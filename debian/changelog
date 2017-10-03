@@ -1,9 +1,9 @@
-gtk+3.0 (3.22.22-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.22.22-1) unstable; urgency=medium
 
   * New upstream release.
   * debian/copyright: Mark Scheme Widget Library as SWL rather than 'other'.
 
- -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 03 Oct 2017 18:27:04 +0200
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 03 Oct 2017 20:02:52 +0200
 
 gtk+3.0 (3.22.21-1) unstable; urgency=medium
 
