@@ -1,6 +1,7 @@
 gtk+3.0 (3.22.22-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * debian/copyright: Mark Scheme Widget Library as SWL rather than 'other'.
 
  -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 03 Oct 2017 18:27:04 +0200
 
