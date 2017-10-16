@@ -8,6 +8,8 @@ These may not result on wl_surface.frame callbacks, yet we do trigger
 a frame clock tick that would get stuck on the lack of such callback.
 
 https://bugzilla.gnome.org/show_bug.cgi?id=784314
+https://launchpad.net/bugs/1719043
+https://bugs.debian.org/875826
 ---
  gdk/wayland/gdkwindow-wayland.c | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
