@@ -1,4 +1,4 @@
-gtk+3.0 (3.22.24-3) UNRELEASED; urgency=medium
+gtk+3.0 (3.22.24-3) unstable; urgency=medium
 
   [ Jeremy Bicha ]
   * Drop 0004_fix-gtkentry-wayland-regression.patch:
@@ -9,7 +9,7 @@ gtk+3.0 (3.22.24-3) UNRELEASED; urgency=medium
   * Force update of GResource files so the changes to the CSS files from
     0002-theme-Fix-Adwaita-headerbars.patch are actually applied.
 
- -- Jeremy Bicha <jbicha@debian.org>  Sat, 21 Oct 2017 20:09:27 -0400
+ -- Michael Biebl <biebl@debian.org>  Sun, 22 Oct 2017 13:22:16 +0200
 
 gtk+3.0 (3.22.24-2) unstable; urgency=medium
 
