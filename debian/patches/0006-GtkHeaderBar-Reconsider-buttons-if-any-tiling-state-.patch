@@ -1,0 +1,37 @@
+From dbf030638e380d2a9ef73cc5e929bcb2ce39310c Mon Sep 17 00:00:00 2001
+From: Simon McVittie <smcv@debian.org>
+Date: Thu, 26 Oct 2017 15:57:29 +0100
+Subject: [PATCH 2/3] GtkHeaderBar: Reconsider buttons if any tiling state
+ changes
+
+Looking at the 1-bit "tiled or not?" state is not necessarily
+enough.
+
+Signed-off-by: Simon McVittie <smcv@debian.org>
+Applied-upstream: 3.22.25, commit:8ad40a49ee28928effcbc57cff463e2867564427
+---
+ gtk/gtkheaderbar.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/gtk/gtkheaderbar.c b/gtk/gtkheaderbar.c
+index 6211f0ec3c..ae85993464 100644
+--- a/gtk/gtkheaderbar.c
++++ b/gtk/gtkheaderbar.c
+@@ -1931,7 +1931,13 @@ window_state_changed (GtkWidget           *window,
+ {
+   GtkHeaderBar *bar = GTK_HEADER_BAR (data);
+ 
+-  if (event->changed_mask & (GDK_WINDOW_STATE_FULLSCREEN | GDK_WINDOW_STATE_MAXIMIZED | GDK_WINDOW_STATE_TILED))
++  if (event->changed_mask & (GDK_WINDOW_STATE_FULLSCREEN |
++                             GDK_WINDOW_STATE_MAXIMIZED |
++                             GDK_WINDOW_STATE_TILED |
++                             GDK_WINDOW_STATE_TOP_TILED |
++                             GDK_WINDOW_STATE_RIGHT_TILED |
++                             GDK_WINDOW_STATE_BOTTOM_TILED |
++                             GDK_WINDOW_STATE_LEFT_TILED))
+     _gtk_header_bar_update_window_buttons (bar);
+ 
+   return FALSE;
+-- 
+2.15.0.rc2
+

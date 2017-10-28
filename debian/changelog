@@ -1,3 +1,14 @@
+gtk+3.0 (3.22.24-4) UNRELEASED; urgency=medium
+
+  * d/p/0004-wayland-Do-not-constrain-saved-window-size.patch,
+    d/p/0005-Set-GDK_WINDOW_STATE_TILED-if-any-edge-is-tiled.patch,
+    d/p/0006-GtkHeaderBar-Reconsider-buttons-if-any-tiling-state-.patch,
+    d/p/0007-GtkWindow-Set-tiled-class-on-windows-that-have-any-t.patch:
+    Add patches committed upstream to fix tiling behaviour with GNOME
+    3.26 (Closes: #879566)
+
+ -- Simon McVittie <smcv@debian.org>  Sat, 28 Oct 2017 00:53:44 +0100
+
 gtk+3.0 (3.22.24-3) unstable; urgency=medium
 
   [ Jeremy Bicha ]
