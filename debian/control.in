@@ -83,7 +83,6 @@ Description: GTK+ graphical user interface library
 Package: @UDEB_PKG@
 Package-Type: udeb
 Section: debian-installer
-Priority: extra
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -193,7 +192,6 @@ Description: documentation for the GTK+ graphical user interface library
 
 Package: @EXAMPLES_PKG@
 Section: x11
-Priority: extra
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
