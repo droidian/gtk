@@ -1,11 +1,11 @@
-gtk+3.0 (3.22.24-4) UNRELEASED; urgency=medium
+gtk+3.0 (3.22.25-1) UNRELEASED; urgency=medium
 
-  * d/p/0004-wayland-Do-not-constrain-saved-window-size.patch,
-    d/p/0005-Set-GDK_WINDOW_STATE_TILED-if-any-edge-is-tiled.patch,
-    d/p/0006-GtkHeaderBar-Reconsider-buttons-if-any-tiling-state-.patch,
-    d/p/0007-GtkWindow-Set-tiled-class-on-windows-that-have-any-t.patch:
-    Add patches committed upstream to fix tiling behaviour with GNOME
-    3.26 (Closes: #879566)
+  * New upstream release
+    - Fix tiling behaviour with Mutter/Shell 3.26 (Closes: #879566)
+    - d/p/0001-Adwaita-Fix-typo-.backgrounf-.background.patch,
+      d/p/0002-theme-Fix-Adwaita-headerbars.patch,
+      d/p/0003-display-x11-Unset-tiled-state-if-_GTK_EDGE_CONSTRAIN.patch:
+      Drop patches, applied upstream
 
  -- Simon McVittie <smcv@debian.org>  Sat, 28 Oct 2017 00:53:44 +0100
 
