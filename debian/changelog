@@ -6,6 +6,9 @@ gtk+3.0 (3.22.25-1) UNRELEASED; urgency=medium
       d/p/0002-theme-Fix-Adwaita-headerbars.patch,
       d/p/0003-display-x11-Unset-tiled-state-if-_GTK_EDGE_CONSTRAIN.patch:
       Drop patches, applied upstream
+    - d/p/gdk-wayland-protocol-server-decoration.patch:
+      Add server-decoration.xml from upstream git. It is missing from the
+      tarball release.
 
  -- Simon McVittie <smcv@debian.org>  Sat, 28 Oct 2017 00:53:44 +0100
 
