@@ -141,8 +141,8 @@ override_dh_clean: debian/control
 	rm -f testsuite/reftests/*.ui.known_fail
 	rm -rf debian/build debian/install
 	# The build system does not automatically update the GResource files
-	# when resources change. Force an update since we modify CSS files in
-	# 0002-theme-Fix-Adwaita-headerbars.patch
+	# when resources change. Force an update in case we ship a patch which
+	# modifies the theme CSS files.
 	rm -f gtk/gtkresources.c gtk/gtkresources.h
 	dh_clean
 
