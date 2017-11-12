@@ -8,6 +8,7 @@ gtk+3.0 (3.22.26-1) UNRELEASED; urgency=medium
   * Rebase patches
   * Update symbols file for libgtk-3-0
   * Bump Standards-Version to 4.1.1
+  * Drop no longer needed Breaks/Replaces
 
  -- Simon McVittie <smcv@debian.org>  Sun, 29 Oct 2017 19:32:09 +0000
 
