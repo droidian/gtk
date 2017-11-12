@@ -150,7 +150,7 @@ override_dh_clean: debian/control
 override_dh_auto_build: $(call dh_subst_files,$(binaries))
 
 override_dh_autoreconf:
-	dh_autoreconf "NOCONFIGURE=true ./autogen.sh"
+	NOCONFIGURE=true dh_autoreconf ./autogen.sh
 
 override_dh_auto_configure: debian/control
 	dh_auto_configure \
