@@ -9,6 +9,8 @@ gtk+3.0 (3.22.26-1) UNRELEASED; urgency=medium
   * Update symbols file for libgtk-3-0
   * Bump Standards-Version to 4.1.1
   * Drop no longer needed Breaks/Replaces
+  * Add (versioned) Provides to gir1.2-gtk-3.0 to follow the latest changes in
+    the GObject introspection policy wrt bundled typelibs.
 
  -- Simon McVittie <smcv@debian.org>  Sun, 29 Oct 2017 19:32:09 +0000
 
