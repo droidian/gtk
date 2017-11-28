@@ -1,4 +1,4 @@
-gtk+3.0 (3.22.26-2) UNRELEASED; urgency=medium
+gtk+3.0 (3.22.26-2) unstable; urgency=medium
 
   [ Simon McVittie ]
   * Set Rules-Requires-Root to no
@@ -8,9 +8,9 @@ gtk+3.0 (3.22.26-2) UNRELEASED; urgency=medium
 
   [ Jeremy Bicha ]
   * Add git_text-view-support-emoji-chooser.patch:
-    - Offer right-click Insert Emoji for GtkTextView too
+    - Offer right-click "Insert Emoji" menu item for GtkTextView too
 
- -- Simon McVittie <smcv@debian.org>  Mon, 13 Nov 2017 08:05:47 +0000
+ -- Jeremy Bicha <jbicha@debian.org>  Tue, 28 Nov 2017 17:16:13 -0500
 
 gtk+3.0 (3.22.26-1) unstable; urgency=medium
 
