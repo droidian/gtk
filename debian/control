@@ -53,8 +53,8 @@ Build-Depends-Indep: libglib2.0-doc,
                      xsltproc,
 Rules-Requires-Root: no
 Standards-Version: 4.1.1
-Vcs-Svn: svn://anonscm.debian.org/pkg-gnome/desktop/unstable/gtk+3.0/
-Vcs-Browser: https://anonscm.debian.org/viewvc/pkg-gnome/desktop/unstable/gtk+3.0/
+Vcs-Git: https://anonscm.debian.org/git/pkg-gnome/gtk+3.0.git
+Vcs-Browser: https://anonscm.debian.org/git/pkg-gnome/gtk+3.0.git
 Homepage: http://www.gtk.org/
 
 Package: libgtk-3-0
