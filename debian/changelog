@@ -1,3 +1,11 @@
+gtk+3.0 (3.22.26-3) UNRELEASED; urgency=medium
+
+  * Update Vcs fields for conversion to git
+  * Add debian/gbp.conf
+  * Bump Standards-Version to 4.1.2
+
+ -- Jeremy Bicha <jbicha@debian.org>  Thu, 21 Dec 2017 21:20:01 -0500
+
 gtk+3.0 (3.22.26-2) unstable; urgency=medium
 
   [ Simon McVittie ]
