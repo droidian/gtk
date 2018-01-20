@@ -52,8 +52,8 @@ Build-Depends-Indep: libglib2.0-doc,
                      xsltproc,
 Rules-Requires-Root: no
 Standards-Version: 4.1.2
-Vcs-Git: https://anonscm.debian.org/git/pkg-gnome/gtk+3.0.git
-Vcs-Browser: https://anonscm.debian.org/git/pkg-gnome/gtk+3.0.git
+Vcs-Browser: https://salsa.debian.org/gnome-team/gtk3
+Vcs-Git: https://salsa.debian.org/gnome-team/gtk3.git
 Homepage: https://www.gtk.org/
 
 Package: libgtk-3-0
