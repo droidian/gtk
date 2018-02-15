@@ -1,10 +1,11 @@
 gtk+3.0 (3.22.28-1) UNRELEASED; urgency=medium
 
-  * New upstream release
+  * New upstream release (LP: #1698270) (LP: #1714518)
   * Update Vcs fields for conversion to git
   * Add debian/gbp.conf
   * Bump Standards-Version to 4.1.2
   * Update Vcs fields for migration to https://salsa.debian.org/
+  * Drop git_text-view-support-emoji-chooser.patch: Applied in new release
 
  -- Jeremy Bicha <jbicha@debian.org>  Fri, 19 Jan 2018 22:02:59 -0500
 
