@@ -1,4 +1,4 @@
-gtk+3.0 (3.22.28-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.22.28-1) unstable; urgency=medium
 
   * New upstream release (LP: #1698270) (LP: #1714518)
   * Update Vcs fields for conversion to git
@@ -7,7 +7,7 @@ gtk+3.0 (3.22.28-1) UNRELEASED; urgency=medium
   * Update Vcs fields for migration to https://salsa.debian.org/
   * Drop git_text-view-support-emoji-chooser.patch: Applied in new release
 
- -- Jeremy Bicha <jbicha@debian.org>  Fri, 19 Jan 2018 22:02:59 -0500
+ -- Jeremy Bicha <jbicha@debian.org>  Thu, 15 Feb 2018 05:23:44 -0500
 
 gtk+3.0 (3.22.26-2) unstable; urgency=medium
 
