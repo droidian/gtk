@@ -1,11 +1,11 @@
-gtk+3.0 (3.22.29-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.22.29-1) unstable; urgency=medium
 
   * New upstream release
     - Reverts confusing single-click open behavior in file chooser
       (Closes: #824606)
   * debian/libgtk-3-0.symbols: Add new symbols
 
- -- Jeremy Bicha <jbicha@debian.org>  Tue, 13 Mar 2018 17:09:26 -0400
+ -- Jeremy Bicha <jbicha@debian.org>  Thu, 15 Mar 2018 07:42:30 -0400
 
 gtk+3.0 (3.22.28-1) unstable; urgency=medium
 
