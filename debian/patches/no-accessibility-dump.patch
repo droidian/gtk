@@ -6,6 +6,8 @@ Temporarily disable this test until someone figures out how
 to make it run with GTK_CSD=1 properly so it gives output
 matching the expected test data in all cases, not just
 for installed-tests.
+
+Forwarded: no
 ---
  testsuite/a11y/Makefile.am | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)

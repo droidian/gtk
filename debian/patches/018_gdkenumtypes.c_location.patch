@@ -13,6 +13,7 @@ in the source tree.
 
 Bug: https://bugzilla.gnome.org/show_bug.cgi?id=647729
 Bug-Ubuntu: https://launchpad.net/bugs/769256
+Forwarded: yes
 ---
  gdk/Makefile.am | 17 +++++++----------
  1 file changed, 7 insertions(+), 10 deletions(-)

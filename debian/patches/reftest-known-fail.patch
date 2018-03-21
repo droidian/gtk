@@ -2,6 +2,7 @@ From: Michael Biebl <biebl@debian.org>
 Date: Mon, 2 May 2016 01:18:04 +0200
 Subject: Mark known failing tests as non-fatal
 
+Forwarded: no
 ---
  testsuite/reftests/gtk-reftest.c | 22 +++++++++++++++++++++-
  1 file changed, 21 insertions(+), 1 deletion(-)

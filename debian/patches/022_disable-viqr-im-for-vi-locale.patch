@@ -2,6 +2,9 @@ From: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
 Date: Tue, 3 Mar 2009 21:58:20 -0300
 Subject: Disable VIQR IM for vi locale
 
+[TODO: why? The Debian changelog just says "imported from Ubuntu"]
+
+Forwarded: no
 ---
  modules/input/imviqr.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)

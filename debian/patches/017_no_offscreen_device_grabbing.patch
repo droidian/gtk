@@ -4,6 +4,7 @@ Subject: Do not allow devices in an offscreen hierarchy to take grabs.
 
 Bug: https://bugzilla.gnome.org/show_bug.cgi?id=658563
 Bug-Ubuntu: https://launchpad.net/bugs/804009
+Forwarded: yes
 ---
  gtk/gtkmain.c | 5 +++++
  1 file changed, 5 insertions(+)

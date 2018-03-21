@@ -11,6 +11,7 @@ ourselves and do a symbol check.
 
 Bug: https://bugzilla.gnome.org/show_bug.cgi?id=775279
 Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=847366
+Applied-upstream: no, GTK+ 4 added a dependency on newer libepoxy instead
 ---
  gdk/x11/gdkglcontext-x11.c | 26 ++++++++++++++++++++++++++
  1 file changed, 26 insertions(+)
