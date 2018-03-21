@@ -6,3 +6,5 @@
 no-accessibility-dump.patch
 reftest-known-fail.patch
 gdk-x11-Check-if-we-have-access-to-GL-before-using-G.patch
+0009-gtkimmodule-make-match_backend-query.patch
+0010-imwayland-Avoid-TOGGLE_INPUT_PANEL-requests-if-there.patch
