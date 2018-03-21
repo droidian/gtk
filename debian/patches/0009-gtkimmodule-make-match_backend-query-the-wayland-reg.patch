@@ -1,19 +1,16 @@
 From: Peter Bloomfield <PeterBloomfield@bellsouth.net>
 Date: Mon, 12 Mar 2018 17:46:57 -0400
-Subject: gtkimmodule: make match_backend() query
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Subject: gtkimmodule: make match_backend() query the wayland registry
 
-4oCmdGhlIHdheWxhbmQgcmVnaXN0cnkuCgpXbmVuIF9ndGtfaW1fbW9kdWxlX2dldF9kZWZhdWx0
-X2NvbnRleHRfaWQgY2FsbHMKbWF0Y2hfYmFja2VuZCAoY29udGV4dF9pZCkgYW5kIHRoZSBkZWZh
-dWx0IEdka0Rpc3BsYXkKaXMgd2F5bGFuZCwgbWF0Y2hfYmFja2VuZCgpIHNob3VsZCByZXR1cm4g
-VFJVRSBvbmx5IGlmCmdka193YXlsYW5kX2Rpc3BsYXlfcXVlcnlfcmVnaXN0cnkgKGRpc3BsYXks
-ICJndGtfdGV4dF9pbnB1dF9tYW5hZ2VyIikKcmV0dXJucyBUUlVFLgoKT3JpZ2luOiB1cHN0cmVh
-bSwgMy4yMi4zMCwgY29tbWl0OjZlMmQxNDAzN2NlYTM1NjYzOGE5YmVhN2I2MTFjYmUyM2JjOTBi
-NDcKQnVnOiBodHRwczovL2dpdGxhYi5nbm9tZS5vcmcvR05PTUUvZ3RrL2lzc3Vlcy8xMTQKQnVn
-LURlYmlhbjogaHR0cHM6Ly9idWdzLmRlYmlhbi5vcmcvY2dpLWJpbi9idWdyZXBvcnQuY2dpP2J1
-Zz04OTM2OTYK
+Wnen _gtk_im_module_get_default_context_id calls
+match_backend (context_id) and the default GdkDisplay
+is wayland, match_backend() should return TRUE only if
+gdk_wayland_display_query_registry (display, "gtk_text_input_manager")
+returns TRUE.
+
+Origin: upstream, 3.22.30, commit:6e2d14037cea356638a9bea7b611cbe23bc90b47
+Bug: https://gitlab.gnome.org/GNOME/gtk/issues/114
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=893696
 ---
  gtk/gtkimmodule.c | 8 +++++++-
  1 file changed, 7 insertions(+), 1 deletion(-)

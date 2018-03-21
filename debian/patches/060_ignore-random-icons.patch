@@ -9,7 +9,7 @@ subdirectory like 48x48/apps).
 TODO: This is believed to have been fixed differently upstream, so maybe
 this change is no longer necessary:
 "I believe a slightly different fix that I did some time ago fixes this
-too." — Matthias Clasen, 2008-02-16 04:43:10 UTC
+too." --Matthias Clasen, 2008-02-16 04:43:10 UTC
 
 Bug: https://bugzilla.gnome.org/show_bug.cgi?id=451634
 Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=444285
