@@ -1,8 +1,16 @@
-Index: b/gtk/updateiconcache.c
-===================================================================
+From: Loic Minier <lool@dooz.org>
+Date: Sun, 21 Oct 2007 22:05:42 +0200
+Subject: Don't list images from unknown directories in icon cache
+
+---
+ gtk/updateiconcache.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/gtk/updateiconcache.c b/gtk/updateiconcache.c
+index b48eaca..6f76b6a 100644
 --- a/gtk/updateiconcache.c
 +++ b/gtk/updateiconcache.c
-@@ -676,7 +676,7 @@
+@@ -676,7 +676,7 @@ scan_directory (const gchar *base_path,
  		      directories = g_list_append (directories, g_strdup (subdir));
  		    }
  		  else
