@@ -3,7 +3,9 @@ gtk+3.0 (3.22.29-2) UNRELEASED; urgency=medium
   * Refresh patch series through gbp-pq
     - Harvest date and authorship information from debian/changelog
   * Add more upstream status information to the patch series
-  * Add patches from upstream fixing Wayland client crashes under
+  * d/p/0009-gtkimmodule-make-match_backend-query-the-wayland-reg.patch,
+    d/p/0010-imwayland-Avoid-TOGGLE_INPUT_PANEL-requests-if-there.patch:
+    Add patches from upstream fixing Wayland client crashes under
     unspecified circumstances (Closes: #893696)
 
  -- Simon McVittie <smcv@debian.org>  Wed, 21 Mar 2018 10:32:43 +0000
