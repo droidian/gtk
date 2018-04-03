@@ -1,6 +1,9 @@
 gtk+3.0 (3.22.29-3) UNRELEASED; urgency=medium
 
   * Allow stderr in autopkgtests. They produce harmless diagnostics.
+  * d/p/0013-wayland-Drop-cairo-surfaces-when-withdrawing.patch:
+    Add patch from upstream fixing a Wayland client crash if it unmaps
+    a window while gdk is processing updates
 
  -- Simon McVittie <smcv@debian.org>  Thu, 22 Mar 2018 15:47:57 +0000
 

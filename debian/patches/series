@@ -10,3 +10,4 @@ gdk-x11-Check-if-we-have-access-to-GL-before-using-G.patch
 0010-imwayland-Avoid-TOGGLE_INPUT_PANEL-requests-if-there.patch
 0011-gtkstylecontext-guard-against-gtk_css_widget_node_ge.patch
 0012-widget-Only-print-allocation-warnings-with-enable-de.patch
+0013-wayland-Drop-cairo-surfaces-when-withdrawing.patch
