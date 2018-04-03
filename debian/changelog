@@ -4,6 +4,10 @@ gtk+3.0 (3.22.29-3) UNRELEASED; urgency=medium
   * d/p/0013-wayland-Drop-cairo-surfaces-when-withdrawing.patch:
     Add patch from upstream fixing a Wayland client crash if it unmaps
     a window while gdk is processing updates
+  * d/p/0014-AM_PATH_GTK_3_0-Use-AC_PATH_TOOL-to-find-pkg-config.patch,
+    d/p/0015-m4macros-Fix-underquoting-in-AC_PATH_TOOL.patch:
+    Use AC_PATH_TOOL to find pkg-config in the deprecated AM_PATH_GTK_3_0
+    macro (Closes: #894069)
 
  -- Simon McVittie <smcv@debian.org>  Thu, 22 Mar 2018 15:47:57 +0000
 
