@@ -1,5 +1,6 @@
-gtk+3.0 (3.22.29-3) UNRELEASED; urgency=medium
+gtk+3.0 (3.22.29-3) unstable; urgency=medium
 
+  * Team upload
   * Allow stderr in autopkgtests. They produce harmless diagnostics.
   * d/p/0013-wayland-Drop-cairo-surfaces-when-withdrawing.patch:
     Add patch from upstream fixing a Wayland client crash if it unmaps
@@ -12,7 +13,7 @@ gtk+3.0 (3.22.29-3) UNRELEASED; urgency=medium
     Add patch proposed upstream to fix crashes on screen blank in some
     dual-monitor configurations (Closes: #894388)
 
- -- Simon McVittie <smcv@debian.org>  Thu, 22 Mar 2018 15:47:57 +0000
+ -- Simon McVittie <smcv@debian.org>  Tue, 03 Apr 2018 08:41:09 +0100
 
 gtk+3.0 (3.22.29-2) unstable; urgency=medium
 
