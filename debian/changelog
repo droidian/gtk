@@ -1,3 +1,12 @@
+gtk+3.0 (3.22.29-4) UNRELEASED; urgency=medium
+
+  * d/p/022_disable-viqr-im-for-vi-locale.patch:
+    Add reference to Ubuntu bug 191451, summarize the reason why this
+    is applied, and correctly attribute the patch to Ming Hua
+    (see #895043)
+
+ -- Simon McVittie <smcv@debian.org>  Fri, 06 Apr 2018 18:50:52 +0100
+
 gtk+3.0 (3.22.29-3) unstable; urgency=medium
 
   * Team upload
