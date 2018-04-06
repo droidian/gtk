@@ -7,7 +7,7 @@ Should fix one of the crash from #129.
 Bug: https://gitlab.gnome.org/GNOME/gtk/issues/129
 Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=894388
 Forwarded: https://gitlab.gnome.org/GNOME/gtk/merge_requests/89
-Applied-upstream: no
+Applied-upstream: 3.22.30, commit:314531640fa6e54933dd838f9bae3a8372a2a99e
 ---
  modules/input/imwayland.c | 12 +++++++-----
  1 file changed, 7 insertions(+), 5 deletions(-)

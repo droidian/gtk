@@ -4,6 +4,8 @@ gtk+3.0 (3.22.29-4) UNRELEASED; urgency=medium
     Add reference to Ubuntu bug 191451, summarize the reason why this
     is applied, and correctly attribute the patch to Ming Hua
     (see #895043)
+  * d/p/0016-imwayland-destroy-objects-only-if-it-matches-our-man.patch:
+    Mark as applied upstream
 
  -- Simon McVittie <smcv@debian.org>  Fri, 06 Apr 2018 18:50:52 +0100
 
