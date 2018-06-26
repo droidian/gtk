@@ -1,6 +1,13 @@
 gtk+3.0 (3.22.30-2) UNRELEASED; urgency=medium
 
+  [ Jeremy Bicha ]
   * Bump minimum wayland-protocols to 1.12
+
+  [ Simon McVittie ]
+  * d/p/m4macros-Set-a-serial-number.patch:
+    Add patch from upstream to give gtk-3.0.m4 a serial number so that
+    it will override older copies bundled with other packages, typically
+    in the m4 directory (GTK+ 3 version of #895018)
 
  -- Jeremy Bicha <jbicha@debian.org>  Mon, 16 Apr 2018 21:04:30 -0400
 
