@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GtkWindow: GTK+ 3 Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GTK+ 3 Reference Manual">
 <link rel="up" href="WindowWidgets.html" title="Windows">
 <link rel="prev" href="WindowWidgets.html" title="Windows">
 <link rel="next" href="GtkDialog.html" title="GtkDialog">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -1310,35 +1310,18 @@ your window (synonymous with <a class="link" href="GtkWindow.html#gtk-window-add
 <p>It also supports the &lt;initial-focus&gt; element, whose name property names
 the widget to receive the focus when the window is mapped.</p>
 <p>An example of a UI definition fragment with accel groups:</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="symbol">&lt;</span><span class="usertype">object</span><span class="normal"> class</span><span class="symbol">=</span><span class="string">"GtkWindow"</span><span class="symbol">&gt;</span>
-<span class="normal">  </span><span class="symbol">&lt;</span><span class="normal">accel</span><span class="symbol">-</span><span class="normal">groups</span><span class="symbol">&gt;</span>
-<span class="normal">    </span><span class="symbol">&lt;</span><span class="usertype">group</span><span class="normal"> name</span><span class="symbol">=</span><span class="string">"accelgroup1"</span><span class="symbol">/&gt;</span>
-<span class="normal">  </span><span class="symbol">&lt;/</span><span class="normal">accel</span><span class="symbol">-</span><span class="normal">groups</span><span class="symbol">&gt;</span>
-<span class="normal">  </span><span class="symbol">&lt;</span><span class="normal">initial</span><span class="symbol">-</span><span class="usertype">focus</span><span class="normal"> name</span><span class="symbol">=</span><span class="string">"thunderclap"</span><span class="symbol">/&gt;</span>
-<span class="symbol">&lt;/</span><span class="normal">object</span><span class="symbol">&gt;</span>
+<div class="informalexample"><pre class="programlisting">
+&lt;object class="GtkWindow"&gt;
+  &lt;accel-groups&gt;
+    &lt;group name="accelgroup1"/&gt;
+  &lt;/accel-groups&gt;
+  &lt;initial-focus name="thunderclap"/&gt;
+&lt;/object&gt;
 
-<span class="symbol">...</span>
+...
 
-<span class="symbol">&lt;</span><span class="usertype">object</span><span class="normal"> class</span><span class="symbol">=</span><span class="string">"GtkAccelGroup"</span><span class="normal"> id</span><span class="symbol">=</span><span class="string">"accelgroup1"</span><span class="symbol">/&gt;</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+&lt;object class="GtkAccelGroup" id="accelgroup1"/&gt;
+</pre></div>
 <p></p>
 <p>The GtkWindow implementation of the GtkBuildable interface supports
 setting a child as the titlebar by specifying “titlebar” as the “type”
@@ -1347,23 +1330,12 @@ attribute of a &lt;child&gt; element.</p>
 <hr>
 <div class="refsect2">
 <a name="id-1.3.6.2.11.4"></a><h3>CSS nodes</h3>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">window</span><span class="symbol">.</span><span class="normal">background</span>
-<span class="normal">├── decoration</span>
-<span class="normal">├── </span><span class="symbol">&lt;</span><span class="usertype">titlebar</span><span class="normal"> child</span><span class="symbol">&gt;.</span><span class="normal">titlebar </span><span class="symbol">[.</span><span class="keyword">default</span><span class="symbol">-</span><span class="normal">decoration</span><span class="symbol">]</span>
-<span class="normal">╰── </span><span class="symbol">&lt;</span><span class="normal">child</span><span class="symbol">&gt;</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+window.background
+├── decoration
+├── &lt;titlebar child&gt;.titlebar [.default-decoration]
+╰── &lt;child&gt;
+</pre></div>
 <p></p>
 <p>GtkWindow has a main CSS node with name window and style class .background,
 and a subnode with name decoration.</p>
@@ -1853,14 +1825,14 @@ character); aspect ratios; and more. See the <span class="type">GdkGeometry</spa
 </tr>
 <tr>
 <td class="parameter_name"><p>geometry_widget</p></td>
-<td class="parameter_description"><p>widget the geometry hints used to be applied to
+<td class="parameter_description"><p> widget the geometry hints used to be applied to
 or <code class="literal">NULL</code>. Since 3.20 this argument is ignored and GTK behaves as if <code class="literal">NULL</code> was
 set. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>geometry</p></td>
-<td class="parameter_description"><p>struct containing geometry information or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> struct containing geometry information or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1929,7 +1901,7 @@ gtk_window_get_gravity (<em class="parameter"><code><a class="link" href="GtkWin
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-gravity.returns"></a><h4>Returns</h4>
-<p>window gravity. </p>
+<p> window gravity. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -2003,7 +1975,7 @@ much as the window manager would have done on X.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p>parent window, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> parent window, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2048,7 +2020,7 @@ between two toplevels instead.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>attach_widget</p></td>
-<td class="parameter_description"><p>a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2194,7 +2166,7 @@ gtk_window_get_screen (<em class="parameter"><code><a class="link" href="GtkWind
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-screen.returns"></a><h4>Returns</h4>
-<p>a <span class="type">GdkScreen</span>. </p>
+<p> a <span class="type">GdkScreen</span>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.2</p>
@@ -2307,7 +2279,7 @@ callbacks that might destroy the widgets, you must call
 then unref all the widgets afterwards.</p>
 <div class="refsect3">
 <a name="gtk-window-list-toplevels.returns"></a><h4>Returns</h4>
-<p>list of toplevel widgets. </p>
+<p> list of toplevel widgets. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GtkWidget][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 </div>
@@ -2529,7 +2501,7 @@ not be <code class="literal">TRUE</code> for the widget.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-focus.returns"></a><h4>Returns</h4>
-<p>the currently focused widget,
+<p> the currently focused widget,
 or <code class="literal">NULL</code> if there is none. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -2563,7 +2535,7 @@ widget in the toplevel, it is usually more convenient to use
 </tr>
 <tr>
 <td class="parameter_name"><p>focus</p></td>
-<td class="parameter_description"><p>widget to be the new focus widget, or <code class="literal">NULL</code> to unset
+<td class="parameter_description"><p> widget to be the new focus widget, or <code class="literal">NULL</code> to unset
 any focus widget for the toplevel window. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -2596,7 +2568,7 @@ gtk_window_get_default_widget (<em class="parameter"><code><a class="link" href=
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-default-widget.returns"></a><h4>Returns</h4>
-<p>the default widget, or <code class="literal">NULL</code>
+<p> the default widget, or <code class="literal">NULL</code>
 if there is none. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -2631,7 +2603,7 @@ the widget you’d like to make the default.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>default_widget</p></td>
-<td class="parameter_description"><p>widget to be the default, or <code class="literal">NULL</code>
+<td class="parameter_description"><p> widget to be the default, or <code class="literal">NULL</code>
 to unset the default widget for the toplevel. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -3691,7 +3663,7 @@ but the pixbufs in the list have not had their reference count
 incremented.</p>
 <div class="refsect3">
 <a name="gtk-window-get-default-icon-list.returns"></a><h4>Returns</h4>
-<p>copy of default icon list. </p>
+<p> copy of default icon list. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GdkPixbuf][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 </div>
@@ -3738,12 +3710,12 @@ used.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>width</p></td>
-<td class="parameter_description"><p>location to store the default width, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> location to store the default width, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>height</p></td>
-<td class="parameter_description"><p>location to store the default height, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> location to store the default height, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -3832,7 +3804,7 @@ the icon list).</p>
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-icon.returns"></a><h4>Returns</h4>
-<p>icon for window or <code class="literal">NULL</code> if none. </p>
+<p> icon for window or <code class="literal">NULL</code> if none. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
 </div>
@@ -3861,7 +3833,7 @@ member won’t be incremented.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-icon-list.returns"></a><h4>Returns</h4>
-<p>copy of window’s icon list. </p>
+<p> copy of window’s icon list. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GdkPixbuf][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 </div>
@@ -3889,7 +3861,7 @@ see <a class="link" href="GtkWindow.html#gtk-window-set-icon-name" title="gtk_wi
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-icon-name.returns"></a><h4>Returns</h4>
-<p>the icon name or <code class="literal">NULL</code> if the window has
+<p> the icon name or <code class="literal">NULL</code> if the window has
 no themed icon. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -4005,13 +3977,13 @@ use a platform-specific protocol, wherever that is available.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>root_x</p></td>
-<td class="parameter_description"><p>return location for X coordinate of
+<td class="parameter_description"><p> return location for X coordinate of
 gravity-determined reference point, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>root_y</p></td>
-<td class="parameter_description"><p>return location for Y coordinate of
+<td class="parameter_description"><p> return location for Y coordinate of
 gravity-determined reference point, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -4043,7 +4015,7 @@ further explanation.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-role.returns"></a><h4>Returns</h4>
-<p>the role of the window if set, or <code class="literal">NULL</code>. The
+<p> the role of the window if set, or <code class="literal">NULL</code>. The
 returned is owned by the widget and must not be modified or freed. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -4067,25 +4039,13 @@ the size returned by this function may not match the size set using
 <a class="link" href="GtkWindow.html#gtk-window-resize" title="gtk_window_resize ()"><code class="function">gtk_window_resize()</code></a>; additionally, since <a class="link" href="GtkWindow.html#gtk-window-resize" title="gtk_window_resize ()"><code class="function">gtk_window_resize()</code></a> may be
 implemented as an asynchronous operation, GTK+ cannot guarantee in any
 way that this code:</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="comment">// width and height are set elsewhere</span>
-<span class="function"><a href="GtkWindow.html#gtk-window-resize">gtk_window_resize</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">window</span><span class="symbol">,</span><span class="normal"> width</span><span class="symbol">,</span><span class="normal"> height</span><span class="symbol">);</span>
+<div class="informalexample"><pre class="programlisting">
+  // width and height are set elsewhere
+  gtk_window_resize (window, width, height);
 
-<span class="type">int</span><span class="normal"> new_width</span><span class="symbol">,</span><span class="normal"> new_height</span><span class="symbol">;</span>
-<span class="function"><a href="GtkWindow.html#gtk-window-get-size">gtk_window_get_size</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">window</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">&amp;</span><span class="normal">new_width</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">&amp;</span><span class="normal">new_height</span><span class="symbol">);</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+  int new_width, new_height;
+  gtk_window_get_size (window, &amp;new_width, &amp;new_height);
+</pre></div>
 <p></p>
 <p>will result in <code class="literal">new_width</code> and <code class="literal">new_height</code> matching <code class="literal">width</code> and
 <code class="literal">height</code>, respectively.</p>
@@ -4102,33 +4062,17 @@ restore them when before showing the window.</p>
 function in response to a size change notification, for instance
 inside a handler for the <a class="link" href="GtkWidget.html#GtkWidget-size-allocate" title="The “size-allocate” signal"><span class="type">“size-allocate”</span></a> signal, or
 inside a handler for the <a class="link" href="GtkWidget.html#GtkWidget-configure-event" title="The “configure-event” signal"><span class="type">“configure-event”</span></a> signal:</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">static</span><span class="normal"> </span><span class="type">void</span>
-<span class="function">on_size_allocate</span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">GtkWidget</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">widget</span><span class="symbol">,</span><span class="normal"> </span><span class="usertype">GtkAllocation</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">allocation</span><span class="symbol">)</span>
-<span class="cbracket">{</span>
-<span class="normal">  </span><span class="type">int</span><span class="normal"> new_width</span><span class="symbol">,</span><span class="normal"> new_height</span><span class="symbol">;</span>
+<div class="informalexample"><pre class="programlisting">
+static void
+on_size_allocate (GtkWidget *widget, GtkAllocation *allocation)
+{
+  int new_width, new_height;
 
-<span class="normal">  </span><span class="function"><a href="GtkWindow.html#gtk-window-get-size">gtk_window_get_size</a></span><span class="normal"> </span><span class="symbol">(</span><span class="function">GTK_WINDOW</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">widget</span><span class="symbol">),</span><span class="normal"> </span><span class="symbol">&amp;</span><span class="normal">new_width</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">&amp;</span><span class="normal">new_height</span><span class="symbol">);</span>
+  gtk_window_get_size (GTK_WINDOW (widget), &amp;new_width, &amp;new_height);
 
-<span class="normal">  </span><span class="symbol">...</span>
-<span class="cbracket">}</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+  ...
+}
+</pre></div>
 <p></p>
 <p>Note that, if you connect to the <a class="link" href="GtkWidget.html#GtkWidget-size-allocate" title="The “size-allocate” signal"><span class="type">“size-allocate”</span></a> signal,
 you should not use the dimensions of the <a class="link" href="GtkWidget.html#GtkAllocation" title="GtkAllocation"><span class="type">GtkAllocation</span></a> passed to
@@ -4165,12 +4109,12 @@ see: <a class="link" href="GtkWindow.html#gtk-window-set-position" title="gtk_wi
 </tr>
 <tr>
 <td class="parameter_name"><p>width</p></td>
-<td class="parameter_description"><p>return location for width, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> return location for width, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>height</p></td>
-<td class="parameter_description"><p>return location for height, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> return location for height, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -4200,7 +4144,7 @@ gtk_window_get_title (<em class="parameter"><code><a class="link" href="GtkWindo
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-title.returns"></a><h4>Returns</h4>
-<p>the title of the window, or <code class="literal">NULL</code> if none has
+<p> the title of the window, or <code class="literal">NULL</code> if none has
 been set explicitly. The returned string is owned by the widget
 and must not be modified or freed. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
@@ -4230,7 +4174,7 @@ gtk_window_get_transient_for (<em class="parameter"><code><a class="link" href="
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-transient-for.returns"></a><h4>Returns</h4>
-<p>the transient parent for this
+<p> the transient parent for this
 window, or <code class="literal">NULL</code> if no transient parent has been set. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -4259,7 +4203,7 @@ gtk_window_get_attached_to (<em class="parameter"><code><a class="link" href="Gt
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-attached-to.returns"></a><h4>Returns</h4>
-<p>the widget where the window
+<p> the widget where the window
 is attached, or <code class="literal">NULL</code> if the window is not attached to any widget. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -4449,14 +4393,14 @@ window group.</p>
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>window</p></td>
-<td class="parameter_description"><p>a <a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> a <a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-group.returns"></a><h4>Returns</h4>
-<p>the <a class="link" href="GtkWindowGroup.html" title="GtkWindowGroup"><span class="type">GtkWindowGroup</span></a> for a window or the default group. </p>
+<p> the <a class="link" href="GtkWindowGroup.html" title="GtkWindowGroup"><span class="type">GtkWindowGroup</span></a> for a window or the default group. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.10</p>
@@ -4614,113 +4558,57 @@ managers to honor the geometry.</p>
 to be called when the window has its “final” size, i.e. after calling
 <a class="link" href="GtkWidget.html#gtk-widget-show-all" title="gtk_widget_show_all ()"><code class="function">gtk_widget_show_all()</code></a> on the contents and <a class="link" href="GtkWindow.html#gtk-window-set-geometry-hints" title="gtk_window_set_geometry_hints ()"><code class="function">gtk_window_set_geometry_hints()</code></a>
 on the window.</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="preproc">#include</span><span class="normal"> </span><span class="string">&lt;gtk/gtk.h&gt;</span>
+<div class="informalexample"><pre class="programlisting">
+#include &lt;gtk/gtk.h&gt;
 
-<span class="keyword">static</span><span class="normal"> </span><span class="type">void</span>
-<span class="function">fill_with_content</span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">GtkWidget</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">vbox</span><span class="symbol">)</span>
-<span class="cbracket">{</span>
-<span class="normal">  </span><span class="comment">// fill with content...</span>
-<span class="cbracket">}</span>
+static void
+fill_with_content (GtkWidget *vbox)
+{
+  // fill with content...
+}
 
-<span class="type">int</span>
-<span class="function">main</span><span class="normal"> </span><span class="symbol">(</span><span class="type">int</span><span class="normal"> argc</span><span class="symbol">,</span><span class="normal"> </span><span class="type">char</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">argv</span><span class="symbol">[])</span>
-<span class="cbracket">{</span>
-<span class="normal">  </span><span class="usertype">GtkWidget</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">window</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">vbox</span><span class="symbol">;</span>
-<span class="normal">  </span><span class="usertype">GdkGeometry</span><span class="normal"> size_hints </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    </span><span class="number">100</span><span class="symbol">,</span><span class="normal"> </span><span class="number">50</span><span class="symbol">,</span><span class="normal"> </span><span class="number">0</span><span class="symbol">,</span><span class="normal"> </span><span class="number">0</span><span class="symbol">,</span><span class="normal"> </span><span class="number">100</span><span class="symbol">,</span><span class="normal"> </span><span class="number">50</span><span class="symbol">,</span><span class="normal"> </span><span class="number">10</span><span class="symbol">,</span>
-<span class="normal">    </span><span class="number">10</span><span class="symbol">,</span><span class="normal"> </span><span class="number">0.0</span><span class="symbol">,</span><span class="normal"> </span><span class="number">0.0</span><span class="symbol">,</span><span class="normal"> GDK_GRAVITY_NORTH_WEST</span>
-<span class="normal">  </span><span class="cbracket">}</span><span class="symbol">;</span>
+int
+main (int argc, char *argv[])
+{
+  GtkWidget *window, *vbox;
+  GdkGeometry size_hints = {
+    100, 50, 0, 0, 100, 50, 10,
+    10, 0.0, 0.0, GDK_GRAVITY_NORTH_WEST
+  };
 
-<span class="normal">  </span><span class="function"><a href="gtk3-General.html#gtk-init">gtk_init</a></span><span class="normal"> </span><span class="symbol">(&amp;</span><span class="normal">argc</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">&amp;</span><span class="normal">argv</span><span class="symbol">);</span>
+  gtk_init (&amp;argc, &amp;argv);
 
-<span class="normal">  window </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GtkWindow.html#gtk-window-new">gtk_window_new</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal"><a href="GtkWindow.html#GTK-WINDOW-TOPLEVEL:CAPS">GTK_WINDOW_TOPLEVEL</a></span><span class="symbol">);</span>
-<span class="normal">  vbox </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GtkBox.html#gtk-box-new">gtk_box_new</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal"><a href="gtk3-Standard-Enumerations.html#GTK-ORIENTATION-VERTICAL:CAPS">GTK_ORIENTATION_VERTICAL</a></span><span class="symbol">,</span><span class="normal"> </span><span class="number">0</span><span class="symbol">);</span>
+  window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 
-<span class="normal">  </span><span class="function"><a href="GtkContainer.html#gtk-container-add">gtk_container_add</a></span><span class="normal"> </span><span class="symbol">(</span><span class="function">GTK_CONTAINER</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">window</span><span class="symbol">),</span><span class="normal"> vbox</span><span class="symbol">);</span>
-<span class="normal">  </span><span class="function">fill_with_content</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">vbox</span><span class="symbol">);</span>
-<span class="normal">  </span><span class="function"><a href="GtkWidget.html#gtk-widget-show-all">gtk_widget_show_all</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">vbox</span><span class="symbol">);</span>
+  gtk_container_add (GTK_CONTAINER (window), vbox);
+  fill_with_content (vbox);
+  gtk_widget_show_all (vbox);
 
-<span class="normal">  </span><span class="function"><a href="GtkWindow.html#gtk-window-set-geometry-hints">gtk_window_set_geometry_hints</a></span><span class="normal"> </span><span class="symbol">(</span><span class="function">GTK_WINDOW</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">window</span><span class="symbol">),</span>
-<span class="normal">                    NULL</span><span class="symbol">,</span>
-<span class="normal">                    </span><span class="symbol">&amp;</span><span class="normal">size_hints</span><span class="symbol">,</span>
-<span class="normal">                    GDK_HINT_MIN_SIZE </span><span class="symbol">|</span>
-<span class="normal">                    GDK_HINT_BASE_SIZE </span><span class="symbol">|</span>
-<span class="normal">                    GDK_HINT_RESIZE_INC</span><span class="symbol">);</span>
+  gtk_window_set_geometry_hints (GTK_WINDOW (window),
+	  			    NULL,
+				    &amp;size_hints,
+				    GDK_HINT_MIN_SIZE |
+				    GDK_HINT_BASE_SIZE |
+				    GDK_HINT_RESIZE_INC);
 
-<span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">argc </span><span class="symbol">&gt;</span><span class="normal"> </span><span class="number">1</span><span class="symbol">)</span>
-<span class="normal">    </span><span class="cbracket">{</span>
-<span class="normal">      </span><span class="usertype">gboolean</span><span class="normal"> res</span><span class="symbol">;</span>
-<span class="normal">      res </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GtkWindow.html#gtk-window-parse-geometry">gtk_window_parse_geometry</a></span><span class="normal"> </span><span class="symbol">(</span><span class="function">GTK_WINDOW</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">window</span><span class="symbol">),</span>
-<span class="normal">                                       argv</span><span class="symbol">[</span><span class="number">1</span><span class="symbol">]);</span>
-<span class="normal">      </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(!</span><span class="normal"> res</span><span class="symbol">)</span>
-<span class="normal">        </span><span class="function">fprintf</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">stderr</span><span class="symbol">,</span>
-<span class="normal">                 </span><span class="string">"Failed to parse “%s”</span><span class="specialchar">\n</span><span class="string">"</span><span class="symbol">,</span>
-<span class="normal">                 argv</span><span class="symbol">[</span><span class="number">1</span><span class="symbol">]);</span>
-<span class="normal">    </span><span class="cbracket">}</span>
+  if (argc &gt; 1)
+    {
+      gboolean res;
+      res = gtk_window_parse_geometry (GTK_WINDOW (window),
+                                       argv[1]);
+      if (! res)
+        fprintf (stderr,
+                 "Failed to parse “%s”\n",
+                 argv[1]);
+    }
 
-<span class="normal">  </span><span class="function"><a href="GtkWidget.html#gtk-widget-show-all">gtk_widget_show_all</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">window</span><span class="symbol">);</span>
-<span class="normal">  </span><span class="function"><a href="gtk3-General.html#gtk-main">gtk_main</a></span><span class="normal"> </span><span class="symbol">();</span>
+  gtk_widget_show_all (window);
+  gtk_main ();
 
-<span class="normal">  </span><span class="keyword">return</span><span class="normal"> </span><span class="number">0</span><span class="symbol">;</span>
-<span class="cbracket">}</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+  return 0;
+}
+</pre></div>
 <p></p>
 <div class="refsect3">
 <a name="gtk-window-parse-geometry.parameters"></a><h4>Parameters</h4>
@@ -4906,7 +4794,7 @@ icon for all windows in your app at once.</p>
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>list</p></td>
-<td class="parameter_description"><p>a list of <span class="type">GdkPixbuf</span>. </p></td>
+<td class="parameter_description"><p> a list of <span class="type">GdkPixbuf</span>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GdkPixbuf][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
@@ -4957,12 +4845,12 @@ on disk. Warns on failure if <em class="parameter"><code>err</code></em>
 <tbody>
 <tr>
 <td class="parameter_name"><p>filename</p></td>
-<td class="parameter_description"><p>location of icon file. </p></td>
+<td class="parameter_description"><p> location of icon file. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>err</p></td>
-<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> location to store error, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -5036,7 +4924,7 @@ for all windows in your application in one go.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>icon</p></td>
-<td class="parameter_description"><p>icon image, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> icon image, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -5085,7 +4973,7 @@ set the icon on transient windows.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>list</p></td>
-<td class="parameter_description"><p>list of <span class="type">GdkPixbuf</span>. </p></td>
+<td class="parameter_description"><p> list of <span class="type">GdkPixbuf</span>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GdkPixbuf]</span></td>
 </tr>
 </tbody>
@@ -5122,12 +5010,12 @@ with a pixbuf created by loading the image from <em class="parameter"><code>file
 </tr>
 <tr>
 <td class="parameter_name"><p>filename</p></td>
-<td class="parameter_description"><p>location of icon file. </p></td>
+<td class="parameter_description"><p> location of icon file. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>err</p></td>
-<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> location to store error, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -5166,7 +5054,7 @@ property which is mentioned in the ICCCM.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>name</p></td>
-<td class="parameter_description"><p>the name of the themed icon. </p></td>
+<td class="parameter_description"><p> the name of the themed icon. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -5528,7 +5416,7 @@ position, width and height into the specified <span class="type">GdkRectangle</s
 </tr>
 <tr>
 <td class="parameter_name"><p>rect</p></td>
-<td class="parameter_description"><p>a pointer to a <span class="type">GdkRectangle</span> which we should store
+<td class="parameter_description"><p> a pointer to a <span class="type">GdkRectangle</span> which we should store
 the resize grip area. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -5564,7 +5452,7 @@ gtk_window_get_application (<em class="parameter"><code><a class="link" href="Gt
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-application.returns"></a><h4>Returns</h4>
-<p>a <a class="link" href="GtkApplication.html" title="GtkApplication"><span class="type">GtkApplication</span></a>, or <code class="literal">NULL</code>. </p>
+<p> a <a class="link" href="GtkApplication.html" title="GtkApplication"><span class="type">GtkApplication</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-0.html#api-index-3.0">3.0</a></p>
@@ -5601,7 +5489,7 @@ the <em class="parameter"><code>application</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>application</p></td>
-<td class="parameter_description"><p>a <a class="link" href="GtkApplication.html" title="GtkApplication"><span class="type">GtkApplication</span></a>, or <code class="literal">NULL</code> to unset. </p></td>
+<td class="parameter_description"><p> a <a class="link" href="GtkApplication.html" title="GtkApplication"><span class="type">GtkApplication</span></a>, or <code class="literal">NULL</code> to unset. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -5676,7 +5564,7 @@ that is already visible, so you set the titlebar before calling
 </tr>
 <tr>
 <td class="parameter_name"><p>titlebar</p></td>
-<td class="parameter_description"><p>the widget to use as titlebar. </p></td>
+<td class="parameter_description"><p> the widget to use as titlebar. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -5708,7 +5596,7 @@ gtk_window_get_titlebar (<em class="parameter"><code><a class="link" href="GtkWi
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-titlebar.returns"></a><h4>Returns</h4>
-<p>the custom titlebar, or <code class="literal">NULL</code>. </p>
+<p> the custom titlebar, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-16.html#api-index-3.16">3.16</a></p>
@@ -6393,6 +6281,6 @@ user_function (<a class="link" href="GtkWindow.html" title="GtkWindow"><span cla
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>

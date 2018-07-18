@@ -217,6 +217,10 @@ GDK_AVAILABLE_IN_ALL GType gtk_file_chooser_error_get_type (void) G_GNUC_CONST;
 GDK_AVAILABLE_IN_ALL GType gtk_file_filter_flags_get_type (void) G_GNUC_CONST;
 #define GTK_TYPE_FILE_FILTER_FLAGS (gtk_file_filter_flags_get_type ())
 
+/* enumerations from "gtkfontchooser.h" */
+GDK_AVAILABLE_IN_ALL GType gtk_font_chooser_level_get_type (void) G_GNUC_CONST;
+#define GTK_TYPE_FONT_CHOOSER_LEVEL (gtk_font_chooser_level_get_type ())
+
 /* enumerations from "gtkicontheme.h" */
 GDK_AVAILABLE_IN_ALL GType gtk_icon_lookup_flags_get_type (void) G_GNUC_CONST;
 #define GTK_TYPE_ICON_LOOKUP_FLAGS (gtk_icon_lookup_flags_get_type ())

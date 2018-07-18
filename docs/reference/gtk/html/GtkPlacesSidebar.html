@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GtkPlacesSidebar: GTK+ 3 Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GTK+ 3 Reference Manual">
 <link rel="up" href="SelectorWidgets.html" title="Selector Widgets and Dialogs">
 <link rel="prev" href="GtkFontChooserDialog.html" title="GtkFontChooserDialog">
 <link rel="next" href="Ornaments.html" title="Ornaments">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -576,7 +576,7 @@ places in the list.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>location</p></td>
-<td class="parameter_description"><p>location to select, or <code class="literal">NULL</code> for no current path. </p></td>
+<td class="parameter_description"><p> location to select, or <code class="literal">NULL</code> for no current path. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -616,7 +616,7 @@ for your menu items.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-places-sidebar-get-location.returns"></a><h4>Returns</h4>
-<p>a <span class="type">GFile</span> with the selected location, or
+<p> a <span class="type">GFile</span> with the selected location, or
 <code class="literal">NULL</code> if nothing is visually selected. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -843,20 +843,12 @@ gtk_places_sidebar_list_shortcuts (<em class="parameter"><code><a class="link" h
 </div>
 <div class="refsect3">
 <a name="gtk-places-sidebar-list-shortcuts.returns"></a><h4>Returns</h4>
-<p>A <span class="type">GSList</span> of <span class="type">GFile</span> of the locations that have been added as
+<p>    A <span class="type">GSList</span> of <span class="type">GFile</span> of the locations that have been added as
 application-specific shortcuts with <a class="link" href="GtkPlacesSidebar.html#gtk-places-sidebar-add-shortcut" title="gtk_places_sidebar_add_shortcut ()"><code class="function">gtk_places_sidebar_add_shortcut()</code></a>.
 To free this list, you can use</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="function">g_slist_free_full</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">list</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">GDestroyNotify</span><span class="symbol">)</span><span class="normal"> g_object_unref</span><span class="symbol">);</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+g_slist_free_full (list, (GDestroyNotify) g_object_unref);
+</pre></div>
 <p>. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GFile][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -895,7 +887,7 @@ the “Alt-1”, “Alt-2”, etc. shortcuts, which activate the cooresponding b
 </div>
 <div class="refsect3">
 <a name="gtk-places-sidebar-get-nth-bookmark.returns"></a><h4>Returns</h4>
-<p>The bookmark specified by the index <em class="parameter"><code>n</code></em>
+<p> The bookmark specified by the index <em class="parameter"><code>n</code></em>
 , or
 <code class="literal">NULL</code> if no such index exist.  Note that the indices start at 0, even though
 the file chooser starts them with the keyboard shortcut "Alt-1". </p>
@@ -1508,17 +1500,17 @@ possible actions for the destination <em class="parameter"><code>dest_file</code
 </tr>
 <tr>
 <td class="parameter_name"><p>context</p></td>
-<td class="parameter_description"><p><span class="type">GdkDragContext</span> with information about the drag operation. </p></td>
+<td class="parameter_description"><p> <span class="type">GdkDragContext</span> with information about the drag operation. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gdk.DragContext]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>dest_file</p></td>
-<td class="parameter_description"><p><span class="type">GFile</span> with the tentative location that is being hovered for a drop. </p></td>
+<td class="parameter_description"><p> <span class="type">GFile</span> with the tentative location that is being hovered for a drop. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gio.File]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>source_file_list</p></td>
-<td class="parameter_description"><p>List of <span class="type">GFile</span> that are being dragged. </p></td>
+<td class="parameter_description"><p>  List of <span class="type">GFile</span> that are being dragged. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GLib.List][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GFile][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1572,12 +1564,12 @@ which should be copied/moved/etc. based on the specified <em class="parameter"><
 </tr>
 <tr>
 <td class="parameter_name"><p>dest_file</p></td>
-<td class="parameter_description"><p>Destination <span class="type">GFile</span>. </p></td>
+<td class="parameter_description"><p> Destination <span class="type">GFile</span>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gio.File]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>source_file_list</p></td>
-<td class="parameter_description"><p><span class="type">GList</span> of <span class="type">GFile</span> that got dropped. </p></td>
+<td class="parameter_description"><p>  <span class="type">GList</span> of <span class="type">GFile</span> that got dropped. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GLib.List][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GFile][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1665,7 +1657,7 @@ the specified location.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>location</p></td>
-<td class="parameter_description"><p><span class="type">GFile</span> to which the caller should switch. </p></td>
+<td class="parameter_description"><p> <span class="type">GFile</span> to which the caller should switch. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gio.File]</span></td>
 </tr>
 <tr>
@@ -1738,19 +1730,19 @@ that this signal is emitted for populating popovers as well.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>container</p></td>
-<td class="parameter_description"><p>a <a class="link" href="GtkMenu.html" title="GtkMenu"><span class="type">GtkMenu</span></a> or another <a class="link" href="GtkContainer.html" title="GtkContainer"><span class="type">GtkContainer</span></a>. </p></td>
+<td class="parameter_description"><p> a <a class="link" href="GtkMenu.html" title="GtkMenu"><span class="type">GtkMenu</span></a> or another <a class="link" href="GtkContainer.html" title="GtkContainer"><span class="type">GtkContainer</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gtk.Widget]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>selected_item</p></td>
-<td class="parameter_description"><p><span class="type">GFile</span> with the item to which
+<td class="parameter_description"><p> <span class="type">GFile</span> with the item to which
 the popup should refer, or <code class="literal">NULL</code> in the case of a <em class="parameter"><code>selected_volume</code></em>
 . </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gio.File][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>selected_volume</p></td>
-<td class="parameter_description"><p><span class="type">GVolume</span> if the selected
+<td class="parameter_description"><p> <span class="type">GVolume</span> if the selected
 item is a volume, or <code class="literal">NULL</code> if it is a file. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gio.Volume][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
@@ -2055,6 +2047,6 @@ progress of the operation and, for example, show a notification.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>

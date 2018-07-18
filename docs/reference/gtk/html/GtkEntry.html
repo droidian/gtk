@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GtkEntry: GTK+ 3 Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GTK+ 3 Reference Manual">
 <link rel="up" href="NumericEntry.html" title="Numeric and Text Data Entry">
 <link rel="prev" href="NumericEntry.html" title="Numeric and Text Data Entry">
 <link rel="next" href="GtkEntryBuffer.html" title="GtkEntryBuffer">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -699,6 +699,11 @@
 </tr>
 <tr>
 <td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="GtkEntry.html#GtkEntry--enable-emoji-completion" title="The “enable-emoji-completion” property">enable-emoji-completion</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
 <td class="property_name"><a class="link" href="GtkEntry.html#GtkEntry--has-frame" title="The “has-frame” property">has-frame</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -1135,31 +1140,16 @@ that any such functionality should also be available by other means, e.g.
 via the context menu of the entry.</p>
 <div class="refsect2">
 <a name="id-1.3.10.2.11.7"></a><h3>CSS nodes</h3>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">entry</span>
-<span class="normal">├── image</span><span class="symbol">.</span><span class="normal">left</span>
-<span class="normal">├── image</span><span class="symbol">.</span><span class="normal">right</span>
-<span class="normal">├── undershoot</span><span class="symbol">.</span><span class="normal">left</span>
-<span class="normal">├── undershoot</span><span class="symbol">.</span><span class="normal">right</span>
-<span class="normal">├── </span><span class="symbol">[</span><span class="normal">selection</span><span class="symbol">]</span>
-<span class="normal">├── </span><span class="symbol">[</span><span class="normal">progress</span><span class="symbol">[.</span><span class="normal">pulse</span><span class="symbol">]]</span>
-<span class="normal">╰── </span><span class="symbol">[</span><span class="normal">window</span><span class="symbol">.</span><span class="normal">popup</span><span class="symbol">]</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+entry[.read-only][.flat][.warning][.error]
+├── image.left
+├── image.right
+├── undershoot.left
+├── undershoot.right
+├── [selection]
+├── [progress[.pulse]]
+╰── [window.popup]
+</pre></div>
 <p></p>
 <p>GtkEntry has a main node with the name entry. Depending on the properties
 of the entry, the style classes .read-only and .flat may appear. The style
@@ -1243,7 +1233,7 @@ this widget.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-entry-get-buffer.returns"></a><h4>Returns</h4>
-<p>A <a class="link" href="GtkEntryBuffer.html" title="GtkEntryBuffer"><span class="type">GtkEntryBuffer</span></a> object. </p>
+<p> A <a class="link" href="GtkEntryBuffer.html" title="GtkEntryBuffer"><span class="type">GtkEntryBuffer</span></a> object. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.18</p>
@@ -1405,7 +1395,7 @@ useful when drawing something to the entry in a draw callback.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>text_area</p></td>
-<td class="parameter_description"><p>Return location for the text area. </p></td>
+<td class="parameter_description"><p> Return location for the text area. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1635,7 +1625,7 @@ gtk_entry_get_inner_border (<em class="parameter"><code><a class="link" href="Gt
 </div>
 <div class="refsect3">
 <a name="gtk-entry-get-inner-border.returns"></a><h4>Returns</h4>
-<p>the entry’s <a class="link" href="GtkStyleContext.html#GtkBorder"><span class="type">GtkBorder</span></a>, or
+<p> the entry’s <a class="link" href="GtkStyleContext.html#GtkBorder"><span class="type">GtkBorder</span></a>, or
 <code class="literal">NULL</code> if none was set. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1801,7 +1791,7 @@ pixel-exact positioning of the entry is important.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>border</p></td>
-<td class="parameter_description"><p>a <a class="link" href="GtkStyleContext.html#GtkBorder"><span class="type">GtkBorder</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> a <a class="link" href="GtkStyleContext.html#GtkBorder"><span class="type">GtkBorder</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1997,7 +1987,7 @@ first key event arrives.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>text</p></td>
-<td class="parameter_description"><p>a string to be displayed when <em class="parameter"><code>entry</code></em>
+<td class="parameter_description"><p> a string to be displayed when <em class="parameter"><code>entry</code></em>
 is empty and unfocused, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
@@ -2124,7 +2114,7 @@ indices in the layout to byte indices in the entry contents.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-entry-get-layout.returns"></a><h4>Returns</h4>
-<p>the <span class="type">PangoLayout</span> for this entry. </p>
+<p> the <span class="type">PangoLayout</span> for this entry. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -2167,12 +2157,12 @@ indices in the layout to byte indices in the entry contents.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>x</p></td>
-<td class="parameter_description"><p>location to store X offset of layout, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> location to store X offset of layout, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>y</p></td>
-<td class="parameter_description"><p>location to store Y offset of layout, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> location to store Y offset of layout, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2308,7 +2298,7 @@ gtk_entry_get_attributes (<em class="parameter"><code><a class="link" href="GtkE
 </div>
 <div class="refsect3">
 <a name="gtk-entry-get-attributes.returns"></a><h4>Returns</h4>
-<p>the attribute list, or <code class="literal">NULL</code>
+<p> the attribute list, or <code class="literal">NULL</code>
 if none was set. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -2404,7 +2394,7 @@ All further configuration of the completion mechanism is done on
 </tr>
 <tr>
 <td class="parameter_name"><p>completion</p></td>
-<td class="parameter_description"><p>The <a class="link" href="GtkEntryCompletion.html" title="GtkEntryCompletion"><span class="type">GtkEntryCompletion</span></a> or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> The <a class="link" href="GtkEntryCompletion.html" title="GtkEntryCompletion"><span class="type">GtkEntryCompletion</span></a> or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2436,7 +2426,7 @@ gtk_entry_get_completion (<em class="parameter"><code><a class="link" href="GtkE
 </div>
 <div class="refsect3">
 <a name="gtk-entry-get-completion.returns"></a><h4>Returns</h4>
-<p>The auxiliary completion object currently
+<p> The auxiliary completion object currently
 in use by <em class="parameter"><code>entry</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -2471,7 +2461,7 @@ as the entry.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>adjustment</p></td>
-<td class="parameter_description"><p>an adjustment which should be adjusted when the cursor
+<td class="parameter_description"><p> an adjustment which should be adjusted when the cursor
 is moved, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
@@ -2504,7 +2494,7 @@ See <a class="link" href="GtkEntry.html#gtk-entry-set-cursor-hadjustment" title=
 </div>
 <div class="refsect3">
 <a name="gtk-entry-get-cursor-hadjustment.returns"></a><h4>Returns</h4>
-<p>the horizontal cursor adjustment, or <code class="literal">NULL</code>
+<p> the horizontal cursor adjustment, or <code class="literal">NULL</code>
 if none has been set. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -2689,7 +2679,7 @@ See <a class="link" href="GtkTextView.html#gtk-text-view-reset-im-context" title
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p>the key event. </p></td>
+<td class="parameter_description"><p> the key event. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gdk.EventKey]</span></td>
 </tr>
 </tbody>
@@ -2750,7 +2740,7 @@ any.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-entry-get-tabs.returns"></a><h4>Returns</h4>
-<p>the tabstops, or <code class="literal">NULL</code> if none was set. </p>
+<p> the tabstops, or <code class="literal">NULL</code> if none was set. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-10.html#api-index-3.10">3.10</a></p>
@@ -2818,7 +2808,7 @@ gtk_entry_set_icon_from_pixbuf (<em class="parameter"><code><a class="link" href
 </tr>
 <tr>
 <td class="parameter_name"><p>pixbuf</p></td>
-<td class="parameter_description"><p>A <span class="type">GdkPixbuf</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> A <span class="type">GdkPixbuf</span>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2862,7 +2852,7 @@ a stock image.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>stock_id</p></td>
-<td class="parameter_description"><p>The name of the stock item, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> The name of the stock item, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2904,7 +2894,7 @@ instead.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>icon_name</p></td>
-<td class="parameter_description"><p>An icon name, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> An icon name, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2946,7 +2936,7 @@ instead.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>icon</p></td>
-<td class="parameter_description"><p>The icon to set, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> The icon to set, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -3025,7 +3015,7 @@ method will work regardless of whether the icon was set using a
 </div>
 <div class="refsect3">
 <a name="gtk-entry-get-icon-pixbuf.returns"></a><h4>Returns</h4>
-<p>A <span class="type">GdkPixbuf</span>, or <code class="literal">NULL</code> if no icon is
+<p> A <span class="type">GdkPixbuf</span>, or <code class="literal">NULL</code> if no icon is
 set for this position. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -3106,7 +3096,7 @@ pixbuf, stock or gicon).</p>
 </div>
 <div class="refsect3">
 <a name="gtk-entry-get-icon-name.returns"></a><h4>Returns</h4>
-<p>An icon name, or <code class="literal">NULL</code> if no icon is set or if the icon
+<p> An icon name, or <code class="literal">NULL</code> if no icon is set or if the icon
 wasn’t set from an icon name. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -3145,7 +3135,7 @@ stock, pixbuf, or icon name).</p>
 </div>
 <div class="refsect3">
 <a name="gtk-entry-get-icon-gicon.returns"></a><h4>Returns</h4>
-<p>A <span class="type">GIcon</span>, or <code class="literal">NULL</code> if no icon is set
+<p> A <span class="type">GIcon</span>, or <code class="literal">NULL</code> if no icon is set
 or if the icon is not a <span class="type">GIcon</span>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -3384,7 +3374,7 @@ setting at least one non-empty tooltip on any icon achieves the same result.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>tooltip</p></td>
-<td class="parameter_description"><p>the contents of the tooltip for the icon, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> the contents of the tooltip for the icon, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -3425,7 +3415,7 @@ position in <em class="parameter"><code>entry</code></em>
 </div>
 <div class="refsect3">
 <a name="gtk-entry-get-icon-tooltip-text.returns"></a><h4>Returns</h4>
-<p>the tooltip text, or <code class="literal">NULL</code>. Free the returned
+<p> the tooltip text, or <code class="literal">NULL</code>. Free the returned
 string with <code class="function">g_free()</code> when done. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -3468,7 +3458,7 @@ the Pango text markup language.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>tooltip</p></td>
-<td class="parameter_description"><p>the contents of the tooltip for the icon, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> the contents of the tooltip for the icon, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -3509,7 +3499,7 @@ position in <em class="parameter"><code>entry</code></em>
 </div>
 <div class="refsect3">
 <a name="gtk-entry-get-icon-tooltip-markup.returns"></a><h4>Returns</h4>
-<p>the tooltip text, or <code class="literal">NULL</code>. Free the returned
+<p> the tooltip text, or <code class="literal">NULL</code>. Free the returned
 string with <code class="function">g_free()</code> when done. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -3639,7 +3629,7 @@ with the icon’s allocation, relative to <em class="parameter"><code>entry</cod
 </tr>
 <tr>
 <td class="parameter_name"><p>icon_area</p></td>
-<td class="parameter_description"><p>Return location for the icon’s area. </p></td>
+<td class="parameter_description"><p> Return location for the icon’s area. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -4258,6 +4248,14 @@ other purpose.</p>
 <p>Whether the entry contents can be edited.</p>
 <p>Flags: Read / Write</p>
 <p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GtkEntry--enable-emoji-completion"></a><h3>The <code class="literal">“enable-emoji-completion”</code> property</h3>
+<pre class="programlisting">  “enable-emoji-completion”  <span class="type">gboolean</span></pre>
+<p>Whether to suggest Emoji replacements.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -4993,7 +4991,7 @@ is clicked.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p>the button press event. </p></td>
+<td class="parameter_description"><p> the button press event. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gdk.EventButton]</span></td>
 </tr>
 <tr>
@@ -5038,7 +5036,7 @@ mouse click over an activatable icon.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p>the button release event. </p></td>
+<td class="parameter_description"><p> the button release event. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gdk.EventButton]</span></td>
 </tr>
 <tr>
@@ -5362,6 +5360,6 @@ which gets emitted to toggle the overwrite mode of the entry.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>

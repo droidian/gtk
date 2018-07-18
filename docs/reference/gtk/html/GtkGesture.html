@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GtkGesture: GTK+ 3 Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GTK+ 3 Reference Manual">
 <link rel="up" href="Gestures.html" title="Gestures and event handling">
 <link rel="prev" href="GtkEventController.html" title="GtkEventController">
 <link rel="next" href="GtkGestureSingle.html" title="GtkGestureSingle">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -287,7 +287,7 @@
 </div>
 <div class="refsect1">
 <a name="GtkGesture.includes"></a><h2>Includes</h2>
-<pre class="synopsis">#include &lt;gtk/gtkunixprint.h&gt;
+<pre class="synopsis">#include &lt;gtk/gtk.h&gt;
 </pre>
 </div>
 <div class="refsect1">
@@ -402,7 +402,7 @@ on <em class="parameter"><code>gesture</code></em>
 </div>
 <div class="refsect3">
 <a name="gtk-gesture-get-device.returns"></a><h4>Returns</h4>
-<p>a <span class="type">GdkDevice</span>, or <code class="literal">NULL</code>. </p>
+<p> a <span class="type">GdkDevice</span>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-14.html#api-index-3.14">3.14</a></p>
@@ -433,7 +433,7 @@ information.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-gesture-get-window.returns"></a><h4>Returns</h4>
-<p>the user defined window, or <code class="literal">NULL</code> if none. </p>
+<p> the user defined window, or <code class="literal">NULL</code> if none. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-14.html#api-index-3.14">3.14</a></p>
@@ -466,7 +466,7 @@ a child of it. <em class="parameter"><code>window</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>window</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkWindow</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> a <span class="type">GdkWindow</span>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -598,49 +598,25 @@ set the state on another gesture within a <a class="link" href="GtkGesture.html#
 signal handler, as the callback might be executed before
 the other gesture knows about the sequence. A safe way to
 perform this could be:</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">static</span><span class="normal"> </span><span class="type">void</span>
-<span class="function">first_gesture_begin_cb</span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">GtkGesture</span><span class="normal">       </span><span class="symbol">*</span><span class="normal">first_gesture</span><span class="symbol">,</span>
-<span class="normal">                        </span><span class="usertype">GdkEventSequence</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">sequence</span><span class="symbol">,</span>
-<span class="normal">                        </span><span class="usertype">gpointer</span><span class="normal">          user_data</span><span class="symbol">)</span>
-<span class="cbracket">{</span>
-<span class="normal">  </span><span class="function"><a href="GtkGesture.html#gtk-gesture-set-sequence-state">gtk_gesture_set_sequence_state</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">first_gesture</span><span class="symbol">,</span><span class="normal"> sequence</span><span class="symbol">,</span><span class="normal"> GTK_EVENT_SEQUENCE_ACCEPTED</span><span class="symbol">);</span>
-<span class="normal">  </span><span class="function"><a href="GtkGesture.html#gtk-gesture-set-sequence-state">gtk_gesture_set_sequence_state</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">second_gesture</span><span class="symbol">,</span><span class="normal"> sequence</span><span class="symbol">,</span><span class="normal"> <a href="GtkGesture.html#GTK-EVENT-SEQUENCE-DENIED:CAPS">GTK_EVENT_SEQUENCE_DENIED</a></span><span class="symbol">);</span>
-<span class="cbracket">}</span>
+<div class="informalexample"><pre class="programlisting">
+static void
+first_gesture_begin_cb (GtkGesture       *first_gesture,
+                        GdkEventSequence *sequence,
+                        gpointer          user_data)
+{
+  gtk_gesture_set_sequence_state (first_gesture, sequence, GTK_EVENT_SEQUENCE_CLAIMED);
+  gtk_gesture_set_sequence_state (second_gesture, sequence, GTK_EVENT_SEQUENCE_DENIED);
+}
 
-<span class="keyword">static</span><span class="normal"> </span><span class="type">void</span>
-<span class="function">second_gesture_begin_cb</span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">GtkGesture</span><span class="normal">       </span><span class="symbol">*</span><span class="normal">second_gesture</span><span class="symbol">,</span>
-<span class="normal">                         </span><span class="usertype">GdkEventSequence</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">sequence</span><span class="symbol">,</span>
-<span class="normal">                         </span><span class="usertype">gpointer</span><span class="normal">          user_data</span><span class="symbol">)</span>
-<span class="cbracket">{</span>
-<span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="function"><a href="GtkGesture.html#gtk-gesture-get-sequence-state">gtk_gesture_get_sequence_state</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">first_gesture</span><span class="symbol">,</span><span class="normal"> sequence</span><span class="symbol">)</span><span class="normal"> </span><span class="symbol">==</span><span class="normal"> GTK_EVENT_SEQUENCE_ACCEPTED</span><span class="symbol">)</span>
-<span class="normal">    </span><span class="function"><a href="GtkGesture.html#gtk-gesture-set-sequence-state">gtk_gesture_set_sequence_state</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">second_gesture</span><span class="symbol">,</span><span class="normal"> sequence</span><span class="symbol">,</span><span class="normal"> <a href="GtkGesture.html#GTK-EVENT-SEQUENCE-DENIED:CAPS">GTK_EVENT_SEQUENCE_DENIED</a></span><span class="symbol">);</span>
-<span class="cbracket">}</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+static void
+second_gesture_begin_cb (GtkGesture       *second_gesture,
+                         GdkEventSequence *sequence,
+                         gpointer          user_data)
+{
+  if (gtk_gesture_get_sequence_state (first_gesture, sequence) == GTK_EVENT_SEQUENCE_CLAIMED)
+    gtk_gesture_set_sequence_state (second_gesture, sequence, GTK_EVENT_SEQUENCE_DENIED);
+}
+</pre></div>
 <p></p>
 <p>If both gestures are in the same group, just set the state on
 the gesture emitting the event, the sequence will be already
@@ -746,7 +722,7 @@ by <em class="parameter"><code>gesture</code></em>
 </div>
 <div class="refsect3">
 <a name="gtk-gesture-get-sequences.returns"></a><h4>Returns</h4>
-<p>A list
+<p> A list
 of <span class="type">GdkEventSequences</span>, the list elements are owned by GTK+
 and must not be freed or modified, the list itself must be deleted
 through <code class="function">g_list_free()</code>. </p>
@@ -780,7 +756,7 @@ gtk_gesture_handles_sequence (<em class="parameter"><code><a class="link" href="
 </tr>
 <tr>
 <td class="parameter_name"><p>sequence</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkEventSequence</span> or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> a <span class="type">GdkEventSequence</span> or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -818,7 +794,7 @@ gtk_gesture_get_last_updated_sequence (<em class="parameter"><code><a class="lin
 </div>
 <div class="refsect3">
 <a name="gtk-gesture-get-last-updated-sequence.returns"></a><h4>Returns</h4>
-<p>The last updated sequence. </p>
+<p> The last updated sequence. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-14.html#api-index-3.14">3.14</a></p>
@@ -852,15 +828,15 @@ a copy of the event.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>sequence</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkEventSequence</span></p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p> a <span class="type">GdkEventSequence</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <div class="refsect3">
 <a name="gtk-gesture-get-last-event.returns"></a><h4>Returns</h4>
-<p>The last event from <em class="parameter"><code>sequence</code></em>
+<p> The last event from <em class="parameter"><code>sequence</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -897,17 +873,17 @@ widget allocation.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>sequence</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkEventSequence</span>, or <code class="literal">NULL</code> for pointer events. </p></td>
+<td class="parameter_description"><p> a <span class="type">GdkEventSequence</span>, or <code class="literal">NULL</code> for pointer events. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>x</p></td>
-<td class="parameter_description"><p>return location for X axis of the sequence coordinates. </p></td>
+<td class="parameter_description"><p> return location for X axis of the sequence coordinates. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>y</p></td>
-<td class="parameter_description"><p>return location for Y axis of the sequence coordinates. </p></td>
+<td class="parameter_description"><p> return location for Y axis of the sequence coordinates. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -954,7 +930,7 @@ regardless of the number of touchpoints.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>rect</p></td>
-<td class="parameter_description"><p>bounding box containing all active touches. </p></td>
+<td class="parameter_description"><p> bounding box containing all active touches. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -996,12 +972,12 @@ will be returned.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>x</p></td>
-<td class="parameter_description"><p>X coordinate for the bounding box center. </p></td>
+<td class="parameter_description"><p> X coordinate for the bounding box center. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>y</p></td>
-<td class="parameter_description"><p>Y coordinate for the bounding box center. </p></td>
+<td class="parameter_description"><p> Y coordinate for the bounding box center. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1103,7 +1079,7 @@ gtk_gesture_get_group (<em class="parameter"><code><a class="link" href="GtkGest
 </div>
 <div class="refsect3">
 <a name="gtk-gesture-get-group.returns"></a><h4>Returns</h4>
-<p>The list
+<p> The list
 of <a href="GtkGesture.html#GtkGesture-struct"><span class="type">GtkGestures</span></a>, free with <code class="function">g_list_free()</code>. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GtkGesture][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
@@ -1444,6 +1420,6 @@ recognized. <em class="parameter"><code>sequence</code></em>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>

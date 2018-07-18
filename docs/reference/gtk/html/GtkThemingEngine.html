@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GtkThemingEngine: GTK+ 3 Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GTK+ 3 Reference Manual">
 <link rel="up" href="DeprecatedObjects.html" title="Deprecated">
 <link rel="prev" href="GtkStatusIcon.html" title="GtkStatusIcon">
 <link rel="next" href="GtkAlignment.html" title="GtkAlignment">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -416,7 +416,7 @@ gtk_theming_engine_get_path (<em class="parameter"><code><a class="link" href="G
 </div>
 <div class="refsect3">
 <a name="gtk-theming-engine-get-path.returns"></a><h4>Returns</h4>
-<p>A <a class="link" href="gtk3-GtkWidgetPath.html#GtkWidgetPath" title="GtkWidgetPath"><span class="type">GtkWidgetPath</span></a>. </p>
+<p> A <a class="link" href="gtk3-GtkWidgetPath.html#GtkWidgetPath" title="GtkWidgetPath"><span class="type">GtkWidgetPath</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-0.html#api-index-3.0">3.0</a></p>
@@ -458,7 +458,7 @@ to the currently rendered element.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>value</p></td>
-<td class="parameter_description"><p>return location for the property value,
+<td class="parameter_description"><p> return location for the property value,
 you must free this memory using <code class="function">g_value_unset()</code> once you are
 done with it. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
@@ -493,7 +493,7 @@ gtk_theming_engine_get_screen (<em class="parameter"><code><a class="link" href=
 </div>
 <div class="refsect3">
 <a name="gtk-theming-engine-get-screen.returns"></a><h4>Returns</h4>
-<p>a <span class="type">GdkScreen</span>, or <code class="literal">NULL</code>. </p>
+<p> a <span class="type">GdkScreen</span>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -589,7 +589,7 @@ gtk_theming_engine_get_style_property (<em class="parameter"><code><a class="lin
 </tr>
 <tr>
 <td class="parameter_name"><p>value</p></td>
-<td class="parameter_description"><p>Return location for the property value, free with
+<td class="parameter_description"><p> Return location for the property value, free with
 <code class="function">g_value_unset()</code> after use. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -701,7 +701,7 @@ gtk_theming_engine_get_color (<em class="parameter"><code><a class="link" href="
 </tr>
 <tr>
 <td class="parameter_name"><p>color</p></td>
-<td class="parameter_description"><p>return value for the foreground color. </p></td>
+<td class="parameter_description"><p> return value for the foreground color. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -740,7 +740,7 @@ gtk_theming_engine_get_background_color
 </tr>
 <tr>
 <td class="parameter_name"><p>color</p></td>
-<td class="parameter_description"><p>return value for the background color. </p></td>
+<td class="parameter_description"><p> return value for the background color. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -778,7 +778,7 @@ gtk_theming_engine_get_border_color (<em class="parameter"><code><a class="link"
 </tr>
 <tr>
 <td class="parameter_name"><p>color</p></td>
-<td class="parameter_description"><p>return value for the border color. </p></td>
+<td class="parameter_description"><p> return value for the border color. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -816,7 +816,7 @@ gtk_theming_engine_get_border (<em class="parameter"><code><a class="link" href=
 </tr>
 <tr>
 <td class="parameter_name"><p>border</p></td>
-<td class="parameter_description"><p>return value for the border settings. </p></td>
+<td class="parameter_description"><p> return value for the border settings. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -854,7 +854,7 @@ gtk_theming_engine_get_padding (<em class="parameter"><code><a class="link" href
 </tr>
 <tr>
 <td class="parameter_name"><p>padding</p></td>
-<td class="parameter_description"><p>return value for the padding settings. </p></td>
+<td class="parameter_description"><p> return value for the padding settings. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -892,7 +892,7 @@ gtk_theming_engine_get_margin (<em class="parameter"><code><a class="link" href=
 </tr>
 <tr>
 <td class="parameter_name"><p>margin</p></td>
-<td class="parameter_description"><p>return value for the margin settings. </p></td>
+<td class="parameter_description"><p> return value for the margin settings. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -935,7 +935,7 @@ gtk_theming_engine_get_font (<em class="parameter"><code><a class="link" href="G
 </div>
 <div class="refsect3">
 <a name="gtk-theming-engine-get-font.returns"></a><h4>Returns</h4>
-<p>the <span class="type">PangoFontDescription</span> for the given
+<p> the <span class="type">PangoFontDescription</span> for the given
 state. This object is owned by GTK+ and should not be
 freed. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -1014,7 +1014,7 @@ to the flags affecting the region.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>flags</p></td>
-<td class="parameter_description"><p>return location for region flags. </p></td>
+<td class="parameter_description"><p> return location for region flags. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1056,7 +1056,7 @@ gtk_theming_engine_lookup_color (<em class="parameter"><code><a class="link" hre
 </tr>
 <tr>
 <td class="parameter_name"><p>color</p></td>
-<td class="parameter_description"><p>Return location for the looked up color. </p></td>
+<td class="parameter_description"><p> Return location for the looked up color. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1110,7 +1110,7 @@ it’s being set to <code class="literal">FALSE</code>.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>progress</p></td>
-<td class="parameter_description"><p>return location for the transition progress. </p></td>
+<td class="parameter_description"><p> return location for the transition progress. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1148,7 +1148,7 @@ standard directories.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-theming-engine-load.returns"></a><h4>Returns</h4>
-<p>A theming engine, or <code class="literal">NULL</code> if
+<p> A theming engine, or <code class="literal">NULL</code> if
 the engine <em class="parameter"><code>name</code></em>
 doesn’t exist. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -1187,23 +1187,12 @@ when creating <span class="type">GtkThemeEngines</span> yourself.</p>
 the CSS file, make sure the engine is loaded first by specifying
 the engine property, either in a previous rule or within the same
 one.</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    engine</span><span class="symbol">:</span><span class="normal"> someengine</span><span class="symbol">;</span>
-<span class="normal">    </span><span class="symbol">-</span><span class="normal">SomeEngine</span><span class="symbol">-</span><span class="normal">custom</span><span class="symbol">-</span><span class="normal">property</span><span class="symbol">:</span><span class="normal"> </span><span class="number">2</span><span class="symbol">;</span>
-<span class="cbracket">}</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+* {
+    engine: someengine;
+    -SomeEngine-custom-property: 2;
+}
+</pre></div>
 <p></p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
@@ -1222,7 +1211,7 @@ one.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>parse_func</p></td>
-<td class="parameter_description"><p>parsing function to use, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> parsing function to use, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1463,17 +1452,9 @@ or <a class="link" href="GtkProgressBar.html" title="GtkProgressBar"><span class
 <p>The theming engine name, this name will be used when registering
 custom properties, for a theming engine named "Clearlooks" registering
 a "glossy" custom property, it could be referenced in the CSS file as</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="symbol">-</span><span class="normal">Clearlooks</span><span class="symbol">-</span><span class="normal">glossy</span><span class="symbol">:</span><span class="normal"> true</span><span class="symbol">;</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+-Clearlooks-glossy: true;
+</pre></div>
 <p></p>
 <p>Flags: Read / Write / Construct Only</p>
 <p>Default value: NULL</p>
@@ -1486,6 +1467,6 @@ a "glossy" custom property, it could be referenced in the CSS file as</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>

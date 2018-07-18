@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GtkIconTheme: GTK+ 3 Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GTK+ 3 Reference Manual">
 <link rel="up" href="theming.html" title="Part IV. Theming in GTK+">
 <link rel="prev" href="gtk3-GtkWidgetPath.html" title="GtkWidgetPath">
 <link rel="next" href="migrating.html" title="Part V. Migrating from Previous Versions of GTK+">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -539,55 +539,28 @@ can create new <a class="link" href="GtkIconTheme.html" title="GtkIconTheme"><sp
 efficient to use the standard icon theme for the <span class="type">GdkScreen</span>
 so that the icon information is shared with other people
 looking up icons.</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="usertype">GError</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">error </span><span class="symbol">=</span><span class="normal"> NULL</span><span class="symbol">;</span>
-<span class="usertype">GtkIconTheme</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">icon_theme</span><span class="symbol">;</span>
-<span class="usertype">GdkPixbuf</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">pixbuf</span><span class="symbol">;</span>
+<div class="informalexample"><pre class="programlisting">
+GError *error = NULL;
+GtkIconTheme *icon_theme;
+GdkPixbuf *pixbuf;
 
-<span class="normal">icon_theme </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GtkIconTheme.html#gtk-icon-theme-get-default">gtk_icon_theme_get_default</a></span><span class="normal"> </span><span class="symbol">();</span>
-<span class="normal">pixbuf </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GtkIconTheme.html#gtk-icon-theme-load-icon">gtk_icon_theme_load_icon</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">icon_theme</span><span class="symbol">,</span>
-<span class="normal">                                   </span><span class="string">"my-icon-name"</span><span class="symbol">,</span><span class="normal"> </span><span class="comment">// icon name</span>
-<span class="normal">                                   </span><span class="number">48</span><span class="symbol">,</span><span class="normal"> </span><span class="comment">// icon size</span>
-<span class="normal">                                   </span><span class="number">0</span><span class="symbol">,</span><span class="normal">  </span><span class="comment">// flags</span>
-<span class="normal">                                   </span><span class="symbol">&amp;</span><span class="normal">error</span><span class="symbol">);</span>
-<span class="keyword">if</span><span class="normal"> </span><span class="symbol">(!</span><span class="normal">pixbuf</span><span class="symbol">)</span>
-<span class="normal">  </span><span class="cbracket">{</span>
-<span class="normal">    </span><span class="function">g_warning</span><span class="normal"> </span><span class="symbol">(</span><span class="string">"Couldn’t load icon: %s"</span><span class="symbol">,</span><span class="normal"> error</span><span class="symbol">-&gt;</span><span class="normal">message</span><span class="symbol">);</span>
-<span class="normal">    </span><span class="function">g_error_free</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">error</span><span class="symbol">);</span>
-<span class="normal">  </span><span class="cbracket">}</span>
-<span class="keyword">else</span>
-<span class="normal">  </span><span class="cbracket">{</span>
-<span class="normal">    </span><span class="comment">// Use the pixbuf</span>
-<span class="normal">    </span><span class="function">g_object_unref</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">pixbuf</span><span class="symbol">);</span>
-<span class="normal">  </span><span class="cbracket">}</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+icon_theme = gtk_icon_theme_get_default ();
+pixbuf = gtk_icon_theme_load_icon (icon_theme,
+                                   "my-icon-name", // icon name
+                                   48, // icon size
+                                   0,  // flags
+                                   &amp;error);
+if (!pixbuf)
+  {
+    g_warning ("Couldn’t load icon: %s", error-&gt;message);
+    g_error_free (error);
+  }
+else
+  {
+    // Use the pixbuf
+    g_object_unref (pixbuf);
+  }
+</pre></div>
 <p></p>
 </div>
 <div class="refsect1">
@@ -616,7 +589,7 @@ gtk_icon_theme_get_default (<em class="parameter"><code><span class="type">void<
 <a class="link" href="GtkIconTheme.html#gtk-icon-theme-get-for-screen" title="gtk_icon_theme_get_for_screen ()"><code class="function">gtk_icon_theme_get_for_screen()</code></a>.</p>
 <div class="refsect3">
 <a name="gtk-icon-theme-get-default.returns"></a><h4>Returns</h4>
-<p>A unique <a class="link" href="GtkIconTheme.html" title="GtkIconTheme"><span class="type">GtkIconTheme</span></a> associated with
+<p> A unique <a class="link" href="GtkIconTheme.html" title="GtkIconTheme"><span class="type">GtkIconTheme</span></a> associated with
 the default screen. This icon theme is associated with
 the screen and can be used as long as the screen
 is open. Do not ref or unref it. </p>
@@ -655,7 +628,7 @@ a single icon theme object will be shared between users.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-theme-get-for-screen.returns"></a><h4>Returns</h4>
-<p>A unique <a class="link" href="GtkIconTheme.html" title="GtkIconTheme"><span class="type">GtkIconTheme</span></a> associated with
+<p> A unique <a class="link" href="GtkIconTheme.html" title="GtkIconTheme"><span class="type">GtkIconTheme</span></a> associated with
 the given screen. This icon theme is associated with
 the screen and can be used as long as the screen
 is open. Do not ref or unref it. </p>
@@ -734,7 +707,7 @@ rather than directly on the icon path.)</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>path</p></td>
-<td class="parameter_description"><p>array of
+<td class="parameter_description"><p> array of
 directories that are searched for icon themes. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_elements][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> filename]</span></td>
 </tr>
@@ -773,7 +746,7 @@ gtk_icon_theme_get_search_path (<em class="parameter"><code><a class="link" href
 </tr>
 <tr>
 <td class="parameter_name"><p>path</p></td>
-<td class="parameter_description"><p>location to store a list of icon theme path directories or <code class="literal">NULL</code>.
+<td class="parameter_description"><p>    location to store a list of icon theme path directories or <code class="literal">NULL</code>.
 The stored value should be freed with <code class="function">g_strfreev()</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_elements][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> filename][<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -812,7 +785,7 @@ See <a class="link" href="GtkIconTheme.html#gtk-icon-theme-set-search-path" titl
 </tr>
 <tr>
 <td class="parameter_name"><p>path</p></td>
-<td class="parameter_description"><p>directory name to append to the icon path. </p></td>
+<td class="parameter_description"><p> directory name to append to the icon path. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr>
 </tbody>
@@ -844,7 +817,7 @@ See <a class="link" href="GtkIconTheme.html#gtk-icon-theme-set-search-path" titl
 </tr>
 <tr>
 <td class="parameter_name"><p>path</p></td>
-<td class="parameter_description"><p>directory name to prepend to the icon path. </p></td>
+<td class="parameter_description"><p> directory name to prepend to the icon path. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr>
 </tbody>
@@ -917,7 +890,7 @@ and <a class="link" href="GtkIconTheme.html#gtk-icon-theme-get-for-screen" title
 </tr>
 <tr>
 <td class="parameter_name"><p>theme_name</p></td>
-<td class="parameter_description"><p>name of icon theme to use instead of
+<td class="parameter_description"><p> name of icon theme to use instead of
 configured theme, or <code class="literal">NULL</code> to unset a previously set custom theme. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1018,7 +991,7 @@ for a given scaling factor may be different.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-theme-lookup-icon.returns"></a><h4>Returns</h4>
-<p>a <a class="link" href="GtkIconTheme.html#GtkIconInfo" title="GtkIconInfo"><span class="type">GtkIconInfo</span></a> object
+<p> a <a class="link" href="GtkIconTheme.html#GtkIconInfo" title="GtkIconInfo"><span class="type">GtkIconInfo</span></a> object
 containing information about the icon, or <code class="literal">NULL</code> if the
 icon wasn’t found. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -1078,7 +1051,7 @@ these two steps if all you need is the pixbuf.)</p>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-theme-lookup-icon-for-scale.returns"></a><h4>Returns</h4>
-<p>a <a class="link" href="GtkIconTheme.html#GtkIconInfo" title="GtkIconInfo"><span class="type">GtkIconInfo</span></a> object
+<p> a <a class="link" href="GtkIconTheme.html#GtkIconInfo" title="GtkIconInfo"><span class="type">GtkIconInfo</span></a> object
 containing information about the icon, or <code class="literal">NULL</code> if the
 icon wasn’t found. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -1118,7 +1091,7 @@ inherited icon themes.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>icon_names</p></td>
-<td class="parameter_description"><p><code class="literal">NULL</code>-terminated array of
+<td class="parameter_description"><p> <code class="literal">NULL</code>-terminated array of
 icon names to lookup. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></td>
 </tr>
@@ -1137,7 +1110,7 @@ icon names to lookup. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-theme-choose-icon.returns"></a><h4>Returns</h4>
-<p>a <a class="link" href="GtkIconTheme.html#GtkIconInfo" title="GtkIconInfo"><span class="type">GtkIconInfo</span></a> object
+<p> a <a class="link" href="GtkIconTheme.html#GtkIconInfo" title="GtkIconInfo"><span class="type">GtkIconInfo</span></a> object
 containing information about the icon, or <code class="literal">NULL</code> if the icon wasn’t
 found. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -1178,7 +1151,7 @@ inherited icon themes.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>icon_names</p></td>
-<td class="parameter_description"><p><code class="literal">NULL</code>-terminated
+<td class="parameter_description"><p> <code class="literal">NULL</code>-terminated
 array of icon names to lookup. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></td>
 </tr>
@@ -1202,7 +1175,7 @@ array of icon names to lookup. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-theme-choose-icon-for-scale.returns"></a><h4>Returns</h4>
-<p>a <a class="link" href="GtkIconTheme.html#GtkIconInfo" title="GtkIconInfo"><span class="type">GtkIconInfo</span></a> object
+<p> a <a class="link" href="GtkIconTheme.html#GtkIconInfo" title="GtkIconInfo"><span class="type">GtkIconInfo</span></a> object
 containing information about the icon, or <code class="literal">NULL</code> if the
 icon wasn’t found. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -1260,7 +1233,7 @@ for a given scaling factor may be different.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-theme-lookup-by-gicon.returns"></a><h4>Returns</h4>
-<p>a <a class="link" href="GtkIconTheme.html#GtkIconInfo" title="GtkIconInfo"><span class="type">GtkIconInfo</span></a> containing
+<p> a <a class="link" href="GtkIconTheme.html#GtkIconInfo" title="GtkIconInfo"><span class="type">GtkIconInfo</span></a> containing
 information about the icon, or <code class="literal">NULL</code> if the icon wasn’t
 found. Unref with <code class="function">g_object_unref()</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -1319,7 +1292,7 @@ a pixbuf using <a class="link" href="GtkIconTheme.html#gtk-icon-info-load-icon" 
 </div>
 <div class="refsect3">
 <a name="gtk-icon-theme-lookup-by-gicon-for-scale.returns"></a><h4>Returns</h4>
-<p>a <a class="link" href="GtkIconTheme.html#GtkIconInfo" title="GtkIconInfo"><span class="type">GtkIconInfo</span></a> containing
+<p> a <a class="link" href="GtkIconTheme.html#GtkIconInfo" title="GtkIconInfo"><span class="type">GtkIconInfo</span></a> containing
 information about the icon, or <code class="literal">NULL</code> if the icon wasn’t
 found. Unref with <code class="function">g_object_unref()</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -1378,7 +1351,7 @@ exactly this size; see <a class="link" href="GtkIconTheme.html#gtk-icon-info-loa
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>Location to store error information on failure,
+<td class="parameter_description"><p> Location to store error information on failure,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1387,7 +1360,7 @@ or <code class="literal">NULL</code>. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-theme-load-icon.returns"></a><h4>Returns</h4>
-<p>the rendered icon; this may be
+<p> the rendered icon; this may be
 a newly created icon or a new reference to an internal icon, so
 you must not modify the icon. Use <code class="function">g_object_unref()</code> to release
 your reference to the icon. <code class="literal">NULL</code> if the icon isn’t found. </p>
@@ -1454,7 +1427,7 @@ exactly this size; see <a class="link" href="GtkIconTheme.html#gtk-icon-info-loa
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>Location to store error information on failure,
+<td class="parameter_description"><p> Location to store error information on failure,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1463,7 +1436,7 @@ or <code class="literal">NULL</code>. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-theme-load-icon-for-scale.returns"></a><h4>Returns</h4>
-<p>the rendered icon; this may be
+<p> the rendered icon; this may be
 a newly created icon or a new reference to an internal icon, so
 you must not modify the icon. Use <code class="function">g_object_unref()</code> to release
 your reference to the icon. <code class="literal">NULL</code> if the icon isn’t found. </p>
@@ -1522,7 +1495,7 @@ exactly this size; see <a class="link" href="GtkIconTheme.html#gtk-icon-info-loa
 </tr>
 <tr>
 <td class="parameter_name"><p>for_window</p></td>
-<td class="parameter_description"><p><span class="type">GdkWindow</span> to optimize drawing for, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> <span class="type">GdkWindow</span> to optimize drawing for, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1532,7 +1505,7 @@ exactly this size; see <a class="link" href="GtkIconTheme.html#gtk-icon-info-loa
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>Location to store error information on failure,
+<td class="parameter_description"><p> Location to store error information on failure,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1541,7 +1514,7 @@ or <code class="literal">NULL</code>. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-theme-load-surface.returns"></a><h4>Returns</h4>
-<p>the rendered icon; this may be
+<p> the rendered icon; this may be
 a newly created icon or a new reference to an internal icon, so
 you must not modify the icon. Use <code class="function">cairo_surface_destroy()</code> to
 release your reference to the icon. <code class="literal">NULL</code> if the icon isn’t
@@ -1575,7 +1548,7 @@ See <a class="link" href="GtkIconTheme.html#gtk-icon-theme-list-icons" title="gt
 </div>
 <div class="refsect3">
 <a name="gtk-icon-theme-list-contexts.returns"></a><h4>Returns</h4>
-<p>a <span class="type">GList</span> list
+<p> a <span class="type">GList</span> list
 holding the names of all the contexts in the theme. You must first
 free each element in the list with <code class="function">g_free()</code>, then free the list
 itself with <code class="function">g_list_free()</code>. </p>
@@ -1614,7 +1587,7 @@ Also see <a class="link" href="GtkIconTheme.html#gtk-icon-theme-list-contexts" t
 </tr>
 <tr>
 <td class="parameter_name"><p>context</p></td>
-<td class="parameter_description"><p>a string identifying a particular type of
+<td class="parameter_description"><p> a string identifying a particular type of
 icon, or <code class="literal">NULL</code> to list all icons. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1623,7 +1596,7 @@ icon, or <code class="literal">NULL</code> to list all icons. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-theme-list-icons.returns"></a><h4>Returns</h4>
-<p>a <span class="type">GList</span> list
+<p> a <span class="type">GList</span> list
 holding the names of all the icons in the theme. You must
 first free each element in the list with <code class="function">g_free()</code>, then
 free the list itself with <code class="function">g_list_free()</code>. </p>
@@ -1665,7 +1638,7 @@ is zero-terminated.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-theme-get-icon-sizes.returns"></a><h4>Returns</h4>
-<p>An newly
+<p> An newly
 allocated array describing the sizes at which the icon is
 available. The array should be freed with <code class="function">g_free()</code> when it is no
 longer needed. </p>
@@ -1698,7 +1671,7 @@ a list of themes to the user.)</p>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-theme-get-example-icon-name.returns"></a><h4>Returns</h4>
-<p>the name of an example icon or <code class="literal">NULL</code>.
+<p> the name of an example icon or <code class="literal">NULL</code>.
 Free with <code class="function">g_free()</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -1817,7 +1790,7 @@ gtk_icon_info_copy (<em class="parameter"><code><a class="link" href="GtkIconThe
 </div>
 <div class="refsect3">
 <a name="gtk-icon-info-copy.returns"></a><h4>Returns</h4>
-<p>the new GtkIconInfo. </p>
+<p> the new GtkIconInfo. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.4</p>
@@ -1881,7 +1854,7 @@ gtk_icon_info_new_for_pixbuf (<em class="parameter"><code><a class="link" href="
 </div>
 <div class="refsect3">
 <a name="gtk-icon-info-new-for-pixbuf.returns"></a><h4>Returns</h4>
-<p>a <a class="link" href="GtkIconTheme.html#GtkIconInfo" title="GtkIconInfo"><span class="type">GtkIconInfo</span></a>. </p>
+<p> a <a class="link" href="GtkIconTheme.html#GtkIconInfo" title="GtkIconInfo"><span class="type">GtkIconInfo</span></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.14</p>
@@ -1980,7 +1953,7 @@ use <a class="link" href="GtkIconTheme.html#gtk-icon-info-get-builtin-pixbuf" ti
 </div>
 <div class="refsect3">
 <a name="gtk-icon-info-get-filename.returns"></a><h4>Returns</h4>
-<p>the filename for the icon, or <code class="literal">NULL</code>
+<p> the filename for the icon, or <code class="literal">NULL</code>
 if <a class="link" href="GtkIconTheme.html#gtk-icon-info-get-builtin-pixbuf" title="gtk_icon_info_get_builtin_pixbuf ()"><code class="function">gtk_icon_info_get_builtin_pixbuf()</code></a> should be used instead.
 The return value is owned by GTK+ and should not be modified
 or freed. </p>
@@ -2018,7 +1991,7 @@ to <a class="link" href="GtkIconTheme.html#gtk-icon-theme-lookup-icon" title="gt
 </div>
 <div class="refsect3">
 <a name="gtk-icon-info-get-builtin-pixbuf.returns"></a><h4>Returns</h4>
-<p>the built-in image pixbuf, or <code class="literal">NULL</code>.
+<p> the built-in image pixbuf, or <code class="literal">NULL</code>.
 No extra reference is added to the returned pixbuf, so if
 you want to keep it around, you must use <code class="function">g_object_ref()</code>.
 The returned image must not be modified. </p>
@@ -2059,7 +2032,7 @@ returned by this function will be scaled to the exact size.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>location to store error information on failure,
+<td class="parameter_description"><p> location to store error information on failure,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -2068,7 +2041,7 @@ or <code class="literal">NULL</code>. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-info-load-icon.returns"></a><h4>Returns</h4>
-<p>the rendered icon; this may be a newly
+<p> the rendered icon; this may be a newly
 created icon or a new reference to an internal icon, so you must
 not modify the icon. Use <code class="function">g_object_unref()</code> to release your reference
 to the icon. </p>
@@ -2110,12 +2083,12 @@ returned by this function will be scaled to the exact size.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>for_window</p></td>
-<td class="parameter_description"><p><span class="type">GdkWindow</span> to optimize drawing for, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> <span class="type">GdkWindow</span> to optimize drawing for, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>location for error information on failure, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> location for error information on failure, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2123,7 +2096,7 @@ returned by this function will be scaled to the exact size.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-info-load-surface.returns"></a><h4>Returns</h4>
-<p>the rendered icon; this may be a newly
+<p> the rendered icon; this may be a newly
 created icon or a new reference to an internal icon, so you must
 not modify the icon. Use <code class="function">cairo_surface_destroy()</code> to release your
 reference to the icon. </p>
@@ -2159,18 +2132,18 @@ version of this call.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>cancellable</p></td>
-<td class="parameter_description"><p>optional <span class="type">GCancellable</span> object, <code class="literal">NULL</code> to ignore. </p></td>
+<td class="parameter_description"><p> optional <span class="type">GCancellable</span> object, <code class="literal">NULL</code> to ignore. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>callback</p></td>
-<td class="parameter_description"><p>a <span class="type">GAsyncReadyCallback</span> to call when the
+<td class="parameter_description"><p> a <span class="type">GAsyncReadyCallback</span> to call when the
 request is satisfied. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>user_data</p></td>
-<td class="parameter_description"><p>the data to pass to callback function. </p></td>
+<td class="parameter_description"><p> the data to pass to callback function. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2207,7 +2180,7 @@ gtk_icon_info_load_icon_finish (<em class="parameter"><code><a class="link" href
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>location to store error information on failure,
+<td class="parameter_description"><p> location to store error information on failure,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -2216,7 +2189,7 @@ or <code class="literal">NULL</code>. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-info-load-icon-finish.returns"></a><h4>Returns</h4>
-<p>the rendered icon; this may be a newly
+<p> the rendered icon; this may be a newly
 created icon or a new reference to an internal icon, so you must
 not modify the icon. Use <code class="function">g_object_unref()</code> to release your reference
 to the icon. </p>
@@ -2268,25 +2241,25 @@ for more information about symbolic icons.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>success_color</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkRGBA</span> representing the warning color
+<td class="parameter_description"><p> a <span class="type">GdkRGBA</span> representing the warning color
 of the icon or <code class="literal">NULL</code> to use the default color. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>warning_color</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkRGBA</span> representing the warning color
+<td class="parameter_description"><p> a <span class="type">GdkRGBA</span> representing the warning color
 of the icon or <code class="literal">NULL</code> to use the default color. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error_color</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkRGBA</span> representing the error color
+<td class="parameter_description"><p> a <span class="type">GdkRGBA</span> representing the error color
 of the icon or <code class="literal">NULL</code> to use the default color (allow-none). </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>was_symbolic</p></td>
-<td class="parameter_description"><p>a <span class="type">gboolean</span>, returns whether the
+<td class="parameter_description"><p> a <span class="type">gboolean</span>, returns whether the
 loaded icon was a symbolic one and whether the <em class="parameter"><code>fg</code></em>
 color was
 applied to it. </p></td>
@@ -2294,7 +2267,7 @@ applied to it. </p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>location to store error information on failure,
+<td class="parameter_description"><p> location to store error information on failure,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -2303,7 +2276,7 @@ or <code class="literal">NULL</code>. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-info-load-symbolic.returns"></a><h4>Returns</h4>
-<p>a <span class="type">GdkPixbuf</span> representing the loaded icon. </p>
+<p> a <span class="type">GdkPixbuf</span> representing the loaded icon. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-0.html#api-index-3.0">3.0</a></p>
@@ -2345,37 +2318,37 @@ version of this call.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>success_color</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkRGBA</span> representing the warning color
+<td class="parameter_description"><p> a <span class="type">GdkRGBA</span> representing the warning color
 of the icon or <code class="literal">NULL</code> to use the default color. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>warning_color</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkRGBA</span> representing the warning color
+<td class="parameter_description"><p> a <span class="type">GdkRGBA</span> representing the warning color
 of the icon or <code class="literal">NULL</code> to use the default color. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error_color</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkRGBA</span> representing the error color
+<td class="parameter_description"><p> a <span class="type">GdkRGBA</span> representing the error color
 of the icon or <code class="literal">NULL</code> to use the default color (allow-none). </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>cancellable</p></td>
-<td class="parameter_description"><p>optional <span class="type">GCancellable</span> object,
+<td class="parameter_description"><p> optional <span class="type">GCancellable</span> object,
 <code class="literal">NULL</code> to ignore. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>callback</p></td>
-<td class="parameter_description"><p>a <span class="type">GAsyncReadyCallback</span> to call when the
+<td class="parameter_description"><p> a <span class="type">GAsyncReadyCallback</span> to call when the
 request is satisfied. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>user_data</p></td>
-<td class="parameter_description"><p>the data to pass to callback function. </p></td>
+<td class="parameter_description"><p> the data to pass to callback function. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2413,7 +2386,7 @@ gtk_icon_info_load_symbolic_finish (<em class="parameter"><code><a class="link" 
 </tr>
 <tr>
 <td class="parameter_name"><p>was_symbolic</p></td>
-<td class="parameter_description"><p>a <span class="type">gboolean</span>, returns whether the
+<td class="parameter_description"><p> a <span class="type">gboolean</span>, returns whether the
 loaded icon was a symbolic one and whether the <em class="parameter"><code>fg</code></em>
 color was
 applied to it. </p></td>
@@ -2421,7 +2394,7 @@ applied to it. </p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>location to store error information on failure,
+<td class="parameter_description"><p> location to store error information on failure,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -2430,7 +2403,7 @@ or <code class="literal">NULL</code>. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-info-load-symbolic-finish.returns"></a><h4>Returns</h4>
-<p>the rendered icon; this may be a newly
+<p> the rendered icon; this may be a newly
 created icon or a new reference to an internal icon, so you must
 not modify the icon. Use <code class="function">g_object_unref()</code> to release your reference
 to the icon. </p>
@@ -2482,7 +2455,7 @@ one, the function will return the result from <a class="link" href="GtkIconTheme
 </tr>
 <tr>
 <td class="parameter_name"><p>was_symbolic</p></td>
-<td class="parameter_description"><p>a <span class="type">gboolean</span>, returns whether the
+<td class="parameter_description"><p> a <span class="type">gboolean</span>, returns whether the
 loaded icon was a symbolic one and whether the <em class="parameter"><code>fg</code></em>
 color was
 applied to it. </p></td>
@@ -2490,7 +2463,7 @@ applied to it. </p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>location to store error information on failure,
+<td class="parameter_description"><p> location to store error information on failure,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -2499,7 +2472,7 @@ or <code class="literal">NULL</code>. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-info-load-symbolic-for-style.returns"></a><h4>Returns</h4>
-<p>a <span class="type">GdkPixbuf</span> representing the loaded icon. </p>
+<p> a <span class="type">GdkPixbuf</span> representing the loaded icon. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-0.html#api-index-3.0">3.0</a></p>
@@ -2542,7 +2515,7 @@ the context.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>was_symbolic</p></td>
-<td class="parameter_description"><p>a <span class="type">gboolean</span>, returns whether the
+<td class="parameter_description"><p> a <span class="type">gboolean</span>, returns whether the
 loaded icon was a symbolic one and whether the <em class="parameter"><code>fg</code></em>
 color was
 applied to it. </p></td>
@@ -2550,7 +2523,7 @@ applied to it. </p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>location to store error information on failure,
+<td class="parameter_description"><p> location to store error information on failure,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -2559,7 +2532,7 @@ or <code class="literal">NULL</code>. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-info-load-symbolic-for-context.returns"></a><h4>Returns</h4>
-<p>a <span class="type">GdkPixbuf</span> representing the loaded icon. </p>
+<p> a <span class="type">GdkPixbuf</span> representing the loaded icon. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-0.html#api-index-3.0">3.0</a></p>
@@ -2599,19 +2572,19 @@ which is the synchronous version of this call.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>cancellable</p></td>
-<td class="parameter_description"><p>optional <span class="type">GCancellable</span> object,
+<td class="parameter_description"><p> optional <span class="type">GCancellable</span> object,
 <code class="literal">NULL</code> to ignore. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>callback</p></td>
-<td class="parameter_description"><p>a <span class="type">GAsyncReadyCallback</span> to call when the
+<td class="parameter_description"><p> a <span class="type">GAsyncReadyCallback</span> to call when the
 request is satisfied. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>user_data</p></td>
-<td class="parameter_description"><p>the data to pass to callback function. </p></td>
+<td class="parameter_description"><p> the data to pass to callback function. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2650,7 +2623,7 @@ gtk_icon_info_load_symbolic_for_context_finish
 </tr>
 <tr>
 <td class="parameter_name"><p>was_symbolic</p></td>
-<td class="parameter_description"><p>a <span class="type">gboolean</span>, returns whether the
+<td class="parameter_description"><p> a <span class="type">gboolean</span>, returns whether the
 loaded icon was a symbolic one and whether the <em class="parameter"><code>fg</code></em>
 color was
 applied to it. </p></td>
@@ -2658,7 +2631,7 @@ applied to it. </p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>location to store error information on failure,
+<td class="parameter_description"><p> location to store error information on failure,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -2667,7 +2640,7 @@ or <code class="literal">NULL</code>. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-icon-info-load-symbolic-for-context-finish.returns"></a><h4>Returns</h4>
-<p>the rendered icon; this may be a newly
+<p> the rendered icon; this may be a newly
 created icon or a new reference to an internal icon, so you must
 not modify the icon. Use <code class="function">g_object_unref()</code> to release your reference
 to the icon. </p>
@@ -2750,7 +2723,7 @@ gtk_icon_info_get_embedded_rect (<em class="parameter"><code><a class="link" hre
 </tr>
 <tr>
 <td class="parameter_name"><p>rectangle</p></td>
-<td class="parameter_description"><p><span class="type">GdkRectangle</span> in which to store embedded
+<td class="parameter_description"><p> <span class="type">GdkRectangle</span> in which to store embedded
 rectangle coordinates; coordinates are only stored
 when this function returns <code class="literal">TRUE</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
@@ -2792,13 +2765,13 @@ gtk_icon_info_get_attach_points (<em class="parameter"><code><a class="link" hre
 </tr>
 <tr>
 <td class="parameter_name"><p>points</p></td>
-<td class="parameter_description"><p>location to store pointer
+<td class="parameter_description"><p> location to store pointer
 to an array of points, or <code class="literal">NULL</code> free the array of points with <code class="function">g_free()</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_points][<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>n_points</p></td>
-<td class="parameter_description"><p>location to store the number of points in <em class="parameter"><code>points</code></em>
+<td class="parameter_description"><p> location to store the number of points in <em class="parameter"><code>points</code></em>
 ,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
@@ -3091,6 +3064,6 @@ icon theme.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>

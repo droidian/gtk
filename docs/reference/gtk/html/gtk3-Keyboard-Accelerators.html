@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Accelerator Groups: GTK+ 3 Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GTK+ 3 Reference Manual">
 <link rel="up" href="gtkbase.html" title="Part III. GTK+ Core Reference">
 <link rel="prev" href="gtk3-Feature-Test-Macros.html" title="Version Information">
 <link rel="next" href="gtk3-Accelerator-Maps.html" title="Accelerator Maps">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -526,7 +526,7 @@ gtk_accel_group_disconnect (<em class="parameter"><code><a class="link" href="gt
 </tr>
 <tr>
 <td class="parameter_name"><p>closure</p></td>
-<td class="parameter_description"><p>the closure to remove from this accelerator
+<td class="parameter_description"><p> the closure to remove from this accelerator
 group, or <code class="literal">NULL</code> to remove all closures. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -745,7 +745,7 @@ see <a class="link" href="gtk3-Keyboard-Accelerators.html#gtk-accel-group-connec
 </div>
 <div class="refsect3">
 <a name="gtk-accel-group-from-accel-closure.returns"></a><h4>Returns</h4>
-<p>the <a class="link" href="gtk3-Keyboard-Accelerators.html#GtkAccelGroup"><span class="type">GtkAccelGroup</span></a> to which <em class="parameter"><code>closure</code></em>
+<p> the <a class="link" href="gtk3-Keyboard-Accelerators.html#GtkAccelGroup"><span class="type">GtkAccelGroup</span></a> to which <em class="parameter"><code>closure</code></em>
 is connected, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -850,7 +850,7 @@ gtk_accel_groups_from_object (<em class="parameter"><code><span class="type">GOb
 </div>
 <div class="refsect3">
 <a name="gtk-accel-groups-from-object.returns"></a><h4>Returns</h4>
-<p>a list of
+<p> a list of
 all accel groups which are attached to <em class="parameter"><code>object</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GtkAccelGroup][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -882,7 +882,7 @@ gtk_accel_group_find (<em class="parameter"><code><a class="link" href="gtk3-Key
 </tr>
 <tr>
 <td class="parameter_name"><p>find_func</p></td>
-<td class="parameter_description"><p>a function to filter the entries
+<td class="parameter_description"><p> a function to filter the entries
 of <em class="parameter"><code>accel_group</code></em>
 with. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid only during the call to the method."><span class="acronym">scope call</span></acronym>]</span></td>
@@ -898,7 +898,7 @@ with. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-accel-group-find.returns"></a><h4>Returns</h4>
-<p>the key of the first entry passing
+<p> the key of the first entry passing
 <em class="parameter"><code>find_func</code></em>
 . The key is owned by GTK+ and must not be freed. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -977,13 +977,13 @@ be set to 0 (zero).</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>accelerator_key</p></td>
-<td class="parameter_description"><p>return location for accelerator
+<td class="parameter_description"><p> return location for accelerator
 keyval, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>accelerator_mods</p></td>
-<td class="parameter_description"><p>return location for accelerator
+<td class="parameter_description"><p> return location for accelerator
 modifier mask, <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1104,18 +1104,18 @@ is given, the parse will fail.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>accelerator_key</p></td>
-<td class="parameter_description"><p>return location for accelerator
+<td class="parameter_description"><p> return location for accelerator
 keyval, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>accelerator_codes</p></td>
-<td class="parameter_description"><p>return location for accelerator keycodes, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>    return location for accelerator keycodes, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>accelerator_mods</p></td>
-<td class="parameter_description"><p>return location for accelerator
+<td class="parameter_description"><p> return location for accelerator
 modifier mask, <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1148,7 +1148,7 @@ should use <a class="link" href="gtk3-Keyboard-Accelerators.html#gtk-accelerator
 <tbody>
 <tr>
 <td class="parameter_name"><p>display</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkDisplay</span> or <code class="literal">NULL</code> to use the default display. </p></td>
+<td class="parameter_description"><p> a <span class="type">GdkDisplay</span> or <code class="literal">NULL</code> to use the default display. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1201,7 +1201,7 @@ should use <a class="link" href="gtk3-Keyboard-Accelerators.html#gtk-accelerator
 <tbody>
 <tr>
 <td class="parameter_name"><p>display</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkDisplay</span> or <code class="literal">NULL</code> to use the default display. </p></td>
+<td class="parameter_description"><p> a <span class="type">GdkDisplay</span> or <code class="literal">NULL</code> to use the default display. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1520,6 +1520,6 @@ their visual representation if the <em class="parameter"><code>accel_closure</co
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>

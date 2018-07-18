@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Event Structures: GDK 3 Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GDK 3 Reference Manual">
 <link rel="up" href="reference.html" title="API Reference">
 <link rel="prev" href="gdk3-Events.html" title="Events">
 <link rel="next" href="gdk3-Keyboard-Handling.html" title="Key Values">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -198,64 +198,31 @@ and allows access to the data fields in a number of ways.</p>
 <p>The event type is always the first field in all of the event types, and
 can always be accessed with the following code, no matter what type of
 event it is:</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="usertype">GdkEvent</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">event</span><span class="symbol">;</span>
-<span class="usertype">GdkEventType</span><span class="normal"> type</span><span class="symbol">;</span>
+<div class="informalexample"><pre class="programlisting">
+  GdkEvent *event;
+  GdkEventType type;
 
-<span class="normal">type </span><span class="symbol">=</span><span class="normal"> event</span><span class="symbol">-&gt;</span><span class="normal">type</span><span class="symbol">;</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+  type = event-&gt;type;
+</pre></div>
 <p></p>
 <p>To access other fields of the event, the pointer to the event
 can be cast to the appropriate event type, or the union member
 name can be used. For example if the event type is <a class="link" href="gdk3-Events.html#GDK-BUTTON-PRESS:CAPS"><code class="literal">GDK_BUTTON_PRESS</code></a>
 then the x coordinate of the button press can be accessed with:</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="usertype">GdkEvent</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">event</span><span class="symbol">;</span>
-<span class="usertype">gdouble</span><span class="normal"> x</span><span class="symbol">;</span>
+<div class="informalexample"><pre class="programlisting">
+  GdkEvent *event;
+  gdouble x;
 
-<span class="normal">x </span><span class="symbol">=</span><span class="normal"> </span><span class="symbol">((</span><span class="normal"><a href="gdk3-Event-Structures.html#GdkEventButton">GdkEventButton</a></span><span class="symbol">*)</span><span class="normal">event</span><span class="symbol">)-&gt;</span><span class="normal">x</span><span class="symbol">;</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+  x = ((GdkEventButton*)event)-&gt;x;
+</pre></div>
 <p>
 or:</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="usertype">GdkEvent</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">event</span><span class="symbol">;</span>
-<span class="usertype">gdouble</span><span class="normal"> x</span><span class="symbol">;</span>
+<div class="informalexample"><pre class="programlisting">
+  GdkEvent *event;
+  gdouble x;
 
-<span class="normal">x </span><span class="symbol">=</span><span class="normal"> event</span><span class="symbol">-&gt;</span><span class="normal">button</span><span class="symbol">.</span><span class="normal">x</span><span class="symbol">;</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+  x = event-&gt;button.x;
+</pre></div>
 <p></p>
 <div class="refsect3">
 <a name="GdkEvent.members"></a><h4>Members</h4>
@@ -484,7 +451,7 @@ access these fields.</p>
 </tr>
 <tr>
 <td class="struct_member_name"><p><span class="type">guint</span> <em class="structfield"><code><a name="GdkEventKey.state"></a>state</code></em>;</p></td>
-<td class="struct_member_description"><p>a bit-mask representing the state of
+<td class="struct_member_description"><p> a bit-mask representing the state of
 the modifier keys (e.g. Control, Shift and Alt) and the pointer
 buttons. See <a class="link" href="gdk3-Windows.html#GdkModifierType" title="enum GdkModifierType"><span class="type">GdkModifierType</span></a>. </p></td>
 <td class="struct_member_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GdkModifierType]</span></td>
@@ -640,7 +607,7 @@ the mouse.</p></td>
 </tr>
 <tr>
 <td class="struct_member_name"><p><span class="type">guint</span> <em class="structfield"><code><a name="GdkEventButton.state"></a>state</code></em>;</p></td>
-<td class="struct_member_description"><p>a bit-mask representing the state of
+<td class="struct_member_description"><p> a bit-mask representing the state of
 the modifier keys (e.g. Control, Shift and Alt) and the pointer
 buttons. See <a class="link" href="gdk3-Windows.html#GdkModifierType" title="enum GdkModifierType"><span class="type">GdkModifierType</span></a>. </p></td>
 <td class="struct_member_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GdkModifierType]</span></td>
@@ -756,7 +723,7 @@ the mouse</p></td>
 </tr>
 <tr>
 <td class="struct_member_name"><p><span class="type">guint</span> <em class="structfield"><code><a name="GdkEventTouch.state"></a>state</code></em>;</p></td>
-<td class="struct_member_description"><p>a bit-mask representing the state of
+<td class="struct_member_description"><p> a bit-mask representing the state of
 the modifier keys (e.g. Control, Shift and Alt) and the pointer
 buttons. See <a class="link" href="gdk3-Windows.html#GdkModifierType" title="enum GdkModifierType"><span class="type">GdkModifierType</span></a>. </p></td>
 <td class="struct_member_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GdkModifierType]</span></td>
@@ -861,7 +828,7 @@ these, the scroll deltas can be obtained with
 </tr>
 <tr>
 <td class="struct_member_name"><p><span class="type">guint</span> <em class="structfield"><code><a name="GdkEventScroll.state"></a>state</code></em>;</p></td>
-<td class="struct_member_description"><p>a bit-mask representing the state of
+<td class="struct_member_description"><p> a bit-mask representing the state of
 the modifier keys (e.g. Control, Shift and Alt) and the pointer
 buttons. See <a class="link" href="gdk3-Windows.html#GdkModifierType" title="enum GdkModifierType"><span class="type">GdkModifierType</span></a>. </p></td>
 <td class="struct_member_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GdkModifierType]</span></td>
@@ -979,7 +946,7 @@ the mouse.</p></td>
 </tr>
 <tr>
 <td class="struct_member_name"><p><span class="type">guint</span> <em class="structfield"><code><a name="GdkEventMotion.state"></a>state</code></em>;</p></td>
-<td class="struct_member_description"><p>a bit-mask representing the state of
+<td class="struct_member_description"><p> a bit-mask representing the state of
 the modifier keys (e.g. Control, Shift and Alt) and the pointer
 buttons. See <a class="link" href="gdk3-Windows.html#GdkModifierType" title="enum GdkModifierType"><span class="type">GdkModifierType</span></a>. </p></td>
 <td class="struct_member_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GdkModifierType]</span></td>
@@ -1223,7 +1190,7 @@ is the focus window or an inferior.</p></td>
 </tr>
 <tr>
 <td class="struct_member_name"><p><span class="type">guint</span> <em class="structfield"><code><a name="GdkEventCrossing.state"></a>state</code></em>;</p></td>
-<td class="struct_member_description"><p>a bit-mask representing the state of
+<td class="struct_member_description"><p> a bit-mask representing the state of
 the modifier keys (e.g. Control, Shift and Alt) and the pointer
 buttons. See <a class="link" href="gdk3-Windows.html#GdkModifierType" title="enum GdkModifierType"><span class="type">GdkModifierType</span></a>. </p></td>
 <td class="struct_member_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GdkModifierType]</span></td>
@@ -1387,7 +1354,7 @@ it has lost the focus.</p></td>
 </tr>
 <tr>
 <td class="struct_member_name"><p><span class="type">guint</span> <em class="structfield"><code><a name="GdkEventProperty.state"></a>state</code></em>;</p></td>
-<td class="struct_member_description"><p>whether the property was changed
+<td class="struct_member_description"><p> whether the property was changed
 (<a class="link" href="gdk3-Event-Structures.html#GDK-PROPERTY-NEW-VALUE:CAPS"><code class="literal">GDK_PROPERTY_NEW_VALUE</code></a>) or deleted (<a class="link" href="gdk3-Event-Structures.html#GDK-PROPERTY-DELETE:CAPS"><code class="literal">GDK_PROPERTY_DELETE</code></a>). </p></td>
 <td class="struct_member_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GdkPropertyState]</span></td>
 </tr>
@@ -1923,7 +1890,7 @@ root of the screen.</p></td>
 </tr>
 <tr>
 <td class="struct_member_name"><p><span class="type">guint</span> <em class="structfield"><code><a name="GdkEventTouchpadSwipe.state"></a>state</code></em>;</p></td>
-<td class="struct_member_description"><p>a bit-mask representing the state of
+<td class="struct_member_description"><p> a bit-mask representing the state of
 the modifier keys (e.g. Control, Shift and Alt) and the pointer
 buttons. See <a class="link" href="gdk3-Windows.html#GdkModifierType" title="enum GdkModifierType"><span class="type">GdkModifierType</span></a>. </p></td>
 <td class="struct_member_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GdkModifierType]</span></td>
@@ -2038,7 +2005,7 @@ root of the screen.</p></td>
 </tr>
 <tr>
 <td class="struct_member_name"><p><span class="type">guint</span> <em class="structfield"><code><a name="GdkEventTouchpadPinch.state"></a>state</code></em>;</p></td>
-<td class="struct_member_description"><p>a bit-mask representing the state of
+<td class="struct_member_description"><p> a bit-mask representing the state of
 the modifier keys (e.g. Control, Shift and Alt) and the pointer
 buttons. See <a class="link" href="gdk3-Windows.html#GdkModifierType" title="enum GdkModifierType"><span class="type">GdkModifierType</span></a>. </p></td>
 <td class="struct_member_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GdkModifierType]</span></td>
@@ -2740,6 +2707,6 @@ full details of crossing event generation.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>
