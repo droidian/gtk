@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GtkPadController: GTK+ 3 Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GTK+ 3 Reference Manual">
 <link rel="up" href="Gestures.html" title="Gestures and event handling">
 <link rel="prev" href="GtkGestureZoom.html" title="GtkGestureZoom">
 <link rel="next" href="DeprecatedObjects.html" title="Deprecated">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -124,7 +124,7 @@
 </div>
 <div class="refsect1">
 <a name="GtkPadController.includes"></a><h2>Includes</h2>
-<pre class="synopsis">#include &lt;gtk/gtkunixprint.h&gt;
+<pre class="synopsis">#include &lt;gtk/gtk.h&gt;
 </pre>
 </div>
 <div class="refsect1">
@@ -149,39 +149,20 @@ will be looked up in the given <span class="type">GActionGroup</span> and activa
 specified input element and mode are triggered.</p>
 <p>A simple example of <a class="link" href="GtkPadController.html" title="GtkPadController"><span class="type">GtkPadController</span></a> usage, assigning button 1 in all
 modes and pad devices to an "invert-selection" action:</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="usertype">GtkPadActionEntry</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">pad_actions</span><span class="symbol">[]</span><span class="normal"> </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">  </span><span class="cbracket">{</span><span class="normal"> <a href="GtkPadController.html#GTK-PAD-ACTION-BUTTON:CAPS">GTK_PAD_ACTION_BUTTON</a></span><span class="symbol">,</span><span class="normal"> </span><span class="number">1</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">-</span><span class="number">1</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"Invert selection"</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"pad-actions.invert-selection"</span><span class="normal"> </span><span class="cbracket">}</span><span class="symbol">,</span>
-<span class="normal">  …</span>
-<span class="cbracket">}</span><span class="symbol">;</span>
+<div class="informalexample"><pre class="programlisting">
+  GtkPadActionEntry *pad_actions[] = {
+    { GTK_PAD_ACTION_BUTTON, 1, -1, "Invert selection", "pad-actions.invert-selection" },
+    …
+  };
 
-<span class="normal">…</span>
-<span class="normal">action_group </span><span class="symbol">=</span><span class="normal"> </span><span class="function">g_simple_action_group_new</span><span class="normal"> </span><span class="symbol">();</span>
-<span class="normal">action </span><span class="symbol">=</span><span class="normal"> </span><span class="function">g_simple_action_new</span><span class="normal"> </span><span class="symbol">(</span><span class="string">"pad-actions.invert-selection"</span><span class="symbol">,</span><span class="normal"> NULL</span><span class="symbol">);</span>
-<span class="function">g_signal_connect</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">action</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"activate"</span><span class="symbol">,</span><span class="normal"> on_invert_selection_activated</span><span class="symbol">,</span><span class="normal"> NULL</span><span class="symbol">);</span>
-<span class="function">g_action_map_add_action</span><span class="normal"> </span><span class="symbol">(</span><span class="function">G_ACTION_MAP</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">action_group</span><span class="symbol">),</span><span class="normal"> action</span><span class="symbol">);</span>
-<span class="normal">…</span>
-<span class="normal">pad_controller </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GtkPadController.html#gtk-pad-controller-new">gtk_pad_controller_new</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">window</span><span class="symbol">,</span><span class="normal"> action_group</span><span class="symbol">,</span><span class="normal"> NULL</span><span class="symbol">);</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+  …
+  action_group = g_simple_action_group_new ();
+  action = g_simple_action_new ("pad-actions.invert-selection", NULL);
+  g_signal_connect (action, "activate", on_invert_selection_activated, NULL);
+  g_action_map_add_action (G_ACTION_MAP (action_group), action);
+  …
+  pad_controller = gtk_pad_controller_new (window, action_group, NULL);
+</pre></div>
 <p></p>
 <p>The actions belonging to rings/strips will be activated with a parameter
 of type <code class="literal">G_VARIANT_TYPE_DOUBLE</code> bearing the value of the given axis, it
@@ -227,7 +208,7 @@ events to actions, use <a class="link" href="GtkPadController.html#gtk-pad-contr
 </tr>
 <tr>
 <td class="parameter_name"><p>pad</p></td>
-<td class="parameter_description"><p>A <code class="literal">GDK_SOURCE_TABLET_PAD</code> device, or <code class="literal">NULL</code> to handle all pads. </p></td>
+<td class="parameter_description"><p> A <code class="literal">GDK_SOURCE_TABLET_PAD</code> device, or <code class="literal">NULL</code> to handle all pads. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -265,7 +246,7 @@ gtk_pad_controller_set_action_entries (<em class="parameter"><code><a class="lin
 </tr>
 <tr>
 <td class="parameter_name"><p>entries</p></td>
-<td class="parameter_description"><p>the action entries to set on <em class="parameter"><code>controller</code></em>
+<td class="parameter_description"><p> the action entries to set on <em class="parameter"><code>controller</code></em>
 . </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_entries]</span></td>
 </tr>
@@ -466,6 +447,6 @@ be deemed user-visible.</p></td>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>

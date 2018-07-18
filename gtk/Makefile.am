@@ -23,6 +23,7 @@ AM_CPPFLAGS =						\
 	$(GTK_BASE_CFLAGS_DEFINES)			\
 	$(GTK_PLAT_CFLAGS_DEFINES)			\
 	-DX11_DATA_PREFIX=\"$(X11_PREFIX)\"		\
+	-DISO_CODES_PREFIX=\"$(ISO_CODES_PREFIX)\"	\
 	-I$(top_builddir)				\
 	-I$(top_builddir)/gtk				\
 	-I$(top_srcdir) 				\
@@ -468,6 +469,7 @@ gtk_private_h_sources =		\
 	gtkdialogprivate.h 	\
 	gtkdndprivate.h		\
 	gtkemojichooser.h	\
+	gtkemojicompletion.h	\
 	gtkentryprivate.h	\
 	gtkeventcontrollerprivate.h	\
 	gtkfilechooserembed.h	\
@@ -746,6 +748,7 @@ gtk_base_c_sources = 		\
 	gtkdrawingarea.c	\
 	gtkeditable.c		\
 	gtkemojichooser.c	\
+	gtkemojicompletion.c	\
 	gtkentry.c		\
 	gtkentrybuffer.c	\
 	gtkentrycompletion.c	\
@@ -811,7 +814,6 @@ gtk_base_c_sources = 		\
 	gtklockbutton.c		\
 	gtkmain.c		\
 	gtkmagnifier.c		\
-	gtkmarshalers.c		\
 	gtkmenu.c		\
 	gtkmenubar.c		\
 	gtkmenubutton.c		\
@@ -848,7 +850,6 @@ gtk_base_c_sources = 		\
 	gtkprintsettings.c	\
 	gtkprintutils.c		\
 	gtkprivate.c		\
-	gtkprivatetypebuiltins.c \
 	gtkprogressbar.c	\
 	gtkprogresstracker.c	\
 	gtkpixelcache.c		\
@@ -871,7 +872,6 @@ gtk_base_c_sources = 		\
 	gtkrenderbackground.c	\
 	gtkrenderborder.c	\
 	gtkrendericon.c		\
-	gtkresources.c		\
 	gtkrevealer.c		\
 	gtkroundedbox.c		\
 	gtkscale.c		\
@@ -947,7 +947,6 @@ gtk_base_c_sources = 		\
 	gtktreestore.c		\
 	gtktreeview.c		\
 	gtktreeviewcolumn.c	\
-	gtktypebuiltins.c	\
 	gtkutils.c		\
 	gtkvolumebutton.c	\
 	gtkviewport.c		\
@@ -957,7 +956,9 @@ gtk_base_c_sources = 		\
 	gtkwindowgroup.c	\
 	gtkwin32draw.c		\
 	gtkwin32theme.c		\
-	gdkpixbufutils.c
+	gdkpixbufutils.c	\
+	language-names.c	\
+	script-names.c
 
 if USE_QUARTZ
 gtk_base_c_sources += 		\
@@ -1127,9 +1128,10 @@ gtk_built_sources =				\
 	gtkresources.c				\
 	gtk.gresource.xml			\
 	gtktypebuiltins.c			\
-	gtktypefuncs.c				\
 	gtkmarshalers.c				\
 	gtkprivatetypebuiltins.c
+
+nodist_gtk_c_sources += $(gtk_built_sources)
 
 stamp_files =					\
 	stamp-gtkmarshalers.h			\
@@ -1426,7 +1428,7 @@ gtktypefuncs.c: stamp-gtktypebuiltins.h stamp-gtkprivatetypebuiltins.h $(top_src
 	  sort | uniq | \
 	  $(SED) '{ s/^/*tp++ = /; s/$$/();/; s/^.*\(gdk_x11\|gtk_plug_\|gtk_socket_\).*$$/#ifdef GDK_WINDOWING_X11\n&\n#endif/; }' >> xgen-gtf \
 	&& cp xgen-gtf $@ && rm -f xgen-gtf
-gtktestutils.c: gtktypefuncs.c
+$(srcdir)/gtktestutils.c: gtktypefuncs.c
 
 # target platform:
 lib_LTLIBRARIES = libgtk-3.la
@@ -1478,7 +1480,8 @@ gtk_3_FILES = \
 	$(gtk_base_c_sources)		\
 	$(gtk_os_win32_c_sources)	\
 	$(gtk_use_win32_c_sources)	\
-	$(gtk_dbus_built_sources)
+	$(gtk_dbus_built_sources)	\
+	$(gtk_built_sources)
 
 gtk_3_EXCLUDES = dummy
 gtk_3_HEADERS_DIR = $(gtkincludedir)

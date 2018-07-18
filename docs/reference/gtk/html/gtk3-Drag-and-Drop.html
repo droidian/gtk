@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Drag and Drop: GTK+ 3 Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GTK+ 3 Reference Manual">
 <link rel="up" href="gtkbase.html" title="Part III. GTK+ Core Reference">
 <link rel="prev" href="gtk3-Clipboards.html" title="Clipboards">
 <link rel="next" href="GtkSettings.html" title="Settings">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -412,47 +412,24 @@ handler calls <a class="link" href="gtk3-Drag-and-Drop.html#gtk-drag-get-data" t
 <p>There’s no way to set a default action here, you can use the
 <a class="link" href="GtkWidget.html#GtkWidget-drag-motion" title="The “drag-motion” signal"><span class="type">“drag-motion”</span></a> callback for that. Here’s an example which selects
 the action to use depending on whether the control key is pressed or not:</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">static</span><span class="normal"> </span><span class="type">void</span>
-<span class="function">drag_motion</span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">GtkWidget</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">widget</span><span class="symbol">,</span>
-<span class="normal">             </span><span class="usertype">GdkDragContext</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">context</span><span class="symbol">,</span>
-<span class="normal">             </span><span class="usertype">gint</span><span class="normal"> x</span><span class="symbol">,</span>
-<span class="normal">             </span><span class="usertype">gint</span><span class="normal"> y</span><span class="symbol">,</span>
-<span class="normal">             </span><span class="usertype">guint</span><span class="normal"> time</span><span class="symbol">)</span>
-<span class="cbracket">{</span>
-<span class="normal">  </span><span class="usertype">GdkModifierType</span><span class="normal"> mask</span><span class="symbol">;</span>
+<div class="informalexample"><pre class="programlisting">
+static void
+drag_motion (GtkWidget *widget,
+             GdkDragContext *context,
+             gint x,
+             gint y,
+             guint time)
+{
+  GdkModifierType mask;
 
-<span class="normal">  </span><span class="function">gdk_window_get_pointer</span><span class="normal"> </span><span class="symbol">(</span><span class="function"><a href="GtkWidget.html#gtk-widget-get-window">gtk_widget_get_window</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">widget</span><span class="symbol">),</span>
-<span class="normal">                          NULL</span><span class="symbol">,</span><span class="normal"> NULL</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">&amp;</span><span class="normal">mask</span><span class="symbol">);</span>
-<span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">mask </span><span class="symbol">&amp;</span><span class="normal"> GDK_CONTROL_MASK</span><span class="symbol">)</span>
-<span class="normal">    </span><span class="function">gdk_drag_status</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">context</span><span class="symbol">,</span><span class="normal"> GDK_ACTION_COPY</span><span class="symbol">,</span><span class="normal"> time</span><span class="symbol">);</span>
-<span class="normal">  </span><span class="keyword">else</span>
-<span class="normal">    </span><span class="function">gdk_drag_status</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">context</span><span class="symbol">,</span><span class="normal"> GDK_ACTION_MOVE</span><span class="symbol">,</span><span class="normal"> time</span><span class="symbol">);</span>
-<span class="cbracket">}</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+  gdk_window_get_pointer (gtk_widget_get_window (widget),
+                          NULL, NULL, &amp;mask);
+  if (mask &amp; GDK_CONTROL_MASK)
+    gdk_drag_status (context, GDK_ACTION_COPY, time);
+  else
+    gdk_drag_status (context, GDK_ACTION_MOVE, time);
+}
+</pre></div>
 <p></p>
 <p><span class="annotation">[<acronym title="This is a method"><span class="acronym">method</span></acronym>]</span></p>
 <div class="refsect3">
@@ -476,7 +453,7 @@ the action to use depending on whether the control key is pressed or not:</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>targets</p></td>
-<td class="parameter_description"><p>a pointer to an array of
+<td class="parameter_description"><p> a pointer to an array of
 <a href="gtk3-Selections.html#GtkTargetEntry"><span class="type">GtkTargetEntrys</span></a> indicating the drop types that this <em class="parameter"><code>widget</code></em>
 will
 accept, or <code class="literal">NULL</code>. Later you can access the list with
@@ -611,7 +588,7 @@ passes the correct target list to this function.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>target_list</p></td>
-<td class="parameter_description"><p>list of droppable targets, or <code class="literal">NULL</code> to use
+<td class="parameter_description"><p> list of droppable targets, or <code class="literal">NULL</code> to use
 gtk_drag_dest_get_target_list (<em class="parameter"><code>widget</code></em>
 ). </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
@@ -621,7 +598,7 @@ gtk_drag_dest_get_target_list (<em class="parameter"><code>widget</code></em>
 </div>
 <div class="refsect3">
 <a name="gtk-drag-dest-find-target.returns"></a><h4>Returns</h4>
-<p>first target that the source offers
+<p> first target that the source offers
 and the dest can accept, or <code class="literal">GDK_NONE</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -651,7 +628,7 @@ drag-and-drop.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-drag-dest-get-target-list.returns"></a><h4>Returns</h4>
-<p>the <a class="link" href="gtk3-Selections.html#GtkTargetList"><span class="type">GtkTargetList</span></a>, or <code class="literal">NULL</code> if none. </p>
+<p> the <a class="link" href="gtk3-Selections.html#GtkTargetList"><span class="type">GtkTargetList</span></a>, or <code class="literal">NULL</code> if none. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -681,7 +658,7 @@ The widget must first be made into a drag destination with
 </tr>
 <tr>
 <td class="parameter_name"><p>target_list</p></td>
-<td class="parameter_description"><p>list of droppable targets, or <code class="literal">NULL</code> for none. </p></td>
+<td class="parameter_description"><p> list of droppable targets, or <code class="literal">NULL</code> for none. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -964,7 +941,7 @@ gtk_drag_get_source_widget (<em class="parameter"><code><span class="type">GdkDr
 </div>
 <div class="refsect3">
 <a name="gtk-drag-get-source-widget.returns"></a><h4>Returns</h4>
-<p>if the drag is occurring
+<p> if the drag is occurring
 within a single application, a pointer to the source widget.
 Otherwise, <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -1067,7 +1044,7 @@ source can provide the data</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p>The event that triggered the start of the drag,
+<td class="parameter_description"><p> The event that triggered the start of the drag,
 or <code class="literal">NULL</code> if none can be obtained. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
@@ -1076,7 +1053,7 @@ or <code class="literal">NULL</code> if none can be obtained. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-drag-begin.returns"></a><h4>Returns</h4>
-<p>the context for this drag. </p>
+<p> the context for this drag. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -1150,7 +1127,7 @@ source can provide the data</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p>The event that triggered the start of the drag,
+<td class="parameter_description"><p> The event that triggered the start of the drag,
 or <code class="literal">NULL</code> if none can be obtained. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
@@ -1177,7 +1154,7 @@ the current pointer position</p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-drag-begin-with-coordinates.returns"></a><h4>Returns</h4>
-<p>the context for this drag. </p>
+<p> the context for this drag. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-10.html#api-index-3.10">3.10</a></p>
@@ -1612,7 +1589,7 @@ clicks and drags on the widget. The widget must have a window.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>targets</p></td>
-<td class="parameter_description"><p>the table of targets
+<td class="parameter_description"><p> the table of targets
 that the drag will support, may be <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_targets]</span></td>
 </tr>
@@ -1817,7 +1794,7 @@ The widget must first be made into a drag source with
 </tr>
 <tr>
 <td class="parameter_name"><p>target_list</p></td>
-<td class="parameter_description"><p>list of draggable targets, or <code class="literal">NULL</code> for none. </p></td>
+<td class="parameter_description"><p> list of draggable targets, or <code class="literal">NULL</code> for none. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1850,7 +1827,7 @@ drag-and-drop.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-drag-source-get-target-list.returns"></a><h4>Returns</h4>
-<p>the <a class="link" href="gtk3-Selections.html#GtkTargetList"><span class="type">GtkTargetList</span></a>, or <code class="literal">NULL</code> if none. </p>
+<p> the <a class="link" href="gtk3-Selections.html#GtkTargetList"><span class="type">GtkTargetList</span></a>, or <code class="literal">NULL</code> if none. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.4</p>
@@ -2119,6 +2096,6 @@ The value can by obtained by connecting to the
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>

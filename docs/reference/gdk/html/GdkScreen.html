@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GdkScreen: GDK 3 Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GDK 3 Reference Manual">
 <link rel="up" href="reference.html" title="API Reference">
 <link rel="prev" href="GdkDisplay.html" title="GdkDisplay">
 <link rel="next" href="GdkSeat.html" title="GdkSeat">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -388,7 +388,7 @@ gdk_screen_get_default (<em class="parameter"><code><span class="type">void</spa
 <a class="link" href="GdkDisplay.html#gdk-display-get-default" title="gdk_display_get_default ()"><code class="function">gdk_display_get_default()</code></a>).</p>
 <div class="refsect3">
 <a name="gdk-screen-get-default.returns"></a><h4>Returns</h4>
-<p>a <a class="link" href="GdkScreen.html" title="GdkScreen"><span class="type">GdkScreen</span></a>, or <code class="literal">NULL</code> if
+<p> a <a class="link" href="GdkScreen.html" title="GdkScreen"><span class="type">GdkScreen</span></a>, or <code class="literal">NULL</code> if
 there is no default display. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -420,7 +420,7 @@ The return value should not be freed.</p>
 </div>
 <div class="refsect3">
 <a name="gdk-screen-get-system-visual.returns"></a><h4>Returns</h4>
-<p>the system visual. </p>
+<p> the system visual. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.2</p>
@@ -458,7 +458,7 @@ must be running to provide appropriate display.</p>
 </div>
 <div class="refsect3">
 <a name="gdk-screen-get-rgba-visual.returns"></a><h4>Returns</h4>
-<p>a visual to use for windows
+<p> a visual to use for windows
 with an alpha channel or <code class="literal">NULL</code> if the capability is not
 available. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -522,7 +522,7 @@ gdk_screen_get_root_window (<em class="parameter"><code><a class="link" href="Gd
 </div>
 <div class="refsect3">
 <a name="gdk-screen-get-root-window.returns"></a><h4>Returns</h4>
-<p>the root window. </p>
+<p> the root window. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.2</p>
@@ -551,7 +551,7 @@ gdk_screen_get_display (<em class="parameter"><code><a class="link" href="GdkScr
 </div>
 <div class="refsect3">
 <a name="gdk-screen-get-display.returns"></a><h4>Returns</h4>
-<p>the display to which <em class="parameter"><code>screen</code></em>
+<p> the display to which <em class="parameter"><code>screen</code></em>
 belongs. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -757,7 +757,7 @@ and might expect pixels to be in a certain format.</p>
 </div>
 <div class="refsect3">
 <a name="gdk-screen-list-visuals.returns"></a><h4>Returns</h4>
-<p>a list of visuals; the list must be freed, but not its contents. </p>
+<p>    a list of visuals; the list must be freed, but not its contents. </p>
 <p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GdkVisual]</span></p>
 </div>
 <p class="since">Since: 2.2</p>
@@ -790,7 +790,7 @@ its elements need not be freed.</p>
 </div>
 <div class="refsect3">
 <a name="gdk-screen-get-toplevel-windows.returns"></a><h4>Returns</h4>
-<p>list of toplevel windows, free with <code class="function">g_list_free()</code>. </p>
+<p>    list of toplevel windows, free with <code class="function">g_list_free()</code>. </p>
 <p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GdkWindow]</span></p>
 </div>
 <p class="since">Since: 2.2</p>
@@ -936,7 +936,7 @@ geometry is in ”application pixels”, not in ”device pixels” (see
 </tr>
 <tr>
 <td class="parameter_name"><p>dest</p></td>
-<td class="parameter_description"><p>a <a class="link" href="gdk3-Points-Rectangles-and-Regions.html#GdkRectangle" title="GdkRectangle"><span class="type">GdkRectangle</span></a> to be filled with
+<td class="parameter_description"><p> a <a class="link" href="gdk3-Points-Rectangles-and-Regions.html#GdkRectangle" title="GdkRectangle"><span class="type">GdkRectangle</span></a> to be filled with
 the monitor geometry. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -990,7 +990,7 @@ available, or does not apply.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>dest</p></td>
-<td class="parameter_description"><p>a <a class="link" href="gdk3-Points-Rectangles-and-Regions.html#GdkRectangle" title="GdkRectangle"><span class="type">GdkRectangle</span></a> to be filled with
+<td class="parameter_description"><p> a <a class="link" href="gdk3-Points-Rectangles-and-Regions.html#GdkRectangle" title="GdkRectangle"><span class="type">GdkRectangle</span></a> to be filled with
 the monitor workarea. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1212,7 +1212,7 @@ product name of the display device.</p>
 </div>
 <div class="refsect3">
 <a name="gdk-screen-get-monitor-plug-name.returns"></a><h4>Returns</h4>
-<p>a newly-allocated string containing the name
+<p> a newly-allocated string containing the name
 of the monitor, or <code class="literal">NULL</code> if the name cannot be determined. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -1332,7 +1332,7 @@ gdk_screen_get_font_options (<em class="parameter"><code><a class="link" href="G
 </div>
 <div class="refsect3">
 <a name="gdk-screen-get-font-options.returns"></a><h4>Returns</h4>
-<p>the current font options, or <code class="literal">NULL</code> if no
+<p> the current font options, or <code class="literal">NULL</code> if no
 default font options have been set. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -1365,7 +1365,7 @@ have already been created.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>options</p></td>
-<td class="parameter_description"><p>a <span class="type">cairo_font_options_t</span>, or <code class="literal">NULL</code> to unset any
+<td class="parameter_description"><p> a <span class="type">cairo_font_options_t</span>, or <code class="literal">NULL</code> to unset any
 previously set default font options. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1472,7 +1472,7 @@ no longer needed.</p>
 </div>
 <div class="refsect3">
 <a name="gdk-screen-get-active-window.returns"></a><h4>Returns</h4>
-<p>the currently active window,
+<p> the currently active window,
 or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -1512,7 +1512,7 @@ its windows unrefed using <code class="function">g_object_unref()</code> when no
 </div>
 <div class="refsect3">
 <a name="gdk-screen-get-window-stack.returns"></a><h4>Returns</h4>
-<p>a
+<p> a
 list of <a href="gdk3-Windows.html#GdkWindow-struct"><span class="type">GdkWindows</span></a> for the current window stack, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GdkWindow]</span></p>
 </div>
@@ -1650,6 +1650,6 @@ height of a screen changes.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>

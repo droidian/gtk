@@ -584,6 +584,7 @@
 ..\..\gtk\gtkdrawingarea.c
 ..\..\gtk\gtkeditable.c
 ..\..\gtk\gtkemojichooser.c
+..\..\gtk\gtkemojicompletion.c
 ..\..\gtk\gtkentry.c
 ..\..\gtk\gtkentrybuffer.c
 ..\..\gtk\gtkentrycompletion.c
@@ -649,7 +650,6 @@
 ..\..\gtk\gtklockbutton.c
 ..\..\gtk\gtkmain.c
 ..\..\gtk\gtkmagnifier.c
-..\..\gtk\gtkmarshalers.c
 ..\..\gtk\gtkmenu.c
 ..\..\gtk\gtkmenubar.c
 ..\..\gtk\gtkmenubutton.c
@@ -686,7 +686,6 @@
 ..\..\gtk\gtkprintsettings.c
 ..\..\gtk\gtkprintutils.c
 ..\..\gtk\gtkprivate.c
-..\..\gtk\gtkprivatetypebuiltins.c
 ..\..\gtk\gtkprogressbar.c
 ..\..\gtk\gtkprogresstracker.c
 ..\..\gtk\gtkpixelcache.c
@@ -709,7 +708,6 @@
 ..\..\gtk\gtkrenderbackground.c
 ..\..\gtk\gtkrenderborder.c
 ..\..\gtk\gtkrendericon.c
-..\..\gtk\gtkresources.c
 ..\..\gtk\gtkrevealer.c
 ..\..\gtk\gtkroundedbox.c
 ..\..\gtk\gtkscale.c
@@ -785,7 +783,6 @@
 ..\..\gtk\gtktreestore.c
 ..\..\gtk\gtktreeview.c
 ..\..\gtk\gtktreeviewcolumn.c
-..\..\gtk\gtktypebuiltins.c
 ..\..\gtk\gtkutils.c
 ..\..\gtk\gtkvolumebutton.c
 ..\..\gtk\gtkviewport.c
@@ -796,6 +793,8 @@
 ..\..\gtk\gtkwin32draw.c
 ..\..\gtk\gtkwin32theme.c
 ..\..\gtk\gdkpixbufutils.c
+..\..\gtk\language-names.c
+..\..\gtk\script-names.c
 ..\..\gtk\gtkclipboard.c
 ..\..\gtk\gtkdnd.c
 ..\..\gtk\gtkdragdest.c

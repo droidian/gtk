@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Settings: GTK+ 3 Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GTK+ 3 Reference Manual">
 <link rel="up" href="gtkbase.html" title="Part III. GTK+ Core Reference">
 <link rel="prev" href="gtk3-Drag-and-Drop.html" title="Drag and Drop">
 <link rel="next" href="gtk3-Bindings.html" title="Bindings">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -674,27 +674,14 @@ configuration facility. When doing so, you need to be aware that settings
 that are specific to individual widgets may not be available before the
 widget type has been realized at least once. The following example
 demonstrates a way to do this:</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="gtk3-General.html#gtk-init">gtk_init</a></span><span class="normal"> </span><span class="symbol">(&amp;</span><span class="normal">argc</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">&amp;</span><span class="normal">argv</span><span class="symbol">);</span>
+<div class="informalexample"><pre class="programlisting">
+  gtk_init (&amp;argc, &amp;argv);
 
-<span class="comment">// make sure the type is realized</span>
-<span class="function">g_type_class_unref</span><span class="normal"> </span><span class="symbol">(</span><span class="function">g_type_class_ref</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">GTK_TYPE_IMAGE_MENU_ITEM</span><span class="symbol">));</span>
+  // make sure the type is realized
+  g_type_class_unref (g_type_class_ref (GTK_TYPE_IMAGE_MENU_ITEM));
 
-<span class="function">g_object_set</span><span class="normal"> </span><span class="symbol">(</span><span class="function"><a href="GtkSettings.html#gtk-settings-get-default">gtk_settings_get_default</a></span><span class="normal"> </span><span class="symbol">(),</span><span class="normal"> </span><span class="string">"gtk-enable-animations"</span><span class="symbol">,</span><span class="normal"> FALSE</span><span class="symbol">,</span><span class="normal"> NULL</span><span class="symbol">);</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+  g_object_set (gtk_settings_get_default (), "gtk-enable-animations", FALSE, NULL);
+</pre></div>
 <p></p>
 <p>There is one GtkSettings instance per screen. It can be obtained with
 <a class="link" href="GtkSettings.html#gtk-settings-get-for-screen" title="gtk_settings_get_for_screen ()"><code class="function">gtk_settings_get_for_screen()</code></a>, but in many cases, it is more convenient
@@ -711,7 +698,7 @@ gtk_settings_get_default (<em class="parameter"><code><span class="type">void</s
 it if necessary. See <a class="link" href="GtkSettings.html#gtk-settings-get-for-screen" title="gtk_settings_get_for_screen ()"><code class="function">gtk_settings_get_for_screen()</code></a>.</p>
 <div class="refsect3">
 <a name="gtk-settings-get-default.returns"></a><h4>Returns</h4>
-<p>a <a class="link" href="GtkSettings.html" title="Settings"><span class="type">GtkSettings</span></a> object. If there is
+<p> a <a class="link" href="GtkSettings.html" title="Settings"><span class="type">GtkSettings</span></a> object. If there is
 no default screen, then returns <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -740,7 +727,7 @@ gtk_settings_get_for_screen (<em class="parameter"><code><span class="type">GdkS
 </div>
 <div class="refsect3">
 <a name="gtk-settings-get-for-screen.returns"></a><h4>Returns</h4>
-<p>a <a class="link" href="GtkSettings.html" title="Settings"><span class="type">GtkSettings</span></a> object. </p>
+<p> a <a class="link" href="GtkSettings.html" title="Settings"><span class="type">GtkSettings</span></a> object. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.2</p>
@@ -1230,15 +1217,8 @@ the token parsed, or a GSTRING holding an unparsed statement</p></td>
 <div class="refsect2">
 <a name="GtkSettings--color-hash"></a><h3>The <code class="literal">“color-hash”</code> property</h3>
 <pre class="programlisting">  “color-hash”               <span class="type">GHashTable</span> *</pre>
-<p>Holds a hash table representation of the <a class="link" href="GtkSettings.html#GtkSettings--gtk-color-scheme" title="The “gtk-color-scheme” property"><span class="type">“gtk-color-scheme”</span></a>
-setting, mapping color names to <span class="type">GdkColors</span>.</p>
-<p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
-<div class="warning">
-<p><code class="literal">GtkSettings:color-hash</code> has been deprecated since version 3.8 and should not be used in newly-written code.</p>
-<p>Will always return an empty hash table.</p>
-</div>
+<p>A hash table representation of the color scheme.</p>
 <p>Flags: Read</p>
-<p class="since">Since: 2.10</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1336,21 +1316,11 @@ presses the mnemonic activator.</p>
 <a name="GtkSettings--gtk-color-scheme"></a><h3>The <code class="literal">“gtk-color-scheme”</code> property</h3>
 <pre class="programlisting">  “gtk-color-scheme”         <span class="type">gchar</span> *</pre>
 <p>A palette of named colors for use in themes. The format of the string is</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">name1</span><span class="symbol">:</span><span class="normal"> color1</span>
-<span class="normal">name2</span><span class="symbol">:</span><span class="normal"> color2</span>
-<span class="symbol">...</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+name1: color1
+name2: color2
+...
+</pre></div>
 <p>
 Color names must be acceptable as identifiers in the
 <a class="link" href="gtk3-Resource-Files.html" title="Resource Files">gtkrc</a> syntax, and
@@ -1361,17 +1331,9 @@ merged, color specifications will be converted to hexadecimal form
 when getting this property.</p>
 <p>Starting with GTK+ 2.12, the entries can alternatively be separated
 by ';' instead of newlines:</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">name1</span><span class="symbol">:</span><span class="normal"> color1</span><span class="symbol">;</span><span class="normal"> name2</span><span class="symbol">:</span><span class="normal"> color2</span><span class="symbol">;</span><span class="normal"> </span><span class="symbol">...</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+name1: color1; name2: color2; ...
+</pre></div>
 <p></p>
 <div class="warning">
 <p><code class="literal">GtkSettings:gtk-color-scheme</code> has been deprecated since version 3.8 and should not be used in newly-written code.</p>
@@ -1879,7 +1841,7 @@ clicking the middle mouse button.</p>
 dialog. Available print backends depend on the GTK+ installation,
 and may include "file", "cups", "lpr" or "papi".</p>
 <p>Flags: Read / Write</p>
-<p>Default value: "file,lpr,cloudprint"</p>
+<p>Default value: "file,cups"</p>
 <p class="since">Since: 2.10</p>
 </div>
 <hr>
@@ -2256,6 +2218,6 @@ or hidden until the user starts to use the keyboard.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>

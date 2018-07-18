@@ -1246,28 +1246,33 @@ _LT_DECL([], [ECHO], [1], [An echo program that protects backslashes])
 # ----------------
 AC_DEFUN([_LT_WITH_SYSROOT],
 [AC_MSG_CHECKING([for sysroot])
-AC_ARG_WITH([sysroot],
-[AS_HELP_STRING([--with-sysroot@<:@=DIR@:>@],
+AC_ARG_WITH([libtool-sysroot],
+[AS_HELP_STRING([--with-libtool-sysroot@<:@=DIR@:>@],
   [Search for dependent libraries within DIR (or the compiler's sysroot
    if not specified).])],
-[], [with_sysroot=no])
+[], [with_libtool_sysroot=no])
 
 dnl lt_sysroot will always be passed unquoted.  We quote it here
 dnl in case the user passed a directory name.
 lt_sysroot=
-case $with_sysroot in #(
- yes)
+case $with_libtool_sysroot in #(
+ no)
    if test yes = "$GCC"; then
      lt_sysroot=`$CC --print-sysroot 2>/dev/null`
+     # Treat "/" the same a an unset sysroot. It seems to be more
+     # compatible across host platforms that way!?
+     if test "$lt_sysroot" = /; then
+       lt_sysroot=
+     fi
    fi
    ;; #(
- /*)
-   lt_sysroot=`echo "$with_sysroot" | sed -e "$sed_quote_subst"`
+ yes|''|/)
    ;; #(
- no|'')
+ /*)
+   lt_sysroot=`echo "$with_libtool_sysroot" | sed -e "$sed_quote_subst"`
    ;; #(
  *)
-   AC_MSG_RESULT([$with_sysroot])
+   AC_MSG_RESULT([$with_libtool_sysroot])
    AC_MSG_ERROR([The sysroot must be an absolute path.])
    ;;
 esac
@@ -2867,9 +2872,6 @@ linux* | k*bsd*-gnu | kopensolaris*-gnu | gnu*)
   # before this can be enabled.
   hardcode_into_libs=yes
 
-  # Add ABI-specific directories to the system library path.
-  sys_lib_dlsearch_path_spec="/lib64 /usr/lib64 /lib /usr/lib"
-
   # Ideally, we could use ldconfig to report *all* directores which are
   # searched for libraries, however this is still not possible.  Aside from not
   # being certain /sbin/ldconfig is available, command
@@ -2878,7 +2880,7 @@ linux* | k*bsd*-gnu | kopensolaris*-gnu | gnu*)
   # appending ld.so.conf contents (and includes) to the search path.
   if test -f /etc/ld.so.conf; then
     lt_ld_extra=`awk '/^include / { system(sprintf("cd /etc; cat %s 2>/dev/null", \[$]2)); skip = 1; } { if (!skip) print \[$]0; skip = 0; }' < /etc/ld.so.conf | $SED -e 's/#.*//;/^[	 ]*hwcap[	 ]/d;s/[:,	]/ /g;s/=[^=]*$//;s/=[^= ]* / /g;s/"//g;/^$/d' | tr '\n' ' '`
-    sys_lib_dlsearch_path_spec="$sys_lib_dlsearch_path_spec $lt_ld_extra"
+    sys_lib_dlsearch_path_spec="/lib /usr/lib $lt_ld_extra"
   fi
 
   # We used to test for /lib/ld.so.1 and disable shared libraries on

@@ -1296,6 +1296,7 @@ get_scroll_unit (GtkScrolledWindow *sw,
   GtkRange *scrollbar;
   GtkAdjustment *adj;
   gdouble page_size;
+  gdouble pow_unit;
 
   if (orientation == GTK_ORIENTATION_HORIZONTAL)
     scrollbar = GTK_RANGE (priv->hscrollbar);
@@ -1307,7 +1308,10 @@ get_scroll_unit (GtkScrolledWindow *sw,
 
   adj = gtk_range_get_adjustment (scrollbar);
   page_size = gtk_adjustment_get_page_size (adj);
-  scroll_unit = pow (page_size, 2.0 / 3.0);
+
+  /* see comment in _gtk_range_get_wheel_delta() */
+  pow_unit = pow (page_size, 2.0 / 3.0);
+  scroll_unit = MIN (pow_unit, page_size / 2.0);
 #else
   scroll_unit = 1;
 #endif
@@ -1399,6 +1403,8 @@ scroll_history_finish (GtkScrolledWindow *sw,
   return TRUE;
 }
 
+static void uninstall_scroll_cursor (GtkScrolledWindow *scrolled_window);
+
 static gboolean
 captured_event_cb (GtkWidget *widget,
                    GdkEvent  *event)
@@ -1416,7 +1422,14 @@ captured_event_cb (GtkWidget *widget,
 
   if (event->type == GDK_SCROLL)
     {
+      GtkWidget *scrollable_child = gtk_bin_get_child (GTK_BIN (widget));
+
       gtk_scrolled_window_cancel_deceleration (sw);
+
+      /* If a nested widget takes over the scroll, unset our scrolling cursor */
+      if (gtk_get_event_widget (event) != scrollable_child)
+        uninstall_scroll_cursor (sw);
+
       return GDK_EVENT_PROPAGATE;
     }
 

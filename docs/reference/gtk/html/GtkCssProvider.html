@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GtkCssProvider: GTK+ 3 Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GTK+ 3 Reference Manual">
 <link rel="up" href="theming.html" title="Part IV. Theming in GTK+">
 <link rel="prev" href="GtkStyleContext.html" title="GtkStyleContext">
 <link rel="next" href="GtkStyleProvider.html" title="GtkStyleProvider">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -279,7 +279,7 @@ gtk_css_provider_get_default (<em class="parameter"><code><span class="type">voi
 fallback for all widgets.</p>
 <div class="refsect3">
 <a name="gtk-css-provider-get-default.returns"></a><h4>Returns</h4>
-<p>The provider used for fallback styling.
+<p> The provider used for fallback styling.
 This memory is owned by GTK+, and you must not free it. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -307,7 +307,7 @@ gtk_css_provider_get_named (<em class="parameter"><code>const <span class="type"
 </tr>
 <tr>
 <td class="parameter_name"><p>variant</p></td>
-<td class="parameter_description"><p>variant to load, for example, "dark", or
+<td class="parameter_description"><p> variant to load, for example, "dark", or
 <code class="literal">NULL</code> for the default. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -316,7 +316,7 @@ gtk_css_provider_get_named (<em class="parameter"><code>const <span class="type"
 </div>
 <div class="refsect3">
 <a name="gtk-css-provider-get-named.returns"></a><h4>Returns</h4>
-<p>a <a class="link" href="GtkCssProvider.html" title="GtkCssProvider"><span class="type">GtkCssProvider</span></a> with the theme loaded.
+<p> a <a class="link" href="GtkCssProvider.html" title="GtkCssProvider"><span class="type">GtkCssProvider</span></a> with the theme loaded.
 This memory is owned by GTK+, and you must not free it. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -349,7 +349,7 @@ information.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>data</p></td>
-<td class="parameter_description"><p>CSS data loaded in memory. </p></td>
+<td class="parameter_description"><p> CSS data loaded in memory. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=length][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> guint8]</span></td>
 </tr>
 <tr>
@@ -363,7 +363,7 @@ potentially do a copy.</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>return location for a <span class="type">GError</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> return location for a <span class="type">GError</span>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -410,7 +410,7 @@ clear any previously loaded information.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>return location for a <span class="type">GError</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> return location for a <span class="type">GError</span>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -457,7 +457,7 @@ any previously loaded information.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>return location for a <span class="type">GError</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> return location for a <span class="type">GError</span>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -651,7 +651,7 @@ for example because the CSS was loaded via
 </div>
 <div class="refsect3">
 <a name="gtk-css-section-get-file.returns"></a><h4>Returns</h4>
-<p>the <span class="type">GFile</span> that <em class="parameter"><code>section</code></em>
+<p> the <span class="type">GFile</span> that <em class="parameter"><code>section</code></em>
 was parsed from
 or <code class="literal">NULL</code> if <em class="parameter"><code>section</code></em>
 was parsed from other data. </p>
@@ -690,7 +690,7 @@ a different file.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-css-section-get-parent.returns"></a><h4>Returns</h4>
-<p>the parent section or <code class="literal">NULL</code> if none. </p>
+<p> the parent section or <code class="literal">NULL</code> if none. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-2.html#api-index-3.2">3.2</a></p>
@@ -1072,6 +1072,6 @@ than when a loading function was called.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>

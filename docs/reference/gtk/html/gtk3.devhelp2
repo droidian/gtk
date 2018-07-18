@@ -433,6 +433,7 @@
     <sub name="Index of new symbols in 3.18" link="api-index-3-18.html"/>
     <sub name="Index of new symbols in 3.20" link="api-index-3-20.html"/>
     <sub name="Index of new symbols in 3.22" link="api-index-3-22.html"/>
+    <sub name="Index of new symbols in 3.24" link="api-index-3-24.html"/>
     <sub name="Annotation Glossary" link="annotation-glossary.html"/>
   </chapters>
   <functions>
@@ -1464,6 +1465,8 @@
     <keyword type="function" name="gtk_info_bar_get_content_area ()" link="GtkInfoBar.html#gtk-info-bar-get-content-area" since="2.18"/>
     <keyword type="function" name="gtk_info_bar_get_show_close_button ()" link="GtkInfoBar.html#gtk-info-bar-get-show-close-button" since="3.10"/>
     <keyword type="function" name="gtk_info_bar_set_show_close_button ()" link="GtkInfoBar.html#gtk-info-bar-set-show-close-button" since="3.10"/>
+    <keyword type="function" name="gtk_info_bar_get_revealed ()" link="GtkInfoBar.html#gtk-info-bar-get-revealed" since="3.22.29"/>
+    <keyword type="function" name="gtk_info_bar_set_revealed ()" link="GtkInfoBar.html#gtk-info-bar-set-revealed" since="3.22.29"/>
     <keyword type="struct" name="struct GtkInfoBar" link="GtkInfoBar.html#GtkInfoBar-struct"/>
     <keyword type="property" name="The “message-type” property" link="GtkInfoBar.html#GtkInfoBar--message-type"/>
     <keyword type="property" name="The “revealed” property" link="GtkInfoBar.html#GtkInfoBar--revealed"/>
@@ -1555,7 +1558,7 @@
     <keyword type="function" name="gtk_button_new_with_label ()" link="GtkButton.html#gtk-button-new-with-label"/>
     <keyword type="function" name="gtk_button_new_with_mnemonic ()" link="GtkButton.html#gtk-button-new-with-mnemonic"/>
     <keyword type="function" name="gtk_button_new_from_icon_name ()" link="GtkButton.html#gtk-button-new-from-icon-name" since="3.10"/>
-    <keyword type="function" name="gtk_button_new_from_stock ()" link="GtkButton.html#gtk-button-new-from-stock" deprecated="3.10: Use gtk_button_new_with_label() instead."/>
+    <keyword type="function" name="gtk_button_new_from_stock ()" link="GtkButton.html#gtk-button-new-from-stock" deprecated=""/>
     <keyword type="function" name="gtk_button_pressed ()" link="GtkButton.html#gtk-button-pressed" deprecated="2.20: Use the #GtkWidget::button-press-event signal."/>
     <keyword type="function" name="gtk_button_released ()" link="GtkButton.html#gtk-button-released" deprecated="2.20: Use the #GtkWidget::button-release-event signal."/>
     <keyword type="function" name="gtk_button_clicked ()" link="GtkButton.html#gtk-button-clicked"/>
@@ -1812,6 +1815,7 @@
     <keyword type="property" name="The “completion” property" link="GtkEntry.html#GtkEntry--completion"/>
     <keyword type="property" name="The “cursor-position” property" link="GtkEntry.html#GtkEntry--cursor-position"/>
     <keyword type="property" name="The “editable” property" link="GtkEntry.html#GtkEntry--editable"/>
+    <keyword type="property" name="The “enable-emoji-completion” property" link="GtkEntry.html#GtkEntry--enable-emoji-completion"/>
     <keyword type="property" name="The “has-frame” property" link="GtkEntry.html#GtkEntry--has-frame"/>
     <keyword type="property" name="The “im-module” property" link="GtkEntry.html#GtkEntry--im-module"/>
     <keyword type="property" name="The “inner-border” property" link="GtkEntry.html#GtkEntry--inner-border"/>
@@ -3353,9 +3357,9 @@
     <keyword type="function" name="gtk_menu_set_screen ()" link="GtkMenu.html#gtk-menu-set-screen" since="2.2"/>
     <keyword type="function" name="gtk_menu_reorder_child ()" link="GtkMenu.html#gtk-menu-reorder-child"/>
     <keyword type="function" name="gtk_menu_attach ()" link="GtkMenu.html#gtk-menu-attach" since="2.4"/>
-    <keyword type="function" name="gtk_menu_popup_at_rect ()" link="GtkMenu.html#gtk-menu-popup-at-rect" since="3.22" stability="Unstable"/>
-    <keyword type="function" name="gtk_menu_popup_at_widget ()" link="GtkMenu.html#gtk-menu-popup-at-widget" since="3.22" stability="Unstable"/>
-    <keyword type="function" name="gtk_menu_popup_at_pointer ()" link="GtkMenu.html#gtk-menu-popup-at-pointer" since="3.22" stability="Unstable"/>
+    <keyword type="function" name="gtk_menu_popup_at_rect ()" link="GtkMenu.html#gtk-menu-popup-at-rect" since="3.22"/>
+    <keyword type="function" name="gtk_menu_popup_at_widget ()" link="GtkMenu.html#gtk-menu-popup-at-widget" since="3.22"/>
+    <keyword type="function" name="gtk_menu_popup_at_pointer ()" link="GtkMenu.html#gtk-menu-popup-at-pointer" since="3.22"/>
     <keyword type="function" name="gtk_menu_popup_for_device ()" link="GtkMenu.html#gtk-menu-popup-for-device" deprecated="" since="3.0"/>
     <keyword type="function" name="gtk_menu_popup ()" link="GtkMenu.html#gtk-menu-popup" deprecated=""/>
     <keyword type="function" name="gtk_menu_set_accel_group ()" link="GtkMenu.html#gtk-menu-set-accel-group"/>
@@ -3907,9 +3911,17 @@
     <keyword type="function" name="gtk_font_chooser_set_filter_func ()" link="GtkFontChooser.html#gtk-font-chooser-set-filter-func" since="3.2"/>
     <keyword type="function" name="gtk_font_chooser_set_font_map ()" link="GtkFontChooser.html#gtk-font-chooser-set-font-map" since="3.18"/>
     <keyword type="function" name="gtk_font_chooser_get_font_map ()" link="GtkFontChooser.html#gtk-font-chooser-get-font-map" since="3.18"/>
+    <keyword type="function" name="gtk_font_chooser_set_level ()" link="GtkFontChooser.html#gtk-font-chooser-set-level" since="3.24"/>
+    <keyword type="function" name="gtk_font_chooser_get_level ()" link="GtkFontChooser.html#gtk-font-chooser-get-level" since="3.24"/>
+    <keyword type="function" name="gtk_font_chooser_get_font_features ()" link="GtkFontChooser.html#gtk-font-chooser-get-font-features" since="3.24"/>
+    <keyword type="function" name="gtk_font_chooser_set_language ()" link="GtkFontChooser.html#gtk-font-chooser-set-language" since="3.24"/>
+    <keyword type="function" name="gtk_font_chooser_get_language ()" link="GtkFontChooser.html#gtk-font-chooser-get-language" since="3.24"/>
     <keyword type="struct" name="GtkFontChooser" link="GtkFontChooser.html#GtkFontChooser-struct"/>
     <keyword type="property" name="The “font” property" link="GtkFontChooser.html#GtkFontChooser--font"/>
     <keyword type="property" name="The “font-desc” property" link="GtkFontChooser.html#GtkFontChooser--font-desc"/>
+    <keyword type="property" name="The “font-features” property" link="GtkFontChooser.html#GtkFontChooser--font-features"/>
+    <keyword type="property" name="The “language” property" link="GtkFontChooser.html#GtkFontChooser--language"/>
+    <keyword type="property" name="The “level” property" link="GtkFontChooser.html#GtkFontChooser--level"/>
     <keyword type="property" name="The “preview-text” property" link="GtkFontChooser.html#GtkFontChooser--preview-text"/>
     <keyword type="property" name="The “show-preview-entry” property" link="GtkFontChooser.html#GtkFontChooser--show-preview-entry"/>
     <keyword type="signal" name="The “font-activated” signal" link="GtkFontChooser.html#GtkFontChooser-font-activated"/>
@@ -3938,6 +3950,7 @@
     <keyword type="function" name="gtk_font_chooser_widget_new ()" link="GtkFontChooserWidget.html#gtk-font-chooser-widget-new" since="3.2"/>
     <keyword type="struct" name="struct GtkFontChooserWidget" link="GtkFontChooserWidget.html#GtkFontChooserWidget-struct"/>
     <keyword type="struct" name="struct GtkFontChooserWidgetClass" link="GtkFontChooserWidget.html#GtkFontChooserWidgetClass"/>
+    <keyword type="property" name="The “tweak-action” property" link="GtkFontChooserWidget.html#GtkFontChooserWidget--tweak-action"/>
     <keyword type="function" name="gtk_font_chooser_dialog_new ()" link="GtkFontChooserDialog.html#gtk-font-chooser-dialog-new" since="3.2"/>
     <keyword type="struct" name="struct GtkFontChooserDialog" link="GtkFontChooserDialog.html#GtkFontChooserDialog-struct"/>
     <keyword type="struct" name="struct GtkFontChooserDialogClass" link="GtkFontChooserDialog.html#GtkFontChooserDialogClass"/>

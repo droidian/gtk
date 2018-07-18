@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GdkGLContext: GDK 3 Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GDK 3 Reference Manual">
 <link rel="up" href="reference.html" title="API Reference">
 <link rel="prev" href="GdkDrawingContext.html" title="GdkDrawingContext">
 <link rel="next" href="gdk3-Events.html" title="Events">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -237,7 +237,7 @@
 </div>
 <div class="refsect1">
 <a name="GdkGLContext.includes"></a><h2>Includes</h2>
-<pre class="synopsis">#include &lt;gdk/gdkwayland.h&gt;
+<pre class="synopsis">#include &lt;gdk/gdk.h&gt;
 </pre>
 </div>
 <div class="refsect1">
@@ -277,17 +277,9 @@ before issuing OpenGL calls; the system sends OpenGL commands to
 whichever context is current. It is possible to have multiple
 contexts, so you always need to ensure that the one which you
 want to draw with is the current one before issuing commands:</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="GdkGLContext.html#gdk-gl-context-make-current">gdk_gl_context_make_current</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">context</span><span class="symbol">);</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+  gdk_gl_context_make_current (context);
+</pre></div>
 <p></p>
 <p>You can now perform your drawing using OpenGL commands.</p>
 <p>You can check which <a class="link" href="GdkGLContext.html" title="GdkGLContext"><span class="type">GdkGLContext</span></a> is the current one by using
@@ -320,7 +312,7 @@ gdk_gl_context_get_display (<em class="parameter"><code><a class="link" href="Gd
 </div>
 <div class="refsect3">
 <a name="gdk-gl-context-get-display.returns"></a><h4>Returns</h4>
-<p>a <a class="link" href="GdkDisplay.html" title="GdkDisplay"><span class="type">GdkDisplay</span></a> or <code class="literal">NULL</code>. </p>
+<p> a <a class="link" href="GdkDisplay.html" title="GdkDisplay"><span class="type">GdkDisplay</span></a> or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-16.html#api-index-3.16">3.16</a></p>
@@ -349,7 +341,7 @@ gdk_gl_context_get_window (<em class="parameter"><code><a class="link" href="Gdk
 </div>
 <div class="refsect3">
 <a name="gdk-gl-context-get-window.returns"></a><h4>Returns</h4>
-<p>a <a class="link" href="gdk3-Windows.html#GdkWindow"><span class="type">GdkWindow</span></a> or <code class="literal">NULL</code>. </p>
+<p> a <a class="link" href="gdk3-Windows.html#GdkWindow"><span class="type">GdkWindow</span></a> or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-16.html#api-index-3.16">3.16</a></p>
@@ -378,7 +370,7 @@ gdk_gl_context_get_shared_context (<em class="parameter"><code><a class="link" h
 </div>
 <div class="refsect3">
 <a name="gdk-gl-context-get-shared-context.returns"></a><h4>Returns</h4>
-<p>a <a class="link" href="GdkGLContext.html" title="GdkGLContext"><span class="type">GdkGLContext</span></a> or <code class="literal">NULL</code>. </p>
+<p> a <a class="link" href="GdkGLContext.html" title="GdkGLContext"><span class="type">GdkGLContext</span></a> or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-16.html#api-index-3.16">3.16</a></p>
@@ -410,12 +402,12 @@ gdk_gl_context_get_version (<em class="parameter"><code><a class="link" href="Gd
 </tr>
 <tr>
 <td class="parameter_name"><p>major</p></td>
-<td class="parameter_description"><p>return location for the major version. </p></td>
+<td class="parameter_description"><p> return location for the major version. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>minor</p></td>
-<td class="parameter_description"><p>return location for the minor version. </p></td>
+<td class="parameter_description"><p> return location for the minor version. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -490,12 +482,12 @@ gdk_gl_context_get_required_version (<em class="parameter"><code><a class="link"
 </tr>
 <tr>
 <td class="parameter_name"><p>major</p></td>
-<td class="parameter_description"><p>return location for the major version to request. </p></td>
+<td class="parameter_description"><p> return location for the major version to request. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>minor</p></td>
-<td class="parameter_description"><p>return location for the minor version to request. </p></td>
+<td class="parameter_description"><p> return location for the minor version to request. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -805,7 +797,7 @@ gdk_gl_context_get_current (<em class="parameter"><code><span class="type">void<
 <p>Retrieves the current <a class="link" href="GdkGLContext.html" title="GdkGLContext"><span class="type">GdkGLContext</span></a>.</p>
 <div class="refsect3">
 <a name="gdk-gl-context-get-current.returns"></a><h4>Returns</h4>
-<p>the current <a class="link" href="GdkGLContext.html" title="GdkGLContext"><span class="type">GdkGLContext</span></a>, or <code class="literal">NULL</code>. </p>
+<p> the current <a class="link" href="GdkGLContext.html" title="GdkGLContext"><span class="type">GdkGLContext</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-16.html#api-index-3.16">3.16</a></p>
@@ -895,6 +887,6 @@ until <a class="link" href="GdkGLContext.html#gdk-gl-context-make-current" title
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>

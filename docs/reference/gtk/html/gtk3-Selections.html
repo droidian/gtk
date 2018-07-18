@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Selections: GTK+ 3 Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="GTK+ 3 Reference Manual">
 <link rel="up" href="gtkbase.html" title="Part III. GTK+ Core Reference">
 <link rel="prev" href="gtk3-Standard-Enumerations.html" title="Standard Enumerations">
 <link rel="next" href="gtk3-Testing.html" title="Testing">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -599,7 +599,7 @@ gtk_target_list_new (<em class="parameter"><code>const <a class="link" href="gtk
 <tbody>
 <tr>
 <td class="parameter_name"><p>targets</p></td>
-<td class="parameter_description"><p>Pointer to an array
+<td class="parameter_description"><p> Pointer to an array
 of <a class="link" href="gtk3-Selections.html#GtkTargetEntry" title="struct GtkTargetEntry"><span class="type">GtkTargetEntry</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=ntargets][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -614,7 +614,7 @@ of <a class="link" href="gtk3-Selections.html#GtkTargetEntry" title="struct GtkT
 </div>
 <div class="refsect3">
 <a name="gtk-target-list-new.returns"></a><h4>Returns</h4>
-<p>the new <a class="link" href="gtk3-Selections.html#GtkTargetList"><span class="type">GtkTargetList</span></a>. </p>
+<p> the new <a class="link" href="gtk3-Selections.html#GtkTargetList"><span class="type">GtkTargetList</span></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -733,7 +733,7 @@ gtk_target_list_add_table (<em class="parameter"><code><a class="link" href="gtk
 </tr>
 <tr>
 <td class="parameter_name"><p>targets</p></td>
-<td class="parameter_description"><p>the table of <a class="link" href="gtk3-Selections.html#GtkTargetEntry" title="struct GtkTargetEntry"><span class="type">GtkTargetEntry</span></a>. </p></td>
+<td class="parameter_description"><p> the table of <a class="link" href="gtk3-Selections.html#GtkTargetEntry" title="struct GtkTargetEntry"><span class="type">GtkTargetEntry</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=ntargets]</span></td>
 </tr>
 <tr>
@@ -958,7 +958,7 @@ gtk_target_list_find (<em class="parameter"><code><a class="link" href="gtk3-Sel
 </tr>
 <tr>
 <td class="parameter_name"><p>info</p></td>
-<td class="parameter_description"><p>a pointer to the location to store
+<td class="parameter_description"><p> a pointer to the location to store
 application info for target, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -989,7 +989,7 @@ gtk_target_table_free (<em class="parameter"><code><a class="link" href="gtk3-Se
 <tbody>
 <tr>
 <td class="parameter_name"><p>targets</p></td>
-<td class="parameter_description"><p>a <a class="link" href="gtk3-Selections.html#GtkTargetEntry" title="struct GtkTargetEntry"><span class="type">GtkTargetEntry</span></a> array. </p></td>
+<td class="parameter_description"><p> a <a class="link" href="gtk3-Selections.html#GtkTargetEntry" title="struct GtkTargetEntry"><span class="type">GtkTargetEntry</span></a> array. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_targets]</span></td>
 </tr>
 <tr>
@@ -1028,7 +1028,7 @@ longer needed.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>n_targets</p></td>
-<td class="parameter_description"><p>return location for the number ot targets in the table. </p></td>
+<td class="parameter_description"><p> return location for the number ot targets in the table. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1036,7 +1036,7 @@ longer needed.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-target-table-new-from-list.returns"></a><h4>Returns</h4>
-<p>the new table. </p>
+<p> the new table. </p>
 <p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_targets][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.10</p>
@@ -1062,7 +1062,7 @@ or, if <em class="parameter"><code>widget</code></em>
 <tbody>
 <tr>
 <td class="parameter_name"><p>widget</p></td>
-<td class="parameter_description"><p>a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>  a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1110,7 +1110,7 @@ if <em class="parameter"><code>widget</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>widget</p></td>
-<td class="parameter_description"><p>new selection owner (a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>), or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> new selection owner (a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>), or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1206,7 +1206,7 @@ for a given widget and selection.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>targets</p></td>
-<td class="parameter_description"><p>a table of targets to add. </p></td>
+<td class="parameter_description"><p> a table of targets to add. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=ntargets]</span></td>
 </tr>
 <tr>
@@ -1338,7 +1338,7 @@ Zero-terminates the stored data.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>data</p></td>
-<td class="parameter_description"><p>pointer to the data (will be copied). </p></td>
+<td class="parameter_description"><p> pointer to the data (will be copied). </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=length]</span></td>
 </tr>
 <tr>
@@ -1419,7 +1419,7 @@ gtk_selection_data_get_text (<em class="parameter"><code>const <a class="link" h
 </div>
 <div class="refsect3">
 <a name="gtk-selection-data-get-text.returns"></a><h4>Returns</h4>
-<p>if the selection data contained a
+<p> if the selection data contained a
 recognized text type and it could be converted to UTF-8, a newly
 allocated string containing the converted text, otherwise <code class="literal">NULL</code>.
 If the result is non-<code class="literal">NULL</code> it must be freed with <code class="function">g_free()</code>. </p>
@@ -1488,7 +1488,7 @@ gtk_selection_data_get_pixbuf (<em class="parameter"><code>const <a class="link"
 </div>
 <div class="refsect3">
 <a name="gtk-selection-data-get-pixbuf.returns"></a><h4>Returns</h4>
-<p>if the selection data
+<p> if the selection data
 contained a recognized image type and it could be converted to a
 <span class="type">GdkPixbuf</span>, a newly allocated pixbuf is returned, otherwise
 <code class="literal">NULL</code>.  If the result is non-<code class="literal">NULL</code> it must be freed with
@@ -1523,7 +1523,7 @@ The string is converted to the form determined by
 </tr>
 <tr>
 <td class="parameter_name"><p>uris</p></td>
-<td class="parameter_description"><p>a <code class="literal">NULL</code>-terminated array of
+<td class="parameter_description"><p> a <code class="literal">NULL</code>-terminated array of
 strings holding URIs. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></td>
 </tr>
@@ -1560,7 +1560,7 @@ gtk_selection_data_get_uris (<em class="parameter"><code>const <a class="link" h
 </div>
 <div class="refsect3">
 <a name="gtk-selection-data-get-uris.returns"></a><h4>Returns</h4>
-<p>if
+<p> if
 the selection data contains a list of
 URIs, a newly allocated <code class="literal">NULL</code>-terminated string array
 containing the URIs, otherwise <code class="literal">NULL</code>. If the result is
@@ -1597,7 +1597,7 @@ any selection.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>targets</p></td>
-<td class="parameter_description"><p>location to store an array of targets. The result stored
+<td class="parameter_description"><p>          location to store an array of targets. The result stored
 here must be freed with <code class="function">g_free()</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_atoms][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></td>
 </tr>
@@ -1789,7 +1789,7 @@ gtk_selection_data_get_selection (<em class="parameter"><code>const <a class="li
 </div>
 <div class="refsect3">
 <a name="gtk-selection-data-get-selection.returns"></a><h4>Returns</h4>
-<p>the selection <span class="type">GdkAtom</span> of the selection data. </p>
+<p> the selection <span class="type">GdkAtom</span> of the selection data. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.16</p>
@@ -1819,7 +1819,7 @@ gtk_selection_data_get_data (<em class="parameter"><code>const <a class="link" h
 </div>
 <div class="refsect3">
 <a name="gtk-selection-data-get-data.returns"></a><h4>Returns</h4>
-<p>the raw data of the selection. </p>
+<p> the raw data of the selection. </p>
 <p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> guint8]</span></p>
 </div>
 <p class="since">Since: 2.14</p>
@@ -1876,7 +1876,7 @@ gtk_selection_data_get_data_with_length
 </tr>
 <tr>
 <td class="parameter_name"><p>length</p></td>
-<td class="parameter_description"><p>return location for length of the data segment. </p></td>
+<td class="parameter_description"><p> return location for length of the data segment. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1884,7 +1884,7 @@ gtk_selection_data_get_data_with_length
 </div>
 <div class="refsect3">
 <a name="gtk-selection-data-get-data-with-length.returns"></a><h4>Returns</h4>
-<p>the raw data of the selection. </p>
+<p> the raw data of the selection. </p>
 <p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=length]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-0.html#api-index-3.0">3.0</a></p>
@@ -1912,7 +1912,7 @@ gtk_selection_data_get_data_type (<em class="parameter"><code>const <a class="li
 </div>
 <div class="refsect3">
 <a name="gtk-selection-data-get-data-type.returns"></a><h4>Returns</h4>
-<p>the data type of the selection. </p>
+<p> the data type of the selection. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.14</p>
@@ -1940,7 +1940,7 @@ gtk_selection_data_get_display (<em class="parameter"><code>const <a class="link
 </div>
 <div class="refsect3">
 <a name="gtk-selection-data-get-display.returns"></a><h4>Returns</h4>
-<p>the display of the selection. </p>
+<p> the display of the selection. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.14</p>
@@ -1995,7 +1995,7 @@ gtk_selection_data_get_target (<em class="parameter"><code>const <a class="link"
 </div>
 <div class="refsect3">
 <a name="gtk-selection-data-get-target.returns"></a><h4>Returns</h4>
-<p>the target of the selection. </p>
+<p> the target of the selection. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.14</p>
@@ -2021,7 +2021,7 @@ provide a <span class="type">GdkPixbuf</span>.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>targets</p></td>
-<td class="parameter_description"><p>an array of <span class="type">GdkAtoms</span>. </p></td>
+<td class="parameter_description"><p> an array of <span class="type">GdkAtoms</span>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_targets]</span></td>
 </tr>
 <tr>
@@ -2067,7 +2067,7 @@ provide text.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>targets</p></td>
-<td class="parameter_description"><p>an array of <span class="type">GdkAtoms</span>. </p></td>
+<td class="parameter_description"><p> an array of <span class="type">GdkAtoms</span>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_targets]</span></td>
 </tr>
 <tr>
@@ -2107,7 +2107,7 @@ provide an uri list.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>targets</p></td>
-<td class="parameter_description"><p>an array of <span class="type">GdkAtoms</span>. </p></td>
+<td class="parameter_description"><p> an array of <span class="type">GdkAtoms</span>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_targets]</span></td>
 </tr>
 <tr>
@@ -2148,7 +2148,7 @@ provide rich text.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>targets</p></td>
-<td class="parameter_description"><p>an array of <span class="type">GdkAtoms</span>. </p></td>
+<td class="parameter_description"><p> an array of <span class="type">GdkAtoms</span>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_targets]</span></td>
 </tr>
 <tr>
@@ -2360,6 +2360,6 @@ type without extensive string compares.</p></td>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>
