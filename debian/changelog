@@ -14,6 +14,7 @@ gtk+3.0 (3.23.0-1) UNRELEASED; urgency=medium
      - gdk_window_move_to_rect
   * debian/patches/m4macros-Set-a-serial-number.patch: Drop, included in this
     release.
+  * debian/control{,.in}: Bump libepoxy (1.4) and pango (1.41.0) per upstream.
 
  -- Iain Lane <laney@debian.org>  Wed, 18 Jul 2018 14:08:52 +0100
 
