@@ -1,3 +1,9 @@
+gtk+3.0 (3.22.30-3) UNRELEASED; urgency=medium
+
+  * debian/{control{,.in},gbp.conf,watch}: Update for experimental
+
+ -- Iain Lane <laney@debian.org>  Wed, 18 Jul 2018 14:03:58 +0100
+
 gtk+3.0 (3.22.30-2) unstable; urgency=medium
 
   * Team upload
