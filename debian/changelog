@@ -1,8 +1,19 @@
-gtk+3.0 (3.22.30-3) UNRELEASED; urgency=medium
+gtk+3.0 (3.23.0-1) UNRELEASED; urgency=medium
 
   * debian/{control{,.in},gbp.conf,watch}: Update for experimental
+  * New upstream development release (!!!) 3.23.0:
+    + New font chooser features:
+     - Allow setting OpenType font features
+     - Show examples for OpenType font features
+     - Allow selecting OpenType font variations
+     - Support levels of details for selection
+    + New Emoji features:
+     - Support a completion popup for Emoji
+     - Drop Ctrl-Shift-e shortcut
+    + Other new apis:
+     - gdk_window_move_to_rect
 
- -- Iain Lane <laney@debian.org>  Wed, 18 Jul 2018 14:03:58 +0100
+ -- Iain Lane <laney@debian.org>  Wed, 18 Jul 2018 14:08:52 +0100
 
 gtk+3.0 (3.22.30-2) unstable; urgency=medium
 
