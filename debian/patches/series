@@ -5,4 +5,3 @@
 060_ignore-random-icons.patch
 no-accessibility-dump.patch
 reftest-known-fail.patch
-gdk-x11-Check-if-we-have-access-to-GL-before-using-G.patch
