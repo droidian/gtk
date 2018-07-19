@@ -498,6 +498,7 @@ libgdk-3.so.0 libgtk-3-0 #MINVER#
  (arch=linux-any)gdk_wayland_selection_add_targets_libgtk_only@Base 3.13.8
  (arch=linux-any)gdk_wayland_selection_clear_targets_libgtk_only@Base 3.13.8
  (arch=linux-any)gdk_wayland_window_announce_csd@Base 3.22.25
+ gdk_wayland_window_announce_ssd@Base 3.23.1
  (arch=linux-any)gdk_wayland_window_export_handle@Base 3.21.5
  (arch=linux-any)gdk_wayland_window_get_type@Base 3.9.10
  (arch=linux-any)gdk_wayland_window_get_wl_surface@Base 3.9.10
@@ -1793,7 +1794,20 @@ libgtk-3.so.0 libgtk-3-0 #MINVER#
  gtk_event_controller_get_type@Base 3.13.7
  gtk_event_controller_get_widget@Base 3.13.7
  gtk_event_controller_handle_event@Base 3.13.7
+ gtk_event_controller_key_forward@Base 3.23.1
+ gtk_event_controller_key_get_group@Base 3.23.1
+ gtk_event_controller_key_get_im_context@Base 3.23.1
+ gtk_event_controller_key_get_type@Base 3.23.1
+ gtk_event_controller_key_new@Base 3.23.1
+ gtk_event_controller_key_set_im_context@Base 3.23.1
+ gtk_event_controller_motion_get_type@Base 3.23.1
+ gtk_event_controller_motion_new@Base 3.23.1
  gtk_event_controller_reset@Base 3.13.7
+ gtk_event_controller_scroll_flags_get_type@Base 3.23.1
+ gtk_event_controller_scroll_get_flags@Base 3.23.1
+ gtk_event_controller_scroll_get_type@Base 3.23.1
+ gtk_event_controller_scroll_new@Base 3.23.1
+ gtk_event_controller_scroll_set_flags@Base 3.23.1
  gtk_event_controller_set_propagation_phase@Base 3.13.7
  gtk_event_sequence_state_get_type@Base 3.13.7
  gtk_events_pending@Base 3.0.0
@@ -2081,6 +2095,11 @@ libgtk-3.so.0 libgtk-3-0 #MINVER#
  gtk_gesture_single_set_button@Base 3.13.7
  gtk_gesture_single_set_exclusive@Base 3.13.7
  gtk_gesture_single_set_touch_only@Base 3.13.7
+ gtk_gesture_stylus_get_axes@Base 3.23.1
+ gtk_gesture_stylus_get_axis@Base 3.23.1
+ gtk_gesture_stylus_get_device_tool@Base 3.23.1
+ gtk_gesture_stylus_get_type@Base 3.23.1
+ gtk_gesture_stylus_new@Base 3.23.1
  gtk_gesture_swipe_get_type@Base 3.13.7
  gtk_gesture_swipe_get_velocity@Base 3.13.7
  gtk_gesture_swipe_new@Base 3.13.7

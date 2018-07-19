@@ -30,7 +30,7 @@ gtk+3.0 (3.23.1-1) UNRELEASED; urgency=medium
   * debian/patches/gdk-x11-Check-if-we-have-access-to-GL-before-using-G.patch:
     Drop - GTK now calls epoxy_has_glx() directly so this bypassed approach
     isn't necessary.
-  * debian/libgail-3-0.symbols: New symbols for this release.
+  * debian/libgail-3-0.symbols: New symbols from both releases.
   * debian/patches/0008-defaultvalue-Ignore-more-style-properties-that-Adwai.patch:
     Cherry-pick test fix patch from upstream !253.
 
