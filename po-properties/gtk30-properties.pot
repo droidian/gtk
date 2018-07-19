@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+ 3.23.0\n"
+"Project-Id-Version: gtk+ 3.23.1\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gtk"
 "%2B\n"
-"POT-Creation-Date: 2018-06-23 18:42-0400\n"
+"POT-Creation-Date: 2018-07-18 17:02-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1011,8 +1011,8 @@ msgid "Whether the proxies for this action look like radio action proxies"
 msgstr ""
 
 #: gtk/deprecated/gtktoggleaction.c:135 gtk/gtkcellrendererspinner.c:125
-#: gtk/gtkcheckmenuitem.c:209 gtk/gtkmenu.c:632 gtk/gtkmodelbutton.c:1151
-#: gtk/gtkmodelbutton.c:1152 gtk/gtkspinner.c:221 gtk/gtkswitch.c:895
+#: gtk/gtkcheckmenuitem.c:209 gtk/gtkmenu.c:632 gtk/gtkmodelbutton.c:1189
+#: gtk/gtkmodelbutton.c:1190 gtk/gtkspinner.c:221 gtk/gtkswitch.c:895
 #: gtk/gtktogglebutton.c:188 gtk/gtktoggletoolbutton.c:130
 msgid "Active"
 msgstr ""
@@ -2216,7 +2216,7 @@ msgstr ""
 msgid "Whether the rendered pixbuf should be colorized according to the state"
 msgstr ""
 
-#: gtk/gtkcellrendererpixbuf.c:281 gtk/gtkimage.c:358 gtk/gtkmodelbutton.c:1122
+#: gtk/gtkcellrendererpixbuf.c:281 gtk/gtkimage.c:358 gtk/gtkmodelbutton.c:1144
 #: gtk/gtkshortcutsshortcut.c:550 gtk/gtkwindow.c:838
 msgid "Icon"
 msgstr ""
@@ -2227,7 +2227,7 @@ msgstr ""
 
 #: gtk/gtkcellrendererprogress.c:156 gtk/gtkcellrenderertext.c:255
 #: gtk/gtkentrybuffer.c:350 gtk/gtkentry.c:953 gtk/gtkmessagedialog.c:214
-#: gtk/gtkmodelbutton.c:1136 gtk/gtkprogressbar.c:287 gtk/gtktextbuffer.c:218
+#: gtk/gtkmodelbutton.c:1158 gtk/gtkprogressbar.c:287 gtk/gtktextbuffer.c:218
 msgid "Text"
 msgstr ""
 
@@ -2264,7 +2264,7 @@ msgid "The vertical text alignment, from 0 (top) to 1 (bottom)."
 msgstr ""
 
 #: gtk/gtkcellrendererprogress.c:226 gtk/gtklevelbar.c:1097
-#: gtk/gtkmodelbutton.c:1182 gtk/gtkprogressbar.c:264 gtk/gtkrange.c:441
+#: gtk/gtkmodelbutton.c:1220 gtk/gtkprogressbar.c:264 gtk/gtkrange.c:441
 msgid "Inverted"
 msgstr ""
 
@@ -3500,7 +3500,7 @@ msgstr ""
 msgid "A list of style attributes to apply to the text of the label"
 msgstr ""
 
-#: gtk/gtkentry.c:1508 gtk/gtkplacessidebar.c:4837 gtk/gtktextview.c:1045
+#: gtk/gtkentry.c:1508 gtk/gtkplacessidebar.c:4839 gtk/gtktextview.c:1045
 msgid "Populate all"
 msgstr ""
 
@@ -3648,6 +3648,10 @@ msgstr ""
 msgid "Propagation phase at which this controller is run"
 msgstr ""
 
+#: gtk/gtkeventcontrollerscroll.c:374 gtk/gtkeventcontrollerscroll.c:375
+msgid "Flags"
+msgstr ""
+
 #: gtk/gtkexpander.c:300
 msgid "Expanded"
 msgstr ""
@@ -3660,7 +3664,7 @@ msgstr ""
 msgid "Text of the expander's label"
 msgstr ""
 
-#: gtk/gtkexpander.c:324 gtk/gtklabel.c:819
+#: gtk/gtkexpander.c:324 gtk/gtklabel.c:819 gtk/gtkmodelbutton.c:1174
 msgid "Use markup"
 msgstr ""
 
@@ -3743,7 +3747,7 @@ msgstr ""
 msgid "The current filter for selecting which files are displayed"
 msgstr ""
 
-#: gtk/gtkfilechooser.c:388 gtk/gtkplacessidebar.c:4803
+#: gtk/gtkfilechooser.c:388 gtk/gtkplacessidebar.c:4805
 #: gtk/gtkplacesview.c:2262
 msgid "Local Only"
 msgstr ""
@@ -5041,47 +5045,51 @@ msgstr ""
 msgid "GtkBox that holds the dialog's primary and secondary labels"
 msgstr ""
 
-#: gtk/gtkmodelbutton.c:1106
+#: gtk/gtkmodelbutton.c:1128
 msgid "Role"
 msgstr ""
 
-#: gtk/gtkmodelbutton.c:1107
+#: gtk/gtkmodelbutton.c:1129
 msgid "The role of this button"
 msgstr ""
 
-#: gtk/gtkmodelbutton.c:1123
+#: gtk/gtkmodelbutton.c:1145
 msgid "The icon"
 msgstr ""
 
-#: gtk/gtkmodelbutton.c:1137
+#: gtk/gtkmodelbutton.c:1159
 msgid "The text"
 msgstr ""
 
-#: gtk/gtkmodelbutton.c:1166
+#: gtk/gtkmodelbutton.c:1175
+msgid "The text of the button includes XML markup. See pango_parse_markup()"
+msgstr ""
+
+#: gtk/gtkmodelbutton.c:1204
 msgid "Menu name"
 msgstr ""
 
-#: gtk/gtkmodelbutton.c:1167
+#: gtk/gtkmodelbutton.c:1205
 msgid "The name of the menu to open"
 msgstr ""
 
-#: gtk/gtkmodelbutton.c:1183
+#: gtk/gtkmodelbutton.c:1221
 msgid "Whether the menu is a parent"
 msgstr ""
 
-#: gtk/gtkmodelbutton.c:1197
+#: gtk/gtkmodelbutton.c:1235
 msgid "Centered"
 msgstr ""
 
-#: gtk/gtkmodelbutton.c:1198
+#: gtk/gtkmodelbutton.c:1236
 msgid "Whether to center the contents"
 msgstr ""
 
-#: gtk/gtkmodelbutton.c:1213
+#: gtk/gtkmodelbutton.c:1251
 msgid "Iconic"
 msgstr ""
 
-#: gtk/gtkmodelbutton.c:1214
+#: gtk/gtkmodelbutton.c:1252
 msgid "Whether to prefer the icon over text"
 msgstr ""
 
@@ -5412,88 +5420,88 @@ msgstr ""
 msgid "If TRUE, the child can be made smaller than its requisition"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4766
+#: gtk/gtkplacessidebar.c:4768
 msgid "Location to Select"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4767
+#: gtk/gtkplacessidebar.c:4769
 msgid "The location to highlight in the sidebar"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4772 gtk/gtkplacesview.c:2283
+#: gtk/gtkplacessidebar.c:4774 gtk/gtkplacesview.c:2283
 msgid "Open Flags"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4773 gtk/gtkplacesview.c:2284
+#: gtk/gtkplacessidebar.c:4775 gtk/gtkplacesview.c:2284
 msgid ""
 "Modes in which the calling application can open locations selected in the "
 "sidebar"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4779
+#: gtk/gtkplacessidebar.c:4781
 msgid "Show recent files"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4780
+#: gtk/gtkplacessidebar.c:4782
 msgid "Whether the sidebar includes a builtin shortcut for recent files"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4785
+#: gtk/gtkplacessidebar.c:4787
 msgid "Show 'Desktop'"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4786
+#: gtk/gtkplacessidebar.c:4788
 msgid "Whether the sidebar includes a builtin shortcut to the Desktop folder"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4791
+#: gtk/gtkplacessidebar.c:4793
 msgid "Show 'Connect to Server'"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4792
+#: gtk/gtkplacessidebar.c:4794
 msgid ""
 "Whether the sidebar includes a builtin shortcut to a 'Connect to server' "
 "dialog"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4797
+#: gtk/gtkplacessidebar.c:4799
 msgid "Show 'Enter Location'"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4798
+#: gtk/gtkplacessidebar.c:4800
 msgid ""
 "Whether the sidebar includes a builtin shortcut to manually enter a location"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4804 gtk/gtkplacesview.c:2263
+#: gtk/gtkplacessidebar.c:4806 gtk/gtkplacesview.c:2263
 msgid "Whether the sidebar only includes local files"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4809
+#: gtk/gtkplacessidebar.c:4811
 msgid "Show 'Trash'"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4810
+#: gtk/gtkplacessidebar.c:4812
 msgid "Whether the sidebar includes a builtin shortcut to the Trash location"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4815
+#: gtk/gtkplacessidebar.c:4817
 msgid "Show 'Other locations'"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4816
+#: gtk/gtkplacessidebar.c:4818
 msgid "Whether the sidebar includes an item to show external locations"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4821
+#: gtk/gtkplacessidebar.c:4823
 msgid "Show “Starred Location”"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4822
+#: gtk/gtkplacessidebar.c:4824
 msgid "Whether the sidebar includes an item to show starred files"
 msgstr ""
 
-#: gtk/gtkplacessidebar.c:4838
+#: gtk/gtkplacessidebar.c:4840
 msgid "Whether to emit ::populate-popup for popups that are not menus"
 msgstr ""
 

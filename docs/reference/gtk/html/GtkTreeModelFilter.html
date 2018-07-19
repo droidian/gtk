@@ -8,7 +8,7 @@
 <link rel="up" href="TreeWidgetObjects.html" title="Tree, List and Icon Grid Widgets">
 <link rel="prev" href="GtkTreeModelSort.html" title="GtkTreeModelSort">
 <link rel="next" href="GtkCellLayout.html" title="GtkCellLayout">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -297,7 +297,7 @@ is determined</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>data</p></td>
-<td class="parameter_description"><p> user data given to <a class="link" href="GtkTreeModelFilter.html#gtk-tree-model-filter-set-visible-func" title="gtk_tree_model_filter_set_visible_func ()"><code class="function">gtk_tree_model_filter_set_visible_func()</code></a>. </p></td>
+<td class="parameter_description"><p>user data given to <a class="link" href="GtkTreeModelFilter.html#gtk-tree-model-filter-set-visible-func" title="gtk_tree_model_filter_set_visible_func ()"><code class="function">gtk_tree_model_filter_set_visible_func()</code></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -347,7 +347,7 @@ particularly efficient operation.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>value</p></td>
-<td class="parameter_description"><p> A <span class="type">GValue</span> which is already initialized for
+<td class="parameter_description"><p>A <span class="type">GValue</span> which is already initialized for
 with the correct type for the column <em class="parameter"><code>column</code></em>
 . </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span></td>
@@ -359,7 +359,7 @@ with the correct type for the column <em class="parameter"><code>column</code></
 </tr>
 <tr>
 <td class="parameter_name"><p>data</p></td>
-<td class="parameter_description"><p> user data given to <a class="link" href="GtkTreeModelFilter.html#gtk-tree-model-filter-set-modify-func" title="gtk_tree_model_filter_set_modify_func ()"><code class="function">gtk_tree_model_filter_set_modify_func()</code></a>. </p></td>
+<td class="parameter_description"><p>user data given to <a class="link" href="GtkTreeModelFilter.html#gtk-tree-model-filter-set-modify-func" title="gtk_tree_model_filter_set_modify_func ()"><code class="function">gtk_tree_model_filter_set_modify_func()</code></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -392,7 +392,7 @@ and <em class="parameter"><code>root</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>root</p></td>
-<td class="parameter_description"><p> A <a class="link" href="GtkTreeModel.html#GtkTreePath"><span class="type">GtkTreePath</span></a> or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>A <a class="link" href="GtkTreeModel.html#GtkTreePath"><span class="type">GtkTreePath</span></a> or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -400,7 +400,7 @@ and <em class="parameter"><code>root</code></em>
 </div>
 <div class="refsect3">
 <a name="gtk-tree-model-filter-new.returns"></a><h4>Returns</h4>
-<p> A new <a class="link" href="GtkTreeModel.html" title="GtkTreeModel"><span class="type">GtkTreeModel</span></a>. </p>
+<p>A new <a class="link" href="GtkTreeModel.html" title="GtkTreeModel"><span class="type">GtkTreeModel</span></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.4</p>
@@ -470,12 +470,12 @@ once for a given filter model.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>data</p></td>
-<td class="parameter_description"><p> User data to pass to the visible function, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>User data to pass to the visible function, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>destroy</p></td>
-<td class="parameter_description"><p> Destroy notifier of <em class="parameter"><code>data</code></em>
+<td class="parameter_description"><p>Destroy notifier of <em class="parameter"><code>data</code></em>
 , or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -529,7 +529,7 @@ can only be called once for a given filter model.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>types</p></td>
-<td class="parameter_description"><p> The <span class="type">GTypes</span> of the columns. </p></td>
+<td class="parameter_description"><p>The <span class="type">GTypes</span> of the columns. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_columns]</span></td>
 </tr>
 <tr>
@@ -539,12 +539,12 @@ can only be called once for a given filter model.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>data</p></td>
-<td class="parameter_description"><p> User data to pass to the modify function, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>User data to pass to the modify function, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>destroy</p></td>
-<td class="parameter_description"><p> Destroy notifier of <em class="parameter"><code>data</code></em>
+<td class="parameter_description"><p>Destroy notifier of <em class="parameter"><code>data</code></em>
 , or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -618,7 +618,7 @@ gtk_tree_model_filter_get_model (<em class="parameter"><code><a class="link" hre
 </div>
 <div class="refsect3">
 <a name="gtk-tree-model-filter-get-model.returns"></a><h4>Returns</h4>
-<p> A pointer to a <a class="link" href="GtkTreeModel.html" title="GtkTreeModel"><span class="type">GtkTreeModel</span></a>. </p>
+<p>A pointer to a <a class="link" href="GtkTreeModel.html" title="GtkTreeModel"><span class="type">GtkTreeModel</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.4</p>
@@ -654,7 +654,7 @@ returned.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>filter_iter</p></td>
-<td class="parameter_description"><p> An uninitialized <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>. </p></td>
+<td class="parameter_description"><p>An uninitialized <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -701,7 +701,7 @@ gtk_tree_model_filter_convert_iter_to_child_iter
 </tr>
 <tr>
 <td class="parameter_name"><p>child_iter</p></td>
-<td class="parameter_description"><p> An uninitialized <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>. </p></td>
+<td class="parameter_description"><p>An uninitialized <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -756,7 +756,7 @@ is returned.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-tree-model-filter-convert-child-path-to-path.returns"></a><h4>Returns</h4>
-<p> A newly allocated <a class="link" href="GtkTreeModel.html#GtkTreePath"><span class="type">GtkTreePath</span></a>, or <code class="literal">NULL</code>. </p>
+<p>A newly allocated <a class="link" href="GtkTreeModel.html#GtkTreePath"><span class="type">GtkTreePath</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.4</p>
@@ -801,7 +801,7 @@ does not point to a location in the child model, <code class="literal">NULL</cod
 </div>
 <div class="refsect3">
 <a name="gtk-tree-model-filter-convert-path-to-child-path.returns"></a><h4>Returns</h4>
-<p> A newly allocated <a class="link" href="GtkTreeModel.html#GtkTreePath"><span class="type">GtkTreePath</span></a>, or <code class="literal">NULL</code>. </p>
+<p>A newly allocated <a class="link" href="GtkTreeModel.html#GtkTreePath"><span class="type">GtkTreePath</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.4</p>
@@ -889,6 +889,6 @@ all unreffed iters will be invalid.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

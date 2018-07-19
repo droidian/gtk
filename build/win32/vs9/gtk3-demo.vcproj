@@ -200,6 +200,7 @@
    <File RelativePath="..\..\..\demos\gtk-demo\offscreen_window2.c" />
    <File RelativePath="..\..\..\demos\gtk-demo\overlay.c" />
    <File RelativePath="..\..\..\demos\gtk-demo\overlay2.c" />
+   <File RelativePath="..\..\..\demos\gtk-demo\paint.c" />
    <File RelativePath="..\..\..\demos\gtk-demo\panes.c" />
    <File RelativePath="..\..\..\demos\gtk-demo\pickers.c" />
    <File RelativePath="..\..\..\demos\gtk-demo\pixbufs.c" />

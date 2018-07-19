@@ -8,7 +8,7 @@
 <link rel="up" href="Printing.html" title="Printing">
 <link rel="prev" href="GtkPrintSettings.html" title="GtkPrintSettings">
 <link rel="next" href="GtkPaperSize.html" title="GtkPaperSize">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -280,7 +280,7 @@
 </div>
 <div class="refsect1">
 <a name="GtkPageSetup.includes"></a><h2>Includes</h2>
-<pre class="synopsis">#include &lt;gtk/gtk.h&gt;
+<pre class="synopsis">#include &lt;gtk/gtkunixprint.h&gt;
 </pre>
 </div>
 <div class="refsect1">
@@ -365,7 +365,7 @@ gtk_page_setup_copy (<em class="parameter"><code><a class="link" href="GtkPageSe
 </div>
 <div class="refsect3">
 <a name="gtk-page-setup-copy.returns"></a><h4>Returns</h4>
-<p> a copy of <em class="parameter"><code>other</code></em>
+<p>a copy of <em class="parameter"><code>other</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -452,7 +452,7 @@ gtk_page_setup_get_paper_size (<em class="parameter"><code><a class="link" href=
 </div>
 <div class="refsect3">
 <a name="gtk-page-setup-get-paper-size.returns"></a><h4>Returns</h4>
-<p> the paper size. </p>
+<p>the paper size. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.10</p>
@@ -1000,12 +1000,12 @@ or <code class="literal">NULL</code> if an error occurred. See <a class="link" h
 <tbody>
 <tr>
 <td class="parameter_name"><p>file_name</p></td>
-<td class="parameter_description"><p> the filename to read the page setup from. </p></td>
+<td class="parameter_description"><p>the filename to read the page setup from. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> return location for an error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for an error, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1045,13 +1045,13 @@ page setup, or <code class="literal">NULL</code> if an error occurred.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>group_name</p></td>
-<td class="parameter_description"><p> the name of the group in the key_file to read, or <code class="literal">NULL</code>
+<td class="parameter_description"><p>the name of the group in the key_file to read, or <code class="literal">NULL</code>
 to use the default name “Page Setup”. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> return location for an error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for an error, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1087,7 +1087,7 @@ the format produced by <a class="link" href="GtkPageSetup.html#gtk-page-setup-to
 </div>
 <div class="refsect3">
 <a name="gtk-page-setup-new-from-gvariant.returns"></a><h4>Returns</h4>
-<p> a new <a class="link" href="GtkPageSetup.html" title="GtkPageSetup"><span class="type">GtkPageSetup</span></a> object. </p>
+<p>a new <a class="link" href="GtkPageSetup.html" title="GtkPageSetup"><span class="type">GtkPageSetup</span></a> object. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-22.html#api-index-3.22">3.22</a></p>
@@ -1118,12 +1118,12 @@ See <a class="link" href="GtkPageSetup.html#gtk-page-setup-to-file" title="gtk_p
 </tr>
 <tr>
 <td class="parameter_name"><p>file_name</p></td>
-<td class="parameter_description"><p> the filename to read the page setup from. </p></td>
+<td class="parameter_description"><p>the filename to read the page setup from. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> return location for an error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for an error, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1168,13 +1168,13 @@ gtk_page_setup_load_key_file (<em class="parameter"><code><a class="link" href="
 </tr>
 <tr>
 <td class="parameter_name"><p>group_name</p></td>
-<td class="parameter_description"><p> the name of the group in the key_file to read, or <code class="literal">NULL</code>
+<td class="parameter_description"><p>the name of the group in the key_file to read, or <code class="literal">NULL</code>
 to use the default name “Page Setup”. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> return location for an error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for an error, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1212,12 +1212,12 @@ gtk_page_setup_to_file (<em class="parameter"><code><a class="link" href="GtkPag
 </tr>
 <tr>
 <td class="parameter_name"><p>file_name</p></td>
-<td class="parameter_description"><p> the file to save to. </p></td>
+<td class="parameter_description"><p>the file to save to. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> return location for errors, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for errors, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1304,6 +1304,6 @@ gtk_page_setup_to_gvariant (<em class="parameter"><code><a class="link" href="Gt
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

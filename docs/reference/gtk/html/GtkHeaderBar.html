@@ -8,7 +8,7 @@
 <link rel="up" href="LayoutContainers.html" title="Layout Containers">
 <link rel="prev" href="GtkActionBar.html" title="GtkActionBar">
 <link rel="next" href="GtkOverlay.html" title="GtkOverlay">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -267,11 +267,11 @@
 <a name="GtkHeaderBar.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkHeaderBar implements
- AtkImplementorIface and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
+ AtkImplementor and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GtkHeaderBar.includes"></a><h2>Includes</h2>
-<pre class="synopsis">#include &lt;gtk/gtk.h&gt;
+<pre class="synopsis">#include &lt;gtk/gtkunixprint.h&gt;
 </pre>
 </div>
 <div class="refsect1">
@@ -328,7 +328,7 @@ application name.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>title</p></td>
-<td class="parameter_description"><p> a title, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a title, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -359,7 +359,7 @@ gtk_header_bar_get_title (<em class="parameter"><code><a class="link" href="GtkH
 </div>
 <div class="refsect3">
 <a name="gtk-header-bar-get-title.returns"></a><h4>Returns</h4>
-<p> the title of the header, or <code class="literal">NULL</code> if none has
+<p>the title of the header, or <code class="literal">NULL</code> if none has
 been set explicitly. The returned string is owned by the widget
 and must not be modified or freed. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
@@ -393,7 +393,7 @@ even if none is currently set. If this is not desired, set the
 </tr>
 <tr>
 <td class="parameter_name"><p>subtitle</p></td>
-<td class="parameter_description"><p> a subtitle, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a subtitle, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -424,7 +424,7 @@ gtk_header_bar_get_subtitle (<em class="parameter"><code><a class="link" href="G
 </div>
 <div class="refsect3">
 <a name="gtk-header-bar-get-subtitle.returns"></a><h4>Returns</h4>
-<p> the subtitle of the header, or <code class="literal">NULL</code> if none has
+<p>the subtitle of the header, or <code class="literal">NULL</code> if none has
 been set explicitly. The returned string is owned by the widget
 and must not be modified or freed. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
@@ -522,7 +522,7 @@ label to be visible again.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>title_widget</p></td>
-<td class="parameter_description"><p> a custom widget to use for a title. </p></td>
+<td class="parameter_description"><p>a custom widget to use for a title. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -554,7 +554,7 @@ gtk_header_bar_get_custom_title (<em class="parameter"><code><a class="link" hre
 </div>
 <div class="refsect3">
 <a name="gtk-header-bar-get-custom-title.returns"></a><h4>Returns</h4>
-<p> the custom title widget
+<p>the custom title widget
 of the header, or <code class="literal">NULL</code> if none has been set explicitly. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -728,7 +728,7 @@ on the left, and minimize, maximize and close buttons on the right.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>layout</p></td>
-<td class="parameter_description"><p> a decoration layout, or <code class="literal">NULL</code> to
+<td class="parameter_description"><p>a decoration layout, or <code class="literal">NULL</code> to
 unset the layout. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -876,6 +876,6 @@ shown if the window can't be closed).</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

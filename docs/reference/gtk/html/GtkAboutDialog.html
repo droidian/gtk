@@ -8,7 +8,7 @@
 <link rel="up" href="WindowWidgets.html" title="Windows">
 <link rel="prev" href="GtkMessageDialog.html" title="GtkMessageDialog">
 <link rel="next" href="GtkAssistant.html" title="GtkAssistant">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -445,7 +445,7 @@
 <a name="GtkAboutDialog.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkAboutDialog implements
- AtkImplementorIface and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
+ AtkImplementor and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GtkAboutDialog.includes"></a><h2>Includes</h2>
@@ -612,7 +612,7 @@ gtk_about_dialog_set_version (<em class="parameter"><code><a class="link" href="
 </tr>
 <tr>
 <td class="parameter_name"><p>version</p></td>
-<td class="parameter_description"><p> the version string. </p></td>
+<td class="parameter_description"><p>the version string. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -672,7 +672,7 @@ This should be a short string of one or two lines.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>copyright</p></td>
-<td class="parameter_description"><p> the copyright string. </p></td>
+<td class="parameter_description"><p>the copyright string. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -732,7 +732,7 @@ This should be a short string of one or two lines.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>comments</p></td>
-<td class="parameter_description"><p> a comments string. </p></td>
+<td class="parameter_description"><p>a comments string. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -794,7 +794,7 @@ hidden.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>license</p></td>
-<td class="parameter_description"><p> the license information or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>the license information or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -977,7 +977,7 @@ gtk_about_dialog_set_website (<em class="parameter"><code><a class="link" href="
 </tr>
 <tr>
 <td class="parameter_name"><p>website</p></td>
-<td class="parameter_description"><p> a URL string starting with "http://". </p></td>
+<td class="parameter_description"><p>a URL string starting with "http://". </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1068,7 +1068,7 @@ of the secondary credits dialog.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-about-dialog-get-authors.returns"></a><h4>Returns</h4>
-<p> A
+<p>A
 <code class="literal">NULL</code>-terminated string array containing the authors. The array is
 owned by the about dialog and must not be modified. </p>
 <p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -1099,7 +1099,7 @@ of the secondary credits dialog.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>authors</p></td>
-<td class="parameter_description"><p> a <code class="literal">NULL</code>-terminated array of strings. </p></td>
+<td class="parameter_description"><p>a <code class="literal">NULL</code>-terminated array of strings. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></td>
 </tr>
 </tbody>
@@ -1131,7 +1131,7 @@ of the secondary credits dialog.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-about-dialog-get-artists.returns"></a><h4>Returns</h4>
-<p> A
+<p>A
 <code class="literal">NULL</code>-terminated string array containing the artists. The array is
 owned by the about dialog and must not be modified. </p>
 <p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -1162,7 +1162,7 @@ of the secondary credits dialog.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>artists</p></td>
-<td class="parameter_description"><p> a <code class="literal">NULL</code>-terminated array of strings. </p></td>
+<td class="parameter_description"><p>a <code class="literal">NULL</code>-terminated array of strings. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></td>
 </tr>
 </tbody>
@@ -1194,7 +1194,7 @@ tab of the secondary credits dialog.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-about-dialog-get-documenters.returns"></a><h4>Returns</h4>
-<p> A
+<p>A
 <code class="literal">NULL</code>-terminated string array containing the documenters. The
 array is owned by the about dialog and must not be modified. </p>
 <p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -1225,7 +1225,7 @@ of the secondary credits dialog.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>documenters</p></td>
-<td class="parameter_description"><p> a <code class="literal">NULL</code>-terminated array of strings. </p></td>
+<td class="parameter_description"><p>a <code class="literal">NULL</code>-terminated array of strings. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></td>
 </tr>
 </tbody>
@@ -1302,7 +1302,7 @@ and hide the tab.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>translator_credits</p></td>
-<td class="parameter_description"><p> the translator credits. </p></td>
+<td class="parameter_description"><p>the translator credits. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1333,7 +1333,7 @@ gtk_about_dialog_get_logo (<em class="parameter"><code><a class="link" href="Gtk
 </div>
 <div class="refsect3">
 <a name="gtk-about-dialog-get-logo.returns"></a><h4>Returns</h4>
-<p> the pixbuf displayed as logo. The
+<p>the pixbuf displayed as logo. The
 pixbuf is owned by the about dialog. If you want to keep a
 reference to it, you have to call <code class="function">g_object_ref()</code> on it. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -1365,7 +1365,7 @@ If it is <code class="literal">NULL</code>, the default window icon set with
 </tr>
 <tr>
 <td class="parameter_name"><p>logo</p></td>
-<td class="parameter_description"><p> a <span class="type">GdkPixbuf</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <span class="type">GdkPixbuf</span>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1427,7 +1427,7 @@ If it is <code class="literal">NULL</code>, the default window icon set with
 </tr>
 <tr>
 <td class="parameter_name"><p>icon_name</p></td>
-<td class="parameter_description"><p> an icon name, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>an icon name, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1464,7 +1464,7 @@ gtk_about_dialog_add_credit_section (<em class="parameter"><code><a class="link"
 </tr>
 <tr>
 <td class="parameter_name"><p>people</p></td>
-<td class="parameter_description"><p> The people who belong to that section. </p></td>
+<td class="parameter_description"><p>The people who belong to that section. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></td>
 </tr>
 </tbody>
@@ -1493,7 +1493,7 @@ reused for future invocations of this function.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p> transient parent, or <code class="literal">NULL</code> for none. </p></td>
+<td class="parameter_description"><p>transient parent, or <code class="literal">NULL</code> for none. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1858,6 +1858,6 @@ which is to call <a class="link" href="gtk3-Filesystem-utilities.html#gtk-show-u
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

@@ -209,6 +209,7 @@
    <ClCompile Include="..\..\..\demos\gtk-demo\offscreen_window2.c" />
    <ClCompile Include="..\..\..\demos\gtk-demo\overlay.c" />
    <ClCompile Include="..\..\..\demos\gtk-demo\overlay2.c" />
+   <ClCompile Include="..\..\..\demos\gtk-demo\paint.c" />
    <ClCompile Include="..\..\..\demos\gtk-demo\panes.c" />
    <ClCompile Include="..\..\..\demos\gtk-demo\pickers.c" />
    <ClCompile Include="..\..\..\demos\gtk-demo\pixbufs.c" />

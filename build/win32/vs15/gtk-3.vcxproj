@@ -467,6 +467,9 @@
    <ClCompile Include="..\..\..\gtk\gtkentrycompletion.c" />
    <ClCompile Include="..\..\..\gtk\gtkeventbox.c" />
    <ClCompile Include="..\..\..\gtk\gtkeventcontroller.c" />
+   <ClCompile Include="..\..\..\gtk\gtkeventcontrollerkey.c" />
+   <ClCompile Include="..\..\..\gtk\gtkeventcontrollermotion.c" />
+   <ClCompile Include="..\..\..\gtk\gtkeventcontrollerscroll.c" />
    <ClCompile Include="..\..\..\gtk\gtkexpander.c" />
    <ClCompile Include="..\..\..\gtk\gtkfilechooser.c" />
    <ClCompile Include="..\..\..\gtk\gtkfilechooserbutton.c" />
@@ -496,6 +499,7 @@
    <ClCompile Include="..\..\..\gtk\gtkgesturepan.c" />
    <ClCompile Include="..\..\..\gtk\gtkgesturerotate.c" />
    <ClCompile Include="..\..\..\gtk\gtkgesturesingle.c" />
+   <ClCompile Include="..\..\..\gtk\gtkgesturestylus.c" />
    <ClCompile Include="..\..\..\gtk\gtkgestureswipe.c" />
    <ClCompile Include="..\..\..\gtk\gtkgesturezoom.c" />
    <ClCompile Include="..\..\..\gtk\gtkglarea.c" />

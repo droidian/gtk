@@ -8,7 +8,7 @@
 <link rel="up" href="Application.html" title="Application support">
 <link rel="prev" href="Application.html" title="Application support">
 <link rel="next" href="GtkApplicationWindow.html" title="GtkApplicationWindow">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -309,7 +309,7 @@ GtkApplication implements
 </div>
 <div class="refsect1">
 <a name="GtkApplication.includes"></a><h2>Includes</h2>
-<pre class="synopsis">#include &lt;gtk/gtk.h&gt;
+<pre class="synopsis">#include &lt;gtk/gtkunixprint.h&gt;
 </pre>
 </div>
 <div class="refsect1">
@@ -420,7 +420,7 @@ GTK+ 3.6 or later.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>application_id</p></td>
-<td class="parameter_description"><p> The application ID. </p></td>
+<td class="parameter_description"><p>The application ID. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -553,7 +553,7 @@ deletion.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-application-get-windows.returns"></a><h4>Returns</h4>
-<p> a <span class="type">GList</span> of <a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a>. </p>
+<p>a <span class="type">GList</span> of <a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a>. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GtkWindow][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-0.html#api-index-3.0">3.0</a></p>
@@ -591,7 +591,7 @@ gtk_application_get_window_by_id (<em class="parameter"><code><a class="link" hr
 </div>
 <div class="refsect3">
 <a name="gtk-application-get-window-by-id.returns"></a><h4>Returns</h4>
-<p> the window with ID <em class="parameter"><code>id</code></em>
+<p>the window with ID <em class="parameter"><code>id</code></em>
 , or
 <code class="literal">NULL</code> if there is no window with this ID. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -625,7 +625,7 @@ recently-focused window within this application.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-application-get-active-window.returns"></a><h4>Returns</h4>
-<p> the active window, or <code class="literal">NULL</code> if
+<p>the active window, or <code class="literal">NULL</code> if
 there isn't one. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -674,7 +674,7 @@ this window to find out more about why the action is inhibited.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>window</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -684,7 +684,7 @@ this window to find out more about why the action is inhibited.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>reason</p></td>
-<td class="parameter_description"><p> a short, human-readable string that explains
+<td class="parameter_description"><p>a short, human-readable string that explains
 why these operations are inhibited. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -850,7 +850,7 @@ gtk_application_get_app_menu (<em class="parameter"><code><a class="link" href="
 </div>
 <div class="refsect3">
 <a name="gtk-application-get-app-menu.returns"></a><h4>Returns</h4>
-<p> the application menu of <em class="parameter"><code>application</code></em>
+<p>the application menu of <em class="parameter"><code>application</code></em>
 or <code class="literal">NULL</code> if no application menu has been set. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -892,7 +892,7 @@ selecting these menu items.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>app_menu</p></td>
-<td class="parameter_description"><p> a <span class="type">GMenuModel</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <span class="type">GMenuModel</span>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -924,7 +924,7 @@ gtk_application_get_menubar (<em class="parameter"><code><a class="link" href="G
 </div>
 <div class="refsect3">
 <a name="gtk-application-get-menubar.returns"></a><h4>Returns</h4>
-<p> the menubar for windows of <em class="parameter"><code>application</code></em>
+<p>the menubar for windows of <em class="parameter"><code>application</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -967,7 +967,7 @@ user selecting these menu items.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>menubar</p></td>
-<td class="parameter_description"><p> a <span class="type">GMenuModel</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <span class="type">GMenuModel</span>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1008,7 +1008,7 @@ for more information.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-application-get-menu-by-id.returns"></a><h4>Returns</h4>
-<p> Gets the menu with the
+<p>Gets the menu with the
 given id from the automatically loaded resources. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1068,7 +1068,7 @@ than calling this function for each accelerator.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>parameter</p></td>
-<td class="parameter_description"><p> parameter to pass when activating the action,
+<td class="parameter_description"><p>parameter to pass when activating the action,
 or <code class="literal">NULL</code> if the action does not accept an activation parameter. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1111,7 +1111,7 @@ with <a class="link" href="GtkApplication.html#gtk-application-add-accelerator" 
 </tr>
 <tr>
 <td class="parameter_name"><p>parameter</p></td>
-<td class="parameter_description"><p> parameter to pass when activating the action,
+<td class="parameter_description"><p>parameter to pass when activating the action,
 or <code class="literal">NULL</code> if the action does not accept an activation parameter. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1145,7 +1145,7 @@ See <a class="link" href="GtkApplication.html#gtk-application-set-accels-for-act
 </div>
 <div class="refsect3">
 <a name="gtk-application-list-action-descriptions.returns"></a><h4>Returns</h4>
-<p> a <code class="literal">NULL</code>-terminated array of strings,
+<p>a <code class="literal">NULL</code>-terminated array of strings,
 free with <code class="function">g_strfreev()</code> when done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -1184,7 +1184,7 @@ and target to obtain accelerators for</p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-application-get-accels-for-action.returns"></a><h4>Returns</h4>
-<p> accelerators for <em class="parameter"><code>detailed_action_name</code></em>
+<p>accelerators for <em class="parameter"><code>detailed_action_name</code></em>
 , as
 a <code class="literal">NULL</code>-terminated array. Free with <code class="function">g_strfreev()</code> when no longer needed. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -1230,7 +1230,7 @@ and target to associate accelerators with</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>accels</p></td>
-<td class="parameter_description"><p> a list of accelerators in the format
+<td class="parameter_description"><p>a list of accelerators in the format
 understood by <a class="link" href="gtk3-Keyboard-Accelerators.html#gtk-accelerator-parse" title="gtk_accelerator_parse ()"><code class="function">gtk_accelerator_parse()</code></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></td>
 </tr>
@@ -1282,7 +1282,7 @@ If you are unsure, check it with <a class="link" href="gtk3-Keyboard-Accelerator
 </div>
 <div class="refsect3">
 <a name="gtk-application-get-actions-for-accel.returns"></a><h4>Returns</h4>
-<p> a <code class="literal">NULL</code>-terminated array of actions for <em class="parameter"><code>accel</code></em>
+<p>a <code class="literal">NULL</code>-terminated array of actions for <em class="parameter"><code>accel</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -1501,6 +1501,6 @@ through <a class="link" href="GtkApplication.html#gtk-application-remove-window"
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <link rel="up" href="ButtonWidgets.html" title="Buttons and Toggles">
 <link rel="prev" href="GtkLinkButton.html" title="GtkLinkButton">
 <link rel="next" href="GtkSwitch.html" title="GtkSwitch">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -230,7 +230,7 @@
 <a name="GtkMenuButton.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkMenuButton implements
- AtkImplementorIface,  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>,  <a class="link" href="GtkActionable.html" title="GtkActionable">GtkActionable</a> and  <a class="link" href="GtkActivatable.html" title="GtkActivatable">GtkActivatable</a>.</p>
+ AtkImplementor,  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>,  <a class="link" href="GtkActionable.html" title="GtkActionable">GtkActionable</a> and  <a class="link" href="GtkActivatable.html" title="GtkActivatable">GtkActivatable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GtkMenuButton.includes"></a><h2>Includes</h2>
@@ -375,7 +375,7 @@ are dissociated from the <em class="parameter"><code>menu_button</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>menu</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkMenu.html" title="GtkMenu"><span class="type">GtkMenu</span></a>, or <code class="literal">NULL</code> to unset and disable the button. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkMenu.html" title="GtkMenu"><span class="type">GtkMenu</span></a>, or <code class="literal">NULL</code> to unset and disable the button. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -408,7 +408,7 @@ returns <code class="literal">NULL</code>.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-menu-button-get-popup.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="GtkMenu.html" title="GtkMenu"><span class="type">GtkMenu</span></a> or <code class="literal">NULL</code>. </p>
+<p>a <a class="link" href="GtkMenu.html" title="GtkMenu"><span class="type">GtkMenu</span></a> or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-6.html#api-index-3.6">3.6</a></p>
@@ -441,7 +441,7 @@ are dissociated from the <em class="parameter"><code>menu_button</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>popover</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkPopover.html" title="GtkPopover"><span class="type">GtkPopover</span></a>, or <code class="literal">NULL</code> to unset and disable the button. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkPopover.html" title="GtkPopover"><span class="type">GtkPopover</span></a>, or <code class="literal">NULL</code> to unset and disable the button. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -474,7 +474,7 @@ returns <code class="literal">NULL</code>.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-menu-button-get-popover.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="GtkPopover.html" title="GtkPopover"><span class="type">GtkPopover</span></a> or <code class="literal">NULL</code>. </p>
+<p>a <a class="link" href="GtkPopover.html" title="GtkPopover"><span class="type">GtkPopover</span></a> or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-12.html#api-index-3.12">3.12</a></p>
@@ -511,7 +511,7 @@ to <code class="literal">NULL</code>.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>menu_model</p></td>
-<td class="parameter_description"><p> a <span class="type">GMenuModel</span>, or <code class="literal">NULL</code> to unset and disable the
+<td class="parameter_description"><p>a <span class="type">GMenuModel</span>, or <code class="literal">NULL</code> to unset and disable the
 button. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
@@ -543,7 +543,7 @@ gtk_menu_button_get_menu_model (<em class="parameter"><code><a class="link" href
 </div>
 <div class="refsect3">
 <a name="gtk-menu-button-get-menu-model.returns"></a><h4>Returns</h4>
-<p> a <span class="type">GMenuModel</span> or <code class="literal">NULL</code>. </p>
+<p>a <span class="type">GMenuModel</span> or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-6.html#api-index-3.6">3.6</a></p>
@@ -703,7 +703,7 @@ and not for popovers.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>align_widget</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -734,7 +734,7 @@ gtk_menu_button_get_align_widget (<em class="parameter"><code><a class="link" hr
 </div>
 <div class="refsect3">
 <a name="gtk-menu-button-get-align-widget.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> value or <code class="literal">NULL</code>. </p>
+<p>a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> value or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-6.html#api-index-3.6">3.6</a></p>
@@ -859,6 +859,6 @@ or a <a class="link" href="GtkMenu.html" title="GtkMenu"><span class="type">GtkM
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

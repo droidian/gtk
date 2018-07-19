@@ -8,7 +8,7 @@
 <link rel="up" href="TreeWidgetObjects.html" title="Tree, List and Icon Grid Widgets">
 <link rel="prev" href="GtkListStore.html" title="GtkListStore">
 <link rel="next" href="MenusAndCombos.html" title="Menus, Combo Box, Toolbar">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -351,7 +351,7 @@ gtk_tree_store_newv (<em class="parameter"><code><span class="type">gint</span> 
 </tr>
 <tr>
 <td class="parameter_name"><p>types</p></td>
-<td class="parameter_description"><p> an array of <span class="type">GType</span> types for the columns, from first to last. </p></td>
+<td class="parameter_description"><p>an array of <span class="type">GType</span> types for the columns, from first to last. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_columns]</span></td>
 </tr>
 </tbody>
@@ -359,7 +359,7 @@ gtk_tree_store_newv (<em class="parameter"><code><span class="type">gint</span> 
 </div>
 <div class="refsect3">
 <a name="gtk-tree-store-newv.returns"></a><h4>Returns</h4>
-<p> a new <a class="link" href="GtkTreeStore.html" title="GtkTreeStore"><span class="type">GtkTreeStore</span></a>. </p>
+<p>a new <a class="link" href="GtkTreeStore.html" title="GtkTreeStore"><span class="type">GtkTreeStore</span></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -395,7 +395,7 @@ or a method on the <a class="link" href="GtkTreeModel.html" title="GtkTreeModel"
 </tr>
 <tr>
 <td class="parameter_name"><p>types</p></td>
-<td class="parameter_description"><p> An array of <span class="type">GType</span> types, one for each column. </p></td>
+<td class="parameter_description"><p>An array of <span class="type">GType</span> types, one for each column. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_columns]</span></td>
 </tr>
 </tbody>
@@ -565,12 +565,12 @@ the number of columns to change is not known until run-time.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>columns</p></td>
-<td class="parameter_description"><p> an array of column numbers. </p></td>
+<td class="parameter_description"><p>an array of column numbers. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_values]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>values</p></td>
-<td class="parameter_description"><p> an array of GValues. </p></td>
+<td class="parameter_description"><p>an array of GValues. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_values]</span></td>
 </tr>
 <tr>
@@ -660,12 +660,12 @@ called.  To fill in values, you need to call <a class="link" href="GtkTreeStore.
 </tr>
 <tr>
 <td class="parameter_name"><p>iter</p></td>
-<td class="parameter_description"><p> An unset <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a> to set to the new row. </p></td>
+<td class="parameter_description"><p>An unset <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a> to set to the new row. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p> A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -721,17 +721,17 @@ this function is called.  To fill in values, you need to call
 </tr>
 <tr>
 <td class="parameter_name"><p>iter</p></td>
-<td class="parameter_description"><p> An unset <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a> to set to the new row. </p></td>
+<td class="parameter_description"><p>An unset <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a> to set to the new row. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p> A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>sibling</p></td>
-<td class="parameter_description"><p> A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -782,17 +782,17 @@ this function is called.  To fill in values, you need to call
 </tr>
 <tr>
 <td class="parameter_name"><p>iter</p></td>
-<td class="parameter_description"><p> An unset <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a> to set to the new row. </p></td>
+<td class="parameter_description"><p>An unset <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a> to set to the new row. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p> A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>sibling</p></td>
-<td class="parameter_description"><p> A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -845,12 +845,12 @@ inserting rows in a sorted tree store.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>iter</p></td>
-<td class="parameter_description"><p> An unset <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a> to set the new row, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>An unset <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a> to set the new row, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p> A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -899,12 +899,12 @@ function is mainly intended for language bindings.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>iter</p></td>
-<td class="parameter_description"><p> An unset <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a> to set the new row, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>An unset <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a> to set the new row, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p> A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -914,12 +914,12 @@ function is mainly intended for language bindings.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>columns</p></td>
-<td class="parameter_description"><p> an array of column numbers. </p></td>
+<td class="parameter_description"><p>an array of column numbers. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_values]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>values</p></td>
-<td class="parameter_description"><p> an array of GValues. </p></td>
+<td class="parameter_description"><p>an array of GValues. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_values]</span></td>
 </tr>
 <tr>
@@ -966,12 +966,12 @@ call <a class="link" href="GtkTreeStore.html#gtk-tree-store-set" title="gtk_tree
 </tr>
 <tr>
 <td class="parameter_name"><p>iter</p></td>
-<td class="parameter_description"><p> An unset <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a> to set to the prepended row. </p></td>
+<td class="parameter_description"><p>An unset <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a> to set to the prepended row. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p> A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1010,12 +1010,12 @@ be empty after this function is called.  To fill in values, you need to call
 </tr>
 <tr>
 <td class="parameter_name"><p>iter</p></td>
-<td class="parameter_description"><p> An unset <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a> to set to the appended row. </p></td>
+<td class="parameter_description"><p>An unset <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a> to set to the appended row. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p> A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>A valid <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1196,12 +1196,12 @@ unsorted stores.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p> A <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>A <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>new_order</p></td>
-<td class="parameter_description"><p> an array of integers mapping the new position of each child
+<td class="parameter_description"><p>an array of integers mapping the new position of each child
 to its old position before the re-ordering,
 i.e. <em class="parameter"><code>new_order</code></em>
 <code class="literal">[newpos] = oldpos</code>. </p></td>
@@ -1292,7 +1292,7 @@ moved to the end of the level.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>position</p></td>
-<td class="parameter_description"><p> A <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a> or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>A <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a> or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1339,7 +1339,7 @@ to the start of the level.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>position</p></td>
-<td class="parameter_description"><p> A <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>. </p></td>
+<td class="parameter_description"><p>A <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1361,6 +1361,6 @@ to the start of the level.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

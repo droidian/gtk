@@ -8,7 +8,7 @@
 <link rel="up" href="TreeWidgetObjects.html" title="Tree, List and Icon Grid Widgets">
 <link rel="prev" href="GtkCellAreaContext.html" title="GtkCellAreaContext">
 <link rel="next" href="GtkCellEditable.html" title="GtkCellEditable">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -262,13 +262,13 @@
 </tr>
 <tr>
 <td class="property_type">
-<span class="type">GdkColor</span> *</td>
+<a href="../html/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a> *</td>
 <td class="property_name"><a class="link" href="GtkCellRenderer.html#GtkCellRenderer--cell-background-gdk" title="The “cell-background-gdk” property">cell-background-gdk</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
 <tr>
 <td class="property_type">
-<span class="type">GdkRGBA</span> *</td>
+<a href="../html/gdk3-RGBA-Colors.html#GdkRGBA"><span class="type">GdkRGBA</span></a> *</td>
 <td class="property_name"><a class="link" href="GtkCellRenderer.html#GtkCellRenderer--cell-background-rgba" title="The “cell-background-rgba” property">cell-background-rgba</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -486,8 +486,8 @@ The type must be a subtype of <span class="type">GtkRendererCellAccessible</span
 gtk_cell_renderer_get_aligned_area (<em class="parameter"><code><a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a> *cell</code></em>,
                                     <em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
                                     <em class="parameter"><code><a class="link" href="GtkCellRenderer.html#GtkCellRendererState" title="enum GtkCellRendererState"><span class="type">GtkCellRendererState</span></a> flags</code></em>,
-                                    <em class="parameter"><code>const <span class="type">GdkRectangle</span> *cell_area</code></em>,
-                                    <em class="parameter"><code><span class="type">GdkRectangle</span> *aligned_area</code></em>);</pre>
+                                    <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *cell_area</code></em>,
+                                    <em class="parameter"><code><a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *aligned_area</code></em>);</pre>
 <p>Gets the aligned area used by <em class="parameter"><code>cell</code></em>
  inside <em class="parameter"><code>cell_area</code></em>
 . Used for finding
@@ -523,7 +523,7 @@ the appropriate edit and focus rectangle.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>aligned_area</p></td>
-<td class="parameter_description"><p> the return location for the space inside <em class="parameter"><code>cell_area</code></em>
+<td class="parameter_description"><p>the return location for the space inside <em class="parameter"><code>cell_area</code></em>
 that would acually be used to render. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -538,7 +538,7 @@ that would acually be used to render. </p></td>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_cell_renderer_get_size (<em class="parameter"><code><a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a> *cell</code></em>,
                             <em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
-                            <em class="parameter"><code>const <span class="type">GdkRectangle</span> *cell_area</code></em>,
+                            <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *cell_area</code></em>,
                             <em class="parameter"><code><span class="type">gint</span> *x_offset</code></em>,
                             <em class="parameter"><code><span class="type">gint</span> *y_offset</code></em>,
                             <em class="parameter"><code><span class="type">gint</span> *width</code></em>,
@@ -579,29 +579,29 @@ in <em class="parameter"><code>x_offset</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>cell_area</p></td>
-<td class="parameter_description"><p> The area a cell will be allocated, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>The area a cell will be allocated, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>x_offset</p></td>
-<td class="parameter_description"><p> location to return x offset of cell relative to <em class="parameter"><code>cell_area</code></em>
+<td class="parameter_description"><p>location to return x offset of cell relative to <em class="parameter"><code>cell_area</code></em>
 , or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>y_offset</p></td>
-<td class="parameter_description"><p> location to return y offset of cell relative to <em class="parameter"><code>cell_area</code></em>
+<td class="parameter_description"><p>location to return y offset of cell relative to <em class="parameter"><code>cell_area</code></em>
 , or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>width</p></td>
-<td class="parameter_description"><p> location to return width needed to render a cell, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to return width needed to render a cell, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>height</p></td>
-<td class="parameter_description"><p> location to return height needed to render a cell, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to return height needed to render a cell, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -615,8 +615,8 @@ in <em class="parameter"><code>x_offset</code></em>
 gtk_cell_renderer_render (<em class="parameter"><code><a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a> *cell</code></em>,
                           <em class="parameter"><code><span class="type">cairo_t</span> *cr</code></em>,
                           <em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
-                          <em class="parameter"><code>const <span class="type">GdkRectangle</span> *background_area</code></em>,
-                          <em class="parameter"><code>const <span class="type">GdkRectangle</span> *cell_area</code></em>,
+                          <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *background_area</code></em>,
+                          <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *cell_area</code></em>,
                           <em class="parameter"><code><a class="link" href="GtkCellRenderer.html#GtkCellRendererState" title="enum GtkCellRendererState"><span class="type">GtkCellRendererState</span></a> flags</code></em>);</pre>
 <p>Invokes the virtual render function of the <a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a>. The three
 passed-in rectangles are areas in <em class="parameter"><code>cr</code></em>
@@ -681,11 +681,11 @@ padding on the sides)</p></td>
 <a name="gtk-cell-renderer-activate"></a><h3>gtk_cell_renderer_activate ()</h3>
 <pre class="programlisting"><span class="returnvalue">gboolean</span>
 gtk_cell_renderer_activate (<em class="parameter"><code><a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a> *cell</code></em>,
-                            <em class="parameter"><code><span class="type">GdkEvent</span> *event</code></em>,
+                            <em class="parameter"><code><a href="../html/gdk3-Event-Structures.html#GdkEvent"><span class="type">GdkEvent</span></a> *event</code></em>,
                             <em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
                             <em class="parameter"><code>const <span class="type">gchar</span> *path</code></em>,
-                            <em class="parameter"><code>const <span class="type">GdkRectangle</span> *background_area</code></em>,
-                            <em class="parameter"><code>const <span class="type">GdkRectangle</span> *cell_area</code></em>,
+                            <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *background_area</code></em>,
+                            <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *cell_area</code></em>,
                             <em class="parameter"><code><a class="link" href="GtkCellRenderer.html#GtkCellRendererState" title="enum GtkCellRendererState"><span class="type">GtkCellRendererState</span></a> flags</code></em>);</pre>
 <p>Passes an activate event to the cell renderer for possible processing.  
 Some cell renderers may use events; for example, <a class="link" href="GtkCellRendererToggle.html" title="GtkCellRendererToggle"><span class="type">GtkCellRendererToggle</span></a> 
@@ -706,7 +706,7 @@ toggles when it gets a mouse click.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkEvent</span></p></td>
+<td class="parameter_description"><p>a <a href="../html/gdk3-Event-Structures.html#GdkEvent"><span class="type">GdkEvent</span></a></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -748,11 +748,11 @@ e.g. for <a class="link" href="GtkTreeView.html" title="GtkTreeView"><span class
 <a name="gtk-cell-renderer-start-editing"></a><h3>gtk_cell_renderer_start_editing ()</h3>
 <pre class="programlisting"><a class="link" href="GtkCellEditable.html" title="GtkCellEditable"><span class="returnvalue">GtkCellEditable</span></a> *
 gtk_cell_renderer_start_editing (<em class="parameter"><code><a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a> *cell</code></em>,
-                                 <em class="parameter"><code><span class="type">GdkEvent</span> *event</code></em>,
+                                 <em class="parameter"><code><a href="../html/gdk3-Event-Structures.html#GdkEvent"><span class="type">GdkEvent</span></a> *event</code></em>,
                                  <em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
                                  <em class="parameter"><code>const <span class="type">gchar</span> *path</code></em>,
-                                 <em class="parameter"><code>const <span class="type">GdkRectangle</span> *background_area</code></em>,
-                                 <em class="parameter"><code>const <span class="type">GdkRectangle</span> *cell_area</code></em>,
+                                 <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *background_area</code></em>,
+                                 <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *cell_area</code></em>,
                                  <em class="parameter"><code><a class="link" href="GtkCellRenderer.html#GtkCellRendererState" title="enum GtkCellRendererState"><span class="type">GtkCellRendererState</span></a> flags</code></em>);</pre>
 <p>Starts editing the contents of this <em class="parameter"><code>cell</code></em>
 , through a new <a class="link" href="GtkCellEditable.html" title="GtkCellEditable"><span class="type">GtkCellEditable</span></a>
@@ -773,7 +773,7 @@ widget created by the <a class="link" href="GtkCellRenderer.html#GtkCellRenderer
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p> a <span class="type">GdkEvent</span>. </p></td>
+<td class="parameter_description"><p>a <a href="../html/gdk3-Event-Structures.html#GdkEvent"><span class="type">GdkEvent</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -807,7 +807,7 @@ e.g. for <a class="link" href="GtkTreeView.html" title="GtkTreeView"><span class
 </div>
 <div class="refsect3">
 <a name="gtk-cell-renderer-start-editing.returns"></a><h4>Returns</h4>
-<p> A new <a class="link" href="GtkCellEditable.html" title="GtkCellEditable"><span class="type">GtkCellEditable</span></a> for editing this
+<p>A new <a class="link" href="GtkCellEditable.html" title="GtkCellEditable"><span class="type">GtkCellEditable</span></a> for editing this
 <em class="parameter"><code>cell</code></em>
 , or <code class="literal">NULL</code> if editing is not possible. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -877,12 +877,12 @@ gtk_cell_renderer_get_fixed_size (<em class="parameter"><code><a class="link" hr
 </tr>
 <tr>
 <td class="parameter_name"><p>width</p></td>
-<td class="parameter_description"><p> location to fill in with the fixed width of the cell, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to fill in with the fixed width of the cell, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>height</p></td>
-<td class="parameter_description"><p> location to fill in with the fixed height of the cell, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to fill in with the fixed height of the cell, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1068,12 +1068,12 @@ gtk_cell_renderer_get_alignment (<em class="parameter"><code><a class="link" hre
 </tr>
 <tr>
 <td class="parameter_name"><p>xalign</p></td>
-<td class="parameter_description"><p> location to fill in with the x alignment of the cell, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to fill in with the x alignment of the cell, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>yalign</p></td>
-<td class="parameter_description"><p> location to fill in with the y alignment of the cell, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to fill in with the y alignment of the cell, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1145,12 +1145,12 @@ gtk_cell_renderer_get_padding (<em class="parameter"><code><a class="link" href=
 </tr>
 <tr>
 <td class="parameter_name"><p>xpad</p></td>
-<td class="parameter_description"><p> location to fill in with the x padding of the cell, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to fill in with the x padding of the cell, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>ypad</p></td>
-<td class="parameter_description"><p> location to fill in with the y padding of the cell, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to fill in with the y padding of the cell, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1216,12 +1216,12 @@ the given <a class="link" href="GtkCellRenderer.html#GtkCellRendererState" title
 <tbody>
 <tr>
 <td class="parameter_name"><p>cell</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>widget</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1298,12 +1298,12 @@ gtk_cell_renderer_get_preferred_height
 </tr>
 <tr>
 <td class="parameter_name"><p>minimum_size</p></td>
-<td class="parameter_description"><p> location to store the minimum size, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store the minimum size, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>natural_size</p></td>
-<td class="parameter_description"><p> location to store the natural size, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store the natural size, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1351,12 +1351,12 @@ gtk_cell_renderer_get_preferred_height_for_width
 </tr>
 <tr>
 <td class="parameter_name"><p>minimum_height</p></td>
-<td class="parameter_description"><p> location for storing the minimum size, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location for storing the minimum size, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>natural_height</p></td>
-<td class="parameter_description"><p> location for storing the preferred size, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location for storing the preferred size, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1395,12 +1395,12 @@ into account the widget’s preference for height-for-width management.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>minimum_size</p></td>
-<td class="parameter_description"><p> location for storing the minimum size, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location for storing the minimum size, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>natural_size</p></td>
-<td class="parameter_description"><p> location for storing the natural size, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location for storing the natural size, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1439,12 +1439,12 @@ gtk_cell_renderer_get_preferred_width (<em class="parameter"><code><a class="lin
 </tr>
 <tr>
 <td class="parameter_name"><p>minimum_size</p></td>
-<td class="parameter_description"><p> location to store the minimum size, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store the minimum size, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>natural_size</p></td>
-<td class="parameter_description"><p> location to store the natural size, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store the natural size, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1492,12 +1492,12 @@ gtk_cell_renderer_get_preferred_width_for_height
 </tr>
 <tr>
 <td class="parameter_name"><p>minimum_width</p></td>
-<td class="parameter_description"><p> location for storing the minimum size, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location for storing the minimum size, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>natural_width</p></td>
-<td class="parameter_description"><p> location for storing the preferred size, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location for storing the preferred size, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1801,8 +1801,8 @@ inside <em class="parameter"><code>cell_area</code></em>
 <hr>
 <div class="refsect2">
 <a name="GtkCellRenderer--cell-background-gdk"></a><h3>The <code class="literal">“cell-background-gdk”</code> property</h3>
-<pre class="programlisting">  “cell-background-gdk”      <span class="type">GdkColor</span> *</pre>
-<p>Cell background as a <span class="type">GdkColor</span></p>
+<pre class="programlisting">  “cell-background-gdk”      <a href="../html/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a> *</pre>
+<p>Cell background as a <a href="../html/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a></p>
 <div class="warning">
 <p><code class="literal">GtkCellRenderer:cell-background-gdk</code> has been deprecated since version 3.4 and should not be used in newly-written code.</p>
 <p>Use <a class="link" href="GtkCellRenderer.html#GtkCellRenderer--cell-background-rgba" title="The “cell-background-rgba” property"><span class="type">“cell-background-rgba”</span></a> instead.</p>
@@ -1812,8 +1812,8 @@ inside <em class="parameter"><code>cell_area</code></em>
 <hr>
 <div class="refsect2">
 <a name="GtkCellRenderer--cell-background-rgba"></a><h3>The <code class="literal">“cell-background-rgba”</code> property</h3>
-<pre class="programlisting">  “cell-background-rgba”     <span class="type">GdkRGBA</span> *</pre>
-<p>Cell background as a <span class="type">GdkRGBA</span></p>
+<pre class="programlisting">  “cell-background-rgba”     <a href="../html/gdk3-RGBA-Colors.html#GdkRGBA"><span class="type">GdkRGBA</span></a> *</pre>
+<p>Cell background as a <a href="../html/gdk3-RGBA-Colors.html#GdkRGBA"><span class="type">GdkRGBA</span></a></p>
 <p>Flags: Read / Write</p>
 <p class="since">Since: <a class="link" href="api-index-3-0.html#api-index-3.0">3.0</a></p>
 </div>
@@ -2045,6 +2045,6 @@ text_editing_started (GtkCellRenderer *cell,
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

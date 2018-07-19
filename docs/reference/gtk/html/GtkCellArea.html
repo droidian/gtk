@@ -8,7 +8,7 @@
 <link rel="up" href="TreeWidgetObjects.html" title="Tree, List and Icon Grid Widgets">
 <link rel="prev" href="GtkCellLayout.html" title="GtkCellLayout">
 <link rel="next" href="GtkCellAreaBox.html" title="GtkCellAreaBox">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -864,7 +864,7 @@ the cell renderers of a <a class="link" href="GtkCellArea.html" title="GtkCellAr
 </tr>
 <tr>
 <td class="parameter_name"><p>data</p></td>
-<td class="parameter_description"><p> user-supplied data. </p></td>
+<td class="parameter_description"><p>user-supplied data. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -880,8 +880,8 @@ the cell renderers of a <a class="link" href="GtkCellArea.html" title="GtkCellAr
 <a name="GtkCellAllocCallback"></a><h3>GtkCellAllocCallback ()</h3>
 <pre class="programlisting"><span class="returnvalue">gboolean</span>
 <span class="c_punctuation">(</span>*GtkCellAllocCallback<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a> *renderer</code></em>,
-                         <em class="parameter"><code>const <span class="type">GdkRectangle</span> *cell_area</code></em>,
-                         <em class="parameter"><code>const <span class="type">GdkRectangle</span> *cell_background</code></em>,
+                         <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *cell_area</code></em>,
+                         <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *cell_background</code></em>,
                          <em class="parameter"><code><span class="type">gpointer</span> data</code></em>);</pre>
 <p>The type of the callback functions used for iterating over the
 cell renderers and their allocated areas inside a <a class="link" href="GtkCellArea.html" title="GtkCellArea"><span class="type">GtkCellArea</span></a>,
@@ -916,7 +916,7 @@ background area provided to <a class="link" href="GtkCellArea.html#gtk-cell-area
 </tr>
 <tr>
 <td class="parameter_name"><p>data</p></td>
-<td class="parameter_description"><p> user-supplied data. </p></td>
+<td class="parameter_description"><p>user-supplied data. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1095,7 +1095,7 @@ gtk_cell_area_foreach (<em class="parameter"><code><a class="link" href="GtkCell
 </tr>
 <tr>
 <td class="parameter_name"><p>callback</p></td>
-<td class="parameter_description"><p> the <a class="link" href="GtkCellArea.html#GtkCellCallback" title="GtkCellCallback ()"><span class="type">GtkCellCallback</span></a> to call. </p></td>
+<td class="parameter_description"><p>the <a class="link" href="GtkCellArea.html#GtkCellCallback" title="GtkCellCallback ()"><span class="type">GtkCellCallback</span></a> to call. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid only during the call to the method."><span class="acronym">scope call</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1115,8 +1115,8 @@ gtk_cell_area_foreach (<em class="parameter"><code><a class="link" href="GtkCell
 gtk_cell_area_foreach_alloc (<em class="parameter"><code><a class="link" href="GtkCellArea.html" title="GtkCellArea"><span class="type">GtkCellArea</span></a> *area</code></em>,
                              <em class="parameter"><code><a class="link" href="GtkCellAreaContext.html" title="GtkCellAreaContext"><span class="type">GtkCellAreaContext</span></a> *context</code></em>,
                              <em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
-                             <em class="parameter"><code>const <span class="type">GdkRectangle</span> *cell_area</code></em>,
-                             <em class="parameter"><code>const <span class="type">GdkRectangle</span> *background_area</code></em>,
+                             <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *cell_area</code></em>,
+                             <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *background_area</code></em>,
                              <em class="parameter"><code><a class="link" href="GtkCellArea.html#GtkCellAllocCallback" title="GtkCellAllocCallback ()"><span class="type">GtkCellAllocCallback</span></a> callback</code></em>,
                              <em class="parameter"><code><span class="type">gpointer</span> callback_data</code></em>);</pre>
 <p>Calls <em class="parameter"><code>callback</code></em>
@@ -1164,7 +1164,7 @@ relative coordinates of the background area</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>callback</p></td>
-<td class="parameter_description"><p> the <a class="link" href="GtkCellArea.html#GtkCellAllocCallback" title="GtkCellAllocCallback ()"><span class="type">GtkCellAllocCallback</span></a> to call. </p></td>
+<td class="parameter_description"><p>the <a class="link" href="GtkCellArea.html#GtkCellAllocCallback" title="GtkCellAllocCallback ()"><span class="type">GtkCellAllocCallback</span></a> to call. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid only during the call to the method."><span class="acronym">scope call</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1184,8 +1184,8 @@ relative coordinates of the background area</p></td>
 gtk_cell_area_event (<em class="parameter"><code><a class="link" href="GtkCellArea.html" title="GtkCellArea"><span class="type">GtkCellArea</span></a> *area</code></em>,
                      <em class="parameter"><code><a class="link" href="GtkCellAreaContext.html" title="GtkCellAreaContext"><span class="type">GtkCellAreaContext</span></a> *context</code></em>,
                      <em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
-                     <em class="parameter"><code><span class="type">GdkEvent</span> *event</code></em>,
-                     <em class="parameter"><code>const <span class="type">GdkRectangle</span> *cell_area</code></em>,
+                     <em class="parameter"><code><a href="../html/gdk3-Event-Structures.html#GdkEvent"><span class="type">GdkEvent</span></a> *event</code></em>,
+                     <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *cell_area</code></em>,
                      <em class="parameter"><code><a class="link" href="GtkCellRenderer.html#GtkCellRendererState" title="enum GtkCellRendererState"><span class="type">GtkCellRendererState</span></a> flags</code></em>);</pre>
 <p>Delegates event handling to a <a class="link" href="GtkCellArea.html" title="GtkCellArea"><span class="type">GtkCellArea</span></a>.</p>
 <div class="refsect3">
@@ -1215,7 +1215,7 @@ is rendering to</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p>the <span class="type">GdkEvent</span> to handle</p></td>
+<td class="parameter_description"><p>the <a href="../html/gdk3-Event-Structures.html#GdkEvent"><span class="type">GdkEvent</span></a> to handle</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -1249,8 +1249,8 @@ gtk_cell_area_render (<em class="parameter"><code><a class="link" href="GtkCellA
                       <em class="parameter"><code><a class="link" href="GtkCellAreaContext.html" title="GtkCellAreaContext"><span class="type">GtkCellAreaContext</span></a> *context</code></em>,
                       <em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
                       <em class="parameter"><code><span class="type">cairo_t</span> *cr</code></em>,
-                      <em class="parameter"><code>const <span class="type">GdkRectangle</span> *background_area</code></em>,
-                      <em class="parameter"><code>const <span class="type">GdkRectangle</span> *cell_area</code></em>,
+                      <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *background_area</code></em>,
+                      <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *cell_area</code></em>,
                       <em class="parameter"><code><a class="link" href="GtkCellRenderer.html#GtkCellRendererState" title="enum GtkCellRendererState"><span class="type">GtkCellRendererState</span></a> flags</code></em>,
                       <em class="parameter"><code><span class="type">gboolean</span> paint_focus</code></em>);</pre>
 <p>Renders <em class="parameter"><code>area</code></em>
@@ -1327,8 +1327,8 @@ gtk_cell_area_get_cell_allocation (<em class="parameter"><code><a class="link" h
                                    <em class="parameter"><code><a class="link" href="GtkCellAreaContext.html" title="GtkCellAreaContext"><span class="type">GtkCellAreaContext</span></a> *context</code></em>,
                                    <em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
                                    <em class="parameter"><code><a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a> *renderer</code></em>,
-                                   <em class="parameter"><code>const <span class="type">GdkRectangle</span> *cell_area</code></em>,
-                                   <em class="parameter"><code><span class="type">GdkRectangle</span> *allocation</code></em>);</pre>
+                                   <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *cell_area</code></em>,
+                                   <em class="parameter"><code><a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *allocation</code></em>);</pre>
 <p>Derives the allocation of <em class="parameter"><code>renderer</code></em>
  inside <em class="parameter"><code>area</code></em>
  if <em class="parameter"><code>area</code></em>
@@ -1375,7 +1375,7 @@ for this row</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>allocation</p></td>
-<td class="parameter_description"><p> where to store the allocation for <em class="parameter"><code>renderer</code></em>
+<td class="parameter_description"><p>where to store the allocation for <em class="parameter"><code>renderer</code></em>
 . </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -1391,10 +1391,10 @@ for this row</p></td>
 gtk_cell_area_get_cell_at_position (<em class="parameter"><code><a class="link" href="GtkCellArea.html" title="GtkCellArea"><span class="type">GtkCellArea</span></a> *area</code></em>,
                                     <em class="parameter"><code><a class="link" href="GtkCellAreaContext.html" title="GtkCellAreaContext"><span class="type">GtkCellAreaContext</span></a> *context</code></em>,
                                     <em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
-                                    <em class="parameter"><code>const <span class="type">GdkRectangle</span> *cell_area</code></em>,
+                                    <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *cell_area</code></em>,
                                     <em class="parameter"><code><span class="type">gint</span> x</code></em>,
                                     <em class="parameter"><code><span class="type">gint</span> y</code></em>,
-                                    <em class="parameter"><code><span class="type">GdkRectangle</span> *alloc_area</code></em>);</pre>
+                                    <em class="parameter"><code><a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *alloc_area</code></em>);</pre>
 <p>Gets the <a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a> at <em class="parameter"><code>x</code></em>
  and <em class="parameter"><code>y</code></em>
  coordinates inside <em class="parameter"><code>area</code></em>
@@ -1446,7 +1446,7 @@ for this row</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>alloc_area</p></td>
-<td class="parameter_description"><p> where to store the inner allocated area of the
+<td class="parameter_description"><p>where to store the inner allocated area of the
 returned cell renderer, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1455,7 +1455,7 @@ returned cell renderer, or <code class="literal">NULL</code>. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-cell-area-get-cell-at-position.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a> at <em class="parameter"><code>x</code></em>
+<p>the <a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a> at <em class="parameter"><code>x</code></em>
 and <em class="parameter"><code>y</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -1491,7 +1491,7 @@ which was used to request the size of those rows of data).</p>
 </div>
 <div class="refsect3">
 <a name="gtk-cell-area-create-context.returns"></a><h4>Returns</h4>
-<p> a newly created <a class="link" href="GtkCellAreaContext.html" title="GtkCellAreaContext"><span class="type">GtkCellAreaContext</span></a> which can be used with <em class="parameter"><code>area</code></em>
+<p>a newly created <a class="link" href="GtkCellAreaContext.html" title="GtkCellAreaContext"><span class="type">GtkCellAreaContext</span></a> which can be used with <em class="parameter"><code>area</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -1537,7 +1537,7 @@ to be displayed.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-cell-area-copy-context.returns"></a><h4>Returns</h4>
-<p> a newly created <a class="link" href="GtkCellAreaContext.html" title="GtkCellAreaContext"><span class="type">GtkCellAreaContext</span></a> copy of <em class="parameter"><code>context</code></em>
+<p>a newly created <a class="link" href="GtkCellAreaContext.html" title="GtkCellAreaContext"><span class="type">GtkCellAreaContext</span></a> copy of <em class="parameter"><code>context</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -1618,12 +1618,12 @@ will be rendering</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>minimum_width</p></td>
-<td class="parameter_description"><p> location to store the minimum width, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store the minimum width, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>natural_width</p></td>
-<td class="parameter_description"><p> location to store the natural width, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store the natural width, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1690,12 +1690,12 @@ will be rendering</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>minimum_height</p></td>
-<td class="parameter_description"><p> location to store the minimum height, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store the minimum height, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>natural_height</p></td>
-<td class="parameter_description"><p> location to store the natural height, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store the natural height, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1749,12 +1749,12 @@ will be rendering</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>minimum_height</p></td>
-<td class="parameter_description"><p> location to store the minimum height, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store the minimum height, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>natural_height</p></td>
-<td class="parameter_description"><p> location to store the natural height, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store the natural height, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1821,12 +1821,12 @@ will be rendering</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>minimum_width</p></td>
-<td class="parameter_description"><p> location to store the minimum width, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store the minimum width, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>natural_width</p></td>
-<td class="parameter_description"><p> location to store the natural width, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store the natural width, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2124,7 +2124,7 @@ gtk_cell_area_class_find_cell_property
 </div>
 <div class="refsect3">
 <a name="gtk-cell-area-class-find-cell-property.returns"></a><h4>Returns</h4>
-<p> the <span class="type">GParamSpec</span> of the child property
+<p>the <span class="type">GParamSpec</span> of the child property
 or <code class="literal">NULL</code> if <em class="parameter"><code>aclass</code></em>
 has no child property with that name. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -2155,7 +2155,7 @@ gtk_cell_area_class_list_cell_properties
 </tr>
 <tr>
 <td class="parameter_name"><p>n_properties</p></td>
-<td class="parameter_description"><p> location to return the number of cell properties found. </p></td>
+<td class="parameter_description"><p>location to return the number of cell properties found. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2163,7 +2163,7 @@ gtk_cell_area_class_list_cell_properties
 </div>
 <div class="refsect3">
 <a name="gtk-cell-area-class-list-cell-properties.returns"></a><h4>Returns</h4>
-<p> a newly
+<p>a newly
 allocated <code class="literal">NULL</code>-terminated array of <span class="type">GParamSpec</span>*.  The array
 must be freed with <code class="function">g_free()</code>. </p>
 <p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_properties][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
@@ -2538,7 +2538,7 @@ can do anything when activated.</p>
 gtk_cell_area_activate (<em class="parameter"><code><a class="link" href="GtkCellArea.html" title="GtkCellArea"><span class="type">GtkCellArea</span></a> *area</code></em>,
                         <em class="parameter"><code><a class="link" href="GtkCellAreaContext.html" title="GtkCellAreaContext"><span class="type">GtkCellAreaContext</span></a> *context</code></em>,
                         <em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
-                        <em class="parameter"><code>const <span class="type">GdkRectangle</span> *cell_area</code></em>,
+                        <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *cell_area</code></em>,
                         <em class="parameter"><code><a class="link" href="GtkCellRenderer.html#GtkCellRendererState" title="enum GtkCellRendererState"><span class="type">GtkCellRendererState</span></a> flags</code></em>,
                         <em class="parameter"><code><span class="type">gboolean</span> edit_only</code></em>);</pre>
 <p>Activates <em class="parameter"><code>area</code></em>
@@ -2704,7 +2704,7 @@ gtk_cell_area_get_focus_cell (<em class="parameter"><code><a class="link" href="
 </div>
 <div class="refsect3">
 <a name="gtk-cell-area-get-focus-cell.returns"></a><h4>Returns</h4>
-<p> the currently focused cell in <em class="parameter"><code>area</code></em>
+<p>the currently focused cell in <em class="parameter"><code>area</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -2877,7 +2877,7 @@ gtk_cell_area_get_focus_siblings (<em class="parameter"><code><a class="link" hr
 </div>
 <div class="refsect3">
 <a name="gtk-cell-area-get-focus-siblings.returns"></a><h4>Returns</h4>
-<p> A <span class="type">GList</span> of <a href="GtkCellRenderer.html#GtkCellRenderer-struct"><span class="type">GtkCellRenderers</span></a>.
+<p>A <span class="type">GList</span> of <a href="GtkCellRenderer.html#GtkCellRenderer-struct"><span class="type">GtkCellRenderers</span></a>.
 The returned list is internal and should not be freed. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GtkCellRenderer][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -2920,7 +2920,7 @@ cell may have been a sibling.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-cell-area-get-focus-from-sibling.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a> for which <em class="parameter"><code>renderer</code></em>
+<p>the <a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a> for which <em class="parameter"><code>renderer</code></em>
 is a sibling, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -2951,7 +2951,7 @@ being edited.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-cell-area-get-edited-cell.returns"></a><h4>Returns</h4>
-<p> The currently edited <a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a>. </p>
+<p>The currently edited <a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-0.html#api-index-3.0">3.0</a></p>
@@ -2980,7 +2980,7 @@ to edit the currently edited cell.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-cell-area-get-edit-widget.returns"></a><h4>Returns</h4>
-<p> The currently active <a class="link" href="GtkCellEditable.html" title="GtkCellEditable"><span class="type">GtkCellEditable</span></a> widget. </p>
+<p>The currently active <a class="link" href="GtkCellEditable.html" title="GtkCellEditable"><span class="type">GtkCellEditable</span></a> widget. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-0.html#api-index-3.0">3.0</a></p>
@@ -2992,8 +2992,8 @@ to edit the currently edited cell.</p>
 gtk_cell_area_activate_cell (<em class="parameter"><code><a class="link" href="GtkCellArea.html" title="GtkCellArea"><span class="type">GtkCellArea</span></a> *area</code></em>,
                              <em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
                              <em class="parameter"><code><a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a> *renderer</code></em>,
-                             <em class="parameter"><code><span class="type">GdkEvent</span> *event</code></em>,
-                             <em class="parameter"><code>const <span class="type">GdkRectangle</span> *cell_area</code></em>,
+                             <em class="parameter"><code><a href="../html/gdk3-Event-Structures.html#GdkEvent"><span class="type">GdkEvent</span></a> *event</code></em>,
+                             <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *cell_area</code></em>,
                              <em class="parameter"><code><a class="link" href="GtkCellRenderer.html#GtkCellRendererState" title="enum GtkCellRendererState"><span class="type">GtkCellRendererState</span></a> flags</code></em>);</pre>
 <p>This is used by <a class="link" href="GtkCellArea.html" title="GtkCellArea"><span class="type">GtkCellArea</span></a> subclasses when handling events
 to activate cells, the base <a class="link" href="GtkCellArea.html" title="GtkCellArea"><span class="type">GtkCellArea</span></a> class activates cells
@@ -3027,12 +3027,12 @@ to activate</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p>the <span class="type">GdkEvent</span> for which cell activation should occur</p></td>
+<td class="parameter_description"><p>the <a href="../html/gdk3-Event-Structures.html#GdkEvent"><span class="type">GdkEvent</span></a> for which cell activation should occur</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
 <td class="parameter_name"><p>cell_area</p></td>
-<td class="parameter_description"><p>the <span class="type">GdkRectangle</span> in <em class="parameter"><code>widget</code></em>
+<td class="parameter_description"><p>the <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> in <em class="parameter"><code>widget</code></em>
 relative coordinates
 of <em class="parameter"><code>renderer</code></em>
 for the current row.</p></td>
@@ -3096,8 +3096,8 @@ edit widget.</p>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_cell_area_inner_cell_area (<em class="parameter"><code><a class="link" href="GtkCellArea.html" title="GtkCellArea"><span class="type">GtkCellArea</span></a> *area</code></em>,
                                <em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
-                               <em class="parameter"><code>const <span class="type">GdkRectangle</span> *cell_area</code></em>,
-                               <em class="parameter"><code><span class="type">GdkRectangle</span> *inner_area</code></em>);</pre>
+                               <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *cell_area</code></em>,
+                               <em class="parameter"><code><a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *inner_area</code></em>);</pre>
 <p>This is a convenience function for <a class="link" href="GtkCellArea.html" title="GtkCellArea"><span class="type">GtkCellArea</span></a> implementations
 to get the inner area where a given <a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a> will be
 rendered. It removes any padding previously added by <a class="link" href="GtkCellArea.html#gtk-cell-area-request-renderer" title="gtk_cell_area_request_renderer ()"><code class="function">gtk_cell_area_request_renderer()</code></a>.</p>
@@ -3131,7 +3131,7 @@ is to be placed</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>inner_area</p></td>
-<td class="parameter_description"><p> the return location for the inner cell area. </p></td>
+<td class="parameter_description"><p>the return location for the inner cell area. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -3193,12 +3193,12 @@ the base request for the orientation is to be returned.</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>minimum_size</p></td>
-<td class="parameter_description"><p> location to store the minimum size, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store the minimum size, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>natural_size</p></td>
-<td class="parameter_description"><p> location to store the natural size, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store the natural size, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -3504,7 +3504,7 @@ a result of a call <a class="link" href="GtkCellArea.html#gtk-cell-area-activate
 user_function (<a class="link" href="GtkCellArea.html" title="GtkCellArea"><span class="type">GtkCellArea</span></a>     *area,
                <a class="link" href="GtkCellRenderer.html" title="GtkCellRenderer"><span class="type">GtkCellRenderer</span></a> *renderer,
                <a class="link" href="GtkCellEditable.html" title="GtkCellEditable"><span class="type">GtkCellEditable</span></a> *editable,
-               <span class="type">GdkRectangle</span>    *cell_area,
+               <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a>    *cell_area,
                <span class="type">gchar</span>           *path,
                <span class="type">gpointer</span>         user_data)</pre>
 <p>Indicates that editing has started on <em class="parameter"><code>renderer</code></em>
@@ -3538,7 +3538,7 @@ should be added to the owning cell-layouting widget at <em class="parameter"><co
 </tr>
 <tr>
 <td class="parameter_name"><p>cell_area</p></td>
-<td class="parameter_description"><p>the <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> relative <span class="type">GdkRectangle</span> coordinates
+<td class="parameter_description"><p>the <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> relative <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> coordinates
 where <em class="parameter"><code>editable</code></em>
 should be added</p></td>
 <td class="parameter_annotations"> </td>
@@ -3719,6 +3719,6 @@ should be removed from the owning cell-layouting widget.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <link rel="up" href="WindowWidgets.html" title="Windows">
 <link rel="prev" href="GtkDialog.html" title="GtkDialog">
 <link rel="next" href="GtkAboutDialog.html" title="GtkAboutDialog">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -220,7 +220,7 @@
 <a name="GtkMessageDialog.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkMessageDialog implements
- AtkImplementorIface and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
+ AtkImplementor and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GtkMessageDialog.includes"></a><h2>Includes</h2>
@@ -305,7 +305,7 @@ signal is emitted with response IDs from <a class="link" href="GtkDialog.html#Gt
 <tbody>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p> transient parent, or <code class="literal">NULL</code> for none. </p></td>
+<td class="parameter_description"><p>transient parent, or <code class="literal">NULL</code> for none. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -325,7 +325,7 @@ signal is emitted with response IDs from <a class="link" href="GtkDialog.html#Gt
 </tr>
 <tr>
 <td class="parameter_name"><p>message_format</p></td>
-<td class="parameter_description"><p> <code class="function">printf()</code>-style format string, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>printf()-style format string, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -339,7 +339,7 @@ signal is emitted with response IDs from <a class="link" href="GtkDialog.html#Gt
 </div>
 <div class="refsect3">
 <a name="gtk-message-dialog-new.returns"></a><h4>Returns</h4>
-<p> a new <a class="link" href="GtkMessageDialog.html" title="GtkMessageDialog"><span class="type">GtkMessageDialog</span></a>. </p>
+<p>a new <a class="link" href="GtkMessageDialog.html" title="GtkMessageDialog"><span class="type">GtkMessageDialog</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -389,7 +389,7 @@ argument.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p> transient parent, or <code class="literal">NULL</code> for none. </p></td>
+<td class="parameter_description"><p>transient parent, or <code class="literal">NULL</code> for none. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -409,7 +409,7 @@ argument.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>message_format</p></td>
-<td class="parameter_description"><p> <code class="function">printf()</code>-style format string, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>printf()-style format string, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -523,7 +523,7 @@ gtk_message_dialog_get_image (<em class="parameter"><code><a class="link" href="
 </div>
 <div class="refsect3">
 <a name="gtk-message-dialog-get-image.returns"></a><h4>Returns</h4>
-<p> the dialog’s image. </p>
+<p>the dialog’s image. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.14</p>
@@ -555,7 +555,7 @@ gtk_message_dialog_format_secondary_text
 </tr>
 <tr>
 <td class="parameter_name"><p>message_format</p></td>
-<td class="parameter_description"><p> <code class="function">printf()</code>-style format string, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>printf()-style format string, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -652,7 +652,7 @@ function in the parent <a class="link" href="GtkDialog.html" title="GtkDialog"><
 </div>
 <div class="refsect3">
 <a name="gtk-message-dialog-get-message-area.returns"></a><h4>Returns</h4>
-<p> A <a class="link" href="GtkBox.html" title="GtkBox"><span class="type">GtkBox</span></a> corresponding to the
+<p>A <a class="link" href="GtkBox.html" title="GtkBox"><span class="type">GtkBox</span></a> corresponding to the
 “message area” in the <em class="parameter"><code>message_dialog</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -882,6 +882,6 @@ See <code class="function">pango_parse_markup()</code>.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <link rel="up" href="Application.html" title="Application support">
 <link rel="prev" href="GtkApplication.html" title="GtkApplication">
 <link rel="next" href="GtkActionable.html" title="GtkActionable">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -142,11 +142,11 @@
 <a name="GtkApplicationWindow.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkApplicationWindow implements
- AtkImplementorIface,  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>,  GActionGroup and  GActionMap.</p>
+ AtkImplementor,  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>,  GActionGroup and  GActionMap.</p>
 </div>
 <div class="refsect1">
 <a name="GtkApplicationWindow.includes"></a><h2>Includes</h2>
-<pre class="synopsis">#include &lt;gtk/gtk.h&gt;
+<pre class="synopsis">#include &lt;gtk/gtkunixprint.h&gt;
 </pre>
 </div>
 <div class="refsect1">
@@ -213,14 +213,14 @@ GtkWidget *window = gtk_application_window_new (app);
 <a name="id-1.3.4.3.9.9"></a><h4>Handling fallback yourself</h4>
 <p><a class="ulink" href="https://git.gnome.org/browse/gtk+/tree/examples/sunny.c" target="_top">A simple example</a></p>
 <p>The XML format understood by <a class="link" href="GtkBuilder.html" title="GtkBuilder"><span class="type">GtkBuilder</span></a> for <span class="type">GMenuModel</span> consists
-of a toplevel <code class="literal">&lt;menu&gt;</code> element, which contains one or more <code class="literal">&lt;item&gt;</code>
-elements. Each <code class="literal">&lt;item&gt;</code> element contains <code class="literal">&lt;attribute&gt;</code> and <code class="literal">&lt;link&gt;</code>
-elements with a mandatory name attribute. <code class="literal">&lt;link&gt;</code> elements have the
-same content model as <code class="literal">&lt;menu&gt;</code>. Instead of <code class="literal">&lt;link name="submenu&gt;</code> or
-<code class="literal">&lt;link name="section"&gt;</code>, you can use <code class="literal">&lt;submenu&gt;</code> or <code class="literal">&lt;section&gt;</code>
+of a toplevel <code class="literal">&amp;lt;menu&gt;</code> element, which contains one or more <code class="literal">&amp;lt;item&gt;</code>
+elements. Each <code class="literal">&amp;lt;item&gt;</code> element contains <code class="literal">&amp;lt;attribute&gt;</code> and <code class="literal">&amp;lt;link&gt;</code>
+elements with a mandatory name attribute. <code class="literal">&amp;lt;link&gt;</code> elements have the
+same content model as <code class="literal">&amp;lt;menu&gt;</code>. Instead of <code class="literal">&amp;lt;link name="submenu&gt;</code> or
+<code class="literal">&amp;lt;link name="section"&gt;</code>, you can use <code class="literal">&amp;lt;submenu&gt;</code> or <code class="literal">&amp;lt;section&gt;</code>
 elements.</p>
 <p>Attribute values can be translated using gettext, like other <a class="link" href="GtkBuilder.html" title="GtkBuilder"><span class="type">GtkBuilder</span></a>
-content. <code class="literal">&lt;attribute&gt;</code> elements can be marked for translation with a
+content. <code class="literal">&amp;lt;attribute&gt;</code> elements can be marked for translation with a
 <code class="literal">translatable="yes"</code> attribute. It is also possible to specify message
 context and translator comments, using the context and comments attributes.
 To make use of this, the <a class="link" href="GtkBuilder.html" title="GtkBuilder"><span class="type">GtkBuilder</span></a> must have been given the gettext
@@ -402,7 +402,7 @@ it.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>help_overlay</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkShortcutsWindow.html" title="GtkShortcutsWindow"><span class="type">GtkShortcutsWindow</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkShortcutsWindow.html" title="GtkShortcutsWindow"><span class="type">GtkShortcutsWindow</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -435,7 +435,7 @@ a prior call to <a class="link" href="GtkApplicationWindow.html#gtk-application-
 </div>
 <div class="refsect3">
 <a name="gtk-application-window-get-help-overlay.returns"></a><h4>Returns</h4>
-<p> the help overlay associated with <em class="parameter"><code>window</code></em>
+<p>the help overlay associated with <em class="parameter"><code>window</code></em>
 , or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -485,6 +485,6 @@ of whether the desktop shell is showing the menus or not.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

@@ -569,6 +569,9 @@
    <File RelativePath="..\..\..\gtk\gtkentrycompletion.c" />
    <File RelativePath="..\..\..\gtk\gtkeventbox.c" />
    <File RelativePath="..\..\..\gtk\gtkeventcontroller.c" />
+   <File RelativePath="..\..\..\gtk\gtkeventcontrollerkey.c" />
+   <File RelativePath="..\..\..\gtk\gtkeventcontrollermotion.c" />
+   <File RelativePath="..\..\..\gtk\gtkeventcontrollerscroll.c" />
    <File RelativePath="..\..\..\gtk\gtkexpander.c" />
    <File RelativePath="..\..\..\gtk\gtkfilechooser.c" />
    <File RelativePath="..\..\..\gtk\gtkfilechooserbutton.c" />
@@ -598,6 +601,7 @@
    <File RelativePath="..\..\..\gtk\gtkgesturepan.c" />
    <File RelativePath="..\..\..\gtk\gtkgesturerotate.c" />
    <File RelativePath="..\..\..\gtk\gtkgesturesingle.c" />
+   <File RelativePath="..\..\..\gtk\gtkgesturestylus.c" />
    <File RelativePath="..\..\..\gtk\gtkgestureswipe.c" />
    <File RelativePath="..\..\..\gtk\gtkgesturezoom.c" />
    <File RelativePath="..\..\..\gtk\gtkglarea.c" />

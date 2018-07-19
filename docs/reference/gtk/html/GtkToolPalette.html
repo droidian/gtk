@@ -8,7 +8,7 @@
 <link rel="up" href="MenusAndCombos.html" title="Menus, Combo Box, Toolbar">
 <link rel="prev" href="GtkToolItem.html" title="GtkToolItem">
 <link rel="next" href="GtkToolItemGroup.html" title="GtkToolItemGroup">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -305,7 +305,7 @@
 <a name="GtkToolPalette.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkToolPalette implements
- AtkImplementorIface,  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>,  <a class="link" href="gtk3-Orientable.html#GtkOrientable">GtkOrientable</a> and  <a class="link" href="GtkScrollable.html" title="GtkScrollable">GtkScrollable</a>.</p>
+ AtkImplementor,  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>,  <a class="link" href="gtk3-Orientable.html#GtkOrientable">GtkOrientable</a> and  <a class="link" href="GtkScrollable.html" title="GtkScrollable">GtkScrollable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GtkToolPalette.includes"></a><h2>Includes</h2>
@@ -648,7 +648,7 @@ See <a class="link" href="GtkToolPalette.html#gtk-tool-palette-set-icon-size" ti
 </div>
 <div class="refsect3">
 <a name="gtk-tool-palette-get-icon-size.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="gtk3-Themeable-Stock-Images.html#GtkIconSize" title="enum GtkIconSize"><span class="type">GtkIconSize</span></a> of icons in the tool palette. </p>
+<p>the <a class="link" href="gtk3-Themeable-Stock-Images.html#GtkIconSize" title="enum GtkIconSize"><span class="type">GtkIconSize</span></a> of icons in the tool palette. </p>
 <p><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> int]</span></p>
 </div>
 <p class="since">Since: 2.20</p>
@@ -676,7 +676,7 @@ gtk_tool_palette_set_icon_size (<em class="parameter"><code><a class="link" href
 </tr>
 <tr>
 <td class="parameter_name"><p>icon_size</p></td>
-<td class="parameter_description"><p> the <a class="link" href="gtk3-Themeable-Stock-Images.html#GtkIconSize" title="enum GtkIconSize"><span class="type">GtkIconSize</span></a> that icons in the tool
+<td class="parameter_description"><p>the <a class="link" href="gtk3-Themeable-Stock-Images.html#GtkIconSize" title="enum GtkIconSize"><span class="type">GtkIconSize</span></a> that icons in the tool
 palette shall have. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> int]</span></td>
 </tr>
@@ -799,7 +799,7 @@ gtk_tool_palette_add_drag_dest (<em class="parameter"><code><a class="link" href
                                 <em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
                                 <em class="parameter"><code><a class="link" href="gtk3-Drag-and-Drop.html#GtkDestDefaults" title="enum GtkDestDefaults"><span class="type">GtkDestDefaults</span></a> flags</code></em>,
                                 <em class="parameter"><code><a class="link" href="GtkToolPalette.html#GtkToolPaletteDragTargets" title="enum GtkToolPaletteDragTargets"><span class="type">GtkToolPaletteDragTargets</span></a> targets</code></em>,
-                                <em class="parameter"><code><span class="type">GdkDragAction</span> actions</code></em>);</pre>
+                                <em class="parameter"><code><a href="../html/gdk3-Drag-and-Drop.html#GdkDragAction"><span class="type">GdkDragAction</span></a> actions</code></em>);</pre>
 <p>Sets <em class="parameter"><code>palette</code></em>
  as drag source (see <a class="link" href="GtkToolPalette.html#gtk-tool-palette-set-drag-source" title="gtk_tool_palette_set_drag_source ()"><code class="function">gtk_tool_palette_set_drag_source()</code></a>)
 and sets <em class="parameter"><code>widget</code></em>
@@ -840,7 +840,7 @@ should support</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>actions</p></td>
-<td class="parameter_description"><p>the <span class="type">GdkDragActions</span> which the widget should suppport</p></td>
+<td class="parameter_description"><p>the <a href="../html/gdk3-Drag-and-Drop.html#GdkDragAction"><span class="type">GdkDragActions</span></a> which the widget should suppport</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -880,7 +880,7 @@ This could be a <a class="link" href="GtkToolItem.html" title="GtkToolItem"><spa
 </div>
 <div class="refsect3">
 <a name="gtk-tool-palette-get-drag-item.returns"></a><h4>Returns</h4>
-<p> the dragged item in selection. </p>
+<p>the dragged item in selection. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.20</p>
@@ -894,7 +894,7 @@ gtk_tool_palette_get_drag_target_group
 <p>Get the target entry for a dragged <a class="link" href="GtkToolItemGroup.html" title="GtkToolItemGroup"><span class="type">GtkToolItemGroup</span></a>.</p>
 <div class="refsect3">
 <a name="gtk-tool-palette-get-drag-target-group.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="gtk3-Selections.html#GtkTargetEntry" title="struct GtkTargetEntry"><span class="type">GtkTargetEntry</span></a> for a dragged group. </p>
+<p>the <a class="link" href="gtk3-Selections.html#GtkTargetEntry" title="struct GtkTargetEntry"><span class="type">GtkTargetEntry</span></a> for a dragged group. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.20</p>
@@ -907,7 +907,7 @@ gtk_tool_palette_get_drag_target_item (<em class="parameter"><code><span class="
 <p>Gets the target entry for a dragged <a class="link" href="GtkToolItem.html" title="GtkToolItem"><span class="type">GtkToolItem</span></a>.</p>
 <div class="refsect3">
 <a name="gtk-tool-palette-get-drag-target-item.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="gtk3-Selections.html#GtkTargetEntry" title="struct GtkTargetEntry"><span class="type">GtkTargetEntry</span></a> for a dragged item. </p>
+<p>the <a class="link" href="gtk3-Selections.html#GtkTargetEntry" title="struct GtkTargetEntry"><span class="type">GtkTargetEntry</span></a> for a dragged item. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.20</p>
@@ -949,7 +949,7 @@ gtk_tool_palette_get_drop_group (<em class="parameter"><code><a class="link" hre
 </div>
 <div class="refsect3">
 <a name="gtk-tool-palette-get-drop-group.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="GtkToolItemGroup.html" title="GtkToolItemGroup"><span class="type">GtkToolItemGroup</span></a> at position
+<p>the <a class="link" href="GtkToolItemGroup.html" title="GtkToolItemGroup"><span class="type">GtkToolItemGroup</span></a> at position
 or <code class="literal">NULL</code> if there is no such group. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -993,7 +993,7 @@ See <a class="link" href="GtkToolPalette.html#gtk-tool-palette-get-drop-group" t
 </div>
 <div class="refsect3">
 <a name="gtk-tool-palette-get-drop-item.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="GtkToolItem.html" title="GtkToolItem"><span class="type">GtkToolItem</span></a> at position or <code class="literal">NULL</code> if there is no such item. </p>
+<p>the <a class="link" href="GtkToolItem.html" title="GtkToolItem"><span class="type">GtkToolItem</span></a> at position or <code class="literal">NULL</code> if there is no such item. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.20</p>
@@ -1060,7 +1060,7 @@ gtk_tool_palette_get_hadjustment (<em class="parameter"><code><a class="link" hr
 </div>
 <div class="refsect3">
 <a name="gtk-tool-palette-get-hadjustment.returns"></a><h4>Returns</h4>
-<p> the horizontal adjustment of <em class="parameter"><code>palette</code></em>
+<p>the horizontal adjustment of <em class="parameter"><code>palette</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1093,7 +1093,7 @@ gtk_tool_palette_get_vadjustment (<em class="parameter"><code><a class="link" hr
 </div>
 <div class="refsect3">
 <a name="gtk-tool-palette-get-vadjustment.returns"></a><h4>Returns</h4>
-<p> the vertical adjustment of <em class="parameter"><code>palette</code></em>
+<p>the vertical adjustment of <em class="parameter"><code>palette</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1215,6 +1215,6 @@ at a given time.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <link rel="up" href="SelectorWidgets.html" title="Selector Widgets and Dialogs">
 <link rel="prev" href="GtkFontChooserDialog.html" title="GtkFontChooserDialog">
 <link rel="next" href="Ornaments.html" title="Ornaments">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -417,7 +417,7 @@
 <a name="GtkPlacesSidebar.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkPlacesSidebar implements
- AtkImplementorIface and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
+ AtkImplementor and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GtkPlacesSidebar.includes"></a><h2>Includes</h2>
@@ -576,7 +576,7 @@ places in the list.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>location</p></td>
-<td class="parameter_description"><p> location to select, or <code class="literal">NULL</code> for no current path. </p></td>
+<td class="parameter_description"><p>location to select, or <code class="literal">NULL</code> for no current path. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -616,7 +616,7 @@ for your menu items.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-places-sidebar-get-location.returns"></a><h4>Returns</h4>
-<p> a <span class="type">GFile</span> with the selected location, or
+<p>a <span class="type">GFile</span> with the selected location, or
 <code class="literal">NULL</code> if nothing is visually selected. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -843,7 +843,7 @@ gtk_places_sidebar_list_shortcuts (<em class="parameter"><code><a class="link" h
 </div>
 <div class="refsect3">
 <a name="gtk-places-sidebar-list-shortcuts.returns"></a><h4>Returns</h4>
-<p>    A <span class="type">GSList</span> of <span class="type">GFile</span> of the locations that have been added as
+<p>A <span class="type">GSList</span> of <span class="type">GFile</span> of the locations that have been added as
 application-specific shortcuts with <a class="link" href="GtkPlacesSidebar.html#gtk-places-sidebar-add-shortcut" title="gtk_places_sidebar_add_shortcut ()"><code class="function">gtk_places_sidebar_add_shortcut()</code></a>.
 To free this list, you can use</p>
 <div class="informalexample"><pre class="programlisting">
@@ -887,7 +887,7 @@ the “Alt-1”, “Alt-2”, etc. shortcuts, which activate the cooresponding b
 </div>
 <div class="refsect3">
 <a name="gtk-places-sidebar-get-nth-bookmark.returns"></a><h4>Returns</h4>
-<p> The bookmark specified by the index <em class="parameter"><code>n</code></em>
+<p>The bookmark specified by the index <em class="parameter"><code>n</code></em>
 , or
 <code class="literal">NULL</code> if no such index exist.  Note that the indices start at 0, even though
 the file chooser starts them with the keyboard shortcut "Alt-1". </p>
@@ -1226,7 +1226,7 @@ see and interact with drives and network servers directly.</p>
 gtk_places_sidebar_set_drop_targets_visible
                                (<em class="parameter"><code><a class="link" href="GtkPlacesSidebar.html" title="GtkPlacesSidebar"><span class="type">GtkPlacesSidebar</span></a> *sidebar</code></em>,
                                 <em class="parameter"><code><span class="type">gboolean</span> visible</code></em>,
-                                <em class="parameter"><code><span class="type">GdkDragContext</span> *context</code></em>);</pre>
+                                <em class="parameter"><code><a href="../html/gdk3-Drag-and-Drop.html#GdkDragContext-struct"><span class="type">GdkDragContext</span></a> *context</code></em>);</pre>
 <p>Make the GtkPlacesSidebar show drop targets, so it can show the available
 drop targets and a "new bookmark" row. This improves the Drag-and-Drop
 experience of the user and allows applications to show all available
@@ -1470,7 +1470,7 @@ of the drag-and-drop operation.</p>
 <a name="GtkPlacesSidebar-drag-action-requested"></a><h3>The <code class="literal">“drag-action-requested”</code> signal</h3>
 <pre class="programlisting"><span class="returnvalue">gint</span>
 user_function (<a class="link" href="GtkPlacesSidebar.html" title="GtkPlacesSidebar"><span class="type">GtkPlacesSidebar</span></a> *sidebar,
-               <span class="type">GdkDragContext</span>   *context,
+               <a href="../html/gdk3-Drag-and-Drop.html#GdkDragContext-struct"><span class="type">GdkDragContext</span></a>   *context,
                <span class="type">GObject</span>          *dest_file,
                <span class="type">gpointer</span>          source_file_list,
                <span class="type">gpointer</span>          user_data)</pre>
@@ -1500,17 +1500,17 @@ possible actions for the destination <em class="parameter"><code>dest_file</code
 </tr>
 <tr>
 <td class="parameter_name"><p>context</p></td>
-<td class="parameter_description"><p> <span class="type">GdkDragContext</span> with information about the drag operation. </p></td>
+<td class="parameter_description"><p><a href="../html/gdk3-Drag-and-Drop.html#GdkDragContext-struct"><span class="type">GdkDragContext</span></a> with information about the drag operation. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gdk.DragContext]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>dest_file</p></td>
-<td class="parameter_description"><p> <span class="type">GFile</span> with the tentative location that is being hovered for a drop. </p></td>
+<td class="parameter_description"><p><span class="type">GFile</span> with the tentative location that is being hovered for a drop. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gio.File]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>source_file_list</p></td>
-<td class="parameter_description"><p>  List of <span class="type">GFile</span> that are being dragged. </p></td>
+<td class="parameter_description"><p>List of <span class="type">GFile</span> that are being dragged. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GLib.List][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GFile][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1523,8 +1523,8 @@ possible actions for the destination <em class="parameter"><code>dest_file</code
 </div>
 <div class="refsect3">
 <a name="GtkPlacesSidebar-drag-action-requested.returns"></a><h4>Returns</h4>
-<p> The drag action to use, for example, <span class="type">GDK_ACTION_COPY</span>
-or <span class="type">GDK_ACTION_MOVE</span>, or 0 if no action is allowed here (i.e. drops
+<p> The drag action to use, for example, <a href="../html/gdk3-Drag-and-Drop.html#GDK-ACTION-COPY:CAPS"><span class="type">GDK_ACTION_COPY</span></a>
+or <a href="../html/gdk3-Drag-and-Drop.html#GDK-ACTION-MOVE:CAPS"><span class="type">GDK_ACTION_MOVE</span></a>, or 0 if no action is allowed here (i.e. drops
 are not allowed in the specified <em class="parameter"><code>dest_file</code></em>
 ).</p>
 </div>
@@ -1564,12 +1564,12 @@ which should be copied/moved/etc. based on the specified <em class="parameter"><
 </tr>
 <tr>
 <td class="parameter_name"><p>dest_file</p></td>
-<td class="parameter_description"><p> Destination <span class="type">GFile</span>. </p></td>
+<td class="parameter_description"><p>Destination <span class="type">GFile</span>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gio.File]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>source_file_list</p></td>
-<td class="parameter_description"><p>  <span class="type">GList</span> of <span class="type">GFile</span> that got dropped. </p></td>
+<td class="parameter_description"><p><span class="type">GList</span> of <span class="type">GFile</span> that got dropped. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GLib.List][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GFile][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1657,7 +1657,7 @@ the specified location.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>location</p></td>
-<td class="parameter_description"><p> <span class="type">GFile</span> to which the caller should switch. </p></td>
+<td class="parameter_description"><p><span class="type">GFile</span> to which the caller should switch. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gio.File]</span></td>
 </tr>
 <tr>
@@ -1730,19 +1730,19 @@ that this signal is emitted for populating popovers as well.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>container</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkMenu.html" title="GtkMenu"><span class="type">GtkMenu</span></a> or another <a class="link" href="GtkContainer.html" title="GtkContainer"><span class="type">GtkContainer</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkMenu.html" title="GtkMenu"><span class="type">GtkMenu</span></a> or another <a class="link" href="GtkContainer.html" title="GtkContainer"><span class="type">GtkContainer</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gtk.Widget]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>selected_item</p></td>
-<td class="parameter_description"><p> <span class="type">GFile</span> with the item to which
+<td class="parameter_description"><p><span class="type">GFile</span> with the item to which
 the popup should refer, or <code class="literal">NULL</code> in the case of a <em class="parameter"><code>selected_volume</code></em>
 . </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gio.File][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>selected_volume</p></td>
-<td class="parameter_description"><p> <span class="type">GVolume</span> if the selected
+<td class="parameter_description"><p><span class="type">GVolume</span> if the selected
 item is a volume, or <code class="literal">NULL</code> if it is a file. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gio.Volume][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
@@ -1968,7 +1968,7 @@ volumes and discovered network addresses.</p>
 <a name="GtkPlacesSidebar-show-starred-location"></a><h3>The <code class="literal">“show-starred-location”</code> signal</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 user_function (<a class="link" href="GtkPlacesSidebar.html" title="GtkPlacesSidebar"><span class="type">GtkPlacesSidebar</span></a>  *sidebar,
-               <a class="link" href="GtkPlacesSidebar.html#GtkPlacesOpenFlags" title="enum GtkPlacesOpenFlags"><span class="type">GtkPlacesOpenFlags</span></a> arg1,
+               <a class="link" href="GtkPlacesSidebar.html#GtkPlacesOpenFlags" title="enum GtkPlacesOpenFlags"><span class="type">GtkPlacesOpenFlags</span></a> open_flags,
                <span class="type">gpointer</span>           user_data)</pre>
 <p>The places sidebar emits this signal when it needs the calling
 application to present a way to show the starred files. In GNOME,
@@ -1986,6 +1986,12 @@ tag in the tracker database.</p>
 <tr>
 <td class="parameter_name"><p>sidebar</p></td>
 <td class="parameter_description"><p>the object which received the signal.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>open_flags</p></td>
+<td class="parameter_description"><p>a single value from <a class="link" href="GtkPlacesSidebar.html#GtkPlacesOpenFlags" title="enum GtkPlacesOpenFlags"><span class="type">GtkPlacesOpenFlags</span></a> specifying how the
+starred file should be opened.</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -2047,6 +2053,6 @@ progress of the operation and, for example, show a notification.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

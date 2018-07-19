@@ -8,7 +8,7 @@
 <link rel="up" href="SelectorWidgets.html" title="Selector Widgets and Dialogs">
 <link rel="prev" href="GtkColorChooserDialog.html" title="GtkColorChooserDialog">
 <link rel="next" href="GtkFileChooserButton.html" title="GtkFileChooserButton">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -659,7 +659,7 @@
 </div>
 <div class="refsect1">
 <a name="GtkFileChooser.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GInterface
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
     <span class="lineart">╰──</span> GtkFileChooser
 </pre>
 </div>
@@ -1225,7 +1225,7 @@ Please see the documentation for those functions for an example of using
 </tr>
 <tr>
 <td class="parameter_name"><p>name</p></td>
-<td class="parameter_description"><p> the filename to use, as a UTF-8 string. </p></td>
+<td class="parameter_description"><p>the filename to use, as a UTF-8 string. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr>
 </tbody>
@@ -1297,7 +1297,7 @@ folder.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-get-filename.returns"></a><h4>Returns</h4>
-<p> The currently selected filename,
+<p>The currently selected filename,
 or <code class="literal">NULL</code> if no file is selected, or the selected file can't
 be represented with a local filename. Free with <code class="function">g_free()</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></p>
@@ -1358,7 +1358,7 @@ is already known, so the file chooser will use it.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>filename</p></td>
-<td class="parameter_description"><p> the filename to set as current. </p></td>
+<td class="parameter_description"><p>the filename to set as current. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr>
 </tbody>
@@ -1398,7 +1398,7 @@ be changed to the folder containing <em class="parameter"><code>filename</code><
 </tr>
 <tr>
 <td class="parameter_name"><p>filename</p></td>
-<td class="parameter_description"><p> the filename to select. </p></td>
+<td class="parameter_description"><p>the filename to select. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr>
 </tbody>
@@ -1436,7 +1436,7 @@ is otherwise not currently selected, does nothing.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>filename</p></td>
-<td class="parameter_description"><p> the filename to unselect. </p></td>
+<td class="parameter_description"><p>the filename to unselect. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr>
 </tbody>
@@ -1517,7 +1517,7 @@ folder cannot be represented as local filenames they will be ignored. (See
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-get-filenames.returns"></a><h4>Returns</h4>
-<p> a <span class="type">GSList</span>
+<p>a <span class="type">GSList</span>
 containing the filenames of all selected files and subfolders in
 the current folder. Free the returned list with <code class="function">g_slist_free()</code>,
 and the filenames with <code class="function">g_free()</code>. </p>
@@ -1554,7 +1554,7 @@ for the rationale behind this.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>filename</p></td>
-<td class="parameter_description"><p> the full path of the new current folder. </p></td>
+<td class="parameter_description"><p>the full path of the new current folder. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr>
 </tbody>
@@ -1598,7 +1598,7 @@ usual way to get the selection.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-get-current-folder.returns"></a><h4>Returns</h4>
-<p> the full path of the current
+<p>the full path of the current
 folder, or <code class="literal">NULL</code> if the current path cannot be represented as a local
 filename.  Free with <code class="function">g_free()</code>.  This function will also return
 <code class="literal">NULL</code> if the file chooser was unable to load the last folder that
@@ -1635,7 +1635,7 @@ folder.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-get-uri.returns"></a><h4>Returns</h4>
-<p> The currently selected URI, or <code class="literal">NULL</code>
+<p>The currently selected URI, or <code class="literal">NULL</code>
 if no file is selected. If <a class="link" href="GtkFileChooser.html#gtk-file-chooser-set-local-only" title="gtk_file_chooser_set_local_only ()"><code class="function">gtk_file_chooser_set_local_only()</code></a> is set to
 <code class="literal">TRUE</code> (the default) a local URI will be returned for any FUSE locations.
 Free with <code class="function">g_free()</code>. </p>
@@ -1808,7 +1808,7 @@ gtk_file_chooser_get_uris (<em class="parameter"><code><a class="link" href="Gtk
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-get-uris.returns"></a><h4>Returns</h4>
-<p> a <span class="type">GSList</span> containing the URIs of all selected
+<p>a <span class="type">GSList</span> containing the URIs of all selected
 files and subfolders in the current folder. Free the returned list
 with <code class="function">g_slist_free()</code>, and the filenames with <code class="function">g_free()</code>. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -1891,7 +1891,7 @@ usual way to get the selection.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-get-current-folder-uri.returns"></a><h4>Returns</h4>
-<p> the URI for the current folder.
+<p>the URI for the current folder.
 Free with <code class="function">g_free()</code>.  This function will also return <code class="literal">NULL</code> if the file chooser
 was unable to load the last folder that was requested from it; for example,
 as would be for calling <a class="link" href="GtkFileChooser.html#gtk-file-chooser-set-current-folder-uri" title="gtk_file_chooser_set_current_folder_uri ()"><code class="function">gtk_file_chooser_set_current_folder_uri()</code></a> on a
@@ -1965,7 +1965,7 @@ gtk_file_chooser_get_preview_widget (<em class="parameter"><code><a class="link"
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-get-preview-widget.returns"></a><h4>Returns</h4>
-<p> the current preview widget, or <code class="literal">NULL</code>. </p>
+<p>the current preview widget, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.4</p>
@@ -2127,7 +2127,7 @@ widget. See <a class="link" href="GtkFileChooser.html#gtk-file-chooser-set-previ
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-get-preview-filename.returns"></a><h4>Returns</h4>
-<p> the filename to preview, or <code class="literal">NULL</code> if
+<p>the filename to preview, or <code class="literal">NULL</code> if
 no file is selected, or if the selected file cannot be represented
 as a local filename. Free with <code class="function">g_free()</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></p>
@@ -2158,7 +2158,7 @@ widget. See <a class="link" href="GtkFileChooser.html#gtk-file-chooser-set-previ
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-get-preview-uri.returns"></a><h4>Returns</h4>
-<p> the URI for the file to preview,
+<p>the URI for the file to preview,
 or <code class="literal">NULL</code> if no file is selected. Free with <code class="function">g_free()</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -2219,7 +2219,7 @@ gtk_file_chooser_get_extra_widget (<em class="parameter"><code><a class="link" h
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-get-extra-widget.returns"></a><h4>Returns</h4>
-<p> the current extra widget, or <code class="literal">NULL</code>. </p>
+<p>the current extra widget, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.4</p>
@@ -2253,7 +2253,7 @@ ref and sink it if you want to keep a reference.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>filter</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkFileFilter.html" title="GtkFileFilter"><span class="type">GtkFileFilter</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkFileFilter.html" title="GtkFileFilter"><span class="type">GtkFileFilter</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2317,7 +2317,7 @@ gtk_file_chooser_list_filters (<em class="parameter"><code><a class="link" href=
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-list-filters.returns"></a><h4>Returns</h4>
-<p> a
+<p>a
 <span class="type">GSList</span> containing the current set of user selectable filters. The
 contents of the list are owned by GTK+, but you must free the list
 itself with <code class="function">g_slist_free()</code> when you are done with it. </p>
@@ -2384,7 +2384,7 @@ gtk_file_chooser_get_filter (<em class="parameter"><code><a class="link" href="G
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-get-filter.returns"></a><h4>Returns</h4>
-<p> the current filter, or <code class="literal">NULL</code>. </p>
+<p>the current filter, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.4</p>
@@ -2416,12 +2416,12 @@ application.  For example, you can use this to add a
 </tr>
 <tr>
 <td class="parameter_name"><p>folder</p></td>
-<td class="parameter_description"><p> filename of the folder to add. </p></td>
+<td class="parameter_description"><p>filename of the folder to add. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> location to store error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2460,12 +2460,12 @@ gtk_file_chooser_remove_shortcut_folder
 </tr>
 <tr>
 <td class="parameter_name"><p>folder</p></td>
-<td class="parameter_description"><p> filename of the folder to remove. </p></td>
+<td class="parameter_description"><p>filename of the folder to remove. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> location to store error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2505,7 +2505,7 @@ gtk_file_chooser_list_shortcut_folders
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-list-shortcut-folders.returns"></a><h4>Returns</h4>
-<p> A list
+<p>A list
 of folder filenames, or <code class="literal">NULL</code> if there are no shortcut folders.
 Free the returned list with <code class="function">g_slist_free()</code>, and the filenames with
 <code class="function">g_free()</code>. </p>
@@ -2546,7 +2546,7 @@ by the application.  For example, you can use this to add a
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> location to store error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2590,7 +2590,7 @@ gtk_file_chooser_remove_shortcut_folder_uri
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> location to store error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2630,7 +2630,7 @@ gtk_file_chooser_list_shortcut_folder_uris
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-list-shortcut-folder-uris.returns"></a><h4>Returns</h4>
-<p> A list of
+<p>A list of
 folder URIs, or <code class="literal">NULL</code> if there are no shortcut folders.  Free the
 returned list with <code class="function">g_slist_free()</code>, and the URIs with <code class="function">g_free()</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -2663,7 +2663,7 @@ See <a class="link" href="GtkFileChooser.html#gtk-file-chooser-get-current-folde
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-get-current-folder-file.returns"></a><h4>Returns</h4>
-<p> the <span class="type">GFile</span> for the current folder. </p>
+<p>the <span class="type">GFile</span> for the current folder. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.14</p>
@@ -2695,7 +2695,7 @@ folder.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-get-file.returns"></a><h4>Returns</h4>
-<p> a selected <span class="type">GFile</span>. You own the returned file;
+<p>a selected <span class="type">GFile</span>. You own the returned file;
 use <code class="function">g_object_unref()</code> to release it. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -2726,7 +2726,7 @@ as <span class="type">GFile</span>. An internal function, see <a class="link" hr
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-get-files.returns"></a><h4>Returns</h4>
-<p> a <span class="type">GSList</span>
+<p>a <span class="type">GSList</span>
 containing a <span class="type">GFile</span> for each selected file and subfolder in the
 current folder.  Free the returned list with <code class="function">g_slist_free()</code>, and
 the files with <code class="function">g_object_unref()</code>. </p>
@@ -2758,7 +2758,7 @@ Internal function, see <a class="link" href="GtkFileChooser.html#gtk-file-choose
 </div>
 <div class="refsect3">
 <a name="gtk-file-chooser-get-preview-file.returns"></a><h4>Returns</h4>
-<p> the <span class="type">GFile</span> for the file to preview,
+<p>the <span class="type">GFile</span> for the file to preview,
 or <code class="literal">NULL</code> if no file is selected. Free with <code class="function">g_object_unref()</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -2795,7 +2795,7 @@ gtk_file_chooser_select_file (<em class="parameter"><code><a class="link" href="
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> location to store error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2839,7 +2839,7 @@ Internal function, see <a class="link" href="GtkFileChooser.html#gtk-file-choose
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> location to store error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2916,7 +2916,7 @@ else
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> location to store the error, or <code class="literal">NULL</code> to ignore errors. </p></td>
+<td class="parameter_description"><p>location to store the error, or <code class="literal">NULL</code> to ignore errors. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -3486,6 +3486,6 @@ chooser about whether the preview was generated successfully or not.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

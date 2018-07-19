@@ -303,6 +303,9 @@
    <ClCompile Include="..\..\..\gtk\gtkentrycompletion.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gtk\gtkeventbox.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gtk\gtkeventcontroller.c"><Filter>Source Files</Filter></ClCompile>
+   <ClCompile Include="..\..\..\gtk\gtkeventcontrollerkey.c"><Filter>Source Files</Filter></ClCompile>
+   <ClCompile Include="..\..\..\gtk\gtkeventcontrollermotion.c"><Filter>Source Files</Filter></ClCompile>
+   <ClCompile Include="..\..\..\gtk\gtkeventcontrollerscroll.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gtk\gtkexpander.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gtk\gtkfilechooser.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gtk\gtkfilechooserbutton.c"><Filter>Source Files</Filter></ClCompile>
@@ -332,6 +335,7 @@
    <ClCompile Include="..\..\..\gtk\gtkgesturepan.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gtk\gtkgesturerotate.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gtk\gtkgesturesingle.c"><Filter>Source Files</Filter></ClCompile>
+   <ClCompile Include="..\..\..\gtk\gtkgesturestylus.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gtk\gtkgestureswipe.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gtk\gtkgesturezoom.c"><Filter>Source Files</Filter></ClCompile>
    <ClCompile Include="..\..\..\gtk\gtkglarea.c"><Filter>Source Files</Filter></ClCompile>
