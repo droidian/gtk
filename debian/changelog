@@ -31,6 +31,8 @@ gtk+3.0 (3.23.1-1) UNRELEASED; urgency=medium
     Drop - GTK now calls epoxy_has_glx() directly so this bypassed approach
     isn't necessary.
   * debian/libgail-3-0.symbols: New symbols for this release.
+  * debian/patches/0008-defaultvalue-Ignore-more-style-properties-that-Adwai.patch:
+    Cherry-pick test fix patch from upstream !253.
 
  -- Iain Lane <laney@debian.org>  Wed, 18 Jul 2018 14:08:52 +0100
 
