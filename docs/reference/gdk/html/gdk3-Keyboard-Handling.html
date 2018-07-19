@@ -8,7 +8,7 @@
 <link rel="up" href="reference.html" title="API Reference">
 <link rel="prev" href="gdk3-Event-Structures.html" title="Event Structures">
 <link rel="next" href="gdk3-Selections.html" title="Selections">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -365,7 +365,7 @@ gdk_keymap_get_default (<em class="parameter"><code><span class="type">void</spa
 <p>Returns the <a class="link" href="gdk3-Keyboard-Handling.html#GdkKeymap"><span class="type">GdkKeymap</span></a> attached to the default display.</p>
 <div class="refsect3">
 <a name="gdk-keymap-get-default.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="gdk3-Keyboard-Handling.html#GdkKeymap"><span class="type">GdkKeymap</span></a> attached to the default display. </p>
+<p>the <a class="link" href="gdk3-Keyboard-Handling.html#GdkKeymap"><span class="type">GdkKeymap</span></a> attached to the default display. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -393,7 +393,7 @@ gdk_keymap_get_for_display (<em class="parameter"><code><a class="link" href="Gd
 </div>
 <div class="refsect3">
 <a name="gdk-keymap-get-for-display.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="gdk3-Keyboard-Handling.html#GdkKeymap"><span class="type">GdkKeymap</span></a> attached to <em class="parameter"><code>display</code></em>
+<p>the <a class="link" href="gdk3-Keyboard-Handling.html#GdkKeymap"><span class="type">GdkKeymap</span></a> attached to <em class="parameter"><code>display</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -470,7 +470,7 @@ keyval, so this function isn’t as useful as you might think.</p>
 
 when comparing this key press to a hot key. For instance, on a US keyboard,
 the <code class="literal">plus</code> symbol is shifted, so when comparing a key press to a
-<code class="literal">&lt;Control&gt;plus</code> accelerator <code class="literal">&lt;Shift&gt;</code> should be masked out.</p>
+<code class="literal">&amp;lt;Control&gt;plus</code> accelerator <code class="literal">&amp;lt;Shift&gt;</code> should be masked out.</p>
 <div class="informalexample"><pre class="programlisting">
 // We want to ignore irrelevant modifiers like ScrollLock
 #define ALL_ACCELS_MASK (GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK)
@@ -495,8 +495,8 @@ if (keyval == accel_keyval &amp;&amp;
 </pre></div>
 <p></p>
 <p>However, this did not work if multi-modifier combinations were
-used in the keymap, since, for instance, <code class="literal">&lt;Control&gt;</code> would be
-masked out even if only <code class="literal">&lt;Control&gt;&lt;Alt&gt;</code> was used in the keymap.
+used in the keymap, since, for instance, <code class="literal">&amp;lt;Control&gt;</code> would be
+masked out even if only <code class="literal">&amp;lt;Control&gt;&amp;lt;Alt&gt;</code> was used in the keymap.
 To support this usage as well as well as possible, all single
 modifier combinations that could affect the key for any combination
 of modifiers will be returned in <em class="parameter"><code>consumed_modifiers</code></em>
@@ -504,7 +504,7 @@ of modifiers will be returned in <em class="parameter"><code>consumed_modifiers<
 combinations are returned only when actually found in <em class="parameter"><code>state</code></em>
 . When
 you store accelerators, you should always store them with consumed
-modifiers removed. Store <code class="literal">&lt;Control&gt;plus</code>, not <code class="literal">&lt;Control&gt;&lt;Shift&gt;plus</code>,</p>
+modifiers removed. Store <code class="literal">&amp;lt;Control&gt;plus</code>, not <code class="literal">&amp;lt;Control&gt;&amp;lt;Shift&gt;plus</code>,</p>
 <div class="refsect3">
 <a name="gdk-keymap-translate-keyboard-state.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -536,23 +536,23 @@ modifiers removed. Store <code class="literal">&lt;Control&gt;plus</code>, not <
 </tr>
 <tr>
 <td class="parameter_name"><p>keyval</p></td>
-<td class="parameter_description"><p> return location for keyval, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for keyval, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>effective_group</p></td>
-<td class="parameter_description"><p> return location for effective
+<td class="parameter_description"><p>return location for effective
 group, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>level</p></td>
-<td class="parameter_description"><p> return location for level, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for level, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>consumed_modifiers</p></td>
-<td class="parameter_description"><p> return location for modifiers
+<td class="parameter_description"><p>return location for modifiers
 that were used to determine the group or level, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -605,7 +605,7 @@ with <code class="function">g_free()</code>.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>keys</p></td>
-<td class="parameter_description"><p> return location
+<td class="parameter_description"><p>return location
 for an array of <a class="link" href="gdk3-Keyboard-Handling.html#GdkKeymapKey" title="struct GdkKeymapKey"><span class="type">GdkKeymapKey</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_keys][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
 </tr>
@@ -661,13 +661,13 @@ keyboard group and level. See <a class="link" href="gdk3-Keyboard-Handling.html#
 </tr>
 <tr>
 <td class="parameter_name"><p>keys</p></td>
-<td class="parameter_description"><p> return
+<td class="parameter_description"><p>return
 location for array of <a class="link" href="gdk3-Keyboard-Handling.html#GdkKeymapKey" title="struct GdkKeymapKey"><span class="type">GdkKeymapKey</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_entries][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed instead of a pointer to a location."><span class="acronym">optional</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>keyvals</p></td>
-<td class="parameter_description"><p> return
+<td class="parameter_description"><p>return
 location for array of keyvals, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_entries][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed instead of a pointer to a location."><span class="acronym">optional</span></acronym>]</span></td>
 </tr>
@@ -882,7 +882,7 @@ accelerators.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>state</p></td>
-<td class="parameter_description"><p> pointer to the modifier mask to change. </p></td>
+<td class="parameter_description"><p>pointer to the modifier mask to change. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -919,7 +919,7 @@ accelerators.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>state</p></td>
-<td class="parameter_description"><p> pointer to the modifier state to map. </p></td>
+<td class="parameter_description"><p>pointer to the modifier state to map. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1005,7 +1005,7 @@ but without the leading “GDK_KEY_”.</p>
 </div>
 <div class="refsect3">
 <a name="gdk-keyval-name.returns"></a><h4>Returns</h4>
-<p> a string containing the name
+<p>a string containing the name
 of the key, or <code class="literal">NULL</code> if <em class="parameter"><code>keyval</code></em>
 is not a valid key. The string
 should not be modified. </p>
@@ -1068,13 +1068,13 @@ Examples of keyvals are <span class="type">GDK_KEY_a</span>, <span class="type">
 </tr>
 <tr>
 <td class="parameter_name"><p>lower</p></td>
-<td class="parameter_description"><p> return location for lowercase version of <em class="parameter"><code>symbol</code></em>
+<td class="parameter_description"><p>return location for lowercase version of <em class="parameter"><code>symbol</code></em>
 . </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>upper</p></td>
-<td class="parameter_description"><p> return location for uppercase version of <em class="parameter"><code>symbol</code></em>
+<td class="parameter_description"><p>return location for uppercase version of <em class="parameter"><code>symbol</code></em>
 . </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -1420,6 +1420,6 @@ See <a class="link" href="gdk3-Keyboard-Handling.html#gdk-keymap-get-caps-lock-s
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

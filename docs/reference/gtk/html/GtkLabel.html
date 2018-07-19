@@ -8,7 +8,7 @@
 <link rel="up" href="DisplayWidgets.html" title="Display Widgets">
 <link rel="prev" href="DisplayWidgets.html" title="Display Widgets">
 <link rel="next" href="GtkImage.html" title="GtkImage">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -633,7 +633,7 @@
 <a name="GtkLabel.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkLabel implements
- AtkImplementorIface and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
+ AtkImplementor and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GtkLabel.includes"></a><h2>Includes</h2>
@@ -793,7 +793,7 @@ labels will be rewrapped to use all of the available width.</p>
 <a name="id-1.3.8.2.10.9"></a><h3>Links</h3>
 <p>Since 2.18, GTK+ supports markup for clickable hyperlinks in addition
 to regular Pango markup. The markup for links is borrowed from HTML,
-using the <code class="literal">&lt;a&gt;</code> with “href“ and “title“ attributes. GTK+ renders links
+using the <code class="literal">&amp;lt;a&gt;</code> with “href“ and “title“ attributes. GTK+ renders links
 similar to the way they appear in web browsers, with colored, underlined
 text. The “title“ attribute is displayed as a tooltip on the link.</p>
 <p>An example looks like this:</p>
@@ -828,7 +828,7 @@ pass <code class="literal">NULL</code> to get an empty label widget.</p>
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>str</p></td>
-<td class="parameter_description"><p> The text of the label. </p></td>
+<td class="parameter_description"><p>The text of the label. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
@@ -904,7 +904,7 @@ to the label after the markup string is parsed.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>attrs</p></td>
-<td class="parameter_description"><p> a <span class="type">PangoAttrList</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <span class="type">PangoAttrList</span>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1369,12 +1369,12 @@ and from pixels using <code class="function">PANGO_PIXELS()</code> or <span clas
 </tr>
 <tr>
 <td class="parameter_name"><p>x</p></td>
-<td class="parameter_description"><p> location to store X offset of layout, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store X offset of layout, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed instead of a pointer to a location."><span class="acronym">optional</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>y</p></td>
-<td class="parameter_description"><p> location to store Y offset of layout, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store Y offset of layout, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed instead of a pointer to a location."><span class="acronym">optional</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1493,7 +1493,7 @@ and be activated by the mnemonic.</p>
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>str</p></td>
-<td class="parameter_description"><p> The text of the label, with an underscore in front of the
+<td class="parameter_description"><p>The text of the label, with an underscore in front of the
 mnemonic character. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr></tbody>
@@ -1580,7 +1580,7 @@ and toggle focus between the colliding widgets otherwise.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>widget</p></td>
-<td class="parameter_description"><p> the target <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>, or <code class="literal">NULL</code> to unset. </p></td>
+<td class="parameter_description"><p>the target <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>, or <code class="literal">NULL</code> to unset. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1682,7 +1682,7 @@ pango_layout_get_attribute (gtk_label_get_layout (label)).</p>
 </div>
 <div class="refsect3">
 <a name="gtk-label-get-attributes.returns"></a><h4>Returns</h4>
-<p> the attribute list, or <code class="literal">NULL</code>
+<p>the attribute list, or <code class="literal">NULL</code>
 if none was set. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1913,7 +1913,7 @@ any time, so it should be considered read-only.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-label-get-layout.returns"></a><h4>Returns</h4>
-<p> the <span class="type">PangoLayout</span> for this label. </p>
+<p>the <span class="type">PangoLayout</span> for this label. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -2023,7 +2023,7 @@ label. See <a class="link" href="GtkLabel.html#gtk-label-set-mnemonic-widget" ti
 </div>
 <div class="refsect3">
 <a name="gtk-label-get-mnemonic-widget.returns"></a><h4>Returns</h4>
-<p> the target of the label’s mnemonic,
+<p>the target of the label’s mnemonic,
 or <code class="literal">NULL</code> if none has been set and the default algorithm will be used. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -2053,12 +2053,12 @@ if there’s a selection.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>start</p></td>
-<td class="parameter_description"><p> return location for start of selection, as a character offset. </p></td>
+<td class="parameter_description"><p>return location for start of selection, as a character offset. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>end</p></td>
-<td class="parameter_description"><p> return location for end of selection, as a character offset. </p></td>
+<td class="parameter_description"><p>return location for end of selection, as a character offset. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2909,6 +2909,6 @@ to this signal and append your menuitems to the <em class="parameter"><code>menu
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

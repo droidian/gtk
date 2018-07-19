@@ -68,6 +68,9 @@
 ..\..\gtk\gtkenums.h
 ..\..\gtk\gtkeventbox.h
 ..\..\gtk\gtkeventcontroller.h
+..\..\gtk\gtkeventcontrollerkey.h
+..\..\gtk\gtkeventcontrollermotion.h
+..\..\gtk\gtkeventcontrollerscroll.h
 ..\..\gtk\gtkexpander.h
 ..\..\gtk\gtkfilechooser.h
 ..\..\gtk\gtkfilechooserbutton.h
@@ -89,6 +92,7 @@
 ..\..\gtk\gtkgesturepan.h
 ..\..\gtk\gtkgesturerotate.h
 ..\..\gtk\gtkgesturesingle.h
+..\..\gtk\gtkgesturestylus.h
 ..\..\gtk\gtkgestureswipe.h
 ..\..\gtk\gtkgesturezoom.h
 ..\..\gtk\gtkglarea.h
@@ -590,6 +594,9 @@
 ..\..\gtk\gtkentrycompletion.c
 ..\..\gtk\gtkeventbox.c
 ..\..\gtk\gtkeventcontroller.c
+..\..\gtk\gtkeventcontrollerkey.c
+..\..\gtk\gtkeventcontrollermotion.c
+..\..\gtk\gtkeventcontrollerscroll.c
 ..\..\gtk\gtkexpander.c
 ..\..\gtk\gtkfilechooser.c
 ..\..\gtk\gtkfilechooserbutton.c
@@ -619,6 +626,7 @@
 ..\..\gtk\gtkgesturepan.c
 ..\..\gtk\gtkgesturerotate.c
 ..\..\gtk\gtkgesturesingle.c
+..\..\gtk\gtkgesturestylus.c
 ..\..\gtk\gtkgestureswipe.c
 ..\..\gtk\gtkgesturezoom.c
 ..\..\gtk\gtkglarea.c

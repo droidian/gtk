@@ -8,7 +8,7 @@
 <link rel="up" href="AbstractObjects.html" title="Abstract Base Classes">
 <link rel="prev" href="GtkWidget.html" title="GtkWidget">
 <link rel="next" href="GtkBin.html" title="GtkBin">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -477,7 +477,7 @@
 <a name="GtkContainer.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkContainer implements
- AtkImplementorIface and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
+ AtkImplementor and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GtkContainer.includes"></a><h2>Includes</h2>
@@ -961,7 +961,7 @@ rather than <a class="link" href="GtkContainer.html#gtk-container-forall" title=
 </tr>
 <tr>
 <td class="parameter_name"><p>callback</p></td>
-<td class="parameter_description"><p>  a callback. </p></td>
+<td class="parameter_description"><p>a callback. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid only during the call to the method."><span class="acronym">scope call</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -997,7 +997,7 @@ gtk_container_get_children (<em class="parameter"><code><a class="link" href="Gt
 </div>
 <div class="refsect3">
 <a name="gtk-container-get-children.returns"></a><h4>Returns</h4>
-<p> a newly-allocated list of the container’s non-internal children. </p>
+<p>a newly-allocated list of the container’s non-internal children. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GtkWidget][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 </div>
@@ -1102,7 +1102,7 @@ currently focused widget. That can be obtained by calling
 </div>
 <div class="refsect3">
 <a name="gtk-container-get-focus-child.returns"></a><h4>Returns</h4>
-<p> The child widget which will receive the
+<p>The child widget which will receive the
 focus inside <em class="parameter"><code>container</code></em>
 when the <em class="parameter"><code>container</code></em>
 is focused,
@@ -1142,7 +1142,7 @@ default behaviour by overriding the class closure of this signal.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>child</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1173,7 +1173,7 @@ gtk_container_get_focus_vadjustment (<em class="parameter"><code><a class="link"
 </div>
 <div class="refsect3">
 <a name="gtk-container-get-focus-vadjustment.returns"></a><h4>Returns</h4>
-<p> the vertical focus adjustment, or
+<p>the vertical focus adjustment, or
 <code class="literal">NULL</code> if none has been set. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1241,7 +1241,7 @@ gtk_container_get_focus_hadjustment (<em class="parameter"><code><a class="link"
 </div>
 <div class="refsect3">
 <a name="gtk-container-get-focus-hadjustment.returns"></a><h4>Returns</h4>
-<p> the horizontal focus adjustment, or <code class="literal">NULL</code> if
+<p>the horizontal focus adjustment, or <code class="literal">NULL</code> if
 none has been set. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1732,7 +1732,7 @@ than <a class="link" href="GtkContainer.html#gtk-container-forall" title="gtk_co
 </tr>
 <tr>
 <td class="parameter_name"><p>callback</p></td>
-<td class="parameter_description"><p> a callback. </p></td>
+<td class="parameter_description"><p>a callback. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid only during the call to the method."><span class="acronym">scope call</span></acronym>][<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym> callback_data]</span></td>
 </tr>
 <tr>
@@ -1818,7 +1818,7 @@ gtk_container_propagate_draw (<em class="parameter"><code><a class="link" href="
                               <em class="parameter"><code><span class="type">cairo_t</span> *cr</code></em>);</pre>
 <p>When a container receives a call to the draw function, it must send
 synthetic <a class="link" href="GtkWidget.html#GtkWidget-draw" title="The “draw” signal"><span class="type">“draw”</span></a> calls to all children that don’t have their
-own <span class="type">GdkWindows</span>. This function provides a convenient way of doing this.
+own <a href="../html/gdk3-Windows.html#GdkWindow-struct"><span class="type">GdkWindows</span></a>. This function provides a convenient way of doing this.
 A container, when it receives a call to its <a class="link" href="GtkWidget.html#GtkWidget-draw" title="The “draw” signal"><span class="type">“draw”</span></a> function,
 calls <a class="link" href="GtkContainer.html#gtk-container-propagate-draw" title="gtk_container_propagate_draw ()"><code class="function">gtk_container_propagate_draw()</code></a> once for each child, passing in
 the <em class="parameter"><code>cr</code></em>
@@ -1890,7 +1890,7 @@ of the children. In that case, GTK+ stores <code class="literal">NULL</code> in
 </tr>
 <tr>
 <td class="parameter_name"><p>focusable_widgets</p></td>
-<td class="parameter_description"><p> location
+<td class="parameter_description"><p>location
 to store the focus chain of the
 container, or <code class="literal">NULL</code>. You should free this list
 using <code class="function">g_list_free()</code> when you are done with it, however
@@ -1935,7 +1935,7 @@ when the focus chain is actually traversed.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>focusable_widgets</p></td>
-<td class="parameter_description"><p>    the new focus chain. </p></td>
+<td class="parameter_description"><p>the new focus chain. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GtkWidget]</span></td>
 </tr>
 </tbody>
@@ -1983,7 +1983,7 @@ gtk_container_class_find_child_property
 <tbody>
 <tr>
 <td class="parameter_name"><p>cclass</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkContainer.html#GtkContainerClass" title="struct GtkContainerClass"><span class="type">GtkContainerClass</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkContainer.html#GtkContainerClass" title="struct GtkContainerClass"><span class="type">GtkContainerClass</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GtkContainerClass]</span></td>
 </tr>
 <tr>
@@ -1996,7 +1996,7 @@ gtk_container_class_find_child_property
 </div>
 <div class="refsect3">
 <a name="gtk-container-class-find-child-property.returns"></a><h4>Returns</h4>
-<p> the <span class="type">GParamSpec</span> of the child
+<p>the <span class="type">GParamSpec</span> of the child
 property or <code class="literal">NULL</code> if <em class="parameter"><code>class</code></em>
 has no child property with that
 name. </p>
@@ -2070,7 +2070,7 @@ gtk_container_class_install_child_properties
 </tr>
 <tr>
 <td class="parameter_name"><p>pspecs</p></td>
-<td class="parameter_description"><p> the <span class="type">GParamSpec</span> array defining the new
+<td class="parameter_description"><p>the <span class="type">GParamSpec</span> array defining the new
 child properties. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_pspecs]</span></td>
 </tr>
@@ -2098,7 +2098,7 @@ gtk_container_class_list_child_properties
 <tbody>
 <tr>
 <td class="parameter_name"><p>cclass</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkContainer.html#GtkContainerClass" title="struct GtkContainerClass"><span class="type">GtkContainerClass</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkContainer.html#GtkContainerClass" title="struct GtkContainerClass"><span class="type">GtkContainerClass</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GtkContainerClass]</span></td>
 </tr>
 <tr>
@@ -2111,7 +2111,7 @@ gtk_container_class_list_child_properties
 </div>
 <div class="refsect3">
 <a name="gtk-container-class-list-child-properties.returns"></a><h4>Returns</h4>
-<p>    a newly allocated <code class="literal">NULL</code>-terminated array of <span class="type">GParamSpec</span>*.
+<p>a newly allocated <code class="literal">NULL</code>-terminated array of <span class="type">GParamSpec</span>*.
 The array must be freed with <code class="function">g_free()</code>. </p>
 <p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_properties][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
@@ -2358,6 +2358,6 @@ user_function (<a class="link" href="GtkContainer.html" title="GtkContainer"><sp
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

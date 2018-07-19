@@ -8,7 +8,7 @@
 <link rel="up" href="DisplayWidgets.html" title="Display Widgets">
 <link rel="prev" href="GtkStatusbar.html" title="GtkStatusbar">
 <link rel="next" href="ButtonWidgets.html" title="Buttons and Toggles">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -160,7 +160,7 @@
 <a name="GtkAccelLabel.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkAccelLabel implements
- AtkImplementorIface and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
+ AtkImplementor and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GtkAccelLabel.includes"></a><h2>Includes</h2>
@@ -282,7 +282,7 @@ current closure, if any.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>accel_closure</p></td>
-<td class="parameter_description"><p> the closure to monitor for accelerator changes,
+<td class="parameter_description"><p>the closure to monitor for accelerator changes,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
@@ -314,7 +314,7 @@ gtk_accel_label_get_accel_widget (<em class="parameter"><code><a class="link" hr
 </div>
 <div class="refsect3">
 <a name="gtk-accel-label-get-accel-widget.returns"></a><h4>Returns</h4>
-<p> the object monitored by the accelerator label, or <code class="literal">NULL</code>. </p>
+<p>the object monitored by the accelerator label, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -344,7 +344,7 @@ gtk_accel_label_set_accel_widget (<em class="parameter"><code><a class="link" hr
 </tr>
 <tr>
 <td class="parameter_name"><p>accel_widget</p></td>
-<td class="parameter_description"><p> the widget to be monitored, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>the widget to be monitored, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -385,7 +385,7 @@ be needed by applications.</p>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_accel_label_set_accel (<em class="parameter"><code><a class="link" href="GtkAccelLabel.html" title="GtkAccelLabel"><span class="type">GtkAccelLabel</span></a> *accel_label</code></em>,
                            <em class="parameter"><code><span class="type">guint</span> accelerator_key</code></em>,
-                           <em class="parameter"><code><span class="type">GdkModifierType</span> accelerator_mods</code></em>);</pre>
+                           <em class="parameter"><code><a href="../html/gdk3-Windows.html#GdkModifierType"><span class="type">GdkModifierType</span></a> accelerator_mods</code></em>);</pre>
 <p>Manually sets a keyval and modifier mask as the accelerator rendered
 by <em class="parameter"><code>accel_label</code></em>
 .</p>
@@ -428,7 +428,7 @@ used regardless of any associated accel closure or widget.</p>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_accel_label_get_accel (<em class="parameter"><code><a class="link" href="GtkAccelLabel.html" title="GtkAccelLabel"><span class="type">GtkAccelLabel</span></a> *accel_label</code></em>,
                            <em class="parameter"><code><span class="type">guint</span> *accelerator_key</code></em>,
-                           <em class="parameter"><code><span class="type">GdkModifierType</span> *accelerator_mods</code></em>);</pre>
+                           <em class="parameter"><code><a href="../html/gdk3-Windows.html#GdkModifierType"><span class="type">GdkModifierType</span></a> *accelerator_mods</code></em>);</pre>
 <p>Gets the keyval and modifier mask set with
 <a class="link" href="GtkAccelLabel.html#gtk-accel-label-set-accel" title="gtk_accel_label_set_accel ()"><code class="function">gtk_accel_label_set_accel()</code></a>.</p>
 <div class="refsect3">
@@ -447,12 +447,12 @@ gtk_accel_label_get_accel (<em class="parameter"><code><a class="link" href="Gtk
 </tr>
 <tr>
 <td class="parameter_name"><p>accelerator_key</p></td>
-<td class="parameter_description"><p> return location for the keyval. </p></td>
+<td class="parameter_description"><p>return location for the keyval. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>accelerator_mods</p></td>
-<td class="parameter_description"><p> return location for the modifier mask. </p></td>
+<td class="parameter_description"><p>return location for the modifier mask. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -520,6 +520,6 @@ should be accessed using the functions below.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

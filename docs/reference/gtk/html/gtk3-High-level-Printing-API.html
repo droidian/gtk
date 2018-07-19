@@ -8,7 +8,7 @@
 <link rel="up" href="Printing.html" title="Printing">
 <link rel="prev" href="Printing.html" title="Printing">
 <link rel="next" href="GtkPrintContext.html" title="GtkPrintContext">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -566,7 +566,7 @@
 </div>
 <div class="refsect1">
 <a name="gtk3-High-level-Printing-API.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GInterface
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
     <span class="lineart">╰──</span> GtkPrintOperationPreview
     GObject
     <span class="lineart">╰──</span> GtkPrintOperation
@@ -766,7 +766,7 @@ to the <a class="link" href="gtk3-High-level-Printing-API.html#GtkPrintOperation
 </tr>
 <tr>
 <td class="parameter_name"><p>default_page_setup</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkPageSetup.html" title="GtkPageSetup"><span class="type">GtkPageSetup</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkPageSetup.html" title="GtkPageSetup"><span class="type">GtkPageSetup</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -799,7 +799,7 @@ gtk_print_operation_get_default_page_setup
 </div>
 <div class="refsect3">
 <a name="gtk-print-operation-get-default-page-setup.returns"></a><h4>Returns</h4>
-<p> the default page setup. </p>
+<p>the default page setup. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.10</p>
@@ -831,7 +831,7 @@ see <a class="link" href="gtk3-High-level-Printing-API.html#gtk-print-operation-
 </tr>
 <tr>
 <td class="parameter_name"><p>print_settings</p></td>
-<td class="parameter_description"><p> <a class="link" href="GtkPrintSettings.html" title="GtkPrintSettings"><span class="type">GtkPrintSettings</span></a>. </p></td>
+<td class="parameter_description"><p><a class="link" href="GtkPrintSettings.html" title="GtkPrintSettings"><span class="type">GtkPrintSettings</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -866,7 +866,7 @@ gtk_print_operation_get_print_settings
 </div>
 <div class="refsect3">
 <a name="gtk-print-operation-get-print-settings.returns"></a><h4>Returns</h4>
-<p> the current print settings of <em class="parameter"><code>op</code></em>
+<p>the current print settings of <em class="parameter"><code>op</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1116,7 +1116,7 @@ of printers in the print dialog.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>filename</p></td>
-<td class="parameter_description"><p> the filename for the exported file. </p></td>
+<td class="parameter_description"><p>the filename for the exported file. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr>
 </tbody>
@@ -1218,7 +1218,7 @@ gtk_print_operation_set_custom_tab_label
 </tr>
 <tr>
 <td class="parameter_name"><p>label</p></td>
-<td class="parameter_description"><p> the label to use, or <code class="literal">NULL</code> to use the default label. </p></td>
+<td class="parameter_description"><p>the label to use, or <code class="literal">NULL</code> to use the default label. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1309,12 +1309,12 @@ given <a class="link" href="gtk3-High-level-Printing-API.html#GtkPrintOperation"
 </tr>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p> Transient parent of the dialog. </p></td>
+<td class="parameter_description"><p>Transient parent of the dialog. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> Return location for errors, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>Return location for errors, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1715,12 +1715,12 @@ a problem.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p> transient parent. </p></td>
+<td class="parameter_description"><p>transient parent. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>page_setup</p></td>
-<td class="parameter_description"><p> an existing <a class="link" href="GtkPageSetup.html" title="GtkPageSetup"><span class="type">GtkPageSetup</span></a>. </p></td>
+<td class="parameter_description"><p>an existing <a class="link" href="GtkPageSetup.html" title="GtkPageSetup"><span class="type">GtkPageSetup</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1733,7 +1733,7 @@ a problem.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-print-run-page-setup-dialog.returns"></a><h4>Returns</h4>
-<p> a new <a class="link" href="GtkPageSetup.html" title="GtkPageSetup"><span class="type">GtkPageSetup</span></a>. </p>
+<p>a new <a class="link" href="GtkPageSetup.html" title="GtkPageSetup"><span class="type">GtkPageSetup</span></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.10</p>
@@ -1765,7 +1765,7 @@ is dismissed, and also serves as destroy notify for <em class="parameter"><code>
 </tr>
 <tr>
 <td class="parameter_name"><p>data</p></td>
-<td class="parameter_description"><p> user data that has been passed to
+<td class="parameter_description"><p>user data that has been passed to
 <a class="link" href="gtk3-High-level-Printing-API.html#gtk-print-run-page-setup-dialog-async" title="gtk_print_run_page_setup_dialog_async ()"><code class="function">gtk_print_run_page_setup_dialog_async()</code></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
 </tr>
@@ -1799,12 +1799,12 @@ from a signal handler for the ::response signal of the dialog.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p> transient parent, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>transient parent, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>page_setup</p></td>
-<td class="parameter_description"><p> an existing <a class="link" href="GtkPageSetup.html" title="GtkPageSetup"><span class="type">GtkPageSetup</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>an existing <a class="link" href="GtkPageSetup.html" title="GtkPageSetup"><span class="type">GtkPageSetup</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1814,7 +1814,7 @@ from a signal handler for the ::response signal of the dialog.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>done_cb</p></td>
-<td class="parameter_description"><p> a function to call when the user saves
+<td class="parameter_description"><p>a function to call when the user saves
 the modified page setup. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span></td>
 </tr>
@@ -2640,7 +2640,7 @@ information you need from the widgets.</p>
 </div>
 <div class="refsect3">
 <a name="GtkPrintOperation-create-custom-widget.returns"></a><h4>Returns</h4>
-<p> A custom widget that gets embedded in
+<p>A custom widget that gets embedded in
 the print dialog, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -2983,7 +2983,7 @@ finished by calling <a class="link" href="gtk3-High-level-Printing-API.html#gtk-
 </tr>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p> the <a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a> to use as window parent, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>the <a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a> to use as window parent, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -3237,6 +3237,6 @@ before the first page is rendered.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

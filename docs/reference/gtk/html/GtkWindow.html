@@ -8,7 +8,7 @@
 <link rel="up" href="WindowWidgets.html" title="Windows">
 <link rel="prev" href="WindowWidgets.html" title="Windows">
 <link rel="next" href="GtkDialog.html" title="GtkDialog">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -158,7 +158,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">GdkGravity</span>
+<a href="../html/gdk3-Windows.html#GdkGravity"><span class="returnvalue">GdkGravity</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="GtkWindow.html#gtk-window-get-gravity" title="gtk_window_get_gravity ()">gtk_window_get_gravity</a> <span class="c_punctuation">()</span>
@@ -214,7 +214,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">GdkScreen</span> *
+<a href="../html/GdkScreen.html#GdkScreen-struct"><span class="returnvalue">GdkScreen</span></a> *
 </td>
 <td class="function_name">
 <a class="link" href="GtkWindow.html#gtk-window-get-screen" title="gtk_window_get_screen ()">gtk_window_get_screen</a> <span class="c_punctuation">()</span>
@@ -620,7 +620,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">GdkModifierType</span>
+<a href="../html/gdk3-Windows.html#GdkModifierType"><span class="returnvalue">GdkModifierType</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="GtkWindow.html#gtk-window-get-mnemonic-modifier" title="gtk_window_get_mnemonic_modifier ()">gtk_window_get_mnemonic_modifier</a> <span class="c_punctuation">()</span>
@@ -682,7 +682,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">GdkWindowTypeHint</span>
+<a href="../html/gdk3-Windows.html#GdkWindowTypeHint"><span class="returnvalue">GdkWindowTypeHint</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="GtkWindow.html#gtk-window-get-type-hint" title="gtk_window_get_type_hint ()">gtk_window_get_type_hint</a> <span class="c_punctuation">()</span>
@@ -1057,7 +1057,7 @@
 <td class="property_flags">Read / Write</td>
 </tr>
 <tr>
-<td class="property_type"><span class="type">GdkGravity</span></td>
+<td class="property_type"><a href="../html/gdk3-Windows.html#GdkGravity"><span class="type">GdkGravity</span></a></td>
 <td class="property_name"><a class="link" href="GtkWindow.html#GtkWindow--gravity" title="The “gravity” property">gravity</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -1126,7 +1126,7 @@
 </tr>
 <tr>
 <td class="property_type">
-<span class="type">GdkScreen</span> *</td>
+<a href="../html/GdkScreen.html#GdkScreen-struct"><span class="type">GdkScreen</span></a> *</td>
 <td class="property_name"><a class="link" href="GtkWindow.html#GtkWindow--screen" title="The “screen” property">screen</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -1164,7 +1164,7 @@
 <td class="property_flags">Read / Write / Construct Only</td>
 </tr>
 <tr>
-<td class="property_type"><span class="type">GdkWindowTypeHint</span></td>
+<td class="property_type"><a href="../html/gdk3-Windows.html#GdkWindowTypeHint"><span class="type">GdkWindowTypeHint</span></a></td>
 <td class="property_name"><a class="link" href="GtkWindow.html#GtkWindow--type-hint" title="The “type-hint” property">type-hint</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -1288,7 +1288,7 @@
 <a name="GtkWindow.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkWindow implements
- AtkImplementorIface and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
+ AtkImplementor and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GtkWindow.includes"></a><h2>Includes</h2>
@@ -1803,12 +1803,12 @@ gtk_window_set_geometry_hints.</p>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_window_set_geometry_hints (<em class="parameter"><code><a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a> *window</code></em>,
                                <em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *geometry_widget</code></em>,
-                               <em class="parameter"><code><span class="type">GdkGeometry</span> *geometry</code></em>,
-                               <em class="parameter"><code><span class="type">GdkWindowHints</span> geom_mask</code></em>);</pre>
+                               <em class="parameter"><code><a href="../html/gdk3-Windows.html#GdkGeometry"><span class="type">GdkGeometry</span></a> *geometry</code></em>,
+                               <em class="parameter"><code><a href="../html/gdk3-Windows.html#GdkWindowHints"><span class="type">GdkWindowHints</span></a> geom_mask</code></em>);</pre>
 <p>This function sets up hints about how a window can be resized by
 the user.  You can set a minimum and maximum size; allowed resize
 increments (e.g. for xterm, you can only resize by the size of a
-character); aspect ratios; and more. See the <span class="type">GdkGeometry</span> struct.</p>
+character); aspect ratios; and more. See the <a href="../html/gdk3-Windows.html#GdkGeometry"><span class="type">GdkGeometry</span></a> struct.</p>
 <div class="refsect3">
 <a name="gtk-window-set-geometry-hints.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -1825,14 +1825,14 @@ character); aspect ratios; and more. See the <span class="type">GdkGeometry</spa
 </tr>
 <tr>
 <td class="parameter_name"><p>geometry_widget</p></td>
-<td class="parameter_description"><p> widget the geometry hints used to be applied to
+<td class="parameter_description"><p>widget the geometry hints used to be applied to
 or <code class="literal">NULL</code>. Since 3.20 this argument is ignored and GTK behaves as if <code class="literal">NULL</code> was
 set. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>geometry</p></td>
-<td class="parameter_description"><p> struct containing geometry information or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>struct containing geometry information or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1849,11 +1849,11 @@ set. </p></td>
 <a name="gtk-window-set-gravity"></a><h3>gtk_window_set_gravity ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_window_set_gravity (<em class="parameter"><code><a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a> *window</code></em>,
-                        <em class="parameter"><code><span class="type">GdkGravity</span> gravity</code></em>);</pre>
+                        <em class="parameter"><code><a href="../html/gdk3-Windows.html#GdkGravity"><span class="type">GdkGravity</span></a> gravity</code></em>);</pre>
 <p>Window gravity defines the meaning of coordinates passed to
-<a class="link" href="GtkWindow.html#gtk-window-move" title="gtk_window_move ()"><code class="function">gtk_window_move()</code></a>. See <a class="link" href="GtkWindow.html#gtk-window-move" title="gtk_window_move ()"><code class="function">gtk_window_move()</code></a> and <span class="type">GdkGravity</span> for
+<a class="link" href="GtkWindow.html#gtk-window-move" title="gtk_window_move ()"><code class="function">gtk_window_move()</code></a>. See <a class="link" href="GtkWindow.html#gtk-window-move" title="gtk_window_move ()"><code class="function">gtk_window_move()</code></a> and <a href="../html/gdk3-Windows.html#GdkGravity"><span class="type">GdkGravity</span></a> for
 more details.</p>
-<p>The default window gravity is <span class="type">GDK_GRAVITY_NORTH_WEST</span> which will
+<p>The default window gravity is <a href="../html/gdk3-Windows.html#GDK-GRAVITY-NORTH-WEST:CAPS"><span class="type">GDK_GRAVITY_NORTH_WEST</span></a> which will
 typically “do what you mean.”</p>
 <div class="refsect3">
 <a name="gtk-window-set-gravity.parameters"></a><h4>Parameters</h4>
@@ -1881,7 +1881,7 @@ typically “do what you mean.”</p>
 <hr>
 <div class="refsect2">
 <a name="gtk-window-get-gravity"></a><h3>gtk_window_get_gravity ()</h3>
-<pre class="programlisting"><span class="returnvalue">GdkGravity</span>
+<pre class="programlisting"><a href="../html/gdk3-Windows.html#GdkGravity"><span class="returnvalue">GdkGravity</span></a>
 gtk_window_get_gravity (<em class="parameter"><code><a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a> *window</code></em>);</pre>
 <p>Gets the value set by <a class="link" href="GtkWindow.html#gtk-window-set-gravity" title="gtk_window_set_gravity ()"><code class="function">gtk_window_set_gravity()</code></a>.</p>
 <div class="refsect3">
@@ -1901,7 +1901,7 @@ gtk_window_get_gravity (<em class="parameter"><code><a class="link" href="GtkWin
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-gravity.returns"></a><h4>Returns</h4>
-<p> window gravity. </p>
+<p>window gravity. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -1955,7 +1955,7 @@ functions in GTK+ will sometimes call
 <p>On Wayland, this function can also be used to attach a new
 <a class="link" href="GtkWindow.html#GTK-WINDOW-POPUP:CAPS"><span class="type">GTK_WINDOW_POPUP</span></a> to a <a class="link" href="GtkWindow.html#GTK-WINDOW-TOPLEVEL:CAPS"><span class="type">GTK_WINDOW_TOPLEVEL</span></a> parent already mapped
 on screen so that the <a class="link" href="GtkWindow.html#GTK-WINDOW-POPUP:CAPS"><span class="type">GTK_WINDOW_POPUP</span></a> will be created as a
-subsurface-based window <span class="type">GDK_WINDOW_SUBSURFACE</span> which can be
+subsurface-based window <a href="../html/gdk3-Windows.html#GDK-WINDOW-SUBSURFACE:CAPS"><span class="type">GDK_WINDOW_SUBSURFACE</span></a> which can be
 positioned at will relatively to the <a class="link" href="GtkWindow.html#GTK-WINDOW-TOPLEVEL:CAPS"><span class="type">GTK_WINDOW_TOPLEVEL</span></a> surface.</p>
 <p>On Windows, this function puts the child window on top of the parent,
 much as the window manager would have done on X.</p>
@@ -1975,7 +1975,7 @@ much as the window manager would have done on X.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p> parent window, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>parent window, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2020,7 +2020,7 @@ between two toplevels instead.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>attach_widget</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2113,8 +2113,8 @@ is maximized</p></td>
 <a name="gtk-window-set-screen"></a><h3>gtk_window_set_screen ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_window_set_screen (<em class="parameter"><code><a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a> *window</code></em>,
-                       <em class="parameter"><code><span class="type">GdkScreen</span> *screen</code></em>);</pre>
-<p>Sets the <span class="type">GdkScreen</span> where the <em class="parameter"><code>window</code></em>
+                       <em class="parameter"><code><a href="../html/GdkScreen.html#GdkScreen-struct"><span class="type">GdkScreen</span></a> *screen</code></em>);</pre>
+<p>Sets the <a href="../html/GdkScreen.html#GdkScreen-struct"><span class="type">GdkScreen</span></a> where the <em class="parameter"><code>window</code></em>
  is displayed; if
 the window is already mapped, it will be unmapped, and
 then remapped on the new screen.</p>
@@ -2134,7 +2134,7 @@ then remapped on the new screen.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>screen</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkScreen</span>.</p></td>
+<td class="parameter_description"><p>a <a href="../html/GdkScreen.html#GdkScreen-struct"><span class="type">GdkScreen</span></a>.</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -2145,9 +2145,9 @@ then remapped on the new screen.</p>
 <hr>
 <div class="refsect2">
 <a name="gtk-window-get-screen"></a><h3>gtk_window_get_screen ()</h3>
-<pre class="programlisting"><span class="returnvalue">GdkScreen</span> *
+<pre class="programlisting"><a href="../html/GdkScreen.html#GdkScreen-struct"><span class="returnvalue">GdkScreen</span></a> *
 gtk_window_get_screen (<em class="parameter"><code><a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a> *window</code></em>);</pre>
-<p>Returns the <span class="type">GdkScreen</span> associated with <em class="parameter"><code>window</code></em>
+<p>Returns the <a href="../html/GdkScreen.html#GdkScreen-struct"><span class="type">GdkScreen</span></a> associated with <em class="parameter"><code>window</code></em>
 .</p>
 <div class="refsect3">
 <a name="gtk-window-get-screen.parameters"></a><h4>Parameters</h4>
@@ -2166,7 +2166,7 @@ gtk_window_get_screen (<em class="parameter"><code><a class="link" href="GtkWind
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-screen.returns"></a><h4>Returns</h4>
-<p> a <span class="type">GdkScreen</span>. </p>
+<p>a <a href="../html/GdkScreen.html#GdkScreen-struct"><span class="type">GdkScreen</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.2</p>
@@ -2279,7 +2279,7 @@ callbacks that might destroy the widgets, you must call
 then unref all the widgets afterwards.</p>
 <div class="refsect3">
 <a name="gtk-window-list-toplevels.returns"></a><h4>Returns</h4>
-<p> list of toplevel widgets. </p>
+<p>list of toplevel widgets. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GtkWidget][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 </div>
@@ -2361,7 +2361,7 @@ gtk_window_remove_mnemonic (<em class="parameter"><code><a class="link" href="Gt
 <pre class="programlisting"><span class="returnvalue">gboolean</span>
 gtk_window_mnemonic_activate (<em class="parameter"><code><a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a> *window</code></em>,
                               <em class="parameter"><code><span class="type">guint</span> keyval</code></em>,
-                              <em class="parameter"><code><span class="type">GdkModifierType</span> modifier</code></em>);</pre>
+                              <em class="parameter"><code><a href="../html/gdk3-Windows.html#GdkModifierType"><span class="type">GdkModifierType</span></a> modifier</code></em>);</pre>
 <p>Activates the targets associated with the mnemonic.</p>
 <div class="refsect3">
 <a name="gtk-window-mnemonic-activate.parameters"></a><h4>Parameters</h4>
@@ -2400,7 +2400,7 @@ gtk_window_mnemonic_activate (<em class="parameter"><code><a class="link" href="
 <a name="gtk-window-activate-key"></a><h3>gtk_window_activate_key ()</h3>
 <pre class="programlisting"><span class="returnvalue">gboolean</span>
 gtk_window_activate_key (<em class="parameter"><code><a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a> *window</code></em>,
-                         <em class="parameter"><code><span class="type">GdkEventKey</span> *event</code></em>);</pre>
+                         <em class="parameter"><code><a href="../html/gdk3-Event-Structures.html#GdkEventKey"><span class="type">GdkEventKey</span></a> *event</code></em>);</pre>
 <p>Activates mnemonics and accelerators for this <a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a>. This is normally
 called by the default ::key_press_event handler for toplevel windows,
 however in some cases it may be useful to call this directly when
@@ -2421,7 +2421,7 @@ overriding the standard key handling for a toplevel window.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkEventKey</span></p></td>
+<td class="parameter_description"><p>a <a href="../html/gdk3-Event-Structures.html#GdkEventKey"><span class="type">GdkEventKey</span></a></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -2438,7 +2438,7 @@ overriding the standard key handling for a toplevel window.</p>
 <a name="gtk-window-propagate-key-event"></a><h3>gtk_window_propagate_key_event ()</h3>
 <pre class="programlisting"><span class="returnvalue">gboolean</span>
 gtk_window_propagate_key_event (<em class="parameter"><code><a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a> *window</code></em>,
-                                <em class="parameter"><code><span class="type">GdkEventKey</span> *event</code></em>);</pre>
+                                <em class="parameter"><code><a href="../html/gdk3-Event-Structures.html#GdkEventKey"><span class="type">GdkEventKey</span></a> *event</code></em>);</pre>
 <p>Propagate a key press or release event to the focus widget and
 up the focus container chain until a widget handles <em class="parameter"><code>event</code></em>
 .
@@ -2462,7 +2462,7 @@ overriding the standard key handling for a toplevel window.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkEventKey</span></p></td>
+<td class="parameter_description"><p>a <a href="../html/gdk3-Event-Structures.html#GdkEventKey"><span class="type">GdkEventKey</span></a></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -2501,7 +2501,7 @@ not be <code class="literal">TRUE</code> for the widget.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-focus.returns"></a><h4>Returns</h4>
-<p> the currently focused widget,
+<p>the currently focused widget,
 or <code class="literal">NULL</code> if there is none. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -2535,7 +2535,7 @@ widget in the toplevel, it is usually more convenient to use
 </tr>
 <tr>
 <td class="parameter_name"><p>focus</p></td>
-<td class="parameter_description"><p> widget to be the new focus widget, or <code class="literal">NULL</code> to unset
+<td class="parameter_description"><p>widget to be the new focus widget, or <code class="literal">NULL</code> to unset
 any focus widget for the toplevel window. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -2568,7 +2568,7 @@ gtk_window_get_default_widget (<em class="parameter"><code><a class="link" href=
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-default-widget.returns"></a><h4>Returns</h4>
-<p> the default widget, or <code class="literal">NULL</code>
+<p>the default widget, or <code class="literal">NULL</code>
 if there is none. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -2603,7 +2603,7 @@ the widget you’d like to make the default.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>default_widget</p></td>
-<td class="parameter_description"><p> widget to be the default, or <code class="literal">NULL</code>
+<td class="parameter_description"><p>widget to be the default, or <code class="literal">NULL</code>
 to unset the default widget for the toplevel. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -2933,7 +2933,7 @@ on <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">Gt
 <a name="gtk-window-fullscreen-on-monitor"></a><h3>gtk_window_fullscreen_on_monitor ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_window_fullscreen_on_monitor (<em class="parameter"><code><a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a> *window</code></em>,
-                                  <em class="parameter"><code><span class="type">GdkScreen</span> *screen</code></em>,
+                                  <em class="parameter"><code><a href="../html/GdkScreen.html#GdkScreen-struct"><span class="type">GdkScreen</span></a> *screen</code></em>,
                                   <em class="parameter"><code><span class="type">gint</span> monitor</code></em>);</pre>
 <p>Asks to place <em class="parameter"><code>window</code></em>
  in the fullscreen state. Note that you shouldn't assume
@@ -2956,7 +2956,7 @@ on <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">Gt
 </tr>
 <tr>
 <td class="parameter_name"><p>screen</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkScreen</span> to draw to</p></td>
+<td class="parameter_description"><p>a <a href="../html/GdkScreen.html#GdkScreen-struct"><span class="type">GdkScreen</span></a> to draw to</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -3104,7 +3104,7 @@ below other windows</p></td>
 <a name="gtk-window-begin-resize-drag"></a><h3>gtk_window_begin_resize_drag ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_window_begin_resize_drag (<em class="parameter"><code><a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a> *window</code></em>,
-                              <em class="parameter"><code><span class="type">GdkWindowEdge</span> edge</code></em>,
+                              <em class="parameter"><code><a href="../html/gdk3-Windows.html#GdkWindowEdge"><span class="type">GdkWindowEdge</span></a> edge</code></em>,
                               <em class="parameter"><code><span class="type">gint</span> button</code></em>,
                               <em class="parameter"><code><span class="type">gint</span> root_x</code></em>,
                               <em class="parameter"><code><span class="type">gint</span> root_y</code></em>,
@@ -3294,7 +3294,7 @@ policy involved.</p>
 <a name="gtk-window-set-mnemonic-modifier"></a><h3>gtk_window_set_mnemonic_modifier ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_window_set_mnemonic_modifier (<em class="parameter"><code><a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a> *window</code></em>,
-                                  <em class="parameter"><code><span class="type">GdkModifierType</span> modifier</code></em>);</pre>
+                                  <em class="parameter"><code><a href="../html/gdk3-Windows.html#GdkModifierType"><span class="type">GdkModifierType</span></a> modifier</code></em>);</pre>
 <p>Sets the mnemonic modifier for this window.</p>
 <div class="refsect3">
 <a name="gtk-window-set-mnemonic-modifier.parameters"></a><h4>Parameters</h4>
@@ -3325,7 +3325,7 @@ mnemonics on this window.</p></td>
 <a name="gtk-window-set-type-hint"></a><h3>gtk_window_set_type_hint ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_window_set_type_hint (<em class="parameter"><code><a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a> *window</code></em>,
-                          <em class="parameter"><code><span class="type">GdkWindowTypeHint</span> hint</code></em>);</pre>
+                          <em class="parameter"><code><a href="../html/gdk3-Windows.html#GdkWindowTypeHint"><span class="type">GdkWindowTypeHint</span></a> hint</code></em>);</pre>
 <p>By setting the type hint for the window, you allow the window
 manager to decorate and handle the window in a way which is
 suitable to the function of the window in your application.</p>
@@ -3663,7 +3663,7 @@ but the pixbufs in the list have not had their reference count
 incremented.</p>
 <div class="refsect3">
 <a name="gtk-window-get-default-icon-list.returns"></a><h4>Returns</h4>
-<p> copy of default icon list. </p>
+<p>copy of default icon list. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GdkPixbuf][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 </div>
@@ -3710,12 +3710,12 @@ used.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>width</p></td>
-<td class="parameter_description"><p> location to store the default width, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store the default width, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>height</p></td>
-<td class="parameter_description"><p> location to store the default height, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store the default height, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -3804,7 +3804,7 @@ the icon list).</p>
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-icon.returns"></a><h4>Returns</h4>
-<p> icon for window or <code class="literal">NULL</code> if none. </p>
+<p>icon for window or <code class="literal">NULL</code> if none. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
 </div>
@@ -3833,7 +3833,7 @@ member won’t be incremented.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-icon-list.returns"></a><h4>Returns</h4>
-<p> copy of window’s icon list. </p>
+<p>copy of window’s icon list. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GdkPixbuf][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
 </div>
@@ -3861,7 +3861,7 @@ see <a class="link" href="GtkWindow.html#gtk-window-set-icon-name" title="gtk_wi
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-icon-name.returns"></a><h4>Returns</h4>
-<p> the icon name or <code class="literal">NULL</code> if the window has
+<p>the icon name or <code class="literal">NULL</code> if the window has
 no themed icon. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -3870,7 +3870,7 @@ no themed icon. </p>
 <hr>
 <div class="refsect2">
 <a name="gtk-window-get-mnemonic-modifier"></a><h3>gtk_window_get_mnemonic_modifier ()</h3>
-<pre class="programlisting"><span class="returnvalue">GdkModifierType</span>
+<pre class="programlisting"><a href="../html/gdk3-Windows.html#GdkModifierType"><span class="returnvalue">GdkModifierType</span></a>
 gtk_window_get_mnemonic_modifier (<em class="parameter"><code><a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a> *window</code></em>);</pre>
 <p>Returns the mnemonic modifier for this window. See
 <a class="link" href="GtkWindow.html#gtk-window-set-mnemonic-modifier" title="gtk_window_set_mnemonic_modifier ()"><code class="function">gtk_window_set_mnemonic_modifier()</code></a>.</p>
@@ -3944,11 +3944,11 @@ have been known to mismanage window gravity, which result in windows
 moving even if you use the coordinates of the current position as
 returned by this function.</p>
 <p>If you haven’t changed the window gravity, its gravity will be
-<span class="type">GDK_GRAVITY_NORTH_WEST</span>. This means that <a class="link" href="GtkWindow.html#gtk-window-get-position" title="gtk_window_get_position ()"><code class="function">gtk_window_get_position()</code></a>
+<a href="../html/gdk3-Windows.html#GDK-GRAVITY-NORTH-WEST:CAPS"><span class="type">GDK_GRAVITY_NORTH_WEST</span></a>. This means that <a class="link" href="GtkWindow.html#gtk-window-get-position" title="gtk_window_get_position ()"><code class="function">gtk_window_get_position()</code></a>
 gets the position of the top-left corner of the window manager
 frame for the window. <a class="link" href="GtkWindow.html#gtk-window-move" title="gtk_window_move ()"><code class="function">gtk_window_move()</code></a> sets the position of this
 same top-left corner.</p>
-<p>If a window has gravity <span class="type">GDK_GRAVITY_STATIC</span> the window manager
+<p>If a window has gravity <a href="../html/gdk3-Windows.html#GDK-GRAVITY-STATIC:CAPS"><span class="type">GDK_GRAVITY_STATIC</span></a> the window manager
 frame is not relevant, and thus <a class="link" href="GtkWindow.html#gtk-window-get-position" title="gtk_window_get_position ()"><code class="function">gtk_window_get_position()</code></a> will
 always produce accurate results. However you can’t use static
 gravity to do things like place a window in a corner of the screen,
@@ -3977,13 +3977,13 @@ use a platform-specific protocol, wherever that is available.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>root_x</p></td>
-<td class="parameter_description"><p> return location for X coordinate of
+<td class="parameter_description"><p>return location for X coordinate of
 gravity-determined reference point, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>root_y</p></td>
-<td class="parameter_description"><p> return location for Y coordinate of
+<td class="parameter_description"><p>return location for Y coordinate of
 gravity-determined reference point, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -4015,7 +4015,7 @@ further explanation.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-role.returns"></a><h4>Returns</h4>
-<p> the role of the window if set, or <code class="literal">NULL</code>. The
+<p>the role of the window if set, or <code class="literal">NULL</code>. The
 returned is owned by the widget and must not be modified or freed. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -4109,12 +4109,12 @@ see: <a class="link" href="GtkWindow.html#gtk-window-set-position" title="gtk_wi
 </tr>
 <tr>
 <td class="parameter_name"><p>width</p></td>
-<td class="parameter_description"><p> return location for width, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for width, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>height</p></td>
-<td class="parameter_description"><p> return location for height, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for height, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -4144,7 +4144,7 @@ gtk_window_get_title (<em class="parameter"><code><a class="link" href="GtkWindo
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-title.returns"></a><h4>Returns</h4>
-<p> the title of the window, or <code class="literal">NULL</code> if none has
+<p>the title of the window, or <code class="literal">NULL</code> if none has
 been set explicitly. The returned string is owned by the widget
 and must not be modified or freed. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
@@ -4174,7 +4174,7 @@ gtk_window_get_transient_for (<em class="parameter"><code><a class="link" href="
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-transient-for.returns"></a><h4>Returns</h4>
-<p> the transient parent for this
+<p>the transient parent for this
 window, or <code class="literal">NULL</code> if no transient parent has been set. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -4203,7 +4203,7 @@ gtk_window_get_attached_to (<em class="parameter"><code><a class="link" href="Gt
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-attached-to.returns"></a><h4>Returns</h4>
-<p> the widget where the window
+<p>the widget where the window
 is attached, or <code class="literal">NULL</code> if the window is not attached to any widget. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -4212,7 +4212,7 @@ is attached, or <code class="literal">NULL</code> if the window is not attached 
 <hr>
 <div class="refsect2">
 <a name="gtk-window-get-type-hint"></a><h3>gtk_window_get_type_hint ()</h3>
-<pre class="programlisting"><span class="returnvalue">GdkWindowTypeHint</span>
+<pre class="programlisting"><a href="../html/gdk3-Windows.html#GdkWindowTypeHint"><span class="returnvalue">GdkWindowTypeHint</span></a>
 gtk_window_get_type_hint (<em class="parameter"><code><a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a> *window</code></em>);</pre>
 <p>Gets the type hint for this window. See <a class="link" href="GtkWindow.html#gtk-window-set-type-hint" title="gtk_window_set_type_hint ()"><code class="function">gtk_window_set_type_hint()</code></a>.</p>
 <div class="refsect3">
@@ -4393,14 +4393,14 @@ window group.</p>
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>window</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-group.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="GtkWindowGroup.html" title="GtkWindowGroup"><span class="type">GtkWindowGroup</span></a> for a window or the default group. </p>
+<p>the <a class="link" href="GtkWindowGroup.html" title="GtkWindowGroup"><span class="type">GtkWindowGroup</span></a> for a window or the default group. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.10</p>
@@ -4479,7 +4479,7 @@ reference point for the window. The gravity determines two things:
 first, the location of the reference point in root window
 coordinates; and second, which point on the window is positioned at
 the reference point.</p>
-<p>By default the gravity is <span class="type">GDK_GRAVITY_NORTH_WEST</span>, so the reference
+<p>By default the gravity is <a href="../html/gdk3-Windows.html#GDK-GRAVITY-NORTH-WEST:CAPS"><span class="type">GDK_GRAVITY_NORTH_WEST</span></a>, so the reference
 point is simply the <em class="parameter"><code>x</code></em>
 , <em class="parameter"><code>y</code></em>
  supplied to <a class="link" href="GtkWindow.html#gtk-window-move" title="gtk_window_move ()"><code class="function">gtk_window_move()</code></a>. The
@@ -4488,17 +4488,17 @@ border) will be placed at <em class="parameter"><code>x</code></em>
 , <em class="parameter"><code>y</code></em>
 .  Therefore, to position a window
 at the top left of the screen, you want to use the default gravity
-(which is <span class="type">GDK_GRAVITY_NORTH_WEST</span>) and move the window to 0,0.</p>
+(which is <a href="../html/gdk3-Windows.html#GDK-GRAVITY-NORTH-WEST:CAPS"><span class="type">GDK_GRAVITY_NORTH_WEST</span></a>) and move the window to 0,0.</p>
 <p>To position a window at the bottom right corner of the screen, you
-would set <span class="type">GDK_GRAVITY_SOUTH_EAST</span>, which means that the reference
+would set <a href="../html/gdk3-Windows.html#GDK-GRAVITY-SOUTH-EAST:CAPS"><span class="type">GDK_GRAVITY_SOUTH_EAST</span></a>, which means that the reference
 point is at <em class="parameter"><code>x</code></em>
  + the window width and <em class="parameter"><code>y</code></em>
  + the window height, and
 the bottom-right corner of the window border will be placed at that
 reference point. So, to place a window in the bottom right corner
 you would first set gravity to south east, then write:
-<code class="literal">gtk_window_move (window, <code class="function">gdk_screen_width()</code> - window_width,
-<code class="function">gdk_screen_height()</code> - window_height)</code> (note that this
+<code class="literal">gtk_window_move (window, <a href="../html/gdk3-General.html#gdk-screen-width"><code class="function">gdk_screen_width()</code></a> - window_width,
+<a href="../html/gdk3-General.html#gdk-screen-height"><code class="function">gdk_screen_height()</code></a> - window_height)</code> (note that this
 example does not take multi-head scenarios into account).</p>
 <p>The <a class="ulink" href="http://www.freedesktop.org/Standards/wm-spec" target="_top">Extended Window Manager Hints Specification</a>
 has a nice table of gravities in the “implementation notes” section.</p>
@@ -4550,7 +4550,7 @@ geometry string, <a class="link" href="GtkWindow.html#gtk-window-parse-geometry"
 and calls <a class="link" href="GtkWindow.html#gtk-window-set-default-size" title="gtk_window_set_default_size ()"><code class="function">gtk_window_set_default_size()</code></a> and/or <a class="link" href="GtkWindow.html#gtk-window-move" title="gtk_window_move ()"><code class="function">gtk_window_move()</code></a>
 to resize/move the window.</p>
 <p>If <a class="link" href="GtkWindow.html#gtk-window-parse-geometry" title="gtk_window_parse_geometry ()"><code class="function">gtk_window_parse_geometry()</code></a> returns <code class="literal">TRUE</code>, it will also
-set the <span class="type">GDK_HINT_USER_POS</span> and/or <span class="type">GDK_HINT_USER_SIZE</span> hints
+set the <a href="../html/gdk3-Windows.html#GDK-HINT-USER-POS:CAPS"><span class="type">GDK_HINT_USER_POS</span></a> and/or <a href="../html/gdk3-Windows.html#GDK-HINT-USER-SIZE:CAPS"><span class="type">GDK_HINT_USER_SIZE</span></a> hints
 indicating to the window manager that the size/position of
 the window was user-specified. This causes most window
 managers to honor the geometry.</p>
@@ -4794,7 +4794,7 @@ icon for all windows in your app at once.</p>
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>list</p></td>
-<td class="parameter_description"><p> a list of <span class="type">GdkPixbuf</span>. </p></td>
+<td class="parameter_description"><p>a list of <span class="type">GdkPixbuf</span>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GdkPixbuf][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
@@ -4845,12 +4845,12 @@ on disk. Warns on failure if <em class="parameter"><code>err</code></em>
 <tbody>
 <tr>
 <td class="parameter_name"><p>filename</p></td>
-<td class="parameter_description"><p> location of icon file. </p></td>
+<td class="parameter_description"><p>location of icon file. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>err</p></td>
-<td class="parameter_description"><p> location to store error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -4924,7 +4924,7 @@ for all windows in your application in one go.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>icon</p></td>
-<td class="parameter_description"><p> icon image, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>icon image, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -4973,7 +4973,7 @@ set the icon on transient windows.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>list</p></td>
-<td class="parameter_description"><p> list of <span class="type">GdkPixbuf</span>. </p></td>
+<td class="parameter_description"><p>list of <span class="type">GdkPixbuf</span>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GdkPixbuf]</span></td>
 </tr>
 </tbody>
@@ -5010,12 +5010,12 @@ with a pixbuf created by loading the image from <em class="parameter"><code>file
 </tr>
 <tr>
 <td class="parameter_name"><p>filename</p></td>
-<td class="parameter_description"><p> location of icon file. </p></td>
+<td class="parameter_description"><p>location of icon file. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>err</p></td>
-<td class="parameter_description"><p> location to store error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -5054,7 +5054,7 @@ property which is mentioned in the ICCCM.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>name</p></td>
-<td class="parameter_description"><p> the name of the themed icon. </p></td>
+<td class="parameter_description"><p>the name of the themed icon. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -5069,7 +5069,7 @@ property which is mentioned in the ICCCM.</p>
 gtk_window_set_auto_startup_notification
                                (<em class="parameter"><code><span class="type">gboolean</span> setting</code></em>);</pre>
 <p>By default, after showing the first <a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a>, GTK+ calls 
-<code class="function">gdk_notify_startup_complete()</code>.  Call this function to disable 
+<a href="../html/gdk3-General.html#gdk-notify-startup-complete"><code class="function">gdk_notify_startup_complete()</code></a>.  Call this function to disable 
 the automatic startup notification. You might do this if your 
 first window is a splash screen, and you want to delay notification 
 until after your real main window has been shown, for example.</p>
@@ -5393,13 +5393,13 @@ gtk_window_resize_grip_is_visible (<em class="parameter"><code><a class="link" h
 <a name="gtk-window-get-resize-grip-area"></a><h3>gtk_window_get_resize_grip_area ()</h3>
 <pre class="programlisting"><span class="returnvalue">gboolean</span>
 gtk_window_get_resize_grip_area (<em class="parameter"><code><a class="link" href="GtkWindow.html" title="GtkWindow"><span class="type">GtkWindow</span></a> *window</code></em>,
-                                 <em class="parameter"><code><span class="type">GdkRectangle</span> *rect</code></em>);</pre>
+                                 <em class="parameter"><code><a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *rect</code></em>);</pre>
 <div class="warning">
 <p><code class="literal">gtk_window_get_resize_grip_area</code> has been deprecated since version 3.14 and should not be used in newly-written code.</p>
 <p>Resize grips have been removed.</p>
 </div>
 <p>If a window has a resize grip, this will retrieve the grip
-position, width and height into the specified <span class="type">GdkRectangle</span>.</p>
+position, width and height into the specified <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a>.</p>
 <div class="refsect3">
 <a name="gtk-window-get-resize-grip-area.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -5416,7 +5416,7 @@ position, width and height into the specified <span class="type">GdkRectangle</s
 </tr>
 <tr>
 <td class="parameter_name"><p>rect</p></td>
-<td class="parameter_description"><p> a pointer to a <span class="type">GdkRectangle</span> which we should store
+<td class="parameter_description"><p>a pointer to a <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> which we should store
 the resize grip area. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -5452,7 +5452,7 @@ gtk_window_get_application (<em class="parameter"><code><a class="link" href="Gt
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-application.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="GtkApplication.html" title="GtkApplication"><span class="type">GtkApplication</span></a>, or <code class="literal">NULL</code>. </p>
+<p>a <a class="link" href="GtkApplication.html" title="GtkApplication"><span class="type">GtkApplication</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-0.html#api-index-3.0">3.0</a></p>
@@ -5489,7 +5489,7 @@ the <em class="parameter"><code>application</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>application</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkApplication.html" title="GtkApplication"><span class="type">GtkApplication</span></a>, or <code class="literal">NULL</code> to unset. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkApplication.html" title="GtkApplication"><span class="type">GtkApplication</span></a>, or <code class="literal">NULL</code> to unset. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -5564,7 +5564,7 @@ that is already visible, so you set the titlebar before calling
 </tr>
 <tr>
 <td class="parameter_name"><p>titlebar</p></td>
-<td class="parameter_description"><p> the widget to use as titlebar. </p></td>
+<td class="parameter_description"><p>the widget to use as titlebar. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -5596,7 +5596,7 @@ gtk_window_get_titlebar (<em class="parameter"><code><a class="link" href="GtkWi
 </div>
 <div class="refsect3">
 <a name="gtk-window-get-titlebar.returns"></a><h4>Returns</h4>
-<p> the custom titlebar, or <code class="literal">NULL</code>. </p>
+<p>the custom titlebar, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-16.html#api-index-3.16">3.16</a></p>
@@ -5895,8 +5895,8 @@ and should not be set by applications.</p>
 <hr>
 <div class="refsect2">
 <a name="GtkWindow--gravity"></a><h3>The <code class="literal">“gravity”</code> property</h3>
-<pre class="programlisting">  “gravity”                  <span class="type">GdkGravity</span></pre>
-<p>The window gravity of the window. See <a class="link" href="GtkWindow.html#gtk-window-move" title="gtk_window_move ()"><code class="function">gtk_window_move()</code></a> and <span class="type">GdkGravity</span> for
+<pre class="programlisting">  “gravity”                  <a href="../html/gdk3-Windows.html#GdkGravity"><span class="type">GdkGravity</span></a></pre>
+<p>The window gravity of the window. See <a class="link" href="GtkWindow.html#gtk-window-move" title="gtk_window_move ()"><code class="function">gtk_window_move()</code></a> and <a href="../html/gdk3-Windows.html#GdkGravity"><span class="type">GdkGravity</span></a> for
 more details about window gravity.</p>
 <p>Flags: Read / Write</p>
 <p>Default value: GDK_GRAVITY_NORTH_WEST</p>
@@ -6020,7 +6020,7 @@ and should not be set by applications.</p>
 <hr>
 <div class="refsect2">
 <a name="GtkWindow--screen"></a><h3>The <code class="literal">“screen”</code> property</h3>
-<pre class="programlisting">  “screen”                   <span class="type">GdkScreen</span> *</pre>
+<pre class="programlisting">  “screen”                   <a href="../html/GdkScreen.html#GdkScreen-struct"><span class="type">GdkScreen</span></a> *</pre>
 <p>The screen where this window will be displayed.</p>
 <p>Flags: Read / Write</p>
 </div>
@@ -6079,7 +6079,7 @@ more details about transient windows.</p>
 <hr>
 <div class="refsect2">
 <a name="GtkWindow--type-hint"></a><h3>The <code class="literal">“type-hint”</code> property</h3>
-<pre class="programlisting">  “type-hint”                <span class="type">GdkWindowTypeHint</span></pre>
+<pre class="programlisting">  “type-hint”                <a href="../html/gdk3-Windows.html#GdkWindowTypeHint"><span class="type">GdkWindowTypeHint</span></a></pre>
 <p>Hint to help the desktop environment understand what kind of window this is and how to treat it.</p>
 <p>Flags: Read / Write</p>
 <p>Default value: GDK_WINDOW_TYPE_HINT_NORMAL</p>
@@ -6281,6 +6281,6 @@ user_function (<a class="link" href="GtkWindow.html" title="GtkWindow"><span cla
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

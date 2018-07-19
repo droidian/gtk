@@ -8,7 +8,7 @@
 <link rel="up" href="RecentDocuments.html" title="Recently Used Documents">
 <link rel="prev" href="RecentDocuments.html" title="Recently Used Documents">
 <link rel="next" href="GtkRecentChooser.html" title="GtkRecentChooser">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -482,7 +482,7 @@ gtk_recent_manager_get_default (<em class="parameter"><code><span class="type">v
 in your application without caring about memory management.</p>
 <div class="refsect3">
 <a name="gtk-recent-manager-get-default.returns"></a><h4>Returns</h4>
-<p> A unique <a class="link" href="GtkRecentManager.html" title="GtkRecentManager"><span class="type">GtkRecentManager</span></a>. Do not ref or
+<p>A unique <a class="link" href="GtkRecentManager.html" title="GtkRecentManager"><span class="type">GtkRecentManager</span></a>. Do not ref or
 unref it. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -622,7 +622,7 @@ list handled by a recent manager.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> return location for a <span class="type">GError</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for a <span class="type">GError</span>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -667,7 +667,7 @@ like its MIME type, or its display name.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> a return location for a <span class="type">GError</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a return location for a <span class="type">GError</span>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -675,7 +675,7 @@ like its MIME type, or its display name.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-recent-manager-lookup-item.returns"></a><h4>Returns</h4>
-<p> a <span class="type">GtkRecentInfo</span> containing information
+<p>a <span class="type">GtkRecentInfo</span> containing information
 about the resource pointed by <em class="parameter"><code>uri</code></em>
 , or <code class="literal">NULL</code> if the URI was
 not registered in the recently used resources list. Free with
@@ -755,14 +755,14 @@ by the URIs, but only the URI used in the recently used resources list.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>new_uri</p></td>
-<td class="parameter_description"><p> the new URI of the recently used resource, or
+<td class="parameter_description"><p>the new URI of the recently used resource, or
 <code class="literal">NULL</code> to remove the item pointed by <em class="parameter"><code>uri</code></em>
 in the list. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> a return location for a <span class="type">GError</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a return location for a <span class="type">GError</span>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -797,7 +797,7 @@ gtk_recent_manager_get_items (<em class="parameter"><code><a class="link" href="
 </div>
 <div class="refsect3">
 <a name="gtk-recent-manager-get-items.returns"></a><h4>Returns</h4>
-<p> a list of
+<p>a list of
 newly allocated <a class="link" href="GtkRecentManager.html#GtkRecentInfo" title="GtkRecentInfo"><span class="type">GtkRecentInfo</span></a> objects. Use
 <a class="link" href="GtkRecentManager.html#gtk-recent-info-unref" title="gtk_recent_info_unref ()"><code class="function">gtk_recent_info_unref()</code></a> on each item inside the list, and then
 free the list itself using <code class="function">g_list_free()</code>. </p>
@@ -828,7 +828,7 @@ gtk_recent_manager_purge_items (<em class="parameter"><code><a class="link" href
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> a return location for a <span class="type">GError</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a return location for a <span class="type">GError</span>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1160,18 +1160,18 @@ storage specification, they will be expanded.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>app_exec</p></td>
-<td class="parameter_description"><p> return location for the string containing
+<td class="parameter_description"><p>return location for the string containing
 the command line. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>count</p></td>
-<td class="parameter_description"><p> return location for the number of times this item was registered. </p></td>
+<td class="parameter_description"><p>return location for the number of times this item was registered. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>time_</p></td>
-<td class="parameter_description"><p> return location for the timestamp this item was last registered
+<td class="parameter_description"><p>return location for the timestamp this item was last registered
 for this application. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -1212,7 +1212,7 @@ gtk_recent_info_get_applications (<em class="parameter"><code><a class="link" hr
 </tr>
 <tr>
 <td class="parameter_name"><p>length</p></td>
-<td class="parameter_description"><p> return location for the length of the returned list. </p></td>
+<td class="parameter_description"><p>return location for the length of the returned list. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1220,7 +1220,7 @@ gtk_recent_info_get_applications (<em class="parameter"><code><a class="link" hr
 </div>
 <div class="refsect3">
 <a name="gtk-recent-info-get-applications.returns"></a><h4>Returns</h4>
-<p>    a newly allocated <code class="literal">NULL</code>-terminated array of strings.
+<p>a newly allocated <code class="literal">NULL</code>-terminated array of strings.
 Use <code class="function">g_strfreev()</code> to free it. </p>
 <p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=length zero-terminated=1][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -1317,14 +1317,14 @@ gtk_recent_info_create_app_info (<em class="parameter"><code><a class="link" hre
 </tr>
 <tr>
 <td class="parameter_name"><p>app_name</p></td>
-<td class="parameter_description"><p> the name of the application that should
+<td class="parameter_description"><p>the name of the application that should
 be mapped to a <span class="type">GAppInfo</span>; if <code class="literal">NULL</code> is used then the default
 application for the MIME type is used. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> return location for a <span class="type">GError</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for a <span class="type">GError</span>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1332,7 +1332,7 @@ application for the MIME type is used. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-recent-info-create-app-info.returns"></a><h4>Returns</h4>
-<p> the newly created <span class="type">GAppInfo</span>, or <code class="literal">NULL</code>.
+<p>the newly created <span class="type">GAppInfo</span>, or <code class="literal">NULL</code>.
 In case of error, <em class="parameter"><code>error</code></em>
 will be set either with a
 <a class="link" href="GtkRecentManager.html#GTK-RECENT-MANAGER-ERROR:CAPS" title="GTK_RECENT_MANAGER_ERROR"><code class="literal">GTK_RECENT_MANAGER_ERROR</code></a> or a <code class="literal">G_IO_ERROR</code>. </p>
@@ -1365,7 +1365,7 @@ length might optionally be <code class="literal">NULL</code>.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>length</p></td>
-<td class="parameter_description"><p> return location for the number of groups returned. </p></td>
+<td class="parameter_description"><p>return location for the number of groups returned. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1373,7 +1373,7 @@ length might optionally be <code class="literal">NULL</code>.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-recent-info-get-groups.returns"></a><h4>Returns</h4>
-<p>  a newly allocated <code class="literal">NULL</code> terminated array of strings.
+<p>a newly allocated <code class="literal">NULL</code> terminated array of strings.
 Use <code class="function">g_strfreev()</code> to free it. </p>
 <p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=length zero-terminated=1][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -1449,7 +1449,7 @@ gtk_recent_info_get_icon (<em class="parameter"><code><a class="link" href="GtkR
 </div>
 <div class="refsect3">
 <a name="gtk-recent-info-get-icon.returns"></a><h4>Returns</h4>
-<p> a <span class="type">GdkPixbuf</span> containing the icon,
+<p>a <span class="type">GdkPixbuf</span> containing the icon,
 or <code class="literal">NULL</code>. Use <code class="function">g_object_unref()</code> when finished using the icon. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -1478,7 +1478,7 @@ gtk_recent_info_get_gicon (<em class="parameter"><code><a class="link" href="Gtk
 </div>
 <div class="refsect3">
 <a name="gtk-recent-info-get-gicon.returns"></a><h4>Returns</h4>
-<p> a <span class="type">GIcon</span> containing the icon, or <code class="literal">NULL</code>.
+<p>a <span class="type">GIcon</span> containing the icon, or <code class="literal">NULL</code>.
 Use <code class="function">g_object_unref()</code> when finished using the icon. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -1540,7 +1540,7 @@ it returns the UTF-8 encoded content of <a class="link" href="GtkRecentManager.h
 </div>
 <div class="refsect3">
 <a name="gtk-recent-info-get-uri-display.returns"></a><h4>Returns</h4>
-<p> a newly allocated UTF-8 string containing the
+<p>a newly allocated UTF-8 string containing the
 resource’s URI or <code class="literal">NULL</code>. Use <code class="function">g_free()</code> when done using it. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
@@ -1752,7 +1752,7 @@ is retrieved;</p></td>
 </tr>
 <tr>
 <td class="struct_member_name"><p><span class="type">gchar</span> **<em class="structfield"><code><a name="GtkRecentData.groups"></a>groups</code></em>;</p></td>
-<td class="struct_member_description"><p> a vector of strings containing
+<td class="struct_member_description"><p>a vector of strings containing
 groups names;. </p></td>
 <td class="struct_member_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></td>
 </tr>
@@ -1911,6 +1911,6 @@ by another application.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

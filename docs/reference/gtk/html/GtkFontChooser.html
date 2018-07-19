@@ -8,7 +8,7 @@
 <link rel="up" href="SelectorWidgets.html" title="Selector Widgets and Dialogs">
 <link rel="prev" href="GtkFileFilter.html" title="GtkFileFilter">
 <link rel="next" href="GtkFontButton.html" title="GtkFontButton">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -289,7 +289,7 @@
 </div>
 <div class="refsect1">
 <a name="GtkFontChooser.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GInterface
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
     <span class="lineart">╰──</span> GtkFontChooser
 </pre>
 </div>
@@ -344,7 +344,7 @@ Font families are a collection of font faces.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-font-chooser-get-font-family.returns"></a><h4>Returns</h4>
-<p> A <span class="type">PangoFontFamily</span> representing the
+<p>A <span class="type">PangoFontFamily</span> representing the
 selected font family, or <code class="literal">NULL</code>. The returned object is owned by <em class="parameter"><code>fontchooser</code></em>
 and must not be modified or freed. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -376,7 +376,7 @@ details (i.e. family, slant, weight, width, etc).</p>
 </div>
 <div class="refsect3">
 <a name="gtk-font-chooser-get-font-face.returns"></a><h4>Returns</h4>
-<p> A <span class="type">PangoFontFace</span> representing the
+<p>A <span class="type">PangoFontFace</span> representing the
 selected font group details, or <code class="literal">NULL</code>. The returned object is owned by
 <em class="parameter"><code>fontchooser</code></em>
 and must not be modified or freed. </p>
@@ -442,7 +442,7 @@ font descriptions.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-font-chooser-get-font.returns"></a><h4>Returns</h4>
-<p> A string with the name
+<p>A string with the name
 of the current font, or <code class="literal">NULL</code> if  no font is selected. You must
 free this string with <code class="function">g_free()</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -510,7 +510,7 @@ font descriptions.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-font-chooser-get-font-desc.returns"></a><h4>Returns</h4>
-<p> A <span class="type">PangoFontDescription</span> for the
+<p>A <span class="type">PangoFontDescription</span> for the
 current font, or <code class="literal">NULL</code> if  no font is selected. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -571,7 +571,7 @@ gtk_font_chooser_get_preview_text (<em class="parameter"><code><a class="link" h
 </div>
 <div class="refsect3">
 <a name="gtk-font-chooser-get-preview-text.returns"></a><h4>Returns</h4>
-<p> the text displayed in the
+<p>the text displayed in the
 preview area. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -602,7 +602,7 @@ The <em class="parameter"><code>text</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>text</p></td>
-<td class="parameter_description"><p> the text to display in the preview area. </p></td>
+<td class="parameter_description"><p>the text to display in the preview area. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -702,7 +702,7 @@ shown in a <a class="link" href="GtkFontChooser.html" title="GtkFontChooser"><sp
 </tr>
 <tr>
 <td class="parameter_name"><p>data</p></td>
-<td class="parameter_description"><p> user data passed to <a class="link" href="GtkFontChooser.html#gtk-font-chooser-set-filter-func" title="gtk_font_chooser_set_filter_func ()"><code class="function">gtk_font_chooser_set_filter_func()</code></a>. </p></td>
+<td class="parameter_description"><p>user data passed to <a class="link" href="GtkFontChooser.html#gtk-font-chooser-set-filter-func" title="gtk_font_chooser_set_filter_func ()"><code class="function">gtk_font_chooser_set_filter_func()</code></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -739,7 +739,7 @@ in the font chooser.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>filter</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkFontChooser.html#GtkFontFilterFunc" title="GtkFontFilterFunc ()"><span class="type">GtkFontFilterFunc</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkFontChooser.html#GtkFontFilterFunc" title="GtkFontFilterFunc ()"><span class="type">GtkFontFilterFunc</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -804,7 +804,7 @@ pango_context_set_font_map (context, fontmap);
 </tr>
 <tr>
 <td class="parameter_name"><p>fontmap</p></td>
-<td class="parameter_description"><p> a <span class="type">PangoFontMap</span>. </p></td>
+<td class="parameter_description"><p>a <span class="type">PangoFontMap</span>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -836,7 +836,7 @@ or <code class="literal">NULL</code> if it does not have one.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-font-chooser-get-font-map.returns"></a><h4>Returns</h4>
-<p> a <span class="type">PangoFontMap</span>, or <code class="literal">NULL</code>. </p>
+<p>a <span class="type">PangoFontMap</span>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-18.html#api-index-3.18">3.18</a></p>
@@ -1103,6 +1103,6 @@ Space, Shift+Space, Return or Enter.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

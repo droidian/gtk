@@ -8,7 +8,7 @@
 <link rel="up" href="MenusAndCombos.html" title="Menus, Combo Box, Toolbar">
 <link rel="prev" href="GtkRadioToolButton.html" title="GtkRadioToolButton">
 <link rel="next" href="GtkPopoverMenu.html" title="GtkPopoverMenu">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -219,7 +219,7 @@
 </tr>
 <tr>
 <td class="property_type">
-<span class="type">GdkRectangle</span> *</td>
+<a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *</td>
 <td class="property_name"><a class="link" href="GtkPopover.html#GtkPopover--pointing-to" title="The “pointing-to” property">pointing-to</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -291,11 +291,11 @@
 <a name="GtkPopover.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkPopover implements
- AtkImplementorIface and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
+ AtkImplementor and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GtkPopover.includes"></a><h2>Includes</h2>
-<pre class="synopsis">#include &lt;gtk/gtk.h&gt;
+<pre class="synopsis">#include &lt;gtk/gtkunixprint.h&gt;
 </pre>
 </div>
 <div class="refsect1">
@@ -376,7 +376,7 @@ gtk_popover_new (<em class="parameter"><code><a class="link" href="GtkWidget.htm
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>relative_to</p></td>
-<td class="parameter_description"><p> <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> the popover is related to. </p></td>
+<td class="parameter_description"><p><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> the popover is related to. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
@@ -414,7 +414,7 @@ on the menus attach widget or on any of its parent widgets.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>relative_to</p></td>
-<td class="parameter_description"><p> <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> the popover is related to. </p></td>
+<td class="parameter_description"><p><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> the popover is related to. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -485,13 +485,13 @@ then you would use the action name “mygroup.quit” in your
 </tr>
 <tr>
 <td class="parameter_name"><p>model</p></td>
-<td class="parameter_description"><p> the <span class="type">GMenuModel</span> to bind to or <code class="literal">NULL</code> to remove
+<td class="parameter_description"><p>the <span class="type">GMenuModel</span> to bind to or <code class="literal">NULL</code> to remove
 binding. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>action_namespace</p></td>
-<td class="parameter_description"><p> the namespace for actions in <em class="parameter"><code>model</code></em>
+<td class="parameter_description"><p>the namespace for actions in <em class="parameter"><code>model</code></em>
 . </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -585,7 +585,7 @@ unless extra references are kept.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>relative_to</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -617,7 +617,7 @@ gtk_popover_get_relative_to (<em class="parameter"><code><a class="link" href="G
 </div>
 <div class="refsect3">
 <a name="gtk-popover-get-relative-to.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>. </p>
+<p>a <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-12.html#api-index-3.12">3.12</a></p>
@@ -627,7 +627,7 @@ gtk_popover_get_relative_to (<em class="parameter"><code><a class="link" href="G
 <a name="gtk-popover-set-pointing-to"></a><h3>gtk_popover_set_pointing_to ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_popover_set_pointing_to (<em class="parameter"><code><a class="link" href="GtkPopover.html" title="GtkPopover"><span class="type">GtkPopover</span></a> *popover</code></em>,
-                             <em class="parameter"><code>const <span class="type">GdkRectangle</span> *rect</code></em>);</pre>
+                             <em class="parameter"><code>const <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *rect</code></em>);</pre>
 <p>Sets the rectangle that <em class="parameter"><code>popover</code></em>
  will point to, in the
 coordinate space of the widget <em class="parameter"><code>popover</code></em>
@@ -662,7 +662,7 @@ see <a class="link" href="GtkPopover.html#gtk-popover-set-relative-to" title="gt
 <a name="gtk-popover-get-pointing-to"></a><h3>gtk_popover_get_pointing_to ()</h3>
 <pre class="programlisting"><span class="returnvalue">gboolean</span>
 gtk_popover_get_pointing_to (<em class="parameter"><code><a class="link" href="GtkPopover.html" title="GtkPopover"><span class="type">GtkPopover</span></a> *popover</code></em>,
-                             <em class="parameter"><code><span class="type">GdkRectangle</span> *rect</code></em>);</pre>
+                             <em class="parameter"><code><a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *rect</code></em>);</pre>
 <p>If a rectangle to point to has been set, this function will
 return <code class="literal">TRUE</code> and fill in <em class="parameter"><code>rect</code></em>
  with such rectangle, otherwise
@@ -685,7 +685,7 @@ widget coordinates.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>rect</p></td>
-<td class="parameter_description"><p> location to store the rectangle. </p></td>
+<td class="parameter_description"><p>location to store the rectangle. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -982,7 +982,7 @@ when the popover is dismissed.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>widget</p></td>
-<td class="parameter_description"><p> the new default widget, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>the new default widget, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1014,7 +1014,7 @@ the popover is shown.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-popover-get-default-widget.returns"></a><h4>Returns</h4>
-<p> the default widget,
+<p>the default widget,
 or <code class="literal">NULL</code> if there is none. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1086,7 +1086,7 @@ receive input while the popover is visible).</p>
 <hr>
 <div class="refsect2">
 <a name="GtkPopover--pointing-to"></a><h3>The <code class="literal">“pointing-to”</code> property</h3>
-<pre class="programlisting">  “pointing-to”              <span class="type">GdkRectangle</span> *</pre>
+<pre class="programlisting">  “pointing-to”              <a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *</pre>
 <p>Marks a specific rectangle to be pointed.</p>
 <p>Flags: Read / Write</p>
 <p class="since">Since: <a class="link" href="api-index-3-12.html#api-index-3.12">3.12</a></p>
@@ -1136,6 +1136,6 @@ user_function (<a class="link" href="GtkPopover.html" title="GtkPopover"><span c
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

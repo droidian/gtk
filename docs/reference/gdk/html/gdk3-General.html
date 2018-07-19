@@ -8,7 +8,7 @@
 <link rel="up" href="reference.html" title="API Reference">
 <link rel="prev" href="reference.html" title="API Reference">
 <link rel="next" href="GdkDisplayManager.html" title="GdkDisplayManager">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -362,12 +362,12 @@ needed by GTK+ applications.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>argc</p></td>
-<td class="parameter_description"><p> the number of command line arguments. </p></td>
+<td class="parameter_description"><p>the number of command line arguments. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>argv</p></td>
-<td class="parameter_description"><p> the array of command line arguments. </p></td>
+<td class="parameter_description"><p>the array of command line arguments. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=argc][<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -399,12 +399,12 @@ needed by GTK+ applications.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>argc</p></td>
-<td class="parameter_description"><p> the number of command line arguments. </p></td>
+<td class="parameter_description"><p>the number of command line arguments. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>argv</p></td>
-<td class="parameter_description"><p> the array of command line arguments. </p></td>
+<td class="parameter_description"><p>the array of command line arguments. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=argc][<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -445,7 +445,7 @@ updated accordingly.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>argv</p></td>
-<td class="parameter_description"><p> the array of command line arguments. </p></td>
+<td class="parameter_description"><p>the array of command line arguments. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=argc]</span></td>
 </tr>
 </tbody>
@@ -462,7 +462,7 @@ gdk_get_display_arg_name (<em class="parameter"><code><span class="type">void</s
 to <a class="link" href="gdk3-General.html#gdk-init" title="gdk_init ()"><code class="function">gdk_init()</code></a> or <a class="link" href="gdk3-General.html#gdk-parse-args" title="gdk_parse_args ()"><code class="function">gdk_parse_args()</code></a>, if any.</p>
 <div class="refsect3">
 <a name="gdk-get-display-arg-name.returns"></a><h4>Returns</h4>
-<p> the display name, if specified explicitly,
+<p>the display name, if specified explicitly,
 otherwise <code class="literal">NULL</code> this string is owned by GTK+ and must not be
 modified or freed. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
@@ -762,7 +762,7 @@ may be selected.</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>confine_to</p></td>
-<td class="parameter_description"><p> If non-<code class="literal">NULL</code>, the pointer will be confined to this
+<td class="parameter_description"><p>If non-<code class="literal">NULL</code>, the pointer will be confined to this
 window during the grab. If the pointer is outside <em class="parameter"><code>confine_to</code></em>
 , it will
 automatically be moved to the closest edge of <em class="parameter"><code>confine_to</code></em>
@@ -772,7 +772,7 @@ and leave events will be generated as necessary. </p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>cursor</p></td>
-<td class="parameter_description"><p> the cursor to display while the grab is active. If this is <code class="literal">NULL</code> then
+<td class="parameter_description"><p>the cursor to display while the grab is active. If this is <code class="literal">NULL</code> then
 the normal cursors are used for <em class="parameter"><code>window</code></em>
 and its descendants, and the cursor
 for <em class="parameter"><code>window</code></em>
@@ -1238,11 +1238,11 @@ trying to use that function.</p>
 </pre>
 <p>A macro that should be defined before including the gdk.h header.
 If it is defined, no compiler warnings will be produced for uses
-of deprecated GDK APIs.</p>
+of deprecated GDK and GTK+ APIs.</p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <link rel="up" href="Ornaments.html" title="Ornaments">
 <link rel="prev" href="Ornaments.html" title="Ornaments">
 <link rel="next" href="GtkSeparator.html" title="GtkSeparator">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -189,7 +189,7 @@
 <a name="GtkFrame.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkFrame implements
- AtkImplementorIface and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
+ AtkImplementor and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GtkFrame.includes"></a><h2>Includes</h2>
@@ -260,7 +260,7 @@ If <em class="parameter"><code>label</code></em>
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>label</p></td>
-<td class="parameter_description"><p> the text to use as the label of the frame. </p></td>
+<td class="parameter_description"><p>the text to use as the label of the frame. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
@@ -295,7 +295,7 @@ new <a class="link" href="GtkLabel.html" title="GtkLabel"><span class="type">Gtk
 </tr>
 <tr>
 <td class="parameter_name"><p>label</p></td>
-<td class="parameter_description"><p> the text to use as the label of the frame. </p></td>
+<td class="parameter_description"><p>the text to use as the label of the frame. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -326,7 +326,7 @@ will appear embedded in the top edge of the frame as a title.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>label_widget</p></td>
-<td class="parameter_description"><p> the new label widget. </p></td>
+<td class="parameter_description"><p>the new label widget. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -435,7 +435,7 @@ to <a class="link" href="GtkFrame.html#gtk-frame-new" title="gtk_frame_new ()">
 </div>
 <div class="refsect3">
 <a name="gtk-frame-get-label.returns"></a><h4>Returns</h4>
-<p> the text in the label, or <code class="literal">NULL</code> if there
+<p>the text in the label, or <code class="literal">NULL</code> if there
 was no label widget or the lable widget was not
 a <a class="link" href="GtkLabel.html" title="GtkLabel"><span class="type">GtkLabel</span></a>. This string is owned by GTK+ and
 must not be modified or freed. </p>
@@ -467,13 +467,13 @@ gtk_frame_get_label_align (<em class="parameter"><code><a class="link" href="Gtk
 </tr>
 <tr>
 <td class="parameter_name"><p>xalign</p></td>
-<td class="parameter_description"><p> location to store X alignment of
+<td class="parameter_description"><p>location to store X alignment of
 frame’s label, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>yalign</p></td>
-<td class="parameter_description"><p> location to store X alignment of
+<td class="parameter_description"><p>location to store X alignment of
 frame’s label, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -505,7 +505,7 @@ gtk_frame_get_label_widget (<em class="parameter"><code><a class="link" href="Gt
 </div>
 <div class="refsect3">
 <a name="gtk-frame-get-label-widget.returns"></a><h4>Returns</h4>
-<p> the label widget, or <code class="literal">NULL</code> if
+<p>the label widget, or <code class="literal">NULL</code> if
 there is none. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -617,6 +617,6 @@ gtk_frame_get_shadow_type (<em class="parameter"><code><a class="link" href="Gtk
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

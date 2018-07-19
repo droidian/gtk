@@ -8,7 +8,7 @@
 <link rel="up" href="MenusAndCombos.html" title="Menus, Combo Box, Toolbar">
 <link rel="prev" href="MenusAndCombos.html" title="Menus, Combo Box, Toolbar">
 <link rel="next" href="GtkComboBoxText.html" title="GtkComboBoxText">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -574,7 +574,7 @@
 <a name="GtkComboBox.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkComboBox implements
- AtkImplementorIface,  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>,  <a class="link" href="GtkCellLayout.html" title="GtkCellLayout">GtkCellLayout</a> and  <a class="link" href="GtkCellEditable.html" title="GtkCellEditable">GtkCellEditable</a>.</p>
+ AtkImplementor,  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>,  <a class="link" href="GtkCellLayout.html" title="GtkCellLayout">GtkCellLayout</a> and  <a class="link" href="GtkCellEditable.html" title="GtkCellEditable">GtkCellEditable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GtkComboBox.includes"></a><h2>Includes</h2>
@@ -1054,7 +1054,7 @@ Otherwise, <em class="parameter"><code>iter</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>iter</p></td>
-<td class="parameter_description"><p> A <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>. </p></td>
+<td class="parameter_description"><p>A <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1093,7 +1093,7 @@ unsets the active item if <em class="parameter"><code>iter</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>iter</p></td>
-<td class="parameter_description"><p> The <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>The <a class="link" href="GtkTreeModel.html#GtkTreeIter"><span class="type">GtkTreeIter</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1202,7 +1202,7 @@ is returned.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-combo-box-get-active-id.returns"></a><h4>Returns</h4>
-<p> the ID of the active row, or <code class="literal">NULL</code>. </p>
+<p>the ID of the active row, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-0.html#api-index-3.0">3.0</a></p>
@@ -1238,7 +1238,7 @@ row has the given ID then the function does nothing and returns <code class="lit
 </tr>
 <tr>
 <td class="parameter_name"><p>active_id</p></td>
-<td class="parameter_description"><p> the ID of the row to select, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>the ID of the row to select, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1277,7 +1277,7 @@ gtk_combo_box_get_model (<em class="parameter"><code><a class="link" href="GtkCo
 </div>
 <div class="refsect3">
 <a name="gtk-combo-box-get-model.returns"></a><h4>Returns</h4>
-<p> A <a class="link" href="GtkTreeModel.html" title="GtkTreeModel"><span class="type">GtkTreeModel</span></a> which was passed
+<p>A <a class="link" href="GtkTreeModel.html" title="GtkTreeModel"><span class="type">GtkTreeModel</span></a> which was passed
 during construction. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1312,7 +1312,7 @@ cell renderers for the new model.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>model</p></td>
-<td class="parameter_description"><p> A <a class="link" href="GtkTreeModel.html" title="GtkTreeModel"><span class="type">GtkTreeModel</span></a>. </p></td>
+<td class="parameter_description"><p>A <a class="link" href="GtkTreeModel.html" title="GtkTreeModel"><span class="type">GtkTreeModel</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1325,12 +1325,12 @@ cell renderers for the new model.</p>
 <a name="gtk-combo-box-popup-for-device"></a><h3>gtk_combo_box_popup_for_device ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_combo_box_popup_for_device (<em class="parameter"><code><a class="link" href="GtkComboBox.html" title="GtkComboBox"><span class="type">GtkComboBox</span></a> *combo_box</code></em>,
-                                <em class="parameter"><code><span class="type">GdkDevice</span> *device</code></em>);</pre>
+                                <em class="parameter"><code><a href="../html/GdkDevice.html#GdkDevice-struct"><span class="type">GdkDevice</span></a> *device</code></em>);</pre>
 <p>Pops up the menu or dropdown list of <em class="parameter"><code>combo_box</code></em>
 , the popup window
 will be grabbed so only <em class="parameter"><code>device</code></em>
  and its associated pointer/keyboard
-are the only <span class="type">GdkDevices</span> able to send events to it.</p>
+are the only <a href="../html/GdkDevice.html#GdkDevice-struct"><span class="type">GdkDevices</span></a> able to send events to it.</p>
 <div class="refsect3">
 <a name="gtk-combo-box-popup-for-device.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -1347,7 +1347,7 @@ are the only <span class="type">GdkDevices</span> able to send events to it.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>device</p></td>
-<td class="parameter_description"><p>a <span class="type">GdkDevice</span></p></td>
+<td class="parameter_description"><p>a <a href="../html/GdkDevice.html#GdkDevice-struct"><span class="type">GdkDevice</span></a></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -1434,7 +1434,7 @@ applications should have little use for it.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-combo-box-get-popup-accessible.returns"></a><h4>Returns</h4>
-<p> the accessible object corresponding
+<p>the accessible object corresponding
 to the combo box’s popup. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1500,13 +1500,13 @@ function is <code class="literal">NULL</code>, no separators are drawn. This is 
 </tr>
 <tr>
 <td class="parameter_name"><p>data</p></td>
-<td class="parameter_description"><p> user data to pass to <em class="parameter"><code>func</code></em>
+<td class="parameter_description"><p>user data to pass to <em class="parameter"><code>func</code></em>
 , or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>destroy</p></td>
-<td class="parameter_description"><p> destroy notifier for <em class="parameter"><code>data</code></em>
+<td class="parameter_description"><p>destroy notifier for <em class="parameter"><code>data</code></em>
 , or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -2318,7 +2318,7 @@ format_entry_text_callback (GtkComboBox *combo,
 </div>
 <div class="refsect3">
 <a name="GtkComboBox-format-entry-text.returns"></a><h4>Returns</h4>
-<p> a newly allocated string representing <em class="parameter"><code>path</code></em>
+<p>a newly allocated string representing <em class="parameter"><code>path</code></em>
 for the current GtkComboBox model. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -2442,6 +2442,6 @@ which gets emitted to popup the combo box list.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

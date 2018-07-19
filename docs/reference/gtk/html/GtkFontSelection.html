@@ -8,7 +8,7 @@
 <link rel="up" href="DeprecatedObjects.html" title="Deprecated">
 <link rel="prev" href="GtkHSV.html" title="GtkHSV">
 <link rel="next" href="GtkFontSelectionDialog.html" title="GtkFontSelectionDialog">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -199,7 +199,7 @@
 <a name="GtkFontSelection.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkFontSelection implements
- AtkImplementorIface,  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a> and  <a class="link" href="gtk3-Orientable.html#GtkOrientable">GtkOrientable</a>.</p>
+ AtkImplementor,  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a> and  <a class="link" href="gtk3-Orientable.html#GtkOrientable">GtkOrientable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GtkFontSelection.includes"></a><h2>Includes</h2>
@@ -415,7 +415,7 @@ details (i.e. family, slant, weight, width, etc).</p>
 </div>
 <div class="refsect3">
 <a name="gtk-font-selection-get-face.returns"></a><h4>Returns</h4>
-<p> A <span class="type">PangoFontFace</span> representing the
+<p>A <span class="type">PangoFontFace</span> representing the
 selected font group details. The returned object is owned by
 <em class="parameter"><code>fontsel</code></em>
 and must not be modified or freed. </p>
@@ -451,7 +451,7 @@ the selected font. For example, “Regular”, “Bold”, etc.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-font-selection-get-face-list.returns"></a><h4>Returns</h4>
-<p> A <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> that is part of <em class="parameter"><code>fontsel</code></em>
+<p>A <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> that is part of <em class="parameter"><code>fontsel</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -484,7 +484,7 @@ gtk_font_selection_get_family (<em class="parameter"><code><a class="link" href=
 </div>
 <div class="refsect3">
 <a name="gtk-font-selection-get-family.returns"></a><h4>Returns</h4>
-<p> A <span class="type">PangoFontFamily</span> representing the
+<p>A <span class="type">PangoFontFamily</span> representing the
 selected font family. Font families are a collection of font
 faces. The returned object is owned by <em class="parameter"><code>fontsel</code></em>
 and must not
@@ -553,7 +553,7 @@ example, “Sans”, “Serif”, etc.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-font-selection-get-family-list.returns"></a><h4>Returns</h4>
-<p> A <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> that is part of <em class="parameter"><code>fontsel</code></em>
+<p>A <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> that is part of <em class="parameter"><code>fontsel</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -586,7 +586,7 @@ gtk_font_selection_get_preview_entry (<em class="parameter"><code><a class="link
 </div>
 <div class="refsect3">
 <a name="gtk-font-selection-get-preview-entry.returns"></a><h4>Returns</h4>
-<p> A <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> that is part of <em class="parameter"><code>fontsel</code></em>
+<p>A <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> that is part of <em class="parameter"><code>fontsel</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -620,7 +620,7 @@ number manually instead of selecting it from the list of font sizes.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-font-selection-get-size-entry.returns"></a><h4>Returns</h4>
-<p> A <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> that is part of <em class="parameter"><code>fontsel</code></em>
+<p>A <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> that is part of <em class="parameter"><code>fontsel</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -653,7 +653,7 @@ gtk_font_selection_get_size_list (<em class="parameter"><code><a class="link" hr
 </div>
 <div class="refsect3">
 <a name="gtk-font-selection-get-size-list.returns"></a><h4>Returns</h4>
-<p> A <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> that is part of <em class="parameter"><code>fontsel</code></em>
+<p>A <a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> that is part of <em class="parameter"><code>fontsel</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -691,6 +691,6 @@ gtk_font_selection_get_size_list (<em class="parameter"><code><a class="link" hr
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

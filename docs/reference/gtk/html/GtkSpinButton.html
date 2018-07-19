@@ -8,7 +8,7 @@
 <link rel="up" href="NumericEntry.html" title="Numeric and Text Data Entry">
 <link rel="prev" href="GtkScale.html" title="GtkScale">
 <link rel="next" href="GtkSearchEntry.html" title="GtkSearchEntry">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -385,7 +385,7 @@
 <a name="GtkSpinButton.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkSpinButton implements
- AtkImplementorIface,  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>,  <a class="link" href="GtkEditable.html" title="GtkEditable">GtkEditable</a>,  <a class="link" href="GtkCellEditable.html" title="GtkCellEditable">GtkCellEditable</a> and  <a class="link" href="gtk3-Orientable.html#GtkOrientable">GtkOrientable</a>.</p>
+ AtkImplementor,  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>,  <a class="link" href="GtkEditable.html" title="GtkEditable">GtkEditable</a>,  <a class="link" href="GtkCellEditable.html" title="GtkCellEditable">GtkCellEditable</a> and  <a class="link" href="gtk3-Orientable.html#GtkOrientable">GtkOrientable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GtkSpinButton.includes"></a><h2>Includes</h2>
@@ -530,7 +530,7 @@ climb rate, and number of decimal places are updated accordingly.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>adjustment</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkAdjustment.html" title="GtkAdjustment"><span class="type">GtkAdjustment</span></a> to replace the spin button’s
+<td class="parameter_description"><p>a <a class="link" href="GtkAdjustment.html" title="GtkAdjustment"><span class="type">GtkAdjustment</span></a> to replace the spin button’s
 existing adjustment, or <code class="literal">NULL</code> to leave its current adjustment unchanged. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
@@ -567,7 +567,7 @@ gtk_spin_button_new (<em class="parameter"><code><a class="link" href="GtkAdjust
 <tbody>
 <tr>
 <td class="parameter_name"><p>adjustment</p></td>
-<td class="parameter_description"><p> the <a class="link" href="GtkAdjustment.html" title="GtkAdjustment"><span class="type">GtkAdjustment</span></a> object that this spin
+<td class="parameter_description"><p>the <a class="link" href="GtkAdjustment.html" title="GtkAdjustment"><span class="type">GtkAdjustment</span></a> object that this spin
 button should use, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -694,7 +694,7 @@ gtk_spin_button_get_adjustment (<em class="parameter"><code><a class="link" href
 </div>
 <div class="refsect3">
 <a name="gtk-spin-button-get-adjustment.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="GtkAdjustment.html" title="GtkAdjustment"><span class="type">GtkAdjustment</span></a> of <em class="parameter"><code>spin_button</code></em>
+<p>the <a class="link" href="GtkAdjustment.html" title="GtkAdjustment"><span class="type">GtkAdjustment</span></a> of <em class="parameter"><code>spin_button</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1105,12 +1105,12 @@ gtk_spin_button_get_increments (<em class="parameter"><code><a class="link" href
 </tr>
 <tr>
 <td class="parameter_name"><p>step</p></td>
-<td class="parameter_description"><p> location to store step increment, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store step increment, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>page</p></td>
-<td class="parameter_description"><p> location to store page increment, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store page increment, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1170,12 +1170,12 @@ See <a class="link" href="GtkSpinButton.html#gtk-spin-button-set-range" title="g
 </tr>
 <tr>
 <td class="parameter_name"><p>min</p></td>
-<td class="parameter_description"><p> location to store minimum allowed value, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store minimum allowed value, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>max</p></td>
-<td class="parameter_description"><p> location to store maximum allowed value, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>location to store maximum allowed value, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1569,7 +1569,7 @@ the entry and set <em class="parameter"><code>new_value</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>new_value</p></td>
-<td class="parameter_description"><p> return location for the new value. </p></td>
+<td class="parameter_description"><p>return location for the new value. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> double]</span></td>
 </tr>
 <tr>
@@ -1716,6 +1716,6 @@ from its maximum to minimum value or vice-versa.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

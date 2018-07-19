@@ -8,7 +8,7 @@
 <link rel="up" href="DeprecatedObjects.html" title="Deprecated">
 <link rel="prev" href="gtk3-GtkGradient.html" title="GtkGradient">
 <link rel="next" href="GtkStyle.html" title="GtkStyle">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -573,9 +573,9 @@ elements are:</p>
   pixmap</code></p>
 <p>     Sets a background pixmap to be used in place of the <code class="literal">bg</code> color
      (or for <span class="type">GtkText</span>, in place of the <code class="literal">base</code> color. The special
-     value <code class="literal">"&lt;parent&gt;"</code> may be used to indicate that the widget should
+     value <code class="literal">"&amp;lt;parent&gt;"</code> may be used to indicate that the widget should
      use the same background pixmap as its parent. The special value
-     <code class="literal">"&lt;none&gt;"</code> may be used to indicate no background pixmap.</p>
+     <code class="literal">"&amp;lt;none&gt;"</code> may be used to indicate no background pixmap.</p>
 </li>
 <li class="listitem">
 <p><code class="literal">font = font</code></p>
@@ -776,23 +776,23 @@ binding name {
 <p><code class="literal">key</code> is a string consisting of a series of modifiers followed by
 the name of a key. The modifiers can be:</p>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
-<li class="listitem"><p><code class="literal">&lt;alt&gt;</code></p></li>
-<li class="listitem"><p><code class="literal">&lt;ctl&gt;</code></p></li>
-<li class="listitem"><p><code class="literal">&lt;control&gt;</code></p></li>
-<li class="listitem"><p><code class="literal">&lt;meta&gt;</code></p></li>
-<li class="listitem"><p><code class="literal">&lt;hyper&gt;</code></p></li>
-<li class="listitem"><p><code class="literal">&lt;super&gt;</code></p></li>
-<li class="listitem"><p><code class="literal">&lt;mod1&gt;</code></p></li>
-<li class="listitem"><p><code class="literal">&lt;mod2&gt;</code></p></li>
-<li class="listitem"><p><code class="literal">&lt;mod3&gt;</code></p></li>
-<li class="listitem"><p><code class="literal">&lt;mod4&gt;</code></p></li>
-<li class="listitem"><p><code class="literal">&lt;mod5&gt;</code></p></li>
-<li class="listitem"><p><code class="literal">&lt;release&gt;</code></p></li>
-<li class="listitem"><p><code class="literal">&lt;shft&gt;</code></p></li>
-<li class="listitem"><p><code class="literal">&lt;shift&gt;</code></p></li>
+<li class="listitem"><p><code class="literal">&amp;lt;alt&gt;</code></p></li>
+<li class="listitem"><p><code class="literal">&amp;lt;ctl&gt;</code></p></li>
+<li class="listitem"><p><code class="literal">&amp;lt;control&gt;</code></p></li>
+<li class="listitem"><p><code class="literal">&amp;lt;meta&gt;</code></p></li>
+<li class="listitem"><p><code class="literal">&amp;lt;hyper&gt;</code></p></li>
+<li class="listitem"><p><code class="literal">&amp;lt;super&gt;</code></p></li>
+<li class="listitem"><p><code class="literal">&amp;lt;mod1&gt;</code></p></li>
+<li class="listitem"><p><code class="literal">&amp;lt;mod2&gt;</code></p></li>
+<li class="listitem"><p><code class="literal">&amp;lt;mod3&gt;</code></p></li>
+<li class="listitem"><p><code class="literal">&amp;lt;mod4&gt;</code></p></li>
+<li class="listitem"><p><code class="literal">&amp;lt;mod5&gt;</code></p></li>
+<li class="listitem"><p><code class="literal">&amp;lt;release&gt;</code></p></li>
+<li class="listitem"><p><code class="literal">&amp;lt;shft&gt;</code></p></li>
+<li class="listitem"><p><code class="literal">&amp;lt;shift&gt;</code></p></li>
 </ul></div>
-<p><code class="literal">&lt;shft&gt;</code> is an alias for <code class="literal">&lt;shift&gt;</code>, <code class="literal">&lt;ctl&gt;</code> is an alias for
-<code class="literal">&lt;control&gt;</code>, and <code class="literal">&lt;alt&gt;</code> is an alias for <code class="literal">&lt;mod1&gt;</code>.</p>
+<p><code class="literal">&amp;lt;shft&gt;</code> is an alias for <code class="literal">&amp;lt;shift&gt;</code>, <code class="literal">&amp;lt;ctl&gt;</code> is an alias for
+<code class="literal">&amp;lt;control&gt;</code>, and <code class="literal">&amp;lt;alt&gt;</code> is an alias for <code class="literal">&amp;lt;mod1&gt;</code>.</p>
 <p>The action that is bound to the key is a sequence of signal names
 (strings) followed by parameters for each signal. The signals must
 be action signals. (See <code class="function">g_signal_new()</code>). Each parameter can be a
@@ -850,7 +850,7 @@ created.)</p>
 </div>
 <div class="refsect3">
 <a name="gtk-rc-get-style.returns"></a><h4>Returns</h4>
-<p> the resulting style. No refcount is added
+<p>the resulting style. No refcount is added
 to the returned style, so if you want to save this style around,
 you should add a reference yourself. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -898,13 +898,13 @@ would be items inside a GNOME canvas widget.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>widget_path</p></td>
-<td class="parameter_description"><p> the widget path to use when looking up the
+<td class="parameter_description"><p>the widget path to use when looking up the
 style, or <code class="literal">NULL</code> if no matching against the widget path should be done. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>class_path</p></td>
-<td class="parameter_description"><p> the class path to use when looking up the style,
+<td class="parameter_description"><p>the class path to use when looking up the style,
 or <code class="literal">NULL</code> if no matching against the class path should be done. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -919,7 +919,7 @@ when matching against class styles, or <span class="type">G_TYPE_NONE</span></p>
 </div>
 <div class="refsect3">
 <a name="gtk-rc-get-style-by-paths.returns"></a><h4>Returns</h4>
-<p> A style created by matching
+<p>A style created by matching
 with the supplied paths, or <code class="literal">NULL</code> if nothing matching was
 specified and the default style should be used. The returned
 value is owned by GTK+ as part of an internal cache, so you
@@ -1050,7 +1050,7 @@ gtk_rc_reset_styles (<em class="parameter"><code><a class="link" href="GtkSettin
 </div>
 <p>This function recomputes the styles for all widgets that use a
 particular <a class="link" href="GtkSettings.html" title="Settings"><span class="type">GtkSettings</span></a> object. (There is one <a class="link" href="GtkSettings.html" title="Settings"><span class="type">GtkSettings</span></a> object
-per <span class="type">GdkScreen</span>, see <a class="link" href="GtkSettings.html#gtk-settings-get-for-screen" title="gtk_settings_get_for_screen ()"><code class="function">gtk_settings_get_for_screen()</code></a>); It is useful
+per <a href="../html/GdkScreen.html#GdkScreen-struct"><span class="type">GdkScreen</span></a>, see <a class="link" href="GtkSettings.html#gtk-settings-get-for-screen" title="gtk_settings_get_for_screen ()"><code class="function">gtk_settings_get_for_screen()</code></a>); It is useful
 when some global parameter has changed that affects the appearance
 of all widgets, because when a widget gets a new style, it will
 both redraw and recompute any cached information about its
@@ -1096,7 +1096,7 @@ end of <a class="link" href="gtk3-General.html#gtk-init" title="gtk_init ()"><c
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>filename</p></td>
-<td class="parameter_description"><p> the pathname to the file. If <em class="parameter"><code>filename</code></em>
+<td class="parameter_description"><p>the pathname to the file. If <em class="parameter"><code>filename</code></em>
 is not absolute, it is searched in the current directory. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
 </tr></tbody>
@@ -1116,7 +1116,7 @@ gtk_rc_get_default_files (<em class="parameter"><code><span class="type">void</s
 at the end of <a class="link" href="gtk3-General.html#gtk-init" title="gtk_init ()"><code class="function">gtk_init()</code></a>.</p>
 <div class="refsect3">
 <a name="gtk-rc-get-default-files.returns"></a><h4>Returns</h4>
-<p>     A <code class="literal">NULL</code>-terminated array of filenames.  This memory is owned
+<p>A <code class="literal">NULL</code>-terminated array of filenames.  This memory is owned
 by GTK+ and must not be freed by the application.  If you want
 to store this information, you should make a copy. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> filename]</span></p>
@@ -1143,7 +1143,7 @@ end of <a class="link" href="gtk3-General.html#gtk-init" title="gtk_init ()"><c
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>filenames</p></td>
-<td class="parameter_description"><p> A
+<td class="parameter_description"><p>A
 <code class="literal">NULL</code>-terminated list of filenames. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> filename]</span></td>
 </tr></tbody>
@@ -1155,7 +1155,7 @@ end of <a class="link" href="gtk3-General.html#gtk-init" title="gtk_init ()"><c
 <a name="gtk-rc-parse-color"></a><h3>gtk_rc_parse_color ()</h3>
 <pre class="programlisting"><span class="returnvalue">guint</span>
 gtk_rc_parse_color (<em class="parameter"><code><span class="type">GScanner</span> *scanner</code></em>,
-                    <em class="parameter"><code><span class="type">GdkColor</span> *color</code></em>);</pre>
+                    <em class="parameter"><code><a href="../html/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a> *color</code></em>);</pre>
 <div class="warning">
 <p><code class="literal">gtk_rc_parse_color</code> has been deprecated since version 3.0 and should not be used in newly-written code.</p>
 <p>Use <a class="link" href="GtkCssProvider.html" title="GtkCssProvider"><span class="type">GtkCssProvider</span></a> instead</p>
@@ -1180,7 +1180,7 @@ order to support symbolic colors.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>color</p></td>
-<td class="parameter_description"><p> a pointer to a <span class="type">GdkColor</span> in which to store
+<td class="parameter_description"><p>a pointer to a <a href="../html/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a> in which to store
 the result. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -1199,7 +1199,7 @@ that was expected but not found</p>
 <pre class="programlisting"><span class="returnvalue">guint</span>
 gtk_rc_parse_color_full (<em class="parameter"><code><span class="type">GScanner</span> *scanner</code></em>,
                          <em class="parameter"><code><a class="link" href="gtk3-Resource-Files.html#GtkRcStyle"><span class="type">GtkRcStyle</span></a> *style</code></em>,
-                         <em class="parameter"><code><span class="type">GdkColor</span> *color</code></em>);</pre>
+                         <em class="parameter"><code><a href="../html/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a> *color</code></em>);</pre>
 <div class="warning">
 <p><code class="literal">gtk_rc_parse_color_full</code> has been deprecated since version 3.0 and should not be used in newly-written code.</p>
 <p>Use <a class="link" href="GtkCssProvider.html" title="GtkCssProvider"><span class="type">GtkCssProvider</span></a> instead</p>
@@ -1224,12 +1224,12 @@ references to symbolic colors.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>style</p></td>
-<td class="parameter_description"><p> a <a class="link" href="gtk3-Resource-Files.html#GtkRcStyle"><span class="type">GtkRcStyle</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="gtk3-Resource-Files.html#GtkRcStyle"><span class="type">GtkRcStyle</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>color</p></td>
-<td class="parameter_description"><p> a pointer to a <span class="type">GdkColor</span> in which to store
+<td class="parameter_description"><p>a pointer to a <a href="../html/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a> in which to store
 the result. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -1271,7 +1271,7 @@ in a RC file.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>state</p></td>
-<td class="parameter_description"><p> A pointer to a <a class="link" href="GtkWidget.html#GtkStateType" title="enum GtkStateType"><span class="type">GtkStateType</span></a> variable in which to
+<td class="parameter_description"><p>A pointer to a <a class="link" href="GtkWidget.html#GtkStateType" title="enum GtkStateType"><span class="type">GtkStateType</span></a> variable in which to
 store the result. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -1353,7 +1353,7 @@ is not useful for applications and should not be used.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-rc-find-module-in-path.returns"></a><h4>Returns</h4>
-<p> The filename, if found (must be
+<p>The filename, if found (must be
 freed with <code class="function">g_free()</code>), otherwise <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></p>
 </div>
@@ -1402,7 +1402,7 @@ warning message, or <code class="literal">NULL</code></p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-rc-find-pixmap-in-path.returns"></a><h4>Returns</h4>
-<p> the filename. </p>
+<p>the filename. </p>
 <p><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></p>
 </div>
 </div>
@@ -1420,7 +1420,7 @@ For full information about the search for theme engines,
 see the docs for <code class="literal">GTK_PATH</code> in <a class="link" href="gtk-running.html" title="Running GTK+ Applications">Running GTK+ Applications</a>.</p>
 <div class="refsect3">
 <a name="gtk-rc-get-module-dir.returns"></a><h4>Returns</h4>
-<p> the directory. (Must be freed with <code class="function">g_free()</code>). </p>
+<p>the directory. (Must be freed with <code class="function">g_free()</code>). </p>
 <p><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></p>
 </div>
 </div>
@@ -1440,7 +1440,7 @@ function is useful solely for utilities supplied with GTK+ and should
 not be used by applications under normal circumstances.</p>
 <div class="refsect3">
 <a name="gtk-rc-get-im-module-path.returns"></a><h4>Returns</h4>
-<p> a newly-allocated string containing the
+<p>a newly-allocated string containing the
 path in which to look for IM modules. </p>
 <p><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></p>
 </div>
@@ -1459,7 +1459,7 @@ of the <code class="literal">GTK_IM_MODULE_FILE</code>
 environment variable for more details.</p>
 <div class="refsect3">
 <a name="gtk-rc-get-im-module-file.returns"></a><h4>Returns</h4>
-<p> a newly-allocated string containing the
+<p>a newly-allocated string containing the
 name of the file listing the IM modules available for loading. </p>
 <p><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></p>
 </div>
@@ -1526,7 +1526,7 @@ derived from <a class="link" href="gtk3-Resource-Files.html#GtkRcStyle"><span cl
 </div>
 <div class="refsect3">
 <a name="gtk-rc-style-copy.returns"></a><h4>Returns</h4>
-<p> the resulting <a class="link" href="gtk3-Resource-Files.html#GtkRcStyle"><span class="type">GtkRcStyle</span></a>. </p>
+<p>the resulting <a class="link" href="gtk3-Resource-Files.html#GtkRcStyle"><span class="type">GtkRcStyle</span></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -1584,22 +1584,22 @@ This can later be composited together with other
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><span class="type">GdkColor</span> <em class="structfield"><code><a name="GtkRcStyle-struct.fg"></a>fg</code></em>[5];</p></td>
+<td class="struct_member_name"><p><a href="../html/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a> <em class="structfield"><code><a name="GtkRcStyle-struct.fg"></a>fg</code></em>[5];</p></td>
 <td class="struct_member_description"><p>Foreground colors</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><span class="type">GdkColor</span> <em class="structfield"><code><a name="GtkRcStyle-struct.bg"></a>bg</code></em>[5];</p></td>
+<td class="struct_member_name"><p><a href="../html/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a> <em class="structfield"><code><a name="GtkRcStyle-struct.bg"></a>bg</code></em>[5];</p></td>
 <td class="struct_member_description"><p>Background colors</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><span class="type">GdkColor</span> <em class="structfield"><code><a name="GtkRcStyle-struct.text"></a>text</code></em>[5];</p></td>
+<td class="struct_member_name"><p><a href="../html/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a> <em class="structfield"><code><a name="GtkRcStyle-struct.text"></a>text</code></em>[5];</p></td>
 <td class="struct_member_description"><p>Text colors</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><span class="type">GdkColor</span> <em class="structfield"><code><a name="GtkRcStyle-struct.base"></a>base</code></em>[5];</p></td>
+<td class="struct_member_name"><p><a href="../html/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a> <em class="structfield"><code><a name="GtkRcStyle-struct.base"></a>base</code></em>[5];</p></td>
 <td class="struct_member_description"><p>Base colors</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
@@ -2136,6 +2136,6 @@ See also <a class="link" href="gtk3-Bindings.html#gtk-binding-set-add-path" titl
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

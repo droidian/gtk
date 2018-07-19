@@ -1246,33 +1246,28 @@ _LT_DECL([], [ECHO], [1], [An echo program that protects backslashes])
 # ----------------
 AC_DEFUN([_LT_WITH_SYSROOT],
 [AC_MSG_CHECKING([for sysroot])
-AC_ARG_WITH([libtool-sysroot],
-[AS_HELP_STRING([--with-libtool-sysroot@<:@=DIR@:>@],
+AC_ARG_WITH([sysroot],
+[AS_HELP_STRING([--with-sysroot@<:@=DIR@:>@],
   [Search for dependent libraries within DIR (or the compiler's sysroot
    if not specified).])],
-[], [with_libtool_sysroot=no])
+[], [with_sysroot=no])
 
 dnl lt_sysroot will always be passed unquoted.  We quote it here
 dnl in case the user passed a directory name.
 lt_sysroot=
-case $with_libtool_sysroot in #(
- no)
+case $with_sysroot in #(
+ yes)
    if test yes = "$GCC"; then
      lt_sysroot=`$CC --print-sysroot 2>/dev/null`
-     # Treat "/" the same a an unset sysroot. It seems to be more
-     # compatible across host platforms that way!?
-     if test "$lt_sysroot" = /; then
-       lt_sysroot=
-     fi
    fi
    ;; #(
- yes|''|/)
-   ;; #(
  /*)
-   lt_sysroot=`echo "$with_libtool_sysroot" | sed -e "$sed_quote_subst"`
+   lt_sysroot=`echo "$with_sysroot" | sed -e "$sed_quote_subst"`
+   ;; #(
+ no|'')
    ;; #(
  *)
-   AC_MSG_RESULT([$with_libtool_sysroot])
+   AC_MSG_RESULT([$with_sysroot])
    AC_MSG_ERROR([The sysroot must be an absolute path.])
    ;;
 esac

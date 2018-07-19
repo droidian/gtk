@@ -8,7 +8,7 @@
 <link rel="up" href="Printing.html" title="Printing">
 <link rel="prev" href="gtk3-High-level-Printing-API.html" title="GtkPrintOperation">
 <link rel="next" href="GtkPrintSettings.html" title="GtkPrintSettings">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -152,7 +152,7 @@
 </div>
 <div class="refsect1">
 <a name="GtkPrintContext.includes"></a><h2>Includes</h2>
-<pre class="synopsis">#include &lt;gtk/gtk.h&gt;
+<pre class="synopsis">#include &lt;gtk/gtkunixprint.h&gt;
 </pre>
 </div>
 <div class="refsect1">
@@ -249,7 +249,7 @@ gtk_print_context_get_cairo_context (<em class="parameter"><code><a class="link"
 </div>
 <div class="refsect3">
 <a name="gtk-print-context-get-cairo-context.returns"></a><h4>Returns</h4>
-<p> the cairo context of <em class="parameter"><code>context</code></em>
+<p>the cairo context of <em class="parameter"><code>context</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -328,7 +328,7 @@ dimensions of the <a class="link" href="GtkPrintContext.html" title="GtkPrintCon
 </div>
 <div class="refsect3">
 <a name="gtk-print-context-get-page-setup.returns"></a><h4>Returns</h4>
-<p> the page setup of <em class="parameter"><code>context</code></em>
+<p>the page setup of <em class="parameter"><code>context</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -472,7 +472,7 @@ with the <a class="link" href="GtkPrintContext.html" title="GtkPrintContext"><sp
 </div>
 <div class="refsect3">
 <a name="gtk-print-context-get-pango-fontmap.returns"></a><h4>Returns</h4>
-<p> the font map of <em class="parameter"><code>context</code></em>
+<p>the font map of <em class="parameter"><code>context</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -503,7 +503,7 @@ gtk_print_context_create_pango_context
 </div>
 <div class="refsect3">
 <a name="gtk-print-context-create-pango-context.returns"></a><h4>Returns</h4>
-<p> a new Pango context for <em class="parameter"><code>context</code></em>
+<p>a new Pango context for <em class="parameter"><code>context</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -533,7 +533,7 @@ with the <a class="link" href="GtkPrintContext.html" title="GtkPrintContext"><sp
 </div>
 <div class="refsect3">
 <a name="gtk-print-context-create-pango-layout.returns"></a><h4>Returns</h4>
-<p> a new Pango layout for <em class="parameter"><code>context</code></em>
+<p>a new Pango layout for <em class="parameter"><code>context</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -565,22 +565,22 @@ gtk_print_context_get_hard_margins (<em class="parameter"><code><a class="link" 
 </tr>
 <tr>
 <td class="parameter_name"><p>top</p></td>
-<td class="parameter_description"><p> top hardware printer margin. </p></td>
+<td class="parameter_description"><p>top hardware printer margin. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>bottom</p></td>
-<td class="parameter_description"><p> bottom hardware printer margin. </p></td>
+<td class="parameter_description"><p>bottom hardware printer margin. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>left</p></td>
-<td class="parameter_description"><p> left hardware printer margin. </p></td>
+<td class="parameter_description"><p>left hardware printer margin. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>right</p></td>
-<td class="parameter_description"><p> right hardware printer margin. </p></td>
+<td class="parameter_description"><p>right hardware printer margin. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -602,6 +602,6 @@ gtk_print_context_get_hard_margins (<em class="parameter"><code><a class="link" 
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

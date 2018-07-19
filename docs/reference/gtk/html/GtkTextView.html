@@ -8,7 +8,7 @@
 <link rel="up" href="TextWidgetObjects.html" title="Multiline Text Editor">
 <link rel="prev" href="GtkTextTagTable.html" title="GtkTextTagTable">
 <link rel="next" href="TreeWidgetObjects.html" title="Tree, List and Icon Grid Widgets">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -206,7 +206,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">GdkWindow</span> *
+<a href="../html/gdk3-Windows.html#GdkWindow-struct"><span class="returnvalue">GdkWindow</span></a> *
 </td>
 <td class="function_name">
 <a class="link" href="GtkTextView.html#gtk-text-view-get-window" title="gtk_text_view_get_window ()">gtk_text_view_get_window</a> <span class="c_punctuation">()</span>
@@ -785,7 +785,7 @@
 </colgroup>
 <tbody><tr>
 <td class="property_type">
-<span class="type">GdkColor</span> *</td>
+<a href="../html/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a> *</td>
 <td class="property_name"><a class="link" href="GtkTextView.html#GtkTextView--s-error-underline-color" title="The “error-underline-color” style property">error-underline-color</a></td>
 <td class="property_flags">Read</td>
 </tr></tbody>
@@ -940,7 +940,7 @@
 <a name="GtkTextView.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkTextView implements
- AtkImplementorIface,  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a> and  <a class="link" href="GtkScrollable.html" title="GtkScrollable">GtkScrollable</a>.</p>
+ AtkImplementor,  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a> and  <a class="link" href="GtkScrollable.html" title="GtkScrollable">GtkScrollable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GtkTextView.includes"></a><h2>Includes</h2>
@@ -1054,7 +1054,7 @@ will not “adopt” it.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>buffer</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkTextBuffer.html" title="GtkTextBuffer"><span class="type">GtkTextBuffer</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkTextBuffer.html" title="GtkTextBuffer"><span class="type">GtkTextBuffer</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1086,7 +1086,7 @@ of this function won’t own a new reference.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-text-view-get-buffer.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="GtkTextBuffer.html" title="GtkTextBuffer"><span class="type">GtkTextBuffer</span></a>. </p>
+<p>a <a class="link" href="GtkTextBuffer.html" title="GtkTextBuffer"><span class="type">GtkTextBuffer</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -1117,7 +1117,7 @@ gtk_text_view_get_hadjustment (<em class="parameter"><code><a class="link" href=
 </div>
 <div class="refsect3">
 <a name="gtk-text-view-get-hadjustment.returns"></a><h4>Returns</h4>
-<p> pointer to the horizontal <a class="link" href="GtkAdjustment.html" title="GtkAdjustment"><span class="type">GtkAdjustment</span></a>. </p>
+<p>pointer to the horizontal <a class="link" href="GtkAdjustment.html" title="GtkAdjustment"><span class="type">GtkAdjustment</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.22</p>
@@ -1149,7 +1149,7 @@ gtk_text_view_get_vadjustment (<em class="parameter"><code><a class="link" href=
 </div>
 <div class="refsect3">
 <a name="gtk-text-view-get-vadjustment.returns"></a><h4>Returns</h4>
-<p> pointer to the vertical <a class="link" href="GtkAdjustment.html" title="GtkAdjustment"><span class="type">GtkAdjustment</span></a>. </p>
+<p>pointer to the vertical <a class="link" href="GtkAdjustment.html" title="GtkAdjustment"><span class="type">GtkAdjustment</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.22</p>
@@ -1399,7 +1399,7 @@ buffer, it it isn’t there already.</p>
 <a name="gtk-text-view-get-visible-rect"></a><h3>gtk_text_view_get_visible_rect ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_text_view_get_visible_rect (<em class="parameter"><code><a class="link" href="GtkTextView.html" title="GtkTextView"><span class="type">GtkTextView</span></a> *text_view</code></em>,
-                                <em class="parameter"><code><span class="type">GdkRectangle</span> *visible_rect</code></em>);</pre>
+                                <em class="parameter"><code><a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *visible_rect</code></em>);</pre>
 <p>Fills <em class="parameter"><code>visible_rect</code></em>
  with the currently-visible
 region of the buffer, in buffer coordinates. Convert to window coordinates
@@ -1420,7 +1420,7 @@ with <a class="link" href="GtkTextView.html#gtk-text-view-buffer-to-window-coord
 </tr>
 <tr>
 <td class="parameter_name"><p>visible_rect</p></td>
-<td class="parameter_description"><p> rectangle to fill. </p></td>
+<td class="parameter_description"><p>rectangle to fill. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1433,7 +1433,7 @@ with <a class="link" href="GtkTextView.html#gtk-text-view-buffer-to-window-coord
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_text_view_get_iter_location (<em class="parameter"><code><a class="link" href="GtkTextView.html" title="GtkTextView"><span class="type">GtkTextView</span></a> *text_view</code></em>,
                                  <em class="parameter"><code>const <a class="link" href="GtkTextIter.html" title="GtkTextIter"><span class="type">GtkTextIter</span></a> *iter</code></em>,
-                                 <em class="parameter"><code><span class="type">GdkRectangle</span> *location</code></em>);</pre>
+                                 <em class="parameter"><code><a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *location</code></em>);</pre>
 <p>Gets a rectangle which roughly contains the character at <em class="parameter"><code>iter</code></em>
 .
 The rectangle position is in buffer coordinates; use
@@ -1460,7 +1460,7 @@ coordinates to coordinates for one of the windows in the text view.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>location</p></td>
-<td class="parameter_description"><p> bounds of the character at <em class="parameter"><code>iter</code></em>
+<td class="parameter_description"><p>bounds of the character at <em class="parameter"><code>iter</code></em>
 . </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -1474,8 +1474,8 @@ coordinates to coordinates for one of the windows in the text view.</p>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_text_view_get_cursor_locations (<em class="parameter"><code><a class="link" href="GtkTextView.html" title="GtkTextView"><span class="type">GtkTextView</span></a> *text_view</code></em>,
                                     <em class="parameter"><code>const <a class="link" href="GtkTextIter.html" title="GtkTextIter"><span class="type">GtkTextIter</span></a> *iter</code></em>,
-                                    <em class="parameter"><code><span class="type">GdkRectangle</span> *strong</code></em>,
-                                    <em class="parameter"><code><span class="type">GdkRectangle</span> *weak</code></em>);</pre>
+                                    <em class="parameter"><code><a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *strong</code></em>,
+                                    <em class="parameter"><code><a href="../html/gdk3-Points-Rectangles-and-Regions.html#GdkRectangle"><span class="type">GdkRectangle</span></a> *weak</code></em>);</pre>
 <p>Given an <em class="parameter"><code>iter</code></em>
  within a text layout, determine the positions of the
 strong and weak cursors if the insertion point is at that
@@ -1511,18 +1511,18 @@ coordinates to coordinates for one of the windows in the text view.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>iter</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkTextIter.html" title="GtkTextIter"><span class="type">GtkTextIter</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkTextIter.html" title="GtkTextIter"><span class="type">GtkTextIter</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>strong</p></td>
-<td class="parameter_description"><p> location to store the strong
+<td class="parameter_description"><p>location to store the strong
 cursor position (may be <code class="literal">NULL</code>). </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>weak</p></td>
-<td class="parameter_description"><p> location to store the weak
+<td class="parameter_description"><p>location to store the weak
 cursor position (may be <code class="literal">NULL</code>). </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1563,7 +1563,7 @@ edge of the line.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>target_iter</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkTextIter.html" title="GtkTextIter"><span class="type">GtkTextIter</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkTextIter.html" title="GtkTextIter"><span class="type">GtkTextIter</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1573,7 +1573,7 @@ edge of the line.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>line_top</p></td>
-<td class="parameter_description"><p> return location for top coordinate of the line. </p></td>
+<td class="parameter_description"><p>return location for top coordinate of the line. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1613,12 +1613,12 @@ convert to window coordinates with <a class="link" href="GtkTextView.html#gtk-te
 </tr>
 <tr>
 <td class="parameter_name"><p>y</p></td>
-<td class="parameter_description"><p> return location for a y coordinate. </p></td>
+<td class="parameter_description"><p>return location for a y coordinate. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>height</p></td>
-<td class="parameter_description"><p> return location for a height. </p></td>
+<td class="parameter_description"><p>return location for a height. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1656,7 +1656,7 @@ event, you have to convert those to buffer coordinates with
 </tr>
 <tr>
 <td class="parameter_name"><p>iter</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkTextIter.html" title="GtkTextIter"><span class="type">GtkTextIter</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkTextIter.html" title="GtkTextIter"><span class="type">GtkTextIter</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1713,12 +1713,12 @@ characters.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>iter</p></td>
-<td class="parameter_description"><p> a <a class="link" href="GtkTextIter.html" title="GtkTextIter"><span class="type">GtkTextIter</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkTextIter.html" title="GtkTextIter"><span class="type">GtkTextIter</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>trailing</p></td>
-<td class="parameter_description"><p> if non-<code class="literal">NULL</code>, location to store an integer indicating where
+<td class="parameter_description"><p>if non-<code class="literal">NULL</code>, location to store an integer indicating where
 in the grapheme the user clicked. It will either be
 zero, or the number of characters in the grapheme.
 0 represents the trailing edge of the grapheme. </p></td>
@@ -1793,12 +1793,12 @@ gtk_text_view_buffer_to_window_coords (<em class="parameter"><code><a class="lin
 </tr>
 <tr>
 <td class="parameter_name"><p>window_x</p></td>
-<td class="parameter_description"><p> window x coordinate return location or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>window x coordinate return location or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>window_y</p></td>
-<td class="parameter_description"><p> window y coordinate return location or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>window y coordinate return location or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1853,12 +1853,12 @@ coordinates, storing the result in (<em class="parameter"><code>buffer_x</code><
 </tr>
 <tr>
 <td class="parameter_name"><p>buffer_x</p></td>
-<td class="parameter_description"><p> buffer x coordinate return location or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>buffer x coordinate return location or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>buffer_y</p></td>
-<td class="parameter_description"><p> buffer y coordinate return location or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>buffer y coordinate return location or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1868,10 +1868,10 @@ coordinates, storing the result in (<em class="parameter"><code>buffer_x</code><
 <hr>
 <div class="refsect2">
 <a name="gtk-text-view-get-window"></a><h3>gtk_text_view_get_window ()</h3>
-<pre class="programlisting"><span class="returnvalue">GdkWindow</span> *
+<pre class="programlisting"><a href="../html/gdk3-Windows.html#GdkWindow-struct"><span class="returnvalue">GdkWindow</span></a> *
 gtk_text_view_get_window (<em class="parameter"><code><a class="link" href="GtkTextView.html" title="GtkTextView"><span class="type">GtkTextView</span></a> *text_view</code></em>,
                           <em class="parameter"><code><a class="link" href="GtkTextView.html#GtkTextWindowType" title="enum GtkTextWindowType"><span class="type">GtkTextWindowType</span></a> win</code></em>);</pre>
-<p>Retrieves the <span class="type">GdkWindow</span> corresponding to an area of the text view;
+<p>Retrieves the <a href="../html/gdk3-Windows.html#GdkWindow-struct"><span class="type">GdkWindow</span></a> corresponding to an area of the text view;
 possible windows include the overall widget window, child windows
 on the left, right, top, bottom, and the window that displays the
 text buffer. Windows are <code class="literal">NULL</code> and nonexistent if their width or
@@ -1901,7 +1901,7 @@ realized.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-text-view-get-window.returns"></a><h4>Returns</h4>
-<p> a <span class="type">GdkWindow</span>, or <code class="literal">NULL</code>. </p>
+<p>a <a href="../html/gdk3-Windows.html#GdkWindow-struct"><span class="type">GdkWindow</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -1910,7 +1910,7 @@ realized.</p>
 <a name="gtk-text-view-get-window-type"></a><h3>gtk_text_view_get_window_type ()</h3>
 <pre class="programlisting"><a class="link" href="GtkTextView.html#GtkTextWindowType" title="enum GtkTextWindowType"><span class="returnvalue">GtkTextWindowType</span></a>
 gtk_text_view_get_window_type (<em class="parameter"><code><a class="link" href="GtkTextView.html" title="GtkTextView"><span class="type">GtkTextView</span></a> *text_view</code></em>,
-                               <em class="parameter"><code><span class="type">GdkWindow</span> *window</code></em>);</pre>
+                               <em class="parameter"><code><a href="../html/gdk3-Windows.html#GdkWindow-struct"><span class="type">GdkWindow</span></a> *window</code></em>);</pre>
 <p>Usually used to find out which window an event corresponds to.</p>
 <p>If you connect to an event signal on <em class="parameter"><code>text_view</code></em>
 , this function
@@ -2362,7 +2362,7 @@ The returned list should be freed with <code class="function">g_list_free()</cod
 </div>
 <div class="refsect3">
 <a name="gtk-text-child-anchor-get-widgets.returns"></a><h4>Returns</h4>
-<p> list of widgets anchored at <em class="parameter"><code>anchor</code></em>
+<p>list of widgets anchored at <em class="parameter"><code>anchor</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GtkWidget][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
@@ -3367,7 +3367,7 @@ with <code class="function">pango_tab_array_free()</code>.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-text-view-get-tabs.returns"></a><h4>Returns</h4>
-<p> copy of default tab array, or <code class="literal">NULL</code> if
+<p>copy of default tab array, or <code class="literal">NULL</code> if
 “standard" tabs are used; must be freed with <code class="function">pango_tab_array_free()</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -3477,7 +3477,7 @@ and should be freed with <a class="link" href="GtkTextTag.html#gtk-text-attribut
 <pre class="programlisting"><span class="returnvalue">gboolean</span>
 gtk_text_view_im_context_filter_keypress
                                (<em class="parameter"><code><a class="link" href="GtkTextView.html" title="GtkTextView"><span class="type">GtkTextView</span></a> *text_view</code></em>,
-                                <em class="parameter"><code><span class="type">GdkEventKey</span> *event</code></em>);</pre>
+                                <em class="parameter"><code><a href="../html/gdk3-Event-Structures.html#GdkEventKey"><span class="type">GdkEventKey</span></a> *event</code></em>);</pre>
 <p>Allow the <a class="link" href="GtkTextView.html" title="GtkTextView"><span class="type">GtkTextView</span></a> input method to internally handle key press
 and release events. If this function returns <code class="literal">TRUE</code>, then no further
 processing should be done for this key event. See
@@ -4297,7 +4297,7 @@ to the padding from the theme.</p>
 <a name="GtkTextView.style-property-details"></a><h2>Style Property Details</h2>
 <div class="refsect2">
 <a name="GtkTextView--s-error-underline-color"></a><h3>The <code class="literal">“error-underline-color”</code> style property</h3>
-<pre class="programlisting">  “error-underline-color”    <span class="type">GdkColor</span> *</pre>
+<pre class="programlisting">  “error-underline-color”    <a href="../html/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a> *</pre>
 <p>Color with which to draw error-indication underlines.</p>
 <p>Flags: Read</p>
 </div>
@@ -4529,8 +4529,8 @@ extended at <em class="parameter"><code>location</code></em>
 </div>
 <div class="refsect3">
 <a name="GtkTextView-extend-selection.returns"></a><h4>Returns</h4>
-<p> <code class="literal">GDK_EVENT_STOP</code> to stop other handlers from being invoked for the
-event. <code class="literal">GDK_EVENT_PROPAGATE</code> to propagate the event further.</p>
+<p> <a href="../html/gdk3-Events.html#GDK-EVENT-STOP:CAPS"><code class="literal">GDK_EVENT_STOP</code></a> to stop other handlers from being invoked for the
+event. <a href="../html/gdk3-Events.html#GDK-EVENT-PROPAGATE:CAPS"><code class="literal">GDK_EVENT_PROPAGATE</code></a> to propagate the event further.</p>
 </div>
 <p>Flags: Run Last</p>
 <p class="since">Since: <a class="link" href="api-index-3-16.html#api-index-3.16">3.16</a></p>
@@ -5027,6 +5027,6 @@ which gets emitted to toggle the overwrite mode of the text view.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

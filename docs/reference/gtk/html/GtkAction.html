@@ -8,7 +8,7 @@
 <link rel="up" href="DeprecatedObjects.html" title="Deprecated">
 <link rel="prev" href="GtkActionGroup.html" title="GtkActionGroup">
 <link rel="next" href="GtkToggleAction.html" title="GtkToggleAction">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -602,18 +602,18 @@ names.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>label</p></td>
-<td class="parameter_description"><p> the label displayed in menu items and on buttons,
+<td class="parameter_description"><p>the label displayed in menu items and on buttons,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>tooltip</p></td>
-<td class="parameter_description"><p> a tooltip for the action, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a tooltip for the action, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>stock_id</p></td>
-<td class="parameter_description"><p> the stock icon to display in widgets representing
+<td class="parameter_description"><p>the stock icon to display in widgets representing
 the action, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -931,7 +931,7 @@ create icons displayed in the proxy widgets.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>icon_size</p></td>
-<td class="parameter_description"><p> the size of the icon (<a class="link" href="gtk3-Themeable-Stock-Images.html#GtkIconSize" title="enum GtkIconSize"><span class="type">GtkIconSize</span></a>) that should
+<td class="parameter_description"><p>the size of the icon (<a class="link" href="gtk3-Themeable-Stock-Images.html#GtkIconSize" title="enum GtkIconSize"><span class="type">GtkIconSize</span></a>) that should
 be created. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> int]</span></td>
 </tr>
@@ -940,7 +940,7 @@ be created. </p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-action-create-icon.returns"></a><h4>Returns</h4>
-<p> a widget that displays the icon for this action. </p>
+<p>a widget that displays the icon for this action. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.4</p>
@@ -973,7 +973,7 @@ instead.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-action-create-menu-item.returns"></a><h4>Returns</h4>
-<p> a menu item connected to the action. </p>
+<p>a menu item connected to the action. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.4</p>
@@ -1006,7 +1006,7 @@ gtk_action_create_tool_item (<em class="parameter"><code><a class="link" href="G
 </div>
 <div class="refsect3">
 <a name="gtk-action-create-tool-item.returns"></a><h4>Returns</h4>
-<p> a toolbar item connected to the action. </p>
+<p>a toolbar item connected to the action. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.4</p>
@@ -1042,7 +1042,7 @@ instance of that menu.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-action-create-menu.returns"></a><h4>Returns</h4>
-<p> the menu item provided by the
+<p>the menu item provided by the
 action, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1073,7 +1073,7 @@ See also <a class="link" href="GtkActivatable.html#gtk-activatable-get-related-a
 </div>
 <div class="refsect3">
 <a name="gtk-action-get-proxies.returns"></a><h4>Returns</h4>
-<p> a <span class="type">GSList</span> of proxy widgets. The list is owned by GTK+
+<p>a <span class="type">GSList</span> of proxy widgets. The list is owned by GTK+
 and must not be modified. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GtkWidget][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1382,7 +1382,7 @@ equivalent for getting the accel closure</p>
 </div>
 <div class="refsect3">
 <a name="gtk-action-get-accel-closure.returns"></a><h4>Returns</h4>
-<p> the accel closure for this action. The
+<p>the accel closure for this action. The
 returned closure is owned by GTK+ and must not be unreffed
 or modified. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -1418,7 +1418,7 @@ will be installed.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>accel_group</p></td>
-<td class="parameter_description"><p> a <a class="link" href="gtk3-Keyboard-Accelerators.html#GtkAccelGroup"><span class="type">GtkAccelGroup</span></a> or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="gtk3-Keyboard-Accelerators.html#GtkAccelGroup"><span class="type">GtkAccelGroup</span></a> or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1776,7 +1776,7 @@ associated with a <span class="type">GAction</span></p>
 </div>
 <div class="refsect3">
 <a name="gtk-action-get-gicon.returns"></a><h4>Returns</h4>
-<p> The action’s <span class="type">GIcon</span> if one is set. </p>
+<p>The action’s <span class="type">GIcon</span> if one is set. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.16</p>
@@ -2386,6 +2386,6 @@ user_function (<a class="link" href="GtkAction.html" title="GtkAction"><span cla
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>

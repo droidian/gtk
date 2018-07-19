@@ -8,7 +8,7 @@
 <link rel="up" href="WindowWidgets.html" title="Windows">
 <link rel="prev" href="GtkWindow.html" title="GtkWindow">
 <link rel="next" href="GtkMessageDialog.html" title="GtkMessageDialog">
-<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -305,7 +305,7 @@
 <a name="GtkDialog.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GtkDialog implements
- AtkImplementorIface and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
+ AtkImplementor and  <a class="link" href="GtkBuildable.html" title="GtkBuildable">GtkBuildable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GtkDialog.includes"></a><h2>Includes</h2>
@@ -498,12 +498,12 @@ so the first button in the list will be the leftmost button in the dialog.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>title</p></td>
-<td class="parameter_description"><p> Title of the dialog, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>Title of the dialog, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>parent</p></td>
-<td class="parameter_description"><p> Transient parent of the dialog, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>Transient parent of the dialog, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -513,7 +513,7 @@ so the first button in the list will be the leftmost button in the dialog.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>first_button_text</p></td>
-<td class="parameter_description"><p> text to go in first button, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>text to go in first button, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -671,7 +671,7 @@ you don’t need it.</p>
 </div>
 <div class="refsect3">
 <a name="gtk-dialog-add-button.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="GtkButton.html" title="GtkButton"><span class="type">GtkButton</span></a> widget that was added. </p>
+<p>the <a class="link" href="GtkButton.html" title="GtkButton"><span class="type">GtkButton</span></a> widget that was added. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -902,7 +902,7 @@ widget</p></td>
 </div>
 <div class="refsect3">
 <a name="gtk-dialog-get-widget-for-response.returns"></a><h4>Returns</h4>
-<p> the <em class="parameter"><code>widget</code></em>
+<p>the <em class="parameter"><code>widget</code></em>
 button that uses the given
 <em class="parameter"><code>response_id</code></em>
 , or <code class="literal">NULL</code>. </p>
@@ -939,7 +939,7 @@ gtk_dialog_get_action_area (<em class="parameter"><code><a class="link" href="Gt
 </div>
 <div class="refsect3">
 <a name="gtk-dialog-get-action-area.returns"></a><h4>Returns</h4>
-<p> the action area. </p>
+<p>the action area. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.14</p>
@@ -968,7 +968,7 @@ gtk_dialog_get_content_area (<em class="parameter"><code><a class="link" href="G
 </div>
 <div class="refsect3">
 <a name="gtk-dialog-get-content-area.returns"></a><h4>Returns</h4>
-<p> the content area <a class="link" href="GtkBox.html" title="GtkBox"><span class="type">GtkBox</span></a>. </p>
+<p>the content area <a class="link" href="GtkBox.html" title="GtkBox"><span class="type">GtkBox</span></a>. </p>
 <p><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gtk.Box][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.14</p>
@@ -999,7 +999,7 @@ headerbar is only used by the dialog if the
 </div>
 <div class="refsect3">
 <a name="gtk-dialog-get-header-bar.returns"></a><h4>Returns</h4>
-<p> the header bar. </p>
+<p>the header bar. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-12.html#api-index-3.12">3.12</a></p>
@@ -1008,7 +1008,7 @@ headerbar is only used by the dialog if the
 <div class="refsect2">
 <a name="gtk-alternative-dialog-button-order"></a><h3>gtk_alternative_dialog_button_order ()</h3>
 <pre class="programlisting"><span class="returnvalue">gboolean</span>
-gtk_alternative_dialog_button_order (<em class="parameter"><code><span class="type">GdkScreen</span> *screen</code></em>);</pre>
+gtk_alternative_dialog_button_order (<em class="parameter"><code><a href="../html/GdkScreen.html#GdkScreen-struct"><span class="type">GdkScreen</span></a> *screen</code></em>);</pre>
 <div class="warning">
 <p><code class="literal">gtk_alternative_dialog_button_order</code> has been deprecated since version 3.10 and should not be used in newly-written code.</p>
 <p>Deprecated</p>
@@ -1033,7 +1033,7 @@ notified if the button order setting changes.</p>
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>screen</p></td>
-<td class="parameter_description"><p> a <span class="type">GdkScreen</span>, or <code class="literal">NULL</code> to use the default screen. </p></td>
+<td class="parameter_description"><p>a <a href="../html/GdkScreen.html#GdkScreen-struct"><span class="type">GdkScreen</span></a>, or <code class="literal">NULL</code> to use the default screen. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
@@ -1162,7 +1162,7 @@ response ids in <em class="parameter"><code>new_order</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>new_order</p></td>
-<td class="parameter_description"><p> an array of response ids of
+<td class="parameter_description"><p>an array of response ids of
 <em class="parameter"><code>dialog</code></em>
 ’s buttons. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_params]</span></td>
@@ -1425,7 +1425,7 @@ was called on that widget directly.</p>
 <div class="refsect2">
 <a name="GtkDialog-close"></a><h3>The <code class="literal">“close”</code> signal</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-user_function (<a class="link" href="GtkDialog.html" title="GtkDialog"><span class="type">GtkDialog</span></a> *arg0,
+user_function (<a class="link" href="GtkDialog.html" title="GtkDialog"><span class="type">GtkDialog</span></a> *dialog,
                <span class="type">gpointer</span>   user_data)</pre>
 <p>The ::close signal is a
 <a class="link" href="gtk3-Bindings.html#GtkBindingSignal" title="struct GtkBindingSignal">keybinding signal</a>
@@ -1496,6 +1496,6 @@ Otherwise, it depends on which action widget was clicked.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25</div>
+<hr>Generated by GTK-Doc V1.27</div>
 </body>
 </html>
