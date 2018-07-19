@@ -1,7 +1,7 @@
-gtk+3.0 (3.23.0-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.23.1-1) UNRELEASED; urgency=medium
 
   * debian/{control{,.in},gbp.conf,watch}: Update for experimental
-  * New upstream development release (!!!) 3.23.0:
+  * New upstream development releases (!!!) 3.23.0 & 3.23.1:
     + New font chooser features:
      - Allow setting OpenType font features
      - Show examples for OpenType font features
@@ -12,6 +12,18 @@ gtk+3.0 (3.23.0-1) UNRELEASED; urgency=medium
      - Drop Ctrl-Shift-e shortcut
     + Other new apis:
      - gdk_window_move_to_rect
+    + Backported event controllers from GTK+ 4:
+     - GtkEventControllerScroll
+     - GtkEventControllerMotion
+     - GtkEventControllerKey
+     - GtkGestureStylus
+    + Support markup in GtkModelButtons
+    + Themes
+     - The Raleigh theme has been removed
+     - Expander size in HighContrast has been increased
+    + Wayland
+     - Update cursor scale when needed
+     - Decoration negotiation protocol fixes
   * debian/patches/m4macros-Set-a-serial-number.patch: Drop, included in this
     release.
   * debian/control{,.in}: Bump libepoxy (1.4) and pango (1.41.0) per upstream.
