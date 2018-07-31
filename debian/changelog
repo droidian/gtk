@@ -1,3 +1,11 @@
+gtk+3.0 (3.22.30-3) UNRELEASED; urgency=medium
+
+  * debian/libgtk-3-0.bug-control:
+    When bugs are reported against GTK+, include details of various
+    engines, modules and LD_PRELOADs if installed
+
+ -- Simon McVittie <smcv@debian.org>  Tue, 31 Jul 2018 15:47:31 +0100
+
 gtk+3.0 (3.22.30-2) unstable; urgency=medium
 
   * Team upload
