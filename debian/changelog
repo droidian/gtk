@@ -1,3 +1,11 @@
+gtk+3.0 (3.23.2-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+  * debian/patches/0008-defaultvalue-Ignore-more-style-properties-that-Adwai.patch:
+    Drop, included in this release.
+
+ -- Andrea Azzarone <andrea.azzarone@canonical.com>  Thu, 09 Aug 2018 13:53:21 +0300
+
 gtk+3.0 (3.23.1-1) experimental; urgency=medium
 
   * debian/{control{,.in},gbp.conf,watch}: Update for experimental
