@@ -1,9 +1,13 @@
 gtk+3.0 (3.23.2-1) UNRELEASED; urgency=medium
 
+  [ Andrea Azzarone ]
   * New upstream release
   * debian/patches/0008-defaultvalue-Ignore-more-style-properties-that-Adwai.patch:
     Drop, included in this release.
   * debian/libgtk-3-0.symbols: New symbols for this release
+
+  [ Iain Lane ]
+  * Stanrdards-Version → 4.2.0 - no changes required.
 
  -- Andrea Azzarone <andrea.azzarone@canonical.com>  Thu, 09 Aug 2018 14:11:12 +0000
 
