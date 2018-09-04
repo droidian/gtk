@@ -1,5 +1,6 @@
-gtk+3.0 (3.23.2-2) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.0-1) UNRELEASED; urgency=medium
 
+  [ Simon McVittie ]
   * debian/libgtk-3-0.bug-control:
     When bugs are reported against GTK+, include details of various
     engines, modules and LD_PRELOADs if installed
@@ -10,7 +11,18 @@ gtk+3.0 (3.23.2-2) UNRELEASED; urgency=medium
     or the upstream git repository https://gitlab.gnome.org/GNOME/gtk
     for a comprehensive change history.
 
- -- Simon McVittie <smcv@debian.org>  Mon, 03 Sep 2018 08:00:52 +0100
+  [ Iain Lane ]
+  * Revert "debian/{control{,.in},gbp.conf,watch}: Update for experimental"
+    This reverts commit 99b78e089c952661fcf3c4897769dd7a463c5cb7.
+  * New upstream stable release 3.24.0
+    + GtkApplication can now track screensaver state
+    + Deprecate a few APIs that are gone in GTK+ 4:
+       - focus chains in GtkContainer
+       - stepper sensitivity in GtkRange
+    + Allow picking colors under kwin
+  * debian/control{,.in}: Bump Standards-Version to 4.2.1, no changes required
+
+ -- Iain Lane <laney@debian.org>  Tue, 04 Sep 2018 17:33:18 +0100
 
 gtk+3.0 (3.23.2-1) experimental; urgency=medium
 
