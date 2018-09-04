@@ -8,7 +8,7 @@
 <link rel="up" href="TreeWidgetObjects.html" title="Tree, List and Icon Grid Widgets">
 <link rel="prev" href="GtkCellAreaContext.html" title="GtkCellAreaContext">
 <link rel="next" href="GtkCellEditable.html" title="GtkCellEditable">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.28 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -430,7 +430,8 @@ provide active user interface elements. A cell renderer can be
 “activatable” like <a class="link" href="GtkCellRendererToggle.html" title="GtkCellRendererToggle"><span class="type">GtkCellRendererToggle</span></a>,
 which toggles when it gets activated by a mouse click, or it can be
 “editable” like <a class="link" href="GtkCellRendererText.html" title="GtkCellRendererText"><span class="type">GtkCellRendererText</span></a>, which
-allows the user to edit the text using a <a class="link" href="GtkEntry.html" title="GtkEntry"><span class="type">GtkEntry</span></a>.
+allows the user to edit the text using a widget implementing the
+<a class="link" href="GtkCellEditable.html" title="GtkCellEditable"><span class="type">GtkCellEditable</span></a> interface, e.g. <a class="link" href="GtkEntry.html" title="GtkEntry"><span class="type">GtkEntry</span></a>.
 To make a cell renderer activatable or editable, you have to
 implement the <a class="link" href="GtkCellRenderer.html#GtkCellRendererClass.activate"><span class="type">GtkCellRendererClass.activate</span></a> or
 <a class="link" href="GtkCellRenderer.html#GtkCellRendererClass.start-editing"><span class="type">GtkCellRendererClass.start_editing</span></a> virtual functions, respectively.</p>
@@ -753,7 +754,9 @@ gtk_cell_renderer_start_editing (<em class="parameter"><code><a class="link" hre
                                  <em class="parameter"><code>const <span class="type">GdkRectangle</span> *background_area</code></em>,
                                  <em class="parameter"><code>const <span class="type">GdkRectangle</span> *cell_area</code></em>,
                                  <em class="parameter"><code><a class="link" href="GtkCellRenderer.html#GtkCellRendererState" title="enum GtkCellRendererState"><span class="type">GtkCellRendererState</span></a> flags</code></em>);</pre>
-<p>Passes an activate event to the cell renderer for possible processing.</p>
+<p>Starts editing the contents of this <em class="parameter"><code>cell</code></em>
+, through a new <a class="link" href="GtkCellEditable.html" title="GtkCellEditable"><span class="type">GtkCellEditable</span></a>
+widget created by the <a class="link" href="GtkCellRenderer.html#GtkCellRendererClass.start-editing"><span class="type">GtkCellRendererClass.start_editing</span></a> virtual function.</p>
 <div class="refsect3">
 <a name="gtk-cell-renderer-start-editing.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -804,7 +807,9 @@ e.g. for <a class="link" href="GtkTreeView.html" title="GtkTreeView"><span class
 </div>
 <div class="refsect3">
 <a name="gtk-cell-renderer-start-editing.returns"></a><h4>Returns</h4>
-<p>A new <a class="link" href="GtkCellEditable.html" title="GtkCellEditable"><span class="type">GtkCellEditable</span></a>, or <code class="literal">NULL</code>. </p>
+<p>A new <a class="link" href="GtkCellEditable.html" title="GtkCellEditable"><span class="type">GtkCellEditable</span></a> for editing this
+<em class="parameter"><code>cell</code></em>
+, or <code class="literal">NULL</code> if editing is not possible. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -1970,6 +1975,10 @@ The intended use of this signal is to do special setup
 on <em class="parameter"><code>editable</code></em>
 , e.g. adding a <a class="link" href="GtkEntryCompletion.html" title="GtkEntryCompletion"><span class="type">GtkEntryCompletion</span></a> or setting
 up additional columns in a <a class="link" href="GtkComboBox.html" title="GtkComboBox"><span class="type">GtkComboBox</span></a>.</p>
+<p>See <a class="link" href="GtkCellEditable.html#gtk-cell-editable-start-editing" title="gtk_cell_editable_start_editing ()"><code class="function">gtk_cell_editable_start_editing()</code></a> for information on the lifecycle of
+the <em class="parameter"><code>editable</code></em>
+ and a way to do setup that doesn’t depend on the <em class="parameter"><code>renderer</code></em>
+.</p>
 <p>Note that GTK+ doesn't guarantee that cell renderers will
 continue to use the same kind of widget for editing in future
 releases, therefore you should check the type of <em class="parameter"><code>editable</code></em>
@@ -2055,10 +2064,10 @@ before doing any specific setup, as in the following example:</p>
 </div>
 <div class="refsect1">
 <a name="GtkCellRenderer.see-also"></a><h2>See Also</h2>
-<p><a class="link" href="GtkCellRendererText.html" title="GtkCellRendererText"><span class="type">GtkCellRendererText</span></a>, <a class="link" href="GtkCellRendererPixbuf.html" title="GtkCellRendererPixbuf"><span class="type">GtkCellRendererPixbuf</span></a>, <a class="link" href="GtkCellRendererToggle.html" title="GtkCellRendererToggle"><span class="type">GtkCellRendererToggle</span></a></p>
+<p><a class="link" href="GtkCellEditable.html" title="GtkCellEditable"><span class="type">GtkCellEditable</span></a></p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.28</div>
 </body>
 </html>

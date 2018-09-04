@@ -8,7 +8,7 @@
 <link rel="up" href="ScrollingWidgets.html" title="Scrolling">
 <link rel="prev" href="GtkScrollbar.html" title="GtkScrollbar">
 <link rel="next" href="GtkScrollable.html" title="GtkScrollable">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.28 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -1556,7 +1556,7 @@ smaller than <a class="link" href="GtkScrolledWindow.html#GtkScrolledWindow--min
 gtk_scrolled_window_get_propagate_natural_width
                                (<em class="parameter"><code><a class="link" href="GtkScrolledWindow.html" title="GtkScrolledWindow"><span class="type">GtkScrolledWindow</span></a> *scrolled_window</code></em>);</pre>
 <p>Reports whether the natural width of the child will be calculated and propagated
-through the scrolled windows requested natural width.</p>
+through the scrolled window’s requested natural width.</p>
 <div class="refsect3">
 <a name="gtk-scrolled-window-get-propagate-natural-width.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -1586,7 +1586,7 @@ gtk_scrolled_window_set_propagate_natural_width
                                (<em class="parameter"><code><a class="link" href="GtkScrolledWindow.html" title="GtkScrolledWindow"><span class="type">GtkScrolledWindow</span></a> *scrolled_window</code></em>,
                                 <em class="parameter"><code><span class="type">gboolean</span> propagate</code></em>);</pre>
 <p>Sets whether the natural width of the child should be calculated and propagated
-through the scrolled windows requested natural width.</p>
+through the scrolled window’s requested natural width.</p>
 <div class="refsect3">
 <a name="gtk-scrolled-window-set-propagate-natural-width.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -1618,7 +1618,7 @@ through the scrolled windows requested natural width.</p>
 gtk_scrolled_window_get_propagate_natural_height
                                (<em class="parameter"><code><a class="link" href="GtkScrolledWindow.html" title="GtkScrolledWindow"><span class="type">GtkScrolledWindow</span></a> *scrolled_window</code></em>);</pre>
 <p>Reports whether the natural height of the child will be calculated and propagated
-through the scrolled windows requested natural height.</p>
+through the scrolled window’s requested natural height.</p>
 <div class="refsect3">
 <a name="gtk-scrolled-window-get-propagate-natural-height.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -1648,7 +1648,7 @@ gtk_scrolled_window_set_propagate_natural_height
                                (<em class="parameter"><code><a class="link" href="GtkScrolledWindow.html" title="GtkScrolledWindow"><span class="type">GtkScrolledWindow</span></a> *scrolled_window</code></em>,
                                 <em class="parameter"><code><span class="type">gboolean</span> propagate</code></em>);</pre>
 <p>Sets whether the natural height of the child should be calculated and propagated
-through the scrolled windows requested natural height.</p>
+through the scrolled window’s requested natural height.</p>
 <div class="refsect3">
 <a name="gtk-scrolled-window-set-propagate-natural-height.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -1924,7 +1924,7 @@ as narrow indicators.</p>
 <a name="GtkScrolledWindow--propagate-natural-height"></a><h3>The <code class="literal">“propagate-natural-height”</code> property</h3>
 <pre class="programlisting">  “propagate-natural-height” <span class="type">gboolean</span></pre>
 <p>Whether the natural height of the child should be calculated and propagated
-through the scrolled windows requested natural height.</p>
+through the scrolled window’s requested natural height.</p>
 <p>This is useful in cases where an attempt should be made to allocate exactly
 enough space for the natural size of the child.</p>
 <p>Flags: Read / Write</p>
@@ -1936,7 +1936,7 @@ enough space for the natural size of the child.</p>
 <a name="GtkScrolledWindow--propagate-natural-width"></a><h3>The <code class="literal">“propagate-natural-width”</code> property</h3>
 <pre class="programlisting">  “propagate-natural-width”  <span class="type">gboolean</span></pre>
 <p>Whether the natural width of the child should be calculated and propagated
-through the scrolled windows requested natural width.</p>
+through the scrolled window’s requested natural width.</p>
 <p>This is useful in cases where an attempt should be made to allocate exactly
 enough space for the natural size of the child.</p>
 <p>Flags: Read / Write</p>
@@ -2023,7 +2023,7 @@ user_function (<a class="link" href="GtkScrolledWindow.html" title="GtkScrolledW
                <a class="link" href="gtk3-Standard-Enumerations.html#GtkPositionType" title="enum GtkPositionType"><span class="type">GtkPositionType</span></a>    pos,
                <span class="type">gpointer</span>           user_data)</pre>
 <p>The ::edge-overshot signal is emitted whenever user initiated scrolling
-makes the scrolledwindow firmly surpass (ie. with some edge resistance)
+makes the scrolled window firmly surpass (i.e. with some edge resistance)
 the lower or upper limits defined by the adjustment in that orientation.</p>
 <p>A similar behavior without edge resistance is provided by the
 <a class="link" href="GtkScrolledWindow.html#GtkScrolledWindow-edge-reached" title="The “edge-reached” signal"><span class="type">“edge-reached”</span></a> signal.</p>
@@ -2068,7 +2068,7 @@ user_function (<a class="link" href="GtkScrolledWindow.html" title="GtkScrolledW
                <a class="link" href="gtk3-Standard-Enumerations.html#GtkPositionType" title="enum GtkPositionType"><span class="type">GtkPositionType</span></a>    pos,
                <span class="type">gpointer</span>           user_data)</pre>
 <p>The ::edge-reached signal is emitted whenever user-initiated scrolling
-makes the scrolledwindow exactly reaches the lower or upper limits
+makes the scrolled window exactly reach the lower or upper limits
 defined by the adjustment in that orientation.</p>
 <p>A similar behavior with edge resistance is provided by the
 <a class="link" href="GtkScrolledWindow.html#GtkScrolledWindow-edge-overshot" title="The “edge-overshot” signal"><span class="type">“edge-overshot”</span></a> signal.</p>
@@ -2117,9 +2117,9 @@ user_function (<a class="link" href="GtkScrolledWindow.html" title="GtkScrolledW
 emitted when focus is moved away from the scrolled window by a
 keybinding. The <a class="link" href="GtkWidget.html#GtkWidget-move-focus" title="The “move-focus” signal"><span class="type">“move-focus”</span></a> signal is emitted with
 <em class="parameter"><code>direction_type</code></em>
- on this scrolled windows toplevel parent in the
+ on this scrolled window’s toplevel parent in the
 container hierarchy. The default bindings for this signal are
-<code class="literal">Tab + Ctrl</code> and <code class="literal">Tab + Ctrl + Shift</code>.</p>
+<code class="literal">Ctrl + Tab</code> to move forward and <code class="literal">Ctrl + Shift + Tab</code> to move backward.</p>
 <div class="refsect3">
 <a name="GtkScrolledWindow-move-focus-out.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -2162,7 +2162,7 @@ user_function (<a class="link" href="GtkScrolledWindow.html" title="GtkScrolledW
 <a class="link" href="gtk3-Bindings.html#GtkBindingSignal" title="struct GtkBindingSignal">keybinding signal</a>
 which gets emitted when a keybinding that scrolls is pressed.
 The horizontal or vertical adjustment is updated which triggers a
-signal that the scrolled windows child may listen to and scroll itself.</p>
+signal that the scrolled window’s child may listen to and scroll itself.</p>
 <div class="refsect3">
 <a name="GtkScrolledWindow-scroll-child.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -2205,6 +2205,6 @@ horizontally or not</p></td>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.28</div>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <link rel="up" href="MenusAndCombos.html" title="Menus, Combo Box, Toolbar">
 <link rel="prev" href="GtkComboBoxText.html" title="GtkComboBoxText">
 <link rel="next" href="GtkMenuBar.html" title="GtkMenuBar">
-<meta name="generator" content="GTK-Doc V1.27 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.28 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -926,20 +926,6 @@ to align with <em class="parameter"><code>rect</code></em>
 </table></div>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-22.html#api-index-3.22">3.22</a></p>
-<p class="stability">Stability Level: <acronym title="Unstable interfaces are experimental or transitional. They are typically used to
-give outside developers early access to new or rapidly changing technology, or
-to provide an interim solution to a problem where a more general solution is
-anticipated. No claims are made about either source or binary compatibility from
-one minor release to the next.
-
-The Unstable interface level is a warning that these interfaces are  subject to
-change without warning and should not be used in unbundled products.
-
-Given such caveats, customer impact need not be a factor when considering
-incompatible changes to an Unstable interface in a major or minor release.
-Nonetheless, when such changes are introduced, the changes should still be
-mentioned in the release notes for the affected release.
-"><span class="acronym">Unstable</span></acronym></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1017,20 +1003,6 @@ to align with <em class="parameter"><code>widget</code></em>
 </table></div>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-22.html#api-index-3.22">3.22</a></p>
-<p class="stability">Stability Level: <acronym title="Unstable interfaces are experimental or transitional. They are typically used to
-give outside developers early access to new or rapidly changing technology, or
-to provide an interim solution to a problem where a more general solution is
-anticipated. No claims are made about either source or binary compatibility from
-one minor release to the next.
-
-The Unstable interface level is a warning that these interfaces are  subject to
-change without warning and should not be used in unbundled products.
-
-Given such caveats, customer impact need not be a factor when considering
-incompatible changes to an Unstable interface in a major or minor release.
-Nonetheless, when such changes are introduced, the changes should still be
-mentioned in the release notes for the affected release.
-"><span class="acronym">Unstable</span></acronym></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1074,20 +1046,6 @@ out how it was actually positioned.</p>
 </table></div>
 </div>
 <p class="since">Since: <a class="link" href="api-index-3-22.html#api-index-3.22">3.22</a></p>
-<p class="stability">Stability Level: <acronym title="Unstable interfaces are experimental or transitional. They are typically used to
-give outside developers early access to new or rapidly changing technology, or
-to provide an interim solution to a problem where a more general solution is
-anticipated. No claims are made about either source or binary compatibility from
-one minor release to the next.
-
-The Unstable interface level is a warning that these interfaces are  subject to
-change without warning and should not be used in unbundled products.
-
-Given such caveats, customer impact need not be a factor when considering
-incompatible changes to an Unstable interface in a major or minor release.
-Nonetheless, when such changes are introduced, the changes should still be
-mentioned in the release notes for the affected release.
-"><span class="acronym">Unstable</span></acronym></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1399,8 +1357,8 @@ it first with <code class="function">g_intern_static_string()</code>.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>accel_path</p></td>
-<td class="parameter_description"><p>a valid accelerator path. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_description"><p>a valid accelerator path, or <code class="literal">NULL</code> to unset the path. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -1462,8 +1420,9 @@ text as that menu item’s label.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>title</p></td>
-<td class="parameter_description"><p>a string containing the title for the menu</p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p>a string containing the title for the menu, or <code class="literal">NULL</code> to
+inherit the title of the parent menu item, if any. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -2142,20 +2101,6 @@ bottom edge of the monitor.</p>
 <p>Flags: Read / Write / Construct</p>
 <p>Default value: GDK_ANCHOR_FLIP_X | GDK_ANCHOR_FLIP_Y | GDK_ANCHOR_SLIDE_X | GDK_ANCHOR_SLIDE_Y | GDK_ANCHOR_RESIZE_X | GDK_ANCHOR_RESIZE_Y</p>
 <p class="since">Since: <a class="link" href="api-index-3-22.html#api-index-3.22">3.22</a></p>
-<p class="stability">Stability Level: <acronym title="Unstable interfaces are experimental or transitional. They are typically used to
-give outside developers early access to new or rapidly changing technology, or
-to provide an interim solution to a problem where a more general solution is
-anticipated. No claims are made about either source or binary compatibility from
-one minor release to the next.
-
-The Unstable interface level is a warning that these interfaces are  subject to
-change without warning and should not be used in unbundled products.
-
-Given such caveats, customer impact need not be a factor when considering
-incompatible changes to an Unstable interface in a major or minor release.
-Nonetheless, when such changes are introduced, the changes should still be
-mentioned in the release notes for the affected release.
-"><span class="acronym">Unstable</span></acronym></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2178,20 +2123,6 @@ use <a class="link" href="GtkMenu.html#gtk-menu-attach-to-widget" title="gtk_men
 <p>Flags: Read / Write / Construct</p>
 <p>Default value: GDK_WINDOW_TYPE_HINT_POPUP_MENU</p>
 <p class="since">Since: <a class="link" href="api-index-3-22.html#api-index-3.22">3.22</a></p>
-<p class="stability">Stability Level: <acronym title="Unstable interfaces are experimental or transitional. They are typically used to
-give outside developers early access to new or rapidly changing technology, or
-to provide an interim solution to a problem where a more general solution is
-anticipated. No claims are made about either source or binary compatibility from
-one minor release to the next.
-
-The Unstable interface level is a warning that these interfaces are  subject to
-change without warning and should not be used in unbundled products.
-
-Given such caveats, customer impact need not be a factor when considering
-incompatible changes to an Unstable interface in a major or minor release.
-Nonetheless, when such changes are introduced, the changes should still be
-mentioned in the release notes for the affected release.
-"><span class="acronym">Unstable</span></acronym></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2215,20 +2146,6 @@ anchor.</p>
 <p>Flags: Read / Write / Construct</p>
 <p>Default value: 0</p>
 <p class="since">Since: <a class="link" href="api-index-3-22.html#api-index-3.22">3.22</a></p>
-<p class="stability">Stability Level: <acronym title="Unstable interfaces are experimental or transitional. They are typically used to
-give outside developers early access to new or rapidly changing technology, or
-to provide an interim solution to a problem where a more general solution is
-anticipated. No claims are made about either source or binary compatibility from
-one minor release to the next.
-
-The Unstable interface level is a warning that these interfaces are  subject to
-change without warning and should not be used in unbundled products.
-
-Given such caveats, customer impact need not be a factor when considering
-incompatible changes to an Unstable interface in a major or minor release.
-Nonetheless, when such changes are introduced, the changes should still be
-mentioned in the release notes for the affected release.
-"><span class="acronym">Unstable</span></acronym></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2241,20 +2158,6 @@ mentioned in the release notes for the affected release.
 <p>Flags: Read / Write / Construct</p>
 <p>Default value: 0</p>
 <p class="since">Since: <a class="link" href="api-index-3-22.html#api-index-3.22">3.22</a></p>
-<p class="stability">Stability Level: <acronym title="Unstable interfaces are experimental or transitional. They are typically used to
-give outside developers early access to new or rapidly changing technology, or
-to provide an interim solution to a problem where a more general solution is
-anticipated. No claims are made about either source or binary compatibility from
-one minor release to the next.
-
-The Unstable interface level is a warning that these interfaces are  subject to
-change without warning and should not be used in unbundled products.
-
-Given such caveats, customer impact need not be a factor when considering
-incompatible changes to an Unstable interface in a major or minor release.
-Nonetheless, when such changes are introduced, the changes should still be
-mentioned in the release notes for the affected release.
-"><span class="acronym">Unstable</span></acronym></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2541,24 +2444,10 @@ backend can't obtain it. </p></td>
 </div>
 <p>Flags: Run First</p>
 <p class="since">Since: <a class="link" href="api-index-3-22.html#api-index-3.22">3.22</a></p>
-<p class="stability">Stability Level: <acronym title="Unstable interfaces are experimental or transitional. They are typically used to
-give outside developers early access to new or rapidly changing technology, or
-to provide an interim solution to a problem where a more general solution is
-anticipated. No claims are made about either source or binary compatibility from
-one minor release to the next.
-
-The Unstable interface level is a warning that these interfaces are  subject to
-change without warning and should not be used in unbundled products.
-
-Given such caveats, customer impact need not be a factor when considering
-incompatible changes to an Unstable interface in a major or minor release.
-Nonetheless, when such changes are introduced, the changes should still be
-mentioned in the release notes for the affected release.
-"><span class="acronym">Unstable</span></acronym></p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27</div>
+<hr>Generated by GTK-Doc V1.28</div>
 </body>
 </html>
