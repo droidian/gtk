@@ -358,9 +358,9 @@ am__libgtk_3_la_SOURCES_DIST = a11y/gtkaccessibility.c \
 	gtkcellrenderertoggle.c gtkcellview.c gtkcheckbutton.c \
 	gtkcheckmenuitem.c gtkcolorbutton.c gtkcolorchooser.c \
 	gtkcolorchooserwidget.c gtkcolorchooserdialog.c \
-	gtkcoloreditor.c gtkcolorpicker.c gtkcolorpickerportal.c \
-	gtkcolorpickershell.c gtkcolorplane.c gtkcolorscale.c \
-	gtkcolorswatch.c gtkcolorutils.c gtkcombobox.c \
+	gtkcoloreditor.c gtkcolorpicker.c gtkcolorpickerkwin.c \
+	gtkcolorpickerportal.c gtkcolorpickershell.c gtkcolorplane.c \
+	gtkcolorscale.c gtkcolorswatch.c gtkcolorutils.c gtkcombobox.c \
 	gtkcomboboxtext.c gtkcomposetable.c gtkcontainer.c \
 	gtkcssanimation.c gtkcssanimatedstyle.c gtkcssarrayvalue.c \
 	gtkcssbgsizevalue.c gtkcssbordervalue.c gtkcsscalcvalue.c \
@@ -651,6 +651,7 @@ am__objects_6 = $(am__objects_1) $(am__objects_2) $(am__objects_3) \
 	libgtk_3_la-gtkcolorchooserwidget.lo \
 	libgtk_3_la-gtkcolorchooserdialog.lo \
 	libgtk_3_la-gtkcoloreditor.lo libgtk_3_la-gtkcolorpicker.lo \
+	libgtk_3_la-gtkcolorpickerkwin.lo \
 	libgtk_3_la-gtkcolorpickerportal.lo \
 	libgtk_3_la-gtkcolorpickershell.lo \
 	libgtk_3_la-gtkcolorplane.lo libgtk_3_la-gtkcolorscale.lo \
@@ -1026,6 +1027,7 @@ am__depfiles_remade = ./$(DEPDIR)/encodesymbolic.Po \
 	./$(DEPDIR)/libgtk_3_la-gtkcolorchooserwidget.Plo \
 	./$(DEPDIR)/libgtk_3_la-gtkcoloreditor.Plo \
 	./$(DEPDIR)/libgtk_3_la-gtkcolorpicker.Plo \
+	./$(DEPDIR)/libgtk_3_la-gtkcolorpickerkwin.Plo \
 	./$(DEPDIR)/libgtk_3_la-gtkcolorpickerportal.Plo \
 	./$(DEPDIR)/libgtk_3_la-gtkcolorpickershell.Plo \
 	./$(DEPDIR)/libgtk_3_la-gtkcolorplane.Plo \
@@ -1619,8 +1621,6 @@ ENABLE_ON_X11 = @ENABLE_ON_X11@
 EXEEXT = @EXEEXT@
 EXE_MANIFEST_ARCHITECTURE = @EXE_MANIFEST_ARCHITECTURE@
 FGREP = @FGREP@
-FONTDEMO_CFLAGS = @FONTDEMO_CFLAGS@
-FONTDEMO_LIBS = @FONTDEMO_LIBS@
 GAIL_INET_LIBS = @GAIL_INET_LIBS@
 GAIL_LT_CURRENT_MINUS_AGE = @GAIL_LT_CURRENT_MINUS_AGE@
 GAIL_LT_VERSION_INFO = @GAIL_LT_VERSION_INFO@
@@ -1667,6 +1667,8 @@ GTK_DEP_CFLAGS = @GTK_DEP_CFLAGS@
 GTK_DEP_LIBS = @GTK_DEP_LIBS@
 GTK_EXTRA_CFLAGS = @GTK_EXTRA_CFLAGS@
 GTK_EXTRA_LIBS = @GTK_EXTRA_LIBS@
+GTK_FONT_CHOOSER_WIDGET_CFLAGS = @GTK_FONT_CHOOSER_WIDGET_CFLAGS@
+GTK_FONT_CHOOSER_WIDGET_LIBS = @GTK_FONT_CHOOSER_WIDGET_LIBS@
 GTK_INTERFACE_AGE = @GTK_INTERFACE_AGE@
 GTK_LINK_FLAGS = @GTK_LINK_FLAGS@
 GTK_MAJOR_VERSION = @GTK_MAJOR_VERSION@
@@ -2493,10 +2495,10 @@ gtk_private_h_sources = $(inspector_h_sources) \
 	gtkcheckbuttonprivate.h gtkcheckmenuitemprivate.h \
 	gtkclipboardprivate.h gtkcolorswatchprivate.h \
 	gtkcoloreditorprivate.h gtkcolorpickerprivate.h \
-	gtkcolorpickerportalprivate.h gtkcolorpickershellprivate.h \
-	gtkcolorplaneprivate.h gtkcolorscaleprivate.h \
-	gtkcolorchooserprivate.h gtkcomboboxprivate.h \
-	gtkcomposetable.h gtkcontainerprivate.h \
+	gtkcolorpickerkwinprivate.h gtkcolorpickerportalprivate.h \
+	gtkcolorpickershellprivate.h gtkcolorplaneprivate.h \
+	gtkcolorscaleprivate.h gtkcolorchooserprivate.h \
+	gtkcomboboxprivate.h gtkcomposetable.h gtkcontainerprivate.h \
 	gtkcssanimationprivate.h gtkcssanimatedstyleprivate.h \
 	gtkcssarrayvalueprivate.h gtkcssbgsizevalueprivate.h \
 	gtkcssbordervalueprivate.h gtkcsscalcvalueprivate.h \
@@ -2613,9 +2615,9 @@ gtk_base_c_sources = $(a11y_c_sources) $(deprecated_c_sources) \
 	gtkcellrenderertoggle.c gtkcellview.c gtkcheckbutton.c \
 	gtkcheckmenuitem.c gtkcolorbutton.c gtkcolorchooser.c \
 	gtkcolorchooserwidget.c gtkcolorchooserdialog.c \
-	gtkcoloreditor.c gtkcolorpicker.c gtkcolorpickerportal.c \
-	gtkcolorpickershell.c gtkcolorplane.c gtkcolorscale.c \
-	gtkcolorswatch.c gtkcolorutils.c gtkcombobox.c \
+	gtkcoloreditor.c gtkcolorpicker.c gtkcolorpickerkwin.c \
+	gtkcolorpickerportal.c gtkcolorpickershell.c gtkcolorplane.c \
+	gtkcolorscale.c gtkcolorswatch.c gtkcolorutils.c gtkcombobox.c \
 	gtkcomboboxtext.c gtkcomposetable.c gtkcontainer.c \
 	gtkcssanimation.c gtkcssanimatedstyle.c gtkcssarrayvalue.c \
 	gtkcssbgsizevalue.c gtkcssbordervalue.c gtkcsscalcvalue.c \
@@ -3663,6 +3665,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgtk_3_la-gtkcolorchooserwidget.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgtk_3_la-gtkcoloreditor.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgtk_3_la-gtkcolorpicker.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgtk_3_la-gtkcolorpickerkwin.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgtk_3_la-gtkcolorpickerportal.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgtk_3_la-gtkcolorpickershell.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgtk_3_la-gtkcolorplane.Plo@am__quote@ # am--include-marker
@@ -5508,6 +5511,13 @@ libgtk_3_la-gtkcolorpicker.lo: gtkcolorpicker.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtkcolorpicker.c' object='libgtk_3_la-gtkcolorpicker.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgtk_3_la_CFLAGS) $(CFLAGS) -c -o libgtk_3_la-gtkcolorpicker.lo `test -f 'gtkcolorpicker.c' || echo '$(srcdir)/'`gtkcolorpicker.c
+
+libgtk_3_la-gtkcolorpickerkwin.lo: gtkcolorpickerkwin.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgtk_3_la_CFLAGS) $(CFLAGS) -MT libgtk_3_la-gtkcolorpickerkwin.lo -MD -MP -MF $(DEPDIR)/libgtk_3_la-gtkcolorpickerkwin.Tpo -c -o libgtk_3_la-gtkcolorpickerkwin.lo `test -f 'gtkcolorpickerkwin.c' || echo '$(srcdir)/'`gtkcolorpickerkwin.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libgtk_3_la-gtkcolorpickerkwin.Tpo $(DEPDIR)/libgtk_3_la-gtkcolorpickerkwin.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtkcolorpickerkwin.c' object='libgtk_3_la-gtkcolorpickerkwin.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgtk_3_la_CFLAGS) $(CFLAGS) -c -o libgtk_3_la-gtkcolorpickerkwin.lo `test -f 'gtkcolorpickerkwin.c' || echo '$(srcdir)/'`gtkcolorpickerkwin.c
 
 libgtk_3_la-gtkcolorpickerportal.lo: gtkcolorpickerportal.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgtk_3_la_CFLAGS) $(CFLAGS) -MT libgtk_3_la-gtkcolorpickerportal.lo -MD -MP -MF $(DEPDIR)/libgtk_3_la-gtkcolorpickerportal.Tpo -c -o libgtk_3_la-gtkcolorpickerportal.lo `test -f 'gtkcolorpickerportal.c' || echo '$(srcdir)/'`gtkcolorpickerportal.c
@@ -8288,6 +8298,7 @@ distclean: distclean-am
 	-rm -f ./$(DEPDIR)/libgtk_3_la-gtkcolorchooserwidget.Plo
 	-rm -f ./$(DEPDIR)/libgtk_3_la-gtkcoloreditor.Plo
 	-rm -f ./$(DEPDIR)/libgtk_3_la-gtkcolorpicker.Plo
+	-rm -f ./$(DEPDIR)/libgtk_3_la-gtkcolorpickerkwin.Plo
 	-rm -f ./$(DEPDIR)/libgtk_3_la-gtkcolorpickerportal.Plo
 	-rm -f ./$(DEPDIR)/libgtk_3_la-gtkcolorpickershell.Plo
 	-rm -f ./$(DEPDIR)/libgtk_3_la-gtkcolorplane.Plo
@@ -8877,6 +8888,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ./$(DEPDIR)/libgtk_3_la-gtkcolorchooserwidget.Plo
 	-rm -f ./$(DEPDIR)/libgtk_3_la-gtkcoloreditor.Plo
 	-rm -f ./$(DEPDIR)/libgtk_3_la-gtkcolorpicker.Plo
+	-rm -f ./$(DEPDIR)/libgtk_3_la-gtkcolorpickerkwin.Plo
 	-rm -f ./$(DEPDIR)/libgtk_3_la-gtkcolorpickerportal.Plo
 	-rm -f ./$(DEPDIR)/libgtk_3_la-gtkcolorpickershell.Plo
 	-rm -f ./$(DEPDIR)/libgtk_3_la-gtkcolorplane.Plo

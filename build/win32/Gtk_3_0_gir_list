@@ -508,6 +508,7 @@
 ..\..\gtk\gtkcolorchooserdialog.c
 ..\..\gtk\gtkcoloreditor.c
 ..\..\gtk\gtkcolorpicker.c
+..\..\gtk\gtkcolorpickerkwin.c
 ..\..\gtk\gtkcolorpickerportal.c
 ..\..\gtk\gtkcolorpickershell.c
 ..\..\gtk\gtkcolorplane.c

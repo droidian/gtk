@@ -122,8 +122,6 @@ build_triplet = @build@
 host_triplet = @host@
 @BUILD_FONT_DEMO_TRUE@am__append_1 = font_features.c
 @OS_UNIX_TRUE@am__append_2 = pagesetup.c
-@BUILD_FONT_DEMO_TRUE@am__append_3 = $(FONTDEMO_CFLAGS)
-@BUILD_FONT_DEMO_TRUE@am__append_4 = $(FONTDEMO_LIBS)
 bin_PROGRAMS = gtk3-demo$(EXEEXT) gtk3-demo-application$(EXEEXT)
 subdir = demos/gtk-demo
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -208,10 +206,9 @@ nodist_gtk3_demo_OBJECTS =
 gtk3_demo_OBJECTS = $(am_gtk3_demo_OBJECTS) \
 	$(nodist_gtk3_demo_OBJECTS)
 am__DEPENDENCIES_1 =
-@BUILD_FONT_DEMO_TRUE@am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1)
-am__DEPENDENCIES_3 = $(top_builddir)/gtk/libgtk-3.la \
+am__DEPENDENCIES_2 = $(top_builddir)/gtk/libgtk-3.la \
 	$(top_builddir)/gdk/libgdk-3.la $(am__DEPENDENCIES_1) \
-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+	$(am__DEPENDENCIES_1)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
@@ -222,7 +219,7 @@ gtk3_demo_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 am_gtk3_demo_application_OBJECTS = application.$(OBJEXT) \
 	demo_resources.$(OBJEXT)
 gtk3_demo_application_OBJECTS = $(am_gtk3_demo_application_OBJECTS)
-gtk3_demo_application_DEPENDENCIES = $(am__DEPENDENCIES_3)
+gtk3_demo_application_DEPENDENCIES = $(am__DEPENDENCIES_2)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -420,8 +417,6 @@ ENABLE_ON_X11 = @ENABLE_ON_X11@
 EXEEXT = @EXEEXT@
 EXE_MANIFEST_ARCHITECTURE = @EXE_MANIFEST_ARCHITECTURE@
 FGREP = @FGREP@
-FONTDEMO_CFLAGS = @FONTDEMO_CFLAGS@
-FONTDEMO_LIBS = @FONTDEMO_LIBS@
 GAIL_INET_LIBS = @GAIL_INET_LIBS@
 GAIL_LT_CURRENT_MINUS_AGE = @GAIL_LT_CURRENT_MINUS_AGE@
 GAIL_LT_VERSION_INFO = @GAIL_LT_VERSION_INFO@
@@ -468,6 +463,8 @@ GTK_DEP_CFLAGS = @GTK_DEP_CFLAGS@
 GTK_DEP_LIBS = @GTK_DEP_LIBS@
 GTK_EXTRA_CFLAGS = @GTK_EXTRA_CFLAGS@
 GTK_EXTRA_LIBS = @GTK_EXTRA_LIBS@
+GTK_FONT_CHOOSER_WIDGET_CFLAGS = @GTK_FONT_CHOOSER_WIDGET_CFLAGS@
+GTK_FONT_CHOOSER_WIDGET_LIBS = @GTK_FONT_CHOOSER_WIDGET_LIBS@
 GTK_INTERFACE_AGE = @GTK_INTERFACE_AGE@
 GTK_LINK_FLAGS = @GTK_LINK_FLAGS@
 GTK_MAJOR_VERSION = @GTK_MAJOR_VERSION@
@@ -738,15 +735,24 @@ demos_base = \
 
 demos_opt = $(am__append_1) $(am__append_2)
 demos = $(demos_base) $(demos_opt)
-AM_CPPFLAGS = -I$(top_srcdir) -I$(top_builddir)/gdk \
-	-DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED \
-	$(GTK_DEBUG_FLAGS) $(GTK_DEP_CFLAGS) $(am__append_3)
+AM_CPPFLAGS = \
+	-I$(top_srcdir) 			\
+	-I$(top_builddir)/gdk			\
+	-DGDK_DISABLE_DEPRECATED		\
+	-DGTK_DISABLE_DEPRECATED 		\
+	$(GTK_DEBUG_FLAGS)			\
+	$(GTK_DEP_CFLAGS)
+
 DEPS = \
 	$(top_builddir)/gtk/libgtk-3.la
 
-LDADDS = $(top_builddir)/gtk/libgtk-3.la \
-	$(top_builddir)/gdk/libgdk-3.la $(GTK_DEP_LIBS) \
-	$(GDK_DEP_LIBS) -lm $(am__append_4)
+LDADDS = \
+	$(top_builddir)/gtk/libgtk-3.la		\
+	$(top_builddir)/gdk/libgdk-3.la		\
+	$(GTK_DEP_LIBS)				\
+	$(GDK_DEP_LIBS)				\
+	-lm
+
 desktopdir = $(datadir)/applications
 dist_desktop_DATA = gtk3-demo.desktop
 BUILT_SOURCES = demos.h demo_resources.c
