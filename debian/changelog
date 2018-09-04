@@ -63,20 +63,6 @@ gtk+3.0 (3.23.1-1) experimental; urgency=medium
 
  -- Iain Lane <laney@debian.org>  Thu, 19 Jul 2018 17:55:42 +0100
 
-gtk+3.0 (3.22.30-3) UNRELEASED; urgency=medium
-
-  * debian/libgtk-3-0.bug-control:
-    When bugs are reported against GTK+, include details of various
-    engines, modules and LD_PRELOADs if installed
-  * Don't install ChangeLog, which currently just says
-    "A git checkout and git-log is required to generate this file";
-    even if it was complete, Policy 4.2.0 does not require detailed
-    changelogs to be installed. Please see NEWS for a summary of changes,
-    or the upstream git repository https://gitlab.gnome.org/GNOME/gtk
-    for a comprehensive change history.
-
- -- Simon McVittie <smcv@debian.org>  Tue, 31 Jul 2018 15:47:31 +0100
-
 gtk+3.0 (3.22.30-2) unstable; urgency=medium
 
   * Team upload
