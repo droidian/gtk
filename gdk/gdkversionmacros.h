@@ -25,8 +25,8 @@
 #include <glib.h>
 
 #define GDK_MAJOR_VERSION (3)
-#define GDK_MINOR_VERSION (23)
-#define GDK_MICRO_VERSION (2)
+#define GDK_MINOR_VERSION (24)
+#define GDK_MICRO_VERSION (0)
 
 #ifndef _GDK_EXTERN
 #define _GDK_EXTERN extern
