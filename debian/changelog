@@ -1,3 +1,12 @@
+gtk+3.0 (3.24.0-2) UNRELEASED; urgency=medium
+
+  * d/p/Revert-imwayland-clear-preedit-on-focus-out.patch:
+    Revert an upstream change that caused the cursor to disappear on
+    focus changes in vte terminals like gnome-terminal and lxterminal
+    under Wayland (Closes: #908120)
+
+ -- Simon McVittie <smcv@debian.org>  Sun, 09 Sep 2018 23:08:13 +0100
+
 gtk+3.0 (3.24.0-1) unstable; urgency=medium
 
   [ Simon McVittie ]
