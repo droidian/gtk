@@ -1,4 +1,4 @@
-gtk+3.0 (3.24.0-3) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.0-3) unstable; urgency=medium
 
   * Cherry-pick 3c7d5e7 to fix a critical on gtk_application_shutdown when not
     using portals (Closes: #908070)
@@ -6,7 +6,7 @@ gtk+3.0 (3.24.0-3) UNRELEASED; urgency=medium
   * Fix-portal-path-handling.patch: Cherry-pick from upstream.  Fix an
     incorrect dereference in the portal handling code.
 
- -- Iain Lane <laney@debian.org>  Tue, 11 Sep 2018 16:49:53 +0100
+ -- Iain Lane <laney@debian.org>  Tue, 11 Sep 2018 17:33:38 +0100
 
 gtk+3.0 (3.24.0-2) unstable; urgency=medium
 
