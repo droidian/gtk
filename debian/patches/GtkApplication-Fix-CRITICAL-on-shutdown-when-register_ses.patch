@@ -4,6 +4,7 @@ Subject: GtkApplication: Fix CRITICAL on shutdown when register_session=FALSE
 
 Origin: upstream, commit:3c7d5e749ccafa75718ef00f1d5f6cdc0defacb3
 Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=908070
+Applied-Upstream: 3.24.1
 ---
  gtk/gtkapplication-dbus.c | 25 ++++++++++++++++---------
  1 file changed, 16 insertions(+), 9 deletions(-)
