@@ -4,6 +4,8 @@ gtk+3.0 (3.24.0-4) UNRELEASED; urgency=medium
     d/p/imwayland-Fix-clearing-of-preedit-text-in-webkitgtk.patch:
     Use the upstream fix for #908120
     - d/p/Revert-imwayland-clear-preedit-on-focus-out.patch: Remove
+  * d/p/modules-Check-current-context-before-retrieving-surroundi.patch:
+    Cherry-pick 88dc784 to fix warnings in Wayland input method
 
  -- Simon McVittie <smcv@debian.org>  Thu, 13 Sep 2018 08:29:08 +0100
 

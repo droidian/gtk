@@ -1,0 +1,28 @@
+From: Carlos Garnacho <carlosg@gnome.org>
+Date: Fri, 7 Sep 2018 16:54:13 +0200
+Subject: modules: Check current context before retrieving surrounding
+
+There may be situations where this might get called while the
+currently focused context just went away (eg. after setting the
+text widget unsensitive).
+
+Bug: https://gitlab.gnome.org/GNOME/gtk/issues/1317
+Origin: upstream, 3.24.1, commit:88dc784256289820fac148fc5c23d0ad92419881
+---
+ modules/input/imwayland.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/modules/input/imwayland.c b/modules/input/imwayland.c
+index 25144f3..7a9a604 100644
+--- a/modules/input/imwayland.c
++++ b/modules/input/imwayland.c
+@@ -121,6 +121,9 @@ notify_external_change (GtkIMContextWayland *context)
+ {
+   gboolean result;
+ 
++  if (!global->current)
++    return;
++
+   context->surrounding_change = ZWP_TEXT_INPUT_V3_CHANGE_CAUSE_OTHER;
+   g_signal_emit_by_name (global->current, "retrieve-surrounding", &result);
+ }
