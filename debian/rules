@@ -88,6 +88,7 @@ debian/%: debian/%.in
 
 configure_flags_common = \
 	--libdir=/$(LIBDIR) \
+	--libexecdir=/usr/libexec \
 	--enable-test-print-backend
 
 configure_flags_deb = \
@@ -98,7 +99,8 @@ configure_flags_deb = \
 	--enable-shared \
 	--enable-introspection \
 	--enable-cloudprint \
-	--disable-static
+	--disable-static \
+	--enable-installed-tests
 
 ifeq (,$(filter stage1,$(DEB_BUILD_PROFILES)))
 configure_flags_deb += --enable-colord

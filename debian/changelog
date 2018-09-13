@@ -9,6 +9,8 @@ gtk+3.0 (3.24.0-4) UNRELEASED; urgency=medium
   * d/p/Add-a-missing-include.patch:
     Cherry-pick b1d3bee to fix implicit declaration of
     gtk_get_portal_request_path()
+  * Build installed-tests
+    - Install them in gtk-3-examples for now to avoid the NEW queue
 
  -- Simon McVittie <smcv@debian.org>  Thu, 13 Sep 2018 08:29:08 +0100
 

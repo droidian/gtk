@@ -198,7 +198,7 @@ Description: example files for GTK+ 3
  suites.
  .
  This package contains the example files and a demonstration program
- for GTK+3.
+ for GTK+3. It also contains the installed tests.
 
 Package: gir1.2-gtk-3.0
 Section: introspection
