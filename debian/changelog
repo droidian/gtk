@@ -1,3 +1,12 @@
+gtk+3.0 (3.24.0-4) UNRELEASED; urgency=medium
+
+  * d/p/imwayland-Fix-clearing-of-preedit-text.patch,
+    d/p/imwayland-Fix-clearing-of-preedit-text-in-webkitgtk.patch:
+    Use the upstream fix for #908120
+    - d/p/Revert-imwayland-clear-preedit-on-focus-out.patch: Remove
+
+ -- Simon McVittie <smcv@debian.org>  Thu, 13 Sep 2018 08:29:08 +0100
+
 gtk+3.0 (3.24.0-3) unstable; urgency=medium
 
   * Cherry-pick 3c7d5e7 to fix a critical on gtk_application_shutdown when not

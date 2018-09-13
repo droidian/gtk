@@ -1,0 +1,30 @@
+From: Dorota Czaplejewicz <dorota.czaplejewicz@puri.sm>
+Date: Mon, 10 Sep 2018 08:32:23 +0000
+Subject: imwayland: Fix clearing of preedit text
+
+Fixes terminal emulator misbehaviour as outlined in
+https://gitlab.gnome.org/GNOME/gtk/issues/1316, which was introduced
+in 49b17e6c. The original commit cleared preedit text by setting it to
+an empty string, which still counted as existing preedit. The fix sets
+preedit string to null, which is correctly understood as not present.
+
+Origin: upstream, 3.24.1, commit:c22d5ab9f6ae0782c2a472feb58f3b3acd5a03bc
+Bug: https://gitlab.gnome.org/GNOME/gtk/issues/1316
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=908120
+---
+ modules/input/imwayland.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/modules/input/imwayland.c b/modules/input/imwayland.c
+index 11d09d2..1fe95f3 100644
+--- a/modules/input/imwayland.c
++++ b/modules/input/imwayland.c
+@@ -654,7 +654,7 @@ gtk_im_context_wayland_focus_out (GtkIMContext *context)
+   commit_state (context_wayland);
+ 
+   /* after disable, incoming state changes won't take effect anyway */
+-  text_input_preedit (global, global->text_input, "", 0, 0);
++  text_input_preedit (global, global->text_input, NULL, 0, 0);
+   text_input_preedit_apply (global);
+ 
+   global->current = NULL;

@@ -1,0 +1,34 @@
+From: Dorota Czaplejewicz <dorota.czaplejewicz@puri.sm>
+Date: Tue, 11 Sep 2018 12:12:28 +0000
+Subject: imwayland: Fix clearing of preedit text in webkitgtk
+
+Fixes webkitgtk misbehaviour as outlined in
+https://gitlab.gnome.org/GNOME/gtk/issues/1316#note_312942 , which was
+introduced in 49b17e6c.
+The preedit will be cleared on exit only if it is already present.
+
+Origin: upstream, 3.24.1, commit:99669503fbc228fcca0edcf9a739354808c46ddb
+Bug: https://gitlab.gnome.org/GNOME/gtk/issues/1316
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=908120
+---
+ modules/input/imwayland.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/modules/input/imwayland.c b/modules/input/imwayland.c
+index 1fe95f3..25144f3 100644
+--- a/modules/input/imwayland.c
++++ b/modules/input/imwayland.c
+@@ -654,8 +654,11 @@ gtk_im_context_wayland_focus_out (GtkIMContext *context)
+   commit_state (context_wayland);
+ 
+   /* after disable, incoming state changes won't take effect anyway */
+-  text_input_preedit (global, global->text_input, NULL, 0, 0);
+-  text_input_preedit_apply (global);
++  if (context_wayland->current_preedit.text)
++    {
++      text_input_preedit (global, global->text_input, NULL, 0, 0);
++      text_input_preedit_apply (global);
++    }
+ 
+   global->current = NULL;
+ }
