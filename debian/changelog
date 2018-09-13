@@ -13,6 +13,9 @@ gtk+3.0 (3.24.0-4) UNRELEASED; urgency=medium
     - Install them in gtk-3-examples for now to avoid the NEW queue
   * d/p/no-accessibility-dump.patch: Drop, no longer needed.
     The build-time tests correctly set GTK_CSD=1 now.
+  * Stop marking some reftests as known failures. They now succeed on
+    all release architectures.
+    - d/p/reftest-known-fail.patch: Drop, no longer needed
 
  -- Simon McVittie <smcv@debian.org>  Thu, 13 Sep 2018 08:29:08 +0100
 
