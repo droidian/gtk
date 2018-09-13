@@ -16,6 +16,15 @@ gtk+3.0 (3.24.0-4) UNRELEASED; urgency=medium
   * Stop marking some reftests as known failures. They now succeed on
     all release architectures.
     - d/p/reftest-known-fail.patch: Drop, no longer needed
+  * Run installed-tests as autopkgtests (Closes: #908440)
+    - Mark them as flaky for now due to the following known failures:
+      + reftests-dark, reftests-hci, reftests-hc, reftests:
+        - 34 box-shadow-changes-modify-clip.ui
+        - 87 label-text-shadow-changes-modify-clip.ui
+      + reftests-hci only:
+        - 119 sizegroups-basics.ui
+      + reftests-hc and reftests only:
+        - 10 background-origin.ui
 
  -- Simon McVittie <smcv@debian.org>  Thu, 13 Sep 2018 08:29:08 +0100
 
