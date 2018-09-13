@@ -1,0 +1,22 @@
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Wed, 12 Sep 2018 23:02:26 -0400
+Subject: Add a missing include
+
+Bug: https://gitlab.gnome.org/GNOME/gtk/issues/1325
+Origin: upstream, 3.24.1, commit:b1d3beedc3cbabc5050a4292ec398978ca873071
+---
+ gtk/gtkprintoperation-portal.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/gtk/gtkprintoperation-portal.c b/gtk/gtkprintoperation-portal.c
+index fb3dad0..9fb0226 100644
+--- a/gtk/gtkprintoperation-portal.c
++++ b/gtk/gtkprintoperation-portal.c
+@@ -37,6 +37,7 @@
+ #include "gtkshow.h"
+ #include "gtkintl.h"
+ #include "gtkwindowprivate.h"
++#include "gtkprivate.h"
+ 
+ 
+ typedef struct {
