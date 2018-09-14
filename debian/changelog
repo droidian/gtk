@@ -18,6 +18,7 @@ gtk+3.0 (3.24.0-4) UNRELEASED; urgency=medium
     - d/p/reftest-known-fail.patch: Drop, no longer needed
   * Run installed-tests as autopkgtests (Closes: #908440)
     - Mark them as flaky for now due to the following known failures:
+      + a11ystate: state/focus1.ui
       + reftests-dark, reftests-hci, reftests-hc, reftests:
         - 34 box-shadow-changes-modify-clip.ui
         - 87 label-text-shadow-changes-modify-clip.ui
