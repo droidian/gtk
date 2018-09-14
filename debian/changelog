@@ -25,6 +25,7 @@ gtk+3.0 (3.24.0-4) UNRELEASED; urgency=medium
         - 119 sizegroups-basics.ui
       + reftests-hc and reftests only:
         - 10 background-origin.ui
+  * Sort dependency lists (wrap-and-sort -a)
 
  -- Simon McVittie <smcv@debian.org>  Thu, 13 Sep 2018 08:29:08 +0100
 
