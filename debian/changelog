@@ -1,5 +1,6 @@
-gtk+3.0 (3.24.0-4) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.1-1) UNRELEASED; urgency=medium
 
+  * New upstream release
   * d/p/imwayland-Fix-clearing-of-preedit-text.patch,
     d/p/imwayland-Fix-clearing-of-preedit-text-in-webkitgtk.patch:
     Use the upstream fix for #908120
