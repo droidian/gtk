@@ -2,15 +2,10 @@ gtk+3.0 (3.24.1-1) UNRELEASED; urgency=medium
 
   * New upstream release
     - Bump GLib build-dependency to 2.53.4 as per configure.ac
-  * d/p/imwayland-Fix-clearing-of-preedit-text.patch,
-    d/p/imwayland-Fix-clearing-of-preedit-text-in-webkitgtk.patch:
-    Use the upstream fix for #908120
-    - d/p/Revert-imwayland-clear-preedit-on-focus-out.patch: Remove
-  * d/p/modules-Check-current-context-before-retrieving-surroundi.patch:
-    Cherry-pick 88dc784 to fix warnings in Wayland input method
-  * d/p/Add-a-missing-include.patch:
-    Cherry-pick b1d3bee to fix implicit declaration of
-    gtk_get_portal_request_path()
+    - d/p/Revert-imwayland-clear-preedit-on-focus-out.patch:
+      Remove, rely on the upstream fix for #908120 instead
+    - d/p/GtkApplication-Fix-CRITICAL-on-shutdown-when-register_ses.patch,
+      d/p/Fix-portal-path-handling.patch: Remove, applied upstream
   * Build installed-tests
     - Install them in gtk-3-examples for now to avoid the NEW queue
   * d/p/no-accessibility-dump.patch: Drop, no longer needed.
