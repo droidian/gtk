@@ -1,5 +1,6 @@
-gtk+3.0 (3.24.1-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.1-1) experimental; urgency=medium
 
+  * Team upload
   * New upstream release
     - Bump GLib build-dependency to 2.53.4 as per configure.ac
     - d/p/Revert-imwayland-clear-preedit-on-focus-out.patch:
@@ -26,8 +27,9 @@ gtk+3.0 (3.24.1-1) UNRELEASED; urgency=medium
     work around #909173 in libepoxy
   * d/rules: Make it clearer that we respect the nocheck option
   * d/copyright: Fix some lintian warnings
+  * Upload to experimental for now, to avoid disrupting migration
 
- -- Simon McVittie <smcv@debian.org>  Wed, 19 Sep 2018 23:19:52 +0100
+ -- Simon McVittie <smcv@debian.org>  Wed, 19 Sep 2018 23:35:29 +0100
 
 gtk+3.0 (3.24.0-3) unstable; urgency=medium
 
