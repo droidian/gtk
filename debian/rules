@@ -184,6 +184,7 @@ endif
 
 override_dh_auto_install:
 	dh_auto_install --builddirectory=debian/build/deb --destdir=debian/install/deb
+	rm -v -f debian/install/deb/usr/libexec/installed-tests/gtk+/reftests/libreftest.la
 ifneq ($(filter %-udeb,$(binaries)),)
 	dh_auto_install --builddirectory=debian/build/udeb --destdir=debian/install/udeb
 endif
