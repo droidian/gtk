@@ -14,8 +14,9 @@ gtk+3.0 (3.24.1-1) UNRELEASED; urgency=medium
     all release architectures.
     - d/p/reftest-known-fail.patch: Drop, no longer needed
   * Run installed-tests as autopkgtests (Closes: #908440)
-    - Mark them as flaky for now due to a known failure:
-      + a11ystate: state/focus1.ui
+    - Run a11ystate.test separately and mark it as flaky for now due to a
+      known failure: state/focus1.ui passes in a desktop session but fails
+      in a minimal autopkgtest VM
   * Sort dependency lists (wrap-and-sort -a)
   * d/gtk-3-examples.install: Sort file list (wrap-and-sort -a)
   * Use the same Xvfb screen configuration as in the upstream GTK+ 4
