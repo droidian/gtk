@@ -14,24 +14,19 @@ gtk+3.0 (3.24.1-1) UNRELEASED; urgency=medium
     all release architectures.
     - d/p/reftest-known-fail.patch: Drop, no longer needed
   * Run installed-tests as autopkgtests (Closes: #908440)
-    - Mark them as flaky for now due to the following known failures:
+    - Mark them as flaky for now due to a known failure:
       + a11ystate: state/focus1.ui
-      + reftests-dark, reftests-hci, reftests-hc, reftests:
-        - 34 box-shadow-changes-modify-clip.ui
-        - 87 label-text-shadow-changes-modify-clip.ui
-      + reftests-hci only:
-        - 119 sizegroups-basics.ui
-      + reftests-hc and reftests only:
-        - 10 background-origin.ui
   * Sort dependency lists (wrap-and-sort -a)
   * d/gtk-3-examples.install: Sort file list (wrap-and-sort -a)
   * Use the same Xvfb screen configuration as in the upstream GTK+ 4
     Gitlab-CI tests. This will hopefully make GLX work (see also #874077)
   * Update d/gbp.conf from glib2.0
-  * Temporarily (B-)D on libgl1-mesa-dev and libegl1-mesa-dev to work
-    around #909173 in libepoxy
+  * Temporarily (Build-)Depend on libgl1-mesa-dev and libegl1-mesa-dev to
+    work around #909173 in libepoxy
+  * d/rules: Make it clearer that we respect the nocheck option
+  * d/copyright: Fix some lintian warnings
 
- -- Simon McVittie <smcv@debian.org>  Thu, 13 Sep 2018 08:29:08 +0100
+ -- Simon McVittie <smcv@debian.org>  Wed, 19 Sep 2018 23:19:52 +0100
 
 gtk+3.0 (3.24.0-3) unstable; urgency=medium
 
