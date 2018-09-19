@@ -32,6 +32,7 @@ gtk+3.0 (3.24.1-1) UNRELEASED; urgency=medium
   * d/gtk-3-examples.install: Sort file list (wrap-and-sort -a)
   * Use the same Xvfb screen configuration as in the upstream GTK+ 4
     Gitlab-CI tests. This will hopefully make GLX work (see also #874077)
+  * Update d/gbp.conf from glib2.0
 
  -- Simon McVittie <smcv@debian.org>  Thu, 13 Sep 2018 08:29:08 +0100
 
