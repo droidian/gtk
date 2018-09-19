@@ -1,6 +1,7 @@
 gtk+3.0 (3.24.1-1) UNRELEASED; urgency=medium
 
   * New upstream release
+    - Bump GLib build-dependency to 2.53.4 as per configure.ac
   * d/p/imwayland-Fix-clearing-of-preedit-text.patch,
     d/p/imwayland-Fix-clearing-of-preedit-text-in-webkitgtk.patch:
     Use the upstream fix for #908120
