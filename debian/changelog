@@ -12,6 +12,9 @@ gtk+3.0 (3.24.1-2) UNRELEASED; urgency=medium
     differs from the reference by 1 column of pixels
   * Revert "Temporarily (B-)D on libgl1-mesa-dev and libegl1-mesa-dev"
     now that libepoxy has been fixed
+  * d/p/reftest-known-fail.patch: Reinstate
+  * Make symbolic-icon-translucent-color.ui non-fatal during
+    build-time tests
 
  -- Simon McVittie <smcv@debian.org>  Sun, 30 Sep 2018 14:50:10 +0100
 
