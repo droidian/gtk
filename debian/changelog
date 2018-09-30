@@ -7,6 +7,9 @@ gtk+3.0 (3.24.1-2) UNRELEASED; urgency=medium
     false positives for files that would have gone into packages not
     included in the current build, for example libgtk-3-common during
     an amd64-only build.
+  * d/tests: Also mark reftests as flaky due to a known failure:
+    symbolic-icon-translucent-color appears to have regressed and now
+    differs from the reference by 1 column of pixels
 
  -- Simon McVittie <smcv@debian.org>  Sun, 30 Sep 2018 14:50:10 +0100
 
