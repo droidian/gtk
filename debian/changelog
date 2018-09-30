@@ -10,6 +10,8 @@ gtk+3.0 (3.24.1-2) UNRELEASED; urgency=medium
   * d/tests: Also mark reftests as flaky due to a known failure:
     symbolic-icon-translucent-color appears to have regressed and now
     differs from the reference by 1 column of pixels
+  * Revert "Temporarily (B-)D on libgl1-mesa-dev and libegl1-mesa-dev"
+    now that libepoxy has been fixed
 
  -- Simon McVittie <smcv@debian.org>  Sun, 30 Sep 2018 14:50:10 +0100
 
