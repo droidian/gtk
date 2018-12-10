@@ -6,3 +6,4 @@ wayland-Avoid-crashes-inside-wl_proxy_marshal.patch
 060_ignore-random-icons.patch
 reftest-known-fail.patch
 Don-t-test-default-constructed-GdkPixbuf-properties.patch
+Force-emoji-presentation.patch
