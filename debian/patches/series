@@ -8,3 +8,4 @@ reftest-known-fail.patch
 Don-t-test-default-constructed-GdkPixbuf-properties.patch
 Force-emoji-presentation.patch
 emojichooser-Pass-chooser-to-add_emoji.patch
+Tooltip-Fix-the-used-cursor-size-if-0-in-Settings.patch

@@ -1,0 +1,40 @@
+From: Daniel Boles <dboles.src@gmail.com>
+Date: Sun, 7 Oct 2018 18:15:09 +0100
+Subject: Tooltip: Fix the used cursor size if 0 in Settings
+
+Before the recent rework of positioning in GtkTooltip, the widget always
+used the cursor_size of the GdkDisplay. That work redid this to instead
+take GtkSettings::gtk-cursor-theme-size. But that property's doc says:
+
+> Size to use for cursors, or 0 to use the default size.
+
+and has 0 as its default. This is quite a likely scenario for anyone
+whose desktop or settings.ini does not explicitly provide a cursor size,
+which is the case for XFCE and win32, to name just two common platforms.
+
+Then, it seems getting a cursor_size of 0 causes GtkTooltip to freak out
+and hide/show itself at a very rapid speed, thus making it unusable.
+
+So, we should check whether the Settings return 0 and, if so, still use
+gdk_display_get_default_cursor_size (display) to ensure we get a size.
+
+https://gitlab.gnome.org/GNOME/gtk/issues/1371
+(cherry picked from commit 9b7d886b723132eade2e76f3fd179cf81b7601f2)
+---
+ gtk/gtktooltip.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/gtk/gtktooltip.c b/gtk/gtktooltip.c
+index f915662..e5fc5db 100644
+--- a/gtk/gtktooltip.c
++++ b/gtk/gtktooltip.c
+@@ -898,6 +898,9 @@ gtk_tooltip_position (GtkTooltip *tooltip,
+                 "gtk-cursor-theme-size", &cursor_size,
+                 NULL);
+ 
++  if (cursor_size == 0)
++    cursor_size = gdk_display_get_default_cursor_size (display);
++
+   if (device)
+     anchor_rect_padding = MAX (4, cursor_size - 32);
+   else
