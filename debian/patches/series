@@ -5,3 +5,4 @@
 060_ignore-random-icons.patch
 reftest-known-fail.patch
 Don-t-test-default-constructed-GdkPixbuf-properties.patch
+Revert-Fix-deprecation-warnings.patch
