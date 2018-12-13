@@ -1,3 +1,10 @@
+gtk+3.0 (3.24.2-3) unstable; urgency=medium
+
+  * Cherry-pick x11-Fix-deprecation-macro-use.patch:
+    - Fix deprecation macro use to fix crashes seen on Xfce
+
+ -- Jeremy Bicha <jbicha@debian.org>  Thu, 13 Dec 2018 12:55:00 -0500
+
 gtk+3.0 (3.24.2-2) unstable; urgency=medium
 
   * Add Revert-update-some-a11y-test-results.patch:
