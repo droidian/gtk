@@ -1,3 +1,11 @@
+gtk+3.0 (3.24.2-2) unstable; urgency=medium
+
+  * Add Revert-update-some-a11y-test-results.patch:
+    - Revert a late change that broke our build tests
+  * Use xvfb-run for build tests
+
+ -- Jeremy Bicha <jbicha@debian.org>  Thu, 13 Dec 2018 08:41:15 -0500
+
 gtk+3.0 (3.24.2-1) unstable; urgency=medium
 
   * New upstream release (LP: #1808233)
