@@ -1,3 +1,10 @@
+gtk+3.0 (3.24.2-4) UNRELEASED; urgency=medium
+
+  * Add -Wl,-O1 -Wl,--as-needed to our LDFLAGS
+  * Enable all hardening flags
+
+ -- Jeremy Bicha <jbicha@debian.org>  Mon, 14 Jan 2019 09:06:52 -0500
+
 gtk+3.0 (3.24.2-3) unstable; urgency=medium
 
   * Cherry-pick x11-Fix-deprecation-macro-use.patch:
