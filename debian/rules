@@ -101,7 +101,6 @@ configure_flags_deb = \
 	--enable-shared \
 	--enable-introspection \
 	--enable-cloudprint \
-	--disable-cloudproviders \
 	--disable-static \
 	--enable-installed-tests
 
@@ -127,7 +126,6 @@ configure_flags_udeb = \
 	--enable-x11-backend \
 	--disable-introspection \
 	--disable-cloudprint \
-	--disable-cloudproviders \
 	--disable-colord \
 	--disable-xcomposite \
 	--disable-xdamage \
