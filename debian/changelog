@@ -1,10 +1,16 @@
-gtk+3.0 (3.24.3-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.3-1) unstable; urgency=medium
 
   * New upstream release
+  * debian/libgtk-3-0.symbols: Add new symbol
   * Add -Wl,-O1 -Wl,--as-needed to our LDFLAGS
   * Enable all hardening flags
+  * Drop patches applied in new release:
+    - Revert-Fix-deprecation-warnings.patch
+    - x11-Fix-deprecation-macro-use.patch
+  * Add Revert-Update-a11-test-output.patch:
+    - Revert another late change that broke our build tests
 
- -- Jeremy Bicha <jbicha@debian.org>  Mon, 14 Jan 2019 09:14:15 -0500
+ -- Jeremy Bicha <jbicha@debian.org>  Mon, 14 Jan 2019 14:03:05 -0500
 
 gtk+3.0 (3.24.2-3) unstable; urgency=medium
 
