@@ -7,4 +7,3 @@ reftest-known-fail.patch
 Don-t-test-default-constructed-GdkPixbuf-properties.patch
 Revert-Update-some-a11y-test-results.patch
 Revert-Update-a11y-test-output.patch
-Add-fallbacks-for-GtkSwitch-state-labels.patch
