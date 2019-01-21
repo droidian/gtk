@@ -1,8 +1,8 @@
-gtk+3.0 (3.24.4-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.4-1) unstable; urgency=medium
 
   * New upstream release
 
- -- Jeremy Bicha <jbicha@debian.org>  Mon, 21 Jan 2019 11:25:26 -0500
+ -- Jeremy Bicha <jbicha@debian.org>  Mon, 21 Jan 2019 12:00:53 -0500
 
 gtk+3.0 (3.24.3-1) unstable; urgency=medium
 
@@ -5264,4 +5264,3 @@ gtk+2.0 (2.0.0-1) unstable; urgency=low
   * Initial Release.
 
  -- Akira TAGOH <tagoh@debian.org>  Wed, 13 Mar 2002 00:07:25 +0900
-
