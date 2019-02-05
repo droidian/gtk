@@ -1,9 +1,11 @@
-gtk+3.0 (3.24.5-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.5-1) unstable; urgency=medium
 
   * New upstream release
     - Includes refreshed Adwaita and High Contrast themes
+  * Cherry-pick Update-css-node-tests.patch:
+    - Update test for GtkSwitch changes
 
- -- Jeremy Bicha <jbicha@debian.org>  Mon, 04 Feb 2019 16:40:16 -0500
+ -- Jeremy Bicha <jbicha@debian.org>  Tue, 05 Feb 2019 12:02:24 -0500
 
 gtk+3.0 (3.24.4-1) unstable; urgency=medium
 
