@@ -31,6 +31,7 @@
 #include "gtkcheckmenuitem.h"
 #include "gtkclipboard.h"
 #include "gtkcomboboxtext.h"
+#include "gtkcssprovider.h"
 #include "gtkdragsource.h"
 #include "gtkdragdest.h"
 #include "gtkentry.h"
@@ -79,6 +80,8 @@
 #include "gtkseparator.h"
 #include "gtkmodelbutton.h"
 #include "gtkgesturelongpress.h"
+#include "hdy-clamp-private.h"
+#include "hdy-flap-private.h"
 
 #include <cairo-gobject.h>
 
@@ -224,7 +227,8 @@ struct _GtkFileChooserWidgetPrivate {
   GtkWidget *save_widgets_table;
 
   /* The file browsing widgets */
-  GtkWidget *browse_widgets_hpaned;
+  GtkWidget *flap;
+  GtkWidget *browse_box;
   GtkWidget *browse_header_revealer;
   GtkWidget *browse_header_stack;
   GtkWidget *browse_files_stack;
@@ -425,6 +429,7 @@ enum {
   MODEL_COL_TIME_TEXT,
   MODEL_COL_LOCATION_TEXT,
   MODEL_COL_ELLIPSIZE,
+  MODEL_COL_DISPLAY,
   MODEL_COL_NUM_COLUMNS
 };
 
@@ -444,7 +449,8 @@ enum {
         G_TYPE_STRING,            /* MODEL_COL_DATE_TEXT */     \
         G_TYPE_STRING,            /* MODEL_COL_TIME_TEXT */     \
         G_TYPE_STRING,            /* MODEL_COL_LOCATION_TEXT */ \
-        PANGO_TYPE_ELLIPSIZE_MODE /* MODEL_COL_ELLIPSIZE */
+        PANGO_TYPE_ELLIPSIZE_MODE, /* MODEL_COL_ELLIPSIZE */    \
+        G_TYPE_STRING             /* MODEL_COL_DISPLAY */
 
 #define DEFAULT_RECENT_FILES_LIMIT 50
 
@@ -1288,6 +1294,9 @@ places_sidebar_open_location_cb (GtkPlacesSidebar     *sidebar,
     operation_mode_set (impl, OPERATION_MODE_RECENT);
   else
     change_folder_and_display_error (impl, location, clear_entry);
+
+  if (gtk_hdy_flap_get_folded (GTK_HDY_FLAP (priv->flap)))
+    gtk_hdy_flap_set_reveal_flap (GTK_HDY_FLAP (priv->flap), FALSE);
 }
 
 /* Callback used when the places sidebar needs us to display an error message */
@@ -1866,8 +1875,7 @@ change_show_size_state (GSimpleAction *action,
   g_simple_action_set_state (action, state);
   priv->show_size_column = g_variant_get_boolean (state);
 
-  gtk_tree_view_column_set_visible (priv->list_size_column,
-                                    priv->show_size_column);
+  clear_model_cache (impl, MODEL_COL_DISPLAY);
 }
 
 /* Callback used when the "Show Type Column" menu item is toggled */
@@ -1882,8 +1890,7 @@ change_show_type_state (GSimpleAction *action,
   g_simple_action_set_state (action, state);
   priv->show_type_column = g_variant_get_boolean (state);
 
-  gtk_tree_view_column_set_visible (priv->list_type_column,
-                                    priv->show_type_column);
+  clear_model_cache (impl, MODEL_COL_DISPLAY);
 }
 
 static void
@@ -1948,11 +1955,7 @@ update_time_renderer_visible (GtkFileChooserWidget *impl)
 {
   GtkFileChooserWidgetPrivate *priv = impl->priv;
 
-  g_object_set (priv->list_time_renderer,
-                "visible", priv->show_time,
-                NULL);
-  clear_model_cache (impl, MODEL_COL_DATE_TEXT);
-  clear_model_cache (impl, MODEL_COL_TIME_TEXT);
+  clear_model_cache (impl, MODEL_COL_DISPLAY);
   gtk_widget_queue_draw (priv->browse_files_tree_view);
 }
 
@@ -2633,7 +2636,7 @@ location_entry_setup (GtkFileChooserWidget *impl)
   _gtk_file_chooser_entry_set_action (GTK_FILE_CHOOSER_ENTRY (priv->location_entry), priv->action);
   _gtk_file_chooser_entry_set_file_filter (GTK_FILE_CHOOSER_ENTRY (priv->location_entry),
                                            priv->current_filter);
-  gtk_entry_set_width_chars (GTK_ENTRY (priv->location_entry), 45);
+
   gtk_entry_set_activates_default (GTK_ENTRY (priv->location_entry), TRUE);
 }
 
@@ -2680,6 +2683,8 @@ save_widgets_create (GtkFileChooserWidget *impl)
 {
   GtkFileChooserWidgetPrivate *priv = impl->priv;
   GtkWidget *vbox;
+  GtkWidget *clamp;
+  GtkWidget *separator;
   GtkWidget *widget;
 
   if (priv->save_widgets != NULL ||
@@ -2701,14 +2706,19 @@ save_widgets_create (GtkFileChooserWidget *impl)
       return;
     }
 
-  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
-  gtk_style_context_add_class (gtk_widget_get_style_context (vbox), "search-bar");
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 
-  gtk_container_set_border_width (GTK_CONTAINER (vbox), 0);
+  clamp = gtk_hdy_clamp_new ();
+  gtk_widget_show (clamp);
+  gtk_container_add (GTK_CONTAINER (vbox), clamp);
+
+  separator = gtk_separator_new (GTK_ORIENTATION_HORIZONTAL);
+  gtk_widget_show (separator);
+  gtk_container_add (GTK_CONTAINER (vbox), separator);
 
   priv->save_widgets_table = gtk_grid_new ();
-  gtk_container_set_border_width (GTK_CONTAINER (priv->save_widgets_table), 10);
-  gtk_box_pack_start (GTK_BOX (vbox), priv->save_widgets_table, FALSE, FALSE, 0);
+  gtk_container_set_border_width (GTK_CONTAINER (priv->save_widgets_table), 6);
+  gtk_container_add (GTK_CONTAINER (clamp), priv->save_widgets_table);
   gtk_widget_show (priv->save_widgets_table);
   gtk_grid_set_row_spacing (GTK_GRID (priv->save_widgets_table), 12);
   gtk_grid_set_column_spacing (GTK_GRID (priv->save_widgets_table), 12);
@@ -2874,6 +2884,9 @@ places_sidebar_show_other_locations_with_flags_cb (GtkPlacesSidebar     *sidebar
   update_preview_widget_visibility (impl);
 
   operation_mode_set (impl, OPERATION_MODE_OTHER_LOCATIONS);
+
+  if (gtk_hdy_flap_get_folded (GTK_HDY_FLAP (priv->flap)))
+    gtk_hdy_flap_set_reveal_flap (GTK_HDY_FLAP (priv->flap), FALSE);
 }
 
 static void
@@ -2936,7 +2949,8 @@ update_extra_and_filters (GtkFileChooserWidget *impl)
 {
   gtk_widget_set_visible (impl->priv->extra_and_filters,
                           gtk_widget_get_visible (impl->priv->extra_align) ||
-                          gtk_widget_get_visible (impl->priv->filter_combo_hbox));
+                          gtk_widget_get_visible (impl->priv->filter_combo_hbox) ||
+                          gtk_hdy_flap_get_folded (GTK_HDY_FLAP (impl->priv->flap)));
 }
 
 /* Sets the extra_widget by packing it in the appropriate place */
@@ -3751,7 +3765,7 @@ change_icon_theme (GtkFileChooserWidget *impl)
 
   profile_start ("start", NULL);
 
-  if (gtk_icon_size_lookup (GTK_ICON_SIZE_MENU, &width, &height))
+  if (gtk_icon_size_lookup (GTK_ICON_SIZE_DND, &width, &height))
     priv->icon_size = MAX (width, height);
   else
     priv->icon_size = FALLBACK_ICON_SIZE;
@@ -3884,7 +3898,6 @@ settings_load (GtkFileChooserWidget *impl)
   gint sort_column;
   GtkSortType sort_order;
   StartupMode startup_mode;
-  gint sidebar_width;
   GSettings *settings;
 
   settings = _gtk_file_chooser_get_settings_for_widget (GTK_WIDGET (impl));
@@ -3894,7 +3907,6 @@ settings_load (GtkFileChooserWidget *impl)
   show_type_column = g_settings_get_boolean (settings, SETTINGS_KEY_SHOW_TYPE_COLUMN);
   sort_column = g_settings_get_enum (settings, SETTINGS_KEY_SORT_COLUMN);
   sort_order = g_settings_get_enum (settings, SETTINGS_KEY_SORT_ORDER);
-  sidebar_width = g_settings_get_int (settings, SETTINGS_KEY_SIDEBAR_WIDTH);
   startup_mode = g_settings_get_enum (settings, SETTINGS_KEY_STARTUP_MODE);
   sort_directories_first = g_settings_get_boolean (settings, SETTINGS_KEY_SORT_DIRECTORIES_FIRST);
   date_format = g_settings_get_enum (settings, SETTINGS_KEY_DATE_FORMAT);
@@ -3903,9 +3915,10 @@ settings_load (GtkFileChooserWidget *impl)
   if (!priv->show_hidden_set)
     set_show_hidden (impl, show_hidden);
   priv->show_size_column = show_size_column;
-  gtk_tree_view_column_set_visible (priv->list_size_column, show_size_column);
+  gtk_tree_view_column_set_visible (priv->list_size_column, FALSE);
   priv->show_type_column = show_type_column;
-  gtk_tree_view_column_set_visible (priv->list_type_column, show_type_column);
+  gtk_tree_view_column_set_visible (priv->list_type_column, FALSE);
+  gtk_tree_view_column_set_visible (priv->list_time_column, FALSE);
 
   priv->sort_column = sort_column;
   priv->sort_order = sort_order;
@@ -3920,7 +3933,6 @@ settings_load (GtkFileChooserWidget *impl)
    */
 
   update_time_renderer_visible (impl);
-  gtk_paned_set_position (GTK_PANED (priv->browse_widgets_hpaned), sidebar_width);
 }
 
 static void
@@ -3941,8 +3953,6 @@ settings_save (GtkFileChooserWidget *impl)
   g_settings_set_boolean (settings, SETTINGS_KEY_SORT_DIRECTORIES_FIRST, priv->sort_directories_first);
   g_settings_set_enum (settings, SETTINGS_KEY_SORT_COLUMN, priv->sort_column);
   g_settings_set_enum (settings, SETTINGS_KEY_SORT_ORDER, priv->sort_order);
-  g_settings_set_int (settings, SETTINGS_KEY_SIDEBAR_WIDTH,
-                      gtk_paned_get_position (GTK_PANED (priv->browse_widgets_hpaned)));
   g_settings_set_enum (settings, SETTINGS_KEY_DATE_FORMAT, priv->show_time ? DATE_FORMAT_WITH_TIME : DATE_FORMAT_REGULAR);
   g_settings_set_enum (settings, SETTINGS_KEY_TYPE_FORMAT, priv->type_format);
 
@@ -4413,11 +4423,7 @@ update_columns (GtkFileChooserWidget *impl,
   GtkFileChooserWidgetPrivate *priv = impl->priv;
   gboolean need_resize = FALSE;
 
-  if (gtk_tree_view_column_get_visible (priv->list_location_column) != location_visible)
-    {
-      gtk_tree_view_column_set_visible (priv->list_location_column, location_visible);
-      need_resize = TRUE;
-    }
+  clear_model_cache (impl, MODEL_COL_DISPLAY);
 
   if (g_strcmp0 (gtk_tree_view_column_get_title (priv->list_time_column), time_title) != 0)
     {
@@ -5297,6 +5303,47 @@ file_system_model_set (GtkFileSystemModel *model,
         if (dir_location)
           g_object_unref (dir_location);
         g_object_unref (home_location);
+      }
+      break;
+    case MODEL_COL_DISPLAY:
+      {
+        gchar *metadata_str;
+        gchar* metadata[7];
+        int i = 0;
+
+        #define APPEND_COLUMN(column) {\
+          GValue val = { 0, }; \
+          gchar *ret; \
+          g_value_init (&val, G_TYPE_STRING); \
+          file_system_model_set (model, file, info, column, &val, data); \
+          ret = g_value_get_string (&val); \
+          if (ret && *ret) \
+            metadata[i++] = g_markup_escape_text (ret, -1); \
+          g_value_unset (&val); \
+        }
+
+        APPEND_COLUMN(MODEL_COL_NAME)
+        APPEND_COLUMN(MODEL_COL_DATE_TEXT)
+
+        if (priv->show_time)
+          APPEND_COLUMN(MODEL_COL_TIME_TEXT)
+
+        if (priv->show_type_column)
+          APPEND_COLUMN(MODEL_COL_TYPE)
+
+        if (priv->show_size_column)
+          APPEND_COLUMN(MODEL_COL_SIZE_TEXT)
+
+        if (priv->operation_mode == OPERATION_MODE_RECENT)
+          APPEND_COLUMN(MODEL_COL_LOCATION_TEXT)
+
+        metadata[i] = NULL;
+        metadata_str = g_strjoinv (" · ", &metadata[1]);
+        g_value_take_string (value, g_strdup_printf ("%s\n<span size=\"smaller\" alpha=\"55%%\">%s</span>", metadata[0], metadata_str));
+
+        while (i > 0)
+          g_free (metadata[--i]);
+        g_free (metadata_str);
       }
       break;
     default:
@@ -8110,7 +8157,7 @@ update_cell_renderer_attributes (GtkFileChooserWidget *impl)
                                        NULL);
   gtk_tree_view_column_set_attributes (priv->list_name_column,
                                        priv->list_name_renderer,
-                                       "text", MODEL_COL_NAME,
+                                       "markup", MODEL_COL_DISPLAY,
                                        "ellipsize", MODEL_COL_ELLIPSIZE,
                                        "sensitive", MODEL_COL_IS_SENSITIVE,
                                        NULL);
@@ -8684,12 +8731,13 @@ gtk_file_chooser_widget_class_init (GtkFileChooserWidgetClass *class)
                                                "/org/gtk/libgtk/ui/gtkfilechooserwidget.ui");
 
   /* A *lot* of widgets that we need to handle .... */
-  gtk_widget_class_bind_template_child_private (widget_class, GtkFileChooserWidget, browse_widgets_hpaned);
   gtk_widget_class_bind_template_child_private (widget_class, GtkFileChooserWidget, browse_files_stack);
   gtk_widget_class_bind_template_child_private (widget_class, GtkFileChooserWidget, places_sidebar);
   gtk_widget_class_bind_template_child_private (widget_class, GtkFileChooserWidget, places_view);
   gtk_widget_class_bind_template_child_private (widget_class, GtkFileChooserWidget, browse_files_tree_view);
   gtk_widget_class_bind_template_child_private (widget_class, GtkFileChooserWidget, browse_files_swin);
+  gtk_widget_class_bind_template_child_private (widget_class, GtkFileChooserWidget, flap);
+  gtk_widget_class_bind_template_child_private (widget_class, GtkFileChooserWidget, browse_box);
   gtk_widget_class_bind_template_child_private (widget_class, GtkFileChooserWidget, browse_header_revealer);
   gtk_widget_class_bind_template_child_private (widget_class, GtkFileChooserWidget, browse_header_stack);
   gtk_widget_class_bind_template_child_private (widget_class, GtkFileChooserWidget, browse_new_folder_button);
@@ -8751,6 +8799,7 @@ gtk_file_chooser_widget_class_init (GtkFileChooserWidgetClass *class)
   gtk_widget_class_bind_template_callback (widget_class, rename_file_name_changed);
   gtk_widget_class_bind_template_callback (widget_class, rename_file_rename_clicked);
   gtk_widget_class_bind_template_callback (widget_class, rename_file_end);
+  gtk_widget_class_bind_template_callback (widget_class, update_extra_and_filters);
 
   gtk_widget_class_set_css_name (widget_class, "filechooser");
 }
@@ -8826,6 +8875,19 @@ post_process_ui (GtkFileChooserWidget *impl)
   gtk_popover_set_relative_to (GTK_POPOVER (impl->priv->rename_file_popover), impl->priv->browse_files_tree_view);
 
   add_actions (impl);
+
+  {
+    GtkCssProvider *provider;
+
+    provider = gtk_css_provider_new ();
+    gtk_css_provider_load_from_data (provider, "placessidebar { border: none; }", -1, NULL);
+
+    gtk_style_context_add_provider (gtk_widget_get_style_context (impl->priv->places_sidebar),
+                                    GTK_STYLE_PROVIDER (provider),
+                                    GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+  }
+
+  update_extra_and_filters (impl);
 }
 
 void
@@ -8883,6 +8945,8 @@ gtk_file_chooser_widget_init (GtkFileChooserWidget *impl)
   /* Ensure GTK+ private types used by the template
    * definition before calling gtk_widget_init_template()
    */
+  g_type_ensure (GTK_TYPE_HDY_CLAMP);
+  g_type_ensure (GTK_TYPE_HDY_FLAP);
   g_type_ensure (GTK_TYPE_PATH_BAR);
   g_type_ensure (GTK_TYPE_PLACES_VIEW);
 
