@@ -14,6 +14,12 @@ gtk+3.0 (3.24.10-1) UNRELEASED; urgency=medium
   * d/p/docs-Add-gtk_file_chooser_add_choice-and-related-function.patch,
     d/p/Fix-a-string-leak.patch:
     Add post-release fixes from upstream gtk-3-24 branch
+  * d/p/Disable-accessibility-dump-aka-a11ytests-test.patch:
+    Disable accessibility-dump test (aka a11ytests).
+    It works by comparing a dump of the a11y widget tree with a known-good
+    version, but that seems to vary unpredictably according to some unknown
+    factor. Upstream's CI currently disables all the a11y tests, so we can't
+    expect this to be reliable.
 
  -- Simon McVittie <smcv@debian.org>  Wed, 17 Jul 2019 10:00:01 +0100
 

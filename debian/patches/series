@@ -9,3 +9,4 @@ reftest-known-fail.patch
 Don-t-test-default-constructed-GdkPixbuf-properties.patch
 gdk-Generate-gdkenumtypes.-ch-in-the-builddir.patch
 gdk-Don-t-distribute-generated-files-in-tarballs.patch
+Disable-accessibility-dump-aka-a11ytests-test.patch
