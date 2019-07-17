@@ -1,3 +1,5 @@
+docs-Add-gtk_file_chooser_add_choice-and-related-function.patch
+Fix-a-string-leak.patch
 016_no_offscreen_widgets_grabbing.patch
 017_no_offscreen_device_grabbing.patch
 018_gdkenumtypes.c_location.patch
