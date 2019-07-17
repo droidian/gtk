@@ -149,6 +149,7 @@ override_dh_clean: debian/control
 	rm -f demos/gtk-demo/demo_resources.[ch]
 	rm -f demos/icon-browser/resources.[ch]
 	rm -f demos/widget-factory/widget_factory_resources.[ch]
+	rm -f docs/reference/gtk/getting_started.xml
 	rm -f examples/application*/resources.[ch]
 	rm -f gdk/gdkenumtypes.[ch]
 	rm -f gdk/gdkmarshalers.[ch]
