@@ -6,6 +6,8 @@ gtk+3.0 (3.24.10-1) UNRELEASED; urgency=medium
     - d/rules: Explicitly select Autotools build system.
       Upstream now partially supports Meson, but it doesn't have all the
       features we want yet (in particular no installed-tests).
+  * d/rules: Delete more generated files in clean to force them to be
+    regenerated
 
  -- Simon McVittie <smcv@debian.org>  Wed, 17 Jul 2019 10:00:01 +0100
 
