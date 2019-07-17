@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.10-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 17 Jul 2019 10:00:01 +0100
+
 gtk+3.0 (3.24.8-1) experimental; urgency=medium
 
   * New upstream release
