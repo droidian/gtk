@@ -1,5 +1,7 @@
-gtk+3.0 (3.24.10-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.10-1) unstable; urgency=medium
 
+  * Team upload
+  * Upload to unstable
   * New upstream release
     - Bump required CUPS version to 1.7
     - d/copyright: Update
@@ -28,7 +30,7 @@ gtk+3.0 (3.24.10-1) UNRELEASED; urgency=medium
   * d/libgail-3-doc.doc-base.gail-reference: Use /usr/share/doc paths
   * Standards-Version: 4.4.0 (no changes required)
 
- -- Simon McVittie <smcv@debian.org>  Wed, 17 Jul 2019 17:53:40 +0100
+ -- Simon McVittie <smcv@debian.org>  Wed, 17 Jul 2019 17:54:17 +0100
 
 gtk+3.0 (3.24.8-1) experimental; urgency=medium
 
