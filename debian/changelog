@@ -9,6 +9,8 @@ gtk+3.0 (3.24.10-1) UNRELEASED; urgency=medium
   * d/rules: Delete more generated files in clean to force them to be
     regenerated
   * d/tests/python3-gi: Don't fail if gir1.2-gtk-4.0 is installed
+  * d/p/Revert-Update-some-a11y-test-results.patch:
+    Drop patch, no longer needed (and indeed it now makes the tests fail)
 
  -- Simon McVittie <smcv@debian.org>  Wed, 17 Jul 2019 10:00:01 +0100
 
