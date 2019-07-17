@@ -8,6 +8,9 @@ gtk+3.0 (3.24.10-1) UNRELEASED; urgency=medium
       features we want yet (in particular no installed-tests).
   * d/rules: Delete more generated files in clean to force them to be
     regenerated
+    - d/p/gdk-Generate-gdkenumtypes.-ch-in-the-builddir.patch,
+      d/p/gdk-Don-t-distribute-generated-files-in-tarballs.patch:
+      Fix regeneration of some generated files
   * d/tests/python3-gi: Don't fail if gir1.2-gtk-4.0 is installed
   * d/p/Revert-Update-some-a11y-test-results.patch:
     Drop patch, no longer needed (and indeed it now makes the tests fail)
