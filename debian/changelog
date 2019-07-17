@@ -23,8 +23,12 @@ gtk+3.0 (3.24.10-1) UNRELEASED; urgency=medium
     version, but that seems to vary unpredictably according to some unknown
     factor. Upstream's CI currently disables all the a11y tests, so we can't
     expect this to be reliable.
+  * Remove another generated file
+  * d/libgail-3-0.symbols: Add Build-Depends-Package
+  * d/libgail-3-doc.doc-base.gail-reference: Use /usr/share/doc paths
+  * Standards-Version: 4.4.0 (no changes required)
 
- -- Simon McVittie <smcv@debian.org>  Wed, 17 Jul 2019 10:00:01 +0100
+ -- Simon McVittie <smcv@debian.org>  Wed, 17 Jul 2019 17:53:40 +0100
 
 gtk+3.0 (3.24.8-1) experimental; urgency=medium
 
