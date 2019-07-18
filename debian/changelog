@@ -1,3 +1,13 @@
+gtk+3.0 (3.24.10-2) UNRELEASED; urgency=medium
+
+  * d/p/018_gdkenumtypes.c_location.patch:
+    Drop patch that was rejected upstream. The issue that it solved
+    was solved more correctly upstream, by introspecting the built files.
+  * d/p/gdk-Generate-gdkenumtypes.-ch-in-the-builddir.patch:
+    Drop patch that partially reverted the one described above.
+
+ -- Simon McVittie <smcv@debian.org>  Thu, 18 Jul 2019 09:40:24 +0100
+
 gtk+3.0 (3.24.10-1) unstable; urgency=medium
 
   * Team upload

@@ -13,7 +13,7 @@ Signed-off-by: Simon McVittie <smcv@debian.org>
  1 file changed, 3 insertions(+), 18 deletions(-)
 
 diff --git a/gdk/Makefile.am b/gdk/Makefile.am
-index 525c5a0..64e5b17 100644
+index 6373e26..bd093f0 100644
 --- a/gdk/Makefile.am
 +++ b/gdk/Makefile.am
 @@ -203,16 +203,8 @@ nodist_gdkinclude_HEADERS = gdkconfig.h gdkenumtypes.h gdkversionmacros.h
@@ -39,12 +39,12 @@ index 525c5a0..64e5b17 100644
  
  lib_LTLIBRARIES = libgdk-3.la
  
--MAINTAINERCLEANFILES = $(gdk_built_sources)
+-MAINTAINERCLEANFILES = $(gdk_built_sources) stamp-gdkenumtypes.h
 +DISTCLEANFILES = $(gdk_built_sources)
  EXTRA_DIST += \
  	$(gdk_built_sources)	\
  	fallback-c89.c
-@@ -562,13 +554,6 @@ install-data-local: install-ms-lib install-def-file
+@@ -565,13 +557,6 @@ install-data-local: install-ms-lib install-def-file
  uninstall-local: uninstall-ms-lib uninstall-def-file
  	rm -f $(DESTDIR)$(configexecincludedir)/gdkconfig.h
  
