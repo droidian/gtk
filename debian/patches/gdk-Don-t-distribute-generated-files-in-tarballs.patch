@@ -7,13 +7,17 @@ DISTCLEANFILES. The rest of $(gdk_built_sources) are built at compile
 time by GLib tools, so in principle they should be in CLEANFILES, but
 DISTCLEANFILES is close enough.
 
+This is a continuation of the same general topic as commit dad773b1.
+
 Signed-off-by: Simon McVittie <smcv@debian.org>
+Forwarded: https://gitlab.gnome.org/GNOME/gtk/merge_requests/1001
+Bug: https://gitlab.gnome.org/GNOME/gtk/issues/357
 ---
- gdk/Makefile.am | 21 +++------------------
- 1 file changed, 3 insertions(+), 18 deletions(-)
+ gdk/Makefile.am | 29 ++++++-----------------------
+ 1 file changed, 6 insertions(+), 23 deletions(-)
 
 diff --git a/gdk/Makefile.am b/gdk/Makefile.am
-index 6373e26..bd093f0 100644
+index 6373e26..41af56d 100644
 --- a/gdk/Makefile.am
 +++ b/gdk/Makefile.am
 @@ -203,16 +203,8 @@ nodist_gdkinclude_HEADERS = gdkconfig.h gdkenumtypes.h gdkversionmacros.h
@@ -35,16 +39,37 @@ index 6373e26..bd093f0 100644
  libgdk_3_la_CFLAGS = $(AM_CFLAGS) $(GDK_HIDDEN_VISIBILITY_CFLAGS)
  libgdk_3_la_LIBADD = $(GDK_DEP_LIBS) $(SHM_LIBS)
  libgdk_3_la_LDFLAGS = $(LDADD)
-@@ -417,7 +409,7 @@ endif
+@@ -417,10 +409,8 @@ endif
  
  lib_LTLIBRARIES = libgdk-3.la
  
 -MAINTAINERCLEANFILES = $(gdk_built_sources) stamp-gdkenumtypes.h
-+DISTCLEANFILES = $(gdk_built_sources)
- EXTRA_DIST += \
- 	$(gdk_built_sources)	\
- 	fallback-c89.c
-@@ -565,13 +557,6 @@ install-data-local: install-ms-lib install-def-file
+-EXTRA_DIST += \
+-	$(gdk_built_sources)	\
+-	fallback-c89.c
++DISTCLEANFILES = $(gdk_built_sources) stamp-gdkenumtypes.h
++EXTRA_DIST += fallback-c89.c
+ 
+ install-exec-hook:
+ if DISABLE_EXPLICIT_DEPS
+@@ -504,7 +494,7 @@ gdkresources.c: gdk.gresource.xml $(resource_files)
+ # ------------------- MSVC Build Items ----------------
+ MSVCPROJS = gdk-3
+ 
+-gdk_3_FILES = $(libgdk_3_la_SOURCES)
++gdk_3_FILES = $(libgdk_3_la_SOURCES) $(nodist_libgdk_3_la_SOURCES)
+ gdk_3_EXCLUDES = dummy
+ gdk_3_HEADERS_DIR = $(gdkincludedir)
+ 
+@@ -558,20 +548,13 @@ dist-hook: \
+ 	$(top_builddir)/build/win32/vs9/gdk-3.headers	\
+ 	$(INTROSPECTION_INTERMEDIATE_ITEMS)
+ 
+-DISTCLEANFILES = gdkconfig.h stamp-gc-h
++DISTCLEANFILES += gdkconfig.h stamp-gc-h
+ 
+ install-data-local: install-ms-lib install-def-file
+ 
  uninstall-local: uninstall-ms-lib uninstall-def-file
  	rm -f $(DESTDIR)$(configexecincludedir)/gdkconfig.h
  
