@@ -8,6 +8,10 @@ gtk+3.0 (3.24.10-2) UNRELEASED; urgency=medium
     d/p/gtk-Really-don-t-distribute-built-files.patch,
     d/p/demos-examples-tests-Don-t-distribute-built-files.patch:
     Replace patches above with an upstreamable version
+  * Install documentation in /usr/share/gtk-doc, with symlinks in /u/s/doc.
+    gtk-doc documentation is technically a functional interface
+    (Policy §12.3), because other packages can build-depend on it and
+    use it to fix cross-references.
 
  -- Simon McVittie <smcv@debian.org>  Thu, 18 Jul 2019 09:40:24 +0100
 
