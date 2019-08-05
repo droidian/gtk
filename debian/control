@@ -6,7 +6,7 @@ Uploaders: Iain Lane <laney@debian.org>, Jeremy Bicha <jbicha@debian.org>
 Build-Depends: adwaita-icon-theme <!nocheck>,
                at-spi2-core <!nocheck>,
                dbus <!nocheck>,
-               debhelper (>= 10.3~),
+               debhelper-compat (= 12),
                fonts-cantarell <!nocheck>,
                fonts-dejavu-core <!nocheck>,
                gnome-pkg-tools (>= 0.11),
