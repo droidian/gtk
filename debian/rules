@@ -212,9 +212,6 @@ override_dh_install:
 	dh_install -p$(UDEB_PKG) --sourcedir=debian/install/udeb
 	dh_install --remaining-packages --sourcedir=debian/install/deb
 
-override_dh_dwz:
-	# Don't enable dwz yet, so binaries can be compared with diffoscope
-
 override_dh_missing:
 ifneq ($(filter %-udeb,$(built_binaries)),)
 	dh_missing --sourcedir=debian/install/udeb --list-missing -X.la
