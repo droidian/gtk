@@ -8,6 +8,11 @@ gtk+3.0 (3.24.10-2) UNRELEASED; urgency=medium
     d/p/gtk-Really-don-t-distribute-built-files.patch,
     d/p/demos-examples-tests-Don-t-distribute-built-files.patch:
     Replace patches above with an upstreamable version
+  * Use debhelper-compat 12
+    - Don't explicitly use dh_makeshlibs -V, it is now the default
+    - Don't explicitly use --libexecdir=/usr/libexec, it is now the default
+    - Don't try to use dh_missing on debian/install/udeb if we didn't do
+      the udeb build
   * API documentation:
     - Install documentation in /usr/share/gtk-doc, with symlinks in /u/s/doc.
       gtk-doc documentation is technically a functional interface
@@ -19,7 +24,7 @@ gtk+3.0 (3.24.10-2) UNRELEASED; urgency=medium
   * Refer to GTK rather than GTK+ in packaging files.
     The library was renamed in February 2019.
 
- -- Simon McVittie <smcv@debian.org>  Mon, 05 Aug 2019 08:12:02 +0100
+ -- Simon McVittie <smcv@debian.org>  Tue, 06 Aug 2019 13:48:52 +0100
 
 gtk+3.0 (3.24.10-1) unstable; urgency=medium
 
