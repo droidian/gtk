@@ -1,5 +1,3 @@
-docs-Add-gtk_file_chooser_add_choice-and-related-function.patch
-Fix-a-string-leak.patch
 gdk-Don-t-distribute-generated-files-in-tarballs.patch
 gtk-Really-don-t-distribute-built-files.patch
 demos-examples-tests-Don-t-distribute-built-files.patch
