@@ -2331,6 +2331,7 @@ $(foreach proj,$(MSVCPROJS),$(eval $(call msvcproj-builder,$(proj))))
 @HAVE_INTROSPECTION_TRUE@    $(error Need to define $(_gir_name)_MSVC_LIBS or $(_gir_name)_MSVC_PROGRAM))
 
 @HAVE_INTROSPECTION_TRUE@$(top_builddir)/build/win32/$(_gir_name)_list: Makefile
+@HAVE_INTROSPECTION_TRUE@	rm -f $(top_builddir)/build/win32/$(_gir_name)_list
 @HAVE_INTROSPECTION_TRUE@	for F in $(_gir_files_msvc); do \
 @HAVE_INTROSPECTION_TRUE@		case $$$$F in \
 @HAVE_INTROSPECTION_TRUE@		*.c|*.cpp|*.cc|*.cxx|*.h|*.hpp|*.hh|*.hxx) \

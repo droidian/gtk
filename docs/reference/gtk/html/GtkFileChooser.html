@@ -8,7 +8,7 @@
 <link rel="up" href="SelectorWidgets.html" title="Selector Widgets and Dialogs">
 <link rel="prev" href="GtkColorChooserDialog.html" title="GtkColorChooserDialog">
 <link rel="next" href="GtkFileChooserButton.html" title="GtkFileChooserButton">
-<meta name="generator" content="GTK-Doc V1.30.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -362,6 +362,37 @@
 </td>
 <td class="function_name">
 <a class="link" href="GtkFileChooser.html#gtk-file-chooser-get-extra-widget" title="gtk_file_chooser_get_extra_widget ()">gtk_file_chooser_get_extra_widget</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GtkFileChooser.html#gtk-file-chooser-add-choice" title="gtk_file_chooser_add_choice ()">gtk_file_chooser_add_choice</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GtkFileChooser.html#gtk-file-chooser-remove-choice" title="gtk_file_chooser_remove_choice ()">gtk_file_chooser_remove_choice</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GtkFileChooser.html#gtk-file-chooser-set-choice" title="gtk_file_chooser_set_choice ()">gtk_file_chooser_set_choice</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GtkFileChooser.html#gtk-file-chooser-get-choice" title="gtk_file_chooser_get_choice ()">gtk_file_chooser_get_choice</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -777,39 +808,39 @@ generate a preview.</p>
 31
 32
 33</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="p">{</span>
-  <span class="n">GtkImage</span> <span class="o">*</span><span class="n">preview</span><span class="p">;</span>
+        <td class="listing_code"><pre class="programlisting"><span class="cbracket">{</span>
+<span class="normal">  </span><span class="usertype">GtkImage</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">preview</span><span class="symbol">;</span>
 
-  <span class="p">...</span>
+<span class="normal">  </span><span class="symbol">...</span>
 
-  <span class="n">preview</span> <span class="o">=</span> <span class="n">gtk_image_new</span> <span class="p">();</span>
+<span class="normal">  preview </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GtkImage.html#gtk-image-new">gtk_image_new</a></span><span class="normal"> </span><span class="symbol">();</span>
 
-  <span class="n">gtk_file_chooser_set_preview_widget</span> <span class="p">(</span><span class="n">my_file_chooser</span><span class="p">,</span> <span class="n">preview</span><span class="p">);</span>
-  <span class="n">g_signal_connect</span> <span class="p">(</span><span class="n">my_file_chooser</span><span class="p">,</span> <span class="s">&quot;update-preview&quot;</span><span class="p">,</span>
-		    <span class="n">G_CALLBACK</span> <span class="p">(</span><span class="n">update_preview_cb</span><span class="p">),</span> <span class="n">preview</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="normal">  </span><span class="function"><a href="GtkFileChooser.html#gtk-file-chooser-set-preview-widget">gtk_file_chooser_set_preview_widget</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">my_file_chooser</span><span class="symbol">,</span><span class="normal"> preview</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function">g_signal_connect</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">my_file_chooser</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"update-preview"</span><span class="symbol">,</span>
+<span class="normal">            </span><span class="function">G_CALLBACK</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">update_preview_cb</span><span class="symbol">),</span><span class="normal"> preview</span><span class="symbol">);</span>
+<span class="cbracket">}</span>
 
-<span class="k">static</span> <span class="kt">void</span>
-<span class="n">update_preview_cb</span> <span class="p">(</span><span class="n">GtkFileChooser</span> <span class="o">*</span><span class="n">file_chooser</span><span class="p">,</span> <span class="n">gpointer</span> <span class="n">data</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="n">GtkWidget</span> <span class="o">*</span><span class="n">preview</span><span class="p">;</span>
-  <span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">;</span>
-  <span class="n">GdkPixbuf</span> <span class="o">*</span><span class="n">pixbuf</span><span class="p">;</span>
-  <span class="n">gboolean</span> <span class="n">have_preview</span><span class="p">;</span>
+<span class="keyword">static</span><span class="normal"> </span><span class="type">void</span>
+<span class="function">update_preview_cb</span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">GtkFileChooser</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">file_chooser</span><span class="symbol">,</span><span class="normal"> </span><span class="usertype">gpointer</span><span class="normal"> data</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="usertype">GtkWidget</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">preview</span><span class="symbol">;</span>
+<span class="normal">  </span><span class="type">char</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">filename</span><span class="symbol">;</span>
+<span class="normal">  </span><span class="usertype">GdkPixbuf</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">pixbuf</span><span class="symbol">;</span>
+<span class="normal">  </span><span class="usertype">gboolean</span><span class="normal"> have_preview</span><span class="symbol">;</span>
 
-  <span class="n">preview</span> <span class="o">=</span> <span class="n">GTK_WIDGET</span> <span class="p">(</span><span class="n">data</span><span class="p">);</span>
-  <span class="n">filename</span> <span class="o">=</span> <span class="n">gtk_file_chooser_get_preview_filename</span> <span class="p">(</span><span class="n">file_chooser</span><span class="p">);</span>
+<span class="normal">  preview </span><span class="symbol">=</span><span class="normal"> </span><span class="function">GTK_WIDGET</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">data</span><span class="symbol">);</span>
+<span class="normal">  filename </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GtkFileChooser.html#gtk-file-chooser-get-preview-filename">gtk_file_chooser_get_preview_filename</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">file_chooser</span><span class="symbol">);</span>
 
-  <span class="n">pixbuf</span> <span class="o">=</span> <span class="n">gdk_pixbuf_new_from_file_at_size</span> <span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
-  <span class="n">have_preview</span> <span class="o">=</span> <span class="p">(</span><span class="n">pixbuf</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">);</span>
-  <span class="n">g_free</span> <span class="p">(</span><span class="n">filename</span><span class="p">);</span>
+<span class="normal">  pixbuf </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="http://library.gnome.org/devel/gdk-pixbuf/unstable/gdk-pixbuf-File-Loading.html#gdk-pixbuf-new-from-file-at-size">gdk_pixbuf_new_from_file_at_size</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">filename</span><span class="symbol">,</span><span class="normal"> </span><span class="number">128</span><span class="symbol">,</span><span class="normal"> </span><span class="number">128</span><span class="symbol">,</span><span class="normal"> NULL</span><span class="symbol">);</span>
+<span class="normal">  have_preview </span><span class="symbol">=</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">pixbuf </span><span class="symbol">!=</span><span class="normal"> NULL</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function">g_free</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">filename</span><span class="symbol">);</span>
 
-  <span class="n">gtk_image_set_from_pixbuf</span> <span class="p">(</span><span class="n">GTK_IMAGE</span> <span class="p">(</span><span class="n">preview</span><span class="p">),</span> <span class="n">pixbuf</span><span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">pixbuf</span><span class="p">)</span>
-    <span class="n">g_object_unref</span> <span class="p">(</span><span class="n">pixbuf</span><span class="p">);</span>
+<span class="normal">  </span><span class="function"><a href="GtkImage.html#gtk-image-set-from-pixbuf">gtk_image_set_from_pixbuf</a></span><span class="normal"> </span><span class="symbol">(</span><span class="function">GTK_IMAGE</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">preview</span><span class="symbol">),</span><span class="normal"> pixbuf</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">pixbuf</span><span class="symbol">)</span>
+<span class="normal">    </span><span class="function">g_object_unref</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">pixbuf</span><span class="symbol">);</span>
 
-  <span class="n">gtk_file_chooser_set_preview_widget_active</span> <span class="p">(</span><span class="n">file_chooser</span><span class="p">,</span> <span class="n">have_preview</span><span class="p">);</span>
-<span class="p">}</span></pre></td>
+<span class="normal">  </span><span class="function"><a href="GtkFileChooser.html#gtk-file-chooser-set-preview-widget-active">gtk_file_chooser_set_preview_widget_active</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">file_chooser</span><span class="symbol">,</span><span class="normal"> have_preview</span><span class="symbol">);</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -840,14 +871,14 @@ widgets in a file chooser.</p>
 6
 7
 8</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="n">GtkWidget</span> <span class="o">*</span><span class="n">toggle</span><span class="p">;</span>
+        <td class="listing_code"><pre class="programlisting"><span class="usertype">GtkWidget</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">toggle</span><span class="symbol">;</span>
 
-<span class="p">...</span>
+<span class="symbol">...</span>
 
-<span class="n">toggle</span> <span class="o">=</span> <span class="n">gtk_check_button_new_with_label</span> <span class="p">(</span><span class="s">&quot;Open file read-only&quot;</span><span class="p">);</span>
-<span class="n">gtk_widget_show</span> <span class="p">(</span><span class="n">toggle</span><span class="p">);</span>
-<span class="n">gtk_file_chooser_set_extra_widget</span> <span class="p">(</span><span class="n">my_file_chooser</span><span class="p">,</span> <span class="n">toggle</span><span class="p">);</span>
-<span class="p">}</span></pre></td>
+<span class="normal">toggle </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GtkCheckButton.html#gtk-check-button-new-with-label">gtk_check_button_new_with_label</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"Open file read-only"</span><span class="symbol">);</span>
+<span class="function"><a href="GtkWidget.html#gtk-widget-show">gtk_widget_show</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">toggle</span><span class="symbol">);</span>
+<span class="function"><a href="GtkFileChooser.html#gtk-file-chooser-set-extra-widget">gtk_file_chooser_set_extra_widget</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">my_file_chooser</span><span class="symbol">,</span><span class="normal"> toggle</span><span class="symbol">);</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -1394,16 +1425,16 @@ time, do not call this function.  Instead, use something similar to this:</p>
 8
 9
 10</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="k">if</span> <span class="p">(</span><span class="n">document_is_new</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="c1">// the user just created a new document</span>
-    <span class="n">gtk_file_chooser_set_current_name</span> <span class="p">(</span><span class="n">chooser</span><span class="p">,</span> <span class="s">&quot;Untitled document&quot;</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="k">else</span>
-  <span class="p">{</span>
-    <span class="c1">// the user edited an existing document</span>
-    <span class="n">gtk_file_chooser_set_filename</span> <span class="p">(</span><span class="n">chooser</span><span class="p">,</span> <span class="n">existing_filename</span><span class="p">);</span>
-  <span class="p">}</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">document_is_new</span><span class="symbol">)</span>
+<span class="normal">  </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="comment">// the user just created a new document</span>
+<span class="normal">    </span><span class="function"><a href="GtkFileChooser.html#gtk-file-chooser-set-current-name">gtk_file_chooser_set_current_name</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">chooser</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"Untitled document"</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="cbracket">}</span>
+<span class="keyword">else</span>
+<span class="normal">  </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="comment">// the user edited an existing document</span>
+<span class="normal">    </span><span class="function"><a href="GtkFileChooser.html#gtk-file-chooser-set-filename">gtk_file_chooser_set_filename</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">chooser</span><span class="symbol">,</span><span class="normal"> existing_filename</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -1749,16 +1780,16 @@ not call this function.  Instead, use something similar to this:</p>
 8
 9
 10</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="k">if</span> <span class="p">(</span><span class="n">document_is_new</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="c1">// the user just created a new document</span>
-    <span class="n">gtk_file_chooser_set_current_name</span> <span class="p">(</span><span class="n">chooser</span><span class="p">,</span> <span class="s">&quot;Untitled document&quot;</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="k">else</span>
-  <span class="p">{</span>
-    <span class="c1">// the user edited an existing document</span>
-    <span class="n">gtk_file_chooser_set_uri</span> <span class="p">(</span><span class="n">chooser</span><span class="p">,</span> <span class="n">existing_uri</span><span class="p">);</span>
-  <span class="p">}</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">document_is_new</span><span class="symbol">)</span>
+<span class="normal">  </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="comment">// the user just created a new document</span>
+<span class="normal">    </span><span class="function"><a href="GtkFileChooser.html#gtk-file-chooser-set-current-name">gtk_file_chooser_set_current_name</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">chooser</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"Untitled document"</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="cbracket">}</span>
+<span class="keyword">else</span>
+<span class="normal">  </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="comment">// the user edited an existing document</span>
+<span class="normal">    </span><span class="function"><a href="GtkFileChooser.html#gtk-file-chooser-set-uri">gtk_file_chooser_set_uri</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">chooser</span><span class="symbol">,</span><span class="normal"> existing_uri</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -2311,6 +2342,166 @@ gtk_file_chooser_get_extra_widget (<em class="parameter"><code><a class="link" h
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gtk-file-chooser-add-choice"></a><h3>gtk_file_chooser_add_choice ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gtk_file_chooser_add_choice (<em class="parameter"><code><a class="link" href="GtkFileChooser.html" title="GtkFileChooser"><span class="type">GtkFileChooser</span></a> *chooser</code></em>,
+                             <em class="parameter"><code>const <span class="type">char</span> *id</code></em>,
+                             <em class="parameter"><code>const <span class="type">char</span> *label</code></em>,
+                             <em class="parameter"><code>const <span class="type">char</span> **options</code></em>,
+                             <em class="parameter"><code>const <span class="type">char</span> **option_labels</code></em>);</pre>
+<p>Adds a 'choice' to the file chooser. This is typically implemented
+as a combobox or, for boolean choices, as a checkbutton. You can select
+a value using <a class="link" href="GtkFileChooser.html#gtk-file-chooser-set-choice" title="gtk_file_chooser_set_choice ()"><code class="function">gtk_file_chooser_set_choice()</code></a> before the dialog is shown,
+and you can obtain the user-selected value in the ::response signal handler
+using <a class="link" href="GtkFileChooser.html#gtk-file-chooser-get-choice" title="gtk_file_chooser_get_choice ()"><code class="function">gtk_file_chooser_get_choice()</code></a>.</p>
+<p>Compare <a class="link" href="GtkFileChooser.html#gtk-file-chooser-set-extra-widget" title="gtk_file_chooser_set_extra_widget ()"><code class="function">gtk_file_chooser_set_extra_widget()</code></a>.</p>
+<div class="refsect3">
+<a name="gtk-file-chooser-add-choice.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>chooser</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkFileChooser.html" title="GtkFileChooser"><span class="type">GtkFileChooser</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>id for the added choice</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>label</p></td>
+<td class="parameter_description"><p>user-visible label for the added choice</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>options</p></td>
+<td class="parameter_description"><p>ids for the options of the choice, or <code class="literal">NULL</code> for a boolean choice. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>option_labels</p></td>
+<td class="parameter_description"><p>user-visible labels for the options, must be the same length as <em class="parameter"><code>options</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: <a class="link" href="api-index-3-22.html#api-index-3.22">3.22</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gtk-file-chooser-remove-choice"></a><h3>gtk_file_chooser_remove_choice ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gtk_file_chooser_remove_choice (<em class="parameter"><code><a class="link" href="GtkFileChooser.html" title="GtkFileChooser"><span class="type">GtkFileChooser</span></a> *chooser</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *id</code></em>);</pre>
+<p>Removes a 'choice' that has been added with <a class="link" href="GtkFileChooser.html#gtk-file-chooser-add-choice" title="gtk_file_chooser_add_choice ()"><code class="function">gtk_file_chooser_add_choice()</code></a>.</p>
+<div class="refsect3">
+<a name="gtk-file-chooser-remove-choice.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>chooser</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkFileChooser.html" title="GtkFileChooser"><span class="type">GtkFileChooser</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>the ID of the choice to remove</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: <a class="link" href="api-index-3-22.html#api-index-3.22">3.22</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gtk-file-chooser-set-choice"></a><h3>gtk_file_chooser_set_choice ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gtk_file_chooser_set_choice (<em class="parameter"><code><a class="link" href="GtkFileChooser.html" title="GtkFileChooser"><span class="type">GtkFileChooser</span></a> *chooser</code></em>,
+                             <em class="parameter"><code>const <span class="type">char</span> *id</code></em>,
+                             <em class="parameter"><code>const <span class="type">char</span> *option</code></em>);</pre>
+<p>Selects an option in a 'choice' that has been added with
+<a class="link" href="GtkFileChooser.html#gtk-file-chooser-add-choice" title="gtk_file_chooser_add_choice ()"><code class="function">gtk_file_chooser_add_choice()</code></a>. For a boolean choice, the
+possible options are "true" and "false".</p>
+<div class="refsect3">
+<a name="gtk-file-chooser-set-choice.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>chooser</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkFileChooser.html" title="GtkFileChooser"><span class="type">GtkFileChooser</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>the ID of the choice to set</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>option</p></td>
+<td class="parameter_description"><p>the ID of the option to select</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: <a class="link" href="api-index-3-22.html#api-index-3.22">3.22</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gtk-file-chooser-get-choice"></a><h3>gtk_file_chooser_get_choice ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gtk_file_chooser_get_choice (<em class="parameter"><code><a class="link" href="GtkFileChooser.html" title="GtkFileChooser"><span class="type">GtkFileChooser</span></a> *chooser</code></em>,
+                             <em class="parameter"><code>const <span class="type">char</span> *id</code></em>);</pre>
+<p>Gets the currently selected option in the 'choice' with the given ID.</p>
+<div class="refsect3">
+<a name="gtk-file-chooser-get-choice.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>chooser</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GtkFileChooser.html" title="GtkFileChooser"><span class="type">GtkFileChooser</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>the ID of the choice to get</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gtk-file-chooser-get-choice.returns"></a><h4>Returns</h4>
+<p> the ID of the currenly selected option</p>
+</div>
+<p class="since">Since: <a class="link" href="api-index-3-22.html#api-index-3.22">3.22</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -2984,17 +3175,17 @@ Instead, use something similar to this:</p>
 9
 10
 11</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="k">if</span> <span class="p">(</span><span class="n">document_is_new</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="c1">// the user just created a new document</span>
-    <span class="n">gtk_file_chooser_set_current_folder_file</span> <span class="p">(</span><span class="n">chooser</span><span class="p">,</span> <span class="n">default_file_for_saving</span><span class="p">);</span>
-    <span class="n">gtk_file_chooser_set_current_name</span> <span class="p">(</span><span class="n">chooser</span><span class="p">,</span> <span class="s">&quot;Untitled document&quot;</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="k">else</span>
-  <span class="p">{</span>
-    <span class="c1">// the user edited an existing document</span>
-    <span class="n">gtk_file_chooser_set_file</span> <span class="p">(</span><span class="n">chooser</span><span class="p">,</span> <span class="n">existing_file</span><span class="p">);</span>
-  <span class="p">}</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">document_is_new</span><span class="symbol">)</span>
+<span class="normal">  </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="comment">// the user just created a new document</span>
+<span class="normal">    </span><span class="function"><a href="GtkFileChooser.html#gtk-file-chooser-set-current-folder-file">gtk_file_chooser_set_current_folder_file</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">chooser</span><span class="symbol">,</span><span class="normal"> default_file_for_saving</span><span class="symbol">);</span>
+<span class="normal">    </span><span class="function"><a href="GtkFileChooser.html#gtk-file-chooser-set-current-name">gtk_file_chooser_set_current_name</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">chooser</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"Untitled document"</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="cbracket">}</span>
+<span class="keyword">else</span>
+<span class="normal">  </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="comment">// the user edited an existing document</span>
+<span class="normal">    </span><span class="function"><a href="GtkFileChooser.html#gtk-file-chooser-set-file">gtk_file_chooser_set_file</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">chooser</span><span class="symbol">,</span><span class="normal"> existing_file</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -3092,7 +3283,7 @@ or to save to a possibly new file.</p>
 <td class="enum_member_name"><p><a name="GTK-FILE-CHOOSER-ACTION-OPEN:CAPS"></a>GTK_FILE_CHOOSER_ACTION_OPEN</p></td>
 <td class="enum_member_description">
 <p>Indicates open mode.  The file chooser
-will only let the user pick an existing file.</p>
+ will only let the user pick an existing file.</p>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
@@ -3100,8 +3291,8 @@ will only let the user pick an existing file.</p>
 <td class="enum_member_name"><p><a name="GTK-FILE-CHOOSER-ACTION-SAVE:CAPS"></a>GTK_FILE_CHOOSER_ACTION_SAVE</p></td>
 <td class="enum_member_description">
 <p>Indicates save mode.  The file chooser
-will let the user pick an existing file, or type in a new
-filename.</p>
+ will let the user pick an existing file, or type in a new
+ filename.</p>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
@@ -3109,8 +3300,8 @@ filename.</p>
 <td class="enum_member_name"><p><a name="GTK-FILE-CHOOSER-ACTION-SELECT-FOLDER:CAPS"></a>GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER</p></td>
 <td class="enum_member_description">
 <p>Indicates an Open mode for
-selecting folders.  The file chooser will let the user pick an
-existing folder.</p>
+ selecting folders.  The file chooser will let the user pick an
+ existing folder.</p>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
@@ -3118,8 +3309,8 @@ existing folder.</p>
 <td class="enum_member_name"><p><a name="GTK-FILE-CHOOSER-ACTION-CREATE-FOLDER:CAPS"></a>GTK_FILE_CHOOSER_ACTION_CREATE_FOLDER</p></td>
 <td class="enum_member_description">
 <p>Indicates a mode for creating a
-new folder.  The file chooser will let the user name an existing or
-new folder.</p>
+ new folder.  The file chooser will let the user name an existing or
+ new folder.</p>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
@@ -3148,7 +3339,7 @@ let the user choose another filename.</p>
 <td class="enum_member_name"><p><a name="GTK-FILE-CHOOSER-CONFIRMATION-CONFIRM:CAPS"></a>GTK_FILE_CHOOSER_CONFIRMATION_CONFIRM</p></td>
 <td class="enum_member_description">
 <p>The file chooser will present
-its stock dialog to confirm about overwriting an existing file.</p>
+ its stock dialog to confirm about overwriting an existing file.</p>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
@@ -3156,7 +3347,7 @@ its stock dialog to confirm about overwriting an existing file.</p>
 <td class="enum_member_name"><p><a name="GTK-FILE-CHOOSER-CONFIRMATION-ACCEPT-FILENAME:CAPS"></a>GTK_FILE_CHOOSER_CONFIRMATION_ACCEPT_FILENAME</p></td>
 <td class="enum_member_description">
 <p>The file chooser will
-terminate and accept the user’s choice of a file name.</p>
+ terminate and accept the user’s choice of a file name.</p>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
@@ -3164,7 +3355,7 @@ terminate and accept the user’s choice of a file name.</p>
 <td class="enum_member_name"><p><a name="GTK-FILE-CHOOSER-CONFIRMATION-SELECT-AGAIN:CAPS"></a>GTK_FILE_CHOOSER_CONFIRMATION_SELECT_AGAIN</p></td>
 <td class="enum_member_description">
 <p>The file chooser will
-continue running, so as to let the user select another file name.</p>
+ continue running, so as to let the user select another file name.</p>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
@@ -3212,7 +3403,7 @@ continue running, so as to let the user select another file name.</p>
 <td class="enum_member_name"><p><a name="GTK-FILE-CHOOSER-ERROR-ALREADY-EXISTS:CAPS"></a>GTK_FILE_CHOOSER_ERROR_ALREADY_EXISTS</p></td>
 <td class="enum_member_description">
 <p>Indicates a duplicate path (e.g. when
-adding a bookmark).</p>
+ adding a bookmark).</p>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
@@ -3384,35 +3575,35 @@ illustrates this.</p>
 27
 28
 29</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="k">static</span> <span class="n">GtkFileChooserConfirmation</span>
-<span class="nf">confirm_overwrite_callback</span> <span class="p">(</span><span class="n">GtkFileChooser</span> <span class="o">*</span><span class="n">chooser</span><span class="p">,</span> <span class="n">gpointer</span> <span class="n">data</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="kt">char</span> <span class="o">*</span><span class="n">uri</span><span class="p">;</span>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">static</span><span class="normal"> <a href="GtkFileChooser.html#GtkFileChooserConfirmation">GtkFileChooserConfirmation</a></span>
+<span class="function">confirm_overwrite_callback</span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">GtkFileChooser</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">chooser</span><span class="symbol">,</span><span class="normal"> </span><span class="usertype">gpointer</span><span class="normal"> data</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="type">char</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">uri</span><span class="symbol">;</span>
 
-  <span class="n">uri</span> <span class="o">=</span> <span class="n">gtk_file_chooser_get_uri</span> <span class="p">(</span><span class="n">chooser</span><span class="p">);</span>
+<span class="normal">  uri </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GtkFileChooser.html#gtk-file-chooser-get-uri">gtk_file_chooser_get_uri</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">chooser</span><span class="symbol">);</span>
 
-  <span class="k">if</span> <span class="p">(</span><span class="n">is_uri_read_only</span> <span class="p">(</span><span class="n">uri</span><span class="p">))</span>
-    <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">user_wants_to_replace_read_only_file</span> <span class="p">(</span><span class="n">uri</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">GTK_FILE_CHOOSER_CONFIRMATION_ACCEPT_FILENAME</span><span class="p">;</span>
-      <span class="k">else</span>
-        <span class="k">return</span> <span class="n">GTK_FILE_CHOOSER_CONFIRMATION_SELECT_AGAIN</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span>
-      <span class="k">return</span> <span class="n">GTK_FILE_CHOOSER_CONFIRMATION_CONFIRM</span><span class="p">;</span> <span class="c1">// fall back to the default dialog</span>
-<span class="p">}</span>
+<span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="function">is_uri_read_only</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">uri</span><span class="symbol">))</span>
+<span class="normal">    </span><span class="cbracket">{</span>
+<span class="normal">      </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="function">user_wants_to_replace_read_only_file</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">uri</span><span class="symbol">))</span>
+<span class="normal">        </span><span class="keyword">return</span><span class="normal"> <a href="GtkFileChooser.html#GTK-FILE-CHOOSER-CONFIRMATION-ACCEPT-FILENAME:CAPS">GTK_FILE_CHOOSER_CONFIRMATION_ACCEPT_FILENAME</a></span><span class="symbol">;</span>
+<span class="normal">      </span><span class="keyword">else</span>
+<span class="normal">        </span><span class="keyword">return</span><span class="normal"> <a href="GtkFileChooser.html#GTK-FILE-CHOOSER-CONFIRMATION-SELECT-AGAIN:CAPS">GTK_FILE_CHOOSER_CONFIRMATION_SELECT_AGAIN</a></span><span class="symbol">;</span>
+<span class="normal">    </span><span class="cbracket">}</span><span class="normal"> </span><span class="keyword">else</span>
+<span class="normal">      </span><span class="keyword">return</span><span class="normal"> <a href="GtkFileChooser.html#GTK-FILE-CHOOSER-CONFIRMATION-CONFIRM:CAPS">GTK_FILE_CHOOSER_CONFIRMATION_CONFIRM</a></span><span class="symbol">;</span><span class="normal"> </span><span class="comment">// fall back to the default dialog</span>
+<span class="cbracket">}</span>
 
-<span class="p">...</span>
+<span class="symbol">...</span>
 
-<span class="n">chooser</span> <span class="o">=</span> <span class="n">gtk_file_chooser_dialog_new</span> <span class="p">(...);</span>
+<span class="normal">chooser </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="GtkFileChooserDialog.html#gtk-file-chooser-dialog-new">gtk_file_chooser_dialog_new</a></span><span class="normal"> </span><span class="symbol">(...);</span>
 
-<span class="n">gtk_file_chooser_set_do_overwrite_confirmation</span> <span class="p">(</span><span class="n">GTK_FILE_CHOOSER</span> <span class="p">(</span><span class="n">dialog</span><span class="p">),</span> <span class="n">TRUE</span><span class="p">);</span>
-<span class="n">g_signal_connect</span> <span class="p">(</span><span class="n">chooser</span><span class="p">,</span> <span class="s">&quot;confirm-overwrite&quot;</span><span class="p">,</span>
-                  <span class="n">G_CALLBACK</span> <span class="p">(</span><span class="n">confirm_overwrite_callback</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">);</span>
+<span class="function"><a href="GtkFileChooser.html#gtk-file-chooser-set-do-overwrite-confirmation">gtk_file_chooser_set_do_overwrite_confirmation</a></span><span class="normal"> </span><span class="symbol">(</span><span class="function">GTK_FILE_CHOOSER</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">dialog</span><span class="symbol">),</span><span class="normal"> TRUE</span><span class="symbol">);</span>
+<span class="function">g_signal_connect</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">chooser</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"confirm-overwrite"</span><span class="symbol">,</span>
+<span class="normal">                  </span><span class="function">G_CALLBACK</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">confirm_overwrite_callback</span><span class="symbol">),</span><span class="normal"> NULL</span><span class="symbol">);</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="n">gtk_dialog_run</span> <span class="p">(</span><span class="n">chooser</span><span class="p">)</span> <span class="o">==</span> <span class="n">GTK_RESPONSE_ACCEPT</span><span class="p">)</span>
-        <span class="n">save_to_file</span> <span class="p">(</span><span class="n">gtk_file_chooser_get_filename</span> <span class="p">(</span><span class="n">GTK_FILE_CHOOSER</span> <span class="p">(</span><span class="n">chooser</span><span class="p">));</span>
+<span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="function"><a href="GtkDialog.html#gtk-dialog-run">gtk_dialog_run</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">chooser</span><span class="symbol">)</span><span class="normal"> </span><span class="symbol">==</span><span class="normal"> <a href="GtkDialog.html#GTK-RESPONSE-ACCEPT:CAPS">GTK_RESPONSE_ACCEPT</a></span><span class="symbol">)</span>
+<span class="normal">        </span><span class="function">save_to_file</span><span class="normal"> </span><span class="symbol">(</span><span class="function"><a href="GtkFileChooser.html#gtk-file-chooser-get-filename">gtk_file_chooser_get_filename</a></span><span class="normal"> </span><span class="symbol">(</span><span class="function">GTK_FILE_CHOOSER</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">chooser</span><span class="symbol">));</span>
 
-<span class="n">gtk_widget_destroy</span> <span class="p">(</span><span class="n">chooser</span><span class="p">);</span></pre></td>
+<span class="function"><a href="GtkWidget.html#gtk-widget-destroy">gtk_widget_destroy</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">chooser</span><span class="symbol">);</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -3628,6 +3819,6 @@ chooser about whether the preview was generated successfully or not.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.30.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>

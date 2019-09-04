@@ -10,8 +10,8 @@
 
 m4_define([gtk_major_version], [3])
 m4_define([gtk_minor_version], [24])
-m4_define([gtk_micro_version], [10])
-m4_define([gtk_interface_age], [6])
+m4_define([gtk_micro_version], [11])
+m4_define([gtk_interface_age], [7])
 m4_define([gtk_binary_age],
           [m4_eval(100 * gtk_minor_version + gtk_micro_version)])
 m4_define([gtk_version],
@@ -42,8 +42,8 @@ m4_define([gtk_binary_version], [3.0.0])
 
 # required versions of other packages
 m4_define([glib_required_major], [2])
-m4_define([glib_required_minor], [53])
-m4_define([glib_required_micro], [4])
+m4_define([glib_required_minor], [57])
+m4_define([glib_required_micro], [2])
 m4_define([glib_required_version],
           [glib_required_major.glib_required_minor.glib_required_micro])
 m4_define([glib_min_required_minor],
@@ -61,7 +61,7 @@ m4_define([cairo_required_version], [1.14.0])
 m4_define([gdk_pixbuf_required_version], [2.30.0])
 m4_define([introspection_required_version], [1.39.0])
 m4_define([wayland_required_version], [1.9.91])
-m4_define([wayland_protocols_required_version], [1.12])
+m4_define([wayland_protocols_required_version], [1.14])
 m4_define([mirclient_required_version], [0.22.0])
 m4_define([mircookie_required_version], [0.17.0])
 m4_define([epoxy_required_version], [1.4])
@@ -852,10 +852,6 @@ AC_CHECK_LIB(m,round,,)
 AC_CHECK_FUNCS(round rint nearbyint sincos exp2 log2 trunc)
 AC_CHECK_DECLS([isnan, isinf], [], [], [[#include <math.h>]])
 
-# Checks for gdkspawn
-AC_CHECK_HEADERS(crt_externs.h)
-AC_CHECK_FUNCS(_NSGetEnviron)
-
 AC_MSG_CHECKING(whether to build dynamic modules)
 
 AC_ARG_ENABLE(modules,
@@ -1054,17 +1050,6 @@ if test "x$enable_x11_backend" = xyes; then
                 AC_MSG_ERROR([*** libX11 and libXext not found. Check 'config.log' for more details.]))
   AC_CHECK_FUNC(XextFindDisplay, :,
                 AC_MSG_ERROR([*** libX11 and libXext not found. Check 'config.log' for more details.]))
-
-  # Check if <X11/extensions/XIproto.h> is needed for xReply.
-
-  AC_CHECK_TYPE([xReply], ,
-                [AC_CHECK_TYPE([xReply],
-                               [AC_DEFINE([NEED_XIPROTO_H_FOR_XREPLY], 1,
-                                          [Define if <X11/extensions/XIproto.h> needed for xReply])],
-                               [AC_MSG_ERROR([xReply type unavailable. X11 is too old])],
-                               [[#include <X11/extensions/XIproto.h>
-                                 #include <X11/Xlibint.h>]])],
-                [[#include <X11/Xlibint.h>]])
 
   # Check for XKB support.
 
@@ -1963,6 +1948,7 @@ docs/reference/libgail-util/version.xml
 docs/tools/Makefile
 build/Makefile
 build/win32/Makefile
+build/win32/config-msvc.mak
 build/win32/vs9/Makefile
 build/win32/vs9/gtk3-version-paths.vsprops
 build/win32/vs10/Makefile

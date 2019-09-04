@@ -8,8 +8,8 @@ project('gtk+-3.0', 'c',
         license: 'LGPLv2.1+')
 
 glib_major_req = 2
-glib_minor_req = 53
-glib_micro_req = 4
+glib_minor_req = 57
+glib_micro_req = 2
 
 if glib_minor_req.is_odd()
   glib_min_required = 'GLIB_VERSION_@0@_@1@'.format(glib_major_req, glib_minor_req - 1)
@@ -30,7 +30,7 @@ atk_req            = '>= 2.15.1'
 cairo_req          = '>= 1.14.0'
 gdk_pixbuf_req     = '>= 2.30.0'
 introspection_req  = '>= 1.39.0'
-wayland_proto_req  = '>= 1.12'
+wayland_proto_req  = '>= 1.14'
 wayland_req        = '>= 1.9.91'
 epoxy_req          = '>= 1.4'
 cloudproviders_req = '>= 0.2.5'
@@ -60,9 +60,9 @@ gtk_debug_cflags = []
 buildtype = get_option('buildtype')
 if buildtype.startswith('debug')
   gtk_debug_cflags += '-DG_ENABLE_DEBUG'
-  if buildtype == 'debug'
-    gtk_debug_cflags += '-DG_ENABLE_CONSISTENCY_CHECKS'
-  endif
+#  if buildtype == 'debug'
+#    gtk_debug_cflags += '-DG_ENABLE_CONSISTENCY_CHECKS'
+#  endif
 elif buildtype == 'release'
   gtk_debug_cflags += '-DG_DISABLE_CAST_CHECKS'
 endif
@@ -121,7 +121,8 @@ else
   gail_library_version = '0.0.0'
 endif
 
-gtk_osxversions = [(100 * gtk_minor_version) + 1, '@0@.@1@.0'.format((100 * gtk_minor_version) + 1, gtk_micro_version)]
+osx_current = gtk_binary_age - gtk_interface_age + 1
+gtk_osxversions = [osx_current, '@0@.@1@.0'.format(osx_current, gtk_interface_age)]
 
 gtk_api_version = '@0@.0'.format(gtk_major_version)
 
