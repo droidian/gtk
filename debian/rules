@@ -132,7 +132,7 @@ configure_flags_udeb = \
 	--disable-xrandr
 
 %:
-	dh $@ --buildsystem=autoconf --with gir
+	dh $@ --buildsystem=autoconf
 
 override_dh_clean: debian/control
 	# gross kludge to force control generation with the %.in target
