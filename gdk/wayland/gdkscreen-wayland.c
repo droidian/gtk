@@ -87,6 +87,7 @@ struct _GdkWaylandScreenClass
 };
 
 #define OUTPUT_VERSION_WITH_DONE 2
+#define NO_XDG_OUTPUT_DONE_SINCE_VERSION 3
 
 #define GTK_SETTINGS_DBUS_PATH "/org/gtk/Settings"
 #define GTK_SETTINGS_DBUS_NAME "org.gtk.Settings"
@@ -1444,6 +1445,16 @@ should_update_monitor (GdkWaylandMonitor *monitor)
           monitor->version < OUTPUT_VERSION_WITH_DONE);
 }
 
+static gboolean
+should_expect_xdg_output_done (GdkWaylandMonitor *monitor)
+{
+  GdkDisplay *display = GDK_MONITOR (monitor)->display;
+  GdkWaylandDisplay *display_wayland = GDK_WAYLAND_DISPLAY (display);
+
+  return (monitor_has_xdg_output (monitor) &&
+          display_wayland->xdg_output_version < NO_XDG_OUTPUT_DONE_SINCE_VERSION);
+}
+
 static void
 apply_monitor_change (GdkWaylandMonitor *monitor)
 {
@@ -1506,7 +1517,7 @@ xdg_output_handle_done (void                  *data,
             g_message ("handle done xdg-output %d", monitor->id));
 
   monitor->xdg_output_done = TRUE;
-  if (monitor->wl_output_done)
+  if (monitor->wl_output_done && should_expect_xdg_output_done (monitor))
     apply_monitor_change (monitor);
 }
 
@@ -1600,7 +1611,7 @@ output_handle_done (void             *data,
 
   monitor->wl_output_done = TRUE;
 
-  if (!monitor_has_xdg_output (monitor) || monitor->xdg_output_done)
+  if (!should_expect_xdg_output_done (monitor) || monitor->xdg_output_done)
     apply_monitor_change (monitor);
 }
 
