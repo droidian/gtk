@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.12-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sat, 05 Oct 2019 08:48:42 -0400
+
 gtk+3.0 (3.24.11-1) unstable; urgency=medium
 
   [ Simon McVittie ]
