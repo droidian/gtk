@@ -6,8 +6,25 @@ gtk+3.0 (3.24.13-1) UNRELEASED; urgency=medium
 
   [ Iain Lane ]
   * New upstream release
+    + listbox: Fix header row reuse
+    + wayland: Fix handling of tablets
+    + theme:
+      - Adwaita: Fix menu rounding
+      - Adwaita: Various improvements for the Emoji chooser
+      - Adwaita: Refresh check and radio buttons
+      - HighContrast: Fix entry colors
+    + input:
+      - Properly handle bubbling of scroll events
+      - Handle modifier key events properly
+      - Run key controllers in the bubble phase
+      - Do not use VIQR for Vietnamese by default 
+    + statusicons: Render sharply on hi-dpi
+    + wayland: Fix handling of selection ownership
+    + broadway: Fix (lack of) clipboard handling
+  * Rebase patches
+    - Drop 022_disable-viqr-im-for-vi-locale.patch, upstream
 
- -- Iain Lane <laney@debian.org>  Thu, 28 Nov 2019 13:19:45 +0000
+ -- Iain Lane <laney@debian.org>  Thu, 28 Nov 2019 13:28:58 +0000
 
 gtk+3.0 (3.24.12-1) unstable; urgency=medium
 
