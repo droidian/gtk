@@ -1,4 +1,4 @@
-gtk+3.0 (3.24.13-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.13-1) unstable; urgency=medium
 
   [ Simon McVittie ]
   * Move gtk-encode-symbolic-svg from gtk-3-examples to libgtk-3-bin.
@@ -24,7 +24,7 @@ gtk+3.0 (3.24.13-1) UNRELEASED; urgency=medium
   * Rebase patches
     - Drop 022_disable-viqr-im-for-vi-locale.patch, upstream
 
- -- Iain Lane <laney@debian.org>  Thu, 28 Nov 2019 13:28:58 +0000
+ -- Iain Lane <laney@debian.org>  Thu, 28 Nov 2019 14:09:42 +0000
 
 gtk+3.0 (3.24.12-1) unstable; urgency=medium
 
