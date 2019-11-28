@@ -1,9 +1,13 @@
-gtk+3.0 (3.24.12-2) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.13-1) UNRELEASED; urgency=medium
 
+  [ Simon McVittie ]
   * Move gtk-encode-symbolic-svg from gtk-3-examples to libgtk-3-bin.
     It's more of a development tool than an example.
 
- -- Simon McVittie <smcv@debian.org>  Mon, 25 Nov 2019 11:17:59 +0000
+  [ Iain Lane ]
+  * New upstream release
+
+ -- Iain Lane <laney@debian.org>  Thu, 28 Nov 2019 13:19:45 +0000
 
 gtk+3.0 (3.24.12-1) unstable; urgency=medium
 
