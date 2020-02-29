@@ -36,7 +36,7 @@ gtk+3.0 (3.24.13-1) unstable; urgency=medium
       - Properly handle bubbling of scroll events
       - Handle modifier key events properly
       - Run key controllers in the bubble phase
-      - Do not use VIQR for Vietnamese by default 
+      - Do not use VIQR for Vietnamese by default
     + statusicons: Render sharply on hi-dpi
     + wayland: Fix handling of selection ownership
     + broadway: Fix (lack of) clipboard handling
