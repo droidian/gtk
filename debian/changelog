@@ -13,6 +13,7 @@ gtk+3.0 (3.24.14-1) UNRELEASED; urgency=medium
   * d/tests/build: Fail if using an undefined variable ("unofficial strict
     mode")
   * d/upstream/metadata: Add upstream URLs
+  * Standards-Version: 4.5.0 (no changes required)
 
  -- Simon McVittie <smcv@debian.org>  Sat, 29 Feb 2020 14:20:22 +0000
 
