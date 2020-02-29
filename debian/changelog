@@ -1,5 +1,6 @@
-gtk+3.0 (3.24.14-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.14-1) unstable; urgency=medium
 
+  * Team upload
   * New upstream release
     - Update Wayland dependency version
   * d/patches: Apply upstream bug fixes from gtk-3-24 branch up to
@@ -15,7 +16,7 @@ gtk+3.0 (3.24.14-1) UNRELEASED; urgency=medium
   * d/upstream/metadata: Add upstream URLs
   * Standards-Version: 4.5.0 (no changes required)
 
- -- Simon McVittie <smcv@debian.org>  Sat, 29 Feb 2020 14:20:22 +0000
+ -- Simon McVittie <smcv@debian.org>  Sat, 29 Feb 2020 20:34:56 +0000
 
 gtk+3.0 (3.24.13-1) unstable; urgency=medium
 
