@@ -15,8 +15,13 @@ gtk+3.0 (3.24.16-1) UNRELEASED; urgency=medium
   * d/p/updateiconcache-Sort-list-of-entries.patch:
     Backport patch from GTK 4 to make the icon cache reproducible
     (Closes: #953105)
+  * d/p/build-Generate-gdk.gresource.xml-in-sorted-order.patch:
+    Sort GDK resources to improve reproducibility.
+    The combination of this and fixing #953105 should hopefully make the
+    package reliably reproducible.
+  * d/README.source: Write down how to inspect reftest failures
 
- -- Simon McVittie <smcv@debian.org>  Thu, 02 Apr 2020 11:57:57 +0100
+ -- Simon McVittie <smcv@debian.org>  Thu, 02 Apr 2020 12:54:10 +0100
 
 gtk+3.0 (3.24.14-1) unstable; urgency=medium
 
