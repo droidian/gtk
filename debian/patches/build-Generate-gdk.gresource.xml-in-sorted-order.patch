@@ -1,0 +1,25 @@
+From: Simon McVittie <smcv@debian.org>
+Date: Thu, 2 Apr 2020 12:52:16 +0100
+Subject: build: Generate gdk.gresource.xml in sorted order
+
+The order in which the resources get embedded matters for reproducible
+builds.
+
+Signed-off-by: Simon McVittie <smcv@debian.org>
+---
+ gdk/Makefile.am | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/gdk/Makefile.am b/gdk/Makefile.am
+index bcaf272..c40d0e3 100644
+--- a/gdk/Makefile.am
++++ b/gdk/Makefile.am
+@@ -461,7 +461,7 @@ stamp-gc-h: $(top_builddir)/config.status
+ # Resources
+ #
+ 
+-glsl_sources := $(wildcard $(srcdir)/resources/glsl/*.glsl)
++glsl_sources := $(sort $(wildcard $(srcdir)/resources/glsl/*.glsl))
+ 
+ gdk.gresource.xml: Makefile.am
+ 	$(AM_V_GEN) echo "<?xml version='1.0' encoding='UTF-8'?>" > $@; \
