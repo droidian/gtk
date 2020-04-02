@@ -320,7 +320,7 @@ notify_surrounding_text (GtkIMContextWayland *context)
             }
 
           mid = MIN (context->surrounding.cursor_idx,
-                     context->surrounding.cursor_idx) + (cursor_len / 2);
+                     context->surrounding.anchor_idx) + (cursor_len / 2);
           a = MAX (0, mid - (MAX_LEN / 2));
           b = MIN (MAX_LEN, mid + (MAX_LEN / 2));
 
@@ -828,7 +828,7 @@ gtk_im_context_wayland_set_surrounding (GtkIMContext *context,
   context_wayland = GTK_IM_CONTEXT_WAYLAND (context);
 
   g_free (context_wayland->surrounding.text);
-  context_wayland->surrounding.text = g_strdup (text);
+  context_wayland->surrounding.text = g_strndup (text, len);
   context_wayland->surrounding.cursor_idx = cursor_index;
   /* Anchor is not exposed via the set_surrounding interface, emulating. */
   context_wayland->surrounding.anchor_idx = cursor_index;
