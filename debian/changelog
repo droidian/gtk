@@ -1,8 +1,5 @@
 gtk+3.0 (3.24.16-1) UNRELEASED; urgency=medium
 
-  * d/p/updateiconcache-Sort-list-of-entries.patch:
-    Backport patch from GTK 4 to make the icon cache reproducible
-    (Closes: #953105)
   * New upstream release
   * Drop patches that came from upstream
   * d/p/supp-Use-a-single-suppressions-file-for-lib-lib64-and-mul.patch:
@@ -11,8 +8,15 @@ gtk+3.0 (3.24.16-1) UNRELEASED; urgency=medium
   * d/p/Don-t-test-default-constructed-GdkPixbuf-properties.patch:
     Drop patch. Build-depend on gdk-pixbuf 2.40 instead of working around
     a bug in older versions.
+  * d/rules: Mark some reftests as allowed to fail.
+    These reftests are sensitive to the build environment (exact versions
+    of Pango, fonts etc.) and are disabled in upstream's CI.
+    (Closes: #954584)
+  * d/p/updateiconcache-Sort-list-of-entries.patch:
+    Backport patch from GTK 4 to make the icon cache reproducible
+    (Closes: #953105)
 
- -- Simon McVittie <smcv@debian.org>  Thu, 02 Apr 2020 09:51:21 +0100
+ -- Simon McVittie <smcv@debian.org>  Thu, 02 Apr 2020 11:57:57 +0100
 
 gtk+3.0 (3.24.14-1) unstable; urgency=medium
 
