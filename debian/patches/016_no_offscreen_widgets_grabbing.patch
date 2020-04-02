@@ -4,6 +4,7 @@ Subject: Don't let offscreen widget do grabbing
 
 Bug: https://bugzilla.gnome.org/show_bug.cgi?id=607668
 Bug: https://bugzilla.gnome.org/show_bug.cgi?id=658563
+Bug: https://gitlab.gnome.org/GNOME/gtk/issues/368
 Bug-Ubuntu: https://bugs.launchpad.net/bugs/512427
 Forwarded: yes
 ---
