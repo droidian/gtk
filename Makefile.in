@@ -540,7 +540,7 @@ EXTRA_DIST = autogen.sh HACKING README README.in INSTALL INSTALL.in \
 	po/README.translators po/po2tbl.sed.in make-pot \
 	meson_options.txt meson.build po/meson.build \
 	po-properties/meson.build build-aux/meson/post-install.py \
-	config.h.meson gtk.supp gtk64.supp
+	config.h.meson gtk.supp
 TEST_PROGS = 
 
 ### testing rules
@@ -583,7 +583,7 @@ MAINTAINERCLEANFILES = \
 	$(srcdir)/ChangeLog
 
 @OS_UNIX_TRUE@valgrinddir = $(datadir)/gtk-3.0/valgrind
-@OS_UNIX_TRUE@valgrind_DATA = gtk.supp gtk64.supp
+@OS_UNIX_TRUE@valgrind_DATA = gtk.supp
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = gdk-3.0.pc gtk+-3.0.pc gail-3.0.pc \
 	${GDK_BACKENDS:%=gtk+-%-3.0.pc} ${GDK_BACKENDS:%=gdk-%-3.0.pc} \
