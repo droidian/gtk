@@ -1,5 +1,6 @@
-gtk+3.0 (3.24.17-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.17-1) unstable; urgency=medium
 
+  * Team upload
   * New upstream release
     - Fix some regressions in 3.24.16
     - When using the "simple" input method context, load the same compose
@@ -9,7 +10,7 @@ gtk+3.0 (3.24.17-1) UNRELEASED; urgency=medium
   * d/p/supp-Use-a-single-suppressions-file-for-lib-lib64-and-mul.patch:
     Drop, applied upstream
 
- -- Simon McVittie <smcv@debian.org>  Fri, 03 Apr 2020 18:55:22 +0100
+ -- Simon McVittie <smcv@debian.org>  Fri, 03 Apr 2020 19:00:28 +0100
 
 gtk+3.0 (3.24.16-1) unstable; urgency=medium
 
