@@ -1,3 +1,15 @@
+gtk+3.0 (3.24.17-2) UNRELEASED; urgency=medium
+
+  * d/p/Do-not-require-an-initial-configure-for-custom-Wayland-su.patch,
+    d/p/Do-not-require-an-initial-configure-for-DnD-windows.patch:
+    Apply patches from upstream gtk-3-24 branch to fix some Wayland
+    window-sizing regressions (partially resolves: #955820)
+  * d/p/wayland-don-t-call-gdk_wayland_window_configure-without-v.patch:
+    Apply a patch proposed upstream to fix additional Wayland window-sizing
+    regressions (hopefully resolves the rest of #955820)
+
+ -- Simon McVittie <smcv@debian.org>  Sun, 05 Apr 2020 20:12:51 +0100
+
 gtk+3.0 (3.24.17-1) unstable; urgency=medium
 
   * Team upload

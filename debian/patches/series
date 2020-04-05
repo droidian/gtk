@@ -8,3 +8,6 @@ reftest-known-fail.patch
 Disable-accessibility-dump-aka-a11ytests-test.patch
 updateiconcache-Sort-list-of-entries.patch
 build-Generate-gdk.gresource.xml-in-sorted-order.patch
+Do-not-require-an-initial-configure-for-custom-Wayland-su.patch
+Do-not-require-an-initial-configure-for-DnD-windows.patch
+wayland-don-t-call-gdk_wayland_window_configure-without-v.patch
