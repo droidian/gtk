@@ -15,7 +15,7 @@ Applied-upstream: 3.96.0, commit:b364827a5b99e3b02862f36be4c03826e72aefba
  1 file changed, 9 insertions(+)
 
 diff --git a/gtk/updateiconcache.c b/gtk/updateiconcache.c
-index 6f76b6a..fd66ac8 100644
+index b48eaca..6703c8b 100644
 --- a/gtk/updateiconcache.c
 +++ b/gtk/updateiconcache.c
 @@ -600,6 +600,7 @@ scan_directory (const gchar *base_path,

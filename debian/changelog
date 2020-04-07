@@ -1,3 +1,13 @@
+gtk+3.0 (3.24.17-3) UNRELEASED; urgency=medium
+
+  * Update to upstream gtk-3-24 branch, commit 3.24.17-22-g99bae0fb5f
+    - Fix even more Wayland window-sizing regressions
+      (Closes: #955820, we hope)
+  * d/p/wayland-don-t-call-gdk_wayland_window_configure-without-v.patch:
+    Drop patch, superseded by other upstream fixes.
+
+ -- Simon McVittie <smcv@debian.org>  Tue, 07 Apr 2020 10:20:29 +0100
+
 gtk+3.0 (3.24.17-2) unstable; urgency=medium
 
   * Team upload

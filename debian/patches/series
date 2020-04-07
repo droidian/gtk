@@ -1,3 +1,18 @@
+macOS-fix-2436-raise-transient-window-on-focus.patch
+Update-Latvian-translation.patch
+docs-Do-not-call-GTK-APIs-if-gtk_init_check-returns-FALSE.patch
+Update-Basque-translation.patch
+Do-not-require-an-initial-configure-for-custom-Wayland-su.patch
+Do-not-require-an-initial-configure-for-DnD-windows.patch
+wayland-Use-helpers-to-add-remove-margins-from-sizes.patch
+wayland-Always-update-unconfigured-size.patch
+wayland-Store-unconfigured-size-without-margin.patch
+wayland-Guard-against-nonsense-sizes-being-configured.patch
+wayland-Set-unconfigured-size-on-impl-construction.patch
+wayland-Don-t-inhibit-premature-resize-for-popups.patch
+build-Generate-gdk.gresource.xml-in-sorted-order.patch
+wayland-Always-store-unconfigured-size.patch
+updateiconcache-Sort-list-of-entries.patch
 gdk-Don-t-distribute-generated-files-in-tarballs.patch
 gtk-Really-don-t-distribute-built-files.patch
 demos-examples-tests-Don-t-distribute-built-files.patch
@@ -6,8 +21,3 @@ demos-examples-tests-Don-t-distribute-built-files.patch
 060_ignore-random-icons.patch
 reftest-known-fail.patch
 Disable-accessibility-dump-aka-a11ytests-test.patch
-updateiconcache-Sort-list-of-entries.patch
-build-Generate-gdk.gresource.xml-in-sorted-order.patch
-Do-not-require-an-initial-configure-for-custom-Wayland-su.patch
-Do-not-require-an-initial-configure-for-DnD-windows.patch
-wayland-don-t-call-gdk_wayland_window_configure-without-v.patch
