@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.18-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- Simon McVittie <smcv@debian.org>  Fri, 10 Apr 2020 15:26:20 +0100
+
 gtk+3.0 (3.24.17-3) unstable; urgency=medium
 
   * Team upload
