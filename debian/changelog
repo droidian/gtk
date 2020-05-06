@@ -1,8 +1,12 @@
 gtk+3.0 (3.24.20-1) UNRELEASED; urgency=medium
 
   * New upstream release
+  * Depend on librsvg2-common for tests.
+    The unit tests expect that gdk-pixbuf can load SVG files. This is
+    provided by librsvg2-common, which used to be pulled in by
+    adwaita-icon-theme. (Closes: #959390)
 
- -- Simon McVittie <smcv@debian.org>  Wed, 06 May 2020 12:18:36 +0100
+ -- Simon McVittie <smcv@debian.org>  Wed, 06 May 2020 22:55:55 +0100
 
 gtk+3.0 (3.24.18-1) unstable; urgency=medium
 
