@@ -454,7 +454,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GdkEventMask"><span class="returnvalue">GdkEventMask</span></a>
+<span class="returnvalue">GdkEventMask</span>
 </td>
 <td class="function_name">
 <a class="link" href="GtkWidget.html#gtk-widget-get-device-events" title="gtk_widget_get_device_events ()">gtk_widget_get_device_events</a> <span class="c_punctuation">()</span>
@@ -2189,7 +2189,7 @@
 <td class="property_flags">Read / Write</td>
 </tr>
 <tr>
-<td class="property_type"><a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GdkEventMask"><span class="type">GdkEventMask</span></a></td>
+<td class="property_type"><span class="type">GdkEventMask</span></td>
 <td class="property_name"><a class="link" href="GtkWidget.html#GtkWidget--events" title="The “events” property">events</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -5239,7 +5239,7 @@ if it does not have a parent window. </p>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_widget_set_events (<em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
                        <em class="parameter"><code><span class="type">gint</span> events</code></em>);</pre>
-<p>Sets the event mask (see <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GdkEventMask"><span class="type">GdkEventMask</span></a>) for a widget. The event
+<p>Sets the event mask (see <span class="type">GdkEventMask</span>) for a widget. The event
 mask determines which events a widget will receive. Keep in mind
 that different widgets have different default event masks, and by
 changing the event mask you may disrupt a widget’s functionality,
@@ -5278,7 +5278,7 @@ box.</p>
 <a name="gtk-widget-get-events"></a><h3>gtk_widget_get_events ()</h3>
 <pre class="programlisting"><span class="returnvalue">gint</span>
 gtk_widget_get_events (<em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>);</pre>
-<p>Returns the event mask (see <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GdkEventMask"><span class="type">GdkEventMask</span></a>) for the widget. These are the
+<p>Returns the event mask (see <span class="type">GdkEventMask</span>) for the widget. These are the
 events that the widget will receive.</p>
 <p>Note: Internally, the widget event mask will be the logical OR of the event
 mask set through <a class="link" href="GtkWidget.html#gtk-widget-set-events" title="gtk_widget_set_events ()"><code class="function">gtk_widget_set_events()</code></a> or <a class="link" href="GtkWidget.html#gtk-widget-add-events" title="gtk_widget_add_events ()"><code class="function">gtk_widget_add_events()</code></a>, and the
@@ -5332,7 +5332,7 @@ gtk_widget_add_events (<em class="parameter"><code><a class="link" href="GtkWidg
 </tr>
 <tr>
 <td class="parameter_name"><p>events</p></td>
-<td class="parameter_description"><p>an event mask, see <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GdkEventMask"><span class="type">GdkEventMask</span></a></p></td>
+<td class="parameter_description"><p>an event mask, see <span class="type">GdkEventMask</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -5345,8 +5345,8 @@ gtk_widget_add_events (<em class="parameter"><code><a class="link" href="GtkWidg
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_widget_set_device_events (<em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
                               <em class="parameter"><code><a href="https://developer.gnome.org/gdk4/GdkDevice.html#GdkDevice-struct"><span class="type">GdkDevice</span></a> *device</code></em>,
-                              <em class="parameter"><code><a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GdkEventMask"><span class="type">GdkEventMask</span></a> events</code></em>);</pre>
-<p>Sets the device event mask (see <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GdkEventMask"><span class="type">GdkEventMask</span></a>) for a widget. The event
+                              <em class="parameter"><code><span class="type">GdkEventMask</span> events</code></em>);</pre>
+<p>Sets the device event mask (see <span class="type">GdkEventMask</span>) for a widget. The event
 mask determines which events a widget will receive from <em class="parameter"><code>device</code></em>
 . Keep
 in mind that different widgets have different default event masks, and by
@@ -5390,7 +5390,7 @@ and receive events on the event box.</p>
 <hr>
 <div class="refsect2">
 <a name="gtk-widget-get-device-events"></a><h3>gtk_widget_get_device_events ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GdkEventMask"><span class="returnvalue">GdkEventMask</span></a>
+<pre class="programlisting"><span class="returnvalue">GdkEventMask</span>
 gtk_widget_get_device_events (<em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
                               <em class="parameter"><code><a href="https://developer.gnome.org/gdk4/GdkDevice.html#GdkDevice-struct"><span class="type">GdkDevice</span></a> *device</code></em>);</pre>
 <p>Returns the events mask for the widget corresponding to an specific device. These
@@ -5431,7 +5431,7 @@ are the events that the widget will receive when <em class="parameter"><code>dev
 <pre class="programlisting"><span class="returnvalue">void</span>
 gtk_widget_add_device_events (<em class="parameter"><code><a class="link" href="GtkWidget.html" title="GtkWidget"><span class="type">GtkWidget</span></a> *widget</code></em>,
                               <em class="parameter"><code><a href="https://developer.gnome.org/gdk4/GdkDevice.html#GdkDevice-struct"><span class="type">GdkDevice</span></a> *device</code></em>,
-                              <em class="parameter"><code><a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GdkEventMask"><span class="type">GdkEventMask</span></a> events</code></em>);</pre>
+                              <em class="parameter"><code><span class="type">GdkEventMask</span> events</code></em>);</pre>
 <p>Adds the device events in the bitfield <em class="parameter"><code>events</code></em>
  to the event mask for
 <em class="parameter"><code>widget</code></em>
@@ -5457,7 +5457,7 @@ gtk_widget_add_device_events (<em class="parameter"><code><a class="link" href="
 </tr>
 <tr>
 <td class="parameter_name"><p>events</p></td>
-<td class="parameter_description"><p>an event mask, see <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GdkEventMask"><span class="type">GdkEventMask</span></a></p></td>
+<td class="parameter_description"><p>an event mask, see <span class="type">GdkEventMask</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -14664,7 +14664,7 @@ allocation</p>
 <hr>
 <div class="refsect2">
 <a name="GtkWidget--events"></a><h3>The <code class="literal">“events”</code> property</h3>
-<pre class="programlisting">  “events”                   <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GdkEventMask"><span class="type">GdkEventMask</span></a></pre>
+<pre class="programlisting">  “events”                   <span class="type">GdkEventMask</span></pre>
 <p>The event mask that decides what kind of GdkEvents this widget gets.</p>
 <p>Owner: GtkWidget</p>
 <p>Flags: Read / Write</p>
@@ -15328,7 +15328,7 @@ user_function (<a class="link" href="GtkWidget.html" title="GtkWidget"><span cla
 <p>The ::button-press-event signal will be emitted when a button
 (typically from a mouse) is pressed.</p>
 <p>To receive this signal, the <span class="type">GdkWindow</span> associated to the
-widget needs to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-BUTTON-PRESS-MASK:CAPS"><span class="type">GDK_BUTTON_PRESS_MASK</span></a> mask.</p>
+widget needs to enable the <span class="type">GDK_BUTTON_PRESS_MASK</span> mask.</p>
 <p>This signal will be sent to the grab widget if there is one.</p>
 <div class="refsect3">
 <a name="GtkWidget-button-press-event.parameters"></a><h4>Parameters</h4>
@@ -15375,7 +15375,7 @@ user_function (<a class="link" href="GtkWidget.html" title="GtkWidget"><span cla
 <p>The ::button-release-event signal will be emitted when a button
 (typically from a mouse) is released.</p>
 <p>To receive this signal, the <span class="type">GdkWindow</span> associated to the
-widget needs to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-BUTTON-RELEASE-MASK:CAPS"><span class="type">GDK_BUTTON_RELEASE_MASK</span></a> mask.</p>
+widget needs to enable the <span class="type">GDK_BUTTON_RELEASE_MASK</span> mask.</p>
 <p>This signal will be sent to the grab widget if there is one.</p>
 <div class="refsect3">
 <a name="GtkWidget-button-release-event.parameters"></a><h4>Parameters</h4>
@@ -15547,7 +15547,7 @@ user_function (<a class="link" href="GtkWidget.html" title="GtkWidget"><span cla
 stacking of the <em class="parameter"><code>widget</code></em>
 's window has changed.</p>
 <p>To receive this signal, the <span class="type">GdkWindow</span> associated to the widget needs
-to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-STRUCTURE-MASK:CAPS"><span class="type">GDK_STRUCTURE_MASK</span></a> mask. GDK will enable this mask
+to enable the <span class="type">GDK_STRUCTURE_MASK</span> mask. GDK will enable this mask
 automatically for all new windows.</p>
 <div class="refsect3">
 <a name="GtkWidget-configure-event.parameters"></a><h4>Parameters</h4>
@@ -15722,7 +15722,7 @@ You rarely get this signal, because most widgets disconnect themselves
 from their window before they destroy it, so no widget owns the
 window at destroy time.</p>
 <p>To receive this signal, the <span class="type">GdkWindow</span> associated to the widget needs
-to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-STRUCTURE-MASK:CAPS"><span class="type">GDK_STRUCTURE_MASK</span></a> mask. GDK will enable this mask
+to enable the <span class="type">GDK_STRUCTURE_MASK</span> mask. GDK will enable this mask
 automatically for all new windows.</p>
 <div class="refsect3">
 <a name="GtkWidget-destroy-event.parameters"></a><h4>Parameters</h4>
@@ -16611,7 +16611,7 @@ user_function (<a class="link" href="GtkWidget.html" title="GtkWidget"><span cla
 the <em class="parameter"><code>widget</code></em>
 's window.</p>
 <p>To receive this signal, the <span class="type">GdkWindow</span> associated to the widget needs
-to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-ENTER-NOTIFY-MASK:CAPS"><span class="type">GDK_ENTER_NOTIFY_MASK</span></a> mask.</p>
+to enable the <span class="type">GDK_ENTER_NOTIFY_MASK</span> mask.</p>
 <p>This signal will be sent to the grab widget if there is one.</p>
 <div class="refsect3">
 <a name="GtkWidget-enter-notify-event.parameters"></a><h4>Parameters</h4>
@@ -16781,7 +16781,7 @@ user_function (<a class="link" href="GtkWidget.html" title="GtkWidget"><span cla
 enters the <em class="parameter"><code>widget</code></em>
 's window.</p>
 <p>To receive this signal, the <span class="type">GdkWindow</span> associated to the widget needs
-to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-FOCUS-CHANGE-MASK:CAPS"><span class="type">GDK_FOCUS_CHANGE_MASK</span></a> mask.</p>
+to enable the <span class="type">GDK_FOCUS_CHANGE_MASK</span> mask.</p>
 <div class="refsect3">
 <a name="GtkWidget-focus-in-event.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -16828,7 +16828,7 @@ user_function (<a class="link" href="GtkWidget.html" title="GtkWidget"><span cla
 leaves the <em class="parameter"><code>widget</code></em>
 's window.</p>
 <p>To receive this signal, the <span class="type">GdkWindow</span> associated to the widget needs
-to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-FOCUS-CHANGE-MASK:CAPS"><span class="type">GDK_FOCUS_CHANGE_MASK</span></a> mask.</p>
+to enable the <span class="type">GDK_FOCUS_CHANGE_MASK</span> mask.</p>
 <div class="refsect3">
 <a name="GtkWidget-focus-out-event.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -17071,7 +17071,7 @@ user_function (<a class="link" href="GtkWidget.html" title="GtkWidget"><span cla
 <p>The ::key-press-event signal is emitted when a key is pressed. The signal
 emission will reoccur at the key-repeat rate when the key is kept pressed.</p>
 <p>To receive this signal, the <span class="type">GdkWindow</span> associated to the widget needs
-to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-KEY-PRESS-MASK:CAPS"><span class="type">GDK_KEY_PRESS_MASK</span></a> mask.</p>
+to enable the <span class="type">GDK_KEY_PRESS_MASK</span> mask.</p>
 <p>This signal will be sent to the grab widget if there is one.</p>
 <div class="refsect3">
 <a name="GtkWidget-key-press-event.parameters"></a><h4>Parameters</h4>
@@ -17116,7 +17116,7 @@ user_function (<a class="link" href="GtkWidget.html" title="GtkWidget"><span cla
                <span class="type">gpointer</span>   user_data)</pre>
 <p>The ::key-release-event signal is emitted when a key is released.</p>
 <p>To receive this signal, the <span class="type">GdkWindow</span> associated to the widget needs
-to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-KEY-RELEASE-MASK:CAPS"><span class="type">GDK_KEY_RELEASE_MASK</span></a> mask.</p>
+to enable the <span class="type">GDK_KEY_RELEASE_MASK</span> mask.</p>
 <p>This signal will be sent to the grab widget if there is one.</p>
 <div class="refsect3">
 <a name="GtkWidget-key-release-event.parameters"></a><h4>Parameters</h4>
@@ -17208,7 +17208,7 @@ user_function (<a class="link" href="GtkWidget.html" title="GtkWidget"><span cla
 the <em class="parameter"><code>widget</code></em>
 's window.</p>
 <p>To receive this signal, the <span class="type">GdkWindow</span> associated to the widget needs
-to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-LEAVE-NOTIFY-MASK:CAPS"><span class="type">GDK_LEAVE_NOTIFY_MASK</span></a> mask.</p>
+to enable the <span class="type">GDK_LEAVE_NOTIFY_MASK</span> mask.</p>
 <p>This signal will be sent to the grab widget if there is one.</p>
 <div class="refsect3">
 <a name="GtkWidget-leave-notify-event.parameters"></a><h4>Parameters</h4>
@@ -17295,7 +17295,7 @@ user_function (<a class="link" href="GtkWidget.html" title="GtkWidget"><span cla
 's window is
 mapped. A window is mapped when it becomes visible on the screen.</p>
 <p>To receive this signal, the <span class="type">GdkWindow</span> associated to the widget needs
-to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-STRUCTURE-MASK:CAPS"><span class="type">GDK_STRUCTURE_MASK</span></a> mask. GDK will enable this mask
+to enable the <span class="type">GDK_STRUCTURE_MASK</span> mask. GDK will enable this mask
 automatically for all new windows.</p>
 <div class="refsect3">
 <a name="GtkWidget-map-event.parameters"></a><h4>Parameters</h4>
@@ -17388,7 +17388,7 @@ user_function (<a class="link" href="GtkWidget.html" title="GtkWidget"><span cla
 <p>The ::motion-notify-event signal is emitted when the pointer moves
 over the widget's <span class="type">GdkWindow</span>.</p>
 <p>To receive this signal, the <span class="type">GdkWindow</span> associated to the widget
-needs to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-POINTER-MOTION-MASK:CAPS"><span class="type">GDK_POINTER_MOTION_MASK</span></a> mask.</p>
+needs to enable the <span class="type">GDK_POINTER_MOTION_MASK</span> mask.</p>
 <p>This signal will be sent to the grab widget if there is one.</p>
 <div class="refsect3">
 <a name="GtkWidget-motion-notify-event.parameters"></a><h4>Parameters</h4>
@@ -17547,7 +17547,7 @@ user_function (<a class="link" href="GtkWidget.html" title="GtkWidget"><span cla
 the <em class="parameter"><code>widget</code></em>
 's window has been changed or deleted.</p>
 <p>To receive this signal, the <span class="type">GdkWindow</span> associated to the widget needs
-to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-PROPERTY-CHANGE-MASK:CAPS"><span class="type">GDK_PROPERTY_CHANGE_MASK</span></a> mask.</p>
+to enable the <span class="type">GDK_PROPERTY_CHANGE_MASK</span> mask.</p>
 <div class="refsect3">
 <a name="GtkWidget-property-notify-event.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -17591,7 +17591,7 @@ user_function (<a class="link" href="GtkWidget.html" title="GtkWidget"><span cla
                <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GdkEvent-struct"><span class="type">GdkEvent</span></a>  *event,
                <span class="type">gpointer</span>   user_data)</pre>
 <p>To receive this signal the <span class="type">GdkWindow</span> associated to the widget needs
-to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-PROXIMITY-IN-MASK:CAPS"><span class="type">GDK_PROXIMITY_IN_MASK</span></a> mask.</p>
+to enable the <span class="type">GDK_PROXIMITY_IN_MASK</span> mask.</p>
 <p>This signal will be sent to the grab widget if there is one.</p>
 <div class="refsect3">
 <a name="GtkWidget-proximity-in-event.parameters"></a><h4>Parameters</h4>
@@ -17636,7 +17636,7 @@ user_function (<a class="link" href="GtkWidget.html" title="GtkWidget"><span cla
                <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GdkEvent-struct"><span class="type">GdkEvent</span></a>  *event,
                <span class="type">gpointer</span>   user_data)</pre>
 <p>To receive this signal the <span class="type">GdkWindow</span> associated to the widget needs
-to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-PROXIMITY-OUT-MASK:CAPS"><span class="type">GDK_PROXIMITY_OUT_MASK</span></a> mask.</p>
+to enable the <span class="type">GDK_PROXIMITY_OUT_MASK</span> mask.</p>
 <p>This signal will be sent to the grab widget if there is one.</p>
 <div class="refsect3">
 <a name="GtkWidget-proximity-out-event.parameters"></a><h4>Parameters</h4>
@@ -17838,7 +17838,7 @@ user_function (<a class="link" href="GtkWidget.html" title="GtkWidget"><span cla
 range is pressed. Wheel mice are usually configured to generate
 button press events for buttons 4 and 5 when the wheel is turned.</p>
 <p>To receive this signal, the <span class="type">GdkWindow</span> associated to the widget needs
-to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-SCROLL-MASK:CAPS"><span class="type">GDK_SCROLL_MASK</span></a> mask.</p>
+to enable the <span class="type">GDK_SCROLL_MASK</span> mask.</p>
 <p>This signal will be sent to the grab widget if there is one.</p>
 <div class="refsect3">
 <a name="GtkWidget-scroll-event.parameters"></a><h4>Parameters</h4>
@@ -18398,7 +18398,7 @@ user_function (<a class="link" href="GtkWidget.html" title="GtkWidget"><span cla
 's window is
 unmapped. A window is unmapped when it becomes invisible on the screen.</p>
 <p>To receive this signal, the <span class="type">GdkWindow</span> associated to the widget needs
-to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-STRUCTURE-MASK:CAPS"><span class="type">GDK_STRUCTURE_MASK</span></a> mask. GDK will enable this mask
+to enable the <span class="type">GDK_STRUCTURE_MASK</span> mask. GDK will enable this mask
 automatically for all new windows.</p>
 <div class="refsect3">
 <a name="GtkWidget-unmap-event.parameters"></a><h4>Parameters</h4>
@@ -18534,7 +18534,7 @@ user_function (<a class="link" href="GtkWidget.html" title="GtkWidget"><span cla
 toplevel window associated to the <em class="parameter"><code>widget</code></em>
  changes.</p>
 <p>To receive this signal the <span class="type">GdkWindow</span> associated to the widget
-needs to enable the <a href="https://developer.gnome.org/gdk4/gdk4-Events.html#GDK-STRUCTURE-MASK:CAPS"><span class="type">GDK_STRUCTURE_MASK</span></a> mask. GDK will enable
+needs to enable the <span class="type">GDK_STRUCTURE_MASK</span> mask. GDK will enable
 this mask automatically for all new windows.</p>
 <div class="refsect3">
 <a name="GtkWidget-window-state-event.parameters"></a><h4>Parameters</h4>
