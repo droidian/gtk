@@ -537,8 +537,8 @@ GTESTER_REPORT = gtester-report		# in $PATH for non-GLIB packages
 
 # initialize variables for unconditional += appending
 EXTRA_DIST = autogen.sh HACKING README README.in INSTALL INSTALL.in \
-	NEWS.pre-1-0 README.commits README.win32 config.h.win32 \
-	makefile.msc gtk-zip.sh.in sanitize-la.sh \
+	NEWS.pre-1-0 README.commits README.win32 check-version.py \
+	config.h.win32 makefile.msc gtk-zip.sh.in sanitize-la.sh \
 	po/README.translators po/po2tbl.sed.in make-pot \
 	meson_options.txt meson.build po/meson.build \
 	po-properties/meson.build build-aux/meson/post-install.py \

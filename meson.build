@@ -1,5 +1,5 @@
 project('gtk+-3.0', 'c',
-        version: '3.24.20',
+        version: '3.24.21',
         default_options: [
           'buildtype=debugoptimized',
           'warning_level=1'
@@ -51,19 +51,20 @@ gtk_version       = meson.project_version()
 gtk_major_version = gtk_version.split('.')[0].to_int()
 gtk_minor_version = gtk_version.split('.')[1].to_int()
 gtk_micro_version = gtk_version.split('.')[2].to_int()
-gtk_interface_age = 7
+gtk_interface_age = 17
 add_project_arguments('-DGTK_VERSION="@0@"'.format(meson.project_version()), language: 'c')
 
 add_project_arguments('-D_GNU_SOURCE', language: 'c')
 
 gtk_debug_cflags = []
-buildtype = get_option('buildtype')
-if buildtype.startswith('debug')
+debug = get_option('debug')
+optimization = get_option('optimization')
+if debug
   gtk_debug_cflags += '-DG_ENABLE_DEBUG'
-#  if buildtype == 'debug'
-#    gtk_debug_cflags += '-DG_ENABLE_CONSISTENCY_CHECKS'
-#  endif
-elif buildtype == 'release'
+  if optimization in ['0', 'g']
+    gtk_debug_cflags += '-DG_ENABLE_CONSISTENCY_CHECKS'
+  endif
+elif optimization in ['2', '3', 's']
   gtk_debug_cflags += '-DG_DISABLE_CAST_CHECKS'
 endif
 
@@ -477,6 +478,16 @@ if require_harfbuzz and not harfbuzz_dep.found()
                               fallback: ['harfbuzz', 'libharfbuzz_dep'])
 endif
 
+tracker3_enabled = get_option('tracker3')
+if tracker3_enabled
+  tracker3_dep = dependency('tracker-sparql-3.0', required: false)
+  if tracker3_dep.found()
+    cdata.set('HAVE_TRACKER3', tracker3_dep.found())
+  else
+    error('Tracker3 not found, but was explicitly requested.')
+  endif
+endif
+
 if iso_codes_dep.found()
   cdata.set_quoted('ISO_CODES_PREFIX', iso_codes_dep.get_pkgconfig_variable('prefix'))
 else
@@ -636,7 +647,7 @@ if broadway_enabled
 endif
 
 if quartz_enabled
-  pc_gdk_extra_libs += ['-framework Cocoa', '-framework Carbon', '-framework CoreGraphics']
+  pc_gdk_extra_libs += ['-Wl,-framework,Cocoa', '-Wl,-framework,Carbon', '-Wl,-framework,CoreGraphics']
 endif
 
 extra_demo_ldflags = []
