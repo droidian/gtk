@@ -1,11 +1,12 @@
-gtk+3.0 (3.24.21-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.21-1) experimental; urgency=medium
 
+  * Team upload
   * New upstream release
     - Fix ability to use BSD-3-clause, Apache 2.0 and MPL 2.0 in
       GtkAboutDialog (Closes: #960303)
   * Add patch to fix FTBFS with newer GLib versions (Closes: #964679)
 
- -- Simon McVittie <smcv@debian.org>  Wed, 05 Aug 2020 15:19:18 +0100
+ -- Simon McVittie <smcv@debian.org>  Wed, 05 Aug 2020 15:33:48 +0100
 
 gtk+3.0 (3.24.20-1) unstable; urgency=medium
 
