@@ -20,6 +20,7 @@ Signed-off-by: Simon McVittie <smcv@debian.org>
 Bug: https://gitlab.gnome.org/GNOME/gtk/-/issues/2919
 Forwarded: https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/2218
 Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=964679
+Applied-upstream: 3.24.22, commit:b4d120fcb415f01966c62ce2010c89867e079057
 ---
  gdk/Makefile.am | 4 ++--
  gtk/Makefile.am | 4 ++--
