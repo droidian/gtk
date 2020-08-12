@@ -1,5 +1,5 @@
 project('gtk+-3.0', 'c',
-        version: '3.24.21',
+        version: '3.24.22',
         default_options: [
           'buildtype=debugoptimized',
           'warning_level=1'
@@ -51,7 +51,7 @@ gtk_version       = meson.project_version()
 gtk_major_version = gtk_version.split('.')[0].to_int()
 gtk_minor_version = gtk_version.split('.')[1].to_int()
 gtk_micro_version = gtk_version.split('.')[2].to_int()
-gtk_interface_age = 17
+gtk_interface_age = 18
 add_project_arguments('-DGTK_VERSION="@0@"'.format(meson.project_version()), language: 'c')
 
 add_project_arguments('-D_GNU_SOURCE', language: 'c')
@@ -275,9 +275,12 @@ endif
 if cc.get_id() == 'msvc'
   # Compiler options taken from msvc_recommended_pragmas.h
   # in GLib, based on _Win32_Programming_ by Rector and Newcomer
-  test_cflags = []
-  add_project_arguments('-FImsvc_recommended_pragmas.h', language: 'c')
-  add_project_arguments('-D_USE_MATH_DEFINES', language: 'c')
+  test_cflags = [
+    '-FImsvc_recommended_pragmas.h',
+    '-D_USE_MATH_DEFINES',
+    '-utf-8',
+  ]
+  add_project_arguments(cc.get_supported_arguments(test_cflags), language: 'c')
 elif cc.get_id() == 'gcc' or cc.get_id() == 'clang'
   test_cflags = [
     '-fno-strict-aliasing',
@@ -883,12 +886,12 @@ cairo_packages = ''
 if cairo_pkg_found
   cairo_packages += ' '.join([ ' cairo', cairo_req ])
 elif cc.get_id() == 'msvc' and cairo_dep.found()
-  cairo_packages += ' '.join([ ' -lcairo' ])
+  cairo_libs += '-lcairo'
 endif
 if cairogobj_pkg_found
   cairo_packages += ' '.join([ ' cairo-gobject', cairo_req ])
 elif cc.get_id() == 'msvc' and cairogobj_dep.found()
-  cairo_packages += ' '.join([ ' -lcairo-gobject' ])
+  cairo_libs += '-lcairo-gobject'
 endif
 
 gdk_packages += cairo_packages
