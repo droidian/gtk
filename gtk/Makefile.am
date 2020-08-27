@@ -1767,7 +1767,8 @@ gsettings_SCHEMAS = \
 	org.gtk.Settings.FileChooser.gschema.xml \
 	org.gtk.Settings.ColorChooser.gschema.xml \
 	org.gtk.Settings.EmojiChooser.gschema.xml \
-	org.gtk.Settings.Debug.gschema.xml
+	org.gtk.Settings.Debug.gschema.xml \
+	org.gtk.Settings.Purism.gschema.xml
 
 @GSETTINGS_RULES@
 
