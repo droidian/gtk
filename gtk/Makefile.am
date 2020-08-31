@@ -602,6 +602,7 @@ gtk_private_h_sources =		\
 	gtktreemenu.h		\
 	gdkpixbufutilsprivate.h \
 	hdy-css-private.h	\
+	hdy-view-switcher-bar-private.h	\
 	hdy-view-switcher-button-private.h	\
 	hdy-view-switcher-private.h	\
 	open-type-layout.h	\
@@ -981,6 +982,7 @@ gtk_base_c_sources = 		\
 	gdkpixbufutils.c	\
 	hdy-css.c	\
 	hdy-view-switcher.c	\
+	hdy-view-switcher-bar.c	\
 	hdy-view-switcher-button.c	\
 	language-names.c	\
 	script-names.c
@@ -1242,6 +1244,7 @@ templates =				\
 	ui/gtktooltipwindow.ui		\
 	ui/gtkvolumebutton.ui		\
 	ui/gtksidebarrow.ui		\
+	ui/hdy-view-switcher-bar.ui	\
 	ui/hdy-view-switcher-button.ui
 
 #
