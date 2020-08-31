@@ -363,7 +363,8 @@ gtk_semi_private_h_sources = \
 
 gtk_private_type_h_sources =	\
 	gtkcsstypesprivate.h	\
-	gtktexthandleprivate.h
+	gtktexthandleprivate.h	\
+	hdy-view-switcher-private.h
 
 
 # GTK+ header files that don't get installed
@@ -600,7 +601,9 @@ gtk_private_h_sources =		\
 	gtkwindowprivate.h	\
 	gtktreemenu.h		\
 	gdkpixbufutilsprivate.h \
+	hdy-css-private.h	\
 	hdy-view-switcher-button-private.h	\
+	hdy-view-switcher-private.h	\
 	open-type-layout.h	\
 	language-names.h	\
 	script-names.h
@@ -976,6 +979,8 @@ gtk_base_c_sources = 		\
 	gtkwin32draw.c		\
 	gtkwin32theme.c		\
 	gdkpixbufutils.c	\
+	hdy-css.c	\
+	hdy-view-switcher.c	\
 	hdy-view-switcher-button.c	\
 	language-names.c	\
 	script-names.c
