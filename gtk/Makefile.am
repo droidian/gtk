@@ -609,6 +609,7 @@ gtk_private_h_sources =		\
 	hdy-view-switcher-bar-private.h	\
 	hdy-view-switcher-button-private.h	\
 	hdy-view-switcher-private.h	\
+	hdy-view-switcher-title-private.h	\
 	open-type-layout.h	\
 	language-names.h	\
 	script-names.h
@@ -990,6 +991,7 @@ gtk_base_c_sources = 		\
 	hdy-view-switcher.c	\
 	hdy-view-switcher-bar.c	\
 	hdy-view-switcher-button.c	\
+	hdy-view-switcher-title.c	\
 	language-names.c	\
 	script-names.c
 
@@ -1251,7 +1253,8 @@ templates =				\
 	ui/gtkvolumebutton.ui		\
 	ui/gtksidebarrow.ui		\
 	ui/hdy-view-switcher-bar.ui	\
-	ui/hdy-view-switcher-button.ui
+	ui/hdy-view-switcher-button.ui	\
+	ui/hdy-view-switcher-title.ui
 
 #
 # rules to generate built sources
