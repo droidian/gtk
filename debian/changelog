@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.23-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- Iain Lane <iain.lane@canonical.com>  Thu, 10 Sep 2020 15:35:30 +0100
+
 gtk+3.0 (3.24.22-1) unstable; urgency=medium
 
   * Team upload
