@@ -2,7 +2,7 @@ Source: gtk+3.0
 Section: libs
 Priority: optional
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
-Uploaders: Iain Lane <laney@debian.org>, Jeremy Bicha <jbicha@debian.org>
+Uploaders: Iain Lane <laney@debian.org>
 Build-Depends: adwaita-icon-theme <!nocheck>,
                at-spi2-core <!nocheck>,
                dbus <!nocheck>,
@@ -45,6 +45,7 @@ Build-Depends: adwaita-icon-theme <!nocheck>,
                libxml2-utils,
                libxrandr-dev (>= 2:1.5.0),
                pkg-config,
+               sassc,
                wayland-protocols (>= 1.14) [linux-any],
                xauth <!nocheck>,
                xvfb <!nocheck>

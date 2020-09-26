@@ -45,6 +45,7 @@ Build-Depends: adwaita-icon-theme <!nocheck>,
                libxml2-utils,
                libxrandr-dev (>= 2:1.5.0),
                pkg-config,
+               sassc,
                wayland-protocols (>= 1.14) [linux-any],
                xauth <!nocheck>,
                xvfb <!nocheck>
