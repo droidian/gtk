@@ -516,10 +516,6 @@ substitutions = \
 	$(AM_V_GEN) sed $(substitutions) $< > $@.tmp && mv $@.tmp $@
 
 built_tests = 			\
-	reftests.test		\
-	reftests-dark.test	\
-	reftests-hc.test	\
-	reftests-hci.test	\
 	$(NULL)
 
 DISTCLEANFILES = $(built_tests)
