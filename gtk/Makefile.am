@@ -364,6 +364,7 @@ gtk_semi_private_h_sources = \
 gtk_private_type_h_sources =	\
 	gtkcsstypesprivate.h	\
 	gtktexthandleprivate.h	\
+	hdy-navigation-direction-private.h \
 	hdy-squeezer-private.h	\
 	hdy-view-switcher-private.h
 
@@ -605,6 +606,7 @@ gtk_private_h_sources =		\
 	hdy-animation-private.h	\
 	hdy-cairo-private.h	\
 	hdy-css-private.h	\
+	hdy-navigation-direction-private.h	\
 	hdy-shadow-helper-private.h	\
 	hdy-squeezer-private.h	\
 	hdy-view-switcher-bar-private.h	\
@@ -988,6 +990,7 @@ gtk_base_c_sources = 		\
 	gdkpixbufutils.c	\
 	hdy-animation.c	\
 	hdy-css.c	\
+	hdy-navigation-direction.c	\
 	hdy-squeezer.c	\
 	hdy-shadow-helper.c	\
 	hdy-view-switcher.c	\
