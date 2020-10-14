@@ -605,6 +605,7 @@ gtk_private_h_sources =		\
 	hdy-animation-private.h	\
 	hdy-cairo-private.h	\
 	hdy-css-private.h	\
+	hdy-shadow-helper-private.h	\
 	hdy-squeezer-private.h	\
 	hdy-view-switcher-bar-private.h	\
 	hdy-view-switcher-button-private.h	\
@@ -988,6 +989,7 @@ gtk_base_c_sources = 		\
 	hdy-animation.c	\
 	hdy-css.c	\
 	hdy-squeezer.c	\
+	hdy-shadow-helper.c	\
 	hdy-view-switcher.c	\
 	hdy-view-switcher-bar.c	\
 	hdy-view-switcher-button.c	\
