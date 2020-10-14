@@ -366,6 +366,8 @@ gtk_private_type_h_sources =	\
 	gtktexthandleprivate.h	\
 	hdy-navigation-direction-private.h \
 	hdy-squeezer-private.h	\
+	hdy-swipeable-private.h \
+	hdy-swipe-tracker-private.h \
 	hdy-view-switcher-private.h
 
 
@@ -609,6 +611,8 @@ gtk_private_h_sources =		\
 	hdy-navigation-direction-private.h	\
 	hdy-shadow-helper-private.h	\
 	hdy-squeezer-private.h	\
+	hdy-swipeable-private.h \
+	hdy-swipe-tracker-private.h \
 	hdy-view-switcher-bar-private.h	\
 	hdy-view-switcher-button-private.h	\
 	hdy-view-switcher-private.h	\
@@ -993,6 +997,8 @@ gtk_base_c_sources = 		\
 	hdy-navigation-direction.c	\
 	hdy-squeezer.c	\
 	hdy-shadow-helper.c	\
+	hdy-swipeable.c		\
+	hdy-swipe-tracker.c	\
 	hdy-view-switcher.c	\
 	hdy-view-switcher-bar.c	\
 	hdy-view-switcher-button.c	\
