@@ -607,6 +607,7 @@ gtk_private_h_sources =		\
 	gdkpixbufutilsprivate.h \
 	hdy-animation-private.h	\
 	hdy-cairo-private.h	\
+	hdy-clamp-private.h	\
 	hdy-css-private.h	\
 	hdy-navigation-direction-private.h	\
 	hdy-shadow-helper-private.h	\
@@ -993,6 +994,7 @@ gtk_base_c_sources = 		\
 	gtkwin32theme.c		\
 	gdkpixbufutils.c	\
 	hdy-animation.c	\
+	hdy-clamp.c	\
 	hdy-css.c	\
 	hdy-navigation-direction.c	\
 	hdy-squeezer.c	\
