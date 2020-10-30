@@ -6,4 +6,5 @@ demos-examples-tests-Don-t-distribute-built-files.patch
 017_no_offscreen_device_grabbing.patch
 060_ignore-random-icons.patch
 reftest-known-fail.patch
+Don-t-test-default-constructed-GdkPixbuf-properties.patch
 Disable-accessibility-dump-aka-a11ytests-test.patch
