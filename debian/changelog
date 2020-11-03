@@ -1,3 +1,15 @@
+gtk+3.0 (3.24.23-2pureos1) amber-phone; urgency=medium
+
+  [ Adrien Plazas ]
+  * librem5: Add CI
+
+  [ Alexander Mikhaylenko ]
+  * Adjust gbp config for amber-phone
+  * Revert "Build-depend on gdk-pixbuf 2.40 instead of working around an old bug"
+  * Add previous downstream patches
+
+ -- Alexander Mikhaylenko <alexander.mikhaylenko@puri.sm>  Tue, 03 Nov 2020 17:02:07 +0500
+
 gtk+3.0 (3.24.23-2) unstable; urgency=medium
 
   * Regenerate CSS themes with sassc during the build.
