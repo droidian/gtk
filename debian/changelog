@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.23-2pureos2) amber-phone; urgency=medium
+
+  * Fix the build
+
+ -- Alexander Mikhaylenko <alexander.mikhaylenko@puri.sm>  Wed, 04 Nov 2020 19:10:43 +0500
+
 gtk+3.0 (3.24.23-2pureos1) amber-phone; urgency=medium
 
   [ Adrien Plazas ]
