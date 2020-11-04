@@ -35,6 +35,7 @@ window-Maximize-resizable-pseudo-dialogs-on-mobile.patch
 headerbar-Use-a-back-button-in-dialogs-on-mobile.patch
 infobar-Move-the-action-area-below.patch
 Reduce-the-font-chooser-minimum-size.patch
+window-Don-t-allow-window-dragging-on-phones.patch
 gtkapplication-dbus-Initialise-screensaver-active-propert.patch
 wayland-Emit-dummy-configure-event-when-resizing-while-fi.patch
 gestureswipe-Count-last-event-when-calculating-velocity.patch
