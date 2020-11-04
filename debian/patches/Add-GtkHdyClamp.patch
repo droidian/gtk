@@ -71,7 +71,7 @@ index 0000000..b41278f
 +G_END_DECLS
 diff --git a/gtk/hdy-clamp.c b/gtk/hdy-clamp.c
 new file mode 100644
-index 0000000..7d8a107
+index 0000000..8b287dc
 --- /dev/null
 +++ b/gtk/hdy-clamp.c
 @@ -0,0 +1,566 @@
@@ -85,7 +85,7 @@ index 0000000..7d8a107
 +#include <glib/gi18n-lib.h>
 +
 +#include "gtkorientable.h"
-+#include "gtkrender.h"
++#include "gtkstylecontext.h"
 +#include "gtktypebuiltins.h"
 +#include "hdy-clamp-private.h"
 +#include "hdy-animation-private.h"

@@ -10,9 +10,9 @@ This is imported from HdySqueezer from libhandy 1.0.0.
  gtk/hdy-animation.c         |   82 +++
  gtk/hdy-cairo-private.h     |   21 +
  gtk/hdy-squeezer-private.h  |   63 ++
- gtk/hdy-squeezer.c          | 1572 +++++++++++++++++++++++++++++++++++++++++++
+ gtk/hdy-squeezer.c          | 1573 +++++++++++++++++++++++++++++++++++++++++++
  gtk/meson.build             |    5 +
- 8 files changed, 1773 insertions(+)
+ 8 files changed, 1774 insertions(+)
  create mode 100644 gtk/hdy-animation-private.h
  create mode 100644 gtk/hdy-animation.c
  create mode 100644 gtk/hdy-cairo-private.h
@@ -279,10 +279,10 @@ index 0000000..9224230
 +G_END_DECLS
 diff --git a/gtk/hdy-squeezer.c b/gtk/hdy-squeezer.c
 new file mode 100644
-index 0000000..b8a166d
+index 0000000..b5ac091
 --- /dev/null
 +++ b/gtk/hdy-squeezer.c
-@@ -0,0 +1,1572 @@
+@@ -0,0 +1,1573 @@
 +/*
 + * Copyright (C) 2013 Red Hat, Inc.
 + * Copyright (C) 2019 Purism SPC
@@ -307,6 +307,7 @@ index 0000000..b8a166d
 +#include "gtkorientable.h"
 +#include "gtkprivatetypebuiltins.h"
 +#include "gtkprogresstrackerprivate.h"
++#include "gtkrender.h"
 +#include "gtkstylecontext.h"
 +#include "gtktypebuiltins.h"
 +#include "gtkwindow.h"
