@@ -29,6 +29,7 @@ aboutdialog-Port-to-phones.patch
 Add-the-view-sidebar-symbolic-icon.patch
 Port-file-chooser-to-phones.patch
 messagedialog-Set-orientation-based-on-device.patch
+theme-Fix-message-dialog-styles.patch
 scrolledwindow-Set-deceleration-value-based-on-the-device.patch
 dialog-Maximize-resizable-dialogs-on-phones.patch
 window-Maximize-resizable-pseudo-dialogs-on-mobile.patch
