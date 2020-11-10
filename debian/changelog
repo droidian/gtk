@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.23-2pureos3) amber-phone; urgency=high
+
+  * Disable window dragging on phones
+
+ -- Alexander Mikhaylenko <alexander.mikhaylenko@puri.sm>  Tue, 10 Nov 2020 12:39:57 +0500
+
 gtk+3.0 (3.24.23-2pureos2) amber-phone; urgency=medium
 
   * Fix the build
