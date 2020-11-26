@@ -57,7 +57,7 @@ Build-Depends-Indep: docbook-xml,
                      libpango1.0-doc,
                      xsltproc
 Rules-Requires-Root: no
-Standards-Version: 4.5.0
+Standards-Version: 4.5.1
 Vcs-Browser: https://salsa.debian.org/gnome-team/gtk3
 Vcs-Git: https://salsa.debian.org/gnome-team/gtk3.git
 Homepage: https://www.gtk.org/
