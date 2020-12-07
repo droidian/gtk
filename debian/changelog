@@ -1,3 +1,17 @@
+gtk+3.0 (3.24.24~really3.23.23-1pureos0) amber-phone; urgency=high
+
+  [ Danct12 ]
+  * Add org.gtk.Settings.Purism to gtk/Makefile.am
+
+  [ Alexander Mikhaylenko ]
+  * events: Compress touch update events
+  * Fix message dialog style
+
+  [ Arnaud Ferraris ]
+  * debian: libgtk-3-common: install Purism gschema
+
+ -- Alexander Mikhaylenko <alexander.mikhaylenko@puri.sm>  Mon, 07 Dec 2020 16:45:03 +0500
+
 gtk+3.0 (3.24.23-2pureos3) amber-phone; urgency=high
 
   * Disable window dragging on phones
