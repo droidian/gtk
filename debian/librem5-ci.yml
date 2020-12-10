@@ -17,3 +17,9 @@ lintian-debian-buster-package:
   dependencies:
     - package:deb-debian-buster
   extends: .l5-lintian-debian-package
+
+check-tarball:
+  extends: .l5-check-tarball
+  only:
+    changes:
+      - "debian/changelog"
