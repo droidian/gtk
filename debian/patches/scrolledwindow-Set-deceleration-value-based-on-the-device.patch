@@ -6,36 +6,116 @@ This makes it nicer on phones by avoiding having to scroll too much on a
 touch screen and it makes it match the changes we applied to WebKitGTK
 for the same reasons.
 ---
- gtk/gtkscrolledwindow.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ gtk/gtkscrolledwindow.c | 25 +++++++++++++++----------
+ 1 file changed, 15 insertions(+), 10 deletions(-)
 
 diff --git a/gtk/gtkscrolledwindow.c b/gtk/gtkscrolledwindow.c
-index 95c910f..3a6192b 100644
+index 95c910f..2c142ea 100644
 --- a/gtk/gtkscrolledwindow.c
 +++ b/gtk/gtkscrolledwindow.c
 @@ -177,6 +177,7 @@
  /* Kinetic scrolling */
  #define MAX_OVERSHOOT_DISTANCE 100
  #define DECELERATION_FRICTION 4
-+#define DECELERATION_FRICTION_PHONE 1
++#define DECELERATION_FRICTION_TOUCH 1
  #define OVERSHOOT_FRICTION 20
  #define SCROLL_CAPTURE_THRESHOLD_MS 150
  
-@@ -3765,7 +3766,7 @@ gtk_scrolled_window_start_deceleration (GtkScrolledWindow *scrolled_window)
+@@ -399,7 +400,8 @@ static gboolean _gtk_scrolled_window_get_overshoot (GtkScrolledWindow *scrolled_
+                                                     gint              *overshoot_x,
+                                                     gint              *overshoot_y);
+ 
+-static void     gtk_scrolled_window_start_deceleration (GtkScrolledWindow *scrolled_window);
++static void     gtk_scrolled_window_start_deceleration (GtkScrolledWindow *scrolled_window,
++                                                        gboolean           is_dragging);
+ static gint     _gtk_scrolled_window_get_scrollbar_spacing (GtkScrolledWindow *scrolled_window);
+ 
+ static void     gtk_scrolled_window_update_use_indicators (GtkScrolledWindow *scrolled_window);
+@@ -1053,7 +1055,8 @@ scrolled_window_drag_end_cb (GtkScrolledWindow *scrolled_window,
+ static void
+ gtk_scrolled_window_decelerate (GtkScrolledWindow *scrolled_window,
+                                 gdouble            x_velocity,
+-                                gdouble            y_velocity)
++                                gdouble            y_velocity,
++                                gboolean           is_dragging)
+ {
+   GtkScrolledWindowPrivate *priv = scrolled_window->priv;
+   gboolean overshoot;
+@@ -1070,7 +1073,7 @@ gtk_scrolled_window_decelerate (GtkScrolledWindow *scrolled_window,
+ 
+   if (priv->x_velocity != 0 || priv->y_velocity != 0 || overshoot)
+     {
+-      gtk_scrolled_window_start_deceleration (scrolled_window);
++      gtk_scrolled_window_start_deceleration (scrolled_window, is_dragging);
+       priv->x_velocity = priv->y_velocity = 0;
+     }
+ }
+@@ -1080,7 +1083,7 @@ scrolled_window_swipe_cb (GtkScrolledWindow *scrolled_window,
+                           gdouble            x_velocity,
+                           gdouble            y_velocity)
+ {
+-  gtk_scrolled_window_decelerate (scrolled_window, -x_velocity, -y_velocity);
++  gtk_scrolled_window_decelerate (scrolled_window, -x_velocity, -y_velocity, TRUE);
+ }
+ 
+ static void
+@@ -3453,7 +3456,7 @@ start_scroll_deceleration_cb (gpointer user_data)
+   if (!priv->deceleration_id)
+     {
+       uninstall_scroll_cursor (scrolled_window);
+-      gtk_scrolled_window_start_deceleration (scrolled_window);
++      gtk_scrolled_window_start_deceleration (scrolled_window, FALSE);
+     }
+ 
+   return FALSE;
+@@ -3601,7 +3604,7 @@ gtk_scrolled_window_scroll_event (GtkWidget      *widget,
+ 
+       if (start_deceleration &&
+           scroll_history_finish (scrolled_window, &vel_x, &vel_y))
+-        gtk_scrolled_window_decelerate (scrolled_window, vel_x, vel_y);
++        gtk_scrolled_window_decelerate (scrolled_window, vel_x, vel_y, FALSE);
+       else if (_gtk_scrolled_window_get_overshoot (scrolled_window, NULL, NULL))
+         {
+           priv->scroll_events_overshoot_id =
+@@ -3738,11 +3741,13 @@ kinetic_scroll_data_free (KineticScrollData *data)
+ }
+ 
+ static void
+-gtk_scrolled_window_start_deceleration (GtkScrolledWindow *scrolled_window)
++gtk_scrolled_window_start_deceleration (GtkScrolledWindow *scrolled_window,
++                                        gboolean           is_deceleration)
+ {
+   GtkScrolledWindowPrivate *priv = scrolled_window->priv;
+   GdkFrameClock *frame_clock;
+   KineticScrollData *data;
++  gdouble friction = is_deceleration ? DECELERATION_FRICTION_TOUCH : DECELERATION_FRICTION;
+ 
+   g_return_if_fail (priv->deceleration_id == 0);
+ 
+@@ -3765,7 +3770,7 @@ gtk_scrolled_window_start_deceleration (GtkScrolledWindow *scrolled_window)
          gtk_kinetic_scrolling_new (lower,
                                     upper,
                                     MAX_OVERSHOOT_DISTANCE,
 -                                   DECELERATION_FRICTION,
-+                                   _gtk_get_is_phone () ? DECELERATION_FRICTION_PHONE : DECELERATION_FRICTION,
++                                   friction,
                                     OVERSHOOT_FRICTION,
                                     priv->unclamped_hadj_value,
                                     priv->x_velocity);
-@@ -3784,7 +3785,7 @@ gtk_scrolled_window_start_deceleration (GtkScrolledWindow *scrolled_window)
+@@ -3784,7 +3789,7 @@ gtk_scrolled_window_start_deceleration (GtkScrolledWindow *scrolled_window)
          gtk_kinetic_scrolling_new (lower,
                                     upper,
                                     MAX_OVERSHOOT_DISTANCE,
 -                                   DECELERATION_FRICTION,
-+                                   _gtk_get_is_phone () ? DECELERATION_FRICTION_PHONE : DECELERATION_FRICTION,
++                                   friction,
                                     OVERSHOOT_FRICTION,
                                     priv->unclamped_vadj_value,
                                     priv->y_velocity);
+@@ -4566,7 +4571,7 @@ gtk_scrolled_window_grab_notify (GtkWidget *widget,
+                                      priv->drag_device))
+     {
+       if (_gtk_scrolled_window_get_overshoot (scrolled_window, NULL, NULL))
+-        gtk_scrolled_window_start_deceleration (scrolled_window);
++        gtk_scrolled_window_start_deceleration (scrolled_window, FALSE);
+       else
+         gtk_scrolled_window_cancel_deceleration (scrolled_window);
+     }
