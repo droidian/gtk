@@ -21,3 +21,9 @@ lintian-debian-bullseye-package:
   dependencies:
     - package:deb-debian-bullseye
   extends: .l5-lintian-debian-package
+
+check-tarball:
+  extends: .l5-check-tarball
+  only:
+    changes:
+      - "debian/changelog"
