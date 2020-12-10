@@ -1,40 +1,17 @@
-gtk+3.0 (3.24.24~really3.23.23-1pureos0) amber-phone; urgency=high
+gtk+3.0 (3.24.23-3) unstable; urgency=medium
 
-  [ Danct12 ]
-  * Add org.gtk.Settings.Purism to gtk/Makefile.am
+  * Preferentially build-depend on libgdk-pixbuf-2.0-dev.
+    We don't need the deprecated Xlib integration that is also pulled in
+    by the older libgdk-pixbuf2.0-dev package (see #974870).
+  * Standards-Version: 4.5.1 (no changes required)
+  * d/copyright: Consolidate similar licenses into one Files stanza
+  * d/gtk-update-icon-cache.preinst: Remove.
+    This was here for upgrades from versions older than oldstable, but we
+    do not support skipping a stable release.
+  * Silence some Lintian false positives
+  * Add myself to Uploaders
 
-  [ Alexander Mikhaylenko ]
-  * events: Compress touch update events
-  * Fix message dialog style
-
-  [ Arnaud Ferraris ]
-  * debian: libgtk-3-common: install Purism gschema
-
- -- Alexander Mikhaylenko <alexander.mikhaylenko@puri.sm>  Mon, 07 Dec 2020 16:45:03 +0500
-
-gtk+3.0 (3.24.23-2pureos3) amber-phone; urgency=high
-
-  * Disable window dragging on phones
-
- -- Alexander Mikhaylenko <alexander.mikhaylenko@puri.sm>  Tue, 10 Nov 2020 12:39:57 +0500
-
-gtk+3.0 (3.24.23-2pureos2) amber-phone; urgency=medium
-
-  * Fix the build
-
- -- Alexander Mikhaylenko <alexander.mikhaylenko@puri.sm>  Wed, 04 Nov 2020 19:10:43 +0500
-
-gtk+3.0 (3.24.23-2pureos1) amber-phone; urgency=medium
-
-  [ Adrien Plazas ]
-  * librem5: Add CI
-
-  [ Alexander Mikhaylenko ]
-  * Adjust gbp config for amber-phone
-  * Revert "Build-depend on gdk-pixbuf 2.40 instead of working around an old bug"
-  * Add previous downstream patches
-
- -- Alexander Mikhaylenko <alexander.mikhaylenko@puri.sm>  Tue, 03 Nov 2020 17:02:07 +0500
+ -- Simon McVittie <smcv@debian.org>  Fri, 27 Nov 2020 12:43:57 +0000
 
 gtk+3.0 (3.24.23-2) unstable; urgency=medium
 

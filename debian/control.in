@@ -2,7 +2,7 @@ Source: gtk+3.0
 Section: libs
 Priority: optional
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
-Uploaders: @GNOME_TEAM@
+Uploaders: Simon McVittie <smcv@debian.org>, @GNOME_TEAM@
 Build-Depends: adwaita-icon-theme <!nocheck>,
                at-spi2-core <!nocheck>,
                dbus <!nocheck>,
@@ -23,7 +23,7 @@ Build-Depends: adwaita-icon-theme <!nocheck>,
                libepoxy-dev (>= 1.4),
                libfontconfig1-dev,
                libfribidi-dev (>= 0.19.7),
-               libgdk-pixbuf2.0-dev (>= 2.30.0),
+               libgdk-pixbuf-2.0-dev (>= 2.40.0) | libgdk-pixbuf2.0-dev (>= 2.40.0),
                libgirepository1.0-dev (>= 1.39.0),
                libglib2.0-dev (>= 2.57.2),
                libharfbuzz-dev (>= 0.9),
@@ -57,7 +57,7 @@ Build-Depends-Indep: docbook-xml,
                      libpango1.0-doc,
                      xsltproc
 Rules-Requires-Root: no
-Standards-Version: 4.5.0
+Standards-Version: 4.5.1
 Vcs-Browser: https://salsa.debian.org/gnome-team/gtk3
 Vcs-Git: https://salsa.debian.org/gnome-team/gtk3.git
 Homepage: https://www.gtk.org/
@@ -148,7 +148,7 @@ Depends: gir1.2-gtk-3.0 (= ${binary:Version}),
          libepoxy-dev (>= 1.0),
          libfontconfig1-dev,
          libfribidi-dev (>= 0.19.7),
-         libgdk-pixbuf2.0-dev (>= 2.30.0),
+         libgdk-pixbuf-2.0-dev (>= 2.40.0) | libgdk-pixbuf2.0-dev (>= 2.40.0),
          libglib2.0-dev (>= 2.57.2),
          libpango1.0-dev (>= 1.41),
          libwayland-dev (>= 1.9.91) [linux-any],
