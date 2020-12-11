@@ -1,0 +1,161 @@
+From: Alexander Mikhaylenko <alexander.mikhaylenko@puri.sm>
+Date: Fri, 11 Dec 2020 15:04:23 +0500
+Subject: Revert "Implement ATK's scrollSubstringTo()"
+
+This reverts commit df670047ea2fafb558dac1b148998735396ef857.
+
+We don't have new enough libatk.
+---
+ configure.ac                     |  2 +-
+ gtk/a11y/gtktextviewaccessible.c | 94 ----------------------------------------
+ meson.build                      |  5 +--
+ 3 files changed, 3 insertions(+), 98 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index 51467bb..0d30e9c 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -56,7 +56,7 @@ GLIB_VERSION_CFLAGS="-DGLIB_MIN_REQUIRED_VERSION=glib_min_required_version -DGLI
+ 
+ m4_define([pango_required_version], [1.41.0])
+ m4_define([fribidi_required_version], [0.19.7])
+-m4_define([atk_required_version], [2.32.0])
++m4_define([atk_required_version], [2.15.1])
+ m4_define([cairo_required_version], [1.14.0])
+ m4_define([gdk_pixbuf_required_version], [2.30.0])
+ m4_define([introspection_required_version], [1.39.0])
+diff --git a/gtk/a11y/gtktextviewaccessible.c b/gtk/a11y/gtktextviewaccessible.c
+index f490d30..c109202 100644
+--- a/gtk/a11y/gtktextviewaccessible.c
++++ b/gtk/a11y/gtktextviewaccessible.c
+@@ -1309,99 +1309,6 @@ gtk_text_view_accessible_set_selection (AtkText *text,
+     return FALSE;
+ }
+ 
+-static gboolean
+-gtk_text_view_accessible_scroll_substring_to(AtkText *text,
+-                                             gint start_offset,
+-                                             gint end_offset,
+-                                             AtkScrollType type)
+-{
+-  GtkTextView *view;
+-  GtkWidget *widget;
+-  GtkTextBuffer *buffer;
+-  GtkTextIter iter;
+-  gdouble xalign = -1.0, yalign = -1.0;
+-  gboolean use_align = TRUE;
+-  gint offset, rtl = 0;
+-
+-  if (end_offset < start_offset)
+-    return FALSE;
+-
+-  widget = gtk_accessible_get_widget (GTK_ACCESSIBLE (text));
+-  if (widget == NULL)
+-    return FALSE;
+-
+-  view = GTK_TEXT_VIEW (widget);
+-  buffer = gtk_text_view_get_buffer (view);
+-
+-  if (gtk_widget_get_direction (widget) == GTK_TEXT_DIR_RTL)
+-    rtl = 1;
+-
+-  /*
+-   * Opportunistically pick which offset should be used to calculate
+-   * the scrolling factor.
+-   *
+-   * Considering only an extremity of the substring is good enough when
+-   * the selected string doesn't include line break and isn't larger than
+-   * the visible rectangle.
+-   */
+-  switch (type)
+-    {
+-    case ATK_SCROLL_TOP_LEFT:
+-      offset = (rtl) ? end_offset : start_offset;
+-      xalign = 0.0;
+-      yalign = 0.0;
+-      break;
+-    case ATK_SCROLL_BOTTOM_RIGHT:
+-      offset = (rtl) ? start_offset : end_offset;
+-      xalign = 1.0;
+-      yalign = 1.0;
+-      break;
+-    case ATK_SCROLL_TOP_EDGE:
+-      offset = start_offset;
+-      yalign = 0.0;
+-      break;
+-    case ATK_SCROLL_BOTTOM_EDGE:
+-      offset = end_offset;
+-      yalign = 1.0;
+-      break;
+-    case ATK_SCROLL_LEFT_EDGE:
+-      offset = (rtl) ? end_offset : start_offset;
+-      xalign = 0.0;
+-      break;
+-    case ATK_SCROLL_RIGHT_EDGE:
+-      offset = (rtl) ? start_offset : end_offset;
+-      xalign = 1.0;
+-      break;
+-    case ATK_SCROLL_ANYWHERE:
+-      offset = start_offset;
+-      use_align = FALSE;
+-      xalign = yalign = 0.0;
+-      break;
+-    default:
+-      return FALSE;
+-    }
+-
+-  gtk_text_buffer_get_iter_at_offset (buffer, &iter, offset);
+-
+-  /* Get current iter location to be able to scroll in a single direction. */
+-  if (use_align && (xalign == -1.0 || yalign == -1.0))
+-    {
+-      GdkRectangle rect, irect;
+-
+-      gtk_text_view_get_visible_rect (view, &rect);
+-      gtk_text_view_get_iter_location (view, &iter, &irect);
+-
+-      if (xalign == -1.0)
+-        xalign = ((gdouble) (irect.x - rect.x)) / (rect.width - 1);
+-      if (yalign == -1.0)
+-        yalign = ((gdouble) (irect.y - rect.y)) / (rect.height - 1);
+-    }
+-
+-  gtk_text_view_scroll_to_iter (view, &iter, 0, use_align, xalign, yalign);
+-
+-  return TRUE;
+-}
+-
+ static void
+ atk_text_interface_init (AtkTextIface *iface)
+ {
+@@ -1422,7 +1329,6 @@ atk_text_interface_init (AtkTextIface *iface)
+   iface->set_selection = gtk_text_view_accessible_set_selection;
+   iface->get_run_attributes = gtk_text_view_accessible_get_run_attributes;
+   iface->get_default_attributes = gtk_text_view_accessible_get_default_attributes;
+-  iface->scroll_substring_to = gtk_text_view_accessible_scroll_substring_to;
+ }
+ 
+ /* atkeditabletext.h */
+diff --git a/meson.build b/meson.build
+index 64b35c2..17e2a1e 100644
+--- a/meson.build
++++ b/meson.build
+@@ -26,8 +26,7 @@ endif
+ glib_req           = '>= @0@.@1@.@2@'.format(glib_major_req, glib_minor_req, glib_micro_req)
+ pango_req          = '>= 1.41.0'
+ fribidi_req        = '>= 0.19.7'
+-atk_req            = '>= 2.32.0'
+-at_spi2_atk_req    = '>= 2.15.1'
++atk_req            = '>= 2.15.1'
+ cairo_req          = '>= 1.14.0'
+ gdk_pixbuf_req     = '>= 2.30.0'
+ introspection_req  = '>= 1.39.0'
+@@ -576,7 +575,7 @@ if x11_enabled
+   xfixes_dep     = dependency('xfixes', required: false)
+   xcomposite_dep = dependency('xcomposite', required: false)
+   fontconfig_dep = dependency('fontconfig', fallback: ['fontconfig', 'fontconfig_dep'])
+-  atkbridge_dep  = dependency('atk-bridge-2.0', version: at_spi2_atk_req)
++  atkbridge_dep  = dependency('atk-bridge-2.0', version: atk_req)
+ 
+   x11_pkgs = ['fontconfig', 'x11', 'xext', 'xi', 'xrandr']
+ 

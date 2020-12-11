@@ -1,0 +1,625 @@
+From: Alexander Mikhaylenko <alexander.mikhaylenko@puri.sm>
+Date: Fri, 11 Dec 2020 15:04:17 +0500
+Subject: Revert "GtkPlug/Socket: add accessibility support"
+
+This reverts commit 7ee6fb2ec04df430dce7d354401663fb4b52862e.
+
+We don't have new enough libatk.
+---
+ gtk/a11y/Makefile.inc          |   4 --
+ gtk/a11y/gtkplugaccessible.c   |  81 --------------------------------
+ gtk/a11y/gtkplugaccessible.h   |  66 --------------------------
+ gtk/a11y/gtksocketaccessible.c | 102 -----------------------------------------
+ gtk/a11y/gtksocketaccessible.h |  60 ------------------------
+ gtk/a11y/meson.build           |   4 --
+ gtk/gtk-a11y.h                 |   2 -
+ gtk/gtkplug.c                  |  30 ------------
+ gtk/gtksocket.c                |  62 -------------------------
+ meson.build                    |   2 +-
+ 10 files changed, 1 insertion(+), 412 deletions(-)
+ delete mode 100644 gtk/a11y/gtkplugaccessible.c
+ delete mode 100644 gtk/a11y/gtkplugaccessible.h
+ delete mode 100644 gtk/a11y/gtksocketaccessible.c
+ delete mode 100644 gtk/a11y/gtksocketaccessible.h
+
+diff --git a/gtk/a11y/Makefile.inc b/gtk/a11y/Makefile.inc
+index 35c35cf..3ed6c5d 100644
+--- a/gtk/a11y/Makefile.inc
++++ b/gtk/a11y/Makefile.inc
+@@ -31,7 +31,6 @@ a11y_h_sources =				\
+ 	a11y/gtknotebookaccessible.h		\
+ 	a11y/gtknotebookpageaccessible.h	\
+ 	a11y/gtkpanedaccessible.h		\
+-	a11y/gtkplugaccessible.h		\
+ 	a11y/gtkpopoveraccessible.h		\
+ 	a11y/gtkprogressbaraccessible.h		\
+ 	a11y/gtkradiobuttonaccessible.h		\
+@@ -41,7 +40,6 @@ a11y_h_sources =				\
+ 	a11y/gtkscaleaccessible.h		\
+ 	a11y/gtkscalebuttonaccessible.h		\
+ 	a11y/gtkscrolledwindowaccessible.h	\
+-	a11y/gtksocketaccessible.h		\
+ 	a11y/gtkspinbuttonaccessible.h		\
+ 	a11y/gtkspinneraccessible.h		\
+ 	a11y/gtkstatusbaraccessible.h		\
+@@ -108,7 +106,6 @@ a11y_c_sources =				\
+ 	a11y/gtknotebookaccessible.c		\
+ 	a11y/gtknotebookpageaccessible.c	\
+ 	a11y/gtkpanedaccessible.c		\
+-	a11y/gtkplugaccessible.c		\
+ 	a11y/gtkpopoveraccessible.c		\
+ 	a11y/gtkprogressbaraccessible.c		\
+ 	a11y/gtkradiobuttonaccessible.c		\
+@@ -118,7 +115,6 @@ a11y_c_sources =				\
+ 	a11y/gtkscaleaccessible.c		\
+ 	a11y/gtkscalebuttonaccessible.c		\
+ 	a11y/gtkscrolledwindowaccessible.c	\
+-	a11y/gtksocketaccessible.c		\
+ 	a11y/gtkspinbuttonaccessible.c		\
+ 	a11y/gtkspinneraccessible.c		\
+ 	a11y/gtkstatusbaraccessible.c		\
+diff --git a/gtk/a11y/gtkplugaccessible.c b/gtk/a11y/gtkplugaccessible.c
+deleted file mode 100644
+index e02d49c..0000000
+--- a/gtk/a11y/gtkplugaccessible.c
++++ /dev/null
+@@ -1,81 +0,0 @@
+-/* GTK+ - accessibility implementations
+- * Copyright 2019 Samuel Thibault <sthibault@hypra.fr>
+- *
+- * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
+- * License as published by the Free Software Foundation; either
+- * version 2 of the License, or (at your option) any later version.
+- *
+- * This library is distributed in the hope that it will be useful,
+- * but WITHOUT ANY WARRANTY; without even the implied warranty of
+- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
+- *
+- * You should have received a copy of the GNU Lesser General Public
+- * License along with this library. If not, see <http://www.gnu.org/licenses/>.
+- */
+-
+-#include "config.h"
+-
+-#include <gtk/gtk.h>
+-#include "gtkplugaccessible.h"
+-
+-#ifdef GTK_HAVE_ATK_PLUG_SET_CHILD
+-
+-/* We can not make GtkPlugAccessible inherit both from GtkContainerAccessible
+- * and GtkPlug, so we make it the atk child of an AtkPlug */
+-
+-struct _GtkPlugAccessiblePrivate
+-{
+-  AtkObject *accessible_plug;
+-};
+-
+-G_DEFINE_TYPE_WITH_CODE (GtkPlugAccessible, gtk_plug_accessible, GTK_TYPE_WINDOW_ACCESSIBLE,
+-                         G_ADD_PRIVATE (GtkPlugAccessible))
+-
+-
+-static void
+-gtk_plug_accessible_finalize (GObject *object)
+-{
+-  GtkPlugAccessible *plug = GTK_PLUG_ACCESSIBLE (object);
+-  GtkPlugAccessiblePrivate *priv = plug->priv;
+-
+-  g_clear_object (&priv->accessible_plug);
+-
+-  G_OBJECT_CLASS (gtk_plug_accessible_parent_class)->finalize (object);
+-}
+-
+-static void
+-gtk_plug_accessible_initialize (AtkObject *plug, gpointer data)
+-{
+-  AtkObject *atk_plug;
+-
+-  ATK_OBJECT_CLASS (gtk_plug_accessible_parent_class)->initialize (plug, data);
+-
+-  atk_plug = atk_plug_new ();
+-  atk_plug_set_child (ATK_PLUG (atk_plug), plug);
+-  GTK_PLUG_ACCESSIBLE (plug)->priv->accessible_plug = atk_plug;
+-}
+-
+-static void
+-gtk_plug_accessible_class_init (GtkPlugAccessibleClass *klass) {
+-  AtkObjectClass *atk_class     = ATK_OBJECT_CLASS (klass);
+-  GObjectClass   *gobject_class = G_OBJECT_CLASS (klass);
+-
+-  atk_class->initialize   = gtk_plug_accessible_initialize;
+-  gobject_class->finalize = gtk_plug_accessible_finalize;
+-}
+-
+-static void
+-gtk_plug_accessible_init (GtkPlugAccessible *plug)
+-{
+-  plug->priv = gtk_plug_accessible_get_instance_private (plug);
+-}
+-
+-gchar *
+-gtk_plug_accessible_get_id (GtkPlugAccessible *plug)
+-{
+-  return atk_plug_get_id (ATK_PLUG (plug->priv->accessible_plug));
+-}
+-
+-#endif /* GTK_HAVE_ATK_PLUG_SET_CHILD */
+diff --git a/gtk/a11y/gtkplugaccessible.h b/gtk/a11y/gtkplugaccessible.h
+deleted file mode 100644
+index e709b73..0000000
+--- a/gtk/a11y/gtkplugaccessible.h
++++ /dev/null
+@@ -1,66 +0,0 @@
+-/* GTK+ - accessibility implementations
+- * Copyright 2019 Samuel Thibault <sthibault@hypra.fr>
+- *
+- * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Library General Public
+- * License as published by the Free Software Foundation; either
+- * version 2 of the License, or (at your option) any later version.
+- *
+- * This library is distributed in the hope that it will be useful,
+- * but WITHOUT ANY WARRANTY; without even the implied warranty of
+- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Library General Public License for more details.
+- *
+- * You should have received a copy of the GNU Library General Public
+- * License along with this library. If not, see <http://www.gnu.org/licenses/>.
+- */
+-
+-#ifndef __GTK_PLUG_ACCESSIBLE_H__
+-#define __GTK_PLUG_ACCESSIBLE_H__
+-
+-#if !defined (__GTK_A11Y_H_INSIDE__) && !defined (GTK_COMPILATION)
+-#error "Only <gtk/gtk-a11y.h> can be included directly."
+-#endif
+-
+-#include <gtk/a11y/gtkwindowaccessible.h>
+-
+-#if ATK_CHECK_VERSION(2,35,1)
+-
+-#define GTK_HAVE_ATK_PLUG_SET_CHILD
+-
+-G_BEGIN_DECLS
+-
+-#define GTK_TYPE_PLUG_ACCESSIBLE                         (gtk_plug_accessible_get_type ())
+-#define GTK_PLUG_ACCESSIBLE(obj)                         (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PLUG_ACCESSIBLE, GtkPlugAccessible))
+-#define GTK_PLUG_ACCESSIBLE_CLASS(klass)                 (G_TYPE_CHECK_CLASS_CAST ((klass), GTK_TYPE_PLUG_ACCESSIBLE, GtkPlugAccessibleClass))
+-#define GTK_IS_PLUG_ACCESSIBLE(obj)                      (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_PLUG_ACCESSIBLE))
+-#define GTK_IS_PLUG_ACCESSIBLE_CLASS(klass)              (G_TYPE_CHECK_CLASS_TYPE ((klass), GTK_TYPE_PLUG_ACCESSIBLE))
+-#define GTK_PLUG_ACCESSIBLE_GET_CLASS(obj)               (G_TYPE_INSTANCE_GET_CLASS ((obj), GTK_TYPE_PLUG_ACCESSIBLE, GtkPlugAccessibleClass))
+-
+-typedef struct _GtkPlugAccessible        GtkPlugAccessible;
+-typedef struct _GtkPlugAccessibleClass   GtkPlugAccessibleClass;
+-typedef struct _GtkPlugAccessiblePrivate GtkPlugAccessiblePrivate;
+-
+-struct _GtkPlugAccessible
+-{
+-  GtkWindowAccessible parent;
+-
+-  GtkPlugAccessiblePrivate *priv;
+-};
+-
+-struct _GtkPlugAccessibleClass
+-{
+-  GtkWindowAccessibleClass parent_class;
+-};
+-
+-GDK_AVAILABLE_IN_ALL
+-GType gtk_plug_accessible_get_type (void);
+-
+-GDK_AVAILABLE_IN_ALL
+-gchar *gtk_plug_accessible_get_id (GtkPlugAccessible *plug);
+-
+-G_END_DECLS
+-
+-#endif /* ATK_CHECK_VERSION(2,35,1) */
+-
+-#endif /* __GTK_PLUG_ACCESSIBLE_H__ */
+diff --git a/gtk/a11y/gtksocketaccessible.c b/gtk/a11y/gtksocketaccessible.c
+deleted file mode 100644
+index cf69973..0000000
+--- a/gtk/a11y/gtksocketaccessible.c
++++ /dev/null
+@@ -1,102 +0,0 @@
+-/* GTK+ - accessibility implementations
+- * Copyright 2019 Samuel Thibault <sthibault@hypra.fr>
+- *
+- * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
+- * License as published by the Free Software Foundation; either
+- * version 2 of the License, or (at your option) any later version.
+- *
+- * This library is distributed in the hope that it will be useful,
+- * but WITHOUT ANY WARRANTY; without even the implied warranty of
+- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
+- *
+- * You should have received a copy of the GNU Lesser General Public
+- * License along with this library. If not, see <http://www.gnu.org/licenses/>.
+- */
+-
+-#include "config.h"
+-
+-#include <gtk/gtk.h>
+-#include "gtksocketaccessible.h"
+-
+-/* We can not make GtkSocketAccessible inherit both from GtkContainerAccessible
+- * and GtkSocket, so we make it the atk parent of an AtkSocket */
+-
+-struct _GtkSocketAccessiblePrivate
+-{
+-  AtkObject *accessible_socket;
+-};
+-
+-G_DEFINE_TYPE_WITH_CODE (GtkSocketAccessible, gtk_socket_accessible, GTK_TYPE_CONTAINER_ACCESSIBLE,
+-                         G_ADD_PRIVATE (GtkSocketAccessible))
+-
+-static AtkObject*
+-gtk_socket_accessible_ref_child (AtkObject *obj, int i)
+-{
+-  GtkSocketAccessible *socket = GTK_SOCKET_ACCESSIBLE (obj);
+-
+-  if (i != 0)
+-    return NULL;
+-
+-  return g_object_ref (socket->priv->accessible_socket);
+-}
+-
+-static int
+-gtk_socket_accessible_get_n_children (AtkObject *obj)
+-{
+-  return 1;
+-}
+-
+-static void
+-gtk_socket_accessible_finalize (GObject *object)
+-{
+-  GtkSocketAccessible *socket = GTK_SOCKET_ACCESSIBLE (object);
+-  GtkSocketAccessiblePrivate *priv = socket->priv;
+-
+-  g_clear_object (&priv->accessible_socket);
+-
+-  G_OBJECT_CLASS (gtk_socket_accessible_parent_class)->finalize (object);
+-}
+-
+-static void
+-gtk_socket_accessible_initialize (AtkObject *socket, gpointer data)
+-{
+-  AtkObject *atk_socket;
+-
+-  ATK_OBJECT_CLASS (gtk_socket_accessible_parent_class)->initialize (socket, data);
+-
+-  atk_socket = atk_socket_new ();
+-
+-  GTK_SOCKET_ACCESSIBLE(socket)->priv->accessible_socket = atk_socket;
+-  atk_object_set_parent (atk_socket, socket);
+-}
+-
+-static void
+-gtk_socket_accessible_class_init (GtkSocketAccessibleClass *klass)
+-{
+-  GtkContainerAccessibleClass *container_class = (GtkContainerAccessibleClass*)klass;
+-  AtkObjectClass              *atk_class       = ATK_OBJECT_CLASS (klass);
+-  GObjectClass                *gobject_class   = G_OBJECT_CLASS (klass);
+-
+-  container_class->add_gtk    = NULL;
+-  container_class->remove_gtk = NULL;
+-
+-  atk_class->initialize     = gtk_socket_accessible_initialize;
+-  atk_class->get_n_children = gtk_socket_accessible_get_n_children;
+-  atk_class->ref_child      = gtk_socket_accessible_ref_child;
+-
+-  gobject_class->finalize = gtk_socket_accessible_finalize;
+-}
+-
+-static void
+-gtk_socket_accessible_init (GtkSocketAccessible *socket)
+-{
+-  socket->priv = gtk_socket_accessible_get_instance_private (socket);
+-}
+-
+-void
+-gtk_socket_accessible_embed (GtkSocketAccessible *socket, gchar *path)
+-{
+-  atk_socket_embed (ATK_SOCKET (socket->priv->accessible_socket), path);
+-}
+diff --git a/gtk/a11y/gtksocketaccessible.h b/gtk/a11y/gtksocketaccessible.h
+deleted file mode 100644
+index f2154a9..0000000
+--- a/gtk/a11y/gtksocketaccessible.h
++++ /dev/null
+@@ -1,60 +0,0 @@
+-/* GTK+ - accessibility implementations
+- * Copyright 2019 Samuel Thibault <sthibault@hypra.fr>
+- *
+- * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Library General Public
+- * License as published by the Free Software Foundation; either
+- * version 2 of the License, or (at your option) any later version.
+- *
+- * This library is distributed in the hope that it will be useful,
+- * but WITHOUT ANY WARRANTY; without even the implied warranty of
+- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Library General Public License for more details.
+- *
+- * You should have received a copy of the GNU Library General Public
+- * License along with this library. If not, see <http://www.gnu.org/licenses/>.
+- */
+-
+-#ifndef __GTK_SOCKET_ACCESSIBLE_H__
+-#define __GTK_SOCKET_ACCESSIBLE_H__
+-
+-#if !defined (__GTK_A11Y_H_INSIDE__) && !defined (GTK_COMPILATION)
+-#error "Only <gtk/gtk-a11y.h> can be included directly."
+-#endif
+-
+-#include <gtk/a11y/gtkcontaineraccessible.h>
+-
+-G_BEGIN_DECLS
+-
+-#define GTK_TYPE_SOCKET_ACCESSIBLE                         (gtk_socket_accessible_get_type ())
+-#define GTK_SOCKET_ACCESSIBLE(obj)                         (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SOCKET_ACCESSIBLE, GtkSocketAccessible))
+-#define GTK_SOCKET_ACCESSIBLE_CLASS(klass)                 (G_TYPE_CHECK_CLASS_CAST ((klass), GTK_TYPE_SOCKET_ACCESSIBLE, GtkSocketAccessibleClass))
+-#define GTK_IS_SOCKET_ACCESSIBLE(obj)                      (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_SOCKET_ACCESSIBLE))
+-#define GTK_IS_SOCKET_ACCESSIBLE_CLASS(klass)              (G_TYPE_CHECK_CLASS_TYPE ((klass), GTK_TYPE_SOCKET_ACCESSIBLE))
+-#define GTK_SOCKET_ACCESSIBLE_GET_CLASS(obj)               (G_TYPE_INSTANCE_GET_CLASS ((obj), GTK_TYPE_SOCKET_ACCESSIBLE, GtkSocketAccessibleClass))
+-
+-typedef struct _GtkSocketAccessible        GtkSocketAccessible;
+-typedef struct _GtkSocketAccessibleClass   GtkSocketAccessibleClass;
+-typedef struct _GtkSocketAccessiblePrivate GtkSocketAccessiblePrivate;
+-
+-struct _GtkSocketAccessible
+-{
+-  GtkContainerAccessible parent;
+-
+-  GtkSocketAccessiblePrivate *priv;
+-};
+-
+-struct _GtkSocketAccessibleClass
+-{
+-  GtkContainerAccessibleClass parent_class;
+-};
+-
+-GDK_AVAILABLE_IN_ALL
+-GType gtk_socket_accessible_get_type (void);
+-
+-GDK_AVAILABLE_IN_ALL
+-void gtk_socket_accessible_embed (GtkSocketAccessible *socket, gchar *path);
+-
+-G_END_DECLS
+-
+-#endif /* __GTK_SOCKET_ACCESSIBLE_H__ */
+diff --git a/gtk/a11y/meson.build b/gtk/a11y/meson.build
+index a250319..566b3a7 100644
+--- a/gtk/a11y/meson.build
++++ b/gtk/a11y/meson.build
+@@ -34,7 +34,6 @@ a11y_sources = files(
+   'gtknotebookaccessible.c',
+   'gtknotebookpageaccessible.c',
+   'gtkpanedaccessible.c',
+-  'gtkplugaccessible.c',
+   'gtkpopoveraccessible.c',
+   'gtkprogressbaraccessible.c',
+   'gtkradiobuttonaccessible.c',
+@@ -44,7 +43,6 @@ a11y_sources = files(
+   'gtkscaleaccessible.c',
+   'gtkscalebuttonaccessible.c',
+   'gtkscrolledwindowaccessible.c',
+-  'gtksocketaccessible.c',
+   'gtkspinbuttonaccessible.c',
+   'gtkspinneraccessible.c',
+   'gtkstatusbaraccessible.c',
+@@ -92,7 +90,6 @@ a11y_headers = files(
+   'gtknotebookaccessible.h',
+   'gtknotebookpageaccessible.h',
+   'gtkpanedaccessible.h',
+-  'gtkplugaccessible.h',
+   'gtkpopoveraccessible.h',
+   'gtkprogressbaraccessible.h',
+   'gtkradiobuttonaccessible.h',
+@@ -102,7 +99,6 @@ a11y_headers = files(
+   'gtkscaleaccessible.h',
+   'gtkscalebuttonaccessible.h',
+   'gtkscrolledwindowaccessible.h',
+-  'gtksocketaccessible.h',
+   'gtkspinbuttonaccessible.h',
+   'gtkspinneraccessible.h',
+   'gtkstatusbaraccessible.h',
+diff --git a/gtk/gtk-a11y.h b/gtk/gtk-a11y.h
+index c663565..36b9119 100644
+--- a/gtk/gtk-a11y.h
++++ b/gtk/gtk-a11y.h
+@@ -57,7 +57,6 @@
+ #include <gtk/a11y/gtkmenushellaccessible.h>
+ #include <gtk/a11y/gtknotebookaccessible.h>
+ #include <gtk/a11y/gtknotebookpageaccessible.h>
+-#include <gtk/a11y/gtkplugaccessible.h>
+ #include <gtk/a11y/gtkpopoveraccessible.h>
+ #include <gtk/a11y/gtkpanedaccessible.h>
+ #include <gtk/a11y/gtkprogressbaraccessible.h>
+@@ -68,7 +67,6 @@
+ #include <gtk/a11y/gtkscaleaccessible.h>
+ #include <gtk/a11y/gtkscalebuttonaccessible.h>
+ #include <gtk/a11y/gtkscrolledwindowaccessible.h>
+-#include <gtk/a11y/gtksocketaccessible.h>
+ #include <gtk/a11y/gtkspinbuttonaccessible.h>
+ #include <gtk/a11y/gtkspinneraccessible.h>
+ #include <gtk/a11y/gtkstackaccessible.h>
+diff --git a/gtk/gtkplug.c b/gtk/gtkplug.c
+index 6361b60..92803d9 100644
+--- a/gtk/gtkplug.c
++++ b/gtk/gtkplug.c
+@@ -39,8 +39,6 @@
+ #include "gtkwindowprivate.h"
+ #include "gtkxembed.h"
+ 
+-#include "a11y/gtkplugaccessible.h"
+-
+ #include <gdk/gdkx.h>
+ 
+ /**
+@@ -229,10 +227,6 @@ gtk_plug_class_init (GtkPlugClass *class)
+ 		  NULL, NULL,
+ 		  NULL,
+ 		  G_TYPE_NONE, 0);
+-
+-#ifdef GTK_HAVE_ATK_PLUG_SET_CHILD
+-  gtk_widget_class_set_accessible_type (widget_class, GTK_TYPE_PLUG_ACCESSIBLE);
+-#endif /* GTK_HAVE_ATK_PLUG_SET_CHILD */
+ }
+ 
+ static void
+@@ -716,26 +710,6 @@ xembed_set_info (GdkWindow     *window,
+ 		   (unsigned char *)buffer, 2);
+ }
+ 
+-#ifdef GTK_HAVE_ATK_PLUG_SET_CHILD
+-static void
+-_gtk_plug_accessible_embed_set_info (GtkWidget *widget, GdkWindow *window)
+-{
+-  GdkDisplay *display = gdk_window_get_display (window);
+-  gchar *buffer = gtk_plug_accessible_get_id (GTK_PLUG_ACCESSIBLE (gtk_widget_get_accessible (widget)));
+-  Atom net_at_spi_path_atom = gdk_x11_get_xatom_by_name_for_display (display, "_XEMBED_AT_SPI_PATH");
+-
+-  if (!buffer)
+-    return;
+-
+-  XChangeProperty (GDK_DISPLAY_XDISPLAY (display),
+-		   GDK_WINDOW_XID (window),
+-		   net_at_spi_path_atom, net_at_spi_path_atom, 8,
+-		   PropModeReplace,
+-		   (unsigned char *)buffer, strlen(buffer));
+-  g_free (buffer);
+-}
+-#endif /* GTK_HAVE_ATK_PLUG_SET_CHILD */
+-
+ /**
+  * gtk_plug_focus_first_last:
+  * @plug: a #GtkPlug
+@@ -1124,10 +1098,6 @@ gtk_plug_realize (GtkWidget *widget)
+     }
+ 
+   gtk_widget_register_window (widget, gdk_window);
+-
+-#ifdef GTK_HAVE_ATK_PLUG_SET_CHILD
+-  _gtk_plug_accessible_embed_set_info (widget, gdk_window);
+-#endif /* GTK_HAVE_ATK_PLUG_SET_CHILD */
+ }
+ 
+ static void
+diff --git a/gtk/gtksocket.c b/gtk/gtksocket.c
+index ffdaf8b..91abb6a 100644
+--- a/gtk/gtksocket.c
++++ b/gtk/gtksocket.c
+@@ -51,8 +51,6 @@
+ 
+ #include "gtkxembed.h"
+ 
+-#include "a11y/gtksocketaccessible.h"
+-
+ 
+ /**
+  * SECTION:gtksocket
+@@ -154,9 +152,6 @@ static gboolean xembed_get_info                 (GdkWindow        *gdk_window,
+                                                  unsigned long    *version,
+                                                  unsigned long    *flags);
+ 
+-static void     _gtk_socket_accessible_embed    (GtkWidget *socket,
+-                                                 GdkWindow *window);
+-
+ /* From Tk */
+ #define EMBEDDED_APP_WANTS_FOCUS NotifyNormal+20
+ 
+@@ -269,9 +264,6 @@ gtk_socket_class_init (GtkSocketClass *class)
+                   _gtk_boolean_handled_accumulator, NULL,
+ 		  _gtk_marshal_BOOLEAN__VOID,
+ 		  G_TYPE_BOOLEAN, 0);
+-
+-
+-  gtk_widget_class_set_accessible_type (widget_class, GTK_TYPE_SOCKET_ACCESSIBLE);
+ }
+ 
+ static void
+@@ -1161,8 +1153,6 @@ G_GNUC_END_IGNORE_DEPRECATIONS
+       socket_update_focus_in (socket);
+ 
+       gtk_widget_queue_resize (GTK_WIDGET (socket));
+-
+-      _gtk_socket_accessible_embed (GTK_WIDGET (socket), private->plug_window);
+     }
+ 
+   if (private->plug_window)
+@@ -1386,58 +1376,6 @@ handle_xembed_message (GtkSocket        *socket,
+     }
+ }
+ 
+-static void
+-_gtk_socket_accessible_embed (GtkWidget *socket, GdkWindow *window)
+-{
+-  GdkDisplay *display = gdk_window_get_display (window);
+-  Atom net_at_spi_path_atom = gdk_x11_get_xatom_by_name_for_display (display, "_XEMBED_AT_SPI_PATH");
+-  Atom type;
+-  int format;
+-  unsigned long nitems, bytes_after;
+-  unsigned char *data;
+-  int status;
+-
+-  gdk_x11_display_error_trap_push (display);
+-  status = XGetWindowProperty (GDK_DISPLAY_XDISPLAY (display),
+-			       GDK_WINDOW_XID (window),
+-			       net_at_spi_path_atom,
+-			       0, INT_MAX / 4, False,
+-			       net_at_spi_path_atom, &type, &format,
+-			       &nitems, &bytes_after, &data);
+-  gdk_x11_display_error_trap_pop_ignored (display);
+-
+-  if (status != Success)
+-    return;			/* Window vanished? */
+-
+-  if (type == None)		/* No info property */
+-    return;
+-
+-  if (type != net_at_spi_path_atom)
+-    {
+-      g_warning ("_XEMBED_AT_SPI_PATH property has wrong type");
+-      return;
+-    }
+-
+-  if (nitems == 0)
+-    {
+-      g_warning ("_XEMBED_AT_SPI_PATH too short");
+-      XFree (data);
+-      return;
+-    }
+-
+-  if (nitems > INT_MAX)
+-    {
+-      g_warning ("_XEMBED_AT_SPI_PATH too long");
+-      XFree (data);
+-      return;
+-    }
+-
+-  gtk_socket_accessible_embed (GTK_SOCKET_ACCESSIBLE (gtk_widget_get_accessible (socket)), (gchar*) data);
+-  XFree (data);
+-
+-  return;
+-}
+-
+ static GdkFilterReturn
+ gtk_socket_filter_func (GdkXEvent *gdk_xevent,
+ 			GdkEvent  *event,
+diff --git a/meson.build b/meson.build
+index b2eaa33..64b35c2 100644
+--- a/meson.build
++++ b/meson.build
+@@ -26,7 +26,7 @@ endif
+ glib_req           = '>= @0@.@1@.@2@'.format(glib_major_req, glib_minor_req, glib_micro_req)
+ pango_req          = '>= 1.41.0'
+ fribidi_req        = '>= 0.19.7'
+-atk_req            = '>= 2.35.1'
++atk_req            = '>= 2.32.0'
+ at_spi2_atk_req    = '>= 2.15.1'
+ cairo_req          = '>= 1.14.0'
+ gdk_pixbuf_req     = '>= 2.30.0'
