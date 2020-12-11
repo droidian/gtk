@@ -1,8 +1,14 @@
-gtk+3.0 (3.24.24-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.24-1pureos0) byzantium; urgency=medium
 
+  [ purism ]
   * New upstream release
 
- -- purism <purism@pureos>  Fri, 11 Dec 2020 07:33:40 +0000
+  [ Alexander Mikhaylenko ]
+  * Update patches
+  * debian: Bump libatk version dependency
+  * debian: Update libgtk-3-0.symbols
+
+ -- Alexander Mikhaylenko <alexander.mikhaylenko@puri.sm>  Fri, 11 Dec 2020 11:25:47 +0000
 
 gtk+3.0 (3.24.23-3) unstable; urgency=medium
 
