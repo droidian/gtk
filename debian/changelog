@@ -1,8 +1,21 @@
-gtk+3.0 (3.24.24-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.24-1) unstable; urgency=medium
 
   * New upstream release
+    - Update the default color palette
+    - Fix font chooser in family-only mode to return regular style
+    - Don't set focus-on-click for tree view header buttons
+    - Add a11y support to GtkPlug/GtkSocket
+    - Implement scrollSubstringTo for a11y
+    - Allow the lpr backend to print pdf and ps files
+    - Update gesture graphics
+    - Update HighContrast css
+    - Support the primary-selection-unstable-v1 Wayland protocol
+    - On X11, fix a crash with parent-relative backgrounds
+    - On Broadway, set modifier state of scroll events
+    - Translation updates
+  * Update versions of (build-)dependencies
 
- -- Simon McVittie <smcv@debian.org>  Fri, 11 Dec 2020 10:19:43 +0000
+ -- Simon McVittie <smcv@debian.org>  Fri, 11 Dec 2020 11:07:01 +0000
 
 gtk+3.0 (3.24.23-3) unstable; urgency=medium
 
