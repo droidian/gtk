@@ -2,7 +2,7 @@ From: Alexander Mikhaylenko <alexm@gnome.org>
 Date: Wed, 14 Oct 2020 17:28:02 +0500
 Subject: Add GtkHdyStackableBox
 
-This is imported from HdyStackableBox from libhandy 1.0.1.
+This is imported from HdyStackableBox from libhandy 1.0.2.
 ---
  gtk/Makefile.am                 |    3 +
  gtk/gtkprivate.h                |    1 +
@@ -196,7 +196,7 @@ index 0000000..64f07df
 +G_END_DECLS
 diff --git a/gtk/hdy-stackable-box.c b/gtk/hdy-stackable-box.c
 new file mode 100644
-index 0000000..f525d2a
+index 0000000..55a737b
 --- /dev/null
 +++ b/gtk/hdy-stackable-box.c
 @@ -0,0 +1,3154 @@
@@ -277,7 +277,7 @@ index 0000000..f525d2a
 +#define GTK_HDY_FOLD_FOLDED TRUE
 +#define GTK_HDY_FOLD_MAX 2
 +#define GTK_ORIENTATION_MAX 2
-+#define GTK_HDY_SWIPE_BORDER 16
++#define GTK_HDY_SWIPE_BORDER 32
 +
 +typedef struct _GtkHdyStackableBoxChildInfo GtkHdyStackableBoxChildInfo;
 +
