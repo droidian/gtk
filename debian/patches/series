@@ -29,7 +29,6 @@ aboutdialog-Port-to-phones.patch
 Add-the-view-sidebar-symbolic-icon.patch
 Port-file-chooser-to-phones.patch
 messagedialog-Set-orientation-based-on-device.patch
-theme-Fix-message-dialog-styles.patch
 scrolledwindow-Set-deceleration-value-based-on-the-device.patch
 dialog-Maximize-resizable-dialogs-on-phones.patch
 window-Maximize-resizable-pseudo-dialogs-on-mobile.patch
@@ -37,7 +36,4 @@ headerbar-Use-a-back-button-in-dialogs-on-mobile.patch
 infobar-Move-the-action-area-below.patch
 Reduce-the-font-chooser-minimum-size.patch
 window-Don-t-allow-window-dragging-on-phones.patch
-gtkapplication-dbus-Initialise-screensaver-active-propert.patch
-wayland-Emit-dummy-configure-event-when-resizing-while-fi.patch
-gestureswipe-Count-last-event-when-calculating-velocity.patch
 events-Compress-touch-update-events.patch
