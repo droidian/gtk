@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.24-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- purism <purism@pureos>  Fri, 11 Dec 2020 07:33:40 +0000
+
 gtk+3.0 (3.24.23-3) unstable; urgency=medium
 
   * Preferentially build-depend on libgdk-pixbuf-2.0-dev.
