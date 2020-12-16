@@ -601,6 +601,7 @@ gtk_private_h_sources =		\
 	gtkwindowprivate.h	\
 	gtktreemenu.h		\
 	gdkpixbufutilsprivate.h \
+	hdy-animation-private.h	\
 	hdy-css-private.h	\
 	hdy-view-switcher-bar-private.h	\
 	hdy-view-switcher-button-private.h	\
@@ -980,6 +981,7 @@ gtk_base_c_sources = 		\
 	gtkwin32draw.c		\
 	gtkwin32theme.c		\
 	gdkpixbufutils.c	\
+	hdy-animation.c	\
 	hdy-css.c	\
 	hdy-view-switcher.c	\
 	hdy-view-switcher-bar.c	\
