@@ -364,6 +364,7 @@ gtk_semi_private_h_sources = \
 gtk_private_type_h_sources =	\
 	gtkcsstypesprivate.h	\
 	gtktexthandleprivate.h	\
+	hdy-flap-private.h	\
 	hdy-navigation-direction-private.h \
 	hdy-squeezer-private.h	\
 	hdy-swipeable-private.h \
@@ -609,6 +610,7 @@ gtk_private_h_sources =		\
 	hdy-cairo-private.h	\
 	hdy-clamp-private.h	\
 	hdy-css-private.h	\
+	hdy-flap-private.h	\
 	hdy-navigation-direction-private.h	\
 	hdy-shadow-helper-private.h	\
 	hdy-squeezer-private.h	\
@@ -996,6 +998,7 @@ gtk_base_c_sources = 		\
 	hdy-animation.c	\
 	hdy-clamp.c	\
 	hdy-css.c	\
+	hdy-flap.c	\
 	hdy-navigation-direction.c	\
 	hdy-squeezer.c	\
 	hdy-shadow-helper.c	\
