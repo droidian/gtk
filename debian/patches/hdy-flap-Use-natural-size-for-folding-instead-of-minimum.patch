@@ -8,7 +8,7 @@ See https://gitlab.gnome.org/GNOME/libhandy/-/issues/390#note_991319
  1 file changed, 16 insertions(+), 8 deletions(-)
 
 diff --git a/gtk/hdy-flap.c b/gtk/hdy-flap.c
-index 4877462..747ea42 100644
+index 8735ad9..1b4504d 100644
 --- a/gtk/hdy-flap.c
 +++ b/gtk/hdy-flap.c
 @@ -962,21 +962,29 @@ gtk_hdy_flap_size_allocate (GtkWidget     *widget,

@@ -35,5 +35,6 @@ window-Maximize-resizable-pseudo-dialogs-on-mobile.patch
 headerbar-Use-a-back-button-in-dialogs-on-mobile.patch
 infobar-Move-the-action-area-below-on-the-phone.patch
 Reduce-the-font-chooser-minimum-size.patch
+printunixdialog-Adapt-for-phones.patch
 window-Disable-window-dragging-on-phones.patch
 events-Compress-touch-update-events.patch
