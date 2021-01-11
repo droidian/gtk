@@ -153,7 +153,7 @@ index 0000000..d0ac61f
 +G_END_DECLS
 diff --git a/gtk/hdy-flap.c b/gtk/hdy-flap.c
 new file mode 100644
-index 0000000..4877462
+index 0000000..8735ad9
 --- /dev/null
 +++ b/gtk/hdy-flap.c
 @@ -0,0 +1,2663 @@
