@@ -56,6 +56,9 @@ Build-Depends-Indep: docbook-xml,
                      libglib2.0-doc,
                      libpango1.0-doc,
                      xsltproc
+Build-Conflicts: graphicsmagick-imagemagick-compat <!nocheck>,
+                 imagemagick <!nocheck>,
+                 imagemagick-6.q16 <!nocheck>,
 Rules-Requires-Root: no
 Standards-Version: 4.5.1
 Vcs-Browser: https://salsa.debian.org/gnome-team/gtk3
