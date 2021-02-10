@@ -1,3 +1,17 @@
+gtk+3.0 (3.24.24-1pureos1) byzantium; urgency=medium
+
+  * Backport fixes from libhandy
+  * Stop including HdyStackableBox and HdyLeaflet
+  * Include HdyAnimation and HdyFlap
+  * Replace HdyLeaflet with HdyFlap in the file chooser
+  * Make the second line of text in file chooser rows half-transparent
+  * Hide file chooser image preview on mobile
+  * Make GtkMessageDialog and GtkHeaderBar follow is-phone changes on the fly
+  * Revert GtkInfoBar changes when is-phone is false, change it on the fly
+  * Adapt print dialog for phones
+
+ -- Alexander Mikhaylenko <alexander.mikhaylenko@puri.sm>  Wed, 10 Feb 2021 12:18:25 +0500
+
 gtk+3.0 (3.24.24-1pureos0) byzantium; urgency=medium
 
   [ purism ]
