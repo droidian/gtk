@@ -1,4 +1,4 @@
-gtk+3.0 (3.24.25-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.25-1) experimental; urgency=medium
 
   * New upstream release
     - Support for cursor aspect ratio setting
@@ -13,8 +13,10 @@ gtk+3.0 (3.24.25-1) UNRELEASED; urgency=medium
     - Support long compose sequences
     - Support compose sequences producing multiple characters
     - Translation updates
+  * Upload to experimental for now, to assess whether this is desirable
+    for bullseye
 
- -- Simon McVittie <smcv@debian.org>  Thu, 18 Feb 2021 12:09:46 +0000
+ -- Simon McVittie <smcv@debian.org>  Thu, 18 Feb 2021 16:34:08 +0000
 
 gtk+3.0 (3.24.24-2) unstable; urgency=medium
 
