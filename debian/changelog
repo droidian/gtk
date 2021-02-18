@@ -1,4 +1,4 @@
-gtk+3.0 (3.24.24-2) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.25-1) UNRELEASED; urgency=medium
 
   * d/watch: Cope with "+" being escaped to "%2B" in links to tarballs
   * Increase dependency on librsvg2-common from Suggests to Recommends.
@@ -9,8 +9,21 @@ gtk+3.0 (3.24.24-2) UNRELEASED; urgency=medium
     adwaita-icon-theme already Recommends librsvg2-common, but people who
     routinely do not install recommended packages will get a better hint
     about how much will be broken by its removal if GTK also recommends it.
+  * New upstream release
+    - Support for cursor aspect ratio setting
+    - Broadway fixes
+    - Avoid crashes with tablet input in Wayland
+    - Add API for better support for Wayland subsurfaces
+    - Make the Inspector available in non-debug builds
+    - Make scrollbars larger
+    - Disable shadows on maximized, fullscreen and tiled windows
+    - Support Avahi-discovered printers better
+    - Show preedit for compose sequences
+    - Support long compose sequences
+    - Support compose sequences producing multiple characters
+    - Translation updates
 
- -- Simon McVittie <smcv@debian.org>  Thu, 18 Feb 2021 12:05:54 +0000
+ -- Simon McVittie <smcv@debian.org>  Thu, 18 Feb 2021 12:09:46 +0000
 
 gtk+3.0 (3.24.24-1) unstable; urgency=medium
 
