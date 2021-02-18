@@ -1,3 +1,21 @@
+gtk+3.0 (3.24.25-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+    - Support for cursor aspect ratio setting
+    - Broadway fixes
+    - Avoid crashes with tablet input in Wayland
+    - Add API for better support for Wayland subsurfaces
+    - Make the Inspector available in non-debug builds
+    - Make scrollbars larger
+    - Disable shadows on maximized, fullscreen and tiled windows
+    - Support Avahi-discovered printers better
+    - Show preedit for compose sequences
+    - Support long compose sequences
+    - Support compose sequences producing multiple characters
+    - Translation updates
+
+ -- Simon McVittie <smcv@debian.org>  Thu, 18 Feb 2021 12:09:46 +0000
+
 gtk+3.0 (3.24.24-2) unstable; urgency=medium
 
   * d/watch: Cope with "+" being escaped to "%2B" in links to tarballs
