@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.24-3) unstable; urgency=medium
+
+  * d/patches: Backport font settings bug fixes recommended by upstream
+
+ -- Simon McVittie <smcv@debian.org>  Mon, 22 Feb 2021 17:51:13 +0000
+
 gtk+3.0 (3.24.24-2) unstable; urgency=medium
 
   * d/watch: Cope with "+" being escaped to "%2B" in links to tarballs
