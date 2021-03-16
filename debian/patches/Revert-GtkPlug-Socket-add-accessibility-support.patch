@@ -611,7 +611,7 @@ index ffdaf8b..91abb6a 100644
  gtk_socket_filter_func (GdkXEvent *gdk_xevent,
  			GdkEvent  *event,
 diff --git a/meson.build b/meson.build
-index b2eaa33..64b35c2 100644
+index e43a57c..15356ba 100644
 --- a/meson.build
 +++ b/meson.build
 @@ -26,7 +26,7 @@ endif

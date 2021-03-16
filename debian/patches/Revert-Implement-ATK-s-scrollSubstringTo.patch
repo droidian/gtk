@@ -12,7 +12,7 @@ We don't have new enough libatk.
  3 files changed, 3 insertions(+), 98 deletions(-)
 
 diff --git a/configure.ac b/configure.ac
-index 51467bb..0d30e9c 100644
+index 7e5a545..89c9024 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -56,7 +56,7 @@ GLIB_VERSION_CFLAGS="-DGLIB_MIN_REQUIRED_VERSION=glib_min_required_version -DGLI
@@ -137,7 +137,7 @@ index f490d30..c109202 100644
  
  /* atkeditabletext.h */
 diff --git a/meson.build b/meson.build
-index 64b35c2..17e2a1e 100644
+index 15356ba..cf38372 100644
 --- a/meson.build
 +++ b/meson.build
 @@ -26,8 +26,7 @@ endif
@@ -150,7 +150,7 @@ index 64b35c2..17e2a1e 100644
  cairo_req          = '>= 1.14.0'
  gdk_pixbuf_req     = '>= 2.30.0'
  introspection_req  = '>= 1.39.0'
-@@ -576,7 +575,7 @@ if x11_enabled
+@@ -577,7 +576,7 @@ if x11_enabled
    xfixes_dep     = dependency('xfixes', required: false)
    xcomposite_dep = dependency('xcomposite', required: false)
    fontconfig_dep = dependency('fontconfig', fallback: ['fontconfig', 'fontconfig_dep'])
