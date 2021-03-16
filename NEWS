@@ -1,3 +1,95 @@
+Overview of Changes in GTK+ 3.24.27
+===================================
+
+* Input: Ensure preedit-start and preedit-end
+  are emitted properly
+
+* GtkScrolledWindow:
+ - Revert a change that broke touch scrolling
+
+* Theme:
+ - Fix a problem with size changes in SSD decorations
+   that caused mutter crashes
+ - Use transparent black for window border in the dark theme
+
+* Windows:
+ - Memory leak fixes
+ - Fix unresponsive windows after tablet input
+ - Add support for wheel and rotation axes
+
+* Translation updates:
+ Belarusian
+ German
+ Kazakh
+ Korean
+ Latvian
+ Turkish
+
+
+Overview of Changes in GTK+ 3.24.26
+===================================
+
+* Input:
+ - Fix a few oversights in Compose file parsing
+ - Fine-tune Compose preedit display
+
+* Theme:
+ - Fine-tune scrollbar size and transitions
+ - Reinstate invisible borders for tiled windows
+
+* Wayland:
+ - Fix a problem with font settings not being found
+
+* Translation updates
+ French
+ Hungarian
+ Turkish
+
+
+Overview of Changes in GTK+ 3.24.25
+===================================
+
+* Settings:
+ - Make cursor aspect ratio setting work
+
+* Broadway:
+ - Fix touchscreen event handling
+ - Support Android / Chrome on-screen keyboard
+
+* Windows:
+ - Fix issues with Intel graphics drivers
+ - Avoid UAC for gtk-update-icon-cache
+
+* Wayland:
+ - Avoid crashes with tablet input
+ - Add api to support clients with subsurfaces better
+
+* Inspector:
+ - Make the inspector available in non-debug builds
+
+* Theme:
+ - Make scrollbars larger
+ - Disable shadows on maximized, fullscreen and tiled windows
+
+* Printing:
+ - Support Avahi-discovered printers better
+
+* Input:
+ - Show preedit for compose sequences
+ - Support long compose sequences
+ - Support compose sequences producing multiple characters
+
+* Translation updates
+ Belarusian
+ British English
+ Catalan
+ Friulian
+ Galician
+ Japanese
+ Persian
+ Serbian
+
+
 Overview of Changes in GTK+ 3.24.24
 ===================================
 

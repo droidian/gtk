@@ -380,15 +380,11 @@ update_xft_settings (GdkScreen *screen)
     }
   else
     {
-      GSettingsSchemaSource *source;
-      GSettingsSchema *schema;
+      TranslationEntry *entry;
 
-      source = g_settings_schema_source_get_default ();
-      schema = g_settings_schema_source_lookup (source,
-                                                "org.gnome.desktop.interface",
-                                                FALSE);
+      entry = find_translation_entry_by_schema ("org.gnome.desktop.interface", "font-antialiasing");
 
-      if (schema && g_settings_schema_has_key (schema, "font-antialiasing"))
+      if (entry && entry->valid)
         {
           settings = g_hash_table_lookup (screen_wayland->settings,
                                           "org.gnome.desktop.interface");
@@ -765,6 +761,7 @@ init_settings (GdkScreen *screen)
                   char *a = g_variant_print (v, FALSE);
                   g_debug ("Using portal setting for %s %s: %s\n", schema, key, a);
                   g_free (a);
+                  entry->valid = TRUE;
                   apply_portal_setting (entry, v, screen);
                 }
               else
