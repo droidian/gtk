@@ -1,8 +1,9 @@
-gtk+3.0 (3.24.27-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.27-1pureos1) byzantium; urgency=medium
 
+  [ Alexander Mikhaylenko ]
   * New upstream release
 
- -- purism <purism@pureos>  Tue, 16 Mar 2021 18:54:08 +0500
+ -- Alexander Mikhaylenko <alexander.mikhaylenko@puri.sm>  Tue, 16 Mar 2021 19:01:14 +0500
 
 gtk+3.0 (3.24.24-1pureos1) byzantium; urgency=medium
 
