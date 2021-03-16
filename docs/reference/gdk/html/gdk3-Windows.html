@@ -2055,7 +2055,7 @@ gdk_window_iconify (<em class="parameter"><code><a class="link" href="gdk3-Windo
 <p>Asks to iconify (minimize) <em class="parameter"><code>window</code></em>
 . The window manager may choose
 to ignore the request, but normally will honor it. Using
-<code class="function">gtk_window_iconify()</code> is preferred, if you have a <a href="https://developer.gnome.org/gtk4/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a> widget.</p>
+<a href="https://developer.gnome.org/gtk3/GtkWindow.html#gtk-window-iconify"><code class="function">gtk_window_iconify()</code></a> is preferred, if you have a <a href="https://developer.gnome.org/gtk4/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a> widget.</p>
 <p>This function only makes sense when <em class="parameter"><code>window</code></em>
  is a toplevel window.</p>
 <div class="refsect3">
@@ -2082,7 +2082,7 @@ gdk_window_deiconify (<em class="parameter"><code><a class="link" href="gdk3-Win
 <p>Attempt to deiconify (unminimize) <em class="parameter"><code>window</code></em>
 . On X11 the window manager may
 choose to ignore the request to deiconify. When using GTK+,
-use <code class="function">gtk_window_deiconify()</code> instead of the <a class="link" href="gdk3-Windows.html#GdkWindow"><span class="type">GdkWindow</span></a> variant. Or better yet,
+use <a href="https://developer.gnome.org/gtk3/GtkWindow.html#gtk-window-deiconify"><code class="function">gtk_window_deiconify()</code></a> instead of the <a class="link" href="gdk3-Windows.html#GdkWindow"><span class="type">GdkWindow</span></a> variant. Or better yet,
 you probably want to use <a href="https://developer.gnome.org/gtk4/GtkWindow.html#gtk-window-present-with-time"><code class="function">gtk_window_present_with_time()</code></a>, which raises the window, focuses it,
 unminimizes it, and puts it on the current desktop.</p>
 <div class="refsect3">
@@ -2108,7 +2108,7 @@ unminimizes it, and puts it on the current desktop.</p>
 gdk_window_stick (<em class="parameter"><code><a class="link" href="gdk3-Windows.html#GdkWindow"><span class="type">GdkWindow</span></a> *window</code></em>);</pre>
 <p>“Pins” a window such that it’s on all workspaces and does not scroll
 with viewports, for window managers that have scrollable viewports.
-(When using <a href="https://developer.gnome.org/gtk4/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a>, <code class="function">gtk_window_stick()</code> may be more useful.)</p>
+(When using <a href="https://developer.gnome.org/gtk4/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a>, <a href="https://developer.gnome.org/gtk3/GtkWindow.html#gtk-window-stick"><code class="function">gtk_window_stick()</code></a> may be more useful.)</p>
 <p>On the X11 platform, this function depends on window manager
 support, so may have no effect with many window managers. However,
 GDK will do the best it can to convince the window manager to stick
@@ -2136,7 +2136,7 @@ there’s nothing you can do to force it to happen.</p>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gdk_window_unstick (<em class="parameter"><code><a class="link" href="gdk3-Windows.html#GdkWindow"><span class="type">GdkWindow</span></a> *window</code></em>);</pre>
 <p>Reverse operation for <a class="link" href="gdk3-Windows.html#gdk-window-stick" title="gdk_window_stick ()"><code class="function">gdk_window_stick()</code></a>; see <a class="link" href="gdk3-Windows.html#gdk-window-stick" title="gdk_window_stick ()"><code class="function">gdk_window_stick()</code></a>,
-and <code class="function">gtk_window_unstick()</code>.</p>
+and <a href="https://developer.gnome.org/gtk3/GtkWindow.html#gtk-window-unstick"><code class="function">gtk_window_unstick()</code></a>.</p>
 <div class="refsect3">
 <a name="gdk-window-unstick.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -2687,7 +2687,7 @@ gdk_window_move (<em class="parameter"><code><a class="link" href="gdk3-Windows.
                  <em class="parameter"><code><span class="type">gint</span> y</code></em>);</pre>
 <p>Repositions a window relative to its parent window.
 For toplevel windows, window managers may ignore or modify the move;
-you should probably use <code class="function">gtk_window_move()</code> on a <a href="https://developer.gnome.org/gtk4/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a> widget
+you should probably use <a href="https://developer.gnome.org/gtk3/GtkWindow.html#gtk-window-move"><code class="function">gtk_window_move()</code></a> on a <a href="https://developer.gnome.org/gtk4/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a> widget
 anyway, instead of using GDK functions. For child windows,
 the move will reliably succeed.</p>
 <p>If you’re also planning to resize the window, use <a class="link" href="gdk3-Windows.html#gdk-window-move-resize" title="gdk_window_move_resize ()"><code class="function">gdk_window_move_resize()</code></a>
@@ -3715,7 +3715,7 @@ or not.</p>
 the <em class="parameter"><code>window</code></em>
  background is opaque, as we know where the opaque regions
 are. If your window background is not opaque, please update this
-property in your <span class="type">“style-updated”</span> handler.</p>
+property in your <a href="https://developer.gnome.org/gtk3/GtkWidget.html#GtkWidget-style-updated"><span class="type">“style-updated”</span></a> handler.</p>
 <div class="refsect3">
 <a name="gdk-window-set-opaque-region.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -3932,7 +3932,7 @@ is already set as the clip region, and already has a backing store.
 Therefore in most cases, application code need not call
 <a class="link" href="gdk3-Windows.html#gdk-window-begin-paint-region" title="gdk_window_begin_paint_region ()"><code class="function">gdk_window_begin_paint_region()</code></a>. (You can disable the automatic
 calls around expose events on a widget-by-widget basis by calling
-<code class="function">gtk_widget_set_double_buffered()</code>.)</p>
+<a href="https://developer.gnome.org/gtk3/GtkWidget.html#gtk-widget-set-double-buffered"><code class="function">gtk_widget_set_double_buffered()</code></a>.)</p>
 <p>If you call this function multiple times before calling the
 matching <a class="link" href="gdk3-Windows.html#gdk-window-end-paint" title="gdk_window_end_paint ()"><code class="function">gdk_window_end_paint()</code></a>, the backing stores are pushed onto
 a stack. <a class="link" href="gdk3-Windows.html#gdk-window-end-paint" title="gdk_window_end_paint ()"><code class="function">gdk_window_end_paint()</code></a> copies the topmost backing store
@@ -4707,7 +4707,7 @@ This means it won’t have a titlebar, won’t be minimizable, etc. - it will
 be entirely under the control of the application. The window manager
 can’t see the override redirect window at all.</p>
 <p>Override redirect should only be used for short-lived temporary
-windows, such as popup menus. <span class="type">GtkMenu</span> uses an override redirect
+windows, such as popup menus. <a href="https://developer.gnome.org/gtk3/GtkMenu.html#GtkMenu-struct"><span class="type">GtkMenu</span></a> uses an override redirect
 window in its implementation, for example.</p>
 <div class="refsect3">
 <a name="gdk-window-set-override-redirect.parameters"></a><h4>Parameters</h4>
@@ -5334,7 +5334,7 @@ gdk_window_set_background (<em class="parameter"><code><a class="link" href="gdk
 .</p>
 <p>However, when using GTK+, influence the background of a widget
 using a style class or CSS — if you’re an application — or with
-<code class="function">gtk_style_context_set_background()</code> — if you're implementing a
+<a href="https://developer.gnome.org/gtk3/GtkStyleContext.html#gtk-style-context-set-background"><code class="function">gtk_style_context_set_background()</code></a> — if you're implementing a
 custom widget.</p>
 <div class="refsect3">
 <a name="gdk-window-set-background.parameters"></a><h4>Parameters</h4>
@@ -6814,7 +6814,7 @@ keep <em class="parameter"><code>window</code></em>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gdk_window_set_role (<em class="parameter"><code><a class="link" href="gdk3-Windows.html#GdkWindow"><span class="type">GdkWindow</span></a> *window</code></em>,
                      <em class="parameter"><code>const <span class="type">gchar</span> *role</code></em>);</pre>
-<p>When using GTK+, typically you should use <code class="function">gtk_window_set_role()</code> instead
+<p>When using GTK+, typically you should use <a href="https://developer.gnome.org/gtk3/GtkWindow.html#gtk-window-set-role"><code class="function">gtk_window_set_role()</code></a> instead
 of this low-level function.</p>
 <p>The window manager and session manager use a window’s role to
 distinguish it from other kinds of window in the same application.
@@ -7818,7 +7818,7 @@ screen, and is created by the window system</p>
 <td class="enum_member_name"><p><a name="GDK-WINDOW-TEMP:CAPS"></a>GDK_WINDOW_TEMP</p></td>
 <td class="enum_member_description">
 <p>override redirect temporary window (used to implement
-<span class="type">GtkMenu</span>)</p>
+<a href="https://developer.gnome.org/gtk3/GtkMenu.html#GtkMenu-struct"><span class="type">GtkMenu</span></a>)</p>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
@@ -7899,12 +7899,12 @@ attention to. Also, the presence/absence of <em class="parameter"><code>GDK_HINT
  is significant, though they don't
 directly refer to <a class="link" href="gdk3-Windows.html#GdkGeometry" title="struct GdkGeometry"><span class="type">GdkGeometry</span></a> fields. <em class="parameter"><code>GDK_HINT_USER_POS</code></em>
  will be set
-automatically by <a href="https://developer.gnome.org/gtk4/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a> if you call <code class="function">gtk_window_move()</code>.
+automatically by <a href="https://developer.gnome.org/gtk4/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a> if you call <a href="https://developer.gnome.org/gtk3/GtkWindow.html#gtk-window-move"><code class="function">gtk_window_move()</code></a>.
 <em class="parameter"><code>GDK_HINT_USER_POS</code></em>
  and <em class="parameter"><code>GDK_HINT_USER_SIZE</code></em>
  should be set if the user
 specified a size/position using a --geometry command-line argument;
-<code class="function">gtk_window_parse_geometry()</code> automatically sets these flags.</p>
+<a href="https://developer.gnome.org/gtk3/GtkWindow.html#gtk-window-parse-geometry"><code class="function">gtk_window_parse_geometry()</code></a> automatically sets these flags.</p>
 <div class="refsect3">
 <a name="GdkWindowHints.members"></a><h4>Members</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -8002,11 +8002,11 @@ the user</p>
 </pre>
 <p>The <a class="link" href="gdk3-Windows.html#GdkGeometry" title="struct GdkGeometry"><span class="type">GdkGeometry</span></a> struct gives the window manager information about
 a window’s geometry constraints. Normally you would set these on
-the GTK+ level using <code class="function">gtk_window_set_geometry_hints()</code>. <a href="https://developer.gnome.org/gtk4/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a>
+the GTK+ level using <a href="https://developer.gnome.org/gtk3/GtkWindow.html#gtk-window-set-geometry-hints"><code class="function">gtk_window_set_geometry_hints()</code></a>. <a href="https://developer.gnome.org/gtk4/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a>
 then sets the hints on the <a class="link" href="gdk3-Windows.html#GdkWindow"><span class="type">GdkWindow</span></a> it creates.</p>
 <p>gdk_window_set_geometry_hints() expects the hints to be fully valid already
 and simply passes them to the window manager; in contrast,
-<code class="function">gtk_window_set_geometry_hints()</code> performs some interpretation. For example,
+<a href="https://developer.gnome.org/gtk3/GtkWindow.html#gtk-window-set-geometry-hints"><code class="function">gtk_window_set_geometry_hints()</code></a> performs some interpretation. For example,
 <a href="https://developer.gnome.org/gtk4/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a> will apply the hints to the geometry widget instead of the
 toplevel window, if you set a geometry widget. Also, the
 <em class="parameter"><code>min_width</code></em>
@@ -8020,7 +8020,7 @@ as the minimum size. If the minimum size is provided and a geometry widget is
 set, <a href="https://developer.gnome.org/gtk4/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a> will take the minimum size as the minimum size of the
 geometry widget rather than the entire window. The base size is treated
 similarly.</p>
-<p>The canonical use-case for <code class="function">gtk_window_set_geometry_hints()</code> is to get a
+<p>The canonical use-case for <a href="https://developer.gnome.org/gtk3/GtkWindow.html#gtk-window-set-geometry-hints"><code class="function">gtk_window_set_geometry_hints()</code></a> is to get a
 terminal widget to resize properly. Here, the terminal text area should be
 the geometry widget; <a href="https://developer.gnome.org/gtk4/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a> will then automatically set the base size to
 the size of other widgets in the terminal window, such as the menubar and
@@ -8154,7 +8154,7 @@ N is any integer (-1 allowed with <a href="https://developer.gnome.org/gtk4/GtkW
 </tr>
 <tr>
 <td class="struct_member_name"><p><a class="link" href="gdk3-Windows.html#GdkGravity" title="enum GdkGravity"><span class="type">GdkGravity</span></a> <em class="structfield"><code><a name="GdkGeometry.win-gravity"></a>win_gravity</code></em>;</p></td>
-<td class="struct_member_description"><p>window gravity, see <code class="function">gtk_window_set_gravity()</code></p></td>
+<td class="struct_member_description"><p>window gravity, see <a href="https://developer.gnome.org/gtk3/GtkWindow.html#gtk-window-set-gravity"><code class="function">gtk_window_set_gravity()</code></a></p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 </tbody>
@@ -8165,7 +8165,7 @@ N is any integer (-1 allowed with <a href="https://developer.gnome.org/gtk4/GtkW
 <div class="refsect2">
 <a name="GdkGravity"></a><h3>enum GdkGravity</h3>
 <p>Defines the reference point of a window and the meaning of coordinates
-passed to <code class="function">gtk_window_move()</code>. See <code class="function">gtk_window_move()</code> and the "implementation
+passed to <a href="https://developer.gnome.org/gtk3/GtkWindow.html#gtk-window-move"><code class="function">gtk_window_move()</code></a>. See <a href="https://developer.gnome.org/gtk3/GtkWindow.html#gtk-window-move"><code class="function">gtk_window_move()</code></a> and the "implementation
 notes" section of the
 <a class="ulink" href="http://www.freedesktop.org/Standards/wm-spec" target="_top">Extended Window Manager Hints</a>
 specification for more details.</p>
@@ -8466,7 +8466,7 @@ specification for more details about window types.</p>
 <td class="enum_member_name"><p><a name="GDK-WINDOW-TYPE-HINT-MENU:CAPS"></a>GDK_WINDOW_TYPE_HINT_MENU</p></td>
 <td class="enum_member_description">
 <p>Window used to implement a menu; GTK+ uses
-this hint only for torn-off menus, see <span class="type">GtkTearoffMenuItem</span>.</p>
+this hint only for torn-off menus, see <a href="https://developer.gnome.org/gtk3/GtkTearoffMenuItem.html#GtkTearoffMenuItem-struct"><span class="type">GtkTearoffMenuItem</span></a>.</p>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
@@ -8638,12 +8638,12 @@ window that receives events)</p></td>
 </tr>
 <tr>
 <td class="struct_member_name"><p><span class="type">gchar</span> *<em class="structfield"><code><a name="GdkWindowAttr.wmclass-name"></a>wmclass_name</code></em>;</p></td>
-<td class="struct_member_description"><p>don’t use (see <code class="function">gtk_window_set_wmclass()</code>)</p></td>
+<td class="struct_member_description"><p>don’t use (see <a href="https://developer.gnome.org/gtk3/GtkWindow.html#gtk-window-set-wmclass"><code class="function">gtk_window_set_wmclass()</code></a>)</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
 <td class="struct_member_name"><p><span class="type">gchar</span> *<em class="structfield"><code><a name="GdkWindowAttr.wmclass-class"></a>wmclass_class</code></em>;</p></td>
-<td class="struct_member_description"><p>don’t use (see <code class="function">gtk_window_set_wmclass()</code>)</p></td>
+<td class="struct_member_description"><p>don’t use (see <a href="https://developer.gnome.org/gtk3/GtkWindow.html#gtk-window-set-wmclass"><code class="function">gtk_window_set_wmclass()</code></a>)</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>

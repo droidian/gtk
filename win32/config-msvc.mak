@@ -38,8 +38,16 @@ GLIB_COMPILE_RESOURCES = $(PREFIX)\bin\glib-compile-resources.exe
 GDBUS_CODEGEN = $(PREFIX)\bin\gdbus-codegen
 !endif
 
+!if "$(PLAT)" == "x64"
+AT_PLAT=x86_64
+!elseif "$(PLAT)" == "arm64"
+AT_PLAT=aarch64
+!else
+AT_PLAT=i686
+!endif
+
 # Please do not change anything beneath this line unless maintaining the NMake Makefiles
-GTK_VERSION = 3.24.24
+GTK_VERSION = 3.24.27
 
 GDK_PREPROCESSOR_FLAGS =	\
 	/DG_LOG_USE_STRUCTURED=1	\
@@ -56,6 +64,7 @@ GTK_PREPROCESSOR_FLAGS =	\
 	 /I$(PREFIX)\include\gdk-pixbuf-2.0	\
 	 /I$(PREFIX)\include\pango-1.0	\
 	 /I$(PREFIX)\include\atk-1.0	\
+	 /I$(PREFIX)\include\harfbuzz	\
 	 /I$(PREFIX)\include\cairo	\
 	 /I$(PREFIX)\include\gio-win32-2.0	\
 	 /I$(PREFIX)\include\glib-2.0	\
@@ -69,7 +78,7 @@ GTK_PREPROCESSOR_FLAGS =	\
 	 /D_USE_MATH_DEFINES	\
 	 /DGTK_COMPILATION	\
 	 /DG_LOG_DOMAIN=\"Gtk\"	\
-	 /DGTK_HOST=\"i686-pc-vs$(VSVER)\"	\
+	 /DGTK_HOST=\"$(AT_PLAT)-pc-vs$(VSVER)\"	\
 	 /DGTK_PRINT_BACKENDS=\"file\"	\
 	 /DGTK_PRINT_BACKEND_ENABLE_UNSUPPORTED	\
 	 /DINCLUDE_IM_am_et	\
