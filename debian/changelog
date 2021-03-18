@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.27-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- purism <purism@pureos>  Tue, 16 Mar 2021 18:54:08 +0500
+
 gtk+3.0 (3.24.24-1pureos1~amber0) amber-phone; urgency=medium
 
   * Backport fixes from libhandy
