@@ -38,3 +38,4 @@ Reduce-the-font-chooser-minimum-size.patch
 printunixdialog-Adapt-for-phones.patch
 window-Disable-window-dragging-on-phones.patch
 events-Compress-touch-update-events.patch
+librem5-Make-GtkShortcutsWindow-adaptive.patch
