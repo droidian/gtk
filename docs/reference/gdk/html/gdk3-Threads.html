@@ -144,7 +144,7 @@ locked), but individual data structure instances are not automatically
 locked for performance reasons. So e.g. you must coordinate
 accesses to the same <span class="type">GHashTable</span> from multiple threads.</p>
 <p>GTK+, however, is not thread safe. You should only use GTK+ and GDK
-from the thread <a href="https://developer.gnome.org/gtk4/gtk4-General.html#gtk-init"><code class="function">gtk_init()</code></a> and <code class="function">gtk_main()</code> were called on.
+from the thread <a href="https://developer.gnome.org/gtk4/gtk4-General.html#gtk-init"><code class="function">gtk_init()</code></a> and <a href="https://developer.gnome.org/gtk3/gtk3-General.html#gtk-main"><code class="function">gtk_main()</code></a> were called on.
 This is usually referred to as the “main thread”.</p>
 <p>Signals on GTK+ and GDK types, as well as non-signal callbacks, are
 emitted in the main thread.</p>
