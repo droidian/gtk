@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.27-1pureos2) byzantium; urgency=medium
+
+  * Make GtkShortcutsWindow adaptive
+
+ -- Alexander Mikhaylenko <alexander.mikhaylenko@puri.sm>  Mon, 22 Mar 2021 13:29:17 +0500
+
 gtk+3.0 (3.24.27-1pureos1) byzantium; urgency=medium
 
   [ Alexander Mikhaylenko ]
