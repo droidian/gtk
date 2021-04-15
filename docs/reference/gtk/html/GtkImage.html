@@ -8,7 +8,7 @@
 <link rel="up" href="DisplayWidgets.html" title="Display Widgets">
 <link rel="prev" href="GtkLabel.html" title="GtkLabel">
 <link rel="next" href="GtkSpinner.html" title="GtkSpinner">
-<meta name="generator" content="GTK-Doc V1.33.0 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -434,7 +434,7 @@ display an animation (<a href="http://library.gnome.org/devel/gdk-pixbuf/unstabl
 <p><a class="link" href="GtkImage.html" title="GtkImage"><span class="type">GtkImage</span></a> is a subclass of <a class="link" href="GtkMisc.html" title="GtkMisc"><span class="type">GtkMisc</span></a>, which implies that you can
 align it (center, left, right) and add padding to it, using
 <a class="link" href="GtkMisc.html" title="GtkMisc"><span class="type">GtkMisc</span></a> methods.</p>
-<p><a class="link" href="GtkImage.html" title="GtkImage"><span class="type">GtkImage</span></a> is a “no window” widget (has no <a href="https://developer.gnome.org/gdk3/gdk3-Windows.html#GdkWindow-struct"><span class="type">GdkWindow</span></a> of its own),
+<p><a class="link" href="GtkImage.html" title="GtkImage"><span class="type">GtkImage</span></a> is a “no window” widget (has no <span class="type">GdkWindow</span> of its own),
 so by default does not receive events. If you want to receive events
 on the image, such as button clicks, place the image inside a
 <a class="link" href="GtkEventBox.html" title="GtkEventBox"><span class="type">GtkEventBox</span></a>, then connect to the event signals on the event box.</p>
@@ -478,7 +478,7 @@ on the image, such as button clicks, place the image inside a
 32
 33</pre></td>
         <td class="listing_code"><pre class="programlisting"><span class="k">static</span> <span class="n">gboolean</span>
-<span class="nf">button_press_callback</span> <span class="p">(</span><span class="n">GtkWidget</span>      <span class="o">*</span><span class="n">event_box</span><span class="p">,</span>
+<span class="n">button_press_callback</span> <span class="p">(</span><span class="n">GtkWidget</span>      <span class="o">*</span><span class="n">event_box</span><span class="p">,</span>
                        <span class="n">GdkEventButton</span> <span class="o">*</span><span class="n">event</span><span class="p">,</span>
                        <span class="n">gpointer</span>        <span class="n">data</span><span class="p">)</span>
 <span class="p">{</span>
@@ -492,7 +492,7 @@ on the image, such as button clicks, place the image inside a
 <span class="p">}</span>
 
 <span class="k">static</span> <span class="n">GtkWidget</span><span class="o">*</span>
-<span class="nf">create_image</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="n">create_image</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="n">GtkWidget</span> <span class="o">*</span><span class="n">image</span><span class="p">;</span>
   <span class="n">GtkWidget</span> <span class="o">*</span><span class="n">event_box</span><span class="p">;</span>
@@ -568,7 +568,7 @@ The storage type of the image must be <a class="link" href="GtkImage.html#GTK-IM
 <td class="parameter_name"><p>icon_set</p></td>
 <td class="parameter_description"><p>location to store a
 <a class="link" href="gtk3-Themeable-Stock-Images.html#GtkIconSet"><span class="type">GtkIconSet</span></a>, or <code class="literal">NULL</code>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>size</p></td>
@@ -609,7 +609,7 @@ returned pixbuf.</p>
 <a name="gtk-image-get-pixbuf.returns"></a><h4>Returns</h4>
 <p>the displayed pixbuf, or <code class="literal">NULL</code> if
 the image is empty. </p>
-<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -646,7 +646,7 @@ be freed.</p>
 <td class="parameter_name"><p>stock_id</p></td>
 <td class="parameter_description"><p>place to store a
 stock icon name, or <code class="literal">NULL</code>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>size</p></td>
@@ -687,7 +687,7 @@ returned animation.</p>
 <a name="gtk-image-get-animation.returns"></a><h4>Returns</h4>
 <p>the displayed animation, or <code class="literal">NULL</code> if
 the image is empty. </p>
-<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -720,7 +720,7 @@ be freed.</p>
 <td class="parameter_name"><p>icon_name</p></td>
 <td class="parameter_description"><p>place to store an
 icon name, or <code class="literal">NULL</code>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>size</p></td>
@@ -763,7 +763,7 @@ returned <span class="type">GIcon</span>.</p>
 <td class="parameter_name"><p>gicon</p></td>
 <td class="parameter_description"><p>place to store a
 <span class="type">GIcon</span>, or <code class="literal">NULL</code>. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>size</p></td>
@@ -1781,6 +1781,6 @@ and <a class="link" href="GtkImage.html#GTK-IMAGE-GICON:CAPS"><code class="liter
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.33.0</div>
+<hr>Generated by GTK-Doc V1.33.1</div>
 </body>
 </html>

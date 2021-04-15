@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+ 3.24.25\n"
+"Project-Id-Version: gtk+ 3.24.28\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gtk"
 "%2B\n"
-"POT-Creation-Date: 2021-02-12 09:40-0500\n"
+"POT-Creation-Date: 2021-03-26 21:30-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -7469,98 +7469,98 @@ msgstr ""
 msgid "Decreases the volume"
 msgstr ""
 
-#: gtk/updateiconcache.c:1388
+#: gtk/updateiconcache.c:1397
 msgid "Failed to write header\n"
 msgstr ""
 
-#: gtk/updateiconcache.c:1394
+#: gtk/updateiconcache.c:1403
 msgid "Failed to write hash table\n"
 msgstr ""
 
-#: gtk/updateiconcache.c:1400
+#: gtk/updateiconcache.c:1409
 msgid "Failed to write folder index\n"
 msgstr ""
 
-#: gtk/updateiconcache.c:1408
+#: gtk/updateiconcache.c:1417
 msgid "Failed to rewrite header\n"
 msgstr ""
 
-#: gtk/updateiconcache.c:1502
+#: gtk/updateiconcache.c:1511
 #, c-format
 msgid "Failed to open file %s : %s\n"
 msgstr ""
 
-#: gtk/updateiconcache.c:1510 gtk/updateiconcache.c:1540
+#: gtk/updateiconcache.c:1519 gtk/updateiconcache.c:1549
 #, c-format
 msgid "Failed to write cache file: %s\n"
 msgstr ""
 
-#: gtk/updateiconcache.c:1550
+#: gtk/updateiconcache.c:1559
 msgid "The generated cache was invalid.\n"
 msgstr ""
 
-#: gtk/updateiconcache.c:1564
+#: gtk/updateiconcache.c:1573
 #, c-format
 msgid "Could not rename %s to %s: %s, removing %s then.\n"
 msgstr ""
 
-#: gtk/updateiconcache.c:1578
+#: gtk/updateiconcache.c:1587
 #, c-format
 msgid "Could not rename %s to %s: %s\n"
 msgstr ""
 
-#: gtk/updateiconcache.c:1588
+#: gtk/updateiconcache.c:1597
 #, c-format
 msgid "Could not rename %s back to %s: %s.\n"
 msgstr ""
 
-#: gtk/updateiconcache.c:1615
+#: gtk/updateiconcache.c:1624
 msgid "Cache file created successfully.\n"
 msgstr ""
 
-#: gtk/updateiconcache.c:1654
+#: gtk/updateiconcache.c:1663
 msgid "Overwrite an existing cache, even if up to date"
 msgstr ""
 
-#: gtk/updateiconcache.c:1655
+#: gtk/updateiconcache.c:1664
 msgid "Don't check for the existence of index.theme"
 msgstr ""
 
-#: gtk/updateiconcache.c:1656
+#: gtk/updateiconcache.c:1665
 msgid "Don't include image data in the cache"
 msgstr ""
 
-#: gtk/updateiconcache.c:1657
+#: gtk/updateiconcache.c:1666
 msgid "Include image data in the cache"
 msgstr ""
 
-#: gtk/updateiconcache.c:1658
+#: gtk/updateiconcache.c:1667
 msgid "Output a C header file"
 msgstr ""
 
-#: gtk/updateiconcache.c:1659
+#: gtk/updateiconcache.c:1668
 msgid "Turn off verbose output"
 msgstr ""
 
-#: gtk/updateiconcache.c:1660
+#: gtk/updateiconcache.c:1669
 msgid "Validate existing icon cache"
 msgstr ""
 
-#: gtk/updateiconcache.c:1727
+#: gtk/updateiconcache.c:1736
 #, c-format
 msgid "File not found: %s\n"
 msgstr ""
 
-#: gtk/updateiconcache.c:1733
+#: gtk/updateiconcache.c:1742
 #, c-format
 msgid "Not a valid icon cache: %s\n"
 msgstr ""
 
-#: gtk/updateiconcache.c:1746
+#: gtk/updateiconcache.c:1755
 msgid "No theme index file.\n"
 msgstr ""
 
-#: gtk/updateiconcache.c:1750
+#: gtk/updateiconcache.c:1759
 #, c-format
 msgid ""
 "No theme index file in '%s'.\n"
