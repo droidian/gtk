@@ -1,6 +1,7 @@
 gdk-wayland-Mark-matched-settings-from-the-portal-as-vali.patch
 gdk-wayland-Look-for-font-settings-recursively.patch
 updateiconcache-Sort-list-of-entries.patch
+x11-dnd-Ignore-XErrors-from-the-COW.patch
 gdk-Don-t-distribute-generated-files-in-tarballs.patch
 gtk-Really-don-t-distribute-built-files.patch
 demos-examples-tests-Don-t-distribute-built-files.patch
