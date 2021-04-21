@@ -1,0 +1,150 @@
+From: Alexander Mikhaylenko <alexm@gnome.org>
+Date: Mon, 15 Mar 2021 17:17:01 +0500
+Subject: scrolledwindow: Cancel overshoot on dimension changes
+
+If we scroll down in a list that's still being filled, we hit the edge and
+initiate overshoot, and then the adjustment's upper value increases. This
+leads to an unwanted bounce back.
+
+Additionally, if in a similar situation the upper value decreases, the
+overscroll glow gets stuck.
+
+Update kinetic scrolling upper and lower value on changes, and immediately
+cancel it if dimensions on that side change.
+
+Bug: https://gitlab.gnome.org/GNOME/gtk/-/issues/3752
+Origin: upstream, 3.24.29, commit:27d38eca9a14fe32893ce5e97d2f0b542458f342
+---
+ gtk/gtkkineticscrolling.c | 29 +++++++++++++++++++++++++++++
+ gtk/gtkkineticscrolling.h | 11 +++++++++++
+ gtk/gtkscrolledwindow.c   | 39 +++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 79 insertions(+)
+
+diff --git a/gtk/gtkkineticscrolling.c b/gtk/gtkkineticscrolling.c
+index 9036e15..4976270 100644
+--- a/gtk/gtkkineticscrolling.c
++++ b/gtk/gtkkineticscrolling.c
+@@ -124,6 +124,35 @@ gtk_kinetic_scrolling_new (gdouble lower,
+   return data;
+ }
+ 
++GtkKineticScrollingChange
++gtk_kinetic_scrolling_update_size (GtkKineticScrolling *data,
++                                   gdouble              lower,
++                                   gdouble              upper)
++{
++  GtkKineticScrollingChange change = GTK_KINETIC_SCROLLING_CHANGE_NONE;
++
++  if (lower != data->lower)
++    {
++      if (data->position <= lower)
++        change |= GTK_KINETIC_SCROLLING_CHANGE_LOWER;
++
++      data->lower = lower;
++    }
++
++  if (upper != data->upper)
++    {
++      if (data->position >= data->upper)
++        change |= GTK_KINETIC_SCROLLING_CHANGE_UPPER;
++
++      data->upper = upper;
++    }
++
++  if (data->phase == GTK_KINETIC_SCROLLING_PHASE_OVERSHOOTING)
++    change |= GTK_KINETIC_SCROLLING_CHANGE_IN_OVERSHOOT;
++
++  return change;
++}
++
+ void
+ gtk_kinetic_scrolling_free (GtkKineticScrolling *kinetic)
+ {
+diff --git a/gtk/gtkkineticscrolling.h b/gtk/gtkkineticscrolling.h
+index d00f1d0..8155d57 100644
+--- a/gtk/gtkkineticscrolling.h
++++ b/gtk/gtkkineticscrolling.h
+@@ -23,6 +23,13 @@
+ 
+ G_BEGIN_DECLS
+ 
++typedef enum {
++  GTK_KINETIC_SCROLLING_CHANGE_NONE = 0,
++  GTK_KINETIC_SCROLLING_CHANGE_LOWER = 1 << 0,
++  GTK_KINETIC_SCROLLING_CHANGE_UPPER = 1 << 1,
++  GTK_KINETIC_SCROLLING_CHANGE_IN_OVERSHOOT = 1 << 2,
++} GtkKineticScrollingChange;
++
+ typedef struct _GtkKineticScrolling GtkKineticScrolling;
+ 
+ GtkKineticScrolling *    gtk_kinetic_scrolling_new  (gdouble               lower,
+@@ -34,6 +41,10 @@ GtkKineticScrolling *    gtk_kinetic_scrolling_new  (gdouble               lower
+                                                      gdouble               initial_velocity);
+ void                     gtk_kinetic_scrolling_free (GtkKineticScrolling  *kinetic);
+ 
++GtkKineticScrollingChange gtk_kinetic_scrolling_update_size (GtkKineticScrolling *data,
++                                                             gdouble              lower,
++                                                             gdouble              upper);
++
+ gboolean                 gtk_kinetic_scrolling_tick (GtkKineticScrolling  *data,
+                                                      gdouble               time_delta,
+                                                      gdouble              *position,
+diff --git a/gtk/gtkscrolledwindow.c b/gtk/gtkscrolledwindow.c
+index bea7339..1909077 100644
+--- a/gtk/gtkscrolledwindow.c
++++ b/gtk/gtkscrolledwindow.c
+@@ -3900,6 +3900,24 @@ gtk_scrolled_window_adjustment_changed (GtkAdjustment *adjustment,
+ 
+ 	  if (priv->hscrollbar_visible != visible)
+ 	    gtk_widget_queue_resize (GTK_WIDGET (scrolled_window));
++
++          if (priv->hscrolling)
++            {
++              GtkKineticScrollingChange change;
++              gdouble lower = gtk_adjustment_get_lower (adjustment);
++              gdouble upper = gtk_adjustment_get_upper (adjustment);
++              upper -= gtk_adjustment_get_page_size (adjustment);
++
++              change = gtk_kinetic_scrolling_update_size (priv->hscrolling, lower, upper);
++
++              if ((change & GTK_KINETIC_SCROLLING_CHANGE_IN_OVERSHOOT) &&
++                  (change & (GTK_KINETIC_SCROLLING_CHANGE_UPPER | GTK_KINETIC_SCROLLING_CHANGE_LOWER)))
++                {
++                  g_clear_pointer (&priv->hscrolling, gtk_kinetic_scrolling_free);
++                  priv->unclamped_hadj_value = gtk_adjustment_get_value (adjustment);
++                  gtk_scrolled_window_invalidate_overshoot (scrolled_window);
++                }
++            }
+ 	}
+     }
+   else if (adjustment == gtk_range_get_adjustment (GTK_RANGE (priv->vscrollbar)))
+@@ -3914,8 +3932,29 @@ gtk_scrolled_window_adjustment_changed (GtkAdjustment *adjustment,
+ 
+ 	  if (priv->vscrollbar_visible != visible)
+ 	    gtk_widget_queue_resize (GTK_WIDGET (scrolled_window));
++
++          if (priv->vscrolling)
++            {
++              GtkKineticScrollingChange change;
++              gdouble lower = gtk_adjustment_get_lower (adjustment);
++              gdouble upper = gtk_adjustment_get_upper (adjustment);
++              upper -= gtk_adjustment_get_page_size (adjustment);
++
++              change = gtk_kinetic_scrolling_update_size (priv->vscrolling, lower, upper);
++
++              if ((change & GTK_KINETIC_SCROLLING_CHANGE_IN_OVERSHOOT) &&
++                  (change & (GTK_KINETIC_SCROLLING_CHANGE_UPPER | GTK_KINETIC_SCROLLING_CHANGE_LOWER)))
++                {
++                  g_clear_pointer (&priv->vscrolling, gtk_kinetic_scrolling_free);
++                  priv->unclamped_vadj_value = gtk_adjustment_get_value (adjustment);
++                  gtk_scrolled_window_invalidate_overshoot (scrolled_window);
++                }
++            }
+ 	}
+     }
++
++  if (!priv->hscrolling && !priv->vscrolling)
++    gtk_scrolled_window_cancel_deceleration (scrolled_window);
+ }
+ 
+ static void

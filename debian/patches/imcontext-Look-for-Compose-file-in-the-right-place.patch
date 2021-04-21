@@ -1,0 +1,27 @@
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Mon, 29 Mar 2021 18:31:23 -0400
+Subject: imcontext: Look for Compose file in the right place
+
+The documentation states that GTK will load a Compose
+file from ~/.config/gtk-3.0/Compose. Unfortunately,
+backports changed this unintentionally to look in
+the gtk-4.0 directory. Change it back.
+
+Origin: upstream, 3.24.29, commit:ba8c18019d4258a9fb056ce84d1df8d510a7e444
+---
+ gtk/gtkimcontextsimple.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/gtk/gtkimcontextsimple.c b/gtk/gtkimcontextsimple.c
+index 60ddbc3..7ab3e43 100644
+--- a/gtk/gtkimcontextsimple.c
++++ b/gtk/gtkimcontextsimple.c
+@@ -162,7 +162,7 @@ gtk_im_context_simple_init_compose_table (void)
+   const char * const *sys_lang = NULL;
+   char *x11_compose_file_dir = get_x11_compose_file_dir ();
+ 
+-  path = g_build_filename (g_get_user_config_dir (), "gtk-4.0", "Compose", NULL);
++  path = g_build_filename (g_get_user_config_dir (), "gtk-3.0", "Compose", NULL);
+   if (g_file_test (path, G_FILE_TEST_EXISTS))
+     {
+       G_LOCK (global_tables);
