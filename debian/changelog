@@ -1,4 +1,4 @@
-gtk+3.0 (3.24.28-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.28-1) experimental; urgency=medium
 
   * New upstream release
     - Fix size changes in server-side decorations that could cause mutter
@@ -7,9 +7,10 @@ gtk+3.0 (3.24.28-1) UNRELEASED; urgency=medium
     - Reinstate invisible borders for tiled windows
     - Wayland: Find font settings more reliably
     - Improve Compose and dead key handling
-    - Fix rendering of scaled text shadows
+    - Fix rendering of scaled text shadows (LP: #1919404)
     - Wayland: Fix matching of accelerators with multiple layouts
-    - Improve X11 error trapping
+    - Fix crashes in X11 drag & drop with certain configurations of the
+      NVIDIA proprietary driver (LP: #1911036)
     - Translation updates
   * d/patches: Add various fixes from upstream
     - d/p/imcontext-Look-for-Compose-file-in-the-right-place.patch,
@@ -38,7 +39,7 @@ gtk+3.0 (3.24.28-1) UNRELEASED; urgency=medium
     - Translation updates
   * d/p/updateiconcache-Sort-list-of-entries.patch: Drop, applied upstream
 
- -- Simon McVittie <smcv@debian.org>  Wed, 21 Apr 2021 09:55:45 +0100
+ -- Simon McVittie <smcv@debian.org>  Wed, 21 Apr 2021 10:20:11 +0100
 
 gtk+3.0 (3.24.25-1) experimental; urgency=medium
 
