@@ -1,8 +1,19 @@
 gtk+3.0 (3.24.28-1) UNRELEASED; urgency=medium
 
   * New upstream release
+    - Fix size changes in server-side decorations that could cause mutter
+      crashes
+    - Use transparent black for window border in dark theme
+    - Reinstate invisible borders for tiled windows
+    - Wayland: Find font settings more reliably
+    - Improve Compose and dead key handling
+    - Fix rendering of scaled text shadows
+    - Wayland: Fix matching of accelerators with multiple layouts
+    - Improve X11 error trapping
+    - Translation updates
+  * d/p/updateiconcache-Sort-list-of-entries.patch: Drop, applied upstream
 
- -- Simon McVittie <smcv@debian.org>  Thu, 15 Apr 2021 09:55:17 +0100
+ -- Simon McVittie <smcv@debian.org>  Wed, 21 Apr 2021 09:55:45 +0100
 
 gtk+3.0 (3.24.25-1) experimental; urgency=medium
 
