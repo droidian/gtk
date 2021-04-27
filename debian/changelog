@@ -1,4 +1,4 @@
-gtk+3.0 (3.24.27-1pureos2) byzantium; urgency=medium
+gtk+3.0 (3.24.27.0) byzantium; urgency=medium
 
   * Make GtkShortcutsWindow adaptive
 
