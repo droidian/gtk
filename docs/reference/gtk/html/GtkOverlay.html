@@ -425,6 +425,10 @@ See <a class="link" href="GtkOverlay.html#gtk-overlay-reorder-overlay" title="gt
 <pre class="programlisting">  “pass-through”             <span class="type">gboolean</span></pre>
 <p>Whether to pass input through the overlay child to the main child.
 (Of course, this has no effect when set on the main child itself.)</p>
+<p>Note that this is implemented by calling <code class="function">gdk_window_set_pass_through()</code>
+on the window that the overlay child is placed in. If the descendents
+of the overlay child have their own windows, you need to manually call
+that function on them to achieve the desired effect.</p>
 <p>Owner: GtkOverlay</p>
 <p>Flags: Read / Write</p>
 <p>Default value: FALSE</p>

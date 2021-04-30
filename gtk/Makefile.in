@@ -1863,8 +1863,7 @@ EXTRA_DIST = $(gtk_all_private_h_sources) $(gtk_extra_sources) \
 	emoji/convert-emoji.c emoji/emoji.json emoji/emoji1.json \
 	a11y/Makefile.inc deprecated/Makefile.inc glade/README.glade \
 	glade/gtk-private-widgets.xml \
-	compose/gtk-compose-lookaside.txt \
-	compose/gtk-compose-remove.txt inspector/Makefile.inc \
+	compose/gtk-compose-lookaside.txt inspector/Makefile.inc \
 	libgtk3.manifest.in gtk-win32.rc.body.in gtk-win32.rc.body \
 	gtkwin32embed.h gtkwin32embedwidget.h gtkwin32embedwidget.c \
 	gtkprint-win32.h gtkprint-win32.c gtksearchenginetracker3.c \
