@@ -100,7 +100,10 @@ static const guint16 gtk_compose_ignore[] = {
   GDK_KEY_Hyper_L,
   GDK_KEY_Hyper_R,
   GDK_KEY_Mode_switch,
-  GDK_KEY_ISO_Level3_Shift
+  GDK_KEY_ISO_Level3_Shift,
+  GDK_KEY_ISO_Level3_Latch,
+  GDK_KEY_ISO_Level5_Shift,
+  GDK_KEY_ISO_Level5_Latch
 };
 
 static void     gtk_im_context_simple_finalize           (GObject                  *obj);
@@ -162,7 +165,7 @@ gtk_im_context_simple_init_compose_table (void)
   const char * const *sys_lang = NULL;
   char *x11_compose_file_dir = get_x11_compose_file_dir ();
 
-  path = g_build_filename (g_get_user_config_dir (), "gtk-4.0", "Compose", NULL);
+  path = g_build_filename (g_get_user_config_dir (), "gtk-3.0", "Compose", NULL);
   if (g_file_test (path, G_FILE_TEST_EXISTS))
     {
       G_LOCK (global_tables);
@@ -553,8 +556,10 @@ no_sequence_matches (GtkIMContextSimple *context_simple,
 
           if (i == n_compose - 1)
             {
+              int j;
+
               /* dead keys are never *really* dead */
-              for (int j = 0; j < i; j++)
+              for (j = 0; j < i; j++)
                 {
                   ch = dead_key_to_unicode (priv->compose_buffer[j], &need_space);
                   if (ch)
@@ -731,13 +736,21 @@ gtk_im_context_simple_filter_keypress (GtkIMContext *context,
 	    }
 	}
 
+      if (priv->in_hex_sequence || priv->in_compose_sequence)
+        return TRUE; /* Don't leak random key events during preedit */
+
       return FALSE;
     }
 
   /* Ignore modifier key presses */
   for (i = 0; i < G_N_ELEMENTS (gtk_compose_ignore); i++)
     if (event->keyval == gtk_compose_ignore[i])
-      return FALSE;
+      {
+        if (priv->in_hex_sequence || priv->in_compose_sequence)
+          return TRUE; /* Don't leak random key events during preedit */
+
+        return FALSE;
+      }
 
   hex_mod_mask = gdk_keymap_get_modifier_mask (gdk_keymap_get_for_display (display),
                                                GDK_MODIFIER_INTENT_PRIMARY_ACCELERATOR);
@@ -776,16 +789,23 @@ gtk_im_context_simple_filter_keypress (GtkIMContext *context,
         gdk_keymap_get_modifier_mask (gdk_keymap_get_for_display (display),
                                       GDK_MODIFIER_INTENT_NO_TEXT_INPUT);
 
-      if (event->state & no_text_input_mask ||
-	  (priv->in_hex_sequence && priv->modifiers_dropped &&
-	   (event->keyval == GDK_KEY_Return ||
-	    event->keyval == GDK_KEY_ISO_Enter ||
-	    event->keyval == GDK_KEY_KP_Enter)))
+      if (priv->in_hex_sequence && priv->modifiers_dropped &&
+	  (event->keyval == GDK_KEY_Return ||
+	   event->keyval == GDK_KEY_ISO_Enter ||
+	   event->keyval == GDK_KEY_KP_Enter))
 	{
 	  return FALSE;
 	}
+
+      if (event->state & no_text_input_mask)
+        {
+          if (priv->in_hex_sequence || priv->in_compose_sequence)
+            return TRUE; /* Don't leak random key events during preedit */
+
+          return FALSE;
+        }
     }
-  
+
   /* Handle backspace */
   if (priv->in_hex_sequence && have_hex_mods && is_backspace)
     {
@@ -1111,7 +1131,7 @@ gtk_im_context_simple_get_preedit_string (GtkIMContext   *context,
     }
 
   if (cursor_pos)
-    *cursor_pos = s->len;
+    *cursor_pos = g_utf8_strlen (s->str, s->len);
 
   if (attrs)
     {

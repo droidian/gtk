@@ -91,7 +91,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="http://library.gnome.org/devel/gdk-pixbuf/unstable/gdk-pixbuf-The-GdkPixbuf-Structure.html#GdkPixbuf-struct"><span class="returnvalue">GdkPixbuf</span></a> *
+<span class="returnvalue">GdkPixbuf</span> *
 </td>
 <td class="function_name">
 <a class="link" href="gdk3-Cursors.html#gdk-cursor-get-image" title="gdk_cursor_get_image ()">gdk_cursor_get_image</a> <span class="c_punctuation">()</span>
@@ -239,7 +239,7 @@ See <a class="link" href="gdk3-Cursors.html#gdk-cursor-new-for-display" title="g
 <a name="gdk-cursor-new-from-pixbuf"></a><h3>gdk_cursor_new_from_pixbuf ()</h3>
 <pre class="programlisting"><a class="link" href="gdk3-Cursors.html#GdkCursor"><span class="returnvalue">GdkCursor</span></a> *
 gdk_cursor_new_from_pixbuf (<em class="parameter"><code><a class="link" href="GdkDisplay.html" title="GdkDisplay"><span class="type">GdkDisplay</span></a> *display</code></em>,
-                            <em class="parameter"><code><a href="http://library.gnome.org/devel/gdk-pixbuf/unstable/gdk-pixbuf-The-GdkPixbuf-Structure.html#GdkPixbuf-struct"><span class="type">GdkPixbuf</span></a> *pixbuf</code></em>,
+                            <em class="parameter"><code><span class="type">GdkPixbuf</span> *pixbuf</code></em>,
                             <em class="parameter"><code><span class="type">gint</span> x</code></em>,
                             <em class="parameter"><code><span class="type">gint</span> y</code></em>);</pre>
 <p>Creates a new cursor from a pixbuf.</p>
@@ -275,7 +275,7 @@ sufficently new version of the X Render extension.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>pixbuf</p></td>
-<td class="parameter_description"><p>the <a href="http://library.gnome.org/devel/gdk-pixbuf/unstable/gdk-pixbuf-The-GdkPixbuf-Structure.html#GdkPixbuf-struct"><span class="type">GdkPixbuf</span></a> containing the cursor image</p></td>
+<td class="parameter_description"><p>the <span class="type">GdkPixbuf</span> containing the cursor image</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -500,9 +500,9 @@ gdk_cursor_get_display (<em class="parameter"><code><a class="link" href="gdk3-C
 <hr>
 <div class="refsect2">
 <a name="gdk-cursor-get-image"></a><h3>gdk_cursor_get_image ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/gdk-pixbuf/unstable/gdk-pixbuf-The-GdkPixbuf-Structure.html#GdkPixbuf-struct"><span class="returnvalue">GdkPixbuf</span></a> *
+<pre class="programlisting"><span class="returnvalue">GdkPixbuf</span> *
 gdk_cursor_get_image (<em class="parameter"><code><a class="link" href="gdk3-Cursors.html#GdkCursor"><span class="type">GdkCursor</span></a> *cursor</code></em>);</pre>
-<p>Returns a <a href="http://library.gnome.org/devel/gdk-pixbuf/unstable/gdk-pixbuf-The-GdkPixbuf-Structure.html#GdkPixbuf-struct"><span class="type">GdkPixbuf</span></a> with the image used to display the cursor.</p>
+<p>Returns a <span class="type">GdkPixbuf</span> with the image used to display the cursor.</p>
 <p>Note that depending on the capabilities of the windowing system and 
 on the cursor, GDK may not be able to obtain the image data. In this 
 case, <code class="literal">NULL</code> is returned.</p>
@@ -523,7 +523,7 @@ case, <code class="literal">NULL</code> is returned.</p>
 </div>
 <div class="refsect3">
 <a name="gdk-cursor-get-image.returns"></a><h4>Returns</h4>
-<p>a <a href="http://library.gnome.org/devel/gdk-pixbuf/unstable/gdk-pixbuf-The-GdkPixbuf-Structure.html#GdkPixbuf-struct"><span class="type">GdkPixbuf</span></a> representing
+<p>a <span class="type">GdkPixbuf</span> representing
 <em class="parameter"><code>cursor</code></em>
 , or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
