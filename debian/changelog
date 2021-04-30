@@ -1,8 +1,15 @@
-gtk+3.0 (3.24.29-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.29-1) experimental; urgency=medium
 
   * New upstream release
+    - Improve input handling to allow 3rd and 5th level choosers
+    - Correct cursor position in non-ASCII preedit text
+    - Handle smb mounts better
+    - Fix extending multi-selections in list boxes
+    - Don't beep on untrusted X11 displays, which can cause an X error
+    - Various fixes that were already included in 3.24.28-1
+  * Drop patches taken from upstream
 
- -- Simon McVittie <smcv@debian.org>  Fri, 30 Apr 2021 10:14:03 +0100
+ -- Simon McVittie <smcv@debian.org>  Fri, 30 Apr 2021 10:17:56 +0100
 
 gtk+3.0 (3.24.28-1) experimental; urgency=medium
 
