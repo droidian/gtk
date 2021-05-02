@@ -9,6 +9,7 @@ had variations between builds in /usr/share/balsa/icon-theme.cache
 
 Forwarded: https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/297
 Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=953105
+Applied-upstream: 3.24.28, commit:850768270f86f060ad317933b629593f6fdd08be
 Applied-upstream: 3.96.0, commit:b364827a5b99e3b02862f36be4c03826e72aefba
 ---
  gtk/updateiconcache.c | 9 +++++++++
