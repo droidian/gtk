@@ -1,8 +1,14 @@
 gtk+3.0 (3.24.30-1) UNRELEASED; urgency=medium
 
   * New upstream release
+  * Drop build-dependencies used for the Google Cloud Print backend.
+    The service required by this backend was shut down, so the printing
+    backend is no longer useful and was removed by upstream.
+  * d/missing-sources: Add emojibase data in JSON format.
+    The GVariant data blobs in gtk/emoji/*.data are mechanically converted
+    from these.
 
- -- Simon McVittie <smcv@debian.org>  Sun, 15 Aug 2021 15:11:26 +0100
+ -- Simon McVittie <smcv@debian.org>  Sun, 15 Aug 2021 15:39:28 +0100
 
 gtk+3.0 (3.24.29-1) experimental; urgency=medium
 
