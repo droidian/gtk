@@ -1,3 +1,11 @@
+gtk+3.0 (3.24.30-2) UNRELEASED; urgency=medium
+
+  * d/control.in: Drop unnecessary Build-Depends on gcc:native.
+    Consensus on #debian-devel is that build-essential implies this,
+    even when cross-compiling.
+
+ -- Simon McVittie <smcv@debian.org>  Mon, 16 Aug 2021 13:52:39 +0100
+
 gtk+3.0 (3.24.30-1) unstable; urgency=medium
 
   * New upstream release
