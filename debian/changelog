@@ -1,4 +1,4 @@
-gtk+3.0 (3.24.30-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.30-1) unstable; urgency=medium
 
   * New upstream release
   * Drop build-dependencies used for the Google Cloud Print backend.
@@ -11,8 +11,9 @@ gtk+3.0 (3.24.30-1) UNRELEASED; urgency=medium
       the correct source files.
   * Update symbols file
   * Switch branch to debian/master for upload to unstable
+  * Mention #982925 in changelog entry for 3.24.25-1
 
- -- Simon McVittie <smcv@debian.org>  Mon, 16 Aug 2021 11:00:40 +0100
+ -- Simon McVittie <smcv@debian.org>  Mon, 16 Aug 2021 11:03:25 +0100
 
 gtk+3.0 (3.24.29-1) experimental; urgency=medium
 
@@ -80,7 +81,7 @@ gtk+3.0 (3.24.25-1) experimental; urgency=medium
     - Make the Inspector available in non-debug builds
     - Make scrollbars larger
     - Disable shadows on maximized, fullscreen and tiled windows
-    - Support Avahi-discovered printers better
+    - Support Avahi-discovered printers better (Closes: #982925)
     - Show preedit for compose sequences
     - Support long compose sequences
     - Support compose sequences producing multiple characters
