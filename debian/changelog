@@ -1,10 +1,19 @@
-gtk+3.0 (3.24.30-2) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.30-2) unstable; urgency=medium
 
   * d/control.in: Drop unnecessary Build-Depends on gcc:native.
     Consensus on #debian-devel is that build-essential implies this,
     even when cross-compiling.
+  * Normalize permissions in installed-tests.
+    debhelper 13.4 makes everything below /usr/libexec executable, but
+    that's not what we want.
+  * Disable gvfs for unit tests.
+    It won't be installed on buildds, but can trigger (fatal) warnings
+    when building on a developer system.
+  * Wrap unit tests with dbus-run-session
+  * d/tests: Disable AT-SPI for tests that do not guarantee to install it.
+    This squashes another warning.
 
- -- Simon McVittie <smcv@debian.org>  Mon, 16 Aug 2021 13:52:39 +0100
+ -- Simon McVittie <smcv@debian.org>  Fri, 20 Aug 2021 15:25:28 +0100
 
 gtk+3.0 (3.24.30-1) unstable; urgency=medium
 
