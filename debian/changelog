@@ -1,3 +1,10 @@
+gtk+3.0 (3.24.30-3) unstable; urgency=medium
+
+  * Move org.gtk.Settings.Debug schema from -dev to -common.
+    gnome-terminal 3.40 wants this. (Closes: #993469)
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 01 Sep 2021 19:35:33 +0100
+
 gtk+3.0 (3.24.30-2) unstable; urgency=medium
 
   * d/control.in: Drop unnecessary Build-Depends on gcc:native.
