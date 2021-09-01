@@ -107,6 +107,8 @@ Architecture: all
 Multi-Arch: foreign
 Depends: ${misc:Depends}
 Recommends: libgtk-3-0
+Breaks: libgtk-3-dev (<< 3.24.30-3~)
+Replaces: libgtk-3-dev (<< 3.24.30-3~)
 Description: common files for the GTK graphical user interface library
  GTK is a multi-platform toolkit for creating graphical user
  interfaces. Offering a complete set of widgets, GTK is suitable
@@ -165,7 +167,7 @@ Depends: gir1.2-gtk-3.0 (= ${binary:Version}),
          wayland-protocols (>= 1.17) [linux-any],
          ${misc:Depends},
          ${shlibs:Depends},
-         libgtk-3-common,
+         libgtk-3-common (>= ${source:Version}),
          libgtk-3-0 (= ${binary:Version})
 Suggests: libgtk-3-doc
 Description: development files for the GTK library

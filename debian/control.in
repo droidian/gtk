@@ -107,6 +107,8 @@ Architecture: all
 Multi-Arch: foreign
 Depends: ${misc:Depends}
 Recommends: @SHARED_PKG@
+Breaks: @DEV_PKG@ (<< 3.24.30-3~)
+Replaces: @DEV_PKG@ (<< 3.24.30-3~)
 Description: common files for the GTK graphical user interface library
  GTK is a multi-platform toolkit for creating graphical user
  interfaces. Offering a complete set of widgets, GTK is suitable
@@ -165,7 +167,7 @@ Depends: gir1.2-gtk-3.0 (= ${binary:Version}),
          wayland-protocols (>= 1.17) [linux-any],
          ${misc:Depends},
          ${shlibs:Depends},
-         @COMMON_PKG@,
+         @COMMON_PKG@ (>= ${source:Version}),
          @SHARED_PKG@ (= ${binary:Version})
 Suggests: @DOC_PKG@
 Description: development files for the GTK library
