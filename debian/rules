@@ -203,6 +203,9 @@ ifneq ($(filter %-udeb,$(built_binaries)),)
 endif
 
 override_dh_auto_test:
+# The tests require librsvg2-common which is only available on architectures
+# where rust has been ported to, disable the tests on the other ones
+ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armel armhf i386 mips64el mipsel ppc64el s390x powerpc ppc64 riscv64 sparc64))
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 	# Mark reftests with known failures as non-fatal
 	# (See also somehow_broken in testsuite/reftests/meson.build)
@@ -224,6 +227,7 @@ ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 	xvfb-run -a \
 	dh_auto_test --builddirectory=debian/build/deb -- \
 	-k check -j1
+endif
 endif
 
 override_dh_auto_install:
