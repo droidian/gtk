@@ -1,0 +1,31 @@
+From: =?utf-8?q?Goran_Vidovi=C4=87?= <trebelnik2@gmail.com>
+Date: Thu, 21 Oct 2021 10:38:42 +0000
+Subject: Update Croatian translation
+
+Origin: upstream, 3.24.31, commit:cdab711ec2afd8ccf3a2504574af7dd5ed2be79d
+---
+ po/hr.po | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/po/hr.po b/po/hr.po
+index 5aa85a7..f7c8cae 100644
+--- a/po/hr.po
++++ b/po/hr.po
+@@ -6,7 +6,7 @@ msgstr ""
+ "Project-Id-Version: gtk+ 0\n"
+ "Report-Msgid-Bugs-To: \n"
+ "POT-Creation-Date: 2021-10-18 11:37+0000\n"
+-"PO-Revision-Date: 2021-10-21 12:33+0200\n"
++"PO-Revision-Date: 2021-10-21 12:36+0200\n"
+ "Last-Translator: gogo <trebelnik2@gmail.com>\n"
+ "Language-Team: Croatian <lokalizacija@linux.hr>\n"
+ "Language: hr\n"
+@@ -6989,7 +6989,7 @@ msgstr "Multansko"
+ #: gtk/script-names.c:146
+ msgctxt "Script"
+ msgid "Old Hungarian"
+-msgstr "Staro Mađarsko"
++msgstr "Staro mađarsko"
+ 
+ #: gtk/script-names.c:147
+ msgctxt "Script"

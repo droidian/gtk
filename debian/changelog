@@ -5,6 +5,33 @@ gtk+3.0 (3.24.30-4) UNRELEASED; urgency=medium
     librsvg is only built on architectures that rust has been ported to,
     so disable them on the other architectures.
 
+  [ Simon McVittie ]
+  * Update to upstream commit 3.24.30-129-g6c4cc93121, excluding CI
+    changes and Windows- and macOS-specific code changes
+    - Signal that a search has finished when required, fixing typeahead
+      search when using NFS (Closes: #976334)
+    - Update name and icon on file chooser button for remote files
+    - Don't unset the URI for the recent files filter
+    - Fix an infinite loop with certain popup behaviours in Wayland
+    - Don't change surface scales for wl_output globals not bound by GTK
+    - Don't print a message on stderr if Broadway (HTML) backend is
+      unavailable
+    - Don't require wayland-protocols when building GTK-dependent
+      components
+    - Avoid a double-free with large or slow clipboard contents
+    - Avoid false-positive warnings with gcc 11
+    - Invalidate compose table cache if target of a symlink changes
+    - Avoid a crash when parsing some radial gradients
+    - Use correct serial number for Wayland drag-and-drop
+    - Fix a crash involving GtkScale
+    - Make Wayland popups avoid triggering X11 heuristics
+    - Trap errors when getting X11 CRTC information, avoiding a crash if
+      monitor configuration changes rapidly
+    - Make reftests more reliable by always using default settings
+    - Documentation improvements
+    - Translation updates: cs, da, de, es, eu, fa, fi, fr, fur, gl, hr,
+      hu, is, it, kk, ko, lv, nl, oc, pt_BR, ru, sr, sv, zh_CN, zh_TW
+
  -- Simon McVittie <smcv@debian.org>  Tue, 30 Nov 2021 11:10:04 +0000
 
 gtk+3.0 (3.24.30-3) unstable; urgency=medium

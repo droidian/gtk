@@ -1,0 +1,926 @@
+From: =?utf-8?b?0JzQuNGA0L7RgdC70LDQsiDQndC40LrQvtC70LjRmw==?=
+ <miroslavnikolic@rocketmail.com>
+Date: Wed, 4 Aug 2021 17:26:12 +0000
+Subject: Update Serbian translation
+
+Origin: upstream, 3.24.31, commit:94f86a2fb67c6e885c01f61ba695998676454dcf
+---
+ po/sr.po | 380 ++++++++++++++++++++++++++++++---------------------------------
+ 1 file changed, 183 insertions(+), 197 deletions(-)
+
+diff --git a/po/sr.po b/po/sr.po
+index 5cd921e..97c9ccf 100644
+--- a/po/sr.po
++++ b/po/sr.po
+@@ -11,16 +11,16 @@ msgid ""
+ msgstr ""
+ "Project-Id-Version: gtk+ 2.14\n"
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2021-04-30 04:57+0000\n"
+-"PO-Revision-Date: 2021-05-01 16:34+0200\n"
++"POT-Creation-Date: 2021-07-20 18:40+0000\n"
++"PO-Revision-Date: 2021-08-04 19:21+0200\n"
+ "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+-"Language-Team: српски <gnome-sr@googlegroups.org>\n"
++"Language-Team: Serbian <(nothing)>\n"
+ "Language: sr\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+-"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : n"
+-"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
++"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
++"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+ "X-Project-Style: gnome\n"
+ 
+ #: gdk/broadway/gdkbroadway-server.c:144
+@@ -476,19 +476,19 @@ msgid "Unable to create a GL pixel format"
+ msgstr "Не могу да направим ГЛ формат пиксела"
+ 
+ #: gdk/quartz/gdkglcontext-quartz.c:133 gdk/wayland/gdkglcontext-wayland.c:208
+-#: gdk/win32/gdkglcontext-win32.c:1089 gdk/win32/gdkglcontext-win32.c:1129
++#: gdk/win32/gdkglcontext-win32.c:1100 gdk/win32/gdkglcontext-win32.c:1140
+ #: gdk/x11/gdkglcontext-x11.c:724 gdk/x11/gdkglcontext-x11.c:774
+ msgid "Unable to create a GL context"
+ msgstr "Не могу да направим ГЛ садржај"
+ 
+ #: gdk/wayland/gdkglcontext-wayland.c:418
+-#: gdk/wayland/gdkglcontext-wayland.c:428 gdk/win32/gdkglcontext-win32.c:927
+-#: gdk/win32/gdkglcontext-win32.c:937 gdk/win32/gdkglcontext-win32.c:1054
++#: gdk/wayland/gdkglcontext-wayland.c:428 gdk/win32/gdkglcontext-win32.c:938
++#: gdk/win32/gdkglcontext-win32.c:948 gdk/win32/gdkglcontext-win32.c:1065
+ #: gdk/x11/gdkglcontext-x11.c:975
+ msgid "No available configurations for the given pixel format"
+ msgstr "Нема доступних подешавања за изабрани формат пиксела"
+ 
+-#: gdk/wayland/gdkglcontext-wayland.c:468 gdk/win32/gdkglcontext-win32.c:1196
++#: gdk/wayland/gdkglcontext-wayland.c:468 gdk/win32/gdkglcontext-win32.c:1207
+ #: gdk/x11/gdkglcontext-x11.c:1281
+ msgid "No GL implementation is available"
+ msgstr "Није доступна ГЛ подршка"
+@@ -497,36 +497,6 @@ msgstr "Није доступна ГЛ подршка"
+ msgid "Core GL is not available on EGL implementation"
+ msgstr "Језгарни ГЛ није доступан уз ЕГЛ подршку"
+ 
+-#. Description of --sync in --help output
+-#: gdk/win32/gdkmain-win32.c:56
+-msgid "Don't batch GDI requests"
+-msgstr "Не групише ГДИ захтеве"
+-
+-#. Description of --no-wintab in --help output
+-#: gdk/win32/gdkmain-win32.c:58
+-msgid "Don't use the Wintab API for tablet support"
+-msgstr "Не користи Винтаб АПИ за подршку таблета"
+-
+-#. Description of --ignore-wintab in --help output
+-#: gdk/win32/gdkmain-win32.c:60
+-msgid "Same as --no-wintab"
+-msgstr "Исто што и „--no-wintab“"
+-
+-#. Description of --use-wintab in --help output
+-#: gdk/win32/gdkmain-win32.c:62
+-msgid "Do use the Wintab API [default]"
+-msgstr "Користи Винтаб АПИ [подразумевано]"
+-
+-#. Description of --max-colors=COLORS in --help output
+-#: gdk/win32/gdkmain-win32.c:64
+-msgid "Size of the palette in 8 bit mode"
+-msgstr "Величина палете у 8-битном режиму"
+-
+-#. Placeholder in --max-colors=COLORS in --help output
+-#: gdk/win32/gdkmain-win32.c:65
+-msgid "COLORS"
+-msgstr "БОЈЕ"
+-
+ #: gdk/x11/gdkapplaunchcontext-x11.c:298
+ #, c-format
+ msgid "Starting %s"
+@@ -648,6 +618,17 @@ msgctxt "Action description"
+ msgid "Activates the expander"
+ msgstr "Покреће проширивач"
+ 
++#: gtk/a11y/gtkfilechooserwidgetaccessible.c:101
++#| msgid "Show other locations"
++msgctxt "Action name"
++msgid "Show location"
++msgstr "Прикажи место"
++
++#: gtk/a11y/gtkfilechooserwidgetaccessible.c:110
++msgctxt "Action description"
++msgid "Show the File Chooser's Location text field"
++msgstr "Прикажите поље текста места бирача датотека"
++
+ #. FIXME these need accelerators when appropriate, and
+ #. * need the mnemonics to be rationalized
+ #.
+@@ -1239,7 +1220,7 @@ msgstr ""
+ 
+ #: gtk/deprecated/gtkcolorseldialog.c:191 gtk/deprecated/gtkfontsel.c:1689
+ #: gtk/gtkfilechoosernative.c:545 gtk/gtkfilechoosernative.c:637
+-#: gtk/gtkfilechooserwidget.c:1498 gtk/gtkfilechooserwidget.c:6572
++#: gtk/gtkfilechooserwidget.c:1499 gtk/gtkfilechooserwidget.c:6573
+ #: gtk/gtkmessagedialog.c:952 gtk/gtkmessagedialog.c:965
+ #: gtk/gtkmountoperation.c:594 gtk/gtkpagesetupunixdialog.c:197
+ #: gtk/gtkprintbackend.c:779 gtk/gtkprinteroptionwidget.c:545
+@@ -2279,8 +2260,8 @@ msgstr "_Копирај"
+ msgid "_Paste"
+ msgstr "У_баци"
+ 
+-#: gtk/gtkentry.c:9602 gtk/gtkfilechooserwidget.c:1499
+-#: gtk/gtkfilechooserwidget.c:2334 gtk/gtklabel.c:6690 gtk/gtktextview.c:9529
++#: gtk/gtkentry.c:9602 gtk/gtkfilechooserwidget.c:1500
++#: gtk/gtkfilechooserwidget.c:2335 gtk/gtklabel.c:6690 gtk/gtktextview.c:9529
+ msgid "_Delete"
+ msgstr "_Обриши"
+ 
+@@ -2347,7 +2328,7 @@ msgstr "_Отвори"
+ msgid "_Save"
+ msgstr "_Сачувај"
+ 
+-#: gtk/gtkfilechoosernativequartz.c:331 gtk/ui/gtkfilechooserwidget.ui:405
++#: gtk/gtkfilechoosernativequartz.c:331 gtk/ui/gtkfilechooserwidget.ui:435
+ msgid "Select which types of files are shown"
+ msgstr "Изабери које врсте датотека се приказују"
+ 
+@@ -2360,359 +2341,347 @@ msgstr "Изабери које врсте датотека се приказу
+ msgid "%1$s on %2$s"
+ msgstr "%1$s на %2$s"
+ 
+-#: gtk/gtkfilechooserwidget.c:385
++#: gtk/gtkfilechooserwidget.c:386
+ msgid "Type name of new folder"
+ msgstr "Унесите назив нове фасцикле"
+ 
+-#: gtk/gtkfilechooserwidget.c:809
++#: gtk/gtkfilechooserwidget.c:810
+ msgid "The folder could not be created"
+ msgstr "Не могу да направим фасциклу"
+ 
+-#: gtk/gtkfilechooserwidget.c:821
+-#| msgid ""
+-#| "The folder could not be created, as a file with the same name already "
+-#| "exists.  Try using a different name for the folder, or rename the file "
+-#| "first."
++#: gtk/gtkfilechooserwidget.c:822
+ msgid ""
+ "The folder could not be created, as a file with the same name already exists."
+ msgstr ""
+ "Фасцикла не може бити направљена, пошто већ постоји датотека са истим "
+ "називом."
+ 
+-#: gtk/gtkfilechooserwidget.c:823
+-#| msgid ""
+-#| "The folder could not be created, as a file with the same name already "
+-#| "exists.  Try using a different name for the folder, or rename the file "
+-#| "first."
++#: gtk/gtkfilechooserwidget.c:824
+ msgid "Try using a different name for the folder, or rename the file first."
+ msgstr ""
+ "Користите неки други назив за фасциклу, или као прво преименујте датотеку."
+ 
+-#: gtk/gtkfilechooserwidget.c:836
++#: gtk/gtkfilechooserwidget.c:837
+ msgid "You need to choose a valid filename."
+ msgstr "Морате да изаберете исправан назив датотеке."
+ 
+-#: gtk/gtkfilechooserwidget.c:839
++#: gtk/gtkfilechooserwidget.c:840
+ #, c-format
+ msgid "Cannot create a file under %s as it is not a folder"
+ msgstr "Не могу да направим датотеку под „%s“ зато што то није фасцикла"
+ 
+-#: gtk/gtkfilechooserwidget.c:849
++#: gtk/gtkfilechooserwidget.c:850
+ msgid "Cannot create file as the filename is too long"
+ msgstr "Не могу да направим датотеку јер је назив предуг"
+ 
+-#: gtk/gtkfilechooserwidget.c:850
++#: gtk/gtkfilechooserwidget.c:851
+ msgid "Try using a shorter name."
+ msgstr "Покушајте са краћим називом."
+ 
+-#: gtk/gtkfilechooserwidget.c:860
++#: gtk/gtkfilechooserwidget.c:861
+ msgid "You may only select folders"
+ msgstr "Можете да изаберете само фасцикле"
+ 
+-#: gtk/gtkfilechooserwidget.c:861
++#: gtk/gtkfilechooserwidget.c:862
+ msgid "The item that you selected is not a folder try using a different item."
+ msgstr ""
+ "Ставка коју сте изабрали није фасцикла, покушајте да користите неку другу "
+ "ставку."
+ 
+-#: gtk/gtkfilechooserwidget.c:869
++#: gtk/gtkfilechooserwidget.c:870
+ msgid "Invalid file name"
+ msgstr "Неисправан назив датотеке"
+ 
+-#: gtk/gtkfilechooserwidget.c:878
++#: gtk/gtkfilechooserwidget.c:879
+ msgid "The folder contents could not be displayed"
+ msgstr "Не могу да прикажем садржај фасцикле"
+ 
+-#: gtk/gtkfilechooserwidget.c:886
++#: gtk/gtkfilechooserwidget.c:887
+ msgid "The file could not be deleted"
+ msgstr "Не могу да обришем датотеку"
+ 
+-#: gtk/gtkfilechooserwidget.c:894
++#: gtk/gtkfilechooserwidget.c:895
+ msgid "The file could not be moved to the Trash"
+ msgstr "Не могу да преместим датотеку у смеће"
+ 
+-#: gtk/gtkfilechooserwidget.c:1039
++#: gtk/gtkfilechooserwidget.c:1040
+ msgid "A folder with that name already exists"
+ msgstr "Фасцикла са таквим именом већ постоји"
+ 
+-#: gtk/gtkfilechooserwidget.c:1041
++#: gtk/gtkfilechooserwidget.c:1042
+ msgid "A file with that name already exists"
+ msgstr "Датотека са таквим именом већ постоји"
+ 
+-#: gtk/gtkfilechooserwidget.c:1076
++#: gtk/gtkfilechooserwidget.c:1077
+ msgid "A folder cannot be called “.”"
+ msgstr "Фасцикла се не може звати „.“"
+ 
+-#: gtk/gtkfilechooserwidget.c:1077
++#: gtk/gtkfilechooserwidget.c:1078
+ msgid "A file cannot be called “.”"
+ msgstr "Датотека се не може звати „.“"
+ 
+-#: gtk/gtkfilechooserwidget.c:1080
++#: gtk/gtkfilechooserwidget.c:1081
+ msgid "A folder cannot be called “..”"
+ msgstr "Фасцикла се не може звати „..“"
+ 
+-#: gtk/gtkfilechooserwidget.c:1081
++#: gtk/gtkfilechooserwidget.c:1082
+ msgid "A file cannot be called “..”"
+ msgstr "Датотека се не може звати „..“"
+ 
+-#: gtk/gtkfilechooserwidget.c:1084
++#: gtk/gtkfilechooserwidget.c:1085
+ msgid "Folder names cannot contain “/”"
+ msgstr "Називи фасцикли не могу садржати знак „/“"
+ 
+-#: gtk/gtkfilechooserwidget.c:1085
++#: gtk/gtkfilechooserwidget.c:1086
+ msgid "File names cannot contain “/”"
+ msgstr "Називи датотека не могу садржати знак „/“"
+ 
+-#: gtk/gtkfilechooserwidget.c:1111
++#: gtk/gtkfilechooserwidget.c:1112
+ msgid "Folder names should not begin with a space"
+ msgstr "Називи фасцикли не треба да почињу размаком"
+ 
+-#: gtk/gtkfilechooserwidget.c:1112
++#: gtk/gtkfilechooserwidget.c:1113
+ msgid "File names should not begin with a space"
+ msgstr "Називи датотека не треба да почињу размаком"
+ 
+-#: gtk/gtkfilechooserwidget.c:1116
++#: gtk/gtkfilechooserwidget.c:1117
+ msgid "Folder names should not end with a space"
+ msgstr "Називи фасцикли не треба да се завршавају размаком"
+ 
+-#: gtk/gtkfilechooserwidget.c:1117
++#: gtk/gtkfilechooserwidget.c:1118
+ msgid "File names should not end with a space"
+ msgstr "Називи датотека не треба да се завршавају размаком"
+ 
+-#: gtk/gtkfilechooserwidget.c:1120
++#: gtk/gtkfilechooserwidget.c:1121
+ msgid "Folder names starting with a “.” are hidden"
+ msgstr "Фасцикле чији називи почињу са „.“ су скривене"
+ 
+-#: gtk/gtkfilechooserwidget.c:1121
++#: gtk/gtkfilechooserwidget.c:1122
+ msgid "File names starting with a “.” are hidden"
+ msgstr "Датотеке чији називи почињу са „.“ су скривене"
+ 
+-#: gtk/gtkfilechooserwidget.c:1494
++#: gtk/gtkfilechooserwidget.c:1495
+ #, c-format
+ msgid "Are you sure you want to permanently delete “%s”?"
+ msgstr "Да ли сигурно желите трајно да обришете „%s“?"
+ 
+-#: gtk/gtkfilechooserwidget.c:1497
++#: gtk/gtkfilechooserwidget.c:1498
+ #, c-format
+ msgid "If you delete an item, it will be permanently lost."
+ msgstr "Уколико обришете ставку, она ће бити трајно изгубљена."
+ 
+-#: gtk/gtkfilechooserwidget.c:1634
++#: gtk/gtkfilechooserwidget.c:1635
+ msgid "The file could not be renamed"
+ msgstr "Не могу да преименујем датотеку"
+ 
+-#: gtk/gtkfilechooserwidget.c:1979
++#: gtk/gtkfilechooserwidget.c:1980
+ msgid "Could not select file"
+ msgstr "Не могу да изаберем датотеку"
+ 
+-#: gtk/gtkfilechooserwidget.c:2329
++#: gtk/gtkfilechooserwidget.c:2330
+ msgid "_Visit File"
+ msgstr "_Посети датотеку"
+ 
+-#: gtk/gtkfilechooserwidget.c:2330
++#: gtk/gtkfilechooserwidget.c:2331
+ msgid "_Open With File Manager"
+ msgstr "Прикажи садржајну _фасциклу"
+ 
+-#: gtk/gtkfilechooserwidget.c:2331
++#: gtk/gtkfilechooserwidget.c:2332
+ msgid "_Copy Location"
+ msgstr "Копирај _путању"
+ 
+-#: gtk/gtkfilechooserwidget.c:2332
++#: gtk/gtkfilechooserwidget.c:2333
+ msgid "_Add to Bookmarks"
+ msgstr "_Додај међу обележиваче"
+ 
+-#: gtk/gtkfilechooserwidget.c:2333 gtk/gtkplacessidebar.c:2741
+-#: gtk/ui/gtkfilechooserwidget.ui:539
++#: gtk/gtkfilechooserwidget.c:2334 gtk/gtkplacessidebar.c:2741
++#: gtk/ui/gtkfilechooserwidget.ui:569
+ msgid "_Rename"
+ msgstr "П_реименуј"
+ 
+-#: gtk/gtkfilechooserwidget.c:2335
++#: gtk/gtkfilechooserwidget.c:2336
+ msgid "_Move to Trash"
+ msgstr "Пре_мести у смеће"
+ 
+-#: gtk/gtkfilechooserwidget.c:2339
++#: gtk/gtkfilechooserwidget.c:2340
+ msgid "Show _Hidden Files"
+ msgstr "Прикажи _скривене датотеке"
+ 
+-#: gtk/gtkfilechooserwidget.c:2340
++#: gtk/gtkfilechooserwidget.c:2341
+ msgid "Show _Size Column"
+ msgstr "Прикажи колону _величине"
+ 
+-#: gtk/gtkfilechooserwidget.c:2341
+-#| msgid "Show _Size Column"
++#: gtk/gtkfilechooserwidget.c:2342
+ msgid "Show T_ype Column"
+ msgstr "Прикажи колону _врсте"
+ 
+-#: gtk/gtkfilechooserwidget.c:2342
++#: gtk/gtkfilechooserwidget.c:2343
+ msgid "Show _Time"
+ msgstr "Прикажи вре_ме"
+ 
+-#: gtk/gtkfilechooserwidget.c:2343
++#: gtk/gtkfilechooserwidget.c:2344
+ msgid "Sort _Folders before Files"
+ msgstr "Пор_еђај фасцикле пре датотека"
+ 
+ #. this is the header for the location column in the print dialog
+-#: gtk/gtkfilechooserwidget.c:2625 gtk/inspector/css-node-tree.ui:141
+-#: gtk/ui/gtkfilechooserwidget.ui:208 gtk/ui/gtkprintunixdialog.ui:123
++#: gtk/gtkfilechooserwidget.c:2626 gtk/inspector/css-node-tree.ui:141
++#: gtk/ui/gtkfilechooserwidget.ui:238 gtk/ui/gtkprintunixdialog.ui:123
+ msgid "Location"
+ msgstr "Путања"
+ 
+ #. Label
+-#: gtk/gtkfilechooserwidget.c:2718
++#: gtk/gtkfilechooserwidget.c:2719
+ msgid "_Name:"
+ msgstr "_Назив:"
+ 
+-#: gtk/gtkfilechooserwidget.c:3343 gtk/gtkfilechooserwidget.c:3357
++#: gtk/gtkfilechooserwidget.c:3344 gtk/gtkfilechooserwidget.c:3358
+ #, c-format
+ msgid "Searching in %s"
+ msgstr "Претражујем унутар %s"
+ 
+-#: gtk/gtkfilechooserwidget.c:3363
++#: gtk/gtkfilechooserwidget.c:3364
+ msgid "Searching"
+ msgstr "Претражујем"
+ 
+-#: gtk/gtkfilechooserwidget.c:3370
++#: gtk/gtkfilechooserwidget.c:3371
+ msgid "Enter location"
+ msgstr "Унесите путању"
+ 
+-#: gtk/gtkfilechooserwidget.c:3372
++#: gtk/gtkfilechooserwidget.c:3373
+ msgid "Enter location or URL"
+ msgstr "Унесите путању или УРЛ"
+ 
+-#: gtk/gtkfilechooserwidget.c:4450 gtk/gtkfilechooserwidget.c:7492
+-#: gtk/ui/gtkfilechooserwidget.ui:248
++#: gtk/gtkfilechooserwidget.c:4451 gtk/gtkfilechooserwidget.c:7493
++#: gtk/ui/gtkfilechooserwidget.ui:278
+ msgid "Modified"
+ msgstr "Измењена"
+ 
+-#: gtk/gtkfilechooserwidget.c:4728
++#: gtk/gtkfilechooserwidget.c:4729
+ #, c-format
+ msgid "Could not read the contents of %s"
+ msgstr "Не могу да прочитам садржај %s"
+ 
+-#: gtk/gtkfilechooserwidget.c:4732
++#: gtk/gtkfilechooserwidget.c:4733
+ msgid "Could not read the contents of the folder"
+ msgstr "Не могу да прочитам садржај фасцикле"
+ 
+-#: gtk/gtkfilechooserwidget.c:4892 gtk/gtkfilechooserwidget.c:4940
++#: gtk/gtkfilechooserwidget.c:4893 gtk/gtkfilechooserwidget.c:4941
+ msgid "%H:%M"
+ msgstr "%H:%M"
+ 
+-#: gtk/gtkfilechooserwidget.c:4894 gtk/gtkfilechooserwidget.c:4942
++#: gtk/gtkfilechooserwidget.c:4895 gtk/gtkfilechooserwidget.c:4943
+ msgid "%l:%M %p"
+ msgstr "%l:%M %p"
+ 
+-#: gtk/gtkfilechooserwidget.c:4898
++#: gtk/gtkfilechooserwidget.c:4899
+ msgid "Yesterday"
+ msgstr "Јуче"
+ 
+-#: gtk/gtkfilechooserwidget.c:4906
++#: gtk/gtkfilechooserwidget.c:4907
+ msgid "%-e %b"
+ msgstr "%-e. %B"
+ 
+-#: gtk/gtkfilechooserwidget.c:4910
++#: gtk/gtkfilechooserwidget.c:4911
+ msgid "%-e %b %Y"
+ msgstr "%-e. %B %Y."
+ 
+-#: gtk/gtkfilechooserwidget.c:5009 gtk/gtkfilechooserwidget.c:5017
++#: gtk/gtkfilechooserwidget.c:5010 gtk/gtkfilechooserwidget.c:5018
+ msgid "Program"
+ msgstr "Програм"
+ 
+-#: gtk/gtkfilechooserwidget.c:5010
++#: gtk/gtkfilechooserwidget.c:5011
+ msgid "Audio"
+ msgstr "Звук"
+ 
+-#: gtk/gtkfilechooserwidget.c:5011 gtk/inspector/visual.ui:230
++#: gtk/gtkfilechooserwidget.c:5012 gtk/inspector/visual.ui:230
+ #: gtk/ui/gtkfontbutton.ui:13
+ msgid "Font"
+ msgstr "Фонт"
+ 
+-#: gtk/gtkfilechooserwidget.c:5012 gtk/inspector/visual.ui:488
++#: gtk/gtkfilechooserwidget.c:5013 gtk/inspector/visual.ui:488
+ msgid "Image"
+ msgstr "Слика"
+ 
+-#: gtk/gtkfilechooserwidget.c:5013
++#: gtk/gtkfilechooserwidget.c:5014
+ msgid "Archive"
+ msgstr "Архива"
+ 
+-#: gtk/gtkfilechooserwidget.c:5014
++#: gtk/gtkfilechooserwidget.c:5015
+ msgid "Markup"
+ msgstr "Означени текст"
+ 
+-#: gtk/gtkfilechooserwidget.c:5015 gtk/gtkfilechooserwidget.c:5016
++#: gtk/gtkfilechooserwidget.c:5016 gtk/gtkfilechooserwidget.c:5017
+ msgid "Text"
+ msgstr "Текст"
+ 
+-#: gtk/gtkfilechooserwidget.c:5018
++#: gtk/gtkfilechooserwidget.c:5019
+ msgid "Video"
+ msgstr "Видео"
+ 
+-#: gtk/gtkfilechooserwidget.c:5019
++#: gtk/gtkfilechooserwidget.c:5020
+ msgid "Contacts"
+ msgstr "Контакти"
+ 
+-#: gtk/gtkfilechooserwidget.c:5020
++#: gtk/gtkfilechooserwidget.c:5021
+ msgid "Calendar"
+ msgstr "Календар"
+ 
+-#: gtk/gtkfilechooserwidget.c:5021
++#: gtk/gtkfilechooserwidget.c:5022
+ msgid "Document"
+ msgstr "Документ"
+ 
+-#: gtk/gtkfilechooserwidget.c:5022
++#: gtk/gtkfilechooserwidget.c:5023
+ msgid "Presentation"
+ msgstr "Презентација"
+ 
+-#: gtk/gtkfilechooserwidget.c:5023
++#: gtk/gtkfilechooserwidget.c:5024
+ msgid "Spreadsheet"
+ msgstr "Табела"
+ 
+-#. Translators: We don't know whether this printer is
+-#. * available to print to.
+-#: gtk/gtkfilechooserwidget.c:5054 gtk/gtkfilechooserwidget.c:5243
++#: gtk/gtkfilechooserwidget.c:5055 gtk/gtkfilechooserwidget.c:5244
+ #: gtk/inspector/prop-editor.c:1689
+-#: modules/printbackends/cloudprint/gtkprintbackendcloudprint.c:748
+ msgid "Unknown"
+ msgstr "Непознато"
+ 
+ # ako je za "home directory", onda bi bilo dobro "licni direktorijum", ako je za "home page", onda za "licna stranica"
+-#: gtk/gtkfilechooserwidget.c:5282 gtk/gtkplacessidebar.c:1094
++#: gtk/gtkfilechooserwidget.c:5283 gtk/gtkplacessidebar.c:1094
+ msgid "Home"
+ msgstr "Лична фасцикла"
+ 
+-#: gtk/gtkfilechooserwidget.c:5779
++#: gtk/gtkfilechooserwidget.c:5780
+ msgid "Cannot change to folder because it is not local"
+ msgstr "Не могу да уђем у фасциклу зато што није локална"
+ 
+-#: gtk/gtkfilechooserwidget.c:6565 gtk/gtkprintunixdialog.c:665
++#: gtk/gtkfilechooserwidget.c:6566 gtk/gtkprintunixdialog.c:665
+ #, c-format
+ msgid "A file named “%s” already exists.  Do you want to replace it?"
+ msgstr "Датотека под називом „%s“ већ постоји.  Да ли желите да је замените?"
+ 
+-#: gtk/gtkfilechooserwidget.c:6568 gtk/gtkprintunixdialog.c:669
++#: gtk/gtkfilechooserwidget.c:6569 gtk/gtkprintunixdialog.c:669
+ #, c-format
+ msgid ""
+ "The file already exists in “%s”.  Replacing it will overwrite its contents."
+ msgstr ""
+ "Датотека већ постоји у „%s“.  Уколико је замените преписаћете њен садржај."
+ 
+-#: gtk/gtkfilechooserwidget.c:6573 gtk/gtkprintunixdialog.c:677
++#: gtk/gtkfilechooserwidget.c:6574 gtk/gtkprintunixdialog.c:677
+ msgid "_Replace"
+ msgstr "_Замени"
+ 
+-#: gtk/gtkfilechooserwidget.c:6792
++#: gtk/gtkfilechooserwidget.c:6793
+ msgid "You do not have access to the specified folder."
+ msgstr "Немате овлашћења за приступ наведеној фасцикли."
+ 
+-#: gtk/gtkfilechooserwidget.c:7415
++#: gtk/gtkfilechooserwidget.c:7416
+ msgid "Could not send the search request"
+ msgstr "Не могу да пошаљем захтев претраге"
+ 
+ # Треба проверити на шта се односи.
+-#: gtk/gtkfilechooserwidget.c:7703
++#: gtk/gtkfilechooserwidget.c:7704
+ msgid "Accessed"
+ msgstr "Датум приступа"
+ 
+-#: gtk/gtkfilechooserwidget.c:8822 gtk/ui/gtkfilechooserwidget.ui:69
++#: gtk/gtkfilechooserwidget.c:8824 gtk/ui/gtkfilechooserwidget.ui:89
+ msgid "Create Folder"
+ msgstr "Направи фасциклу"
+ 
+@@ -3284,7 +3253,7 @@ msgstr "Не могу да покренем „%s“"
+ #: gtk/gtkplacessidebar.c:2430
+ #, c-format
+ msgid "Error unlocking “%s”"
+-msgstr "Грешка при откључавању ставке „%s“."
++msgstr "Грешка при откључавању ставке „%s“"
+ 
+ #: gtk/gtkplacessidebar.c:2432
+ #, c-format
+@@ -3297,7 +3266,7 @@ msgstr "Ово име је већ заузето"
+ 
+ #: gtk/gtkplacessidebar.c:2735 gtk/inspector/actions.ui:43
+ #: gtk/inspector/css-node-tree.ui:39 gtk/inspector/object-tree.ui:110
+-#: gtk/ui/gtkfilechooserwidget.ui:190 gtk/ui/gtkfilechooserwidget.ui:513
++#: gtk/ui/gtkfilechooserwidget.ui:220 gtk/ui/gtkfilechooserwidget.ui:543
+ msgid "Name"
+ msgstr "Назив"
+ 
+@@ -3885,12 +3854,12 @@ msgid "Search Shortcuts"
+ msgstr "Тражи пречице"
+ 
+ #: gtk/gtkshortcutswindow.c:1053 gtk/ui/gtkemojichooser.ui:376
+-#: gtk/ui/gtkfilechooserwidget.ui:323
++#: gtk/ui/gtkfilechooserwidget.ui:353
+ msgid "No Results Found"
+ msgstr "Нема резултата"
+ 
+ #: gtk/gtkshortcutswindow.c:1060 gtk/ui/gtkemojichooser.ui:390
+-#: gtk/ui/gtkfilechooserwidget.ui:337 gtk/ui/gtkplacesview.ui:274
++#: gtk/ui/gtkfilechooserwidget.ui:367 gtk/ui/gtkplacesview.ui:274
+ msgid "Try a different search"
+ msgstr "Пробајте другачију претрагу"
+ 
+@@ -4446,7 +4415,7 @@ msgid "Property"
+ msgstr "Особине"
+ 
+ #: gtk/inspector/prop-list.ui:68 gtk/inspector/statistics.ui:53
+-#: gtk/ui/gtkfilechooserwidget.ui:236
++#: gtk/ui/gtkfilechooserwidget.ui:266
+ msgid "Type"
+ msgstr "Врста"
+ 
+@@ -4466,7 +4435,7 @@ msgstr "Путања"
+ msgid "Count"
+ msgstr "Број"
+ 
+-#: gtk/inspector/resource-list.ui:130 gtk/ui/gtkfilechooserwidget.ui:224
++#: gtk/inspector/resource-list.ui:130 gtk/ui/gtkfilechooserwidget.ui:254
+ #: gtk/ui/gtkfontchooserwidget.ui:134 gtk/ui/gtkfontchooserwidget.ui:276
+ msgid "Size"
+ msgstr "Величина"
+@@ -4979,7 +4948,6 @@ msgid "Historical Forms"
+ msgstr "Историјски облици"
+ 
+ #: gtk/open-type-layout.h:50
+-#| msgid "Horizontal Separator Width"
+ msgctxt "OpenType layout"
+ msgid "Horizontal Kana Alternates"
+ msgstr "Водоравни Кана заменски"
+@@ -5020,7 +4988,6 @@ msgid "Italics"
+ msgstr "Искошени"
+ 
+ #: gtk/open-type-layout.h:58
+-#| msgid "Justification set"
+ msgctxt "OpenType layout"
+ msgid "Justification Alternates"
+ msgstr "Заменски порвнања"
+@@ -5076,19 +5043,16 @@ msgid "Localized Forms"
+ msgstr "Локализовани облици"
+ 
+ #: gtk/open-type-layout.h:69
+-#| msgid "LRM _Left-to-right mark"
+ msgctxt "OpenType layout"
+ msgid "Left-to-right alternates"
+ msgstr "Заменски с лева на десно"
+ 
+ #: gtk/open-type-layout.h:70
+-#| msgid "LRM _Left-to-right mark"
+ msgctxt "OpenType layout"
+ msgid "Left-to-right mirrored forms"
+ msgstr "С лева на десно пресликани облици"
+ 
+ #: gtk/open-type-layout.h:71
+-#| msgid "Tab Position"
+ msgctxt "OpenType layout"
+ msgid "Mark Positioning"
+ msgstr "Постављање обележја"
+@@ -5109,7 +5073,6 @@ msgid "Mathematical Greek"
+ msgstr "Математички Грчки"
+ 
+ #: gtk/open-type-layout.h:75
+-#| msgid "Maximal Position"
+ msgctxt "OpenType layout"
+ msgid "Mark to Mark Positioning"
+ msgstr "Постављање знака до знака"
+@@ -5120,7 +5083,6 @@ msgid "Mark Positioning via Substitution"
+ msgstr "Постављање знака путем замене"
+ 
+ #: gtk/open-type-layout.h:77
+-#| msgid "Alternative button order"
+ msgctxt "OpenType layout"
+ msgid "Alternate Annotation Forms"
+ msgstr "Заменски облици прибелешке"
+@@ -5151,7 +5113,6 @@ msgid "Optical Bounds"
+ msgstr "Оптичке границе"
+ 
+ #: gtk/open-type-layout.h:83
+-#| msgid "Signals"
+ msgctxt "OpenType layout"
+ msgid "Ordinals"
+ msgstr "Редни бројеви"
+@@ -5162,7 +5123,6 @@ msgid "Ornaments"
+ msgstr "Орнаменти"
+ 
+ #: gtk/open-type-layout.h:85
+-#| msgid "Horizontal Separator Width"
+ msgctxt "OpenType layout"
+ msgid "Proportional Alternate Widths"
+ msgstr "Сразмерне заменске ширине"
+@@ -5178,7 +5138,6 @@ msgid "Proportional Kana"
+ msgstr "Сразмерни Кана"
+ 
+ #: gtk/open-type-layout.h:88
+-#| msgid "Properties"
+ msgctxt "OpenType layout"
+ msgid "Proportional Figures"
+ msgstr "Сразмерне фигуре"
+@@ -5244,13 +5203,11 @@ msgid "Right Bounds"
+ msgstr "Десне границе"
+ 
+ #: gtk/open-type-layout.h:101
+-#| msgid "RLM _Right-to-left mark"
+ msgctxt "OpenType layout"
+ msgid "Right-to-left alternates"
+ msgstr "Заменски са десна на лево"
+ 
+ #: gtk/open-type-layout.h:102
+-#| msgid "RLM _Right-to-left mark"
+ msgctxt "OpenType layout"
+ msgid "Right-to-left mirrored forms"
+ msgstr "Са десна на лево пресликани облици"
+@@ -5451,13 +5408,11 @@ msgid "Unicase"
+ msgstr "Уста величина слова"
+ 
+ #: gtk/open-type-layout.h:142
+-#| msgid "Alternative sort indicator direction"
+ msgctxt "OpenType layout"
+ msgid "Alternate Vertical Metrics"
+ msgstr "Заменска усправна метрика"
+ 
+ #: gtk/open-type-layout.h:143
+-#| msgid "Dark Variant"
+ msgctxt "OpenType layout"
+ msgid "Vattu Variants"
+ msgstr "Вату варијанте"
+@@ -5478,13 +5433,11 @@ msgid "Vowel Jamo Forms"
+ msgstr "Облици Јамо самогласника"
+ 
+ #: gtk/open-type-layout.h:147
+-#| msgid "Vertical adjustment"
+ msgctxt "OpenType layout"
+ msgid "Vertical Kana Alternates"
+ msgstr "Усправни Кана заменски"
+ 
+ #: gtk/open-type-layout.h:148
+-#| msgid "Vertical separation"
+ msgctxt "OpenType layout"
+ msgid "Vertical Kerning"
+ msgstr "Усправно уклапање"
+@@ -5495,13 +5448,11 @@ msgid "Proportional Alternate Vertical Metrics"
+ msgstr "Сразмерна заменска усправна метрика"
+ 
+ #: gtk/open-type-layout.h:150
+-#| msgid "Vertical separation"
+ msgctxt "OpenType layout"
+ msgid "Vertical Alternates and Rotation"
+ msgstr "Усправни заменски и ротација"
+ 
+ #: gtk/open-type-layout.h:151
+-#| msgid "Vertical separation"
+ msgctxt "OpenType layout"
+ msgid "Vertical Alternates for Rotation"
+ msgstr "Усправни заменски за ротацију"
+@@ -6079,9 +6030,7 @@ msgstr "а2 коверта"
+ #: gtk/paper_names_offsets.c:117
+ msgctxt "paper size"
+ msgid "Arch A"
+-msgstr ""
+-"А\n"
+-"рч А"
++msgstr "Арч А"
+ 
+ #: gtk/paper_names_offsets.c:118
+ msgctxt "paper size"
+@@ -7268,19 +7217,52 @@ msgstr "Симболи"
+ msgid "Flags"
+ msgstr "Заставе"
+ 
+-#: gtk/ui/gtkfilechooserwidget.ui:169
++#: gtk/ui/gtkfilechooserdialog.ui:32
++#| msgid "Focus Widget"
++msgid "File Chooser Widget"
++msgstr "Справица бирача датотека"
++
++#: gtk/ui/gtkfilechooserwidget.ui:22
++msgid "Places"
++msgstr "Места"
++
++#: gtk/ui/gtkfilechooserwidget.ui:47
++#| msgid "Use Header Bar"
++msgid "Browse Header Revealer"
++msgstr "Откривач заглавља разгледања"
++
++#: gtk/ui/gtkfilechooserwidget.ui:65
++#| msgid "Use Header Bar"
++msgid "Browse Header Stack"
++msgstr "Спремник заглавља разгледања"
++
++#: gtk/ui/gtkfilechooserwidget.ui:75
++msgid "PathBar Layer"
++msgstr "Слој траке путање"
++
++#: gtk/ui/gtkfilechooserwidget.ui:121
++#| msgid "Location"
++msgid "Location Layer"
++msgstr "Слој места"
++
++#: gtk/ui/gtkfilechooserwidget.ui:137
++#| msgid "Search"
++msgid "Search Layer"
++msgstr "Слој претраге"
++
++#: gtk/ui/gtkfilechooserwidget.ui:199
+ msgid "Files"
+ msgstr "Датотеке"
+ 
+-#: gtk/ui/gtkfilechooserwidget.ui:274
++#: gtk/ui/gtkfilechooserwidget.ui:304
+ msgid "Remote location — only searching the current folder"
+ msgstr "Удаљено место — претражујем само тренутну фасциклу"
+ 
+-#: gtk/ui/gtkfilechooserwidget.ui:446
++#: gtk/ui/gtkfilechooserwidget.ui:476
+ msgid "Folder Name"
+ msgstr "Назив фасцикле"
+ 
+-#: gtk/ui/gtkfilechooserwidget.ui:474
++#: gtk/ui/gtkfilechooserwidget.ui:504
+ msgid "_Create"
+ msgstr "_Направи"
+ 
+@@ -7810,31 +7792,6 @@ msgctxt "input method menu"
+ msgid "X Input Method"
+ msgstr "Иксов начин уноса (XIM)"
+ 
+-#. Translators: The printer status is online, i.e. it is
+-#. * ready to print.
+-#: modules/printbackends/cloudprint/gtkprintbackendcloudprint.c:744
+-msgid "Online"
+-msgstr "На мрежи"
+-
+-#. Translators: The printer is offline.
+-#: modules/printbackends/cloudprint/gtkprintbackendcloudprint.c:751
+-msgid "Offline"
+-msgstr "Ван мреже"
+-
+-#. We shouldn't get here because the query omits dormant
+-#. * printers by default.
+-#. Translators: Printer has been offline for a long time.
+-#: modules/printbackends/cloudprint/gtkprintbackendcloudprint.c:757
+-msgid "Dormant"
+-msgstr "Успаван"
+-
+-#. How many document pages to go onto one side of paper.
+-#: modules/printbackends/cloudprint/gtkprintbackendcloudprint.c:939
+-#: modules/printbackends/file/gtkprintbackendfile.c:676
+-#: modules/printbackends/test/gtkprintbackendtest.c:501
+-msgid "Pages per _sheet:"
+-msgstr "_Страница на листу:"
+-
+ #: modules/printbackends/cups/gtkprintbackendcups.c:1159
+ #: modules/printbackends/cups/gtkprintbackendcups.c:1468
+ msgid "Username:"
+@@ -8382,6 +8339,11 @@ msgstr "Постскрипт"
+ msgid "SVG"
+ msgstr "СВГ"
+ 
++#: modules/printbackends/file/gtkprintbackendfile.c:676
++#: modules/printbackends/test/gtkprintbackendtest.c:501
++msgid "Pages per _sheet:"
++msgstr "_Страница на листу:"
++
+ #: modules/printbackends/file/gtkprintbackendfile.c:735
+ msgid "File"
+ msgstr "Датотека"
+@@ -8437,6 +8399,33 @@ msgstr "тест-излаз.%s"
+ msgid "Print to Test Printer"
+ msgstr "Штампај на пробном штампачу"
+ 
++#~ msgid "Don't batch GDI requests"
++#~ msgstr "Не групише ГДИ захтеве"
++
++#~ msgid "Don't use the Wintab API for tablet support"
++#~ msgstr "Не користи Винтаб АПИ за подршку таблета"
++
++#~ msgid "Same as --no-wintab"
++#~ msgstr "Исто што и „--no-wintab“"
++
++#~ msgid "Do use the Wintab API [default]"
++#~ msgstr "Користи Винтаб АПИ [подразумевано]"
++
++#~ msgid "Size of the palette in 8 bit mode"
++#~ msgstr "Величина палете у 8-битном режиму"
++
++#~ msgid "COLORS"
++#~ msgstr "БОЈЕ"
++
++#~ msgid "Online"
++#~ msgstr "На мрежи"
++
++#~ msgid "Offline"
++#~ msgstr "Ван мреже"
++
++#~ msgid "Dormant"
++#~ msgstr "Успаван"
++
+ #~ msgctxt "Color name"
+ #~ msgid "Dark"
+ #~ msgstr "Тамна"
+@@ -9352,9 +9341,6 @@ msgstr "Штампај на пробном штампачу"
+ #~ "Приморати да се однос димензија слаже са односом димензија оквира "
+ #~ "садржаног елемента"
+ 
+-#~ msgid "Use Header Bar"
+-#~ msgstr "Користи траку заглавља"
+-
+ #~ msgid "Use Header Bar for actions."
+ #~ msgstr "Користи траку заглавља за радње."
+ 

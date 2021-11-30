@@ -1,0 +1,1007 @@
+From: Emmanuele Bassi <ebassi@gnome.org>
+Date: Sun, 22 Aug 2021 19:02:29 +0100
+Subject: docs: Escape the XML tags in the Widget class description
+
+While gtk-doc doesn't care, this isn't really valid Markdown as the
+GtkBuilder custom XML tags will be considered valid markup and embedded
+as they are, breaking the HTML output.
+
+Origin: upstream, 3.24.31, commit:ff46ea64c45cc89a8cee6a52b4255cc295132e69
+---
+ gtk/deprecated/gtkactiongroup.c  |  9 +++++----
+ gtk/deprecated/gtkiconfactory.c  |  4 ++--
+ gtk/deprecated/gtkrecentaction.c |  4 ++--
+ gtk/deprecated/gtkuimanager.c    | 24 ++++++++++++------------
+ gtk/gtkbuildable.c               |  2 +-
+ gtk/gtkbuildable.h               |  8 ++++----
+ gtk/gtkbuilder.c                 | 40 ++++++++++++++++++++--------------------
+ gtk/gtkcelllayout.c              | 19 ++++++++++---------
+ gtk/gtkcomboboxtext.c            |  7 ++++---
+ gtk/gtkcontainer.c               |  9 +++++----
+ gtk/gtkdialog.c                  | 13 +++++++------
+ gtk/gtkexpander.c                |  7 ++++---
+ gtk/gtkfilefilter.c              |  9 +++++----
+ gtk/gtkframe.c                   | 11 ++++++-----
+ gtk/gtkinfobar.c                 |  4 ++--
+ gtk/gtklabel.c                   |  7 ++++---
+ gtk/gtklevelbar.c                |  4 ++--
+ gtk/gtklistbox.c                 |  2 +-
+ gtk/gtkliststore.c               | 14 ++++++++------
+ gtk/gtkmenuitem.c                |  6 ++++--
+ gtk/gtkmenutoolbutton.c          |  5 +++--
+ gtk/gtknotebook.c                |  9 +++++----
+ gtk/gtkpopovermenu.c             |  2 +-
+ gtk/gtkrecentfilter.c            | 12 +++++++-----
+ gtk/gtkscale.c                   |  4 ++--
+ gtk/gtkshortcutsshortcut.c       | 17 +++++++++--------
+ gtk/gtksizegroup.c               |  9 +++++----
+ gtk/gtktexttagtable.c            |  5 +++--
+ gtk/gtktreestore.c               |  7 ++++---
+ gtk/gtktreeview.c                |  5 +++--
+ gtk/gtkwidget.c                  | 38 +++++++++++++++++++++-----------------
+ gtk/gtkwindow.c                  |  9 +++++----
+ 32 files changed, 176 insertions(+), 149 deletions(-)
+
+diff --git a/gtk/deprecated/gtkactiongroup.c b/gtk/deprecated/gtkactiongroup.c
+index 45eeb1c..9bd4e8a 100644
+--- a/gtk/deprecated/gtkactiongroup.c
++++ b/gtk/deprecated/gtkactiongroup.c
+@@ -56,19 +56,20 @@
+  * # GtkActionGroup as GtkBuildable # {#GtkActionGroup-BUILDER-UI}
+  *
+  * The #GtkActionGroup implementation of the #GtkBuildable interface accepts
+- * #GtkAction objects as <child> elements in UI definitions.
++ * #GtkAction objects as `<child>` elements in UI definitions.
+  *
+  * Note that it is probably more common to define actions and action groups
+  * in the code, since they are directly related to what the code can do.
+  *
+  * The GtkActionGroup implementation of the GtkBuildable interface supports
+- * a custom <accelerator> element, which has attributes named “key“ and
++ * a custom `<accelerator>` element, which has attributes named “key“ and
+  * “modifiers“ and allows to specify accelerators. This is similar to the
+- * <accelerator> element of #GtkWidget, the main difference is that
++ * `<accelerator>` element of #GtkWidget, the main difference is that
+  * it doesn’t allow you to specify a signal.
+  *
+  * ## A #GtkDialog UI definition fragment. ##
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkActionGroup" id="actiongroup">
+  *   <child>
+  *       <object class="GtkAction" id="About">
+diff --git a/gtk/deprecated/gtkiconfactory.c b/gtk/deprecated/gtkiconfactory.c
+index 5ac19ca..04579a9 100644
+--- a/gtk/deprecated/gtkiconfactory.c
++++ b/gtk/deprecated/gtkiconfactory.c
+@@ -72,8 +72,8 @@
+  *
+  * # GtkIconFactory as GtkBuildable # {#GtkIconFactory-BUILDER-UI}
+  *
+- * GtkIconFactory supports a custom <sources> element, which can contain
+- * multiple <source> elements. The following attributes are allowed:
++ * GtkIconFactory supports a custom `<sources>` element, which can contain
++ * multiple `<source>` elements. The following attributes are allowed:
+  *
+  * - stock-id
+  *
+diff --git a/gtk/deprecated/gtkrecentaction.c b/gtk/deprecated/gtkrecentaction.c
+index 3431e37..d5677be 100644
+--- a/gtk/deprecated/gtkrecentaction.c
++++ b/gtk/deprecated/gtkrecentaction.c
+@@ -41,9 +41,9 @@
+  * #GtkRecentChooserMenu.
+  *
+  * To construct a submenu showing recently used files, use a #GtkRecentAction
+- * as the action for a <menuitem>. To construct a menu toolbutton showing
++ * as the action for a `<menuitem>`. To construct a menu toolbutton showing
+  * the recently used files in the popup menu, use a #GtkRecentAction as the
+- * action for a <toolitem> element.
++ * action for a `<toolitem>` element.
+  */
+ 
+ 
+diff --git a/gtk/deprecated/gtkuimanager.c b/gtk/deprecated/gtkuimanager.c
+index 8b0233f..39da4cb 100644
+--- a/gtk/deprecated/gtkuimanager.c
++++ b/gtk/deprecated/gtkuimanager.c
+@@ -56,16 +56,16 @@
+  * @Title: GtkUIManager
+  * @See_also: #GtkBuilder
+  *
++ * A #GtkUIManager constructs a user interface (menus and toolbars) from
++ * one or more UI definitions, which reference actions from one or more
++ * action groups.
++ *
+  * > GtkUIManager is deprecated since GTK+ 3.10. To construct user interfaces
+  * > from XML definitions, you should use #GtkBuilder, #GMenuModel, et al. To
+  * > work with actions, use #GAction, #GtkActionable et al. These newer classes
+  * > support richer functionality and integration with various desktop shells.
+  * > It should be possible to migrate most/all functionality from GtkUIManager.
+  *
+- * A #GtkUIManager constructs a user interface (menus and toolbars) from
+- * one or more UI definitions, which reference actions from one or more
+- * action groups.
+- *
+  * # UI Definitions # {#XML-UI}
+  *
+  * The UI definitions are specified in an XML format which can be
+@@ -126,7 +126,7 @@
+  *
+  * # A UI definition #
+  *
+- * |[
++ * |[<!-- language="xml" -->
+  * <ui>
+  *   <menubar>
+  *     <menu name="FileMenu" action="FileMenuAction">
+@@ -213,7 +213,7 @@
+  *
+  * Every action has an accelerator path. Accelerators are installed together
+  * with menuitem proxies, but they can also be explicitly added with
+- * <accelerator> elements in the UI definition. This makes it possible to
++ * `<accelerator>` elements in the UI definition. This makes it possible to
+  * have accelerators for actions even if they have no visible proxies.
+  *
+  * # Smart Separators # {#Smart-Separators}
+@@ -246,10 +246,10 @@
+  * # GtkUIManager as GtkBuildable # {#GtkUIManager-BUILDER-UI}
+  *
+  * The GtkUIManager implementation of the GtkBuildable interface accepts
+- * GtkActionGroup objects as <child> elements in UI definitions.
++ * GtkActionGroup objects as `<child>` elements in UI definitions.
+  *
+  * A GtkUIManager UI definition as described above can be embedded in
+- * an GtkUIManager <object> element in a GtkBuilder UI definition.
++ * an GtkUIManager `<object>` element in a GtkBuilder UI definition.
+  *
+  * The widgets that are constructed by a GtkUIManager can be embedded in
+  * other parts of the constructed user interface with the help of the
+@@ -257,7 +257,7 @@
+  *
+  * ## An embedded GtkUIManager UI definition
+  *
+- * |[
++ * |[<!-- language="xml" -->
+  * <object class="GtkUIManager" id="uiman">
+  *   <child>
+  *     <object class="GtkActionGroup" id="actiongroup">
+@@ -1096,10 +1096,10 @@ gtk_ui_manager_get_accel_group (GtkUIManager *manager)
+  * Looks up a widget by following a path. 
+  * The path consists of the names specified in the XML description of the UI. 
+  * separated by “/”. Elements which don’t have a name or action attribute in 
+- * the XML (e.g. <popup>) can be addressed by their XML element name 
++ * the XML (e.g. `<popup>`) can be addressed by their XML element name 
+  * (e.g. "popup"). The root element ("/ui") can be omitted in the path.
+  *
+- * Note that the widget found by following a path that ends in a <menu>;
++ * Note that the widget found by following a path that ends in a `<menu>`;
+  * element is the menuitem to which the menu is attached, not the menu it
+  * manages.
+  *
+@@ -1937,7 +1937,7 @@ add_ui_from_string (GtkUIManager *manager,
+  * @error: return location for an error
+  * 
+  * Parses a string containing a [UI definition][XML-UI] and merges it with
+- * the current contents of @manager. An enclosing <ui> element is added if
++ * the current contents of @manager. An enclosing `<ui>` element is added if
+  * it is missing.
+  * 
+  * Returns: The merge id for the merged UI. The merge id can be used
+diff --git a/gtk/gtkbuildable.c b/gtk/gtkbuildable.c
+index d16e008..9c0b54a 100644
+--- a/gtk/gtkbuildable.c
++++ b/gtk/gtkbuildable.c
+@@ -236,7 +236,7 @@ gtk_buildable_construct_child (GtkBuildable *buildable,
+  * @data: (out): return location for user data that will be passed in 
+  *   to parser functions
+  *
+- * This is called for each unknown element under <child>.
++ * This is called for each unknown element under `<child>`.
+  * 
+  * Returns: %TRUE if a object has a custom implementation, %FALSE
+  *          if it doesn't.
+diff --git a/gtk/gtkbuildable.h b/gtk/gtkbuildable.h
+index 9652a5e..518b4d1 100644
+--- a/gtk/gtkbuildable.h
++++ b/gtk/gtkbuildable.h
+@@ -58,15 +58,15 @@ typedef struct _GtkBuildableIface GtkBuildableIface;
+  *  is created.
+  * @construct_child: Constructs a child of a buildable that has been
+  *  specified as “constructor” in the UI definition. #GtkUIManager implements
+- *  this to reference to a widget created in a <ui> tag which is outside
++ *  this to reference to a widget created in a `<ui>` tag which is outside
+  *  of the normal GtkBuilder UI definition hierarchy.  A reference to the
+  *  constructed object is returned and becomes owned by the caller.
+  * @custom_tag_start: Implement this if the buildable needs to parse
+- *  content below <child>. To handle an element, the implementation
++ *  content below `<child>`. To handle an element, the implementation
+  *  must fill in the @parser and @user_data and return %TRUE.
+  *  #GtkWidget implements this to parse keyboard accelerators specified
+- *  in <accelerator> elements. #GtkContainer implements it to map
+- *  properties defined via <packing> elements to child properties.
++ *  in `<accelerator>` elements. #GtkContainer implements it to map
++ *  properties defined via `<packing>` elements to child properties.
+  *  Note that @user_data must be freed in @custom_tag_end or @custom_finished.
+  * @custom_tag_end: Called for the end tag of each custom element that is
+  *  handled by the buildable (see @custom_tag_start).
+diff --git a/gtk/gtkbuilder.c b/gtk/gtkbuilder.c
+index 93be663..886913b 100644
+--- a/gtk/gtkbuilder.c
++++ b/gtk/gtkbuilder.c
+@@ -69,25 +69,25 @@
+  *
+  * [RELAX NG Compact Syntax](https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/gtkbuilder.rnc)
+  *
+- * The toplevel element is <interface>. It optionally takes a “domain”
++ * The toplevel element is `<interface>`. It optionally takes a “domain”
+  * attribute, which will make the builder look for translated strings
+  * using dgettext() in the domain specified. This can also be done by
+  * calling gtk_builder_set_translation_domain() on the builder.
+- * Objects are described by <object> elements, which can contain
+- * <property> elements to set properties, <signal> elements which
+- * connect signals to handlers, and <child> elements, which describe
++ * Objects are described by `<object>` elements, which can contain
++ * `<property>` elements to set properties, `<signal>` elements which
++ * connect signals to handlers, and `<child>` elements, which describe
+  * child objects (most often widgets inside a container, but also e.g.
+- * actions in an action group, or columns in a tree model). A <child>
+- * element contains an <object> element which describes the child object.
+- * The target toolkit version(s) are described by <requires> elements,
++ * actions in an action group, or columns in a tree model). A `<child>`
++ * element contains an `<object>` element which describes the child object.
++ * The target toolkit version(s) are described by `<requires>` elements,
+  * the “lib” attribute specifies the widget library in question (currently
+  * the only supported value is “gtk+”) and the “version” attribute specifies
+- * the target version in the form “<major>.<minor>”. The builder will error
++ * the target version in the form `<major>.<minor>`. The builder will error
+  * out if the version requirements are not met.
+  *
+- * Typically, the specific kind of object represented by an <object>
++ * Typically, the specific kind of object represented by an `<object>`
+  * element is specified by the “class” attribute. If the type has not
+- * been loaded yet, GTK+ tries to find the get_type() function from the
++ * been loaded yet, GTK+ tries to find the `get_type()` function from the
+  * class name by applying heuristics. This works in most cases, but if
+  * necessary, it is possible to specify the name of the get_type() function
+  * explictly with the "type-func" attribute. As a special case, GtkBuilder
+@@ -100,10 +100,10 @@
+  * application to retrieve them from the builder with gtk_builder_get_object().
+  * An id is also necessary to use the object as property value in other
+  * parts of the UI definition. GTK+ reserves ids starting and ending
+- * with ___ (3 underscores) for its own purposes.
++ * with `___` (3 underscores) for its own purposes.
+  *
+  * Setting properties of objects is pretty straightforward with the
+- * <property> element: the “name” attribute specifies the name of the
++ * `<property>` element: the “name” attribute specifies the name of the
+  * property, and the content of the element specifies the value.
+  * If the “translatable” attribute is set to a true value, GTK+ uses
+  * gettext() (or dgettext() if the builder has a translation domain set)
+@@ -141,7 +141,7 @@
+  * Internally builder implements this using GBinding objects.
+  * For more information see g_object_bind_property()
+  *
+- * Signal handlers are set up with the <signal> element. The “name”
++ * Signal handlers are set up with the `<signal>` element. The “name”
+  * attribute specifies the name of the signal, and the “handler” attribute
+  * specifies the function to connect to the signal. By default, GTK+ tries
+  * to find the handler using g_module_symbol(), but this can be changed by
+@@ -157,19 +157,19 @@
+  * been constructed by GTK+ as part of a composite widget, to set
+  * properties on them or to add further children (e.g. the @vbox of
+  * a #GtkDialog). This can be achieved by setting the “internal-child”
+- * property of the <child> element to a true value. Note that GtkBuilder
+- * still requires an <object> element for the internal child, even if it
++ * property of the `<child>` element to a true value. Note that GtkBuilder
++ * still requires an `<object>` element for the internal child, even if it
+  * has already been constructed.
+  *
+  * A number of widgets have different places where a child can be added
+  * (e.g. tabs vs. page content in notebooks). This can be reflected in
+- * a UI definition by specifying the “type” attribute on a <child>
++ * a UI definition by specifying the “type” attribute on a `<child>`
+  * The possible values for the “type” attribute are described in the
+  * sections describing the widget-specific portions of UI definitions.
+  *
+  * # A GtkBuilder UI Definition
+  *
+- * |[
++ * |[<!-- language="xml" -->
+  * <interface>
+  *   <object class="GtkDialog" id="dialog1">
+  *     <child internal-child="vbox">
+@@ -195,14 +195,14 @@
+  *
+  * Beyond this general structure, several object classes define their
+  * own XML DTD fragments for filling in the ANY placeholders in the DTD
+- * above. Note that a custom element in a <child> element gets parsed by
++ * above. Note that a custom element in a `<child>` element gets parsed by
+  * the custom tag handler of the parent object, while a custom element in
+- * an <object> element gets parsed by the custom tag handler of the object.
++ * an `<object>` element gets parsed by the custom tag handler of the object.
+  *
+  * These XML fragments are explained in the documentation of the
+  * respective objects.
+  *
+- * Additionally, since 3.10 a special <template> tag has been added
++ * Additionally, since 3.10 a special `<template>` tag has been added
+  * to the format allowing one to define a widget class’s components.
+  * See the [GtkWidget documentation][composite-templates] for details.
+  */
+diff --git a/gtk/gtkcelllayout.c b/gtk/gtkcelllayout.c
+index 241f467..c3209df 100644
+--- a/gtk/gtkcelllayout.c
++++ b/gtk/gtkcelllayout.c
+@@ -39,33 +39,34 @@
+  * Implementations of GtkCellLayout which also implement the GtkBuildable
+  * interface (#GtkCellView, #GtkIconView, #GtkComboBox,
+  * #GtkEntryCompletion, #GtkTreeViewColumn) accept GtkCellRenderer objects
+- * as <child> elements in UI definitions. They support a custom <attributes>
+- * element for their children, which can contain multiple <attribute>
+- * elements. Each <attribute> element has a name attribute which specifies
++ * as `<child>` elements in UI definitions. They support a custom `<attributes>`
++ * element for their children, which can contain multiple `<attribute>`
++ * elements. Each `<attribute>` element has a name attribute which specifies
+  * a property of the cell renderer; the content of the element is the
+  * attribute value.
+  *
+  * This is an example of a UI definition fragment specifying attributes:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkCellView">
+  *   <child>
+  *     <object class="GtkCellRendererText"/>
+  *     <attributes>
+  *       <attribute name="text">0</attribute>
+  *     </attributes>
+- *   </child>"
++ *   </child>
+  * </object>
+  * ]|
+  *
+  * Furthermore for implementations of GtkCellLayout that use a #GtkCellArea
+  * to lay out cells (all GtkCellLayouts in GTK+ use a GtkCellArea)
+  * [cell properties][cell-properties] can also be defined in the format by
+- * specifying the custom <cell-packing> attribute which can contain multiple
+- * <property> elements defined in the normal way.
++ * specifying the custom `<cell-packing>` attribute which can contain multiple
++ * `<property>` elements defined in the normal way.
+  *
+  * Here is a UI definition fragment specifying cell properties:
+  *
+- * |[
++ * |[<!-- language="xml" -->
+  * <object class="GtkTreeViewColumn">
+  *   <child>
+  *     <object class="GtkCellRendererText"/>
+@@ -73,7 +74,7 @@
+  *       <property name="align">True</property>
+  *       <property name="expand">False</property>
+  *     </cell-packing>
+- *   </child>"
++ *   </child>
+  * </object>
+  * ]|
+  *
+diff --git a/gtk/gtkcomboboxtext.c b/gtk/gtkcomboboxtext.c
+index e70f323..05dc040 100644
+--- a/gtk/gtkcomboboxtext.c
++++ b/gtk/gtkcomboboxtext.c
+@@ -55,13 +55,14 @@
+  * # GtkComboBoxText as GtkBuildable
+  *
+  * The GtkComboBoxText implementation of the GtkBuildable interface supports
+- * adding items directly using the <items> element and specifying <item>
+- * elements for each item. Each <item> element can specify the “id”
++ * adding items directly using the `<items>` element and specifying `<item>`
++ * elements for each item. Each `<item>` element can specify the “id”
+  * corresponding to the appended text and also supports the regular
+  * translation attributes “translatable”, “context” and “comments”.
+  *
+  * Here is a UI definition fragment specifying GtkComboBoxText items:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkComboBoxText">
+  *   <items>
+  *     <item translatable="yes" id="factory">Factory</item>
+diff --git a/gtk/gtkcontainer.c b/gtk/gtkcontainer.c
+index 4b12104..435a233 100644
+--- a/gtk/gtkcontainer.c
++++ b/gtk/gtkcontainer.c
+@@ -241,19 +241,20 @@
+  * # GtkContainer as GtkBuildable
+  *
+  * The GtkContainer implementation of the GtkBuildable interface supports
+- * a <packing> element for children, which can contain multiple <property>
++ * a `<packing>` element for children, which can contain multiple `<property>`
+  * elements that specify child properties for the child.
+  * 
+  * Since 2.16, child properties can also be marked as translatable using
+  * the same “translatable”, “comments” and “context” attributes that are used
+  * for regular properties.
+  *
+- * Since 3.16, containers can have a <focus-chain> element containing multiple
+- * <widget> elements, one for each child that should be added to the focus
++ * Since 3.16, containers can have a `<focus-chain>` element containing multiple
++ * `<widget>` elements, one for each child that should be added to the focus
+  * chain. The ”name” attribute gives the id of the widget.
+  *
+  * An example of these properties in UI definitions:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkBox">
+  *   <child>
+  *     <object class="GtkEntry" id="entry1"/>
+diff --git a/gtk/gtkdialog.c b/gtk/gtkdialog.c
+index 1905b48..0e58ac4 100644
+--- a/gtk/gtkdialog.c
++++ b/gtk/gtkdialog.c
+@@ -141,21 +141,22 @@
+  * @vbox and @action_area as internal children with the names “vbox” and
+  * “action_area”.
+  *
+- * GtkDialog supports a custom <action-widgets> element, which can contain
+- * multiple <action-widget> elements. The “response” attribute specifies a
++ * GtkDialog supports a custom `<action-widgets>` element, which can contain
++ * multiple `<action-widget>` elements. The “response” attribute specifies a
+  * numeric response, and the content of the element is the id of widget
+  * (which should be a child of the dialogs @action_area). To mark a response
+- * as default, set the “default“ attribute of the <action-widget> element
++ * as default, set the “default“ attribute of the `<action-widget>` element
+  * to true.
+  *
+  * GtkDialog supports adding action widgets by specifying “action“ as
+- * the “type“ attribute of a <child> element. The widget will be added
++ * the “type“ attribute of a `<child>` element. The widget will be added
+  * either to the action area or the headerbar of the dialog, depending
+  * on the “use-header-bar“ property. The response id has to be associated
+- * with the action widget using the <action-widgets> element.
++ * with the action widget using the `<action-widgets>` element.
+  *
+  * An example of a #GtkDialog UI definition fragment:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkDialog" id="dialog1">
+  *   <child type="action">
+  *     <object class="GtkButton" id="button_cancel"/>
+diff --git a/gtk/gtkexpander.c b/gtk/gtkexpander.c
+index e2d6cec..8cfbdb3 100644
+--- a/gtk/gtkexpander.c
++++ b/gtk/gtkexpander.c
+@@ -77,11 +77,12 @@
+  *
+  * The GtkExpander implementation of the GtkBuildable interface supports
+  * placing a child in the label position by specifying “label” as the
+- * “type” attribute of a <child> element. A normal content child can be
+- * specified without specifying a <child> type attribute.
++ * “type” attribute of a `<child>` element. A normal content child can be
++ * specified without specifying a `<child>` type attribute.
+  *
+  * An example of a UI definition fragment with GtkExpander:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkExpander">
+  *   <child type="label">
+  *     <object class="GtkLabel" id="expander-label"/>
+diff --git a/gtk/gtkfilefilter.c b/gtk/gtkfilefilter.c
+index 84a3613..0916df4 100644
+--- a/gtk/gtkfilefilter.c
++++ b/gtk/gtkfilefilter.c
+@@ -41,14 +41,15 @@
+  * # GtkFileFilter as GtkBuildable
+  *
+  * The GtkFileFilter implementation of the GtkBuildable interface
+- * supports adding rules using the <mime-types>, <patterns> and
+- * <applications> elements and listing the rules within. Specifying
+- * a <mime-type> or <pattern> has the same effect as as calling
++ * supports adding rules using the `<mime-types>`, `<patterns>` and
++ * `<applications>` elements and listing the rules within. Specifying
++ * a `<mime-type>` or `<pattern>` has the same effect as as calling
+  * gtk_file_filter_add_mime_type() or gtk_file_filter_add_pattern().
+  *
+  * An example of a UI definition fragment specifying GtkFileFilter
+  * rules:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkFileFilter">
+  *   <mime-types>
+  *     <mime-type>text/plain</mime-type>
+diff --git a/gtk/gtkframe.c b/gtk/gtkframe.c
+index dedc4d8..8ae7054 100644
+--- a/gtk/gtkframe.c
++++ b/gtk/gtkframe.c
+@@ -53,13 +53,14 @@
+  *
+  * # GtkFrame as GtkBuildable
+  *
+- * The GtkFrame implementation of the GtkBuildable interface supports
++ * The GtkFrame implementation of the #GtkBuildable interface supports
+  * placing a child in the label position by specifying “label” as the
+- * “type” attribute of a <child> element. A normal content child can
+- * be specified without specifying a <child> type attribute.
++ * “type” attribute of a `<child>` element. A normal content child can
++ * be specified without specifying a `<child>` type attribute.
+  *
+- * An example of a UI definition fragment with GtkFrame:
+- * |[
++ * An example of a UI definition fragment with `GtkFrame`:
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkFrame">
+  *   <child type="label">
+  *     <object class="GtkLabel" id="frame-label"/>
+diff --git a/gtk/gtkinfobar.c b/gtk/gtkinfobar.c
+index 8cb6e51..8eb89ff 100644
+--- a/gtk/gtkinfobar.c
++++ b/gtk/gtkinfobar.c
+@@ -118,8 +118,8 @@
+  * the content area and action area as internal children with the names
+  * “content_area” and “action_area”.
+  *
+- * GtkInfoBar supports a custom <action-widgets> element, which can contain
+- * multiple <action-widget> elements. The “response” attribute specifies a
++ * GtkInfoBar supports a custom `<action-widgets>` element, which can contain
++ * multiple `<action-widget>` elements. The “response” attribute specifies a
+  * numeric response, and the content of the element is the id of widget
+  * (which should be a child of the dialogs @action_area).
+  *
+diff --git a/gtk/gtklabel.c b/gtk/gtklabel.c
+index bd5c397..7933ab2 100644
+--- a/gtk/gtklabel.c
++++ b/gtk/gtklabel.c
+@@ -98,13 +98,14 @@
+  * # GtkLabel as GtkBuildable
+  *
+  * The GtkLabel implementation of the GtkBuildable interface supports a
+- * custom <attributes> element, which supports any number of <attribute>
+- * elements. The <attribute> element has attributes named “name“, “value“,
++ * custom `<attributes>` element, which supports any number of `<attribute>`
++ * elements. The `<attribute>` element has attributes named “name“, “value“,
+  * “start“ and “end“ and allows you to specify #PangoAttribute values for
+  * this label.
+  *
+  * An example of a UI definition fragment specifying Pango attributes:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkLabel">
+  *   <attributes>
+  *     <attribute name="weight" value="PANGO_WEIGHT_BOLD"/>
+diff --git a/gtk/gtklevelbar.c b/gtk/gtklevelbar.c
+index 7924b70..6e3ac12 100644
+--- a/gtk/gtklevelbar.c
++++ b/gtk/gtklevelbar.c
+@@ -92,8 +92,8 @@
+  * # GtkLevelBar as GtkBuildable
+  *
+  * The GtkLevelBar implementation of the GtkBuildable interface supports a
+- * custom <offsets> element, which can contain any number of <offset> elements,
+- * each of which must have name and value attributes.
++ * custom `<offsets>` element, which can contain any number of `<offset>` elements,
++ * each of which must have "name" and "value" attributes.
+  *
+  * # CSS nodes
+  *
+diff --git a/gtk/gtklistbox.c b/gtk/gtklistbox.c
+index 5743477..efc3434 100644
+--- a/gtk/gtklistbox.c
++++ b/gtk/gtklistbox.c
+@@ -68,7 +68,7 @@
+  *
+  * The GtkListBox implementation of the #GtkBuildable interface supports
+  * setting a child as the placeholder by specifying “placeholder” as the “type”
+- * attribute of a <child> element. See gtk_list_box_set_placeholder() for info.
++ * attribute of a `<child>` element. See gtk_list_box_set_placeholder() for info.
+  *
+  * # CSS nodes
+  *
+diff --git a/gtk/gtkliststore.c b/gtk/gtkliststore.c
+index 39388ef..e4c50e6 100644
+--- a/gtk/gtkliststore.c
++++ b/gtk/gtkliststore.c
+@@ -54,6 +54,7 @@
+  * #GdkPixbufs stored.
+  *
+  * An example for creating a simple list store:
++ *
+  * |[<!-- language="C" -->
+  * enum {
+  *   COLUMN_STRING,
+@@ -134,14 +135,14 @@
+  * # GtkListStore as GtkBuildable
+  *
+  * The GtkListStore implementation of the GtkBuildable interface allows
+- * to specify the model columns with a <columns> element that may contain
+- * multiple <column> elements, each specifying one model column. The “type”
++ * to specify the model columns with a `<columns>` element that may contain
++ * multiple `<column>` elements, each specifying one model column. The “type”
+  * attribute specifies the data type for the column.
+  *
+  * Additionally, it is possible to specify content for the list store
+- * in the UI definition, with the <data> element. It can contain multiple
+- * <row> elements, each specifying to content for one row of the list model.
+- * Inside a <row>, the <col> elements specify the content for individual cells.
++ * in the UI definition, with the `<data>` element. It can contain multiple
++ * `<row>` elements, each specifying to content for one row of the list model.
++ * Inside a `<row>`, the `<col>` elements specify the content for individual cells.
+  *
+  * Note that it is probably more common to define your models in the code,
+  * and one might consider it a layering violation to specify the content of
+@@ -149,7 +150,8 @@
+  * is to separate the two, as far as possible.
+  *
+  * An example of a UI Definition fragment for a list store:
+- * |[<!-- language="C" -->
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkListStore">
+  *   <columns>
+  *     <column type="gchararray"/>
+diff --git a/gtk/gtkmenuitem.c b/gtk/gtkmenuitem.c
+index 66be913..2fee8ee 100644
+--- a/gtk/gtkmenuitem.c
++++ b/gtk/gtkmenuitem.c
+@@ -70,6 +70,7 @@
+  * For more advanced label settings, you can fetch the child widget from the GtkBin.
+  *
+  * An example for setting markup and accelerator on a MenuItem:
++ *
+  * |[<!-- language="C" -->
+  * GtkWidget *menu_item = gtk_menu_item_new_with_label ("Example Menu Item");
+  *
+@@ -82,10 +83,11 @@
+  *
+  * The GtkMenuItem implementation of the #GtkBuildable interface supports
+  * adding a submenu by specifying “submenu” as the “type” attribute of
+- * a <child> element.
++ * a `<child>` element.
+  *
+  * An example of UI definition fragment with submenus:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkMenuItem">
+  *   <child type="submenu">
+  *     <object class="GtkMenu"/>
+diff --git a/gtk/gtkmenutoolbutton.c b/gtk/gtkmenutoolbutton.c
+index 431eea0..c43de74 100644
+--- a/gtk/gtkmenutoolbutton.c
++++ b/gtk/gtkmenutoolbutton.c
+@@ -51,10 +51,11 @@
+  *
+  * The GtkMenuToolButton implementation of the GtkBuildable interface
+  * supports adding a menu by specifying “menu” as the “type” attribute
+- * of a <child> element.
++ * of a `<child>` element.
+  *
+  * An example for a UI definition fragment with menus:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkMenuToolButton">
+  *   <child type="menu">
+  *     <object class="GtkMenu"/>
+diff --git a/gtk/gtknotebook.c b/gtk/gtknotebook.c
+index e07d1e1..f51570e 100644
+--- a/gtk/gtknotebook.c
++++ b/gtk/gtknotebook.c
+@@ -74,17 +74,18 @@
+  * 
+  * The GtkNotebook implementation of the #GtkBuildable interface
+  * supports placing children into tabs by specifying “tab” as the
+- * “type” attribute of a <child> element. Note that the content
++ * “type” attribute of a `<child>` element. Note that the content
+  * of the tab must be created before the tab can be filled.
+- * A tab child can be specified without specifying a <child>
++ * A tab child can be specified without specifying a `<child>`
+  * type attribute.
+  *
+  * To add a child widget in the notebooks action area, specify
+  * "action-start" or “action-end” as the “type” attribute of the
+- * <child> element.
++ * `<child>` element.
+  *
+  * An example of a UI definition fragment with GtkNotebook:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkNotebook">
+  *   <child>
+  *     <object class="GtkLabel" id="notebook-content">
+diff --git a/gtk/gtkpopovermenu.c b/gtk/gtkpopovermenu.c
+index 31d82f0..25bddba 100644
+--- a/gtk/gtkpopovermenu.c
++++ b/gtk/gtkpopovermenu.c
+@@ -48,7 +48,7 @@
+  *
+  * # Example
+  *
+- * |[
++ * |[<!-- language="xml" -->
+  * <object class="GtkPopoverMenu">
+  *   <child>
+  *     <object class="GtkBox">
+diff --git a/gtk/gtkrecentfilter.c b/gtk/gtkrecentfilter.c
+index 70c021a..2d99f8c 100644
+--- a/gtk/gtkrecentfilter.c
++++ b/gtk/gtkrecentfilter.c
+@@ -43,14 +43,16 @@
+  * ## GtkRecentFilter as GtkBuildable
+  *
+  * The GtkRecentFilter implementation of the GtkBuildable interface
+- * supports adding rules using the <mime-types>, <patterns> and
+- * <applications> elements and listing the rules within. Specifying
+- * a <mime-type>, <pattern> or <application> has the same effect as
++ * supports adding rules using the `<mime-types>`, `<patterns>` and
++ * `<applications>` elements and listing the rules within. Specifying
++ * a `<mime-type>`, `<pattern>` or `<application>` has the same effect as
+  * calling gtk_recent_filter_add_mime_type(),
+  * gtk_recent_filter_add_pattern() or gtk_recent_filter_add_application().
+  *
+- * An example of a UI definition fragment specifying GtkRecentFilter rules:
+- * |[
++ * An example of a UI definition fragment specifying `GtkRecentFilter`
++ * rules:
++ * 
++ * |[<!-- language="xml" -->
+  * <object class="GtkRecentFilter">
+  *   <mime-types>
+  *     <mime-type>text/plain</mime-type>
+diff --git a/gtk/gtkscale.c b/gtk/gtkscale.c
+index 529fb3d..bee30ee 100644
+--- a/gtk/gtkscale.c
++++ b/gtk/gtkscale.c
+@@ -68,8 +68,8 @@
+  *
+  * # GtkScale as GtkBuildable
+  *
+- * GtkScale supports a custom <marks> element, which can contain multiple
+- * <mark> elements. The “value” and “position” attributes have the same
++ * GtkScale supports a custom `<marks>` element, which can contain multiple
++ * `<mark>` elements. The “value” and “position” attributes have the same
+  * meaning as gtk_scale_add_mark() parameters of the same name. If the
+  * element is not empty, its content is taken as the markup to show at
+  * the mark. It can be translated with the usual ”translatable” and
+diff --git a/gtk/gtkshortcutsshortcut.c b/gtk/gtkshortcutsshortcut.c
+index ca06eab..d28f9b9 100644
+--- a/gtk/gtkshortcutsshortcut.c
++++ b/gtk/gtkshortcutsshortcut.c
+@@ -515,20 +515,21 @@ gtk_shortcuts_shortcut_class_init (GtkShortcutsShortcutClass *klass)
+    * The syntax of this property is (an extension of) the syntax understood by
+    * gtk_accelerator_parse(). Multiple accelerators can be specified by separating
+    * them with a space, but keep in mind that the available width is limited.
+-   * It is also possible to specify ranges of shortcuts, using ... between the keys.
+-   * Sequences of keys can be specified using a + or & between the keys.
++   * It is also possible to specify ranges of shortcuts, using `...` between the keys.
++   * Sequences of keys can be specified using a `+` or `&` between the keys.
+    *
+    * Examples:
+-   * - A single shortcut: <ctl><alt>delete
+-   * - Two alternative shortcuts: <shift>a Home
+-   * - A range of shortcuts: <alt>1...<alt>9
+-   * - Several keys pressed together: Control_L&Control_R
+-   * - A sequence of shortcuts or keys: <ctl>c+<ctl>x
++   *
++   * - A single shortcut: `<ctl><alt>delete`
++   * - Two alternative shortcuts: `<shift>a Home`
++   * - A range of shortcuts: `<alt>1...<alt>9`
++   * - Several keys pressed together: `Control_L&Control_R`
++   * - A sequence of shortcuts or keys: `<ctl>c+<ctl>x`
+    *
+    * Use + instead of & when the keys may (or have to be) pressed sequentially (e.g
+    * use t+t for 'press the t key twice').
+    *
+-   * Note that <, > and & need to be escaped as &lt;, &gt; and &amp; when used
++   * Note that `<`, `>` and `&` need to be escaped as &lt;, &gt; and &amp; when used
+    * in .ui files.
+    */
+   properties[PROP_ACCELERATOR] =
+diff --git a/gtk/gtksizegroup.c b/gtk/gtksizegroup.c
+index a939a05..06cf0cd 100644
+--- a/gtk/gtksizegroup.c
++++ b/gtk/gtksizegroup.c
+@@ -84,14 +84,15 @@
+  *
+  * # GtkSizeGroup as GtkBuildable
+  *
+- * Size groups can be specified in a UI definition by placing an <object>
++ * Size groups can be specified in a UI definition by placing an `<object>`
+  * element with `class="GtkSizeGroup"` somewhere in the UI definition. The
+- * widgets that belong to the size group are specified by a <widgets> element
+- * that may contain multiple <widget> elements, one for each member of the
++ * widgets that belong to the size group are specified by a `<widgets>` element
++ * that may contain multiple `<widget>` elements, one for each member of the
+  * size group. The ”name” attribute gives the id of the widget.
+  *
+  * An example of a UI definition fragment with GtkSizeGroup:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkSizeGroup">
+  *   <property name="mode">GTK_SIZE_GROUP_HORIZONTAL</property>
+  *   <widgets>
+diff --git a/gtk/gtktexttagtable.c b/gtk/gtktexttagtable.c
+index 3b0de89..c2853f0 100644
+--- a/gtk/gtktexttagtable.c
++++ b/gtk/gtktexttagtable.c
+@@ -49,10 +49,11 @@
+  *
+  * The GtkTextTagTable implementation of the GtkBuildable interface
+  * supports adding tags by specifying “tag” as the “type” attribute
+- * of a <child> element.
++ * of a `<child>` element.
+  *
+  * An example of a UI definition fragment specifying tags:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkTextTagTable">
+  *  <child type="tag">
+  *    <object class="GtkTextTag"/>
+diff --git a/gtk/gtktreestore.c b/gtk/gtktreestore.c
+index ad4a8a7..535b183 100644
+--- a/gtk/gtktreestore.c
++++ b/gtk/gtktreestore.c
+@@ -45,12 +45,13 @@
+  * # GtkTreeStore as GtkBuildable
+  *
+  * The GtkTreeStore implementation of the #GtkBuildable interface allows
+- * to specify the model columns with a <columns> element that may contain
+- * multiple <column> elements, each specifying one model column. The “type”
++ * to specify the model columns with a `<columns>` element that may contain
++ * multiple `<column>` elements, each specifying one model column. The “type”
+  * attribute specifies the data type for the column.
+  *
+  * An example of a UI Definition fragment for a tree store:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkTreeStore">
+  *   <columns>
+  *     <column type="gchararray"/>
+diff --git a/gtk/gtktreeview.c b/gtk/gtktreeview.c
+index 704702c..172b2b9 100644
+--- a/gtk/gtktreeview.c
++++ b/gtk/gtktreeview.c
+@@ -99,11 +99,12 @@
+  * # GtkTreeView as GtkBuildable
+  *
+  * The GtkTreeView implementation of the GtkBuildable interface accepts
+- * #GtkTreeViewColumn objects as <child> elements and exposes the internal
++ * #GtkTreeViewColumn objects as `<child>` elements and exposes the internal
+  * #GtkTreeSelection in UI definitions.
+  *
+  * An example of a UI definition fragment with GtkTreeView:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkTreeView" id="treeview">
+  *   <property name="model">liststore1</property>
+  *   <child>
+diff --git a/gtk/gtkwidget.c b/gtk/gtkwidget.c
+index 1bdd2ce..b6e0011 100644
+--- a/gtk/gtkwidget.c
++++ b/gtk/gtkwidget.c
+@@ -275,23 +275,25 @@
+  * # GtkWidget as GtkBuildable
+  *
+  * The GtkWidget implementation of the GtkBuildable interface supports a
+- * custom <accelerator> element, which has attributes named ”key”, ”modifiers”
++ * custom `<accelerator>` element, which has attributes named ”key”, ”modifiers”
+  * and ”signal” and allows to specify accelerators.
+  *
+  * An example of a UI definition fragment specifying an accelerator:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkButton">
+  *   <accelerator key="q" modifiers="GDK_CONTROL_MASK" signal="clicked"/>
+  * </object>
+  * ]|
+  *
+- * In addition to accelerators, GtkWidget also support a custom <accessible>
++ * In addition to accelerators, GtkWidget also support a custom `<accessible>`
+  * element, which supports actions and relations. Properties on the accessible
+  * implementation of an object can be set by accessing the internal child
+  * “accessible” of a #GtkWidget.
+  *
+  * An example of a UI definition fragment specifying an accessible:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkLabel" id="label1"/>
+  *   <property name="label">I am a Label for a Button</property>
+  * </object>
+@@ -309,8 +311,9 @@
+  * ]|
+  *
+  * Finally, GtkWidget allows style information such as style classes to
+- * be associated with widgets, using the custom <style> element:
+- * |[
++ * be associated with widgets, using the custom `<style>` element:
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkButton" id="button1">
+  *   <style>
+  *     <class name="my-special-button-class"/>
+@@ -333,27 +336,28 @@
+  * is slightly different from regular #GtkBuilder XML.
+  *
+  * Unlike regular interface descriptions, gtk_widget_class_set_template() will
+- * expect a <template> tag as a direct child of the toplevel <interface>
+- * tag. The <template> tag must specify the “class” attribute which must be
++ * expect a `<template>` tag as a direct child of the toplevel `<interface>`
++ * tag. The `<template>` tag must specify the “class” attribute which must be
+  * the type name of the widget. Optionally, the “parent” attribute may be
+  * specified to specify the direct parent type of the widget type, this is
+  * ignored by the GtkBuilder but required for Glade to introspect what kind
+  * of properties and internal children exist for a given type when the actual
+  * type does not exist.
+  *
+- * The XML which is contained inside the <template> tag behaves as if it were
+- * added to the <object> tag defining @widget itself. You may set properties
+- * on @widget by inserting <property> tags into the <template> tag, and also
+- * add <child> tags to add children and extend @widget in the normal way you
+- * would with <object> tags.
++ * The XML which is contained inside the `<template>` tag behaves as if it were
++ * added to the `<object>` tag defining "widget" itself. You may set properties
++ * on @widget by inserting `<property>` tags into the `<template>` tag, and also
++ * add `<child>` tags to add children and extend "widget" in the normal way you
++ * would with `<object>` tags.
+  *
+- * Additionally, <object> tags can also be added before and after the initial
+- * <template> tag in the normal way, allowing one to define auxiliary objects
++ * Additionally, `<object>` tags can also be added before and after the initial
++ * `<template>` tag in the normal way, allowing one to define auxiliary objects
+  * which might be referenced by other widgets declared as children of the
+- * <template> tag.
++ * `<template>` tag.
+  *
+  * An example of a GtkBuilder Template Definition:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <interface>
+  *   <template class="FooWidget" parent="GtkBox">
+  *     <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+diff --git a/gtk/gtkwindow.c b/gtk/gtkwindow.c
+index 78729cb..8df1c8e 100644
+--- a/gtk/gtkwindow.c
++++ b/gtk/gtkwindow.c
+@@ -98,15 +98,16 @@
+  * # GtkWindow as GtkBuildable
+  *
+  * The GtkWindow implementation of the #GtkBuildable interface supports a
+- * custom <accel-groups> element, which supports any number of <group>
++ * custom `<accel-groups>` element, which supports any number of `<group>`
+  * elements representing the #GtkAccelGroup objects you want to add to
+  * your window (synonymous with gtk_window_add_accel_group().
+  *
+- * It also supports the <initial-focus> element, whose name property names
++ * It also supports the `<initial-focus>` element, whose name property names
+  * the widget to receive the focus when the window is mapped.
+  *
+  * An example of a UI definition fragment with accel groups:
+- * |[
++ *
++ * |[<!-- language="xml" -->
+  * <object class="GtkWindow">
+  *   <accel-groups>
+  *     <group name="accelgroup1"/>
+@@ -121,7 +122,7 @@
+  * 
+  * The GtkWindow implementation of the #GtkBuildable interface supports
+  * setting a child as the titlebar by specifying “titlebar” as the “type”
+- * attribute of a <child> element.
++ * attribute of a `<child>` element.
+  *
+  * # CSS nodes
+  *

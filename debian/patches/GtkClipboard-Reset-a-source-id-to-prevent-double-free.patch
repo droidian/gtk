@@ -1,0 +1,39 @@
+From: =?utf-8?q?Ga=C3=ABl_Bonithon?= <gael@xfce.org>
+Date: Sun, 12 Sep 2021 18:00:24 +0200
+Subject: GtkClipboard: Reset a source id to prevent double free
+
+Bug: https://gitlab.gnome.org/GNOME/gtk/-/issues/4253
+Origin: upstream, 3.24.31, commit:599ab80c635d3471eda08f75702a321c091f5788
+---
+ gtk/gtkclipboard.c | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+
+diff --git a/gtk/gtkclipboard.c b/gtk/gtkclipboard.c
+index c34c802..b0caf16 100644
+--- a/gtk/gtkclipboard.c
++++ b/gtk/gtkclipboard.c
+@@ -2036,7 +2036,8 @@ static gboolean
+ gtk_clipboard_store_timeout (GtkClipboard *clipboard)
+ {
+   g_main_loop_quit (clipboard->store_loop);
+-  
++  clipboard->store_timeout = 0;
++
+   return G_SOURCE_REMOVE;
+ }
+ 
+@@ -2179,8 +2180,12 @@ gtk_clipboard_real_store (GtkClipboard *clipboard)
+   g_main_loop_unref (clipboard->store_loop);
+   clipboard->store_loop = NULL;
+   
+-  g_source_remove (clipboard->store_timeout);
+-  clipboard->store_timeout = 0;
++  if (clipboard->store_timeout != 0)
++    {
++      g_source_remove (clipboard->store_timeout);
++      clipboard->store_timeout = 0;
++    }
++
+   g_signal_handler_disconnect (clipboard_widget, clipboard->notify_signal_id);
+   clipboard->notify_signal_id = 0;
+   

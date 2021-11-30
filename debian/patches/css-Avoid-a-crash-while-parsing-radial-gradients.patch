@@ -1,0 +1,25 @@
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Mon, 7 Nov 2016 14:44:29 -0500
+Subject: css: Avoid a crash while parsing radial gradients
+
+has_size does not imply that sizes[0] is != NULL.
+
+(cherry picked from commit aceba7484faf4932442d92d0b2dd0f0466e0afed)
+Origin: upstream, 3.24.31, commit:60ec8dbd6974dd8546b736fc9aa5bbb257f8aa2a
+---
+ gtk/gtkcssimageradial.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/gtk/gtkcssimageradial.c b/gtk/gtkcssimageradial.c
+index 81967c9..cfb2740 100644
+--- a/gtk/gtkcssimageradial.c
++++ b/gtk/gtkcssimageradial.c
+@@ -346,7 +346,7 @@ gtk_css_image_radial_parse (GtkCssImage  *image,
+ 
+   if (has_size && !radial->circle)
+     {
+-      if (!radial->sizes[1])
++      if (radial->sizes[0] && !radial->sizes[1])
+         radial->sizes[1] = _gtk_css_value_ref (radial->sizes[0]);
+     }
+ 

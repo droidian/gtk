@@ -1,0 +1,35 @@
+From: =?utf-8?q?Na=C3=AFm_Favier?= <n@monade.li>
+Date: Tue, 16 Nov 2021 12:53:38 +0100
+Subject: composetable: invalidate cache based on symlink mtime too
+
+When the compose file is a symbolic link, take the link itself's
+modification time into account (in addition to its target's) in
+determining whether to invalidate the compose cache.
+
+This is useful e.g. on NixOS systems where the compose file might point
+to a store path with an irrelevant modification time, and we want the
+cache to expire when the symlink itself changes.
+
+(cherry picked from commit 22f523694393f2e4c5d26cdce6bcc1ee15c4185a)
+Origin: upstream, 3.24.31, commit:1284a804f11f3fa2c4bb1379a776cdf87395b4cb
+---
+ gtk/gtkcomposetable.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/gtk/gtkcomposetable.c b/gtk/gtkcomposetable.c
+index 185f89f..9555c02 100644
+--- a/gtk/gtkcomposetable.c
++++ b/gtk/gtkcomposetable.c
+@@ -588,8 +588,11 @@ gtk_compose_table_load_cache (const char *compose_file)
+   if (!g_file_test (path, G_FILE_TEST_EXISTS))
+     goto out_load_cache;
+ 
+-  g_stat (compose_file, &original_buf);
+   g_stat (path, &cache_buf);
++  g_lstat (compose_file, &original_buf);
++  if (original_buf.st_mtime > cache_buf.st_mtime)
++    goto out_load_cache;
++  g_stat (compose_file, &original_buf);
+   if (original_buf.st_mtime > cache_buf.st_mtime)
+     goto out_load_cache;
+   if (!g_file_get_contents (path, &contents, &total_length, &error))
