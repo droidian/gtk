@@ -1,4 +1,4 @@
-gtk+3.0 (3.24.31-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.31-1) unstable; urgency=medium
 
   * New upstream release
     - Support touchpad gestures with XI 2.4
@@ -9,8 +9,10 @@ gtk+3.0 (3.24.31-1) UNRELEASED; urgency=medium
       relevant in Debian
     - Various other changes that were already in 3.24.30-4
   * Drop patches that came from upstream
+  * d/copyright: Update
+  * d/control.in: Update build-dependencies
 
- -- Simon McVittie <smcv@debian.org>  Sun, 26 Dec 2021 18:44:18 +0000
+ -- Simon McVittie <smcv@debian.org>  Sun, 26 Dec 2021 19:50:22 +0000
 
 gtk+3.0 (3.24.30-4) unstable; urgency=medium
 
