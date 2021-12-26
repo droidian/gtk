@@ -1,6 +1,14 @@
 gtk+3.0 (3.24.31-1) UNRELEASED; urgency=medium
 
   * New upstream release
+    - Support touchpad gestures with XI 2.4
+    - Avoid clipboard-related lockups on Wayland
+    - textview: Add CSS letter spacing
+    - Translation updates: is, oc
+    - Various Windows- and macOS-specific changes that are not directly
+      relevant in Debian
+    - Various other changes that were already in 3.24.30-4
+  * Drop patches that came from upstream
 
  -- Simon McVittie <smcv@debian.org>  Sun, 26 Dec 2021 18:44:18 +0000
 
