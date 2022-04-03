@@ -1,0 +1,38 @@
+From: Simon McVittie <smcv@debian.org>
+Date: Sun, 3 Apr 2022 14:33:29 +0100
+Subject: build: Disable testsuite/gdk/display
+
+Opening an invalid X11 display with libx11 1.7.4 causes a crash, but
+this is not GTK's fault. Skip the test that relied on this being handled
+gracefully.
+
+Bug: https://gitlab.freedesktop.org/xorg/lib/libx11/-/issues/155
+Forwarded: not-needed, workaround for a bug in a different project
+---
+ testsuite/gdk/Makefile.am | 1 -
+ testsuite/gdk/meson.build | 1 -
+ 2 files changed, 2 deletions(-)
+
+diff --git a/testsuite/gdk/Makefile.am b/testsuite/gdk/Makefile.am
+index 1b5fc4f..5e6a3d1 100644
+--- a/testsuite/gdk/Makefile.am
++++ b/testsuite/gdk/Makefile.am
+@@ -19,7 +19,6 @@ LDADD = 				\
+ 
+ TEST_PROGS += 				\
+ 	cairo				\
+-	display				\
+ 	encoding			\
+ 	keysyms				\
+ 	rectangle			\
+diff --git a/testsuite/gdk/meson.build b/testsuite/gdk/meson.build
+index 9c8480d..7c6192a 100644
+--- a/testsuite/gdk/meson.build
++++ b/testsuite/gdk/meson.build
+@@ -1,6 +1,5 @@
+ tests = [
+   'cairo',
+-  'display',
+   'encoding',
+   'keysyms',
+   'rectangle',
