@@ -6,4 +6,3 @@ demos-examples-tests-Don-t-distribute-built-files.patch
 060_ignore-random-icons.patch
 reftest-known-fail.patch
 Disable-accessibility-dump-aka-a11ytests-test.patch
-debian/build-Disable-testsuite-gdk-display.patch
