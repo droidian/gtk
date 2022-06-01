@@ -1,8 +1,10 @@
 gtk+3.0 (3.24.34-1) UNRELEASED; urgency=medium
 
   * New upstream release
+  * d/copyright: Update
+  * Drop patches that were cherry-picked from upstream
 
- -- Simon McVittie <smcv@debian.org>  Wed, 01 Jun 2022 16:15:28 +0100
+ -- Simon McVittie <smcv@debian.org>  Wed, 01 Jun 2022 17:09:06 +0100
 
 gtk+3.0 (3.24.33-2) unstable; urgency=medium
 
