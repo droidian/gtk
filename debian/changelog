@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.34-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 01 Jun 2022 16:15:28 +0100
+
 gtk+3.0 (3.24.33-2) unstable; urgency=medium
 
   * Cherry-pick gtk-3-24 commits needed for mutter 42.1 (LP: #1972721)
