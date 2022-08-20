@@ -1,3 +1,4 @@
+Avoid-repeated-g_log_set_writer_func-in-tests.patch
 gdk-Don-t-distribute-generated-files-in-tarballs.patch
 gtk-Really-don-t-distribute-built-files.patch
 demos-examples-tests-Don-t-distribute-built-files.patch
