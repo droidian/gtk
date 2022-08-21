@@ -151,6 +151,10 @@ ignore_reftests += \
 	flipping-icons \
 	$(NULL)
 
+ifneq (,$(filter $(DEB_HOST_ARCH_CPU),i386))
+ignore_reftests += linear-gradient
+endif
+
 xfail_reftests = \
 	$(NULL)
 
