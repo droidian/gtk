@@ -1,4 +1,4 @@
-gtk+3.0 (3.24.34-3) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.34-3) unstable; urgency=medium
 
   * d/control.in: Remove support for pre-bullseye versions of gdk-pixbuf
   * Backport reftest comparison machinery from our gtk4 packaging.
@@ -15,7 +15,7 @@ gtk+3.0 (3.24.34-3) UNRELEASED; urgency=medium
   * Update Lintian overrides
   * Refer to #1017578 in previous changelog entry
 
- -- Simon McVittie <smcv@debian.org>  Sun, 21 Aug 2022 18:22:18 +0100
+ -- Simon McVittie <smcv@debian.org>  Sun, 21 Aug 2022 20:57:41 +0100
 
 gtk+3.0 (3.24.34-2) unstable; urgency=medium
 
