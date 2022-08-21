@@ -1,9 +1,21 @@
 gtk+3.0 (3.24.34-3) UNRELEASED; urgency=medium
 
+  * d/control.in: Remove support for pre-bullseye versions of gdk-pixbuf
+  * Backport reftest comparison machinery from our gtk4 packaging.
+    This will let us distinguish between "fails by small differences caused
+    by rounding/i387/..." and "completely different result", without having
+    to move the whole build system to Meson, which seems like one variation
+    too many during a transition.
+  * d/rules: Ignore new reftest failure for linear-gradient on any-i386.
+    This seems to have regressed despite the GTK code not having changed,
+    possibly as a result of changes in another package, and it seems to be
+    the reference rendering rather than the test output that changed.
+    Please report a bug if there are user-visible rendering issues
+    involving gradients on i386.
   * Update Lintian overrides
   * Refer to #1017578 in previous changelog entry
 
- -- Simon McVittie <smcv@debian.org>  Sat, 20 Aug 2022 23:27:11 +0100
+ -- Simon McVittie <smcv@debian.org>  Sun, 21 Aug 2022 18:22:18 +0100
 
 gtk+3.0 (3.24.34-2) unstable; urgency=medium
 
