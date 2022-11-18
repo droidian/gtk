@@ -1,4 +1,4 @@
-gtk+3.0 (3.24.34-4) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.34-4) unstable; urgency=medium
 
   * d/patches: Update to upstream gtk-3-24 branch commit
     3.24.34-209-gf8d26e2acc (Windows- and macOS-specific changes excluded)
@@ -30,8 +30,10 @@ gtk+3.0 (3.24.34-4) UNRELEASED; urgency=medium
     - Translation updates
   * (Build-)Depend on libfontconfig-dev, not transitional libfontconfig1-dev
   * Build-/test-depend on dbus-daemon for dbus-run-session, instead of dbus
+  * d/p/build-Define-USE_XDG_ACTIVATION-conditional-when-Wayland-.patch:
+    Add patch to fix FTBFS for the udeb and non-Linux architectures
 
- -- Simon McVittie <smcv@debian.org>  Tue, 15 Nov 2022 11:33:54 +0000
+ -- Simon McVittie <smcv@debian.org>  Fri, 18 Nov 2022 11:53:03 +0000
 
 gtk+3.0 (3.24.34-3) unstable; urgency=medium
 
