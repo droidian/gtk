@@ -1,7 +1,7 @@
 gtk+3.0 (3.24.34-4) UNRELEASED; urgency=medium
 
   * d/patches: Update to upstream gtk-3-24 branch commit
-    3.24.34-204-g2fcc114870 (Windows- and macOS-specific changes excluded)
+    3.24.34-209-gf8d26e2acc (Windows- and macOS-specific changes excluded)
     - Don't crash on HiDPI systems if the cursor theme has cursors of
       the wrong size
     - When using server-side window decorations, don't draw a shadow around

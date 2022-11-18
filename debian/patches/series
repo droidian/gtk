@@ -88,6 +88,10 @@ Update-Russian-translation.patch
 Update-Dutch-translation.patch
 Update-Indonesian-translation.patch
 Update-Norwegian-Bokm-l-translation.patch
+Update-Turkish-translation-2.patch
+Update-Turkish-translation-3.patch
+Revert-wayland-cursor-Sanity-check-cursor-image-size.patch
+Make-wayland-load-cursors-on-demand.patch
 016_no_offscreen_widgets_grabbing.patch
 017_no_offscreen_device_grabbing.patch
 060_ignore-random-icons.patch
