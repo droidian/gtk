@@ -9,6 +9,7 @@ Debian's installer.
 
 Signed-off-by: Simon McVittie <smcv@debian.org>
 Forwarded: https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/5226
+Applied-upstream: 3.24.35, commit:20f2c13b2b34397fbaf298c10537a842465ee7a3
 ---
  configure.ac | 1 +
  1 file changed, 1 insertion(+)

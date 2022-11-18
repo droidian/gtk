@@ -92,6 +92,7 @@ Update-Turkish-translation-2.patch
 Update-Turkish-translation-3.patch
 Revert-wayland-cursor-Sanity-check-cursor-image-size.patch
 Make-wayland-load-cursors-on-demand.patch
+build-Define-USE_XDG_ACTIVATION-conditional-when-Wayland-.patch
 016_no_offscreen_widgets_grabbing.patch
 017_no_offscreen_device_grabbing.patch
 060_ignore-random-icons.patch
@@ -99,4 +100,3 @@ Disable-accessibility-dump-aka-a11ytests-test.patch
 reftest_compare_surfaces-Report-how-much-the-images-diffe.patch
 reftests-Allow-minor-differences-to-be-tolerated.patch
 testsuite-Allow-reftest-output-directory-to-be-forced-via.patch
-build-Define-USE_XDG_ACTIVATION-conditional-when-Wayland-.patch
