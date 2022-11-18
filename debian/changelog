@@ -1,3 +1,12 @@
+gtk+3.0 (3.24.34-5) unstable; urgency=medium
+
+  * d/p/build-Define-USE_XDG_ACTIVATION-conditional-when-Wayland-.patch:
+    Mark patch as applied upstream
+  * Skip border-image-excess-size reftest on big-endian machines.
+    Mitigates: #1024392
+
+ -- Simon McVittie <smcv@debian.org>  Fri, 18 Nov 2022 23:56:42 +0000
+
 gtk+3.0 (3.24.34-4) unstable; urgency=medium
 
   * d/patches: Update to upstream gtk-3-24 branch commit
