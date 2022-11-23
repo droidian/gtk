@@ -7,6 +7,10 @@ gtk+3.0 (3.24.35-1) UNRELEASED; urgency=medium
   * d/p/Flush-drawable-surface-when-getting-a-pixbuf.patch:
     Add post-release fix from upstream to avoid an assertion failure in
     gnome-screenshot and epiphany
+  * d/rules, d/run-tests.sh: Build using Meson
+  * d/p/Disable-accessibility-dump-aka-a11ytests-test.patch,
+    d/p/testsuite-Allow-reftest-output-directory-to-be-forced-via.patch:
+    Drop patches that are not needed when building with Meson
 
  -- Simon McVittie <smcv@debian.org>  Wed, 23 Nov 2022 15:21:00 +0000
 

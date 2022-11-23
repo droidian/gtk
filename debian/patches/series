@@ -3,7 +3,5 @@ Flush-drawable-surface-when-getting-a-pixbuf.patch
 016_no_offscreen_widgets_grabbing.patch
 017_no_offscreen_device_grabbing.patch
 060_ignore-random-icons.patch
-Disable-accessibility-dump-aka-a11ytests-test.patch
 reftest_compare_surfaces-Report-how-much-the-images-diffe.patch
 reftests-Allow-minor-differences-to-be-tolerated.patch
-testsuite-Allow-reftest-output-directory-to-be-forced-via.patch
