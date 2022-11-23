@@ -1,5 +1,8 @@
 dist/Reinstate-gdk-wayland-cursor-meson.build.patch
 Flush-drawable-surface-when-getting-a-pixbuf.patch
+testsuite-Avoid-using-should_fail.patch
+testsuite-Try-enabling-a11y-tests-other-than-those-known-.patch
+testsuite-Don-t-create-.test-files-for-flaky-or-failing-t.patch
 016_no_offscreen_widgets_grabbing.patch
 017_no_offscreen_device_grabbing.patch
 060_ignore-random-icons.patch

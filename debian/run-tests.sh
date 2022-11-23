@@ -45,7 +45,6 @@ for BACKEND in x11; do
         dbus-run-session -- \
             xvfb-run -a \
                 dh_auto_test --builddirectory="$BUILDDIR" -- \
-                    --no-suite=gtk+-3.0:a11y \
                     "$@" \
     || touch "$test_data/tests-failed"
 
