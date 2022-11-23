@@ -1,8 +1,14 @@
 gtk+3.0 (3.24.35-1) UNRELEASED; urgency=medium
 
   * New upstream release
+    - Drop most patches, included in upstream release
+  * d/p/dist/Reinstate-gdk-wayland-cursor-meson.build.patch:
+    Add a missing build file from upstream git
+  * d/p/Flush-drawable-surface-when-getting-a-pixbuf.patch:
+    Add post-release fix from upstream to avoid an assertion failure in
+    gnome-screenshot and epiphany
 
- -- Simon McVittie <smcv@debian.org>  Wed, 23 Nov 2022 15:11:30 +0000
+ -- Simon McVittie <smcv@debian.org>  Wed, 23 Nov 2022 15:21:00 +0000
 
 gtk+3.0 (3.24.34-5) unstable; urgency=medium
 
