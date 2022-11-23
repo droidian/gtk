@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.35-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 23 Nov 2022 15:11:30 +0000
+
 gtk+3.0 (3.24.34-5) unstable; urgency=medium
 
   * d/p/build-Define-USE_XDG_ACTIVATION-conditional-when-Wayland-.patch:
