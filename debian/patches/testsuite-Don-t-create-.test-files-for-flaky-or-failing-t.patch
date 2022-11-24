@@ -21,6 +21,8 @@ file and a separate Meson test() for each .ui file, but that would
 require more active maintenance of GTK 3.
 
 Signed-off-by: Simon McVittie <smcv@debian.org>
+Forwarded: https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/5249
+Applied-upstream: 3.24.36, commit:cdb598793a0bdbbbc5b6226635afefcd33f51753
 ---
  testsuite/a11y/meson.build       | 7 ++++++-
  testsuite/a11y/state/meson.build | 7 +++++--

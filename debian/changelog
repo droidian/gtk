@@ -2,17 +2,23 @@ gtk+3.0 (3.24.35-1) UNRELEASED; urgency=medium
 
   * New upstream release
     - Drop most patches, included in upstream release
+  * d/rules, d/run-tests.sh: Build using Meson
   * d/p/dist/Reinstate-gdk-wayland-cursor-meson.build.patch:
     Add a missing build file from upstream git
   * d/p/Flush-drawable-surface-when-getting-a-pixbuf.patch:
     Add post-release fix from upstream to avoid an assertion failure in
     gnome-screenshot and epiphany
-  * d/rules, d/run-tests.sh: Build using Meson
   * d/p/Disable-accessibility-dump-aka-a11ytests-test.patch,
     d/p/testsuite-Allow-reftest-output-directory-to-be-forced-via.patch:
     Drop patches that are not needed when building with Meson
+  * d/p/testsuite-Avoid-using-should_fail.patch,
+    d/p/testsuite-Try-enabling-a11y-tests-other-than-those-known-.patch,
+    d/p/testsuite-Don-t-create-.test-files-for-flaky-or-failing-t.patch:
+    Add patches from upstream to improve handling of flaky tests.
+    With these changes, the flaky/known-failing tests are no longer installed
+    as installed-tests at all, so remove them from the autopkgtest metadata.
 
- -- Simon McVittie <smcv@debian.org>  Wed, 23 Nov 2022 15:21:00 +0000
+ -- Simon McVittie <smcv@debian.org>  Thu, 24 Nov 2022 13:41:39 +0000
 
 gtk+3.0 (3.24.34-5) unstable; urgency=medium
 

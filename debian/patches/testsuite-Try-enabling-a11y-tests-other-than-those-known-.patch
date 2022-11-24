@@ -10,6 +10,8 @@ passing on ci.debian.net for several years, so hopefully they are also
 reliable enough for upstream CI and we don't need to mark them as flaky?
 
 Signed-off-by: Simon McVittie <smcv@debian.org>
+Forwarded: https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/5249
+Applied-upstream: 3.24.36, commit:a1cd0f71d9170dcc8f0bb3579961a30d16a51e48
 ---
  testsuite/a11y/meson.build | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)

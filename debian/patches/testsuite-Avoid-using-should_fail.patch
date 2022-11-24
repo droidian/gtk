@@ -27,6 +27,8 @@ This arrangement is inspired by GNOME/glib!2987, which was contributed
 by Marco Trevisan.
 
 Signed-off-by: Simon McVittie <smcv@debian.org>
+Forwarded: https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/5249
+Applied-upstream: 3.24.36, commit:820d72ffb8b69e6f19166be736bf434a2e43c4d9
 ---
  testsuite/a11y/meson.build     |  4 ++--
  testsuite/gtk/meson.build      | 17 +++++++++++++----
