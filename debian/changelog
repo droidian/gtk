@@ -1,5 +1,6 @@
-gtk+3.0 (3.24.35-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.35-1) unstable; urgency=medium
 
+  [ Simon McVittie ]
   * New upstream release
     - Drop most patches, included in upstream release
   * d/rules, d/run-tests.sh: Build using Meson
@@ -18,7 +19,12 @@ gtk+3.0 (3.24.35-1) UNRELEASED; urgency=medium
     With these changes, the flaky/known-failing tests are no longer installed
     as installed-tests at all, so remove them from the autopkgtest metadata.
 
- -- Simon McVittie <smcv@debian.org>  Thu, 24 Nov 2022 13:41:39 +0000
+  [ Jeremy Bicha ]
+  * debian/control.in, debian/tests/control: Depend on
+    adwaita-icon-theme-full for tests. In Debian this is a virtual package
+    provided by adwaita-icon-theme, and in Ubuntu it's a separate package.
+
+ -- Simon McVittie <smcv@debian.org>  Thu, 24 Nov 2022 13:52:17 +0000
 
 gtk+3.0 (3.24.34-5) unstable; urgency=medium
 
