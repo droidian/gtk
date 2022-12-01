@@ -98,7 +98,7 @@ configure_flags_deb = \
 	-Dinstalled_tests=true \
 	-Dintrospection=true \
 	-Dman=true \
-	-Dprint_backends=cups,file,lpr,test \
+	-Dprint_backends=cups,file \
 	$(NULL)
 
 ifeq (,$(filter stage1,$(DEB_BUILD_PROFILES)))
