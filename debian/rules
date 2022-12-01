@@ -94,7 +94,6 @@ configure_flags_common = \
 configure_flags_deb = \
 	--default-library=shared \
 	-Dbroadway_backend=true \
-	-Dgtk_doc=true \
 	-Dinstalled_tests=true \
 	-Dintrospection=true \
 	-Dman=true \
