@@ -120,6 +120,13 @@ else
 configure_flags_deb += -Dgtk_doc=true
 endif
 
+ifeq ($(shell dpkg-vendor --is Ubuntu && echo yes), yes)
+# Not in main repository
+configure_flags_deb += -Dcloudproviders=false
+else
+configure_flags_deb += -Dcloudproviders=true
+endif
+
 configure_flags_udeb = \
 	-Dbroadway_backend=false \
 	-Dcolord=no \
