@@ -85,7 +85,6 @@ debian/%: debian/%.in
 		$@.in > $@
 
 configure_flags_common = \
-	--libdir=/$(LIBDIR) \
 	-Dx11_backend=true \
 	$(NULL)
 
