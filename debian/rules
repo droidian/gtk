@@ -93,7 +93,6 @@ configure_flags_deb = \
 	-Dbroadway_backend=true \
 	-Dinstalled_tests=true \
 	-Dintrospection=true \
-	-Dman=true \
 	-Dprint_backends=cups,file \
 	$(NULL)
 
@@ -107,6 +106,12 @@ ifeq (linux,$(DEB_HOST_ARCH_OS))
 configure_flags_deb += -Dwayland_backend=true
 else
 configure_flags_deb += -Dwayland_backend=false
+endif
+
+ifeq ($(filter nodoc,$(DEB_BUILD_PROFILES)),)
+configure_flags_deb += -Dman=true
+else
+configure_flags_deb += -Dman=false
 endif
 
 ifeq ($(filter %-doc,$(built_binaries)),)
@@ -268,6 +273,9 @@ override_dh_installdocs:
 	# debhelper 11's defaults, otherwise it would have file conflicts
 	dh_installdocs -p$(DOC_PKG) --doc-main-package=$(DOC_PKG) AUTHORS -X.in
 	dh_installdocs --remaining-packages -A AUTHORS
+
+override_dh_installman:
+	dh_installman --sourcedir=debian/install/deb
 
 override_dh_makeshlibs:
 	dh_makeshlibs -p$(SHARED_PKG) --add-udeb=$(UDEB_PKG) -X$(MODULES_BASE_PATH) -- -c4

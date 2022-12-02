@@ -50,13 +50,13 @@ Build-Depends: adwaita-icon-theme-full <!nocheck>,
                wayland-protocols (>= 1.17) [linux-any],
                xauth <!nocheck>,
                xvfb <!nocheck>
-Build-Depends-Indep: docbook-xml,
-                     docbook-xsl,
+Build-Depends-Indep: docbook-xml <!nodoc>,
+                     docbook-xsl <!nodoc>,
                      libatk1.0-doc <!nodoc>,
                      libcairo2-doc <!nodoc>,
                      libglib2.0-doc <!nodoc>,
                      libpango1.0-doc <!nodoc>,
-                     xsltproc
+                     xsltproc <!nodoc>,
 Rules-Requires-Root: no
 Standards-Version: 4.6.1
 Vcs-Browser: https://salsa.debian.org/gnome-team/gtk3
