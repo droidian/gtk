@@ -3,6 +3,11 @@ Flush-drawable-surface-when-getting-a-pixbuf.patch
 testsuite-Avoid-using-should_fail.patch
 testsuite-Try-enabling-a11y-tests-other-than-those-known-.patch
 testsuite-Don-t-create-.test-files-for-flaky-or-failing-t.patch
+wayland-Look-for-cursor-themes-in-HOME.patch
+Update-Brazilian-Portuguese-translation.patch
+application-Switch-links-to-gtk-3-24-branch.patch
+docs-Switch-example-to-gtk-3-24-branch.patch
+docs-Use-main-branch-instead-of-master.patch
 016_no_offscreen_widgets_grabbing.patch
 017_no_offscreen_device_grabbing.patch
 060_ignore-random-icons.patch
