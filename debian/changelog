@@ -1,4 +1,4 @@
-gtk+3.0 (3.24.35-2) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.35-2) unstable; urgency=medium
 
   * d/rules: Return to the print backends we previously enabled.
     lpr and test were enabled during the move to Meson, but we didn't enable
@@ -26,7 +26,7 @@ gtk+3.0 (3.24.35-2) UNRELEASED; urgency=medium
     Workaround for Mesa regression #1025312. We expect only software
     rendering to be available in a buildd or autopkgtest environment anyway.
 
- -- Simon McVittie <smcv@debian.org>  Fri, 02 Dec 2022 15:13:45 +0000
+ -- Simon McVittie <smcv@debian.org>  Fri, 02 Dec 2022 16:25:44 +0000
 
 gtk+3.0 (3.24.35-1) unstable; urgency=medium
 
