@@ -1,3 +1,33 @@
+gtk+3.0 (3.24.35-2) UNRELEASED; urgency=medium
+
+  * d/rules: Return to the print backends we previously enabled.
+    lpr and test were enabled during the move to Meson, but we didn't enable
+    them in the past and they don't seem to be desirable. (Closes: #1025271)
+  * d/rules: Remove redundant gtk_doc option.
+    In both cases (documentation enabled or disabled) we override this later.
+  * d/patches: Update to upstream commit 3.24.35-15-g9c60b8d4d4
+    - Load icon themes from ~/.local/share/icons and ~/.icons under Wayland
+    - Fix links in documentation to point to correct git branch for GTK 3
+    - Translation update: pt_BR
+  * Remove dpkg trigger on old immodules search path.
+    GTK 3 hasn't searched this path since 2015, so it was no longer useful
+    to have a trigger on it.
+  * d/rules: Remove redundant --libdir override.
+    We get the correct library directory from dh_auto_configure.
+  * Install emoji data for non-English languages.
+    With Autotools this was incorporated into the shared library, but with
+    Meson it's loaded on-demand.
+  * d/control.in: Disable API documentation under nodoc build profile
+  * d/control.in, d/rules: Disable man pages under nodoc build-profile
+  * d/control.in: Don't depend on gtk-doc-tools under nodoc build-profile.
+    This was needed at autoreconf time when we built with Autotools, but not
+    with Meson.
+  * Force software rendering during tests.
+    Workaround for Mesa regression #1025312. We expect only software
+    rendering to be available in a buildd or autopkgtest environment anyway.
+
+ -- Simon McVittie <smcv@debian.org>  Fri, 02 Dec 2022 15:13:45 +0000
+
 gtk+3.0 (3.24.35-1) unstable; urgency=medium
 
   [ Simon McVittie ]
