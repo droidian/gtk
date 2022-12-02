@@ -235,6 +235,7 @@ ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 		BUILDDIR=$(CURDIR)/debian/build/deb \
 		FUZZY_REFTESTS="$(fuzzy_reftests)" \
 		IGNORE_REFTESTS="$(ignore_reftests)" \
+		LIBGL_ALWAYS_SOFTWARE=1 \
 		XFAIL_REFTESTS="$(xfail_reftests)" \
 	debian/run-tests.sh --timeout-multiplier 4
 endif
