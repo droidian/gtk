@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.35-3) unstable; urgency=medium
+
+  * Cherry-pick 2 proposed patches to fix app startup regressions
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Fri, 09 Dec 2022 08:25:27 -0500
+
 gtk+3.0 (3.24.35-2) unstable; urgency=medium
 
   * d/rules: Return to the print backends we previously enabled.
