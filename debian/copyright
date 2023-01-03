@@ -130,7 +130,7 @@ License: LGPL-2.1+
 
 Files: po/*
        po-properties/*
-Copyright: Copyright (C) 1998-2019 Free Software Foundation, Inc.
+Copyright: Copyright (C) 1995-2019 Free Software Foundation, Inc.
            Copyright (C) 1999, 2003-2010 The GTK Team
            Copyright (C) 2004 Zuza Software Foundation <info@translate.org.za>
            Copyright (C) 2008-2010 F Wolff <friedel@translate.org.za>
