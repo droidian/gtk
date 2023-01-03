@@ -131,7 +131,7 @@ configure_flags_udeb = \
 	$(NULL)
 
 %:
-	dh $@ --buildsystem=meson
+	dh $@
 
 fuzzy_reftests = \
 	$(NULL)
@@ -161,26 +161,10 @@ override_dh_clean: debian/control
 	# The build system does not automatically update the GResource files
 	# when resources change. Force an update in case we ship a patch which
 	# modifies the theme CSS files.
-	rm -f gtk/gtkresources.c gtk/gtkresources.h
 	rm -f gtk/theme/Adwaita/gtk-contained.css
 	rm -f gtk/theme/Adwaita/gtk-contained-dark.css
 	rm -f gtk/theme/HighContrast/gtk-contained.css
 	rm -f gtk/theme/HighContrast/gtk-contained-inverse.css
-	# We just don't want to have to review these...
-	rm -f demos/gtk-demo/demo_resources.[ch]
-	rm -f demos/icon-browser/resources.[ch]
-	rm -f demos/widget-factory/widget_factory_resources.[ch]
-	rm -f docs/reference/gtk/getting_started.xml
-	rm -f examples/application*/resources.[ch]
-	rm -f gdk/gdkenumtypes.[ch]
-	rm -f gdk/gdkmarshalers.[ch]
-	rm -f gdk/gdkresources.[ch]
-	rm -f gtk/gtkmarshalers.[ch]
-	rm -f gtk/gtkprivatetypebuiltins.[ch]
-	rm -f gtk/gtkresources.[ch]
-	rm -f gtk/gtktypebuiltins.[ch]
-	rm -f testsuite/css/style/resources.[ch]
-	rm -f testsuite/gtk/gtkresources.[ch]
 	dh_clean
 
 # Add dependencies to generate files from the debian/*.in ones
@@ -194,9 +178,6 @@ rebuild-emoji:
 		output=gtk/emoji/$$lang.data; \
 		debian/convert-emoji $$input $$output; \
 	done
-
-override_dh_autoreconf:
-	: # Do nothing, we're using Meson
 
 override_dh_auto_configure: debian/control
 	dh_auto_configure \
@@ -261,9 +242,9 @@ endif
 
 override_dh_missing:
 ifneq ($(filter %-udeb,$(built_binaries)),)
-	dh_missing --sourcedir=debian/install/udeb --list-missing -X.la
+	dh_missing --sourcedir=debian/install/udeb --list-missing
 endif
-	dh_missing --sourcedir=debian/install/deb --list-missing -X.la
+	dh_missing --sourcedir=debian/install/deb --list-missing
 
 override_dh_installchangelogs:
 	dh_installchangelogs -XChangeLog
