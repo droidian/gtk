@@ -463,6 +463,10 @@ Files: gtk/icons/scalable/status/*.svg
 Copyright: unspecified, possibly © Jakub Steiner
 License: CC-BY-SA-4.0
 
+Files: gdk/win32/cursor.bdf
+Copyright: none stated
+License: unencumbered
+
 Files: gdk/win32/wintab.h
        gdk/win32/pktdef.h
 Copyright: Copyright (C) 1991-1998 LCS/Telegraphics
@@ -1044,6 +1048,9 @@ License: CC-BY-SA-4.0
  public licenses.
  .
  Creative Commons may be contacted at creativecommons.org.
+
+License: unencumbered
+ These "glyphs" are unencumbered
 
 License: X11R5-permissive
  Permission to use, copy, modify, distribute, and sell this
