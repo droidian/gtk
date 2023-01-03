@@ -250,11 +250,11 @@ override_dh_installchangelogs:
 	dh_installchangelogs -XChangeLog
 
 override_dh_installdocs:
-	dh_installdocs -p$(COMMON_PKG) AUTHORS README NEWS
-	# We need to install AUTHORS in /u/s/d/l-doc, not -dev according to
+	dh_installdocs -p$(COMMON_PKG) README NEWS
+	# We need to install into /u/s/d/l-doc, not -dev according to
 	# debhelper 11's defaults, otherwise it would have file conflicts
-	dh_installdocs -p$(DOC_PKG) --doc-main-package=$(DOC_PKG) AUTHORS -X.in
-	dh_installdocs --remaining-packages -A AUTHORS
+	dh_installdocs -p$(DOC_PKG) --doc-main-package=$(DOC_PKG) -X.in
+	dh_installdocs --remaining-packages -A
 
 override_dh_installman:
 	dh_installman --sourcedir=debian/install/deb
