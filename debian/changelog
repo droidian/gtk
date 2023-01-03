@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.36-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- Simon McVittie <smcv@debian.org>  Tue, 03 Jan 2023 09:41:28 +0000
+
 gtk+3.0 (3.24.35-3) unstable; urgency=medium
 
   * Cherry-pick 2 proposed patches to fix app startup regressions
