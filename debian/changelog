@@ -1,4 +1,4 @@
-gtk+3.0 (3.24.36-2) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.36-2) unstable; urgency=medium
 
   [ Jeremy Bicha ]
   * d/p/dist/Reinstate-gdk-wayland-cursor-meson.build.patch:
@@ -11,8 +11,10 @@ gtk+3.0 (3.24.36-2) UNRELEASED; urgency=medium
     rebasing on 3.24.36.
     Note that this solution to GNOME/gtk#5386 has been rejected upstream
     and should be replaced with a backport from GTK 4.
+  * d/rules: Accept minor rendering differences in label-background test.
+    Workaround for GNOME/gtk#5545
 
- -- Simon McVittie <smcv@debian.org>  Tue, 24 Jan 2023 17:24:05 +0000
+ -- Simon McVittie <smcv@debian.org>  Tue, 24 Jan 2023 18:33:47 +0000
 
 gtk+3.0 (3.24.36-1) unstable; urgency=medium
 
