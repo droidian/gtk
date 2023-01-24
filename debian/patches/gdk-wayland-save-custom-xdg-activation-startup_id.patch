@@ -9,11 +9,11 @@ later when presenting the window.
 Needed for activation of gnome-terminal (also needs patches on the application
 side, see https://gitlab.gnome.org/GNOME/gnome-terminal/-/issues/7952).
 
-Fixes #5386
-
 Signed-off-by: Joan Bruguera <joanbrugueram@gmail.com>
 
-https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/5301
+Bug: https://gitlab.gnome.org/GNOME/gtk/-/issues/5386
+Forwarded: https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/5301
+Applied-upstream: no, rejected in https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/5302#note_1622250
 ---
  gdk/wayland/gdkdisplay-wayland.c | 8 +++++++-
  1 file changed, 7 insertions(+), 1 deletion(-)

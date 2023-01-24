@@ -9,11 +9,10 @@ This supersedes 5dca6dce91b4413064c858ae011ea7b1e33421e2, which misses the case
 where the window is shown with gtk_widget_show instead of gtk_window_present.
 Note 5dca6dce91 was also accidentally missing on the xdg-activation GTK3 port.
 
-Fixes #5386
-
 Signed-off-by: Joan Bruguera <joanbrugueram@gmail.com>
-
-https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/5301
+Bug: https://gitlab.gnome.org/GNOME/gtk/-/issues/5386
+Forwarded: https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/5301
+Applied-upstream: no, rejected in https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/5302#note_1622250
 ---
  gtk/gtkwindow.c | 10 ++++++++++
  1 file changed, 10 insertions(+)
