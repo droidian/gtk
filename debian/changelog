@@ -1,3 +1,25 @@
+gtk+3.0 (3.24.36-3) UNRELEASED; urgency=medium
+
+  * d/patches: Update to gtk-3-24 branch commit 3.24.36-33-g5554113c74,
+    excluding Windows- and macOS-specific changes, and a workaround for
+    a libhandy bug which was applied and then reverted.
+    - Fix logic for when to build GObject-Introspection
+    - Treat XKB_MOD_NAME_LOGO as Super key in Wayland (GNOME/gtk#4913)
+    - Fix animations and transitions randomly stopping (GNOME/gtk#4426)
+    - Take UI scale into account when loading "image-missing" icon
+    - Replace upstream-rejected solution to GNOME/gtk#5386 (see 3.24.35-3,
+      3.24.36-2) with the upstreamed solution
+    - Fix a touchscreen handling bug that can cause applications to become
+      unresponsive (GNOME/gtk#4947)
+    - Fix GL rendering issues in Totem after the Mesa AMD driver enabled
+      threaded rendering (GNOME/gtk#5517)
+    - Translation updates: ab, lt, tr
+  * Standards-Version: 4.6.2 (no changes required)
+  * Clean up unused Lintian overrides
+  * Add overrides for lintian/lintian!452
+
+ -- Simon McVittie <smcv@debian.org>  Sat, 04 Feb 2023 15:16:30 +0000
+
 gtk+3.0 (3.24.36-2) unstable; urgency=medium
 
   [ Jeremy Bicha ]
