@@ -1,4 +1,4 @@
-gtk+3.0 (3.24.36-3) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.36-3) unstable; urgency=medium
 
   * d/patches: Update to gtk-3-24 branch commit 3.24.36-33-g5554113c74,
     excluding Windows- and macOS-specific changes, and a workaround for
@@ -18,7 +18,7 @@ gtk+3.0 (3.24.36-3) UNRELEASED; urgency=medium
   * Clean up unused Lintian overrides
   * Add overrides for lintian/lintian!452
 
- -- Simon McVittie <smcv@debian.org>  Sat, 04 Feb 2023 17:29:33 +0000
+ -- Simon McVittie <smcv@debian.org>  Sat, 04 Feb 2023 17:31:57 +0000
 
 gtk+3.0 (3.24.36-2) unstable; urgency=medium
 
