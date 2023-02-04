@@ -7,8 +7,8 @@ gtk+3.0 (3.24.36-3) UNRELEASED; urgency=medium
     - Treat XKB_MOD_NAME_LOGO as Super key in Wayland (GNOME/gtk#4913)
     - Fix animations and transitions randomly stopping (GNOME/gtk#4426)
     - Take UI scale into account when loading "image-missing" icon
-    - Replace upstream-rejected solution to GNOME/gtk#5386 (see 3.24.35-3,
-      3.24.36-2) with the upstreamed solution
+    - Improve tracking of app status during activation in an attempt to
+      solve GNOME/gtk#5386 in an upstreamable way
     - Fix a touchscreen handling bug that can cause applications to become
       unresponsive (GNOME/gtk#4947)
     - Fix GL rendering issues in Totem after the Mesa AMD driver enabled
@@ -18,7 +18,7 @@ gtk+3.0 (3.24.36-3) UNRELEASED; urgency=medium
   * Clean up unused Lintian overrides
   * Add overrides for lintian/lintian!452
 
- -- Simon McVittie <smcv@debian.org>  Sat, 04 Feb 2023 15:16:30 +0000
+ -- Simon McVittie <smcv@debian.org>  Sat, 04 Feb 2023 17:29:33 +0000
 
 gtk+3.0 (3.24.36-2) unstable; urgency=medium
 
