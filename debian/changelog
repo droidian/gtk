@@ -1,3 +1,11 @@
+gtk+3.0 (3.24.36-4) unstable; urgency=medium
+
+  * Team upload.
+  * Backport upstream patch to fix outdated screen state on screenshots.
+    (Closes: #1031112)
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Wed, 15 Feb 2023 12:45:23 +0300
+
 gtk+3.0 (3.24.36-3) unstable; urgency=medium
 
   * d/patches: Update to gtk-3-24 branch commit 3.24.36-33-g5554113c74,
