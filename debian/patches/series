@@ -23,3 +23,4 @@ reftest_compare_surfaces-Report-how-much-the-images-diffe.patch
 reftests-Allow-minor-differences-to-be-tolerated.patch
 window-focus-on-window-show-for-wayland-activation.patch
 gdk-wayland-save-custom-xdg-activation-startup_id.patch
+Mark-surface-as-dirty-before-flushing-it.patch
