@@ -1,6 +1,25 @@
 gtk+3.0 (3.24.37-1) UNRELEASED; urgency=medium
 
   * New upstream release
+    - Add support for xdg-desktop-portal file transfer API, allowing
+      copy/paste and drag-and-drop of files where one of the apps involved
+      is sandboxed by Flatpak, Snap or similar (GNOME/gtk!5554)
+    - Fix a regression for startup notifications (GNOME/gtk!5581)
+    - Fix potential invalid pointer dereference when checking whether a
+      list store iterator is valid
+    - Simple input method: Silence a warning from newer GLib by correctly
+      returning a value from a task
+    - Search engine: Reduce severity of the warning when Tracker
+      initialization failed, avoiding crashes when run with
+      G_DEBUG=fatal-criticals and without Tracker (GNOME/gtk!5490)
+    - Wayland backend: Drop support for an obsolete text input protocol,
+      which was only used by GNOME versions prior to Debian 10
+    - Broadway backend: Implement modal dialogs, preventing issues
+      with focus loss in complex UIs (GNOME/gtk!3990)
+    - Tests: Stop using GTestDBus, avoiding test timeouts if a dependency
+      leaks a bus connection
+    - Windows and macOS fixes not directly relevant to Debian
+  * Drop patches that were applied upstream
 
  -- Simon McVittie <smcv@debian.org>  Fri, 03 Mar 2023 15:18:26 +0000
 
