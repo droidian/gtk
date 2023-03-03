@@ -1,4 +1,4 @@
-gtk+3.0 (3.24.37-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.37-1) experimental; urgency=medium
 
   * New upstream release
     - Add support for xdg-desktop-portal file transfer API, allowing
@@ -19,9 +19,16 @@ gtk+3.0 (3.24.37-1) UNRELEASED; urgency=medium
     - Tests: Stop using GTestDBus, avoiding test timeouts if a dependency
       leaks a bus connection
     - Windows and macOS fixes not directly relevant to Debian
-  * Drop patches that were applied upstream
+  * d/patches: Drop patches that were applied upstream
+  * d/p/gdk-wayland-save-custom-xdg-activation-startup_id.patch,
+    d/p/window-focus-on-window-show-for-wayland-activation.patch:
+    Drop temporary fixes for GNOME/gtk#5386 (see 3.24.36-2, 3.24.35-3
+    changelogs). These were rejected upstream, and the change from
+    GNOME/gtk!5581 included in 3.24.37 should fix the issue more
+    correctly.
+  * Upload to experimental for further testing
 
- -- Simon McVittie <smcv@debian.org>  Fri, 03 Mar 2023 15:18:26 +0000
+ -- Simon McVittie <smcv@debian.org>  Fri, 03 Mar 2023 20:27:28 +0000
 
 gtk+3.0 (3.24.36-4) unstable; urgency=medium
 
