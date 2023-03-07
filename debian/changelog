@@ -1,3 +1,11 @@
+gtk+3.0 (3.24.37-2) UNRELEASED; urgency=medium
+
+  * d/copyright: Remove gtk-text-input.xml.
+    This file is no longer present in the source package.
+  * Remove Lintian overrides for lintian/lintian!452, no longer necessary
+
+ -- Simon McVittie <smcv@debian.org>  Tue, 07 Mar 2023 00:07:09 +0000
+
 gtk+3.0 (3.24.37-1) experimental; urgency=medium
 
   * New upstream release
