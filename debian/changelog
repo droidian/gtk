@@ -1,10 +1,15 @@
-gtk+3.0 (3.24.37-2) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.37-2) unstable; urgency=medium
 
+  * d/p/selection-Use-the-right-mime-type.patch:
+    Add patch to fix incorrect MIME type for file transfer portal.
+    Regression in 3.24.37, affecting interoperability with other
+    implementations like the one requested in QTBUG-91357.
+  * d/patches: Update translations from upstream git: gl, he
   * d/copyright: Remove gtk-text-input.xml.
     This file is no longer present in the source package.
   * Remove Lintian overrides for lintian/lintian!452, no longer necessary
 
- -- Simon McVittie <smcv@debian.org>  Tue, 07 Mar 2023 00:07:09 +0000
+ -- Simon McVittie <smcv@debian.org>  Wed, 08 Mar 2023 14:52:40 +0000
 
 gtk+3.0 (3.24.37-1) experimental; urgency=medium
 
