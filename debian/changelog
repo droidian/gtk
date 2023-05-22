@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.38-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Mon, 22 May 2023 13:19:09 -0400
+
 gtk+3.0 (3.24.37-2) unstable; urgency=medium
 
   * d/p/selection-Use-the-right-mime-type.patch:
