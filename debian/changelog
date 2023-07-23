@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.38-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Sun, 23 Jul 2023 16:14:18 -0400
+
 gtk+3.0 (3.24.38-1) experimental; urgency=medium
 
   [ Jeremy Bícha ]
