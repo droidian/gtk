@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.38-3) unstable; urgency=medium
+
+  * Build with libcloudproviders (on Debian)
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Wed, 09 Aug 2023 11:29:11 -0400
+
 gtk+3.0 (3.24.38-2) unstable; urgency=medium
 
   * Release to unstable
