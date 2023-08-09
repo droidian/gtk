@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.38-4) unstable; urgency=medium
+
+  * Have -dev package depend on libcloudproviders-dev on Debian
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Wed, 09 Aug 2023 18:10:50 -0400
+
 gtk+3.0 (3.24.38-3) unstable; urgency=medium
 
   * Build with libcloudproviders (on Debian)
