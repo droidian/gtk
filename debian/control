@@ -171,6 +171,7 @@ Depends: gir1.2-gtk-3.0 (= ${binary:Version}),
          wayland-protocols (>= 1.17) [linux-any],
          ${misc:Depends},
          ${shlibs:Depends},
+         ${cloudProvider:Depends},
          libgtk-3-common (>= ${source:Version}),
          libgtk-3-0 (= ${binary:Version})
 Suggests: libgtk-3-doc
