@@ -1,3 +1,10 @@
+gtk+3.0 (3.24.38-6) UNRELEASED; urgency=medium
+
+  * d/p/gdk-wayland-Return-pad-devices-querying-for-all-devices.patch:
+    Fix a copy/paste error in patch metadata
+
+ -- Simon McVittie <smcv@debian.org>  Sun, 10 Sep 2023 16:39:16 +0100
+
 gtk+3.0 (3.24.38-5) unstable; urgency=medium
 
   [ Amin Bandali ]
