@@ -1,4 +1,4 @@
-merge_Carlos Garnacho <carlosg@gnome.org>
+From: Carlos Garnacho <carlosg@gnome.org>
 Date: Tue, 13 Jun 2023 22:54:23 +0200
 Subject: gdk/wayland: Return pad devices querying for all devices
 
