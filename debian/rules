@@ -67,7 +67,6 @@ debian/%: debian/%.in
 		-e "s#@SONAME@#$(SONAME)#g" \
 		-e "s#@APIVER@#$(APIVER)#g" \
 		-e "s#@VERSION@#$(DEB_VERSION_UPSTREAM)#g" \
-		-e "s#@GTK_BINVER_DEP@#$(GTK_BINVER_DEP)#g" \
 		-e "s#@SHARED_PKG@#$(SHARED_PKG)#g" \
 		-e "s#@COMMON_PKG@#$(COMMON_PKG)#g" \
 		-e "s#@DEV_PKG@#$(DEV_PKG)#g" \
@@ -273,11 +272,11 @@ override_dh_makeshlibs:
 	dh_makeshlibs -plibgail-3-0 -- -c4
 	dh_makeshlibs --remaining-packages -X$(MODULES_BASE_PATH)
 
+dpkg_gencontrol_args = -Vgtk:BinVer=$(GTK_BINVER_DEP)
 # libcloudproviders is in Ubuntu "universe"
-override_dh_gencontrol:
 ifneq ($(shell dpkg-vendor --query vendor),Ubuntu)
-	dh_gencontrol -- \
-		-VcloudProvider:Depends='libcloudproviders-dev (>= 0.3.2)'
-else
-	dh_gencontrol
+dpkg_gencontrol_args += -VcloudProvider:Depends='libcloudproviders-dev (>= 0.3.2)'
 endif
+
+override_dh_gencontrol:
+	dh_gencontrol -- $(dpkg_gencontrol_args)

@@ -2,7 +2,7 @@ Source: gtk+3.0
 Section: libs
 Priority: optional
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
-Uploaders: Simon McVittie <smcv@debian.org>, Jeremy Bícha <jbicha@ubuntu.com>
+Uploaders: Simon McVittie <smcv@debian.org>, Dmitry Shachnev <mitya57@debian.org>, Jeremy Bícha <jbicha@ubuntu.com>
 Build-Depends: adwaita-icon-theme-full <!nocheck>,
                at-spi2-core <!nocheck>,
                dbus-daemon <!nocheck>,
@@ -74,7 +74,7 @@ Depends: adwaita-icon-theme,
          ${misc:Depends},
          ${shlibs:Depends},
          libgtk-3-common (>= ${source:Version})
-Provides: gtk3-binver-3.0.0
+Provides: ${gtk:BinVer}
 Recommends: libgtk-3-bin,
             librsvg2-common
 Suggests: gvfs,
@@ -93,7 +93,7 @@ Section: debian-installer
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends}
-Provides: gtk3-binver-3.0.0
+Provides: ${gtk:BinVer}
 Description: GTK graphical user interface library - minimal runtime
  This is a udeb, or a microdeb, for the debian-installer.
  .
