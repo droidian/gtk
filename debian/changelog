@@ -1,8 +1,9 @@
-gtk+3.0 (3.24.39-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.39-1) unstable; urgency=medium
 
   * New upstream release
+  * Drop patches applied in new release
 
- -- Jeremy Bícha <jbicha@ubuntu.com>  Fri, 22 Dec 2023 09:47:40 -0500
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Fri, 22 Dec 2023 10:32:30 -0500
 
 gtk+3.0 (3.24.38-6) unstable; urgency=medium
 
