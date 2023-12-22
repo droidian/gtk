@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.39-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Fri, 22 Dec 2023 09:47:40 -0500
+
 gtk+3.0 (3.24.38-6) unstable; urgency=medium
 
   * d/p/gdk-wayland-Return-pad-devices-querying-for-all-devices.patch:
