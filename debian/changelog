@@ -1,8 +1,10 @@
-gtk+3.0 (3.24.40-1) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.40-1) unstable; urgency=medium
 
   * New upstream release
+    - Update emoji chooser for Unicode 15.1
+  * missing-sources: Update emojibase
 
- -- Jeremy Bícha <jbicha@ubuntu.com>  Fri, 19 Jan 2024 09:01:00 -0500
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Fri, 19 Jan 2024 15:22:17 -0500
 
 gtk+3.0 (3.24.39-2) unstable; urgency=medium
 
