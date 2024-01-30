@@ -1,3 +1,9 @@
+gtk+3.0 (3.24.41-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- Simon McVittie <smcv@debian.org>  Tue, 30 Jan 2024 10:13:38 +0000
+
 gtk+3.0 (3.24.40-2) unstable; urgency=medium
 
   * Cherry-pick 2 commits to fix crash when screen is turned off
