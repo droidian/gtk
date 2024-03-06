@@ -1,3 +1,17 @@
+gtk+3.0 (3.24.41-2) unstable; urgency=medium
+
+  * d/libgtk-3-0t64.preinst: Remove libgtk-3-0 postrm to avoid loss of
+    input method modules during upgrade (Closes: #1065494)
+  * d/tests/manual/1065494.sh: Add a manual reproducer for #1065494
+  * d/libgtk-3-0t64.postrm.in: Only clean up immodules.cache during purge.
+    This avoids input methods becoming briefly unavailable during upgrades.
+  * d/libgtk-3-0t64.postrm.in: Avoid recurrence of #1065494 in the future,
+    by not deleting immodules.cache (even during purge) unless the immodules
+    directory no longer exists.
+  * d/tests/1065494-futureproofing: Add a test for recurrence of #1065494.
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 06 Mar 2024 11:23:01 +0000
+
 gtk+3.0 (3.24.41-1.1) unstable; urgency=medium
 
   * Non-maintainer upload.
