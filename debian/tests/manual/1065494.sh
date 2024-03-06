@@ -44,7 +44,7 @@ Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 EOF
 
 # Add a deb822-formatted apt source at this location if you are testing a
-# locally-built glib2.0 before upload
+# locally-built gtk+3.0 before upload
 if [ -e "debian/tests/manual/local-1065494.sources" ]; then
     install -m644 "debian/tests/manual/local-1065494.sources" /etc/apt/sources.list.d/
 fi
