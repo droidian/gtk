@@ -1,5 +1,21 @@
-gtk+3.0 (3.24.41-3) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.41-3) unstable; urgency=medium
 
+  * d/control, d/tests/control: Drop dependency on adwaita-icon-theme-full.
+    This package name was Ubuntu-specific, and was dropped since 45.0-4
+    (the Debian version of a-i-t has a Provides for a-i-t-full). Use a
+    versioned build-dependency so that we definitely have all of the
+    necessary icons to run tests successfully.
+    Thanks to Heinrich Schuchardt
+  * Temporarily disable tests on 32-bit non-i386 architectures.
+    This should help to resolve cyclic build-dependencies during the
+    64-bit time_t transition.
+  * d/control, d/rules: Temporarily disable colord on 32-bit non-i386.
+    This is not yet buildable on the architectures affected by the 64-bit
+    time_t transition.
+  * d/control, d/rules: Temporarily disable cloudproviders on 32-bit non-x86.
+    This is not yet buildable on the architectures affected by the 64-bit
+    time_t transition, with a dependency chain involving graphviz and
+    GTK 2.
   * d/control, d/tests: Use pkgconf in preference to pkg-config
   * d/control, d/rules: Make it clearer that we are using the correct
     pkgconf.
@@ -15,7 +31,7 @@ gtk+3.0 (3.24.41-3) UNRELEASED; urgency=medium
     in /usr/share means that it can at least be shared between multiple
     installed multiarch instances.
 
- -- Simon McVittie <smcv@debian.org>  Wed, 06 Mar 2024 14:06:14 +0000
+ -- Simon McVittie <smcv@debian.org>  Thu, 14 Mar 2024 18:27:58 +0000
 
 gtk+3.0 (3.24.41-2) unstable; urgency=medium
 
