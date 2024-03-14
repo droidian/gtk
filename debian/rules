@@ -120,11 +120,15 @@ configure_flags_deb += -Dgtk_doc=true
 endif
 
 ifeq ($(shell dpkg-vendor --is Ubuntu && echo yes), yes)
-# Not in main repository
-configure_flags_deb += -Dcloudproviders=false
+# libcloudproviders is in Ubuntu "universe"
+use_cloudproviders := false
+else ifeq ($(DEB_HOST_ARCH_BITS)$(filter i386,$(DEB_HOST_ARCH_CPU)),32)
+# Temporarily unbuildable during 64-bit time_t transition
+use_cloudproviders := false
 else
-configure_flags_deb += -Dcloudproviders=true
+use_cloudproviders := true
 endif
+configure_flags_deb += -Dcloudproviders=$(use_cloudproviders)
 
 configure_flags_udeb = \
 	-Dbroadway_backend=false \
@@ -271,8 +275,7 @@ override_dh_makeshlibs:
 	dh_makeshlibs --remaining-packages -X$(MODULES_BASE_PATH)
 
 dpkg_gencontrol_args = -Vgtk:BinVer=$(GTK_BINVER_DEP)
-# libcloudproviders is in Ubuntu "universe"
-ifneq ($(shell dpkg-vendor --query vendor),Ubuntu)
+ifeq ($(use_cloudproviders),true)
 dpkg_gencontrol_args += -VcloudProvider:Depends='libcloudproviders-dev (>= 0.3.2)'
 endif
 
