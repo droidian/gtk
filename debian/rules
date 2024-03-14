@@ -209,7 +209,7 @@ endif
 override_dh_auto_test:
 # The tests require librsvg2-common which is only available on architectures
 # where rust has been ported to, disable the tests on the other ones
-ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armel armhf i386 mips64el mipsel ppc64el s390x powerpc ppc64 riscv64 sparc64))
+ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 i386 mips64el ppc64el s390x ppc64 riscv64 sparc64))
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 	# So that gsettings can find the (uninstalled) gtk schemas
 	mkdir -p debian/build/glib-2.0/schemas/
