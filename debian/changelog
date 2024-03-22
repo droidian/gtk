@@ -1,3 +1,11 @@
+gtk+3.0 (3.24.41-4) UNRELEASED; urgency=medium
+
+  [ Jeremy Bícha ]
+  * d/control, d/rules: Reinstate cloudproviders.
+    This has now been rebuilt on the 32-bit architectures.
+
+ -- Simon McVittie <smcv@debian.org>  Fri, 22 Mar 2024 10:32:49 +0000
+
 gtk+3.0 (3.24.41-3) unstable; urgency=medium
 
   * d/control, d/tests/control: Drop dependency on adwaita-icon-theme-full.
