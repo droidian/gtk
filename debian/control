@@ -27,7 +27,7 @@ Build-Depends: adwaita-icon-theme (>= 45.0-4~) [!armel !armhf !hppa !m68k !power
                libatk1.0-dev (>= 2.35.1),
                libcairo2-dev (>= 1.14.0),
                libcloudproviders-dev (>= 0.3.2),
-               libcolord-dev (>= 0.1.9) [!armel !armhf !hppa !m68k !powerpc !sh4],
+               libcolord-dev (>= 0.1.9),
                libcups2-dev (>= 1.7),
                libegl1-mesa-dev [linux-any],
                libepoxy-dev (>= 1.4),

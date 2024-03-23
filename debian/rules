@@ -92,14 +92,11 @@ ifneq ($(DEB_BUILD_ARCH),$(DEB_HOST_ARCH))
 configure_flags_deb += --cross-file=$(DEB_HOST_GNU_TYPE)-gobject-introspection.ini
 endif
 
-ifneq (,$(filter stage1,$(DEB_BUILD_PROFILES)))
-use_colord := no
-else ifeq ($(DEB_HOST_ARCH_BITS)$(filter i386,$(DEB_HOST_ARCH_CPU)),32)
-use_colord := no
+ifeq (,$(filter stage1,$(DEB_BUILD_PROFILES)))
+configure_flags_deb += -Dcolord=yes
 else
-use_colord := yes
+configure_flags_deb += -Dcolord=no
 endif
-configure_flags_deb += -Dcolord=$(use_colord)
 
 ifeq (linux,$(DEB_HOST_ARCH_OS))
 configure_flags_deb += -Dwayland_backend=true
