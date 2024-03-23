@@ -4,7 +4,10 @@ gtk+3.0 (3.24.41-4) UNRELEASED; urgency=medium
   * d/control, d/rules: Reinstate cloudproviders.
     This has now been rebuilt on the 32-bit architectures.
 
- -- Simon McVittie <smcv@debian.org>  Fri, 22 Mar 2024 10:32:49 +0000
+  [ Simon McVittie ]
+  * d/control, d/rules: Reinstate colord integration on 32-bit
+
+ -- Simon McVittie <smcv@debian.org>  Sat, 23 Mar 2024 10:06:38 +0000
 
 gtk+3.0 (3.24.41-3) unstable; urgency=medium
 
