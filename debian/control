@@ -74,8 +74,8 @@ Vcs-Git: https://salsa.debian.org/gnome-team/gtk3.git
 Homepage: https://www.gtk.org/
 
 Package: libgtk-3-0t64
-Replaces: libgtk-3-0
-Breaks: libgtk-3-0 (<< ${source:Version})
+Replaces: libgtk-3-0 (<< 3.24.41-1.1)
+Breaks: libgtk-3-0 (<< 3.24.41-1.1)
 Architecture: any
 Multi-Arch: same
 Depends: adwaita-icon-theme,
@@ -274,8 +274,8 @@ Description: icon theme caching utility
 
 Package: libgail-3-0t64
 Provides: ${t64:Provides}
-Replaces: libgail-3-0
-Breaks: libgail-3-0 (<< ${source:Version})
+Replaces: libgail-3-0 (<< 3.24.41-1.1)
+Breaks: libgail-3-0 (<< 3.24.41-1.1)
 Architecture: any
 Multi-Arch: same
 Depends: at-spi2-core,
