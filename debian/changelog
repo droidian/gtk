@@ -6,8 +6,10 @@ gtk+3.0 (3.24.41-4) UNRELEASED; urgency=medium
 
   [ Simon McVittie ]
   * d/control, d/rules: Reinstate colord integration on 32-bit
+  * d/control, d/rules: Reinstate build-time tests on 32-bit
+  * d/control: Use a concrete version number for the Breaks/Replaces
 
- -- Simon McVittie <smcv@debian.org>  Sat, 23 Mar 2024 10:06:38 +0000
+ -- Simon McVittie <smcv@debian.org>  Mon, 25 Mar 2024 11:01:40 +0000
 
 gtk+3.0 (3.24.41-3) unstable; urgency=medium
 
