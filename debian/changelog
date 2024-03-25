@@ -1,4 +1,4 @@
-gtk+3.0 (3.24.41-4) UNRELEASED; urgency=medium
+gtk+3.0 (3.24.41-4) unstable; urgency=medium
 
   [ Jeremy Bícha ]
   * d/control, d/rules: Reinstate cloudproviders.
@@ -9,7 +9,7 @@ gtk+3.0 (3.24.41-4) UNRELEASED; urgency=medium
   * d/control, d/rules: Reinstate build-time tests on 32-bit
   * d/control: Use a concrete version number for the Breaks/Replaces
 
- -- Simon McVittie <smcv@debian.org>  Mon, 25 Mar 2024 11:01:40 +0000
+ -- Simon McVittie <smcv@debian.org>  Mon, 25 Mar 2024 12:34:40 +0000
 
 gtk+3.0 (3.24.41-3) unstable; urgency=medium
 
